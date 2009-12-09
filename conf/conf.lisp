@@ -29,10 +29,11 @@
   "Read a single file into the site-configuration hash"
   (let ((site-config 
 	 (with-open-file (stream filename)
-	   (read stream)))
+	   (prog1 (read stream)
+             (unless (eq (read stream) :EOF)
+               (error "Ill-formed configuration file: ~A" filename)))))
 	(config (get-site-config-table)))
-    (unless (eq (read) :EOF)
-      (error "Ill-formed configuration file: ~A" filename))
+        
     (loop for entry in site-config do
 	 (setf (gethash (car entry) config) 
 	       (if (equal (length (cdr entry)) 1) 
