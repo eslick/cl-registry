@@ -27,7 +27,28 @@
 	     (*current-page-description* (list " - " *current-page-description*))
 	     (webapp-description (list " - " webapp-description))
 	     (t '("" ""))))))
-  
+
+;; ===================================
+;; Render custom header entries
+;; ===================================
+
+(defmethod render-page-headers ((app registry))
+  (awhen (get-site-config-param :google-analytics-id)
+    (with-html
+      (:script :type "text/javascript"
+	       (str (format nil 
+              "var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', '~A']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                 var ga = document.createElement('script');
+                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 
+                           'http://www') + '.google-analytics.com/ga.js';
+                           ga.setAttribute('async', 'true');
+                           document.documentElement.firstChild.appendChild(ga);
+                 })();" it))))))
+
 ;; ===================================
 ;; Render page header at top
 ;; ===================================
@@ -132,22 +153,7 @@
 			   #!"Privacy Policy")
 	      "&nbsp; | &nbsp;"
 	      (:a :href (format nil "mailto:~A" (get-site-config-param :email-admin-address))
-		  (str #!"Contact")))))
-  (render-google-analytics))
-
-(defun render-google-analytics ()
-  (awhen (get-site-config-param :google-analytics-id)
-    (with-html 
-      (:script :type "text/javascript"
-	       "var gaJsHost = ((\"https:\" == document.location.protocol) ? \"https://ssl.\" : \"http://www.\");
-              document.write(unescape(\"%3Cscript src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));")
-      (:script :type "text/javascript"
-	       (str (format nil 
-			    "try {
-                                 var pageTracker = _gat._getTracker(\"~A\");
-                                 pageTracker._trackPageview();
-                               } catch(err) {}"
-			    it))))))
+		  (str #!"Contact"))))))
 
 (defun ajax-scroll-to-top ()
   (declare (special *on-ajax-complete-scripts*))
