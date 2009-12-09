@@ -34,18 +34,16 @@
   (render-stats)
   (with-html
     "Email to users: "
-    (str (if *enable-email-to-users* "Enabled" "Disabled"))
+    (str (if (get-site-config-param :email-to-users-p) "Enabled" "Disabled"))
     (render-link
-     (f* (setq *enable-email-to-users* (not *enable-email-to-users*))
+     (f* (toggle-site-config-param :email-to-users-p)
          (mark-dirty admin))
      " [Toggle]")
     (:br)
     "Twitter updates: "
-    (str (if (twitter:authenticated-user) "Enabled" "Disabled"))
+    (str (if (get-site-config-param :twitter-enabled-p) "Enabled" "Disabled"))
     (render-link
-     (f* (if (twitter-enabled-p)
-             (twitter-disable)
-	     (twitter-enable))
+     (f* (toggle-site-config-param :twitter-enabled-p)
          (mark-dirty admin))
      " [Toggle]")
     (:br)

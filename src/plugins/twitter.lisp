@@ -8,20 +8,8 @@
   (when (twitter-enabled-p)
     (update-twitter-feed)))
 
-(defparameter *twitter-status* nil)
-
 (defun twitter-enabled-p ()
-  (aif *twitter-status*
-       (eq it :enabled)
-       (aif (get-site-config-param :twitter-enabled-p)
-	    (progn (twitter-enable) t)
-	    (progn (twitter-disable) nil))))
-
-(defun twitter-enable ()
-  (setf *twitter-status* :enabled))
-
-(defun twitter-disable ()
-  (setf *twitter-status* :disabled))
+  (get-site-config-param :twitter-enabled-p))
 
 ;;
 ;; Authenticating user

@@ -52,6 +52,10 @@
 (defun (setf get-site-config-param) (value name)
   (setf (gethash name *site-configuration*) value))
 
+(defun toggle-site-config-param (param)
+  "Convenience function for toggling predicates"
+  (setf (get-site-config-param param)
+	(not (get-site-config-param param))))
 
 ;; ================================
 ;; Plugin features and capabilities

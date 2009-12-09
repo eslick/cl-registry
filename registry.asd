@@ -170,6 +170,7 @@
 			      ((:file "forum")
 			       (:file "ratings")
 			       (:file "recent-topics")
+			       (:file "recent-activity")
 			       (:file "forums"))
 			      :serial t)
 		     (:module collect

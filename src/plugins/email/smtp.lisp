@@ -18,14 +18,12 @@
 (defun whitelist-user-p (user)
   (member (username user) *user-whitelist* :test #'equal))
 
-(defvar *enable-email-to-users* nil)
-
 (defun send-email-to-users (users subject body)
   (let ((addresses (mapcar #'user-email 
 			   (if *enable-email-whitelist*
 			       (select-if #'whitelist-user-p (mklist users))
 			       (mklist users)))))
-    (when (and addresses *enable-email-to-users*)
+    (when (and addresses (get-site-config-param :email-to-users-p))
       (loop for address in addresses
 	   do (send-email address
 			  subject
