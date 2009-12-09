@@ -1,0 +1,19 @@
+
+div.group-editor-widget {
+    margin: 3px;
+    padding: 3px;
+    border: 0px;
+}
+
+div.group-editor-widget h1 {
+    font-size: 1.2em;
+}
+
+div.group-editor-widget fieldset textarea,
+div.group-editor-widget fieldset input.text
+{
+    width: 90%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}

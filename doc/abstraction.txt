@@ -1,0 +1,183 @@
+This file contains a proposal for ways to abstract the API code and supporting files so the same code base and data model can feed a large number of sites with none to minimal site-specific coding.
+
+
+========================================
+Core Architecture
+========================================
+
+I would like to see us move towards a more modular architecture that
+will force the simplification and abstraction of subsystems.  In
+particular making each major UI section such as forums, collect,
+create, and explore their own modules we can include and/or replace
+specific sections on a site specific basis.
+
+To do so we need to think about several different classes of functionality:
+
+- Common facilities (depend on Weblocks and other libs)
+  - Lisp infrastructure / utilities
+  - Internationalization / Localization
+  - Translation mixin and supporting infrastructure
+  - Full-text search subsystem
+  - System events (get rid of 'hooks' system and piggy back on events)
+  - Debug support, logging, analytics
+
+  - Per-site configuration architecture (DONE)
+  - Top level site architecture / page (In-Progress)
+    - Home page, how specific apps like Forums integrate, etc.
+    - Article content and page templates
+  - Cross-linking from module to module (TODO)
+    - Each module needs a way to link to content in other modules (perhaps optionally)
+      (For example, a user may want to 
+  - Preferences subsystem (TODO)
+  - Admin pane subsystem (TODO)
+  - Permissions subsystem (TODO)
+  - Admin pane default functionality 
+    (generic model editor/browser, article editor, site status, permissions, etc)
+
+  - Users, permissions, and login authentication
+  - Basic e-mail / SMTP functionality
+
+  - Also: security / backup / remote IO / twitter / data APIs
+
+- Core Data Model (also part of the common facilities)
+  - Data model, data types, 
+  - Provenance & other metadata
+  - Harmonization
+  - UI layout and presentation subsystems
+
+- Modules / Applications
+  - Forums can be completely abstracted out
+  - Create, Collect, and Explore are dependent on the data model and Create and Explore
+    are dependent on Collect (for linking)
+  - Each application can dynamically register their own configuration parameters,
+    preferences, admin facilities, models, events, event handlers, UI
+    widgets, presentation types, link creator/resolver, and a top-level pane.
+  - These can be slowly cleaned up within the current LAMsight library and source tree
+
+- Widgets - standalone widgets
+
+  Widgets may be used by one or more apps or simply, be implemented
+  within a single app, or be optional components.  They can define
+  their own models, use a shared model (in a library like geocoding?),
+  define weblocks UI widgets, etc.  
+
+  The primary need is an optional load/instantiation API that allows
+  an app page to configure itself based on a configuration option
+  and/or the presence of the widget in the image.
+
+  A widget may not need to be a UI, for example the twitter support
+  could be a plugin which links into system events, pulls in
+  cl-twitter, 
+
+- Libraries - coherent functional blocks
+
+  Only necessary if we have common functionality across core and/or two apps.  
+  Standard asdf packaging can work here.  
+
+- Data APIs 
+
+  My flash explorer plugin uses a json data API that allows
+  authenticated sessions to get access to filtered aggregate data from
+  the models.  The abstraction can be cleaned up a bit but is
+  basically there - you simply register a handler and the core system
+  handles dispatch based on a URL path.
+
+
+========================================
+Look and Feel 
+========================================
+
+- Static file partitioning and organization (Phase I, MINOR/MEDIUM)
+  We need a way to shadow and augment the core files that are included
+  in both the core code base and the plugins.
+
+  For example if a plugin needs a CSS file only it defines, how is it
+  found?  How do plugins map to disk hierarchy map to URLs in a
+  systematic composable way?  This includes:
+  - CSS files
+  - Image files
+  - JS files
+
+  We might be able to get a quick answer on how to do this from the
+  Weblocks list...
+  
+- Preferences / Admin (Phase II, MINOR)
+  To take module/app specific functionality and integrate 
+
+  Simply put them into tabs on a per module basis?  Do we define a configuration
+  and there is a single layout algorithm or are they weblocks widgets that are embedded
+  in the preference / admin tabs?  
+
+- Skinning (punting for ILR, MASSIVE)
+  - To make the core code, plugins and a custom site work together for
+    sites with different look and feel or branding we'll need the
+    ability to extract out the common UI elements so there is a
+    consistent language about color, borders, fonts, images, etc.
+
+
+=======================================
+Phase I baby steps:
+=======================================
+
+1) Create a simple mechanism by which we can configure the details of
+a specific site by passing a simple key-value file or structure to
+(start-server).  This reads the site-specific configuration into a
+data structure which is used to instantiate the site.  
+
+2) This configuration should support develop/stage/deploy
+configurations for both the ILR and LAMsight.
+- Google API keys
+- Google Analytics keys
+- Site URL base
+- Site-specific files path (CSS/Img)
+- Subsystem enable/disable (e.g. e-mail, twitter updates)
+- Debug status
+- Logging information
+- Define applications to load/instantiate
+
+I think by parameterizing the code along these lines, we can avoid
+most of the likely duplication we would otherwise incur at the modest
+increased cost of abstraction out common-content, dashboard, and tour.
+
+This is also a good time to do significant refactoring of the source
+tree, remove deprecated cruft, clarify APIs, etc.  I suspect I could
+do a huge chunk of this in about a day or two.
+
+What should we call the new core codebase which will eventually turn
+into the open-source core system (e.g. Trac, vBulletin, etc) that is
+personalized by custom extensions (code) or simply site-specific
+configurations?
+
+=======================================
+Challenges
+=======================================
+
+1) Moving things around and changing package names will make the code
+base incompatible with the current code base (elephant stores symbols
+as package::symbolname so class schemas and non-keyword symbols won't
+resolve properly.  I think the import/export process will handle this
+just fine since it doesn't refer to packages.  It just means that the
+package everything is imported into is using all the appropriate
+constituent classes, etc...
+
+=======================================
+TODO
+=======================================
+
+Configure sites via a webapp or a configuration file or both?
+
+Big API issues:
+1) Factor out per-site page-template stuff
+2) Module and plugin API
+3) Public page startup and authentication flow
+   to internal pages
+4) Abstract site preferences to plugin-level definitions
+5) Admin plugin panes
+6) How to compose scripts, stylsheets and images from two sites as
+   well as plugins (punt separate plugins for now, just site skinning...)
+
+Little issues:
+1) Registration links need to be per-site
+2) LAMsight admin e-mails / e-mail generation, etc.
+3) Path references need to be abstracted per-site (how to resolve refs?)
+

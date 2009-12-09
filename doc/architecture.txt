@@ -1,0 +1,116 @@
+Architecture overview:
+
+Analogous sites: 
+  Surveymonkey meets 
+  Patientslikeme meets 
+  ManyEyes
+
+Infrastructure and tools:
+- Elephant & BDB
+- Weblocks
+  - Elephant proxy classes
+  - Workspace (general way to coordinate widgets)
+  - Dynamic navigation (multi-pane widget container)
+  - Various utilities
+  - weblocks-ian source divergence
+- Site handlers / dispatching
+  - page-not-found
+  - expired actions
+  - redirects
+  - permanent actions (login, login-complete)
+  - changing languages
+  - dashboard
+- Apache integration
+- Security
+  - authentication procedure
+  - permissions
+- Data defmodels
+- Database Import/Export and anonymizing procedures
+- Translation (cl-i18n)
+  - find-translation/#! -- Simple string translation
+  - translation-mixin (objects with translatable fields - posts, surveys, etc)
+  - google auto translation
+  - PO reading/writing
+- Presentations / presentation views
+  - Internationalization (cl-l10n)
+  - numbers/ranges
+  - measurements
+  - technical terms
+  - [future needs]
+- NLP tools
+  - langutils: stopwords / lexicon-based stemming
+  - conceptnet (similarity)
+  - fulltext indexing & support (montezuma)
+  - fulltext-mixin
+- Explorer/Discovery tools (a real mess)
+  - Answers -> datasets
+  - Google visualization api & charting
+- Eye candy:
+  - geocoding / virtual earth
+  - laura virtual agent (speaking help text)
+- Event management
+  - System event hooks (startup/shutdown)
+  - Object event log & observers 
+  - Timing thread
+- Email system
+  - smtp
+  - e-mail templates
+  - event observers
+  - specific updates
+- Apps  
+  - chumby
+  - iphone
+  - nmm-demo
+  - api
+- Query system (TODO)
+  - Efficient queries for complex questions / smart caching
+  - Global methods for filtering populations
+  - map-ops vs. find vs. merge-sorts (?)
+
+Models:
+- Basics
+  - user
+    - preferences-btree
+  - registration
+  - articles
+- Content mgmt
+  - blog-entry
+  - forum-category, forum-topic, forum-entry
+  - comment
+- Survey data
+  - survey
+  - survey-group
+  - question / answer
+  - diary
+- Analysis/explorer
+  - population
+  - constraints
+  - population-comparison
+
+Site top-level widgets / flow:
+- public
+  - simple content selector
+- home
+  - intro content, sidebar 'widgets'
+- preferences
+  - Simple rendered list of preference presentations
+  - Custom layout handled in CSS
+- collect
+  - display and capture questions as answers
+- explore
+  - search, view questions, filter by population, create population
+    compare two populations
+  - visualization
+- forums
+  - simple
+- create
+  - create survey, survey-groups & questions
+  - don't lose data
+- admin
+  - low level interface to models - general editing support
+  - To add:
+    - permission editor
+    - articles editor for content administrators
+    - stats / display event log
+
+

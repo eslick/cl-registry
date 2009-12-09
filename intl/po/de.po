@@ -1,0 +1,133 @@
+
+msgid "Help"
+msgstr "Hilfe"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Welcome"
+msgstr "Willkommen"
+
+msgid "logout"
+msgstr "ausloggen"
+
+msgid "Your browser has disabled Javascript.  Many, but not all, eatures of this site depend on Javascript.  You can use the 'Collect' and 'Discuss' sections but for now the 'Explore' section may not function for you.  You can find out about how to enable Javascript  from "
+msgstr "Sie haben in Ihrem Browser Javascript deaktiviert. Viele, aber nicht alle Funktionen dieser Seite basieren auf Javascript. Sie können den \"Sammeln\" und \"Diskutieren\" Teil verwenden, \"Entdecken\" wird vermutlich aber nicht funktionieren. Lesen Sie hier, wie sie Javascript aktivieren können  "
+
+msgid "Role"
+msgstr "Rolle"
+
+msgid "Information"
+msgstr "Information"
+
+msgid "Demographics"
+msgstr "Demographie"
+
+msgid " I am a LAM patient."
+msgstr "Ich bin LAM-Patientin"
+
+msgid " I have a family member with LAM."
+msgstr "Eines meiner Familienmitglieder hat LAM"
+
+msgid " I am a LAM clinican."
+msgstr "Ich bin Arzt mit LAM Spezialisierung"
+
+msgid " I am involved in disease research."
+msgstr "Ich bin in Forschungsaktivitäten eingebunden"
+
+msgid " I work directly on LAM research."
+msgstr "Ich arbeite direkt in der LAM Forschung"
+
+msgid " I am none of the above."
+msgstr "nichts ist zutreffend"
+
+msgid "Update Preferences"
+msgstr "Update Einstellungen"
+
+msgid "Cancel"
+msgstr "Abbruch"
+
+msgid "How often? "
+msgstr "Wie oft? "
+
+msgid "Never"
+msgstr "nie"
+
+msgid "Daily"
+msgstr "täglich"
+
+msgid "Weekly"
+msgstr "wöchentlich"
+
+msgid "Monthly"
+msgstr "monatlich"
+
+msgid " When the site is updated or improved?"
+msgstr " Sobald die Seite aktualisiert oder verbessert ist"
+
+msgid " About new forum postings"
+msgstr " Über neue Beiträge im Forum"
+
+msgid " When a new survey is published"
+msgstr " Wenn eine neue Umfrage startet"
+
+msgid "How may we contact you? (select zero or more)"
+msgstr "Wie können wir Kontakt mit Ihnen aufnehmen? (wählen Sie Null oder mehr)"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Mail"
+msgstr "Anschrift"
+
+msgid "Another patient"
+msgstr "Eine andere Patientin"
+
+msgid " To confirm your identity"
+msgstr " Zur Bestätigung Ihrer Identität"
+
+msgid " To contact you for a potential study"
+msgstr " Zur Kontaktaufnahme im Falle einer Medikamentenstudie"
+
+msgid " To follow up and verify any data you have entered?"
+msgstr " Zum Nachhalten und bestätigen sämtlicher Daten, die Sie erfasst haben"
+
+msgid "Last updated: "
+msgstr "Letze Aktualisierung: "
+
+msgid "Return to forums page"
+msgstr "Rückkehr zur Forum-Seite"
+
+msgid "translate posts into"
+msgstr "übersetze Beiträge in"
+
+msgid "English"
+msgstr "Englisch"
+
+msgid "by: "
+msgstr "von: "
+
+msgid "hide translations"
+msgstr "Übersetzungen nicht zeigen"
+
+msgid "Register"
+msgstr "registrieren"
+
+msgid "Login"
+msgstr "einloggen"
+
+msgid "Registration Instructions"
+msgstr "Anleitung zur Registrierung"
+
+msgid "A username is a short name that will be used by the system to identify you to other users.  If you are concerned about privacy, pick a username that you can remember, but doesn't include anything about you like your name."
+msgstr "Ein username (Benutzername) ist ein Kurzname, den das System zur Identifizierung von Ihnen oder anderen Teilnehmern verwendet. Wenn Sie unerkannt bleiben möchten, wählen Sie einen Benutzernamen, an den Sie sich leicht erinnern, der aber keine Rückschlüsse auf Ihren Namen zulässt."
+
+msgid "A password should be at least 6 characters and include a number
+               or other non-alphabetical character."
+msgstr "Ein Passwort sollte mindestens 6 Zeichen und eine Zahl oder eine nicht-alphabetisches Zeichen beinhalten"
+
+msgid "Your e-mail will be maintained by the system and will never be disclosed to anyone without your express consent. We take your privacy very seriously."
+msgstr "Wir nehmen den Schutz Ihrer Daten sehr ernst. Daher wird Ihre e-mail adresse zwar vom System gespeichert aber niemals ohne Ihr Einverständnis an irgendjemand Dritten weitergegeben."

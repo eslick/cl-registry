@@ -1,0 +1,15 @@
+
+div.survey-editor-widget {
+    margin: 3px;
+    padding: 3px;
+/*    margin-top: 45px; */
+/*    border: 1px solid #aaa;*/
+}
+
+.survey-editor-widget .survey-name {
+    font-weight: bold;
+    font-size: 120%;
+}
+
+#add-existing-group {
+}

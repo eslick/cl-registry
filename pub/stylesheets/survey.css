@@ -1,0 +1,460 @@
+/*********************************/
+/* Surveys                       */
+/*********************************/
+
+.survey-left-column hr{
+    display: none;
+}
+
+.newline 
+{
+    margin-top: 20px;
+}
+
+.survey-grid
+{
+    margin-right: 40px;
+}
+
+/* The form in the middle of the screen */
+
+.survey-form
+{
+    margin-left: 10px;
+}
+
+.survey-form-question-group
+{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+div.survey-group div.question
+{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+div.survey-group div.question-prompt
+{
+/*    float: left;*/
+    text-align: left; /* right */
+/*    vertical-align: middle; */
+    width: 500px;
+    margin-bottom: 10px;
+/*    border: 1px solid red; */
+}
+
+div.survey-group div.question-prompt img
+{
+    height: 1.1em; 
+    display: inline; 
+    border: 0;
+}
+
+div.survey-group div.question-input
+{
+/*    vertical-align:middle; */
+    display: inline; 
+}
+
+div.survey-group div.question-input input
+{
+    position: relative;
+/*    margin-left: 20px; */
+    margin-left: 5px; 
+    margin-top: 5px;
+/*    width: 280px;  */
+/*    border: 1px solid green; */
+}
+
+div.survey-group div.question-input input[type="text"]
+{
+    margin-left: 20px;
+    width: 260px;
+    text-indent: 2px;
+}
+
+div.survey-group label.radio
+{
+    width: 40px;
+}
+
+div.survey-group label.radio span
+{
+    text-align: left;
+}
+
+
+div.survey-group div.question-input span.measurement input
+{
+    width: 80px;
+}
+
+div.survey-group div.question-input span.measure
+{
+    width: 60px;
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+div.survey-group div.question-input select, 
+div.survey-group div.question-input textarea
+{
+    clear: both;
+    margin-left: 10px;
+/*    min-width: 200px; */
+/*    max-width: 500px;  */
+/*    selector { width: expression(this.width > 500 ? 500: true); } */
+}
+
+div.survey-group div.question-input textarea 
+{    
+    min-height: 120px;
+    width: 80%; 
+}
+
+div.survey-group div.survey-inline-group input
+{
+/*    width: 160px; */
+}
+
+div.survey-group div.survey-inline-group select, 
+div.survey-group div.survey-inline-group textarea
+{
+    clear: both;
+    margin-left: 20px;
+/*    width: 80%; */
+    min-width: 200px;
+    max-width: 400px;
+}
+
+div.survey-group div.survey-inline-group textarea
+{
+    min-height: 120px;
+}
+
+.question-separator-1
+{
+    clear: both;
+    height: 0px;
+    width: 100%;
+}
+
+div.survey-group div.question-error
+{
+  color: red;
+  display: block;
+  margin-left: 30px;
+}
+
+div.survey-group div.question-help
+{
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 80%;
+    margin-left: 30px;
+}
+
+
+.question-separator-2
+{
+/*    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 200px;
+    width: 200px;
+    height: 0px;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: gray;*/
+}
+
+
+div.survey-group .question-prompt a.question-has-comments
+{
+/*    border: 1px solid red; */
+}
+
+div.survey-group .question-prompt p.question-has-comments
+{
+    margin: 0;
+    font-size: small;
+}
+
+.survey-form-actions
+{
+    margin-top: 20px;
+    text-align: center;
+    background-color: #3080E0; 
+    background-color: #FFFFFF; 
+    border-top: 2px solid #888888;
+    border-bottom: 2px solid #888888;
+    border-style: none;
+    padding: 0px 10px 0px 10px;
+}
+
+.survey-form-actions input
+{
+/*    vertical-align: middle; */
+    margin-right: 20px;
+}
+
+
+/* Static survey bar at top of screen */
+
+.survey-bar
+{
+    margin: 10px 0 30px 10px;
+}
+
+.survey-bar-nav
+{
+    margin-left: 20px;
+    font-size: 9pt;
+}
+
+.survey-bar-title
+{
+    font-weight: bold;
+    font-size: 175%;
+    margin-bottom: 10px;
+    color: #DC8027;
+}
+
+.survey-bar-title a{
+    font-weight: normal;
+    color: #DC8027;
+}
+
+.survey-bar-title a:hover{
+    text-decoration: underline;
+}
+
+.survey-bar-group-title 
+{
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.survey-bar-ranking
+{
+    margin-left: 20px;
+}
+
+.survey-bar-progress
+{
+    margin-left: 50px;
+    float: right;
+}
+
+.survey-bar-description
+{
+    width: 500px;
+    position: relative;
+}
+
+.survey-bar-diary-nav {
+    height: 100px;
+    overflow: auto;
+    background: #E0E0E0;
+    border-width: 2px;
+    border-style: outset;
+    border-color: #FFFFFF;
+    padding: 5px 5px 5px 5px;
+}
+
+.survey-bar-diary-nav ul {
+    list-style: none;
+}
+
+.survey-bar-diary-nav li {
+    margin-bottom: 5px;
+}
+
+.diary-selected-answer-entry {
+    background-color: #C0C0CA;
+}
+
+.diary-answer-entry {
+    list-style: none;
+}
+
+
+
+/* Survey list nav */
+
+.survey-list-nav{
+}
+
+.survey-list-nav h3 {
+    font-size: 14pt;
+    color: black;
+}
+
+.survey-list-nav li {
+    color: black;
+    font-size: 10pt;
+}
+
+a.survey-list-nav-active-group, a.survey-list-nav-active-group:hover{
+    color: #000;
+}
+
+/* Survey quick help */
+
+.survey-right-column .quick-help{
+    padding-bottom: 10px;
+}
+
+.survey-right-column .quick-help img{
+    margin-left: 4px;
+}
+
+/* Survey help widget */
+
+.survey-help li
+{
+    font-size: 10pt;
+    margin-bottom: 5px;
+}
+
+
+/* Survey groups */
+
+.survey-form
+{
+}
+
+.survey-form fieldset
+{
+    border: none;
+}
+
+.survey-left-column h1 {
+    font-size: 120%;
+    color: #DC8027;
+    background-color: #FFFFFF; 
+    font-weight:bold;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.survey-inline-group 
+{
+    margin-left: 30px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    border-left: 3px solid darkgray; 
+}
+
+.survey-inline-group .question-separator-2
+{
+    border: none;
+}
+
+
+/* Comment Widget */
+
+.survey-view-comment-widget
+{
+    margin-bottom: 30px;
+}
+
+.survey-view-comment-widget .quickform ul
+{
+    -moz-padding-start: 0px;
+}
+
+.survey-view-comment-widget .content textarea
+{
+    width:100%;
+    margin-left: 5px;
+    margin-right: 10px;
+    height: 6em;
+}
+
+
+.survey-view-comment-widget fieldset h1
+{
+    display: none;
+}
+
+.survey-view-comment-widget button 
+{
+}
+
+.survey-view-comment-widget .existing-comments
+{
+    height: 200px;
+    overflow: auto;
+    margin-left: 5px;
+    margin-top: 20px;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #808080;
+}
+
+.survey-view-comment-widget p.comment-author /* author */
+{
+    display: inline;
+    font-size: 12px;
+    font-weight: bold; 
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.survey-view-comment-widget span.comment-datetime /* date */
+{
+    display: inline;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.survey-view-comment-widget p.comment-content
+{
+    float: clear;
+    color: #333333;	
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: normal;
+    margin: 10px 0px 10px 40px;
+}
+
+div.survey-form-actions{
+    margin-left: 20px;
+    float: left;
+    clear: left;
+}
+
+div.survey-form-actions input.survey-form-button{
+    display: inline;
+    border: solid #000;
+    border-width: 0 1px;
+    color: #79AABB;
+    font-weight: bold;
+    background: #FFF;
+    margin: 0 -1px;
+    padding: 2px 5px;
+    font-size: 90%;
+}
+
+/* List Styling */
+
+.survey-right-column ol{
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.survey-right-column ul{
+    margin: 0 0 10px 0;
+    padding: 0 0 0 15px;
+}
+
+.survey-right-column li{
+    margin: 0;
+    padding: 0;
+    line-height: 14pt;
+}
+
+div.button-select{
+    margin-top: -10px;
+}

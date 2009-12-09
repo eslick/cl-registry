@@ -1,0 +1,44 @@
+.dropAllowed { background: #ffd; }
+
+ul.empty {
+    height: 100px;
+    border: 1px dashed silver;
+}
+
+li.scratchpad-question {
+    font-size: small;
+    list-style: none;
+    cursor: move;
+    margin-bottom: 0.3em;
+}
+
+li.scratchpad-group {
+    font-size: small;
+    list-style: none;
+    cursor: move;
+    margin-bottom: 0.3em;
+}
+
+/* Support for moving the sidebar in survey editor */
+
+#survey-editor .sidebar-scratchpad ul
+{
+    height: 150px;
+}
+
+#survey-editor .sidebar-scratchpad
+{
+/*    width: 250px; */
+}
+
+.workspace-sidebar
+{
+    margin-top: 30px; 
+}
+
+#group-editor-questions
+{
+    border: 2px solid #B0B0B0;
+}
+
+

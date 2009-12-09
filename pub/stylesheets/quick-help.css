@@ -1,0 +1,16 @@
+/* Survey quick help */
+
+.quick-help img {
+    vertical-align: middle;
+}
+
+.quick-help a {
+    text-decoration: none;
+}
+
+.quick-help span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+

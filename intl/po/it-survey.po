@@ -1,0 +1,285 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# SURVEY NAME
+#: 460 NAME
+msgid "Personal Information"
+msgstr "Informazioni personali"
+
+# SURVEY DESCRIPTION
+#: 460 DESCRIPTION
+msgid "Please enter your personal information below.  This information will be helpful in establishing demographics for potential patient populations that may be of use to researchers.  You may choose to provide as little or as much information as you are comfortable with."
+msgstr "Si prega di inserire le proprie informazioni personali nel testo sottostante. Tali informazioni saranno di aiuto a ricercatori per studiare dati demografici su potenziali gruppi di pazienti. Siete liberi di fornire a vostra discrezione il livello di informazioni che preferite."
+
+# SURVEY NAME
+#: 466 NAME
+msgid "Medical Events"
+msgstr "Situazione medica"
+
+# SURVEY DESCRIPTION
+#: 466 DESCRIPTION
+msgid "One of the most important pieces of information for understanding the LAM patient population is keeping track of major medical events in your history.  This includes LAM-relevant life events such as pregnancy, pneumothorax, diagnosis, TSC diagnosis, etc."
+msgstr "Le informazioni più rilevanti per comprendere al meglio la popolazione di pazienti LAM sono quelle relative ad eventi medici significativi legati alla LAM che avvengono nel corso della vita, quali ad esempio gravidanze, pneumotoraci, diagnosi, TAC, ecc "
+
+# SURVEY NAME
+#: 468 NAME
+msgid "Home Pulmonary Function Testing"
+msgstr "Test di funzionalità polmonare svolto a casa"
+
+# SURVEY DESCRIPTION
+#: 468 DESCRIPTION
+msgid "This form will enable you to keep a history of all  pulmonary function tests you take at home.  You can input all your tests over time.  This data is critically important for us to establish the potential benefit of any given therapy for LAM.  We will provide the ability for you to visualize this history in the explore section over time.\n"
+msgstr "Questa pagina vi permette di inserire e conservare i risultati dei test polmonari svolti a casa. Potete inserire i risultati dei test nel corso del tempo. Tali dati sono estremamente importanti per poter stabilire potenziali benefici di alcune terapie. Saremo presto in grado di fornirvi la possibilità di visualizzare tali risultati nella sezione “Esplorare”. "
+
+# SURVEY HELP
+#: 468 HELP
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
+msgstr "I risultati dei test di laboratorio devono essere inseriti nel Diario delle Visite Mediche. Vi preghiamo di inviare un’email a lamsight-admin@media.mit.edu in caso di domande su questo diario."
+
+# SURVEY NAME
+#: 473 NAME
+msgid "LAM Medical History"
+msgstr "Dati Medici Personali  - LAM"
+
+# SURVEY DESCRIPTION
+#: 473 DESCRIPTION
+msgid "This form will only be filled out once, but it will give the system crucial insight into the system for trial recruitment and population analysis.  Please also see the Medical History questionnaire to enter your full history."
+msgstr "Questo questionario dovrà essere completato solo una volta e servirà a fornire le informazioni  necessarie per il reclutamento per trial e per analisi sulla popolazione LAM. Si prega di riferirsi al questionario “Dati Medici Personali  - LAM” per inserire le proprie informazioni."
+
+# SURVEY NAME
+#: 478 NAME
+msgid "General Personal and Family Information"
+msgstr "Dati personali e familiari"
+
+# SURVEY DESCRIPTION
+#: 478 DESCRIPTION
+msgid "General personal physical profile and experiences of any form of pain and\ndiscomfort "
+msgstr "Profilo fisico generale ed esperienze di dolore o disagio."
+
+# SURVEY NAME
+#: 482 NAME
+msgid "Dietary Information"
+msgstr "Informazioni alimentari"
+
+# SURVEY DESCRIPTION
+#: 482 DESCRIPTION
+msgid " Information about diet, dietary habits, use of supplements and relationship\nto health (use of vitamins, control of cholesterol, avoided foods, etc.)."
+msgstr "Informazioni che riguardano le abitudini alimentari, l’uso di integratori e vitamine, controllo del colesterolo, cibi non assunti, ecc"
+
+# SURVEY NAME
+#: 485 NAME
+msgid "Exercise and Fitness"
+msgstr "Esercizio e livello di fitness"
+
+# SURVEY DESCRIPTION
+#: 485 DESCRIPTION
+msgid " Physical exercise profile (sports - frequency, intensity, etc.) and general\nfitness information"
+msgstr "Profilo fisico personale (attività fisica) e livello generale di fitness"
+
+# SURVEY NAME
+#: 489 NAME
+msgid "Complementary and Alternative Medicines"
+msgstr "Medicina complementare ed alternativa"
+
+# SURVEY DESCRIPTION
+#: 489 DESCRIPTION
+msgid " Descriptions of uses and perceived effects of complementary and alternative\nmedicine"
+msgstr "Uso di medicinali alternativi e/o complementari e potenziali effetti"
+
+# SURVEY NAME
+#: 491 NAME
+msgid "Behavior and Environment"
+msgstr "Comportamento ed Ambiente"
+
+# SURVEY DESCRIPTION
+#: 491 DESCRIPTION
+msgid "This survey covers daily activities (work schedule, level of daily physical\nactivity, sleep, etc.) along with information regarding flying on airplanes\nand living at different altitudes an in different climates. "
+msgstr "Questionario sulle attività quotidiane (orari di lavoro, livello di attività fisica,ore di sonno, ecc), sulle esperienza legate a viaggi aerei e alla vita a diverse altitudini e climi."
+
+# SURVEY NAME
+#: 498 NAME
+msgid "Reproductive Health"
+msgstr "Informazioni sulla sfera riproduttiva "
+
+# SURVEY DESCRIPTION
+#: 498 DESCRIPTION
+msgid "Information on reproductive health history, monthly cycle, surgical\nprocedures, birth control, pregnancy,  and menopause"
+msgstr "Informazioni sul ciclo mestruale, operazioni  chirurgiche, metodi anticoncezionali, gravidanze e menopausa"
+
+# SURVEY NAME
+#: 502 NAME
+msgid "General Medical History"
+msgstr "Informazioni mediche generali"
+
+# SURVEY DESCRIPTION
+#: 502 DESCRIPTION
+msgid "Other pertinent medical history (i.e. tuberous sclerosis or other pre-existing conditions. Also family history of any pertinent illness)\n"
+msgstr "Altre informazioni rilevanti (scelorosi tuberosa o altre condizioni presistenti; altre malattie familiari inerenti)"
+
+# SURVEY NAME
+#: 506 NAME
+msgid "LAM Diagnosis"
+msgstr "Diagnosi LAM"
+
+# SURVEY DESCRIPTION
+#: 506 DESCRIPTION
+msgid "This section captures essential information about your LAM diagnosis (for patients only)"
+msgstr "Informazioni essenziali sulla propria diagnosi LAM (solo per pazienti)"
+
+# SURVEY NAME
+#: 507 NAME
+msgid "A survey"
+msgstr "Questionario"
+
+# SURVEY NAME
+#: 509 NAME
+msgid "LAM Medications [on and off label uses]"
+msgstr "Uso di farmaci per LAM (uso all’interno di trial o off label)"
+
+# SURVEY DESCRIPTION
+#: 509 DESCRIPTION
+msgid "Not all medications are officially approved treatments.  Because of the urgency of treatment, some patients and doctors use unapproved medications or use \"approved\" medications for unapproved purposes.  These are called \"off-label\".  Information about off-label drugs may be very helpful.  \n\nThis is a history survey meant to identify who in the patient population has taken off-label medications for LAM.  This includes medication intended to slow or stop LAM progression as well as medications that impact LAM symptoms.  Your responses to this question will help us formulate diary forms for you to record your history of off-label use."
+msgstr "Sebbene non tutti i farmaci siano attestati ufficialmente, per via della natura della malattia, medici e pazienti in alcune situazioni utilizzano farmaci non approvati o al di fuori di trial. Tale utilizzo è denominato “off label”. Informazioni sull’assunzione di tali farmaci mantiene un’elevata importanza e rilevanza.   Questo questionario è redatto per raccogliere informazioni da pazienti che hanno assunto farmaci “off label”, sia per diminuire il progredire della malattia che per trattarne i sintomi. Le vostre risposte a questa domanda ci aiuteranno a formulare questionari e diari per registrare l’utilizzo di farmaci “off label”."
+
+# SURVEY NAME
+#: 511 NAME
+msgid "jajtest"
+msgstr "jajtest"
+
+# SURVEY DESCRIPTION
+#: 511 DESCRIPTION
+msgid "jaj test1"
+msgstr "jaj test1"
+
+# SURVEY NAME
+#: 514 NAME
+msgid "Incontinence"
+msgstr "Incontinenza"
+
+# SURVEY DESCRIPTION
+#: 514 DESCRIPTION
+msgid "Many patients report incontinence as a significant side effect of LAM.  This survey seeks to gather more information about the prevalence and patient's experiences managing this problem."
+msgstr "Molti pazienti riportano fenomeni di incontinenza come effetto collaterale della malattia. Questo questionario si prefigge di raccogliere maggiori informazioni su tale condizione e su come viene affrontata dai pazienti."
+
+# SURVEY NAME
+#: 519 NAME
+msgid "Andrew Test Survey"
+msgstr "Test di Andrew"
+
+# SURVEY DESCRIPTION
+#: 519 DESCRIPTION
+msgid "I'm trying out the create a survey feature."
+msgstr "Sto cercando di utilizzare la funzione \"Crea un Questionario\""
+
+# SURVEY NAME
+#: 520 NAME
+msgid "Another Test Survey"
+msgstr "Un altro questionario"
+
+# SURVEY DESCRIPTION
+#: 520 DESCRIPTION
+msgid "This is another test survey."
+msgstr "Questo è un altro questionario"
+
+# SURVEY NAME
+#: 522 NAME
+msgid "LAMsight Experiences"
+msgstr "Esperienza con LAMsight"
+
+# SURVEY DESCRIPTION
+#: 522 DESCRIPTION
+msgid "We would like to invite your feedback and comments on LAMsight.  What works well, what doesn't and what can we do to improve the experience and features.  We will update this survey over time so please check back and update your answers as you gain more experience. "
+msgstr "Vi inivitiamo a condividere con noi la vostra esperienza nell’utilizzare il sito LAMsight: ciò che funziona, ciò che vorreste migliorare. Questo questionario verrà aggiornato con il tempo, per cui vi chiediamo di controllarne gli sviluppi e farci avere le vostre impressioni nel continuo uso del sito."
+
+# SURVEY NAME
+#: 529 NAME
+msgid "Bone Dysfunction and LAM"
+msgstr "Disfunzione ossea e LAM "
+
+# SURVEY DESCRIPTION
+#: 529 DESCRIPTION
+msgid "LAM researchers recently observed that there may be a link between LAM and osteoporosis.  This survey helps us gather information that may yield new ideas about ways to treat LAM."
+msgstr "Ricercatori LAM hanno osservato di recente un collegamento tra LAM e osteoporosi. Questo questionario vuole raccogliere informazioni che possano aiutarci a sviluppare nuove idea su come trattare la malattia."
+
+# SURVEY NAME
+#: 533 NAME
+msgid "Hormones and Pulmonary Function"
+msgstr "Ormoni e capacità polmonare"
+
+# SURVEY DESCRIPTION
+#: 533 DESCRIPTION
+msgid "This study is an extended background survey for information related to an our patient-driven Estrogen Study.  The pages up to Exercise are the most important, however you can complete this survey at whatever pace is most comfortable for you.<br><br>\nData you enter here will be reused in other surveys.\n\n"
+msgstr "Questo studio è un’estensione di una raccolta di informazioni relative ad uno studio sull’estrogeno svolto da pazienti. Le prossime pagine fino ad Esercizio sono le più importanti. Potrete completare il questionario nei tempi da voi prescelti. I dati inseriti qui verranno riutilizzati per popolare riposte di altri questionari."
+
+# SURVEY NAME
+#: 537 NAME
+msgid "Estrogen Study Diary"
+msgstr "Diario sullo studio dell’estrogeno"
+
+# SURVEY DESCRIPTION
+#: 537 DESCRIPTION
+msgid "This diary allows you to capture important information for each day you are part of the study as well as track information for your own information afterwards.  The first page contains the essential information.  The remaining pages only need to be filled out if something changed or something unusual happened."
+msgstr "Questo diario vi permette di inserire informazioni quotidiane rilevanti per lo studio e di riaccedervi successivamente per vostra conoscenza. La prima pagina contiene le informazioni essenziali. Le pagine successive andranno completate solo in caso vi siano cambiamenti o eventi inusuali."
+
+# SURVEY NAME
+#: 546 NAME
+msgid "User Satisfaction Survey "
+msgstr "Questionario di soddisfazione dell’utente"
+
+# SURVEY DESCRIPTION
+#: 546 DESCRIPTION
+msgid "We would like to hear feedback on your usage of LAMsight. Please provide us with information on how we could further improve LAMsight to better your experience with it. We are continuously updating and would love user input."
+msgstr "Vorremmo avere da voi feedback sull’utilizzo del sito LAMsight. Vi preghiamo di fornirci informazioni su come potremmo migliorare ulteriormente il sito. E’ per noi importante continuare nell’aggiornamento e miglioramento di LAMsight e apprezziamo molto ogni vostro contributo."
+
+# SURVEY NAME
+#: 554 NAME
+msgid "Alpha-1 Antitrypsin Deficiency "
+msgstr "Deficienza di Alpha-1 Antitrypsin "
+
+# SURVEY DESCRIPTION
+#: 554 DESCRIPTION
+msgid "Relationship betwen LAM, Pneumothorax and Alpha-1 Antitrypsin Deficiency "
+msgstr "Relazione tra LAM, pneumotorace e deficienza di Alpha-1 Antitrypsin "
+
+# SURVEY HELP
+#: 554 HELP
+msgid "Alpha-1 is one of the most common genetic disorders in the world. The symptoms include shortness of breath, a chronic cough, and abnormal liver test results. If you have any of these symptoms there is a simple blood test that can detect alpha-1 antitrypsin levels"
+msgstr " Alpha-1 è uno dei disordini genetici più comuni nel mondo. I sintomi includono mancanza di fiato, tosse cronica e risultati epatici anomali. Se avete riscontrato alcuni di questi sintomi è possibile svolgere un normale esame del sangue per identificare i livelli di Alpha-1 Antitrypsin "
+
+# SURVEY NAME
+#: 559 NAME
+msgid "Lybba - Test Survey"
+msgstr "Test di Lybba"
+
+# SURVEY DESCRIPTION
+#: 559 DESCRIPTION
+msgid "This is a quick test to see how this survey creator works."
+msgstr "Questo è un breve test per vedere come funziona il “Crea un questionario"
+
+# SURVEY NAME
+#: 563 NAME
+msgid "Special LAM Diet?"
+msgstr "Seguite una dieta speciale per via della LAM?"
+
+# SURVEY DESCRIPTION
+#: 563 DESCRIPTION
+msgid "find out whether LAM patients have consciously changed their diets due to the disease"
+msgstr "scoprite quanti pazienti LAM hanno modificato la propria dieta a causa della malattia"
+
+# SURVEY NAME
+#: 10803 NAME
+msgid "jajtest4"
+msgstr "jajtest4"
+
+# SURVEY DESCRIPTION
+#: 10803 DESCRIPTION
+msgid "test4"
+msgstr "test4"

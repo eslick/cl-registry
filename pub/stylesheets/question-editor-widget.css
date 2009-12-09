@@ -1,0 +1,58 @@
+div.question-editor-widget {
+    margin: 3px;
+    padding: 3px;
+/*    border: 1px solid #aaa; */
+}
+
+div.question-preview {
+    margin: 3px;
+    padding: 3px;
+    padding: 0px 0px 10px 5px;
+    border: 1px solid gray;
+    background-color: #EEEEEE;
+/*    border: 1px solid #aaa; */
+}
+
+span.question-preview-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#type-selector  table
+{
+    width: 100%;
+    background: #F5F5F5;
+    text-align: center;
+}
+
+#type-selector table tr 
+{
+    width: 100%;
+    background: #F5F5F5;
+    text-align: center;
+}
+
+#type-selector table td
+{
+    width: 50%;
+    background: #F5F5F5;
+    text-align: center;
+}
+
+div.question-header-form-fields textarea,
+div.question-header-form-fields input
+{
+    width: 90%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+p.validation-error
+{
+  color: red;
+  font-weight: normal;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 0;
+}

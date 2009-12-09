@@ -1,0 +1,17 @@
+.wmd-preview ul
+{
+  list-style-type: disc ! important;
+}
+
+.wmd-preview ol
+{
+  list-style-type: decimal ! important;
+}
+
+.wmd-preview li
+{
+  margin-top: 0 ! important;
+  margin-bottom: 0 ! important;
+  list-style-type: inherit ! important;
+  display: list-item ! important;
+}

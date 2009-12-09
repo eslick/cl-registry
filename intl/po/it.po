@@ -1,0 +1,260 @@
+msgid "Permissions" 
+msgstr "Autorizzazioni"
+
+msgid "Body"
+msgstr "Corpo"
+
+msgid "Event"
+msgstr "Evento"
+
+msgid "Order"
+msgstr "Ordine"
+
+msgid "First Name"
+msgstr "Nome"
+
+msgid "Language"
+msgstr "Lingua"
+
+msgid "New User?"
+msgstr "Nuovo utente?"
+
+msgid "Name" 
+msgstr "Nome"
+
+msgid "Post Datetime" – cannot find it in the site
+msgstr ""
+
+msgid "Days Ago"
+msgstr "Giorni passati"
+
+msgid "Required"
+msgstr "Richiesto"
+
+msgid "Change password"
+msgstr "Cambia password"
+
+msgid "Diary P" – what is P?
+msgstr "Diario P"
+
+msgid "Number Of Ratings" 
+msgstr "Numero di indicatori"
+
+msgid "Street"
+msgstr "Strada"
+
+msgid "Log In"
+msgstr "Log in"
+
+msgid "Owner"
+msgstr "Proprietario"
+
+msgid "Show Surveys"
+msgstr "Mostra questionario"
+
+msgid "Contact"
+msgstr "Contatto"
+
+msgid "Prompt"
+msgstr "Immediato"
+
+msgid "Forgot your username or password?"
+msgstr "Dimenticato nome utente o password?"
+
+msgid "Published"
+msgstr "Pubblicato"
+
+msgid "Up Ratings" – i don’t know where to find it in the site
+msgstr ""
+
+msgid "Content"
+msgstr "Contenuto"
+
+msgid "Editedp" – edited?
+msgstr "Redatto"
+
+msgid "Description"
+msgstr "Descrizione"
+
+msgid "Address"
+msgstr "Indirizzo"
+
+msgid "Root" 
+msgstr "Radice"
+
+msgid "Magic Key"
+msgstr "Chiave magica"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Trustedp" – trusted?
+msgstr "Fidato"
+
+msgid "Help"
+msgstr "Aiuto"
+
+msgid "Oid" – old?
+msgstr "Precedente"
+
+msgid "City"
+msgstr "Città"
+
+msgid "Old Password"
+msgstr "Password precedente"
+
+msgid "Avg Rating" 
+msgstr "Valore medio"
+
+msgid "Translation Alist" – alist?
+msgstr ""
+
+msgid "Diary Description"
+msgstr "Descrizione diario"
+
+msgid "Rating"
+msgstr "Valore"
+
+msgid "Register"
+msgstr "Registrarsi"
+
+msgid "Groups"
+msgstr "Gruppi"
+
+msgid "Last Name"
+msgstr "Cognome"
+
+msgid "Subject"
+msgstr "Soggetto"
+
+msgid "Target"
+msgstr "Target"
+
+msgid "Submit"
+msgstr "Inviare"
+
+msgid "Post Permissions" – don’t understand what it means
+msgstr ""
+
+msgid "Number"
+msgstr "Numero"
+
+msgid "Down Ratings" – lack of context
+msgstr ""
+
+msgid "Diary Question"
+msgstr "Domande del diario"
+
+msgid "Page"
+msgstr "Pagina"
+
+msgid "Title"
+msgstr "Titolo"
+
+msgid "Confirm Password"
+msgstr "Conferma password"
+
+msgid "Category"
+msgstr "Categoria"
+
+msgid "Priority"
+msgstr "Priorità"
+
+msgid "Slug" – what does it mean?
+msgstr ""
+
+msgid "Archived Questions"
+msgstr "Domande archiviate"
+
+msgid "Username"
+msgstr "Nome utente"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Original"
+msgstr "Originale"
+
+msgid "Register Now >>"
+msgstr "Rigistrarsi Ora"
+
+msgid "Question Help"
+msgstr "Aiuto con le domande"
+
+msgid "State"
+msgstr "Stato"
+
+msgid "Advice"
+msgstr "Consiglio"
+
+msgid "Current Post Number" – what is post number?
+msgstr ""
+
+msgid "Acl" - ?
+msgstr ""
+
+msgid "I'm having a problem with LAMsight and have provided details on my problem below."
+msgstr "Ho problemi ad utilizzare LAMsight e ho evidenziato tali problemi nel testo sottostante."
+
+msgid "Tags" - context
+msgstr ""
+
+msgid "Topic"
+msgstr "Argomento"
+
+msgid "Login"
+msgstr "Log in"
+
+msgid "Preferences Btree" – what is “b tree”?
+msgstr ""
+
+msgid "Ranking Record" 
+msgstr "Record del valore"
+
+msgid "Show Forums"
+msgstr "Mostrare forum"
+
+msgid "Date Created"
+msgstr "Data di creazione"
+
+msgid "Short"
+msgstr "Breve"
+
+msgid "Date Updated"
+msgstr "Data di aggiornamento"
+
+msgid "Related Content"
+msgstr "Contenuto relativo"
+
+msgid "Fulltext"
+msgstr "Testo completo"
+
+msgid "Date Joined"
+msgstr "Data di iscrizione"
+
+msgid "Ratings" 
+msgstr "Valori"
+
+msgid "Widget" – don’t know what it is
+msgstr ""
+
+msgid "[LAMsight Help Request]"
+msgstr "[Richiesta di aiuto LAMsight]"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Locale" – what does it mean?
+msgstr ""
+
+msgid "Author"
+msgstr "Autore"
+
+msgid "Submit Request"
+msgstr "Inviare richiesta"
+
+msgid "User"
+msgstr "Utente"
+
+msgid "Status"
+msgstr "Stato"

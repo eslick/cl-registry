@@ -1,0 +1,82 @@
+div#admin-page form.dataseq-form ul {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  min-width: 560px;
+  max-width: 800px;
+}
+
+div#admin-page form.dataseq-form fieldset {
+  clear: both;
+  font-size: 100%;
+/*  border-color: #000000; */
+  border-color: rgb(210,210,210);
+  border-width: 1px 0 0 0;
+  border-style: solid none none none;
+  padding: 10px;
+  margin: 0 0 0 0;
+}
+
+div#admin-page form.dataseq-form fieldset legend {
+  font-size: 150%;
+  font-weight: normal;
+/*  color: #000000; */
+  color: rgb(100,100,100);
+  margin: 0 0 0 0;
+  padding: 0 5px;
+}
+
+div#admin-page form.dataseq-form label {
+  font-size: 100%;
+}
+
+div#admin-page form.dataseq-form label u {
+  font-style: normal;
+  text-decoration: underline;
+}
+
+div#admin-page form.dataseq-form input, select, textarea {
+  font-family: Tahoma, Arial, sans-serif;
+  font-size: 100%;
+  color: #000000;
+}
+
+div#admin-page form.dataseq-form textarea {
+  overflow: auto;
+}
+
+div#admin-page form.dataseq-form div {
+  clear: left;
+  display: block;
+  width: 354px;
+  height: expression('1%');
+  margin: 5px 0 0 0;
+  padding: 1px 3px;
+}
+
+div#admin-page form.dataseq-form div fieldset {
+  clear: none;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #666666;
+  margin: 0 0 0 144px;
+  padding: 0 5px 5px 5px;
+  width: 197px; 
+}
+
+div#admin-page form.dataseq-form div label {
+  display: block;
+  float: left;
+  width: 130px; 
+  padding: 3px 5px;
+  margin: 0 0 5px 0;
+  text-align: right;
+}
+
+
+div#admin-page form.dataseq-form div fieldset input.inputText, div#admin-page form.dataseq-form div fieldset input.inputPassword, div#admin-page form.dataseq-form div fieldset input.inputFile, div#admin-page form.dataseq-form div fieldset textarea.inputTextarea {
+  width: 160px;
+  margin: 0 0 0 18px;
+  margin: expression('0px 0 0 -124px');
+}
+

@@ -1,0 +1,102 @@
+/*********************************/
+/*       Explorer                */
+/*********************************/
+
+div.explorer-question-result-view
+{
+    margin: 10px 10px 10px 10px;
+    border: 4px ridge #101010;
+    text-color: black;
+}
+
+div.explorer-question-summary
+{
+    float: left;
+    width: 55%;
+    vertical-align: middle;
+    margin-top: 1em;
+}
+
+div.explorer-question-summary h1
+{
+    font-size: 20px;
+    color: black;
+    padding-top: 0.5em;
+    background: #fff;
+    border: 0px none;
+}
+
+div.explorer-question-summary h2
+{
+    font-size: 16px;
+}
+
+div.explorer-chart-summary
+{
+    width:30%;
+    float: left;
+    vertical-align: center;
+    padding-top: 10px;
+    padding-left: 40px;
+}
+
+div.explorer-question-bottom
+{
+    clear:both;
+}
+
+div.workspace-sidebar input
+{
+    width: 100%;
+}
+
+/* Search */
+
+div.explorer-browser fieldset
+{
+    border: 0px;
+    padding: 10px 20px 10px 20px;
+}
+
+div.explorer-browser .search-bar input
+{
+    width: 60%;
+}
+
+
+/* Summaries */
+
+div.explorer-question-summary-view .visualization
+{
+    width: 200px;
+    height: 200px;
+}
+
+
+div.explorer-question-context h1
+{
+    font-size: 125%;
+    color: #333;
+    border: 0px;
+    background-color: #E0E0E0;
+}
+
+div.explorer-question-context h2
+{
+    font-size: 110%;
+    margin-left: 10px;
+    color: #333;
+    border: 0px;
+    background-color: #E0E0E0;
+}
+
+div.explorer-question-context h3
+{
+    font-size: 80%;
+    margin-left: 20px;
+    color: #333;
+    border: 0px;
+    background-color: #E0E0E0;
+}
+
+

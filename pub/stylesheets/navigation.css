@@ -1,0 +1,172 @@
+/********************/
+/* Nav body layout  */
+/********************/
+
+.menu
+{
+  height: 20px; 
+  width: 900px;
+  max-width: 900px;
+  margin: 0px 0px 10px 0px; 
+  padding-left: 13px; 
+}
+
+
+.navigation-body
+{
+/*  float: left; */
+/*  margin-left: 13px; */
+/*  padding-top: 0px; */
+/*  top: 10px; 
+    left: 13px;*/
+  position: relative;
+  overflow: hidden /*IE6*/;
+  overflow: visible !important /*Firefox*/; 
+  height: 100%;
+  width: 100%;
+}
+
+
+/**********************/
+/*  Menu Bar Layout   */
+/**********************/
+
+/*
+.dashboard-navigation .menu
+{
+  display: block;
+  position: absolute;
+  top: 120px;   
+  left: 70px; 
+  height: 25px; 
+  width: 900px;
+  margin: 10px 0px 10px 0px; 
+  font-size: large;
+  font-family: serif, times, sans-serif, arial;
+}
+*/
+
+.menu h1
+{
+/*  background: #d8eaf8; */
+    display: none;
+    clear: both;
+}
+
+.empty-navigation
+{
+  padding-left: 0.5em;
+}
+
+
+.selected-item
+{
+}
+
+
+.menu ul
+{
+  margin: 0px;
+/*  height: 25px; */
+  list-style: none;
+  -moz-padding-start: 0px;
+  -webkit-padding-start: 0px;
+/*  padding-top: 5px;  */
+}
+
+.menu ul li 
+{
+  float: left;
+  margin-right: 5px;  
+  padding-right: 10px; 
+  padding-left: 10px; 
+  padding-top: 5px; 
+  padding-bottom: 5px; 
+  list-style: none;
+/*  background: #d8eaf8;   */
+/*  background-color: #b6d0f8;  */
+  color: #5030E0;
+  background: #C0C0C0;
+  border: 1px solid grey;
+/*  -moz-border-radius: 5px; */
+/*  -webkit-border-radius: 5px; */
+}
+
+.menu ul li.selected-item
+{
+/*    color: #FF000;  */
+    background-color: #E0E0E0;
+    text-decoration: none;
+/*    background-color: #bfd9ec;  */
+}
+
+.menu ul li.selected-item span
+{
+/*  background: url(/pub/images/widget/menu/arrow.png) no-repeat center left;  */
+/*  padding-left: 1em; */
+}
+
+.menu a
+{
+  display: block;
+  text-decoration: none;
+  color: #404040;
+}
+
+/************************************/
+
+.menu h1, .view .empty-navigation, .menu ul li
+{
+  border-top-color: #f6fbfd;
+  border-bottom-color: #bfd9ec;
+}
+
+.menu h1, .menu .empty-navigation, .menu ul
+{
+  border-left-color: #bfd9ec;
+  border-right-color: #bfd9ec;
+}
+
+/* IE 6 and 7 hover hack */
+*:first-child+html {} * html {} .menu a
+{
+  height: 1%;
+}
+
+.menu a:hover
+{
+  color: #707070;
+}
+
+/***********************************/
+/* Dynamic menus                   */
+/***********************************/
+
+.dynamic-navigation .menu ul {
+    margin-left: 0px;
+}
+
+.dynamic-navigation .menu ul li {
+    min-height: 27px;
+    display: inline-block;
+    padding: 0px 5px 0px 10px; 
+    margin: 1px 1px 1px 1px;
+    border: 1px solid grey;
+}
+
+.dyn-nav-menu-entry {
+    display: inline-block;
+    position: relative;
+}
+
+.dyn-nav-menu-entry a {
+    margin-top: 5px;
+    height: 18px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.dyn-nav-menu-entry img {
+    width: 20px;
+    height: 18px; 
+}

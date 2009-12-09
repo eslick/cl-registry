@@ -1,0 +1,231 @@
+/* New Home Page Layout */
+
+div.public-page, #public-about {
+    padding-left: 20px;
+    padding-bottom: 20px;
+	font-family: arial, sans-serif;
+}
+
+div.main-pane {
+	display: block;
+	margin: 0 15px -40px 0px;
+	padding: 20px;
+	color: #000;
+	background-color: #858585;
+	height: 314px;
+	background: url("/pub/images/map.png") no-repeat 50% 2px;
+}
+
+
+div.main-pane h1 {
+	font-size: 24px;
+	color: #dc8027;
+}
+
+div.main-pane h1 a {
+	font-size: 20px;
+}
+
+div.main-pane-header h1{
+    font-size: 20pt;
+    line-height: 1.3em;
+}
+
+div.main-pane-header{
+    float: left;
+    width: 550px;
+    margin: 30px 0 0 10px;
+/*    margin: 45px 0 0 60px;*/
+}
+
+div.middle-pane{
+    margin: 20px auto;
+    width: 900px;
+}
+
+div.middle-pane b, div.middle-pane strong{
+    font-size: 120%;
+}
+
+div.bottom-pane{
+    width: 930px;
+    margin: 0 auto;
+}
+
+div.bottom-sub-pane{
+    float: left;
+    height: 190px;
+    width: 262px;
+    padding: 15px;
+    margin: 0 9px 10px;
+    background: url(/pub/images/subpanebg.png) no-repeat center top;
+    line-height: 1.2em;
+}
+
+div.bottom-sub-pane h1{
+    font-size: 18px;
+    margin: 5px 0 0!important;
+    padding: 0 0 0 25px;
+    background: url(/pub/images/bullet.png) no-repeat 0 50%;
+}
+
+div.bottom-sub-pane p{
+    font-size: 12px;
+    color: #434343;
+}
+
+/* Article pages */
+
+#public-about .article{
+    margin: 10px 15px 10px 0px;
+    padding: 10px 20px 10px 20px;
+    background-color: #e0e0e0;
+    color: #434343;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
+#public-about a{
+    color: #88abdd;
+}
+
+/* Big login widget */
+
+.front-login{
+    float: right;
+    width: 270px;
+    border-left: 2px solid #FFF;
+    font-size: 10pt;
+    margin: 10px 10px 0 0;
+    padding: 0 0 0 10px;
+    height: 300px;
+    line-height: 1.2em;
+}
+
+.front-login h1{
+    margin: 0;
+    padding: 15px 0;
+}
+
+.front-login input{
+    width: 230px;
+    color: #808080;
+    font-size: 10pt;
+    font-weight: bold;
+    background: #FFF;
+    border: solid #808080;
+    border-width: 0 2px 2px 0;
+    margin: 5px 0 15px;
+    padding: 5px 10px;
+}
+
+.front-login input.submit{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    width: 167px;
+    height: 43px;
+    border: 0;
+    background: url(/pub/images/button.png) no-repeat center top;
+    font: 12pt/43px Arial, Helvetica, sans-serif;
+    color: #FFF;
+}
+
+.front-login input.submit:hover{
+    color: #EFD8C2;
+}
+
+#login-error{
+    display: block;
+    color: #E44;
+    font-size: 9pt;
+}
+
+.front-login p{
+    margin: 5px 0;
+    padding: 0;
+}
+
+.public-page-dispatcher {
+    min-height: 35em;
+    padding-top: 10px;
+    background: transparent url(/pub/images/page/panel_bg.png) repeat-y 50% 0;
+}
+
+
+/* Multiple articles */
+
+div.articles-page-sidebar ul {
+    float: left;
+    list-style: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 150px;
+    min-height: 500px;
+    margin-top: 0px;
+    margin-right: 20px;
+    background-color: #C0C0C0;
+    border: background-color: #707070;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+div.articles-page-sidebar li {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+
+div.articles-page-sidebar .current-article {
+    background-color: #2040FF;
+}
+
+div.articles-page-sidebar a {
+    color: #222222
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+div.articles-page-sidebar p {
+    padding-left: 10px;
+    margin: 0px;
+}
+
+
+div.article h1 {
+    margin-bottom: 20px;
+}
+
+div.article-body {
+    text-indent: true;
+}
+
+div.articles-dialog-body {
+    max-height: 450px;
+    overflow: scroll;
+}
+
+
+#front-message
+{
+    margin: 20px 30px 20px 40px;
+    width: 700px;
+}
+
+#front-message h2
+{
+    margin-bottom: 20px;
+}
+
+#front-message hr
+{
+    margin: 20px;
+}

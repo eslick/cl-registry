@@ -1,0 +1,78 @@
+
+============================
+
+Forums
+- editing if authenticated
+- ranking
+- private group
+- linking to other site resources
+- report abuse?
+
+Surveys and Logs
+
+home page
+- about me
+  - diary/journal?
+  - comments/ratings
+  - my activity
+  - my ratings
+  - value created
+- community (cached queries!)
+  - new content
+  - highly ranked content
+  - community participation
+
+~ Url dispatch and navigation/layout model
+
+Simple visualizations
+
+Users and authentication
+- login flow
+- profile and prefs
+- visible profile?
+
+dynamic translation
+
+dynamic form creation!
+(full schema support in elephant)
+
+UI internationalization: i18n/l10n
+- get proper translation done
+
+Ease of use:
+- TineMCE editor
+- Date selector
+
+= release
+- server online/offline debugging model
+- ssl security and certificates
+- server launch infrastructure / image
+- richer backtrace functionality (from ucw)
+- backup strategy
+- better log infrastructure (log5?)
+
+=========================
+References:
+
+discussion: openleft (soapbox - php)
+bluemassgroup: journals, diaries, etc.
+
+Spiegel (psychosocial factors in disease survival)
+
+diaries, comments, ratings :: personalize user's interactions
+
+goal: generate content
+
+Me:
+- content you generated
+- value of what you generated
+- responses to what you generated
+-> links out to impact
+
+Community:
+- new content out there
+- highly ranked content
+
+Milestones of participation: 
+- registered for donated tissues
+

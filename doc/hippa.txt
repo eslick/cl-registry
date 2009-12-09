@@ -1,0 +1,24 @@
+
+    * Names
+    * Electronic mail addresses
+    * Telephone numbers
+
+    * All elements of dates (except year) for dates directly related to an individual, including birth date, admission date, discharge date, date of death; and for all ages over 89 all elements of dates (including year) indicative of such age, except that such ages and elements may be aggregated into a single category of age 90 or older.
+
+    * All geographic subdivisions smaller than a state, including street address, city, county, precinct, zip code and equivalent geocodes, except for the initial three digits of the zip code if according to the current publicly available information from the bureau of the census the initial three digits of the zip code for all the geographic units contains more than 20,000 persons.
+
+
+
+    * Fax numbers
+    * Social security numbers
+    * Medical records numbers
+    * Health plan beneficiary numbers
+    * Account numbers
+    * Certificate/License numbers
+    * Vehicle identifiers and serial numbers, including license plate numbers
+    * Device identifiers and serial numbers
+    * Web Universal Resource Locators (URL’s)
+    * Internet Protocol (IP) address numbers
+    * Biometric identifiers, including finger and voice prints
+    * Full face photographic images and any comparable images
+    * Any other unique identifying number characteristic, or code, except a special re-identification code that cannot be shared with the investigator

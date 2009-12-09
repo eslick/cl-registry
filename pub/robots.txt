@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /dashboard/
+
+User-agent: msnbot
+Disallow: /
+

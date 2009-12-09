@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 9944 SUBJECT
+msgid "LAMsight Update Message"
+msgstr "Messaggio di aggiornamento LAMsight"
+
+# MESSAGE-TEMPLATE BODY
+#: 9944 BODY
+msgid "<%author%> writes:\n\n<%title%>\nDate: <%date%>\n\n<%content%>\n"
+msgstr "<%author%> scrive:\n\n<%title%>\nData:<%date%>\n\n<%content%>\n"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 9946 SUBJECT
+msgid "[LAMsight] New comment"
+msgstr "[LAMsight] Nuovo commento"
+
+# MESSAGE-TEMPLATE BODY
+#: 9946 BODY
+msgid "You are an editor for a LAMsight survey that has a new comment on a question\n\nComment by <%author%> (<%date%>) for question\n\"<%question%>\"\n\nComment text:\n\n<%comment%>\n\n\n<%context%>\n\n\n"
+msgstr "Sei un editore per il questionario LAMsight che ha un commento su una domanda. Commento da parte di <%author%> (<%date%>) per domanda\n\"<%question%>\"\n\nCommento:\n\n<%comment%>\n\n\n<%context%>\n\n\n\""
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 9947 SUBJECT
+msgid "[LAMsight] New post for <%topic%>"
+msgstr "[LAMsight] Nuovo messaggio per <%topic%>"
+
+# MESSAGE-TEMPLATE BODY
+#: 9947 BODY
+msgid "<%author%> writes:\n\n<%content%>\n\n<%original%>\n\nVisit this topic \"<%topic%>\":\n<%url%>\n\n"
+msgstr "<%author%> scrive:\n\n<%content%>\n\n<%original%>\n\nVisita questo argomento \"<%topic%>\":\n<%url%>\n\n"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 9948 SUBJECT
+msgid "[LAMsight] Forum digest for <%date%>"
+msgstr "[LAMsigt] Forum per <%date%>"
+
+# MESSAGE-TEMPLATE BODY
+#: 9948 BODY
+msgid "<%count%> new messages\n\n<%activity%>"
+msgstr "<%count%> messaggi\n\n<%activity%>"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 9949 SUBJECT
+msgid "LAMsight news and reminders"
+msgstr "Novità e promemoria LAMsight"

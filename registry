@@ -1,0 +1,6 @@
+#!/bin/bash
+# Usage is: "registry [slimeport]"
+ccl -e '(load "registry-loader.lisp")' \
+    -e '(in-package :registry-loader)' \
+    -e '(when (find-package :registry) (in-package :registry))' \
+    -e "(registry-loader:load-swank $1)"

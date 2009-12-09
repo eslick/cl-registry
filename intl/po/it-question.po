@@ -1,0 +1,3145 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# QUESTION PROMPT
+#: 449 PROMPT
+msgid "What kind of exercises do you do?"
+msgstr "Che tipo di esercizio pratichi?"
+
+# QUESTION PROMPT
+#: 452 PROMPT
+msgid "Do you exercise?"
+msgstr "Fai esercizio? "
+
+# QUESTION PROMPT
+#: 457 PROMPT
+msgid "Have you tried Herbal treatments?"
+msgstr "Hai mai provato trattamenti alle erbe?"
+
+# QUESTION PROMPT
+#: 471 PROMPT
+msgid "Date of spirometer test"
+msgstr "Data del test della spirometria"
+
+# QUESTION PROMPT
+#: 472 PROMPT
+msgid "FEV1"
+msgstr "FEV1"
+
+# QUESTION QUESTION-HELP
+#: 472 QUESTION-HELP
+msgid "Forced Expiratory Volume for 1 second.  Data should be entered in liters."
+msgstr "Volume di aria emessa in un secondo. Il risultato deve essere espresso in litri."
+
+# QUESTION PROMPT
+#: 544 PROMPT
+msgid "Date of PFT Measurement"
+msgstr "Data di misurazione della Prova di Funzionalità Respiratoria"
+
+# QUESTION PROMPT
+#: 545 PROMPT
+msgid "Your temperature today"
+msgstr "Temperatura corporea di oggi"
+
+# QUESTION QUESTION-HELP
+#: 545 QUESTION-HELP
+msgid "Take your temperature under your tongue, hold for 30 seconds using the same thermometer each day."
+msgstr "Misuarsi ogni giorno la temperatura corporea con lo stesso termometro posto sotto la lingua per 30 secondi"
+
+# QUESTION PROMPT
+#: 556 PROMPT
+msgid "Hospitalizations"
+msgstr "Ospidalizzazioni"
+
+# QUESTION PROMPT
+#: 564 PROMPT
+msgid "How were you referred to this site?"
+msgstr "Come sei stata informata di questo sito? "
+
+# QUESTION PROMPT
+#: 565 PROMPT
+msgid "What are your roles in the LAM community?"
+msgstr "Quali ruoli svolgi allùinterno della comunità LAM?"
+
+# QUESTION PROMPT
+#: 566 PROMPT
+msgid "Address 1"
+msgstr "Indirizzo 1"
+
+# QUESTION PROMPT
+#: 567 PROMPT
+msgid "Address 2"
+msgstr "Indirizzo 2"
+
+# QUESTION PROMPT
+#: 568 PROMPT
+msgid "City"
+msgstr "CittÃ "
+
+# QUESTION PROMPT
+#: 569 PROMPT
+msgid "State"
+msgstr "Regione"
+
+# QUESTION PROMPT
+#: 570 PROMPT
+msgid "Postal code"
+msgstr "Codice postale"
+
+# QUESTION PROMPT
+#: 571 PROMPT
+msgid "Country"
+msgstr "Paese"
+
+# QUESTION PROMPT
+#: 572 PROMPT
+msgid "Home phone"
+msgstr "Telefono di casa"
+
+# QUESTION PROMPT
+#: 573 PROMPT
+msgid "Work phone"
+msgstr "Telefono dùufficio"
+
+# QUESTION PROMPT
+#: 574 PROMPT
+msgid "what is your favorite color?"
+msgstr "qual è il tuo colore preferito?"
+
+# QUESTION QUESTION-HELP
+#: 574 QUESTION-HELP
+msgid "favorite primary color"
+msgstr "il tuo colore primario preferito"
+
+# QUESTION PROMPT
+#: 575 PROMPT
+msgid "Birthdate"
+msgstr "Data di nascita"
+
+# QUESTION PROMPT
+#: 576 PROMPT
+msgid "Birth city"
+msgstr "CittÃ  di nascita"
+
+# QUESTION PROMPT
+#: 577 PROMPT
+msgid "Birth state"
+msgstr "Regione di nascita"
+
+# QUESTION PROMPT
+#: 578 PROMPT
+msgid "Birth country"
+msgstr "Paese di nascita"
+
+# QUESTION PROMPT
+#: 579 PROMPT
+msgid "Gender"
+msgstr "Sesso"
+
+# QUESTION PROMPT
+#: 580 PROMPT
+msgid "Date of event"
+msgstr "Data dellùevento"
+
+# QUESTION PROMPT
+#: 581 PROMPT
+msgid "Type of event"
+msgstr "Tipologia di evento"
+
+# QUESTION PROMPT
+#: 582 PROMPT
+msgid "Name of other event"
+msgstr "Nome di un altro evento"
+
+# QUESTION PROMPT
+#: 583 PROMPT
+msgid "Diagnosing or treating institution"
+msgstr "Istituto di diagnosi o di trattamento"
+
+# QUESTION PROMPT
+#: 584 PROMPT
+msgid "FEV6"
+msgstr "FEV6"
+
+# QUESTION QUESTION-HELP
+#: 584 QUESTION-HELP
+msgid "Forced expiratory volume at 6 seconds of exhalation. (Enter in liters) This is a measure from most home spirometers that acts as a surrogate for FVC.  If you have a device that gives you FVC instead, please write to lamsight-admin@media.mit.edu and we will add a new field to this survey."
+msgstr "Volume di espirazione forzata al sesto second di esalazione (inserire valore in litri). Questa è una misurazione calcolata dai più comuni spirometri di uso domestico, che funge da surrogato per FVC. Se hai uno strumento che misura invece il valore di FVC, si prega di scrivere a lamsight-admin@media.mit.edu  ed aggiungeremo una nuova voce a questo questionario."
+
+# QUESTION PROMPT
+#: 585 PROMPT
+msgid "What spirometer was used?"
+msgstr "Che spirometro è stato usato?"
+
+# QUESTION PROMPT
+#: 586 PROMPT
+msgid "What was the primary condition that led to the eventual diagnosis of LAM?"
+msgstr "Quale è stata la condizione principale che ha portato alla diagnosi della LAM?"
+
+# QUESTION PROMPT
+#: 587 PROMPT
+msgid "Date of original diagnosis"
+msgstr "Data della diagnosi originale"
+
+# QUESTION PROMPT
+#: 588 PROMPT
+msgid "Diagnosing physician name"
+msgstr "Nome del medico che ha diagnosticato"
+
+# QUESTION QUESTION-HELP
+#: 588 QUESTION-HELP
+msgid "This is an optional entry if you have extra concerns about privacy"
+msgstr "Questo spazio è riservato per commenti sulla privacy"
+
+# QUESTION PROMPT
+#: 589 PROMPT
+msgid "Speciality of diagnosing physician"
+msgstr "SpecialitÃ  / Qualifica del medico che ha diagnosticato"
+
+# QUESTION PROMPT
+#: 590 PROMPT
+msgid "Institution of physician"
+msgstr "Istituto dove opera il medico"
+
+# QUESTION PROMPT
+#: 593 PROMPT
+msgid "Did you give birth to all your children yourself?"
+msgstr "Hai dato alla luce tu personalmente tutti i tuoi figli?"
+
+# QUESTION PROMPT
+#: 594 PROMPT
+msgid "Do you believe that your diagnosis was related to your pregnancy?"
+msgstr "Pensi che la tua diagnosi sia legata alla gravidanza?"
+
+# QUESTION PROMPT
+#: 595 PROMPT
+msgid "Number of children"
+msgstr "Numero di figli"
+
+# QUESTION PROMPT
+#: 596 PROMPT
+msgid "Surrogate pregnancies"
+msgstr "Gravidanze in forma surrogata"
+
+# QUESTION PROMPT
+#: 598 PROMPT
+msgid "Pneumothoraces"
+msgstr "Pneumotoraci"
+
+# QUESTION PROMPT
+#: 599 PROMPT
+msgid "Previous surgeries"
+msgstr "Operazioni precedenti"
+
+# QUESTION PROMPT
+#: 600 PROMPT
+msgid "Special events such as infections, pleural effusion, etc"
+msgstr "Eventi particolari quali infezioni, effusioni pleuriche, ecc."
+
+# QUESTION PROMPT
+#: 602 PROMPT
+msgid "Are you on a strict low-fat Diet?"
+msgstr "Segui una dieta strettamente a base di pochi grassi?"
+
+# QUESTION PROMPT
+#: 603 PROMPT
+msgid "Do you smoke?"
+msgstr "Fumi?"
+
+# QUESTION PROMPT
+#: 604 PROMPT
+msgid "If so, how many a day?"
+msgstr "Se sì, quante al giorno?"
+
+# QUESTION PROMPT
+#: 605 PROMPT
+msgid "Do you use caffeine-containing products? (coffee, tea, soda, etc)"
+msgstr "Fai uso di prodotti che contengono caffeina? (caffè, thè, bevande gassate, ecc.)"
+
+# QUESTION PROMPT
+#: 606 PROMPT
+msgid "Weight"
+msgstr "Peso"
+
+# QUESTION PROMPT
+#: 607 PROMPT
+msgid "Height"
+msgstr "Altezza"
+
+# QUESTION PROMPT
+#: 608 PROMPT
+msgid "Body-Mass Index"
+msgstr "Indice di densitometria ossea "
+
+# QUESTION PROMPT
+#: 609 PROMPT
+msgid "Do you feel aches or pains of any kind of discomfort on a regular basis?"
+msgstr "Soffri di dolori o fastidi di ogni genere in continuazione?"
+
+# QUESTION PROMPT
+#: 610 PROMPT
+msgid "Do you experience pain and/or discomfort related to the reproductive organs?"
+msgstr "Soffri di dolori o fastidi correlati agli organi di riproduzione?"
+
+# QUESTION PROMPT
+#: 611 PROMPT
+msgid "Do you experience pain and/or discomfort related to any surgery related to ovaries?"
+msgstr " Soffri di dolori o fastidi correlati a qualche operazione alle ovarie?"
+
+# QUESTION PROMPT
+#: 615 PROMPT
+msgid "Do you have a history of any abnormal blood test results?"
+msgstr "Hai una storia di test del sangue con risultati anormali?"
+
+# QUESTION PROMPT
+#: 616 PROMPT
+msgid "Have any members of your family suffered from genetic conditions or diseases?"
+msgstr "Ci sono membri della tual famiglia che soffrono di condizioni o malattie genetiche?"
+
+# QUESTION PROMPT
+#: 617 PROMPT
+msgid "Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews died prematurely?"
+msgstr "Ci sono membri della tua famiglia diretti (inclusi nonni, zie, zii, nipoti) che sono morti prematuramente?"
+
+# QUESTION PROMPT
+#: 618 PROMPT
+msgid "Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews suffered from disabling disorders?"
+msgstr " Ci sono membri della tua famiglia diretti (inclusi nonni, zie, zii, nipoti) che soffrono di malattie debilitanti?"
+
+# QUESTION PROMPT
+#: 619 PROMPT
+msgid "Any other comments on family history"
+msgstr "Altri commenti sulla storia medica della tua famiglia"
+
+# QUESTION PROMPT
+#: 624 PROMPT
+msgid "What are your favorite foods?"
+msgstr "Quali sono i tuoi cibi preferiti?"
+
+# QUESTION PROMPT
+#: 625 PROMPT
+msgid "What are your least favorite foods?"
+msgstr "Quali sono i cibi che ti piacciono di meno?"
+
+# QUESTION PROMPT
+#: 626 PROMPT
+msgid "Do you avoid eating certain foods?"
+msgstr "Cerchi di evitare dei cibi in particolare?"
+
+# QUESTION PROMPT
+#: 627 PROMPT
+msgid "Do you have symptoms, related to LAM or unrelated to LAM that you associate with a particular food/ drink or food group?"
+msgstr "Ci sono dei sintomi correlati o no alla LAM che associ a dei cibi/bevande particolari?"
+
+# QUESTION PROMPT
+#: 628 PROMPT
+msgid "Are you a vegetarian?"
+msgstr "Sei vegetariana?"
+
+# QUESTION PROMPT
+#: 629 PROMPT
+msgid "If yes, pick the following foods that you do eat"
+msgstr "Se sì, scegli dalla lista sotto quali alimenti assumi"
+
+# QUESTION PROMPT
+#: 630 PROMPT
+msgid "Do you eat one or more of the following high oestrogen foods?"
+msgstr "Mangi uno o più dei seguenti cibi ad alto contenuto di estrogeni?"
+
+# QUESTION PROMPT
+#: 631 PROMPT
+msgid "How would you characterize your appetite relative to your peers?"
+msgstr "Come giudicheresti il tuo appetito rispetto a quello dei tuoi pari?"
+
+# QUESTION PROMPT
+#: 634 PROMPT
+msgid "Do you try to follow a fat-free or low-fat diet?"
+msgstr "Cerchi di seguire una dieta senza grassi o con pochi grassi?"
+
+# QUESTION PROMPT
+#: 635 PROMPT
+msgid "Do you have high-cholesterol?"
+msgstr "Soffri di un alto livello di colesterolo?"
+
+# QUESTION PROMPT
+#: 636 PROMPT
+msgid "Do you find it difficult to maintain your weight?"
+msgstr "Ti è difficile mantenere peso?"
+
+# QUESTION PROMPT
+#: 637 PROMPT
+msgid "Do you take vitamin or mineral supplements?"
+msgstr "Prendi vitamine o supplementi minerali?"
+
+# QUESTION PROMPT
+#: 638 PROMPT
+msgid "Any other comments on diet"
+msgstr "Altri commenti sulla dieta"
+
+# QUESTION PROMPT
+#: 643 PROMPT
+msgid "Have you given up any type of exercise because of LAM?"
+msgstr "Hai dovuto abbandonare qualche tipo di sport per via della LAM?"
+
+# QUESTION PROMPT
+#: 645 PROMPT
+msgid "Do you desaturate on exertion?"
+msgstr "Desaturi sotto sforzo?"
+
+# QUESTION PROMPT
+#: 647 PROMPT
+msgid "If you exercise, do you see positive effects of exercise?"
+msgstr "Se fai esercizio, noti degli effetti positive come conseguenza?"
+
+# QUESTION PROMPT
+#: 649 PROMPT
+msgid "Can you walk 100 meters on level ground without stopping?"
+msgstr "Riesci a camminare per 100 metri a livello piano senza fermarti?"
+
+# QUESTION PROMPT
+#: 650 PROMPT
+msgid "Can you carry small loads (up to 2kg/4.4lbs)?"
+msgstr "Riesci a portare piccolo pesi (fino a 2 kg)?"
+
+# QUESTION PROMPT
+#: 651 PROMPT
+msgid "Do you get breathless easily from relatively simple motions (from bending down to pick something up or getting dressed)?"
+msgstr "Ti manca il fiato nel compiere movimenti piccolo (abbassarsi per raccogliere qualcosa, o vestirti)?"
+
+# QUESTION PROMPT
+#: 652 PROMPT
+msgid "What activities can you not do because of LAM?"
+msgstr "Quali attivitÃ  non puoi svolgere per via della LAM?"
+
+# QUESTION PROMPT
+#: 653 PROMPT
+msgid "What activities can you do but in a modified way because of LAM? What modifications have you made to make these activities possible?"
+msgstr "Quali attivitÃ  puoi svolgere ma in forma modificata per via della LAM? Quali modificazioni hai dovuto fare per poter continuare a svolgere queste attivitÃ ?"
+
+# QUESTION PROMPT
+#: 654 PROMPT
+msgid "Have you been referred to pulmonary rehabilitation?"
+msgstr "Ti è mai stata consigliata la riabilitazione polmonare?"
+
+# QUESTION PROMPT
+#: 656 PROMPT
+msgid "Have you ever taken recreational drugs (excluding cigarettes and alcohol)?"
+msgstr "Hai mai assunto droghe? (escluse sigarette e alcol?)"
+
+# QUESTION PROMPT
+#: 657 PROMPT
+msgid "Have you tried Chinese medicine?"
+msgstr "Hai mai provato la medicina cinese?"
+
+# QUESTION PROMPT
+#: 658 PROMPT
+msgid "Have you tried Acupuncture?"
+msgstr "Hai mai provato lùagopuntura?"
+
+# QUESTION PROMPT
+#: 659 PROMPT
+msgid "Have you tried Shiatsu massage?"
+msgstr "Hai mai provato il massaggio Shiatsu?"
+
+# QUESTION PROMPT
+#: 660 PROMPT
+msgid "Have you tried Hypnosis?"
+msgstr "Hai mai provato lùipnosi?"
+
+# QUESTION PROMPT
+#: 661 PROMPT
+msgid "Have you tried Meditation?"
+msgstr "Hai mai provato la meditazione?"
+
+# QUESTION PROMPT
+#: 662 PROMPT
+msgid "Any other forms of complementary or alternative medicine?"
+msgstr "Altre forme di medicina complementare o alternativa?"
+
+# QUESTION PROMPT
+#: 663 PROMPT
+msgid "Have you noticed an effect on your breathing from these interventions?"
+msgstr "Hai mai riscontrato effetti sulla respirazione a seguito di queste attivitÃ ?"
+
+# QUESTION PROMPT
+#: 664 PROMPT
+msgid "Have you noticed an effect on your  well-being from any of these interventions?"
+msgstr "Hai mai riscontrato un benessere generale a seguito di queste attivitÃ ?"
+
+# QUESTION PROMPT
+#: 665 PROMPT
+msgid "Any other comments on alternative therapies"
+msgstr "Altri commenti su terapie alternative"
+
+# QUESTION PROMPT
+#: 674 PROMPT
+msgid "How many people live in your home (including yourself)?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 675 PROMPT
+msgid "Does your daily routine vary a lot?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 676 PROMPT
+msgid "Is your daily routine fairly physically active?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 677 PROMPT
+msgid "Do you leave the house every day to work/run errands/etc?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 678 PROMPT
+msgid "Do you have a job?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 679 PROMPT
+msgid "Do you care for the home and family as your primary form of work?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 680 PROMPT
+msgid "Briefly describe your daily routine (wake up time, meals, activities of the day, bedtime)"
+msgstr ""
+
+# QUESTION PROMPT
+#: 683 PROMPT
+msgid "What type of environment do you live in?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 684 PROMPT
+msgid "Please describe the air quality where you live as"
+msgstr ""
+
+# QUESTION PROMPT
+#: 685 PROMPT
+msgid "Are there potential environmental risks where you live now?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 686 PROMPT
+msgid "Were there environmental risks where you lived for a significant period in your past?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 687 PROMPT
+msgid "Have you ever smoked?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 688 PROMPT
+msgid "Have you ever used alcohol?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 689 PROMPT
+msgid "Were there environmental risks that your parents were exposed to?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 694 PROMPT
+msgid "Do certain types of weather affect your body?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 695 PROMPT
+msgid "Do you travel by airplane?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 697 PROMPT
+msgid "Has your sleep routine changed since being diagnosed with LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 698 PROMPT
+msgid "Do you have problems falling or staying asleep?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 699 PROMPT
+msgid "How many hours on average do you sleep each night?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 700 PROMPT
+msgid "Do you wake up too early on a regular basis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 701 PROMPT
+msgid "Do you take naps or short sleeps during the day?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 702 PROMPT
+msgid "Do you sleep with oxygen?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 703 PROMPT
+msgid "Do you feel particularly cold when going to sleep or waking up?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 704 PROMPT
+msgid "Do you have cold feet or hands in bed?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 705 PROMPT
+msgid "Do you have cold feet or hands when not in bed?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 706 PROMPT
+msgid "Any other comments about sleep?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 713 PROMPT
+msgid "Is your data available elsewhere?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 714 PROMPT
+msgid "Name of LAM organizations you are affiliated with"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 714 QUESTION-HELP
+msgid "Separate multiple responses by a comma"
+msgstr ""
+
+# QUESTION PROMPT
+#: 717 PROMPT
+msgid "Have you ever had a tissue biopsy?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 718 PROMPT
+msgid "Has your blood [serum] ever been stored for research purposes?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 720 PROMPT
+msgid "Is there a clinician who has your medical history?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 721 PROMPT
+msgid "Do you have access to your own medical history?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 723 PROMPT
+msgid "Have you ever taken birth control pills?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 724 PROMPT
+msgid "Have you ever been pregnant?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 725 PROMPT
+msgid "Do you have children?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 726 PROMPT
+msgid "Do you have any other comments regarding your reproductive history?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 730 PROMPT
+msgid "Were you diagnosed with LAM during your pregnancy?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 732 PROMPT
+msgid "Did you know you had LAM during one or more pregnancies?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 734 PROMPT
+msgid "At what age did you start having a period?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 735 PROMPT
+msgid "Are your periods regular?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 736 PROMPT
+msgid "How many days is your menstrual cycle?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 737 PROMPT
+msgid "For how many days do you bleed each month?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 738 PROMPT
+msgid "Would you say that your periods are:"
+msgstr ""
+
+# QUESTION PROMPT
+#: 739 PROMPT
+msgid "Has this become more or less over time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 740 PROMPT
+msgid "Would you say that your periods are so painful that you find it difficult to do normal activities during your period?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 741 PROMPT
+msgid "Is ovulation so painful that you find it difficult to do normal activities at times?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 742 PROMPT
+msgid "Do you experience any difference in your breathing or pain in your body at difference parts of your monthly cycle?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 745 PROMPT
+msgid "Have you taken birth control pills since your diagnosis with LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 746 PROMPT
+msgid "Are you post- or peri-menopausal"
+msgstr ""
+
+# QUESTION PROMPT
+#: 749 PROMPT
+msgid "Have you ever been on hormone replacement therapy?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 750 PROMPT
+msgid "Have you been diagnosed with Tuberous Sclerosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 751 PROMPT
+msgid "Has any member of your family (including second cousins, grandparents, great aunts/uncles, etc) ever been diagnosed with Tuberous Sclerosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 752 PROMPT
+msgid "Has any member of your family (including second cousins, grandparents, etc) ever experienced any symptom potentially associated with Tuberous Sclerosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 753 PROMPT
+msgid "Do you have any other significant illness in addition to LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 758 PROMPT
+msgid "Have you had ovarian surgery?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 758 QUESTION-HELP
+msgid "If not, please skip this section of questions."
+msgstr ""
+
+# QUESTION PROMPT
+#: 759 PROMPT
+msgid "Have you ever had an internal ultrasound test of your uterus?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 760 PROMPT
+msgid "Have you ever had your uterus removed or other uterine surgery?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 762 PROMPT
+msgid "Have you ever experienced any of the following symptoms of LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 763 PROMPT
+msgid "Have you ever had or been suspected of having renal cell carcinoma?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 765 PROMPT
+msgid "Have you taken part in one or more of the following?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 766 PROMPT
+msgid "Are you willing to be contacted for a potential trial?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 768 PROMPT
+msgid "If Other primary condition, please enter it here"
+msgstr ""
+
+# QUESTION PROMPT
+#: 769 PROMPT
+msgid "For what reason?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 770 PROMPT
+msgid "What was the procedure?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 771 PROMPT
+msgid "How old were you?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 772 PROMPT
+msgid "When was this relative to your diagnosis with LAM?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 772 QUESTION-HELP
+msgid "Please enter the number of years before by entering a negative number (e.g. -4) or the number of years after with a positive number."
+msgstr ""
+
+# QUESTION PROMPT
+#: 773 PROMPT
+msgid "Did you notice any change in the progression of your disease since the surgery?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 774 PROMPT
+msgid "Are you having hormone replacement therapy as a result of the surgery?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 776 PROMPT
+msgid "Were you already diagnosed with LAM when you had your first pneumothorax?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 777 PROMPT
+msgid "Have you received any specific treatment and/or surgery?  Please describe"
+msgstr ""
+
+# QUESTION PROMPT
+#: 780 PROMPT
+msgid "If you had chylothorax or chylous ascites / ascites, was this after you were diagnosed with LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 781 PROMPT
+msgid "If so, how many years after your diagnosis did you have the first occurance?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 782 PROMPT
+msgid "Have you received any specific treatment and/or surgery for this condition?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 784 PROMPT
+msgid "If you have had angiomyolipoma, how many in the left kidney?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 785 PROMPT
+msgid "How many in the right?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 786 PROMPT
+msgid "When was the angiomyolipoma diagnosed?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 787 PROMPT
+msgid "Have you received any special treatment or surgery?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 788 PROMPT
+msgid "If yes to any of the above, please describe"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 788 QUESTION-HELP
+msgid " Please enter the total number of documented events as well as the number of events on each side of the lungs for each event selected above."
+msgstr ""
+
+# QUESTION PROMPT
+#: 789 PROMPT
+msgid "How long after diagnosis was your first pneumothorax??"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 789 QUESTION-HELP
+msgid "Please enter in years.  Partial years are OK in decimal form (e.g. 2.25)"
+msgstr ""
+
+# QUESTION PROMPT
+#: 791 PROMPT
+msgid "What is the name of the trial (if there is one)"
+msgstr ""
+
+# QUESTION PROMPT
+#: 792 PROMPT
+msgid "What is the name of the drug in the most recent trial?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 793 PROMPT
+msgid "When did you start the trial?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 794 PROMPT
+msgid "If you have been part of more than one, please list any additional information here"
+msgstr ""
+
+# QUESTION PROMPT
+#: 796 PROMPT
+msgid "Referral"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 796 QUESTION-HELP
+msgid "Fill this in if you selected Other as your referral"
+msgstr ""
+
+# QUESTION PROMPT
+#: 797 PROMPT
+msgid "If so, for how many years?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 798 PROMPT
+msgid "How many cigarettes per day did you smoke at your heaviest time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 799 PROMPT
+msgid "How many glasses of alcohol (glass of wine/beer or a shot of hard liquor) have you consumed per week at your heaviest time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 800 PROMPT
+msgid "How much alcohol do you currently consume per week?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 801 PROMPT
+msgid "If so, what were they?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 802 PROMPT
+msgid "If yes, what type of weather?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 803 PROMPT
+msgid "What kind of effects?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 804 PROMPT
+msgid "How often do you fly?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 805 PROMPT
+msgid "How long is the average flight in hours?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 806 PROMPT
+msgid "How many days between flights?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 807 PROMPT
+msgid "Do you try to fly only on non-stop flights?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 808 PROMPT
+msgid "Do you fly over the ocean?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 809 PROMPT
+msgid "Have you ever experienced any discomfort while on the plane?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 810 PROMPT
+msgid "If so, did you experience this during one or more of"
+msgstr ""
+
+# QUESTION PROMPT
+#: 811 PROMPT
+msgid "Please describe the pain/ discomfort that you felt?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 812 PROMPT
+msgid "Do you regularly use oxygen on the plane?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 813 PROMPT
+msgid "If so, how much (liters per minute)?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 814 PROMPT
+msgid "If you do not use oxygen regularly on the plane, do you ever tell airplane staff that you have a lung condition when you get on the plane?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 815 PROMPT
+msgid "Do you take any precautions when you fly (x-ray before flying, etc)?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 816 PROMPT
+msgid "What are these?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 817 PROMPT
+msgid "Have you had a pneumathorax (collapsed lung) or any other medical problem within a week after flying?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 818 PROMPT
+msgid "At what approximate altitude (meters) do you live (1 meter=3.3 feet)?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 819 PROMPT
+msgid "Do you feel that this affects your breathing?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 820 PROMPT
+msgid "When you travel, do you visit locations at high altitude?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 821 PROMPT
+msgid "If so, how do you feel"
+msgstr ""
+
+# QUESTION PROMPT
+#: 822 PROMPT
+msgid "Do you work part-time or full-time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 823 PROMPT
+msgid "Are you the sole income-earner in your family?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 824 PROMPT
+msgid "Do you have a job outside of the home?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 825 PROMPT
+msgid "Do you work from home?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 826 PROMPT
+msgid "Are you the sole home-maker in your family?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 827 PROMPT
+msgid "On average, is the climate where you now live wet, temperate or dry?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 828 PROMPT
+msgid "Is the climate on average hot, temperate, or cold?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 829 PROMPT
+msgid "Other comments on climate and its impact on your health?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 830 PROMPT
+msgid "Is this due to one or more of the following?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 831 PROMPT
+msgid "If yes, on how many litres per minute of oxygen?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 832 PROMPT
+msgid "Has this become worse over time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 833 PROMPT
+msgid "Has this sensation become worse over time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 834 PROMPT
+msgid "Has this sensation become worse over time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 835 PROMPT
+msgid "Did you use these drugs regularly during more than a year of your life?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 836 PROMPT
+msgid "What remedies?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 837 PROMPT
+msgid "What treatments or herbs have you tried?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 838 PROMPT
+msgid "What kind or format?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 839 PROMPT
+msgid "For what symptoms or underlying cause?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 840 PROMPT
+msgid "What kind or form?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 841 PROMPT
+msgid "If so, please name them"
+msgstr ""
+
+# QUESTION PROMPT
+#: 842 PROMPT
+msgid "Which ones?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 843 PROMPT
+msgid "Please describe"
+msgstr ""
+
+# QUESTION PROMPT
+#: 844 PROMPT
+msgid "If yes, what are these symptoms?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 845 PROMPT
+msgid "What food / group do you associate with each symptom?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 846 PROMPT
+msgid "Which food or food groups do you avoid to alleviate this symptom?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 847 PROMPT
+msgid "Are there any foods or food groups you avoid eating?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 848 PROMPT
+msgid "If yes, do you avoid eating these due to"
+msgstr ""
+
+# QUESTION PROMPT
+#: 849 PROMPT
+msgid "For how long have you done this (in years)?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 850 PROMPT
+msgid "What prompted you to follow this diet?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 851 PROMPT
+msgid "Do you follow this due to a weight concern related to one or more of:"
+msgstr ""
+
+# QUESTION PROMPT
+#: 852 PROMPT
+msgid "Do you find it difficult to lose weight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 853 PROMPT
+msgid "Do you find it difficult to gain weight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 854 PROMPT
+msgid "Do you regularly take fish oil or any other antioxidants?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 855 PROMPT
+msgid "Please list supplements and symptoms/issues they are meant to address"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 855 QUESTION-HELP
+msgid "Please put one supplement and symptom or condition per line"
+msgstr ""
+
+# QUESTION PROMPT
+#: 856 PROMPT
+msgid "If so, does that stop you from exercising?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 857 PROMPT
+msgid "If you desaturate, what are your symptoms?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 858 PROMPT
+msgid "If so, please describe"
+msgstr ""
+
+# QUESTION PROMPT
+#: 860 PROMPT
+msgid "For how long have you been doing this form of exercise (in years)?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 861 PROMPT
+msgid "Does this improve how you feel?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 862 PROMPT
+msgid "If yes, because of what symptom?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 863 PROMPT
+msgid "Did you do pulmonary rehabilitation?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 864 PROMPT
+msgid "For how long (in months)?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 865 PROMPT
+msgid "Did you find it helpful?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 866 PROMPT
+msgid "Is your exercise"
+msgstr ""
+
+# QUESTION PROMPT
+#: 867 PROMPT
+msgid "Is this exercise targeted at endurance?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 868 PROMPT
+msgid "How many times a week on average?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 869 PROMPT
+msgid "and for how many minutes?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 870 PROMPT
+msgid "Do you not use oxygen normally but use oxygen when you exercise?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 871 PROMPT
+msgid "If you use oxygen normally, do you exercise with oxygen?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 872 PROMPT
+msgid "Do you experience any discomfort or pain while exercising?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 873 PROMPT
+msgid "What is your favorite kind of exercise?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 874 PROMPT
+msgid "Name of Clinician"
+msgstr ""
+
+# QUESTION PROMPT
+#: 875 PROMPT
+msgid "Would you be willing to provide your clinician's contact information?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 876 PROMPT
+msgid "Is your clinician a member of LAMsight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 878 PROMPT
+msgid "Other database"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 878 QUESTION-HELP
+msgid "Please enter the name of any other LAM-related databases that you are a part of"
+msgstr ""
+
+# QUESTION PROMPT
+#: 879 PROMPT
+msgid "Member of registry or database"
+msgstr ""
+
+# QUESTION PROMPT
+#: 881 PROMPT
+msgid "Location of the tissue"
+msgstr ""
+
+# QUESTION PROMPT
+#: 882 PROMPT
+msgid "Type of sample"
+msgstr ""
+
+# QUESTION PROMPT
+#: 883 PROMPT
+msgid "Date of sample"
+msgstr ""
+
+# QUESTION PROMPT
+#: 884 PROMPT
+msgid "If yes, please describe"
+msgstr ""
+
+# QUESTION PROMPT
+#: 885 PROMPT
+msgid "Do you take any medications for this?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 886 PROMPT
+msgid "Any other comments on pain and discomfort"
+msgstr ""
+
+# QUESTION PROMPT
+#: 887 PROMPT
+msgid "What part of your body hurts?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 888 PROMPT
+msgid "How often do you experience these pains?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 889 PROMPT
+msgid "During which activities does it hurt?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 890 PROMPT
+msgid "How would you rate this pain overall?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 890 QUESTION-HELP
+msgid "Use a scale from 1 to 10, where 1 is the lightest pain you have ever felt and 10 the greatest pain."
+msgstr ""
+
+# QUESTION PROMPT
+#: 891 PROMPT
+msgid "Do you take any medications to address this?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 892 PROMPT
+msgid "If yes, please list the medications"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 892 QUESTION-HELP
+msgid "Please enter: medication, dose, duration of time taken. One line per medication"
+msgstr ""
+
+# QUESTION PROMPT
+#: 893 PROMPT
+msgid "Do/did these medications have an impact on your pain / discomfort?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 894 PROMPT
+msgid "Please describe"
+msgstr ""
+
+# QUESTION PROMPT
+#: 895 PROMPT
+msgid "If yes, please list the medication(s)"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 895 QUESTION-HELP
+msgid "Please enter: medication, dose, duration of time taken. One line per medication"
+msgstr ""
+
+# QUESTION PROMPT
+#: 896 PROMPT
+msgid "Does this medication completely or patially resolve your pain / discomfort?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 897 PROMPT
+msgid "If so, which and when?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 898 PROMPT
+msgid "Has the problem persisted?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 899 PROMPT
+msgid "For how many years (1 if recent)?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 900 PROMPT
+msgid "If so, which disease or condition and who suffered from it?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 901 PROMPT
+msgid "If yes, from what cause?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 902 PROMPT
+msgid "If yes, which?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 903 PROMPT
+msgid "If no, by what form of testing was the possibility that you have Tuberous Sclerosis ruled out?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 904 PROMPT
+msgid "If yes, how old were you?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 905 PROMPT
+msgid "Do you currently have any symptoms associated with your Tuberous Sclerosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 906 PROMPT
+msgid "Do you currently have any symptoms not definitely related to Tuberous Sclerosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 907 PROMPT
+msgid "If other, please describe"
+msgstr ""
+
+# QUESTION PROMPT
+#: 908 PROMPT
+msgid "Please provide details (current age and relation to you)"
+msgstr ""
+
+# QUESTION PROMPT
+#: 909 PROMPT
+msgid "If yes, please choose from the following"
+msgstr ""
+
+# QUESTION PROMPT
+#: 910 PROMPT
+msgid "Please describe your relationship to the affected members of your family"
+msgstr ""
+
+# QUESTION PROMPT
+#: 911 PROMPT
+msgid "Please describe the condition and date of diagnosis"
+msgstr ""
+
+# QUESTION PROMPT
+#: 912 PROMPT
+msgid "If so, how many children do you have, if any?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 913 PROMPT
+msgid "What are the sexes and birth years of each child?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 913 QUESTION-HELP
+msgid "Please list: sex followed by birth year, one per line"
+msgstr ""
+
+# QUESTION PROMPT
+#: 914 PROMPT
+msgid "Do you have any children through"
+msgstr ""
+
+# QUESTION PROMPT
+#: 915 PROMPT
+msgid "If you gave birth to any of your children, what was the date of your last delivery?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 918 PROMPT
+msgid "Was your pregnancy uneventful?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 919 PROMPT
+msgid "If not, what challenges did you face?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 920 PROMPT
+msgid "Do you think these challenges may be LAM-related?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 921 PROMPT
+msgid "What makes you think this?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 922 PROMPT
+msgid "If yes, based on what clues was the diagnosis made?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 923 PROMPT
+msgid "Your age at your first pregnancy?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 924 PROMPT
+msgid "Number of pregnancies carried to term"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 924 QUESTION-HELP
+msgid "This means live births, whether naturally or surgically"
+msgstr ""
+
+# QUESTION PROMPT
+#: 925 PROMPT
+msgid "Number of pregnancies not carried to term"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 925 QUESTION-HELP
+msgid "Please enter a number: 0 if none"
+msgstr ""
+
+# QUESTION PROMPT
+#: 926 PROMPT
+msgid "Have you ever had difficulty becoming pregnant?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 927 PROMPT
+msgid "Have you ever had IVF?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 927 QUESTION-HELP
+msgid "IVF: In-vitro fertilization"
+msgstr ""
+
+# QUESTION PROMPT
+#: 928 PROMPT
+msgid "Were you ever given DES to prevent miscarriage?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 928 QUESTION-HELP
+msgid "DES: Diethylstilbestrol"
+msgstr ""
+
+# QUESTION PROMPT
+#: 931 PROMPT
+msgid "Has this become worse or better over time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 933 PROMPT
+msgid "Are you on the pill now?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 934 PROMPT
+msgid "For how many years have you been on birth control pills?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 935 PROMPT
+msgid "For what purpose(s) were you on birth control pills?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 936 PROMPT
+msgid "For what purpose?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 937 PROMPT
+msgid "If so, for how long?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 938 PROMPT
+msgid "Also, are you on hormone replacement therapy now?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 939 PROMPT
+msgid "At what age did you stop getting regular periods?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 940 PROMPT
+msgid "What changes has your body undergone since you stopped menstruating?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 941 PROMPT
+msgid "Do you think any of these changes are LAM-specific?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 942 PROMPT
+msgid "Please describe other medications used with as much detail as you can"
+msgstr ""
+
+# QUESTION PROMPT
+#: 943 PROMPT
+msgid "Have you taken medications specifically for LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 944 PROMPT
+msgid "Which types of drugs have you tried?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 944 QUESTION-HELP
+msgid "Please select one or more categories"
+msgstr ""
+
+# QUESTION PROMPT
+#: 945 PROMPT
+msgid "If you have taken LAM medications"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 945 QUESTION-HELP
+msgid "Please list the medications, dates you took them and the reason you stopped, if any."
+msgstr ""
+
+# QUESTION PROMPT
+#: 946 PROMPT
+msgid "Please select over the counter drugs you have used"
+msgstr ""
+
+# QUESTION PROMPT
+#: 948 PROMPT
+msgid "FEC"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 948 QUESTION-HELP
+msgid "Forced Expiratory Volume measured in Liters"
+msgstr ""
+
+# QUESTION PROMPT
+#: 949 PROMPT
+msgid "FEV1 (post-BD) (L)"
+msgstr ""
+
+# QUESTION PROMPT
+#: 950 PROMPT
+msgid "FEC (post-BD) (L)"
+msgstr ""
+
+# QUESTION PROMPT
+#: 951 PROMPT
+msgid "TLC"
+msgstr ""
+
+# QUESTION PROMPT
+#: 952 PROMPT
+msgid "Hgb (g/dl)"
+msgstr ""
+
+# QUESTION PROMPT
+#: 953 PROMPT
+msgid "DLco"
+msgstr ""
+
+# QUESTION PROMPT
+#: 954 PROMPT
+msgid "Weight"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 954 QUESTION-HELP
+msgid "Weight on a home scale.  "
+msgstr ""
+
+# QUESTION PROMPT
+#: 955 PROMPT
+msgid "Body Temperature"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 955 QUESTION-HELP
+msgid "Collecting your daily temperature at the same time as your spirometer readings may help us understand the role of hormones in variations in FEV1.  Please use under the tongue readings. "
+msgstr ""
+
+# QUESTION PROMPT
+#: 956 PROMPT
+msgid "Before you go out, do you consciously think about whether you need to visit the toilet?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 957 PROMPT
+msgid "Do you sometimes go to the toilet \"just to be safe\" even if you don't feel you need to?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 958 PROMPT
+msgid "Have you ever worried that you would not get to the toilet in time due to shortness of breath?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 959 PROMPT
+msgid "Have you ever experienced a slight leak of urine due to coughing, sneezing, or laughing?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 961 PROMPT
+msgid "Do you avoid certain drinks?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 961 QUESTION-HELP
+msgid "Such as coffee, tea, or other diuretics?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 963 PROMPT
+msgid "Have you been incontinent of feces?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 965 PROMPT
+msgid "Have you been incontinent of urine?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 966 PROMPT
+msgid "Roughly how often?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 967 PROMPT
+msgid "On a scale of 1 (least significant) to 10 (most significant) who significant is incontinence compared to the other challenges you face as a LAM patient?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 968 PROMPT
+msgid "Does incontinence prevent you from doing certain things such as shopping or going for walks?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 969 PROMPT
+msgid "Does incontinence limit you in any other way?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 970 PROMPT
+msgid "Do you limit your liquid intake?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 970 QUESTION-HELP
+msgid "For example, are worried about finding a toilet when you are out, or getting upstairs when you are home?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 971 PROMPT
+msgid "Please describe any coping strategies that have helped to reduce or avoid incontinence"
+msgstr ""
+
+# QUESTION PROMPT
+#: 972 PROMPT
+msgid "If you have a chest infection, do you find that you have to be more aware of continence issues than you would be normally?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 973 PROMPT
+msgid "Has you incontinence become worse as your breathlessness increased over the years?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 974 PROMPT
+msgid "Is you incontinence cyclical?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 975 PROMPT
+msgid "What do you believe to be the major cause of your incontinence?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 976 PROMPT
+msgid "Do you think your incontinence occurs because of"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 976 QUESTION-HELP
+msgid "i.e. desaturation leads you to lose control of the muscles"
+msgstr ""
+
+# QUESTION PROMPT
+#: 977 PROMPT
+msgid "Would you feel comfortable talking to your doctor or pulmonologist about incontinence problems?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 978 PROMPT
+msgid "Have you ever asked for professional help with incontinence?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 979 PROMPT
+msgid "Did you receive vaccinations an a child?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 980 PROMPT
+msgid "Please rate your overall experience"
+msgstr ""
+
+# QUESTION PROMPT
+#: 981 PROMPT
+msgid "Do you have a family history of osteoporosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 982 PROMPT
+msgid "Do you suffer from bone loss?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 983 PROMPT
+msgid "Do you suffer from back, joint or bone pain?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 987 PROMPT
+msgid "In which members of your family?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 988 PROMPT
+msgid "At approximately what age was that diagnosis made for those family members "
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 988 QUESTION-HELP
+msgid "Please list one family member and age per line"
+msgstr ""
+
+# QUESTION PROMPT
+#: 989 PROMPT
+msgid "Have you ever had a bone density scan?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 990 PROMPT
+msgid "Has your bone loss been rated for severity?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 991 PROMPT
+msgid "Has a clinician said that this may be related to LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 992 PROMPT
+msgid "If so, what connection was described between LAM and bone loss?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 993 PROMPT
+msgid "Any other comments on your loss of bone density?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 996 PROMPT
+msgid "Have you ever had a bone density scan?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 998 PROMPT
+msgid "Date?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 999 PROMPT
+msgid "Result?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1000 PROMPT
+msgid "Please describe."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1001 PROMPT
+msgid "Have you ever been diagnosed with osteoporosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1003 PROMPT
+msgid "Date of diagnosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1004 PROMPT
+msgid "What test was used to arrive at your diagnosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1005 PROMPT
+msgid "Name and address of diagnosing clinician"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1006 PROMPT
+msgid "Are you now taking any prescription medication for this condition?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1007 PROMPT
+msgid "Have you taken medication for osteoporosis in the past that you are no longer taking?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1008 PROMPT
+msgid "Have you ever taken bisphosophonates?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1009 PROMPT
+msgid "Are you currently taking bisphosphonates?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1013 PROMPT
+msgid "Which ones?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1014 PROMPT
+msgid "Has this ever been recommended?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1015 PROMPT
+msgid "Medication?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1016 PROMPT
+msgid "Date when medication started?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1017 PROMPT
+msgid "Date when medication stopped?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1018 PROMPT
+msgid "Reason for stopping medication?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1019 PROMPT
+msgid "Do you currently take multivitamins?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1020 PROMPT
+msgid "Not counting multi-vitamins, do you take any calcium or vitamin D supplements?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1021 PROMPT
+msgid "Do you take any other vitamin supplements?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1022 PROMPT
+msgid "Do you regularly consume any of the following foods?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1025 PROMPT
+msgid "Vitamin D content?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1026 PROMPT
+msgid "Calcium content?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1027 PROMPT
+msgid "What are the supplements called?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1028 PROMPT
+msgid "What formulation?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1029 PROMPT
+msgid "Amount of Vitamin D taken each day?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1030 PROMPT
+msgid "Amount of Calcium taken each day?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1032 PROMPT
+msgid "Which ones?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1033 PROMPT
+msgid "Do any of those include folate or folic acid?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1035 PROMPT
+msgid "Amount folate or folic acid taken per day?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1036 PROMPT
+msgid "Formulation?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1038 PROMPT
+msgid "Do you exercise regularly?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1040 PROMPT
+msgid "Type of exercise"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1041 PROMPT
+msgid "How strenuous is your exercise?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1042 PROMPT
+msgid "Frequency of exercise"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1043 PROMPT
+msgid "What is your usual walking pace outdoors?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1045 PROMPT
+msgid "Minutes per week?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1047 PROMPT
+msgid "Description?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1048 PROMPT
+msgid "Are you currently taking any prescription medications?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1049 PROMPT
+msgid "Are you regularly taking vitamins or supplements?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1051 PROMPT
+msgid "Please list the prescription medications you are taking"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1051 QUESTION-HELP
+msgid "To give us more information on your prescriptions, please go to our medication diary and enter the details of your current and past prescription medication use"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1052 PROMPT
+msgid "Have you ever been on birth control pills?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1053 PROMPT
+msgid "Have you ever used female hormones other than oral contraceptives?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1054 PROMPT
+msgid "Are you currently using over-the-counter hormone replacements or to treat post-menopausal symptoms?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1054 QUESTION-HELP
+msgid "For example herbal, natural or soy-based preparations or supplements?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1057 PROMPT
+msgid "Please rate your average level of daily stress"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1057 QUESTION-HELP
+msgid "Where 1 is no stress and 10 is the highest you have experienced."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1058 PROMPT
+msgid "What is the primary cause of your stress?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1059 PROMPT
+msgid "Has your general stress level increased since your LAM diagnosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1060 PROMPT
+msgid "What is your primary method of coping with stress?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1061 PROMPT
+msgid "What estrogens did you take?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1061 QUESTION-HELP
+msgid "Please enter one medication and the dates taken, one per line"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1062 PROMPT
+msgid "What prompted you to take estrogens?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1063 PROMPT
+msgid "At what age did you first take estrogens?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1064 PROMPT
+msgid "How long did you take estrogens?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1065 PROMPT
+msgid "How were the estrogens administered?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1066 PROMPT
+msgid "What over the counter estrogens?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1068 PROMPT
+msgid "Date of last bone density scan"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1069 PROMPT
+msgid "Bone density scan result"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1070 PROMPT
+msgid "Where do you primarily experience your pain?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1071 PROMPT
+msgid "How often does the pain occur?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1072 PROMPT
+msgid "Does your pain vary cyclically?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1073 PROMPT
+msgid "How would you rate the pain on average?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1073 QUESTION-HELP
+msgid "Please rate from 1 to 10 where 1 is the most mild and 10 is the worst pain you have ever felt"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1074 PROMPT
+msgid "How has your pain changed over the past year?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1076 PROMPT
+msgid "FEV1 - 2nd value"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1077 PROMPT
+msgid "FEV1 - trial 1"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1078 PROMPT
+msgid "FEV6 - trial 1"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1079 PROMPT
+msgid "FEV1 - trial 2"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1080 PROMPT
+msgid "FEV6 - trial 2"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1081 PROMPT
+msgid "FEV1 - trial 3"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1082 PROMPT
+msgid "FEV6 - trial 3"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1083 PROMPT
+msgid "Did your travel routine vary yesterday?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1083 QUESTION-HELP
+msgid "You need to describe only major changes, such as flights, long car trips, etc."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1085 PROMPT
+msgid "Did your altitude change significantly?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1085 QUESTION-HELP
+msgid "Enter the variation, or 0 if no change.  For example a typical commercial airplane flies up to 12000 meters or 35000 feet."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1086 PROMPT
+msgid "Did you fly?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1087 PROMPT
+msgid "Any other changes in your routine?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1089 PROMPT
+msgid "How long were you in the air?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1090 PROMPT
+msgid "Did your breathing change during the flight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1091 PROMPT
+msgid "How did you feel after the flight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1092 PROMPT
+msgid "Were you or did you feel sick yesterday?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1093 PROMPT
+msgid "Was your energy level:"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1095 PROMPT
+msgid "Type of sickness"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1095 QUESTION-HELP
+msgid "The goal of this section is to capture any ordinary ailments that may effect your FEV or temperature readings or other daily information."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1096 PROMPT
+msgid "Symptoms of sickness"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1099 PROMPT
+msgid "Please describe sickness or injury"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1100 PROMPT
+msgid "Please describe your other symptoms"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1101 PROMPT
+msgid "Any variations in your normal diet?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1101 QUESTION-HELP
+msgid "We are leaving this question open for now to see what you report.  We will add more detailed questions here later."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1102 PROMPT
+msgid "Did you miss any medications yesterday?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1105 PROMPT
+msgid "Please describe your dietary changes"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1105 QUESTION-HELP
+msgid "We are leaving this question open for now to see what you report.  We will add more detailed questions here later."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1106 PROMPT
+msgid "Please describe the medication you missed"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1107 PROMPT
+msgid "If not, how many years after your child was born were you diagnosed?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1108 PROMPT
+msgid "Did you use your husband/partner's sperm?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1109 PROMPT
+msgid "Did you use your own eggs?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1110 PROMPT
+msgid "If yes, do you think hormonal stimulation to harvest your eggs for transfer progressed your disease?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1111 PROMPT
+msgid "If yes, what supports that belief?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1112 PROMPT
+msgid "Was your surrogate a relative?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1113 PROMPT
+msgid "Please describe "
+msgstr ""
+
+# QUESTION PROMPT
+#: 1115 PROMPT
+msgid "If yes, based on what factors?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1116 PROMPT
+msgid "If other, please specify"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1117 PROMPT
+msgid "Age you first took birth control pills?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1118 PROMPT
+msgid "How many years did you take them?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1118 QUESTION-HELP
+msgid "Total years, even if you didn't for some years"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1119 PROMPT
+msgid "What kind or brand did or do you take?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1120 PROMPT
+msgid "If you stopped taking them, what was the reason?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1121 PROMPT
+msgid "If you stopped taking them, did you have irregular or painful periods when you stopped?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1122 PROMPT
+msgid "Are you still taking birth control pills?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1123 PROMPT
+msgid "How does your breathing feel today?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1123 QUESTION-HELP
+msgid "Your answer to this question should be made relative to your normal experience of breathing; if your breathing is always labored, and hasn't changed, then you should use 'normal' as your answer."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1124 PROMPT
+msgid "Menstrual symptoms"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1125 PROMPT
+msgid "Did you experience incontinence yesterday?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1126 PROMPT
+msgid "Please record any observations or thoughts you have today"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1126 QUESTION-HELP
+msgid "This can be regarding your monthly cycle, the nature of your symptoms or anything else you feel is relevant."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1127 PROMPT
+msgid "Are you currently sexually active?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1129 PROMPT
+msgid "Does sexual activity leave you unusually breathless or unwell?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1131 PROMPT
+msgid "Would you be willing to release this tissue?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1132 PROMPT
+msgid "Is a sample of your tissue available"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1133 PROMPT
+msgid "Do you ever cough up blood after exercise?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1134 PROMPT
+msgid "Do you regularly cough up blood at the same point in your menstrual cycle?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1135 PROMPT
+msgid "Have you ever been treated for any form of malignancy?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1136 PROMPT
+msgid "If you have had chemotherapy, what drugs were used?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1136 QUESTION-HELP
+msgid "Please enter one drug name per line"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1138 PROMPT
+msgid "Has this involved one or more of"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1139 PROMPT
+msgid "Do you have Diabetes?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1140 PROMPT
+msgid "If so, do you take medication for your diabetes?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1142 PROMPT
+msgid "Please list medications and dates taken"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1142 QUESTION-HELP
+msgid "enter one medication and start or end dates per line.  If current, say current."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1143 PROMPT
+msgid "What condition led to your LAM diagnosis?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1144 PROMPT
+msgid "Date of last scan"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1145 PROMPT
+msgid "Were your bone density scan results"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1146 PROMPT
+msgid "What was your T score?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1146 QUESTION-HELP
+msgid "Leave blank if you don't know"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1147 PROMPT
+msgid "What was your Z score?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1147 QUESTION-HELP
+msgid "Leave blank if you don't know"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1148 PROMPT
+msgid "What was your last cholesterol measurement?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1149 PROMPT
+msgid "What was the date of your last test?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1149 QUESTION-HELP
+msgid "Leave both of these blank if you don't know."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1153 PROMPT
+msgid "On a scale of 1-5, with 5 being the highest, how would you rank the layout of LAMsight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1154 PROMPT
+msgid "On a scale of 1-5, with 5 being the highest, how would you rank the overall layout of LAMsight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1155 PROMPT
+msgid "Are the names on the tabs representative of what the page displays?\n"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1156 PROMPT
+msgid "If not, do you have any suggestions to improve them?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1158 PROMPT
+msgid "Are the names on the tabs representative of what you expect the page to be?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1159 PROMPT
+msgid "Where should the tabs be located?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1160 PROMPT
+msgid "If not, do you have any suggestions?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1161 PROMPT
+msgid "On a scale of 1-5, what is your overall satisfaction with LAMsight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1169 PROMPT
+msgid "Have you been tested for Alpha-1 Antitrypsin Deficiency?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1170 PROMPT
+msgid "If you have been tested for Alpha-1 Antitrypsin Deficiency, what were your blood levels and phenotype? "
+msgstr ""
+
+# QUESTION PROMPT
+#: 1171 PROMPT
+msgid "Have you ever had a spontaneous pneumothorax?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1173 PROMPT
+msgid "How often do you use LAMsight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1174 PROMPT
+msgid "On a scale of 1-5, with 5 being the highest, what would you rank your experience with LAMsight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1175 PROMPT
+msgid "On a scale of 1-5, with 5 being the hardest, how easy is it for you to navigate LAMsight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1176 PROMPT
+msgid "Is the information on the site presented in a clear and well organized manner?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1177 PROMPT
+msgid "Did you experience any trouble registering on the site and getting started with the surveys and diaries?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1178 PROMPT
+msgid "Does the FAQ page provide you with answers to most of your questions?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1179 PROMPT
+msgid "Are the names on the tabs representative of what you expect from the page?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1180 PROMPT
+msgid "Do you use the language function? (If there is another language that you would like have have included, please comment through the comment icon)"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1181 PROMPT
+msgid "Have you ever communicated with a LAMsight administrator?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1182 PROMPT
+msgid "Besides email, how else would you like to connect with LAMsight administrators?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1183 PROMPT
+msgid "Please feel free to provide us with any other feedback and comments your experience and impression of LAMsight."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1187 PROMPT
+msgid "If yes, what your trouble and do you have any suggestions for changing the site to improve site?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1188 PROMPT
+msgid "If yes, how would you rate the service that you received? (On a scale of 1-5, with 5 being the highest)"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1189 PROMPT
+msgid "Does the home page communicate effectively how to get started on LAMsight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1190 PROMPT
+msgid "Would you prefer to have a visual tutorial that will guide you through the functions of LAMsight on the homepage?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1191 PROMPT
+msgid "Do you find the home page to be too cluttered with information?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1192 PROMPT
+msgid "Have you ever viewed the current ongoing clinical trials on LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1193 PROMPT
+msgid "Have you viewed the \"Where are our users?\" function?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1194 PROMPT
+msgid "How often do you view the Featured Survey Question Results?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1195 PROMPT
+msgid "What else would you like to see featured besides the survey results?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1196 PROMPT
+msgid "Do you find the \"Breaking News\" section helpful in keeping you updated with the modifications of LAMsight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1197 PROMPT
+msgid "Do you have any suggestions for improving the home page?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1200 PROMPT
+msgid "How often do you use this function?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1201 PROMPT
+msgid "Is it helpful to you in keeping updated about research on LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1202 PROMPT
+msgid "Have you entered your own geographic information into this map?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1203 PROMPT
+msgid "Is this function helpful in assessing the patient population?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1204 PROMPT
+msgid "Would it be more helpful to separate the different types of users (patient, doctor, etc.) on the map?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1205 PROMPT
+msgid "How many surveys have you completed?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1206 PROMPT
+msgid "Are you participating in one or both diaries?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1207 PROMPT
+msgid "In general, do you find the surveys and diaries to be pertinent to uncovering more information about LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1208 PROMPT
+msgid "Are the survey and diary questions worded in a clear manner?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1209 PROMPT
+msgid "On scale of 1-5, with 5 being the highest, please rank the format and ease of navigation for the surveys and diaries."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1210 PROMPT
+msgid "Have you use the comment bubble before?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1211 PROMPT
+msgid "Do you have any suggestions for improving the collect page?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1215 PROMPT
+msgid "How many diary entries do you have?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1216 PROMPT
+msgid "Do you find it easy to regularly complete diary entries?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1217 PROMPT
+msgid "Would it be helpful if LAMsight provided email reminders to assist you in regularly completing diary entries?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1218 PROMPT
+msgid "If not, which surveys specifically did you find to be irrelevant?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1219 PROMPT
+msgid "Do you find the comment bubble an easy way to relay information to the LAMsight administrators?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1220 PROMPT
+msgid "In general, what do you use the comment bubbles for?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1221 PROMPT
+msgid "Have you used the explore page before?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1222 PROMPT
+msgid "Do you have any suggestions on improving the explore page?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1224 PROMPT
+msgid "How often do you use the explore page?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1225 PROMPT
+msgid "On a scale of 1-5, with 5 being the hardest, how easy is it to use the explore page?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1226 PROMPT
+msgid "In general, does this function help give you a better understanding of the LAM patient population?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1227 PROMPT
+msgid "Is the visualization option a good way to help you picture the data?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1228 PROMPT
+msgid "Have you used the population filter function before?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1229 PROMPT
+msgid "If you post a problem or concern on the forum, do you feel that LAMsight administrators respond in a reasonable amount of time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1230 PROMPT
+msgid "If you have posted a question or concern on the forum, do you feel that LAMsight administrators respond in a reasonable amount of time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1232 PROMPT
+msgid "In your opinion, does the population filter function provide insight into whether different populations are more susceptible to LAM?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1233 PROMPT
+msgid "Which populations have you viewed?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1234 PROMPT
+msgid "Did you attempt to create your own population?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1235 PROMPT
+msgid "Have you used the discuss page before?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1236 PROMPT
+msgid "Do you have any suggestions on improving the discuss page?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1238 PROMPT
+msgid "How often do you use the discuss page?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1239 PROMPT
+msgid "On a scale of 1-5, with 5 being the hardest, how easy is it to use the discuss page?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1240 PROMPT
+msgid "What do you generally use the discuss page for?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1241 PROMPT
+msgid "If you have posted a question or concern on the forums, do you feel that LAMsight administrators respond in a reasonable amount of time?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1242 PROMPT
+msgid "Have you created a topic before?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1243 PROMPT
+msgid "Do you feel the forum categories are adequate?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1244 PROMPT
+msgid "On a scale of 1-5, with 5 being the highest, how organized do you think the discuss page currently is?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1246 PROMPT
+msgid "If not, please provide us with any suggestions for improvement."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1247 PROMPT
+msgid "Have you used the create page before?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1248 PROMPT
+msgid "Please feel free to give us any suggestions to facilitate the use of this page"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1250 PROMPT
+msgid "How many surveys have you created?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1251 PROMPT
+msgid "On a scale of 1-5, with 5 being the hardest, how easy do you find it to create surveys or diaries through LAMsight?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1252 PROMPT
+msgid "Have you used the subgroup function before?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1253 PROMPT
+msgid "Have you used the scratchpad function before?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1255 PROMPT
+msgid "How often do you use this function?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1256 PROMPT
+msgid "Do you find this to be a useful function?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1257 PROMPT
+msgid "If other, please specify here."
+msgstr ""
+
+# QUESTION PROMPT
+#: 1258 PROMPT
+msgid "What do you think of the overall design of the website?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1259 PROMPT
+msgid "Which page is the least organized and needs the most attention?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1260 PROMPT
+msgid "On a scale of 1-5, with 5 being the hardest, how easy is it for you to navigate the website?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1261 PROMPT
+msgid "Please provide us with any suggestions or comments about the site design. "
+msgstr ""
+
+# QUESTION PROMPT
+#: 1263 PROMPT
+msgid "What do you think of the layout of the website? (clarity, ease of access, etc.)"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1264 PROMPT
+msgid "What do you think of the colors of the website? (Are they distracting? Do they enhance the important information?)"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1264 QUESTION-HELP
+msgid "Great\nAcceptable \nPoor"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1265 PROMPT
+msgid "What do you think of the logo of the LAMsight? "
+msgstr ""
+
+# QUESTION PROMPT
+#: 1266 PROMPT
+msgid "How do you feel today?"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 1266 QUESTION-HELP
+msgid "good\ngreat"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1583 PROMPT
+msgid "Are you using the metric system for your weight and height?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 1603 PROMPT
+msgid "Do you take mineral supplements?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 9576 PROMPT
+msgid "Choose a number."
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 9576 QUESTION-HELP
+msgid "Plase choose a number."
+msgstr ""
+
+# QUESTION PROMPT
+#: 9577 PROMPT
+msgid "What is your favorite color?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 9578 PROMPT
+msgid "New question prompt"
+msgstr ""
+
+# QUESTION QUESTION-HELP
+#: 9578 QUESTION-HELP
+msgid "What is this question about?"
+msgstr ""
+
+# QUESTION PROMPT
+#: 9579 PROMPT
+msgid "Are you often sad (at least once a day)?"
+msgstr ""

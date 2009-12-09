@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WMD minimal example</title>
+    <script src='wmd.js' type='text/javascript'></script>
+    <script src='wmd-base.js' type='text/javascript'></script>
+    <script src='wmd-plus.js' type='text/javascript'></script>
+    <script src='showdown.js' type='text/javascript'></script>
+  </head>
+  <body>
+    
+    <form>
+        <textarea id="myTextarea" style="width: 500px; height: 200px;">*This* is a minimal example.</textarea>
+    </form>
+	<div class="wmd-preview" id="preview"></div>
+    
+    <script type="text/javascript">
+Attacklab.go();
+var inp = document.getElementById('myTextarea');
+var prev = document.getElementById('preview');
+var panes = {input:inp, preview:prev, output:null};
+var previewManager = new Attacklab.wmd.previewManager(panes);
+var editor = new Attacklab.wmd.editor(inp,previewManager.refresh);
+    </script>
+    
+  </body>
+</html>

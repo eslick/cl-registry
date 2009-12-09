@@ -1,0 +1,106 @@
+In order to use the lamsight script in this directory to load the
+LAMSIGHT2 system for developement, you need to get its code and
+libraries:
+
+  cd ~/lamsight     # wherever you want the code on your machine
+  darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/systems/
+  darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/lamsight2-dev/
+
+To load the LAMSIGHT2 system:
+
+  cd ~/lamsight/lamsight2-dev
+  ./lamsight [port]
+
+If "port" is included, loads Swank (from ../systems/slime/)
+and starts a server listening on "port" (4005 is the default port for
+m-x slime-connect in Emacs).
+
+If NOLOAD is set to "true" in the environment, does not load the
+lamsight2 or library code, only lamsight-loader.lisp:
+
+  NOLOAD=true ./lamsight [port]
+
+In this case, the Slime package will be LAMSIGHT-LOADER, and you can
+load lamsight with:
+
+  (loadsys :lamsight2)
+
+Otherwise, the Slime package will be LAMSIGHT2.
+
+If LAMPORT is an integer, will start up a debugging server on that
+port. For example, the following will load the LAMSIGHT2, start a
+lamsight server on port 8080, and start a Slime server on port 4005:
+
+  LAMPORT=8080 ./lamsight 4005
+
+Alternatively, you can start the server from the REPL with:
+
+  (lamsight-loader:start-lamsight 8080)
+
+or:
+
+  (start-lamsight2 :debug <debug>
+                   :log-level <log-level>
+                   :address "localhost"
+                   :port 8080)
+
+<debug> is NIL to log web site errors, :HTML to display error
+information in the browser, or anything else to break into the
+debugger. Default: NIL. You can set *ERROR-ACTION* to change it.
+
+<log-level> is :ERROR, :WARNING, :INFO, or :DEBUG. If :ERROR, then
+only errors will be logged to the log file
+(<lamsight-dir>/logs/lamsight2.log). If :WARNING, then both errors and
+warnings will be logged. If :INFO or :DEBUG, then both errors and
+warnings will be logged, plus explicit calls to LOG-MESSAGE with a
+LEVEL of :INFO, if <log-level> is :INFO, or of :INFO or :DEBUG, if
+<log-level> is :DEBUG. The default for <log-level> is :ERROR, if
+<debug> is NIL, or :DEBUG otherwise. You can use SET-LOG-LEVEL to
+change it.
+
+If LAMDEV is set to "true" in the environment, then the build will be
+done with :lamsight-development in *features*. This builds with
+(optimize (speed 1) (space 1) (debug 3) (safety 3)), which is very
+slow in CCL, but easier to debug.
+
+If LAMSIGHT_PRODUCTION is set to "true" in the environment, then the
+build will be done with :lamsight-production in *features*. This
+enables Twitter updates.
+
+If ENABLE_EMAILS_TO_USERS is set to "true" in the environment, then
+the variable *enable-email-to-users* will be set true after the
+Lamsight code is loaded, but before the server is started. This
+enables periodic emails to users who have requested it.
+
+Both Twitter updates and periodic emails can be toggled on the "Admin"
+page.
+
+Before you can start a lamsight server, you need to configure Elephant
+for your version of the Berkeley Database (BDB). To do this:
+
+  cd ~/lamsight/systems/elephant-1.0
+  cp config.sexp my-config.sexp
+
+Then, unless you're using BDB version 4.5, edit my-config.sexp, and
+change 4.5 for your platform to the version you're using (4.6 or 4.7).
+
+The first time you start the server, you'll have an empty database,
+which will cause many of the pages to be blank. To load an initial
+database, you can do the following on newmed-dev:
+
+  (import-model-file "/usr/local/lamsight/anon-db-export-05-27-09.sexp")
+
+If BDB isn't installed on your machine, you can download source from:
+
+  http://www.oracle.com/technology/software/products/berkeley-db/
+
+Make sure you compile and link for 64 bits, if you're using a 64-bit
+CCL:
+
+  cd /path/to/db-4.x.y/build_unix
+  CFLAGS="-m64" LDFLAGS="-arch x86_64" ../dist/configure
+  make
+  sudo make install
+
+I'm using version 4.5 on OS X. For a new installation, use the latest,
+4.7.

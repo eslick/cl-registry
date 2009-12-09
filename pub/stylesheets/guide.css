@@ -1,0 +1,138 @@
+
+/* GUIDES FOR TOUR */
+
+.doc {
+	background: #f0f0f0;
+	border: 1px solid black;
+	padding: 1em;
+	margin: 1em;
+}
+
+.bigdoc .boxed h2{
+	float:none;
+}
+
+.doc_title {
+	background: #e0e0e0;
+	border: 1px solid black;
+	padding: 1em;
+	margin: 1em;
+}
+
+.doc_desc {
+	background: #e0e0e0;
+	border: 1px solid black;
+	padding: 1em;
+	margin: 1em;
+}
+
+.doc_content {
+	background: #e0e0e0;
+	border: 1px solid black;
+	padding: 1em;
+	margin: 1em;
+}
+
+.doc_xref {
+	background: #e0e0e0;
+	border: 1px solid black;
+	padding: 1em;
+	margin: 1em;
+}
+
+.faq_edit_xref_ul {
+	list-style: none;
+}
+
+.faq_edit_xref_li {
+	float: left;
+	display: block;
+	width: 22em;
+}
+
+.bigdoc .boxed{
+margin: .7em 20px .5em 0;
+}
+
+.bigdoc_crumbs, .bigdoc_next_prev{
+	padding: .3em 1em;
+}
+
+.bigdoc .node {
+	display: none;
+}
+
+.bigdoc_crumbs {
+	background: #eee;
+	border-bottom: 1px solid black;
+}
+
+.bigdoc_crumb {
+	
+}
+
+.bigdoc_prev, .bigdoc_prev {
+	float: left;
+	padding-right:1em;
+}
+
+.bigdoc .contents{
+padding:1em;
+}
+
+.bigdoc ul{
+	list-style-type:disc;
+}
+
+.bigdoc ol {
+	list-style-type: decimal;
+}
+
+.bigdoc ol li {
+	padding-left: 1em;
+}
+
+.bigdoc ol ol li {
+	padding-left: 2em;
+}
+
+.bigdoc ol ol ol li {
+	padding-left: 3em;
+}
+
+.contents li a{
+	padding-bottom:.3em;
+	display:block;
+}
+
+.bigdoc li ul{
+padding-left:1em;
+}
+
+.bigdoc ul ul{
+border-left:1px dotted #aaa;
+}
+
+.bigdoc_toc, .bigdoc_toc ul {
+	list-style: none;
+	padding:.3em 0 1em .5em;
+}
+
+.bigdoc_toc li {
+	padding-left: 1em;
+	font-size:1.3em;
+}
+
+.bigdoc_toc li ul li{
+	font-size: .8em;
+}
+
+.toc{
+	margin-top:2em;
+	width:auto;
+}
+
+.toc_active {
+	background: yellow;
+}
+

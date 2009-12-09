@@ -1,0 +1,10 @@
+/* @import url(/pub/stylesheets/data.css); */
+@import url(/pub/stylesheets/form.css);
+
+.dataform li input, .dataform li textarea, .dataform li select {
+    display: block;
+}
+
+
+
+

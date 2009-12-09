@@ -1,0 +1,269 @@
+
+/*******************/
+/* Category Widget */
+/*******************/
+
+.forums-dispatcher
+{
+/*    width: 700px;  */
+}
+
+/*.forums-dispatcher h2 {
+    margin-left: 20px; 
+    width: 400px;
+    border-bottom: 2px solid black; 
+} */
+
+.category-widget
+{
+    margin-top: 20px;
+}
+
+#create-topic {
+    margin: 20px 0px 0px 20px;
+    width: 400px;
+/*    border-top: 2px solid black; */
+    padding-top: 10px;
+}
+
+.category-widget table
+{
+    line-height: 1.5em;
+    font-size: 14px;
+    border-spacing: 0px 10px;
+    border-collapse: separate;
+}
+
+.category-widget table
+{
+    width: 90%;
+    margin-left: 20px;
+    margin-bottom: 10px; 
+}
+
+.category-widget tr
+{
+    width: 100%; 
+/*    background-color: #E8E8EF; */
+}
+
+.category-widget td {
+    border-bottom: 1px solid #BBB; 
+    padding: 10px;
+}
+
+.category-widget td.topic-name 
+{
+    width: 55%;
+    text-align: left;
+    font-size: 17px;
+/*    float:left;*/
+}
+
+.category-widget td.topic-owner
+{
+    width: 25%;
+    text-align: right;
+/*    float: right; */
+}
+
+.category-widget td.topic-posts
+{
+    width: 20%;
+    text-align: right;
+}
+
+
+/**********************/
+/* Forum Topic Widget */
+/**********************/
+
+div.topic-widget {
+    margin: 0px 0px 10px 10px; 
+}
+
+div.forum-topic-main {
+}
+
+div.forum-topic-right {
+}
+
+div.forum-topic-header
+{
+    margin: 0px 40px 10px 00px;  
+}
+
+div.forum-topic-header h1
+{
+    font-size: 1.5em;
+/*    padding-left: 10px; */
+    font-weight: bold;
+}
+
+div.forum-topic-header .post-user
+{
+    display: inline;
+    font-size: 12px;
+    font-weight: bold; 
+    margin-right: 10px;
+}
+
+.post-datetime /* date */
+{
+    display: inline;
+    font-size: 80%;
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+div.forum-topic-header p
+{
+    float: left;
+    vertical-align: middle;
+    width: 400px;
+    color: #333333;	
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+/*    font-size: small;*/
+}
+
+/*
+div.forum-topic div.rating
+{
+    float: right;
+}
+*/
+
+div.forum-topic div.user-rating
+{
+    display: block;
+}
+
+div.forum-topic div.clear-both 
+{
+    clear: both;
+    display: static;
+    height: 0px;
+}
+
+div.forum-topic .dataform {
+    width: 100%;
+}
+ 
+
+div.forum-topic blockquote
+{
+/*    background-color: #DDDDDD; */
+    padding: 5px 5px 5px 5px;
+    border-color: #DDDDDD; 
+    border-style: dotted;
+}
+
+div.translation-button 
+{
+    clear:both;
+    margin-bottom: 20px;
+}
+
+/* Add post */
+
+div.add-post-widget 
+{
+    padding-bottom: 20px;
+}
+
+form.forum-post 
+{
+/*    width: 90%; */
+    margin-left: 0px;
+}
+
+form.forum-post li.title .slot-name
+{
+    display: block;
+}
+
+
+/* Topic post body */
+
+div.forum-post
+{
+   list-style: none;
+   margin: 0px 0px 30px 5px;
+   width: 600px;
+}
+
+div.forum-post h2 /* diary title */
+{
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgb(200, 200, 200);
+    margin: 0px 0px 0px 0px;
+}
+
+div.forum-post p.post-user /* author */
+{
+    display: inline;
+    font-size: 12px;
+    font-weight: bold; 
+    margin-right: 10px;
+}
+
+.datetime /* date */
+{
+    display: inline;
+    font-size: 80%;
+    font-weight: normal;
+    font-style: italic;
+}
+
+div.forum-post p.post-content
+{
+    float: clear;
+    color: #333333;	
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: small;
+    margin: 15px 0px 15px 0px;
+}
+
+div.forum-post blockquote
+{
+/*    background-color: #DDDDDD; */
+    padding: 5px 5px 5px 5px;
+    border-color: #DDDDDD; 
+    border-style: dotted;
+}
+
+
+
+/*
+ 	<div class="forum_background_forumobject_top"></div>
+      	<div class="forum_background_forumobject_middle">
+      		<div class="forum_list_link_wrapper">
+      			<h2 class="forum_list_subject">
+      				<a href="http://culturedcode.com/things/forums/list.php?3">Using Things</a>
+          		</h2>
+
+          		<p class="forum_list_description">Share your experience.</p>
+          	</div> <!-- link_wrapper -->
+         	
+        	<div class="forum_list_right_stuff">
+        	
+        		
+        		<ul class="forum_list_meta" style="margin-top: 10px;"style="margin-top: 10px;">
+        			<li>
+        			286 Topics
+        			
+        			
+   					</li>
+   					<li>
+
+   					2,140 Posts
+   					
+          			
+         			</li>
+         		</ul>
+        	</div>
+         </div> <!-- forum_background_forumobject_middle -->
+         <div class="forum_background_forumobject_bottom"></div>
+*/

@@ -1,0 +1,23 @@
+
+Setup:
+- apache, mod_lisp, 
+- SBCL
+- Libraries
+
+Configuration:
+- Remote Development
+  - ssh tunnel for SLIME  
+  - slime tramp, etc.
+- Server startup
+  - Fast SBCL core image (hunchentoot, down & other libs)
+  - Launch SBCL server via detachtty or screens
+  - .sbclrc (swank, application startup)
+
+Professional:
+- Security overhaul
+- Backup process
+
+Security:
+- Encrypted BDB?
+- Separate ident and deident data stores?
+- Protecting 4005 on server?
