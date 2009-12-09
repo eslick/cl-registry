@@ -47,6 +47,10 @@
          (mark-dirty admin))
      " [Toggle]")
     (:br)
+    "Analytics" 
+    (:a :onclick "pageTracker._setVar('no_report');" 
+	"Ignore My Browser")
+    (:br)
     (flet ((process-dropdowns (&key error-action log-level &allow-other-keys)
              (setf *error-action*
                    (cond ((equal error-action "HTML") :html)
