@@ -57,13 +57,28 @@
              ;;:coding-system "utf-8-unix"
              :dont-close t)))
 
-(defun start-registry (port)
+(defparameter *default-config* '("ilr-production" "devel"))
+
+(defun start-registry (port &optional config)
   (when (stringp port)
     (setq port (ignore-errors (parse-integer port))))
+  (cond ((null config) (setf config *default-config*))
+        ((stringp config)
+         (let ((split-sequence (find-symbol "SPLIT-SEQUENCE" "SPLIT-SEQUENCE")))
+           (when split-sequence
+             (setf config (funcall split-sequence #\space config))))))
+  (check-type config list)
+  (setf config
+        (mapcar (lambda (path)
+                  (merge-pathnames path "sites/.config" *source-directory*))
+                config))                                           
   (when port
     (let ((start-registry (find-symbol "START-REGISTRY" :registry)))
       (when (fboundp start-registry)
-        (funcall (fdefinition start-registry) :address "localhost" :port port)))))
+        (funcall (fdefinition start-registry)
+                 :address "localhost"
+                 :port port
+                 :config config)))))
 
 (defun is-environment-p (var)
   (member (ccl:getenv var) '("YES" "yes" "true" "TRUE")
@@ -79,7 +94,7 @@
 (unless (is-environment-p "NOLOAD")
   (loadsys :trivial-backtrace)
   (loadsys :registry)
-  (start-registry (ccl:getenv "REGPORT")))
+  (start-registry (ccl:getenv "REGPORT") (ccl:getenv "REGCONFIG")))
 
 
 

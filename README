@@ -1,48 +1,49 @@
-In order to use the lamsight script in this directory to load the
-LAMSIGHT2 system for developement, you need to get its code and
-libraries:
+In order to use the "registry" script in this directory to load the
+International LAM Registry system for developement, you need to get
+its code and libraries:
 
   cd ~/lamsight     # wherever you want the code on your machine
   darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/systems/
-  darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/lamsight2-dev/
+  darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/registry/
 
 To load the LAMSIGHT2 system:
 
-  cd ~/lamsight/lamsight2-dev
-  ./lamsight [port]
+  cd ~/lamsight/registry
+  ./registry [port]
 
 If "port" is included, loads Swank (from ../systems/slime/)
 and starts a server listening on "port" (4005 is the default port for
 m-x slime-connect in Emacs).
 
 If NOLOAD is set to "true" in the environment, does not load the
-lamsight2 or library code, only lamsight-loader.lisp:
+registry or library code, only registry-loader.lisp:
 
-  NOLOAD=true ./lamsight [port]
+  NOLOAD=true ./registry [port]
 
-In this case, the Slime package will be LAMSIGHT-LOADER, and you can
-load lamsight with:
+In this case, the Slime package will be REGISTRY-LOADER, and you can
+load the registry code with:
 
-  (loadsys :lamsight2)
+  (loadsys :registry)
 
-Otherwise, the Slime package will be LAMSIGHT2.
+Otherwise, the Slime package will be REGISTRY.
 
-If LAMPORT is an integer, will start up a debugging server on that
-port. For example, the following will load the LAMSIGHT2, start a
-lamsight server on port 8080, and start a Slime server on port 4005:
+If REGPORT is an integer, will start up a debugging server on that
+port. For example, the following will load the registry code, start a
+server on port 8080, and start a Slime server on port 4005:
 
-  LAMPORT=8080 ./lamsight 4005
+  REGPORT=8080 ./registry 4005
 
 Alternatively, you can start the server from the REPL with:
 
-  (lamsight-loader:start-lamsight 8080)
+  (registry-loader:start-registry 8080)
 
 or:
 
-  (start-lamsight2 :debug <debug>
-                   :log-level <log-level>
-                   :address "localhost"
-                   :port 8080)
+  (start-registry :debug <debug>
+                  :log-level <log-level>
+                  :address "localhost"
+                  :port 8080
+                  :config <config>)
 
 <debug> is NIL to log web site errors, :HTML to display error
 information in the browser, or anything else to break into the
@@ -50,7 +51,7 @@ debugger. Default: NIL. You can set *ERROR-ACTION* to change it.
 
 <log-level> is :ERROR, :WARNING, :INFO, or :DEBUG. If :ERROR, then
 only errors will be logged to the log file
-(<lamsight-dir>/logs/lamsight2.log). If :WARNING, then both errors and
+(<registry-dir>/logs/registry.log). If :WARNING, then both errors and
 warnings will be logged. If :INFO or :DEBUG, then both errors and
 warnings will be logged, plus explicit calls to LOG-MESSAGE with a
 LEVEL of :INFO, if <log-level> is :INFO, or of :INFO or :DEBUG, if
@@ -58,24 +59,35 @@ LEVEL of :INFO, if <log-level> is :INFO, or of :INFO or :DEBUG, if
 <debug> is NIL, or :DEBUG otherwise. You can use SET-LOG-LEVEL to
 change it.
 
-If LAMDEV is set to "true" in the environment, then the build will be
-done with :lamsight-development in *features*. This builds with
-(optimize (speed 1) (space 1) (debug 3) (safety 3)), which is very
+<config> is a list of paths to configuration files, which are usually
+stored in the "sites" directory. If it is a string, it will be split
+on spaces to make a list of strings. Then each element will be merged
+with "sites/.config" and the directory of "registry-loader.lisp" to
+get a full (possibly relative) pathname. The default is
+("ilr-production" "devel").
+
+If REGCONFIG is set in the environment, it will be passed by
+REGISTRY-LOADER:START-REGISTRY to REGISTRY:START-REGISTRY as the value
+for the CONFIG parameter.
+
+If REGDEV is set to "true" in the environment, then the build will be
+done with :REGISTRY-DEVELOPMENT in *FEATURES*. This builds with
+(OPTIMIZE (SPEED 1) (SPACE 1) (DEBUG 3) (SAFETY 3)), which is very
 slow in CCL, but easier to debug.
 
-If LAMSIGHT_PRODUCTION is set to "true" in the environment, then the
-build will be done with :lamsight-production in *features*. This
+If REGISTRY_PRODUCTION is set to "true" in the environment, then the
+build will be done with :REGISTRY-PRODUCTION in *FEATURES*. This
 enables Twitter updates.
 
 If ENABLE_EMAILS_TO_USERS is set to "true" in the environment, then
 the variable *enable-email-to-users* will be set true after the
-Lamsight code is loaded, but before the server is started. This
+registry code is loaded, but before the server is started. This
 enables periodic emails to users who have requested it.
 
 Both Twitter updates and periodic emails can be toggled on the "Admin"
 page.
 
-Before you can start a lamsight server, you need to configure Elephant
+Before you can start a registry server, you need to configure Elephant
 for your version of the Berkeley Database (BDB). To do this:
 
   cd ~/lamsight/systems/elephant-1.0
