@@ -124,8 +124,10 @@
 		    :serial t)
 		   (:module data-model
 		    :components
-		    ((:file "survey-question")
-		     (:file "survey-group")
+		    ((:file "question")
+		     (:file "answer")
+		     (:file "group-rules")
+		     (:file "group")
 		     (:file "survey"))
 		    :depends-on (core)
 		    :serial t)

@@ -71,7 +71,9 @@
 					       #'change-language-handler
 					       :use-ajax-p nil
 					       :selected-value (session-language)))
-			 (:li  (:a :href (help-mailto-string) (str #!"Help")) 
+			 (:li  (:a :href (help-mailto-string) 
+				   :onclick "_gaq.push(['_trackEvent','help','header']);"
+				   (str #!"Help"))
 			       (str "&nbsp;|&nbsp;"))
 			 (:li (render-registration-header))
 			 (:li (render-login-header))))

@@ -643,7 +643,7 @@
                                              'survey-properties-data-view
                                              :type data :caption "")
   (sticky :present-as predicate)
-  (origin :present-as (text :format-string "~/LAMSIGHT2:FORMAT-SURVEY-ORIGIN/")))
+  (origin :present-as (text :format-string "~/REGISTRY:FORMAT-SURVEY-ORIGIN/")))
 
 (defview survey-properties-form-view (:type form :persistp nil :caption "")
   (name :present-as (textarea :cols 80 :rows 1))

@@ -43,51 +43,21 @@
 (defmethod print-object ((user user) stream)
   (format stream "#<USER (~A) '~A'>" (object-id user) (username user)))
 
+(defun get-user (username)
+  "Convenience function to lookup a user instance regardless of what it
+   is: string = username, user object = identity, by ID"
+  (cond ((subtypep (type-of username) 'user)
+	 username)
+	((numberp username)
+	 (get-model 'user username))
+	(t (get-instance-by-value 'user 'username username))))
+
 (defun drop-user (user)
   "How to handle user 'unregistration'"
   ;; FIXME(kcarnold): drop the ratings too, and update all the rated objects.
   (drop-instances (get-instances-by-value 'answer 'user user))
   (drop-instance user))
 
-(defmethod user-locale :around ((user user))
-  "Infer the users locale from either the locale slot or their
-language and country preferences."
-  (let ((locale (call-next-method)))
-    (if locale
-        (cl-l10n:locale locale)
-        (let ((language (or (get-preference :default-language user)
-                            (session-language)))
-              (country (get-preference :residence-country user)))
-          (flet ((set-locale (locale-name)
-                   (handler-case 
-                       (progn
-                         (if (cl-l10n:locale locale-name)
-                             (setf (slot-value user 'locale) locale-name)
-                             (setf (slot-value user 'locale) "en_US"))
-                         (cl-l10n:locale (slot-value user 'locale)))
-                     (error () 
-                       (setf (slot-value user 'locale) "en_US")
-                       (cl-l10n:locale "en_US")))))
-            (cond
-              ((and language country)
-               (set-locale (format nil "~A_~A"
-                                   (string-downcase language)
-                                   (string-upcase country))))
-              (language
-               (set-locale (string-downcase language)))
-              (country
-               ;; FIXME: this is so wrong
-               (macrolet ((locale-country-case (&rest clauses)
-                            `(cond ,@(mapcar (lambda (clause)
-                                               `((string-equal country ,(first clause))
-                                                 (set-locale ,(second clause))))
-                                             clauses))))
-                 (locale-country-case
-                  ("US" "en_US")
-                  ("DE" "de_DE")
-                  ("IT" "it_IT")
-                  ("FR" "fr_FR"))))
-              (t (set-locale "en_US"))))))))
 
 ;;
 ;; Administrative interface to user objects
@@ -154,3 +124,42 @@ language and country preferences."
 		 :last-name (or last "")
 		 :email (or email "")))
 
+(defmethod user-locale :around ((user user))
+  "Infer the users locale from either the locale slot or their
+language and country preferences."
+  (let ((locale (call-next-method)))
+    (if locale
+        (cl-l10n:locale locale)
+        (let ((language (or (get-preference :default-language user)
+                            (session-language)))
+              (country (get-preference :residence-country user)))
+          (flet ((set-locale (locale-name)
+                   (handler-case 
+                       (progn
+                         (if (cl-l10n:locale locale-name)
+                             (setf (slot-value user 'locale) locale-name)
+                             (setf (slot-value user 'locale) "en_US"))
+                         (cl-l10n:locale (slot-value user 'locale)))
+                     (error () 
+                       (setf (slot-value user 'locale) "en_US")
+                       (cl-l10n:locale "en_US")))))
+            (cond
+              ((and language country)
+               (set-locale (format nil "~A_~A"
+                                   (string-downcase language)
+                                   (string-upcase country))))
+              (language
+               (set-locale (string-downcase language)))
+              (country
+               ;; FIXME: this is so wrong
+               (macrolet ((locale-country-case (&rest clauses)
+                            `(cond ,@(mapcar (lambda (clause)
+                                               `((string-equal country ,(first clause))
+                                                 (set-locale ,(second clause))))
+                                             clauses))))
+                 (locale-country-case
+                  ("US" "en_US")
+                  ("DE" "de_DE")
+                  ("IT" "it_IT")
+                  ("FR" "fr_FR"))))
+              (t (set-locale "en_US"))))))))

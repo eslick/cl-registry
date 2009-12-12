@@ -3,17 +3,17 @@
 (registry-proclamations)
 
 ;;
-;; Helper function for doing reloads on ajax requests
+;; Various helpful utilities
 ;;
 
-#+fixme
-(defun run-reload-script ()
-  (declare (special weblocks::*on-ajax-complete-scripts*))
-  (push (weblocks::json-function
-	 (js:ps ((slot-value location 'reload) true)))
-	weblocks::*on-ajax-complete-scripts*))
+(defun get-object (id)
+  (elephant::controller-recreate-instance *store-controller* id))
 
-
+(defmacro assert-body-type (type &body body)
+  (with-gensyms (value)
+    `(let ((,value (progn ,@body)))
+       (assert (eq (type-of ,value) ,type))
+       ,value)))
 
 ;;
 ;; Find a natural split point for NL text content
@@ -60,6 +60,36 @@
 	   (when (not (eq (char string i) #\Newline))
 	     (return (1- i))))
       offset))
+
+
+;;
+;; Little list utilities (used in group.lisp)
+;;
+
+(defun nsplice-list-after (list inserted element &key (test 'equal))
+  (aif (member element list :test test)
+       (progn (rplacd it (append inserted (rest it)))
+	      list)
+       (append inserted list)))
+
+(defun move-list-element (list element insert-after &key (test 'equal))
+  (assert (not (some #'null list)))
+  (let ((position (if (null insert-after) 0
+		      (position insert-after list :test test))))
+    (assert (numberp position))
+    (ninsert (remove element list) element position)))
+
+(defun list-prev (ref list &aux last-one)
+  "Return the element before elt in list"
+  (loop for elt in list do
+       (if (equal elt ref)
+	   (return last-one)
+	   (setf last-one elt))))
+
+(defun list-next (ref list)
+  "Return the element after elt in list"
+  (awhen (cdr (member ref list))
+    (car it)))
 
 ;;
 ;; Shadow with html to allow *dev
