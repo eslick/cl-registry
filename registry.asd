@@ -126,8 +126,8 @@
 		    :components
 		    ((:file "question")
 		     (:file "answer")
-		     (:file "group-rules")
 		     (:file "group")
+		     (:file "group-rules")
 		     (:file "survey"))
 		    :depends-on (core)
 		    :serial t)
