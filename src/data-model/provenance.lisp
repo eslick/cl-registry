@@ -31,7 +31,8 @@
             (setf *provenance-btree*
                   (or
                    (get-from-root '*provenance-btree*)
-                   (add-to-root '*provenance-btree* (make-btree))))))))
+                   (with-transaction ()
+                     (add-to-root '*provenance-btree* (make-btree)))))))))
 
 (defparameter *provenance-history-length*
   nil
@@ -47,28 +48,29 @@
   (when (and history-length (not (eq history-length t)))
     (check-type history-length (integer 0)))
   (with-provenance-lock
-    (let ((provenance (get-value model (provenance-btree))))
-      (cond ((and provenance
-                  (eq user (provenance-user provenance))
-                  (eq center (provenance-center provenance))
-                  (<= (abs (- time (provenance-time provenance)))
-                      *provenance-time-delta*))
-             provenance)
-            (t (let ((history (unless (eq t history-length)
-                                (get-provenance-history model))))
-                 (prog1
-                     ;; Cons up the new instance before dropping old ones
-                     ;; to avoid modifying the provenance-btree more than once.
-                     (let ((provenance (make-instance 'provenance
-                                                      :model model
-                                                      :user user
-                                                      :center center
-                                                      :time time)))
-                       (setf (get-value model (provenance-btree)) provenance))
-                   (when history
-                     (dolist (provenance (nthcdr (max 0 (1- (or history-length 0)))
-                                                 history))
-                       (drop-instance provenance))))))))))
+    (with-transaction ()
+      (let ((provenance (get-value model (provenance-btree))))
+        (cond ((and provenance
+                    (eq user (provenance-user provenance))
+                    (eq center (provenance-center provenance))
+                    (<= (abs (- time (provenance-time provenance)))
+                        *provenance-time-delta*))
+               provenance)
+              (t (let ((history (unless (eq t history-length)
+                                  (get-provenance-history model))))
+                   (prog1
+                       ;; Cons up the new instance before dropping old ones
+                       ;; to avoid modifying the provenance-btree more than once.
+                       (let ((provenance (make-instance 'provenance
+                                                        :model model
+                                                        :user user
+                                                        :center center
+                                                        :time time)))
+                         (setf (get-value model (provenance-btree)) provenance))
+                     (when history
+                       (dolist (provenance (nthcdr (max 0 (1- (or history-length 0)))
+                                                   history))
+                         (drop-instance provenance)))))))))))
                        
 (defun get-provenance (model)
   (get-value model (provenance-btree)))
