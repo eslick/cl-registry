@@ -58,19 +58,25 @@
                provenance)
               (t (let ((history (unless (eq t history-length)
                                   (get-provenance-history model))))
-                   (prog1
-                       ;; Cons up the new instance before dropping old ones
-                       ;; to avoid modifying the provenance-btree more than once.
-                       (let ((provenance (make-instance 'provenance
-                                                        :model model
-                                                        :user user
-                                                        :center center
-                                                        :time time)))
-                         (setf (get-value model (provenance-btree)) provenance))
-                     (when history
-                       (dolist (provenance (nthcdr (max 0 (1- (or history-length 0)))
-                                                   history))
-                         (drop-instance provenance)))))))))))
+                   (cond ((and history (>= (length history) history-length))
+                          (setf history
+                                (nthcdr (max 0 (1- (or history-length 0))) history))
+                          (let ((prov (car history)))
+                            (dolist (p (cdr history)) (drop-instance p))
+                            (setf (provenance-user prov) user
+                                  (provenance-center prov) center
+                                  (provenance-time prov) time)
+                            (unless (eq prov provenance)
+                              (setf (get-value model (provenance-btree)) prov))
+                            prov))
+                         (t
+                          (let ((prov (make-instance 'provenance
+                                                     :model model
+                                                     :user user
+                                                     :center center
+                                                     :time time)))
+                            (setf (get-value model (provenance-btree)) prov)))))))))))
+
                        
 (defun get-provenance (model)
   (get-value model (provenance-btree)))
