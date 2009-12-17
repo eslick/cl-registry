@@ -127,6 +127,7 @@
 		    ((:file "question")
 		     (:file "answer")
 		     (:file "group")
+		     (:file "group-rules")
 		     (:file "survey")
                      (:file "provenance"))
 		    :depends-on (core)
