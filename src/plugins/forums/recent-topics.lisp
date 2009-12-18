@@ -4,6 +4,10 @@
 ;; Simple recent activity widget
 ;;
 
+(define-plugin recent-topics-widget ()
+  "Adds a recent forum topics widget"
+  :create 'make-recent-topics-widget)
+
 (defwidget recent-topics-widget ()
   ())
 

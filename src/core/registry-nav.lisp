@@ -94,7 +94,7 @@
 	(args (rest config)))
     (assert (subtypep (type-of app) 'site-app))
     (awhen (getf args :permissions)
-      (print it)
+      ;;(print it)
       (unless (some (lambda (p) 
 		      (has-permission-p (current-user) p t))
 		    it)

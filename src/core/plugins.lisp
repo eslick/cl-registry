@@ -59,6 +59,14 @@
    signal an error if it doesn't exist"
   (safe-apply (plugin-create plugin) args))
 
+(defmethod instantiate-plugins (plugin-specs)
+  "Make a list of objects specified by a plugins arg in a config file.
+PLUGIN-SPECS is a list of PLUGIN-NAME or (PLUGIN-NAME . args)"
+  (loop
+     for spec in plugin-specs
+     for list = (mklist spec)
+     collect (create-plugin-object (find-plugin (car list)) (cdr list))))
+
 ;; =============================
 ;; Quick definition macros
 ;; =============================
@@ -76,8 +84,8 @@
   (with-gensyms (keyname)
     (when (stringp (first args))
       (setf args (rest args)))
-    (let ((class (or (if (consp type) (first type) type) 'plugin)))
-      `(eval-when (:load-toplevel)
-	 (let ((,keyname (as-keyword ',name)))
-	   (register-plugin ,keyname (make-instance ',class :name ,keyname ,@args)))))))
-				       
+    (let ((class (or (if (consp type) (first type) type) 'registry-plugin)))
+      `(progn
+         #+ccl (ccl:record-source-file ',name 'plugin)
+         (let ((,keyname (as-keyword ',name)))
+           (register-plugin ,keyname (make-instance ',class :name ,keyname ,@args)))))))

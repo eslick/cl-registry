@@ -4,6 +4,9 @@
 ;; User controls
 ;;
 
+(define-plugin user-controls ()
+  :create 'make-user-controls)
+
 (defun make-user-controls ()
   (make-instance 'user-controls))
 

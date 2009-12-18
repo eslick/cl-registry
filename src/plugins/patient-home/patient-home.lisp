@@ -46,7 +46,6 @@
   '(5858 5854 5856 6074 6076 6123))
 
 (defun make-patient-home-page (&key plugins &allow-other-keys)
-  (declare (ignore plugins))
   (let ((home (make-instance 'patient-home 
 	       :widgets
 	       `(,(make-instance 'composite
@@ -54,14 +53,9 @@
 				 (list (make-widget 'no-javascript)
 				       (make-article-widget "dashboard-home"
 							    :sidebar-p t)))
-		  ,(make-user-controls)
-		  ,(make-user-map-widget)
-		  ,(make-recent-topics-widget)
+                  ,@(instantiate-plugins plugins)
 ;;		  ,(make-featured-survey-widget
 ;;		    (mapcar #'get-question *featured-survey-question-ids*))
-		  ,(make-instance 'blog-widget
-				  :entries-per-page 1
-				  :title "Breaking News")
 		  ))))
     (mapcar (lambda (widget)
 	      (setf (widget-parent widget) home))
@@ -69,6 +63,9 @@
     (setf (home-page-map home) (third (composite-widgets home)))
     home))
 			 
+(define-plugin user-map-widget ()
+  :create 'make-user-map-widget)
+
 (defun make-user-map-widget ()
   (make-instance 'user-map-widget
 		 :dataset (generate-user-map-dataset (mappable-users))))

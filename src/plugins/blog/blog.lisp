@@ -2,6 +2,9 @@
 
 (registry-proclamations)
 
+(define-plugin blog-widget ()
+  :create 'make-blog-widget)
+
 (defwidget blog-widget (widget)
   ((flash :accessor blog-widget-flash :initarg :flash
 	  :initform (make-instance 'flash))

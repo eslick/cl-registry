@@ -37,7 +37,6 @@
 		(str "&nbsp;")))))
 
 (defun make-clinician-home-page (&key plugins &allow-other-keys)
-  (declare (ignore plugins))
   (let ((home (make-instance 'clinician-home 
 	       :widgets
 	       `(,(make-instance 'composite
@@ -45,7 +44,7 @@
 				 (list (make-widget 'no-javascript)
 				       (make-article-widget "clinician-home"
 							    :sidebar-p t)))
-		  ,(make-recent-topics-widget)))))
+		  ,@(instantiate-plugins plugins)))))
     (mapcar (lambda (widget)
 	      (setf (widget-parent widget) home))
 	    (composite-widgets home))
