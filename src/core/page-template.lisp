@@ -12,7 +12,6 @@
 ;;   - Render the page footer (after main page renders)
 ;;
 
-
 ;; ===================================
 ;; Render the title 
 ;; ===================================
@@ -109,7 +108,11 @@
 ;; ==============================
 
 (defun render-header-menu ()
-  (let* ((nav (get-registry-nav))
+  (let* ((nav
+	  (cond
+	    ((get-registry-nav))
+	    ((and (make-registry-navigation) ;2nd chance if flow got lost!!
+		  (get-registry-nav)))))
 	 (tabs (cars (static-selector-panes nav)))
 	 (selected (static-selector-current-pane nav)))
     (with-html
