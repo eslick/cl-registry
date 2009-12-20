@@ -8,7 +8,7 @@
 ;;
 
 (define-plugin clinician-home (site-app)
-  "Defines a patient home and accepts a list of plugins to put into the side bar"
+  "Defines a clinician home page and accepts a list of plugins to put into the side bar"
   :tab-name 'home
   :create 'make-clinician-home-page)
 
@@ -43,7 +43,8 @@
 				 :widgets
 				 (list (make-widget 'no-javascript)
 				       (make-article-widget "clinician-home"
-							    :sidebar-p t)))
+							    :sidebar-p t)
+				       (make-patient-editor-widget)))
 		  ,@(instantiate-plugins plugins)))))
     (mapcar (lambda (widget)
 	      (setf (widget-parent widget) home))

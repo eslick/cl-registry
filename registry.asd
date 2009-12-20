@@ -99,6 +99,7 @@
 			      :components
 			      ((:file "address")
 			       (:file "user")
+			       (:file "patient")
 			       (:file "preferences")
 			       (:file "article")
 			       (:file "registration"))
@@ -207,7 +208,8 @@
 			      :serial t)
 		     (:module clinician-home
 			      :components
-			      ((:file "clinician-home")))
+			      ((:file "patient-editor")
+			       (:file "clinician-home" :depends-on ("patient-editor"))))
 		     )
 		    :depends-on (core data-model)))
 		 :depends-on ("package" conf)

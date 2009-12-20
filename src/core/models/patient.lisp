@@ -2,6 +2,13 @@
 
 (registry-proclamations)
 
+(defvar *user-center-alist*
+  '((kmcorbett . "Clozure")
+    (wws . "Clozure")
+    (eslick . "MIT")
+    (mnurok . "BWH")
+    (jryu . "Mayo")))
+
 (defmodel center ()
   ((short-name :accessor short-name
                :initarg :short-name
@@ -26,20 +33,35 @@
         ((not nil-if-none)
          (error "There is no center with a short-name of ~s" short-name))))
 
+(defun maybe-current-username ()
+  (let ((current-user (ignore-errors (current-user))))
+    (and current-user (username current-user))))
+
+(defun get-center-from-username (&optional (username (maybe-current-username)))
+  (or (cdr (assoc username *user-center-alist* :test #'string-equal)) "UNKNOWN"))
+
+(defun generate-patient-id (&key center sequence)
+  (unless center
+    (setq center (get-center-from-username (maybe-current-username))))
+  (unless sequence
+    (setq sequence (symbol-name (gensym))))
+  ;; Returns
+  (format nil "~A-~A" center sequence))
+
 (defmodel patient ()
   ((id :accessor id
        :initarg :id
        :index t
-       :initform (error "Patient ID is required")
+       :initform (generate-patient-id)
        :documentation "A unique patient ID")
    (center :accessor center
            :initarg :center
-           :initform nil
+           :initform (get-center-from-username)
            :index t
            :documentation "The CENTER for this patient")
    (user :accessor user
          :initarg :user
-         :initform nil
+         :initform (maybe-current-username)
          :index t
          :documentation "If this patient is a user, the USER instance")))
 
@@ -85,3 +107,12 @@
     (map-inverted-index #'map-fn 'patient 'center
                         :value (get-center center)
                       :collect nil)))
+
+(defview patient-table-view (:type table
+                             :inherit-from '(:scaffold patient))
+  )
+
+(defview patient-form-view (:type form :inherit-from '(:scaffold patient))
+  (center :hidep t)                     ;get this from the logged-in user
+  (user :hidep t)
+  )
