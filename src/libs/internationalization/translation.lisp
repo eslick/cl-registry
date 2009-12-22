@@ -11,8 +11,11 @@
    (language :accessor translation-language :initarg :language)
    (trustedp :accessor translation-trustedp :initarg :trustedp :initform nil)
    (editedp :accessor translation-editedp :initarg :editedp :initform nil)
-   (translation-alist :accessor translation-alist :initarg :translations :initform nil))
-  (:documentation "Provides a list of field translations"))
+   (translation-alist :accessor translation-alist :initarg :translations 
+		      :initform nil :cached t))
+  (:documentation "Provides a list of field translations")
+  (:default-initargs (:checked-out t))
+  (:cache-style :checkout))
 
 (defview translation-table-view (:type table :inherit-from '(:scaffold translation))
   (translation-alist :hidep t))

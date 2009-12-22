@@ -429,8 +429,10 @@
 	 (cell (assoc field alist)))
     (cond (cell (setf (cdr cell) value))
           (value (push (cons field value) alist)))
-    (setf (translation-alist translation)
-	  alist)))
+    (prog1 (setf (translation-alist translation)
+		 alist)
+      (ele::maybe-persistent-sync translation))))
+
 
 (defsetf post-translation-text set-post-translation-text)
 

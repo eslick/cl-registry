@@ -75,6 +75,7 @@
                    ;; transaction may abort, so clear the cache
                    (translation-cache model) nil)
              (persist-object *default-store* translation)))
+    (ele::maybe-persistent-sync translation)
     translation))
 
 (defun translation-field (translation field &optional (use-original t))

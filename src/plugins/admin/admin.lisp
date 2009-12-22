@@ -53,6 +53,10 @@
         (unless (gethash key *registered-models*)
 	  (register-model (find-class key)))))
 
+(defun rebuild-admin-models ()
+  (clrhash *registered-models*)
+  (refresh-admin-models))
+
 (define-system-event-hook refresh-admin-models (start-app)
   refresh-admin-models)
 

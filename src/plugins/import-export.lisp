@@ -243,15 +243,19 @@
                (t (setf (slot-value instance slotname) (import-value value))))))
     (loop
        for (lang . alist) in translations
-       do (make-instance 'translation
-                         :language lang
-                         :original instance
-                         :translations alist)))
+       do (let ((tran (make-instance 'translation
+				     :language lang
+				     :original instance
+				     :translations alist)))
+	    (ele::maybe-persistent-sync tran))))
   (initialize-imported-instance instance)
   instance)
 
 (defmethod initialize-imported-instance ((instance t))
   nil)
+
+(defmethod initialize-imported-instance ((instance article))
+  (ele::maybe-persistent-sync instance))
 
 (defmethod initialize-imported-instance ((instance user))
   (handler-case

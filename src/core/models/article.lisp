@@ -5,7 +5,8 @@
 (defmodel article (user-translation-mixin)
   ((title :initform ""
 	  :accessor article-title
-	  :initarg :title)
+	  :initarg :title
+	  :cached t)
    (owner :initform (current-user t)
 	  :accessor article-owner
 	  :initarg :owner
@@ -20,11 +21,14 @@
 	  :index t)
    (content :initform ""
 	    :accessor article-content
-	    :initarg :content)
+	    :initarg :content
+	    :cached t)
    (content-type :accessor article-content-type
                  :initarg :content-type
                  :initform nil))
-  (:documentation "A model of a markdown-enabled article for managing page content"))
+  (:documentation "A model of a markdown-enabled article for managing page content")
+  (:default-initargs :checked-out t)
+  (:cache-style :checkout))
 
 (defmethod translated-title ((article article))
   (slot-value-translation article 'title))
