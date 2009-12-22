@@ -208,7 +208,8 @@
 			      :serial t)
 		     (:module clinician-home
 			      :components
-			      ((:file "patient-editor")
+			      ((:file "choose-center")
+                               (:file "patient-editor")
 			       (:file "clinician-home" :depends-on ("patient-editor"))))
 		     )
 		    :depends-on (core data-model)))

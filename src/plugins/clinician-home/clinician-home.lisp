@@ -44,6 +44,7 @@
 				 (list (make-widget 'no-javascript)
 				       (make-article-widget "clinician-home"
 							    :sidebar-p t)
+                                       (make-choose-center-widget)
 				       (make-patient-editor-widget)))
 		  ,@(instantiate-plugins plugins)))))
     (mapcar (lambda (widget)

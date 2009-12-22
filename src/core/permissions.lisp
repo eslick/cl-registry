@@ -111,6 +111,12 @@
 (def-permission editor
     "A validated editor of site content")
 
+(def-permission center-admin
+    "An administrator of a center. Can add new clinicians to the center.")
+
+(def-permission article-translator
+    "Users that have been allowed to edit content in order to add article translations")
+
 (defun content-editors ()
   (select-if (lambda (user)
 	       (has-permission-p user :editor t))
