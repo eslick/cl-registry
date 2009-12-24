@@ -2,13 +2,6 @@
 
 (registry-proclamations)
 
-(defvar *user-center-alist*
-  '((kmcorbett . "Clozure")
-    (wws . "Clozure")
-    (eslick . "MIT")
-    (mnurok . "BWH")
-    (jryu . "Mayo")))
-
 (defmodel center ()
   ((short-name :accessor short-name
                :initarg :short-name
@@ -16,7 +9,9 @@
                :index t)
    (name :accessor center-name
          :initarg :name
-         :initform (error "Center name is required"))))
+         :initform (error "Center name is required"))
+   (patient-counter :accessor patient-counter
+                    :initform 0)))
 
 (defmethod print-object ((center center) stream)
   (format stream "#<CENTER (~A) '~A'>"
@@ -40,6 +35,13 @@
 
 (defun all-centers ()
   (map-class #'identity 'center :collect t))
+
+(defvar *center-counter-lock* (elephant-utils:ele-make-lock))
+
+(defun next-patient-counter (center)
+  (check-type center center)
+  (elephant-utils:ele-with-lock (*center-counter-lock*)
+    (incf (patient-counter center))))
 
 (defmodel clinician ()
   ((user :accessor user
@@ -111,16 +113,14 @@
 (defun (setf current-patient) (patient)
   (setf (webapp-session-value 'current-patient) (get-patient patient)))
 
-(defun get-center-from-username (&optional (username (maybe-current-username)))
-  (or (cdr (assoc username *user-center-alist* :test #'string-equal)) "UNKNOWN"))
-
 (defun generate-patient-id (&key center sequence)
   (unless center
-    (setq center (get-center-from-username (maybe-current-username))))
+    (setq center (current-center)))
+  (check-type center center)
   (unless sequence
-    (setq sequence (symbol-name (gensym))))
+    (setq sequence (next-patient-counter center)))
   ;; Returns
-  (format nil "~A-~A" center sequence))
+  (format nil "~A-~3,'0d" (short-name center) sequence))
 
 ;;
 ;; Patients
@@ -134,12 +134,12 @@
        :documentation "A unique patient ID")
    (center :accessor center
            :initarg :center
-           :initform (get-center-from-username)
+           :initform (current-center)
            :index t
            :documentation "The CENTER for this patient")
    (user :accessor user
          :initarg :user
-         :initform (maybe-current-username)
+         :initform nil
          :index t
          :documentation "If this patient is a user, the USER instance")))
 
@@ -190,11 +190,21 @@
                         :value (get-center center)
                         :collect nil)))
 
+(defun patient-center-short-name (patient)
+  (awhen (center patient)
+    (short-name it)))
+
+(defun patient-username (patient)
+  (awhen (user patient)
+    (username it)))
+
 (defview patient-table-view (:type table
                              :inherit-from '(:scaffold patient))
+  (center :reader 'patient-center-short-name)
+  (user :reader 'patient-username)
   )
 
 (defview patient-form-view (:type form :inherit-from '(:scaffold patient))
-  (center :hidep t)                     ;get this from the logged-in user
-  (user :hidep t)
+  (center :hidep t)                  ;use (current-center)
+  (user :hidep t)                    ;get this from the logged-in user
   )

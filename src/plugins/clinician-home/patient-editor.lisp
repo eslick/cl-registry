@@ -5,17 +5,48 @@
 (registry-proclamations)
 
 (defwidget patient-editor (composite)
-  ((obj :accessor patient-editor-obj :initarg :patient :initform nil)))
-
+  ())
+ 
 (defmethod render-widget-body ((widget patient-editor) &rest args)
   (declare (ignore args))
   (with-html
-    (:h2 "Add / Edit Patient")
-    (:p "Current patient ID: "
-        (str (format nil "~:[not set~;~:*~A~]"
-                     (let ((obj (patient-editor-obj widget)))
-                       (if obj (id obj))))))
+    (:h2 "Add / Delete Patient")
     (:hr)))
+
+(defun string-or-nil-lessp (x y)
+  (cond ((null x) (not (null y)))
+        ((null y) nil)
+        (t (string-lessp x y))))
+
+(defun string-or-nil-greaterp (x y)
+  (cond ((null x) (not (null y)))
+        ((null y) t)
+        (t (string-greaterp x y))))
+
+(defun patient-editor-query (widget sort range &key countp)
+  (declare (ignore widget))
+  (let* ((center (current-center))
+         (res (and center (get-patients-for-center center))))
+    (cond (countp (length res))
+          (t (destructuring-bind (col . dir) (or sort '(nil . nil))
+               (unless (eq col 'id)
+                 (setf res (sort res (if (eq dir :asc)
+                                         #'string-lessp
+                                         #'string-greaterp)
+                                 :key #'id)))
+               (when sort
+                 (destructuring-bind (col . dir) sort
+                   (setf res (sort res
+                                   (if (eq dir :asc)
+                                       #'string-or-nil-lessp
+                                       #'string-or-nil-greaterp)
+                                   :key (cond ((eq col 'user) #'patient-username)
+                                              ((eq col 'center)
+                                               #'patient-center-short-name)
+                                              (t #'id)))))))
+             (when range
+               (setf res (subseq res (car range) (cdr range)))))
+          res)))
 
 (defun make-patient-editor-widget ()
   (let ((edw (make-instance 'patient-editor))
@@ -23,7 +54,8 @@
                              :name 'patient-grid
                              :data-class 'patient
                              :view 'patient-table-view
-                             :item-form-view 'patient-form-view)))
+                             :item-form-view 'patient-form-view
+                             :on-query 'patient-editor-query)))
     (setf (composite-widgets edw) (list gred))
     ;; Returns
     edw))

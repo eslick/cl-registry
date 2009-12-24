@@ -5,7 +5,7 @@
 (registry-proclamations)
 
 (defwidget choose-center ()
-  ((obj :accessor patient-editor-obj :initarg :patient :initform nil)))
+  ())
 
 (defmethod render-widget-body ((widget choose-center) &rest args)
   (declare (ignore args))
@@ -39,8 +39,7 @@
                                     :selected-value (short-name center)
                                     :autosubmitp t)
                    " "
-                   (str (center-name center))))))
-      (htm (:hr)))
+                   (str (center-name center)))))))
     (when invalidate (mark-dirty (widget-parent widget)))))
 
 (defun make-choose-center-widget ()

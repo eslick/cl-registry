@@ -209,6 +209,7 @@
 		     (:module clinician-home
 			      :components
 			      ((:file "choose-center")
+                               (:file "choose-patient")
                                (:file "patient-editor")
 			       (:file "clinician-home" :depends-on ("patient-editor"))))
 		     )
