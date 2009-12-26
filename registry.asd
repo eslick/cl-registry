@@ -211,7 +211,12 @@
 			      ((:file "choose-center")
                                (:file "choose-patient")
                                (:file "patient-editor")
-			       (:file "clinician-home" :depends-on ("patient-editor"))))
+                               (:file "center-editor")
+			       (:file "clinician-home"
+                                      :depends-on ("choose-center"
+                                                   "choose-patient"
+                                                   "patient-editor"
+                                                   "center-editor"))))
 		     )
 		    :depends-on (core data-model)))
 		 :depends-on ("package" conf)

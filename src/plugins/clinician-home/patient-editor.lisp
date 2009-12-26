@@ -5,13 +5,23 @@
 (registry-proclamations)
 
 (defwidget patient-editor (composite)
-  ())
+  ((visible-p :accessor visible-p :initform nil)))
  
 (defmethod render-widget-body ((widget patient-editor) &rest args)
   (declare (ignore args))
-  (with-html
-    (:h2 "Add / Delete Patient")
-    (:hr)))
+  (let* ((user (current-user t))
+         (center (current-center))
+         (clinician (and user center
+                         (or (has-permission-p user :admin)
+                             (get-clinician user center)))))
+    (when (setf (visible-p widget) (not (null clinician)))
+      (with-html
+        (:h2 "Add / Delete Patient")
+        (:hr)))))
+
+(defmethod render-widget-children :around ((widget patient-editor) &rest args)
+  (declare (ignore args))
+  (when (visible-p widget) (call-next-method)))
 
 (defun string-or-nil-lessp (x y)
   (cond ((null x) (not (null y)))
@@ -35,15 +45,14 @@
                                          #'string-greaterp)
                                  :key #'id)))
                (when sort
-                 (destructuring-bind (col . dir) sort
-                   (setf res (sort res
-                                   (if (eq dir :asc)
-                                       #'string-or-nil-lessp
-                                       #'string-or-nil-greaterp)
-                                   :key (cond ((eq col 'user) #'patient-username)
-                                              ((eq col 'center)
-                                               #'patient-center-short-name)
-                                              (t #'id)))))))
+                 (setf res (sort res
+                                 (if (eq dir :asc)
+                                     #'string-or-nil-lessp
+                                     #'string-or-nil-greaterp)
+                                 :key (cond ((eq col 'user) #'patient-username)
+                                            ((eq col 'center)
+                                             #'patient-center-short-name)
+                                            (t #'id))))))
              (when range
                (setf res (subseq res (car range) (cdr range)))))
           res)))

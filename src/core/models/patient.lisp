@@ -43,6 +43,14 @@
   (elephant-utils:ele-with-lock (*center-counter-lock*)
     (incf (patient-counter center))))
 
+(defview center-table-view (:type table
+                           :inherit-from '(:scaffold center))
+  )
+
+(defview center-form-view (:type form :inherit-from '(:scaffold center))
+  (patient-counter :hidep t)
+  )
+
 (defmodel clinician ()
   ((user :accessor user
          :initarg :user
