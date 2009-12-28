@@ -47,6 +47,7 @@
                                        (make-choose-center-widget)
                                        (make-choose-patient-widget)
                                        (make-patient-editor-widget)
+                                       (make-clinician-editor-widget)
                                        (make-center-editor-widget)))
 		  ,@(instantiate-plugins plugins)))))
     (mapcar (lambda (widget)

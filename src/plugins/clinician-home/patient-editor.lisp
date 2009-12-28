@@ -16,7 +16,7 @@
                              (get-clinician user center)))))
     (when (setf (visible-p widget) (not (null clinician)))
       (with-html
-        (:h2 "Add / Delete Patient")
+        (:h2 "Add / Edit Patient")
         (:hr)))))
 
 (defmethod render-widget-children :around ((widget patient-editor) &rest args)

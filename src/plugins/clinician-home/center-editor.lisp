@@ -11,7 +11,7 @@
   (declare (ignore args))
   (when (setf (visible-p widget) (is-admin-p))
     (with-html
-      (:h2 "Add / Delete Center")
+      (:h2 "Add / Edit Center")
       (:hr))))
 
 (defmethod render-widget-children :around ((widget center-editor) &rest args)

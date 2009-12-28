@@ -5,11 +5,11 @@
 (defmodel center ()
   ((short-name :accessor short-name
                :initarg :short-name
-               :initform (error "Center short-name is required")
+               :initform nil
                :index t)
    (name :accessor center-name
          :initarg :name
-         :initform (error "Center name is required"))
+         :initform nil)
    (patient-counter :accessor patient-counter
                     :initform 0)))
 
@@ -28,7 +28,8 @@
   (make-instance 'center :short-name short-name :name name))
 
 (defun get-center (short-name &optional nil-if-none)
-  (cond ((typep short-name 'center) short-name)
+  (cond ((null short-name) nil)
+        ((typep short-name 'center) short-name)
         ((get-instance-by-value 'center 'short-name short-name))
         ((not nil-if-none)
          (error "There is no center with a short-name of ~s" short-name))))
@@ -54,14 +55,13 @@
 (defmodel clinician ()
   ((user :accessor user
          :initarg :user
-         :initform (error "Clinician user is required")
+         :initform nil
          :index t)
    (center :accessor center
            :initarg :center
-           :initform (error "Clinician center is required")
+           :initform (current-center)
            :index t)
-   (permissions :initform nil
-                :accessor user-permissions ;so permissions functions "just work"
+   (permissions :accessor user-permissions ;so permissions functions "just work"
                 :set-valued t)))
 
 (defmethod print-object ((clinician clinician) stream)
@@ -69,6 +69,38 @@
           (object-id clinician)
           (username (user clinician))
           (short-name (center clinician))))
+
+(defview clinician-table-view (:type table
+                                     :inherit-from '(:scaffold clinician))
+  (user :reader 'clinician-username)
+  (center :reader 'clinician-center-short-name)
+  (permissions :reader 'permission-names-string)
+  )
+
+(defclass clinician-user-parser (parser)
+  ()
+  (:default-initargs :error-message nil))
+
+(defmethod parse-view-field-value ((parser clinician-user-parser) value obj view field &rest args)
+  (declare (ignore view field args))
+  (let ((user (get-user value))
+        (center (if obj (center obj) (current-center))))
+    (cond (user
+           (dolist (clin (get-clinicians-for-user user))
+             (when (and (eq center (center clin)) (not (eq clin obj)))
+               (setf (parser-error-message parser)
+                     (format nil "There is already a clinician for that user"))
+               (return-from parse-view-field-value nil)))
+           (values t t user))
+          (t (setf (parser-error-message parser)
+                   (format nil "~s is not a valid username" value))
+             nil))))
+
+(defview clinician-form-view (:type form :inherit-from '(:scaffold clinician))
+  (user :reader 'clinician-username :parse-as clinician-user)
+  (center :hidep t)
+  (permissions :hidep t)
+  )
 
 (defun make-clinician (user center)
   "Returns a clinician for user & center, creating a new one if it doesn't already exist."
@@ -84,6 +116,9 @@
     (dolist (clinician (get-clinicians-for-user user))
       (when (eq center (center clinician))
         (return clinician)))))
+
+(defun current-clinician ()
+  (get-clinician (current-user t) (current-center)))
 
 (defun drop-clinician (user center)
   "Drop the clinician record for user and center"
@@ -110,13 +145,15 @@
     (and current-user (username current-user))))
 
 (defun current-center ()
-  (webapp-session-value 'current-center))
+  (and (boundp 'hunchentoot:*session*)
+       (webapp-session-value 'current-center)))
 
 (defun (setf current-center) (center)
   (setf (webapp-session-value 'current-center) (get-center center)))
 
 (defun current-patient ()
-  (webapp-session-value 'current-patient))
+  (and (boundp 'hunchentoot:*session*)
+       (webapp-session-value 'current-patient)))
 
 (defun (setf current-patient) (patient)
   (setf (webapp-session-value 'current-patient) (get-patient patient)))

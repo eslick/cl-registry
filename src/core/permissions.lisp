@@ -91,6 +91,19 @@
   "Used in an action/render context to see if the current user has a permission"
   (has-permission-p (current-user) permission))
 
+(defun permission-names (user)
+  (let ((res nil)
+        (permissions (user-permissions user)))
+    (when permissions
+      (map-slot-set (lambda (permission)
+                      (push (string (name permission)) res))
+                    (user-permissions user))
+      (sort res #'string-lessp))))
+
+(defun permission-names-string (user)
+  (let ((perms (permission-names user)))
+    (format nil "~@[~a~]~{ ~a~}" (car perms) (cdr perms))))
+
 ;; =====================================
 ;;  Default permission set
 ;; =====================================
