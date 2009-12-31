@@ -12,8 +12,7 @@
   (let* ((user (current-user))
          (center (current-center))
          (patients (and center (get-patients-for-center center)))
-         (user-patient (and user (get-patient-for-user user)))
-         (invalidate nil))
+         (user-patient (and user (get-patient-for-user user))))
     (when user-patient
       (pushnew user-patient patients :test #'eq))
     (with-html
@@ -22,27 +21,27 @@
             ((null (cdr patients))
              (let ((patient (car patients)))
                (unless (eq patient (current-patient))
-                 (setf (current-patient) patient
-                       invalidate t))
+                 (setf (current-patient) patient))
                (htm
                 "<b>Patient:</b> "
                 (str (id patient)))))
             (t (let ((patient (current-patient))
                      (action (lambda (&key patient &allow-other-keys)
-                               (setf (current-patient) patient)
-                               (mark-dirty (widget-parent widget)))))
+                               (cond ((get-patient patient center t)
+                                      (setf (current-patient) patient))
+                                     (t
+                                      ;; Somebody deleted or renamed the patient
+                                      (mark-dirty widget))))))
                  (setf patients (sort patients #'string-lessp :key #'id))
                  (unless (member patient patients :test #'eq)
                    (setf patient (car patients)
-                         (current-patient) patient
-                         invalidate t))
+                         (current-patient) patient))
                  (with-html-form (:get action :use-ajax-p t :class "autodropdown")
                    "<b>Patient:</b> "
                    (render-dropdown "patient" (mapcar 'id patients)
                                     :selected-value (id patient)
                                     :autosubmitp t)))))
-      (htm (:hr)))
-    (when invalidate (mark-dirty (widget-parent widget)))))
+      (htm (:hr)))))
 
 (defun make-choose-patient-widget ()
   (make-instance 'choose-patient))

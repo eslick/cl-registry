@@ -57,15 +57,58 @@
                (setf res (subseq res (car range) (cdr range)))))
           res)))
 
+(defun delete-patients-confirmation-string (obj items)
+  (declare (ignore obj))
+  (let ((item-count (ecase (car items)
+                      (:none (length (cdr items)))))
+        (survey-count
+         (loop
+            for id in (cdr items)
+            for patient = (get-object id)
+            summing (length (get-instances-by-value 'answer 'user patient)))))
+    (format
+     nil
+     #!"Delete ~d ~v[patient~:;patients~]~[~*~; and ~d survey answer~:; and ~d survey answers~]?"
+     item-count (1- item-count) survey-count survey-count)))
+
+(defun delete-patients-and-answers (widget items)
+  (loop
+     with current-patient = (current-patient)
+     for id in (cdr items)
+     for patient = (get-object id)
+     do
+       (with-transaction ()
+         (dolist (answer (get-instances-by-value 'answer 'user patient))
+           (drop-instance answer))
+         (when (eq patient current-patient)
+           (setf (current-patient) nil))
+         (drop-instance patient)))
+  (mark-dirty-sibling-widgets-of-types widget '(choose-patient)))
+
 (defun make-patient-editor-widget ()
-  (let ((edw (make-instance 'patient-editor))
-        (gred (make-instance 'gridedit
-                             :name 'patient-grid
-                             :data-class 'patient
-                             :view 'patient-table-view
-                             :item-form-view 'patient-form-view
-                             :on-query 'patient-editor-query)))
-    (setf (composite-widgets edw) (list gred))
+  (let ((edw (make-instance 'patient-editor)))
+    (flet ((delete-patients-and-answers (obj items)
+             (declare (ignore obj))
+             (delete-patients-and-answers edw items)))
+      (let* ((mark-dirty-patient
+              (lambda (&rest ignore)
+                (declare (ignore ignore))
+                (mark-dirty-sibling-widgets-of-types
+                 edw '(choose-patient center-editor))))
+             (gred (make-instance 'gridedit
+                                 :name 'patient-grid
+                                 :data-class 'patient
+                                 :view 'patient-table-view
+                                 :item-form-view 'patient-form-view
+                                 :on-query 'patient-editor-query
+                                 :on-add-item-completed mark-dirty-patient
+                                 :on-edit-item-completed mark-dirty-patient
+                                 :no-items-to-delete-format-string
+                                 #!"Please select patients to delete"
+                                 :delete-confirmation-string-function
+                                 'delete-patients-confirmation-string
+                                 :on-delete-items #'delete-patients-and-answers)))
+        (setf (composite-widgets edw) (list gred))))
     ;; Returns
     edw))
 

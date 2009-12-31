@@ -9,14 +9,14 @@
  
 (defmethod render-widget-body ((widget clinician-editor) &rest args)
   (declare (ignore args))
-  (let ((clinician (current-clinician)))
-    (when (setf (visible-p widget)
-                (or (is-admin-p)
+  (when (setf (visible-p widget)
+              (or (and (is-admin-p) (current-center))
+                  (let ((clinician (current-clinician)))
                     (and clinician
-                         (has-permission-p clinician :center-admin))))
-      (with-html
-        (:h2 "Add / Edit Clinician")
-        (:hr)))))
+                         (center-admin-p clinician)))))
+    (with-html
+      (:h2 "Add / Edit Clinician")
+      (:hr))))
 
 (defmethod render-widget-children :around ((widget clinician-editor) &rest args)
   (declare (ignore args))
@@ -49,8 +49,8 @@
                                    :key (cond ((eq col 'user) #'clinician-username)
                                               ((eq col 'center)
                                                #'clinician-center-short-name)
-                                              ((eq col 'permissions)
-                                               #'permission-names)))))))
+                                              ((eq col 'center-admin-p)
+                                               #'center-admin-p)))))))
              (when range
                (setf res (subseq res (car range) (cdr range)))))
           res)))

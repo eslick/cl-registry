@@ -68,6 +68,8 @@
        permission))))
 
 (defun has-permission-p (user permission &optional specific-p)
+  (unless (user-permissions user)
+    (return-from has-permission-p nil))
   (unless specific-p
     (when (find-item (get-permission 'admin) (user-permissions user))
       (return-from has-permission-p t)))

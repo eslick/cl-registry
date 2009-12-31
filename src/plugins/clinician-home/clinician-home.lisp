@@ -38,18 +38,18 @@
 
 (defun make-clinician-home-page (&key plugins &allow-other-keys)
   (let ((home (make-instance 'clinician-home 
-	       :widgets
-	       `(,(make-instance 'composite
-				 :widgets
-				 (list (make-widget 'no-javascript)
-				       (make-article-widget "clinician-home"
-							    :sidebar-p t)
-                                       (make-choose-center-widget)
-                                       (make-choose-patient-widget)
-                                       (make-patient-editor-widget)
-                                       (make-clinician-editor-widget)
-                                       (make-center-editor-widget)))
-		  ,@(instantiate-plugins plugins)))))
+                :widgets
+	        `(,(make-instance 'composite
+                                  :widgets
+                                  (list (make-widget 'no-javascript)
+                                        (make-choose-center-widget)
+                                        (make-choose-patient-widget)
+                                        (make-article-widget "clinician-home"
+                                                             :sidebar-p t)
+                                        (make-patient-editor-widget)
+                                        (make-clinician-editor-widget)
+                                        (make-center-editor-widget)))
+                   ,@(instantiate-plugins plugins)))))
     (mapcar (lambda (widget)
 	      (setf (widget-parent widget) home))
 	    (composite-widgets home))

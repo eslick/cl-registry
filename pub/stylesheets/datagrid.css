@@ -10,9 +10,11 @@ table th{
     margin-bottom: 0;
 }
 
+/*
 table td.name{
     font-weight: bold;
 }
+*/
 
 table tr:hover td{
     background: #C0C0C0;

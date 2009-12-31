@@ -48,7 +48,20 @@
                            :inherit-from '(:scaffold center))
   )
 
+(defclass center-short-name-parser (parser)
+  ()
+  (:default-initargs :error-message nil))
+
+(defmethod parse-view-field-value ((parser center-short-name-parser) value obj view field &rest args)
+  (declare (ignore obj view field args))
+  (cond ((get-center value t)
+         (setf (parser-error-message parser)
+               (format nil "There is already a center with that Short Name"))
+         (return-from parse-view-field-value nil))
+        (t (values t t value))))
+
 (defview center-form-view (:type form :inherit-from '(:scaffold center))
+  (short-name :parse-as center-short-name)
   (patient-counter :hidep t)
   )
 
@@ -61,8 +74,10 @@
            :initarg :center
            :initform (current-center)
            :index t)
-   (permissions :accessor user-permissions ;so permissions functions "just work"
-                :set-valued t)))
+   (center-admin-p :accessor center-admin-p
+                   :initarg :center-admin-p
+                   :initform nil
+                   :type boolean)))
 
 (defmethod print-object ((clinician clinician) stream)
   (format stream "#<CLINICIAN (~A) '~A' '~A'>"
@@ -72,9 +87,10 @@
 
 (defview clinician-table-view (:type table
                                      :inherit-from '(:scaffold clinician))
-  (user :reader 'clinician-username)
-  (center :reader 'clinician-center-short-name)
-  (permissions :reader 'permission-names-string)
+  (user :reader 'clinician-username :label #!"User")
+  (center :reader 'clinician-center-short-name :label #!"Center")
+  (center-admin-p :present-as predicate
+                  :label #!"Center Admin?")
   )
 
 (defclass clinician-user-parser (parser)
@@ -99,7 +115,6 @@
 (defview clinician-form-view (:type form :inherit-from '(:scaffold clinician))
   (user :reader 'clinician-username :parse-as clinician-user)
   (center :hidep t)
-  (permissions :hidep t)
   )
 
 (defun make-clinician (user center)
@@ -193,7 +208,8 @@
   (check-type id string)
   (check-type center (or string center))
   (check-type user (or null user))
-  (assert (null (get-patient id))
+  (setq center (get-center center))
+  (assert (null (get-patient id center))
           nil
           "Patient already exists with id ~s"
           id)
@@ -204,16 +220,22 @@
   (with-transaction ()
     (let ((patient (make-instance
                     'patient
-                    :id id :center (get-center center) :user user)))
+                    :id id :center center :user user)))
       (make-provenance patient :user (current-user t) :center center)
       patient)))
 
-(defun get-patient (id &optional nil-if-none)
+(defun get-patient (id &optional center nil-if-none)
   "Get the patient for a patient ID. Error if not found, unless NIL-IF-NONE is true."
-  (cond ((typep id 'patient) id)
-        ((get-instance-by-value 'patient 'id id))
-        ((not nil-if-none)
-         (error "There is no patient with an ID of ~s" id))))
+  (let ((center (get-center (or center (current-center)))))
+    (cond ((null id) nil)
+          ((typep id 'patient) id)
+          ((let ((patients (get-instances-by-value 'patient 'id id)))
+             (if (and patients (null (cdr patients)) (null center))
+                 (car patients)
+                 (dolist (patient patients)
+                   (when (eq (center patient) center) (return patient))))))
+          ((not nil-if-none)
+           (error "There is no patient with an ID of ~s" id)))))
 
 (defun get-patient-for-user (user)
   "Get the patient associated with a user, or NIL if there is none."
@@ -249,7 +271,22 @@
   (user :reader 'patient-username)
   )
 
+(defclass patient-id-parser (parser)
+  ()
+  (:default-initargs :error-message nil))
+
+(defmethod parse-view-field-value ((parser patient-id-parser) value obj view field &rest args)
+  (declare (ignore obj view field args))
+  (let* ((center (current-center))
+         (patient (get-patient value center t)))
+    (cond (patient
+           (setf (parser-error-message parser)
+                 (format nil "There is already a patient with that Id"))
+               (return-from parse-view-field-value nil))
+          (t (values t t value)))))
+
 (defview patient-form-view (:type form :inherit-from '(:scaffold patient))
+  (id :parse-as patient-id)
   (center :hidep t)                  ;use (current-center)
   (user :hidep t)                    ;get this from the logged-in user
   )
