@@ -171,8 +171,8 @@
 			      :serial t)
 		     (:module forums
 			      :components
-			      ((:file "forum")
-			       (:file "ratings")
+			      ((:file "ratings")
+			       (:file "forum")
 			       (:file "recent-topics")
 			       (:file "recent-activity")
 			       (:file "forums"))

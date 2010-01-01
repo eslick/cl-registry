@@ -27,7 +27,7 @@
                  :initarg :content-type
                  :initform nil))
   (:documentation "A model of a markdown-enabled article for managing page content")
-  (:default-initargs :checked-out t)
+  (:default-initargs :pchecked-out-p t)
   (:cache-style :checkout))
 
 (defmethod translated-title ((article article))

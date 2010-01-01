@@ -14,7 +14,7 @@
    (translation-alist :accessor translation-alist :initarg :translations 
 		      :initform nil :cached t))
   (:documentation "Provides a list of field translations")
-  (:default-initargs (:checked-out t))
+  (:default-initargs (:pchecked-out-p t))
   (:cache-style :checkout))
 
 (defview translation-table-view (:type table :inherit-from '(:scaffold translation))
