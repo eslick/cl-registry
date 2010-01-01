@@ -118,7 +118,7 @@
 
 (defun update-answer (question value &optional id)
   "Updates the answer; or latest answer"
-  (let* ((user (current-user))
+  (let* ((user (current-patient))
 	 (answer (get-answer question user id)))
     (if answer
 	(update-answer% answer value id)
@@ -151,7 +151,7 @@
   (mapc #'delete-answer questions))
 
 (defun delete-answer (question &optional user)
-  (awhen (get-answer question (or user (current-user)))
+  (awhen (get-answer question (or user (current-patient)))
     (cond ((update-history-p it :delete)
 	   (drop-instances (mklist it)))
 	  ((record-history-p it :delete)

@@ -94,9 +94,24 @@
 (defmethod dependencies append ((grid survey-grid))
   (list (make-local-dependency :stylesheet "survey")))
 
+(defun survey-on-query-fn (&optional filter-fn)
+  (lambda (widget order-by range &key countp)
+    (declare (ignore widget))
+    (let ((surveys (and (current-patient)
+                        (get-instances-by-value 'survey 'center (current-center)))))
+      (if countp
+          (length surveys)
+          (weblocks-memory:range-objects-in-memory
+           (weblocks-elephant::advanced-order-objects-in-memory
+            (weblocks-elephant::filter-objects-in-memory
+             surveys filter-fn)
+            order-by)
+           range)))))
+
 (defun make-survey-grid (&optional diary-p)
   (make-instance 'composite :widgets
     (list 
+     (make-choose-patient-widget :hr-p nil)
      (make-widget (f* (render-survey-list-header diary-p)))
      (make-instance 'survey-grid
 		    :data-class 'survey
@@ -105,8 +120,9 @@
 		    :allow-drilldown-p t
 		    :on-drilldown (cons :do-survey 'goto-survey-viewer)
 		    :autoset-drilled-down-item-p nil
-		    :on-query `(:filter-fn ,(lambda (survey) 
-					      (not (include-survey-p survey diary-p))))
+		    :on-query (survey-on-query-fn
+                               (lambda (survey) 
+                                 (not (include-survey-p survey diary-p))))
 		    :sort '(sort-key . :asc)))))
 
 (defun include-survey-p (survey diary-p)
@@ -197,7 +213,7 @@
 ;; 		  (make-survey-state (survey ctrl) (current-user)))))
   (when (and (survey ctrl) (diary-p (survey ctrl)))
     (setf (current-id ctrl)
-	  (aif (latest-answer (diary-question (survey ctrl)) (current-user))
+	  (aif (latest-answer (diary-question (survey ctrl)) (current-patient))
 	       (answer-id it)
 	       1)))
   (create-current-presentations ctrl))
@@ -206,7 +222,7 @@
 (defmethod (setf current-id) :after (id (ctrl survey-ctrl))
   (let* ((survey (survey ctrl))
 	 (question (diary-question survey))
-	 (user (current-user)))
+	 (user (current-patient)))
     (unless (get-answer question user id)
       (add-answer question user (default-question-value question) :id id))))
 
@@ -349,6 +365,11 @@
 (defun render-survey-header (ctrl)
   (with-html
     (:div :class "survey-bar"
+          (let ((patient (current-patient)))
+            (when patient
+              (htm (:b "Patient: ")
+                   (str (id patient))
+                   (:br)(:br))))
 	  (:span :class "survey-bar-title"
 		 (if (diary-p ctrl)
 		     (htm (:a :href "/dashboard/collect/diary/" (str #!"Diaries:")))
@@ -385,12 +406,12 @@
     (with-html
       (:div :class "newline survey-bar-diary-nav"
 	    "List of entries  &nbsp; ("
-	    (render-link (f* (setf (current-id ctrl) (next-id series (current-user)))
+	    (render-link (f* (setf (current-id ctrl) (next-id series (current-patient)))
 			     (create-current-presentations ctrl))
 			 #!"Add new entry")
 	    ")"
 	    (:ul 
-	     (dolist (answer (sorted-answers series (current-user)))
+	     (dolist (answer (sorted-answers series (current-patient)))
 	       (render-entry-header-link ctrl answer series description)))))))
 
 (defun render-entry-header-link (ctrl answer series description)
@@ -552,7 +573,7 @@
 	  (inline-groups (current-group ctrl) q (lisp-value p))))
 ;;    (log-message :survey :debug "render question: ~A (~A) with value ~A"
 ;;		 (question-name q) q (lisp-value p))
-    (validate-answers q (current-user))
+    (validate-answers q (current-patient))
     (with-html 
       (:div :class "question inline-trigger"
  	    (:div :class "question-prompt"
@@ -681,7 +702,7 @@
 (defun get-question-value (ctrl q)
   (aif (find q (current-presentations ctrl) :key 'metadata)
        (lisp-value it)
-       (aif (get-answer q (current-user) (current-id ctrl))
+       (aif (get-answer q (current-patient) (current-id ctrl))
 	    (value it)
 	    :none)))
 

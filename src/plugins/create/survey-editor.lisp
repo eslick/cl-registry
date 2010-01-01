@@ -176,16 +176,19 @@
 (defmethod render-widget-body :after ((grid survey-edit-grid) &rest args)
   (declare (ignore args))
   (with-html
-    (:p (render-link (f* (do-dialog "" (make-quickform 'new-survey-form-view
-						  :data-class-name 'survey
-						  :on-success
-						  (lambda (qform temp)
-						    (declare (ignore qform))
-						    (setq temp (persist-object *default-store* temp))
-						    (setf (published-p temp) nil)
-						    (setf (owner temp) (current-user))
-						    (mark-dirty grid)))))
-		     #!"[Create New Survey]"))))
+    (:p
+     (if (current-center)
+         (render-link (f* (do-dialog "" (make-quickform 'new-survey-form-view
+                                                        :data-class-name 'survey
+                                                        :on-success
+                                                        (lambda (qform temp)
+                                                          (declare (ignore qform))
+                                                          (setq temp (persist-object *default-store* temp))
+                                                          (setf (published-p temp) nil)
+                                                          (setf (owner temp) (current-user))
+                                                          (mark-dirty grid)))))
+                      #!"[Create New Survey]")
+         (str #!"To create a new survey, you must choose a center on the Home tab.")))))
 						  
 
 (defun edit-survey-object (grid survey)
@@ -1763,10 +1766,12 @@ has unsaved changes.  Please save or discard your changes and try again."))
 		    ;; (What about when a deleted question's id is in the scratchpad?)
 		    (when (null (get-answers question))
 		      (render-image-link 
-			(f* (when (eq (do-confirmation "Are you sure you want to delete this question permanently?  This action cannot be undone." :type :yes/no)
-				      :yes)
-			      (let ((parent (widget-parent w)))
-				(group-editor-delete-question parent question))))
+			(lambda/cc (&rest rest)
+                          (declare (ignore rest))
+                          (when (eq (do-confirmation "Are you sure you want to delete this question permanently?  This action cannot be undone." :type :yes/no)
+                                    :yes)
+                            (let ((parent (widget-parent w)))
+                              (group-editor-delete-question parent question))))
 			"/pub/images/icons/action_delete.png"
 			:title "Delete question")))
 	      (:div :style "clear: both;"))

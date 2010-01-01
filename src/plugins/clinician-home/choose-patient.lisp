@@ -5,7 +5,7 @@
 (registry-proclamations)
 
 (defwidget choose-patient ()
-  ())
+  ((hr-p :accessor choose-patient-hr-p :initarg :hr-p :initform t)))
 
 (defmethod render-widget-body ((widget choose-patient) &rest args)
   (declare (ignore args))
@@ -41,7 +41,8 @@
                    (render-dropdown "patient" (mapcar 'id patients)
                                     :selected-value (id patient)
                                     :autosubmitp t)))))
-      (htm (:hr)))))
+      (when (choose-patient-hr-p widget)
+        (htm (:hr))))))
 
-(defun make-choose-patient-widget ()
-  (make-instance 'choose-patient))
+(defun make-choose-patient-widget (&key (hr-p t))
+  (make-instance 'choose-patient :hr-p hr-p))

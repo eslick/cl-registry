@@ -214,7 +214,7 @@
 	(push (make-instance 'number-validator)
 	      (validators presentation)))
       (setf (dom-id presentation) (query-name presentation))
-      (aif (get-answer question (current-user) id)
+      (aif (get-answer question (current-patient) id)
 	   (setf (lisp-value presentation) (value it))
 	   (when (subtypep (type-of presentation) 'boolean-presentation)
 	     (setf (lisp-value presentation) :none)))
