@@ -14,13 +14,19 @@
 (defun make-recent-topics-widget ()
   (make-instance 'recent-topics-widget))
 
+;; This doesn't scale
+(defun recent-forum-topics (&key (count 5) (center (current-center)))
+  (let ((topics nil))
+    (when center
+      (dolist (category (get-instances-by-value 'forum-category 'center center))
+        (dolist (topic (get-instances-by-value 'forum-topic 'category category))
+          (push topic topics)))
+      (subseq (sort topics #'> :key #'topic-date-created)
+              0 (min (length topics) count)))))
+
 (defmethod render-widget-body ((widget recent-topics-widget) &rest args)
   (declare (ignore args))
-  (let ((popular-forum-topics
-	 (find-persistent-objects *registry-main* 'forum-topic
-				  :order-by '(date-updated . :desc)
-				  ;; :range '(0 . 5) ; commented because BUG if list isn't as big as range.
-				  )))
+  (let ((popular-forum-topics (recent-forum-topics)))
    (with-html
      (:h1 (str #!"Recent Forum Activity"))
      (:ul

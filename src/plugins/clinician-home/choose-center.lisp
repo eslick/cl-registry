@@ -23,9 +23,7 @@
          (centers (get-centers-for-user user nil))
          (invalidate nil))
     (flet ((mark-dirty-siblings ()
-             (mark-dirty-sibling-widgets-of-types
-              widget
-              '(choose-patient patient-editor clinician-editor))))
+             (mark-dirty (car (last (widget-parents widget))))))
       (with-html
         (cond ((null centers)
                (setf invalidate t)
