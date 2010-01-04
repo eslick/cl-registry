@@ -29,10 +29,16 @@
 ;; Categories
 ;; ====================================
 
+(defparameter *forum-category-per-center-p* nil
+  "True if forum categories should be per center.")
+
+(defun forum-category-center ()
+  (and *forum-category-per-center-p* (current-center)))
+
 (defmodel forum-category (user-translation-mixin)
   ((name :accessor category-name :initarg :name)
    (short :accessor category-short-description :initarg :short-description :initform "")
-   (center :accessor center :initarg :center :initform (current-center)
+   (center :accessor center :initarg :center :initform (forum-category-center)
            :index t)
    (post-permissions :accessor category-permissions :initarg :permissions :initform nil))
   (:documentation "The forums category object maintains a top level set of

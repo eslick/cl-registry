@@ -676,7 +676,8 @@
 		 :allows-drilldown-p t
 		 :on-drilldown (cons :show-category 'show-category)
 		 :view 'category-table-view
-                 :on-query (forum-category-on-query-fn)))
+                 :on-query (and *forum-category-per-center-p*
+                                (forum-category-on-query-fn))))
 
 (defun show-category (grid category)
   (declare (ignore grid))

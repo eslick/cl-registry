@@ -16,13 +16,17 @@
 
 ;; This doesn't scale
 (defun recent-forum-topics (&key (count 5) (center (current-center)))
-  (let ((topics nil))
-    (when center
-      (dolist (category (get-instances-by-value 'forum-category 'center center))
-        (dolist (topic (get-instances-by-value 'forum-topic 'category category))
-          (push topic topics)))
-      (subseq (sort topics #'> :key #'topic-date-created)
-              0 (min (length topics) count)))))
+  (if *forum-category-per-center-p*
+      (let ((topics nil))
+        (when center
+          (dolist (category (get-instances-by-value 'forum-category 'center center))
+            (dolist (topic (get-instances-by-value 'forum-topic 'category category))
+              (push topic topics)))
+          (subseq (sort topics #'> :key #'topic-date-created)
+                  0 (min (length topics) count))))
+      (find-persistent-objects *registry-main* 'forum-topic
+                               :order-by '(date-updated . :desc)
+                               :range '(cons 0 count))))
 
 (defmethod render-widget-body ((widget recent-topics-widget) &rest args)
   (declare (ignore args))
