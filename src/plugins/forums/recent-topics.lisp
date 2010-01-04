@@ -26,7 +26,7 @@
                   0 (min (length topics) count))))
       (find-persistent-objects *registry-main* 'forum-topic
                                :order-by '(date-updated . :desc)
-                               :range '(cons 0 count))))
+                               :range (cons 0 count))))
 
 (defmethod render-widget-body ((widget recent-topics-widget) &rest args)
   (declare (ignore args))
