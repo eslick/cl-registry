@@ -32,6 +32,8 @@
 (defmodel forum-category (user-translation-mixin)
   ((name :accessor category-name :initarg :name)
    (short :accessor category-short-description :initarg :short-description :initform "")
+   (center :accessor center :initarg :center :initform (current-center)
+           :index t)
    (post-permissions :accessor category-permissions :initarg :permissions :initform nil))
   (:documentation "The forums category object maintains a top level set of
     forum areas that the widgets use to split aparts kinds of postings and

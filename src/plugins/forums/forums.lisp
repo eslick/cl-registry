@@ -650,6 +650,23 @@
 (defun category-count (category)
   (length (get-instances-by-value 'forum-topic 'category category)))
 
+(defun forum-category-on-query-fn (&optional filter-fn)
+  (lambda (widget order-by range &key countp)
+    (declare (ignore widget))
+    (let ((categories (and (current-center)
+                           (get-instances-by-value
+                            'forum-category 'center (current-center)))))
+      (if countp
+          (length categories)
+          (weblocks-memory:range-objects-in-memory
+           (weblocks-elephant::advanced-order-objects-in-memory
+            (if filter-fn
+                (weblocks-elephant::filter-objects-in-memory
+                 categories filter-fn)
+                categories)
+            order-by)
+           range)))))
+
 ;; Assuming that the datagrid widget is an acceptable UI,
 ;; we can use :on-query to filter which categories are displayed
 ;; when we need to do that.
@@ -658,7 +675,8 @@
 		 :data-class 'forum-category
 		 :allows-drilldown-p t
 		 :on-drilldown (cons :show-category 'show-category)
-		 :view 'category-table-view))
+		 :view 'category-table-view
+                 :on-query (forum-category-on-query-fn)))
 
 (defun show-category (grid category)
   (declare (ignore grid))
