@@ -94,20 +94,6 @@
 (defmethod dependencies append ((grid survey-grid))
   (list (make-local-dependency :stylesheet "survey")))
 
-(defun survey-on-query-fn (&optional filter-fn)
-  (lambda (widget order-by range &key countp)
-    (declare (ignore widget))
-    (let ((surveys (and (current-patient)
-                        (get-instances-by-value 'survey 'center (current-center)))))
-      (if countp
-          (length surveys)
-          (weblocks-memory:range-objects-in-memory
-           (weblocks-elephant::advanced-order-objects-in-memory
-            (weblocks-elephant::filter-objects-in-memory
-             surveys filter-fn)
-            order-by)
-           range)))))
-
 (defun make-survey-grid (&optional diary-p)
   (make-instance 'composite :widgets
     (list 
@@ -120,13 +106,13 @@
 		    :allow-drilldown-p t
 		    :on-drilldown (cons :do-survey 'goto-survey-viewer)
 		    :autoset-drilled-down-item-p nil
-		    :on-query (survey-on-query-fn
-                               (lambda (survey) 
-                                 (not (include-survey-p survey diary-p))))
+		    :on-query `(:filter-fn ,(lambda (survey) 
+					      (not (include-survey-p survey diary-p))))
 		    :sort '(sort-key . :asc)))))
 
 (defun include-survey-p (survey diary-p)
-  (and (or (published-p survey)
+  (and (current-patient)
+       (or (published-p survey)
 	   (is-admin-p)
 	   (eq (current-user) (owner survey))
 	   (member (current-user) (survey-acl survey)))
@@ -158,8 +144,10 @@
 			(str #! "View Surveys"))
 		    (:a :href "/dashboard/collect/diary" :class "button"
 			(str #! "View Diaries"))))))
-    (:p (str (format nil "~A ~A." #!"Please choose from the following"
-		     (if diary-view-p #!"diaries" #!"surveys"))))))
+    (if (current-patient)
+        (htm (:p (str (format nil "~A ~A." #!"Please choose from the following"
+                              (if diary-view-p #!"diaries" #!"surveys")))))
+        (htm (:p (str #!"Please select a patient on the Home page."))))))
 
 (defun get-view-from-grid (grid)
   (equal (default-view (parent (parent grid))) "diary"))

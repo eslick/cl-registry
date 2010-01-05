@@ -17,6 +17,7 @@
       (pushnew user-patient patients :test #'eq))
     (with-html
       (cond ((null patients)
+             (setf (current-patient) nil)
              (htm (str #!"You do not have access to any patients")))
             ((null (cdr patients))
              (let ((patient (car patients)))

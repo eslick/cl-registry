@@ -25,7 +25,6 @@
 		      :initarg :diary-description
 		      :initform nil)
    ;; Access control
-   (center :accessor center :initarg :center :initform (current-center) :index t)
    (published :accessor published-p :initarg :published :initform nil)
    (priority :accessor priority-value :initarg :priority :initform nil)
    (owner :accessor owner :initarg :owner :initform nil)
