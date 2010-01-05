@@ -540,6 +540,11 @@
   (let ((group (current-group ctrl)))
     (with-html
       (:div :class "survey-group"
+	    (let ((advice (group-advice group)))
+	      (when advice
+		(htm
+		 (:div :class "survey-advice"
+		       (:p :style "font-size:small;font-style:italic;" (str advice))))))
 ;;	    (when (is-admin-p)
 ;;	      (render-group-info group))
 	    (mapc #'(lambda (p) (render-question ctrl p))
