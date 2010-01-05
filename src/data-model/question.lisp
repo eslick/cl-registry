@@ -72,6 +72,12 @@
     (mapcar #'drop-instance (get-instances-by-value 'answer 'question question))
     t))
 
+(defparameter *question-prompt-suffix* ":")
+
+(defun make-question (name &rest args &key (prompt name prompt-supplied-p) &allow-other-keys)
+  (if (not prompt-supplied-p)
+      (setq prompt (concatenate 'string prompt *question-prompt-suffix*)))
+  (apply #'make-instance 'question :name name :prompt prompt args))
 
 ;;
 ;; Question views 
