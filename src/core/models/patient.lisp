@@ -209,7 +209,7 @@
   (check-type center (or string center))
   (check-type user (or null user))
   (setq center (get-center center))
-  (assert (null (get-patient id center))
+  (assert (null (get-patient id center t))
           nil
           "Patient already exists with id ~s"
           id)

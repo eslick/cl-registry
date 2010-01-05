@@ -45,7 +45,17 @@
 (defparameter *featured-survey-question-ids*
   '(5858 5854 5856 6074 6076 6123))
 
+(defun get-patient-home-center ()
+  (or (get-center "" t)
+      (make-center "" "Patient Home Center")))
+
+(defun get-patient-home-patient (&optional (user (current-user)))
+  (or (get-patient-for-user user)
+      (make-patient (username user) (get-patient-home-center) user)))
+      
 (defun make-patient-home-page (&key plugins &allow-other-keys)
+  (setf (current-center) (get-patient-home-center)
+        (current-patient) (get-patient-home-patient))
   (let ((home (make-instance 'patient-home 
 	       :widgets
 	       `(,(make-instance 'composite
