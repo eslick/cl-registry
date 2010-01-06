@@ -9,20 +9,20 @@
 (defparameter *constraint-cache-lifetime* #.(* 60 10)) ;; 10 minutes
 
 (defpclass constraint ()
-  ((users :accessor constraint-users :initform nil :transient t)
+  ((patients :accessor constraint-patients :initform nil :transient t)
    (time  :accessor constraint-time-computed :initarg :time :initform 0)))
 
-(defmethod constraint-user-oids :around ((constraint constraint) &key force &allow-other-keys)
+(defmethod constraint-patient-oids :around ((constraint constraint) &key force &allow-other-keys)
   "Cache returned OIDs"
   (declare (ignore force))
-  (with-slots (users time) constraint
+  (with-slots (patients time) constraint
 ;;    (if (and (not force)
 ;	     (< (time-since time) *constraint-cache-lifetime*)
 ;	     users)
 ;	users
 	(progn 
 	  (setf time (get-universal-time))
-	  (setf users (call-next-method)))))
+	  (setf patients (call-next-method)))))
 
 (defun time-since (time)
   (- (get-universal-time) time))
@@ -53,21 +53,21 @@
 			    :constraints constraints
 			    :name name
 			    :keywords keywords)))
-    (setf (constraint-users pop)
-	  (compute-users (population-constraints pop)))
+    (setf (constraint-patients pop)
+	  (compute-patients (population-constraints pop)))
     (setf (constraint-time-computed pop)
 	  (get-universal-time))))
 
-(defun compute-users (constraints &key force)
+(defun compute-patients (constraints &key force)
   (mapcar (curry 'elephant::controller-recreate-instance *store-controller*)
-	  (compute-user-oids constraints force)))
+	  (compute-patient-oids constraints force)))
 
-(defun compute-user-oids (constraints &optional force)
-  (remove-if (lambda (x) (member x (blacklisted-user-oids)))
+(defun compute-patient-oids (constraints &optional force)
+  (remove-if (lambda (x) (member x (blacklisted-patient-oids)))
 	     (apply 'intersections 
 		    (all-patient-oids)
 		    (mapcar (lambda (c) 
-			      (sort (constraint-user-oids c :force force) #'>))
+			      (sort (constraint-patient-oids c :force force) #'>))
 			    (remove-nulls 
 			     (remove-duplicates 
 			      (flatten-constraints constraints)))))))
@@ -80,9 +80,9 @@
 		 (flatten-constraints (rest constraints))))
         (t (cons (first constraints) (flatten-constraints (rest constraints))))))
 
-(defmethod constraint-user-oids ((population population) &key force &allow-other-keys)
+(defmethod constraint-patient-oids ((population population) &key force &allow-other-keys)
   "Constructive constraints; one population can constraint another"
-  (apply 'intersections (mapcar (lambda (c) (constraint-user-oids c :force force))
+  (apply 'intersections (mapcar (lambda (c) (constraint-patient-oids c :force force))
 				(population-constraints population))))
 
 ;; ==================================================================
@@ -130,7 +130,7 @@
    (type :accessor constraint-type :initarg :type)
    (value :accessor constraint-value :initarg :value)))
 
-(defmethod constraint-user-oids ((constraint question-constraint) &key force &allow-other-keys)
+(defmethod constraint-patient-oids ((constraint question-constraint) &key force &allow-other-keys)
   (declare (ignore force))
   (loop for answer in (get-answers (constraint-question constraint)) 
      when (match-value-constraint constraint (value answer))
@@ -159,12 +159,14 @@
    (type :accessor constraint-type :initarg :type)
    (value :accessor constraint-value :initarg :value)))
   
-(defmethod constraint-user-oids ((constraint preference-constraint) &key force &allow-other-keys)
+(defmethod constraint-patient-oids ((constraint preference-constraint) &key force &allow-other-keys)
   (declare (ignore force))
-  (loop for user in (all-users) 
-       for value = (get-preference (constraint-preference constraint) user)
-       when (match-value-constraint constraint value)
-       collect (object-id user)))
+  (loop for patient in (all-patients)
+       for user = (user patient)
+       for value = (and user
+                        (get-preference (constraint-preference constraint) user))
+       when (and user (match-value-constraint constraint value))
+       collect (object-id patient)))
 
 (defmethod humanize-constraint ((constraint preference-constraint))
   (prompt (constraint-preference constraint)))

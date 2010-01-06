@@ -156,20 +156,20 @@
 
 (defmethod series-query (question viz &optional constraints)
   (declare (ignore viz constraints))
-  (let ((result (second (return-user-series question (current-user)))))
+  (let ((result (second (return-patient-series question (current-patient)))))
     (convert-to-google-dataset 
      (list '("string" "Date")
            `("number" ,(second (get-column-header question))))
      (or result '(("No Data" 1))))))
   
-(defmethod return-user-series (question user)
-  "Get the user's ordered set of answers to a diary question"
+(defmethod return-patient-series (question patient)
+  "Get the patient's ordered set of answers to a diary question"
   (assert (diary-question-p question))
   (let* ((reference (diary-question 
 		    (first (find-group-surveys 
 			    (parent question)))))
-	 (references (sort (get-user-answers reference user) #'< :key #'answer-id))
-	 (values (sort (get-user-answers question user) #'< :key #'answer-id)))
+	 (references (sort (get-user-answers reference patient) #'< :key #'answer-id))
+	 (values (sort (get-user-answers question patient) #'< :key #'answer-id)))
     (list (cons (question-data-type reference) 
 		(question-data-type question))
 	  (mapcar #'(lambda (r v)
@@ -184,26 +184,25 @@
 ;;  Query support (quick hack to filter answers)
 ;; ====================================================
 
-(defparameter *user-blacklist* nil)
-(defparameter *user-blacklist-oids* nil)
+(defparameter *patient-blacklist* nil)
+(defparameter *patient-blacklist-oids* nil)
 
-(defun blacklisted-user-p (user)
-  (unless *user-blacklist*
-    (setf *user-blacklist*
-	  (mapcar #'get-user '("eslick" "rme" "charlest" "Charles" "clozure" 
-			       "Dugan" "david" "lpolzer")))
-    (setf *user-blacklist-oids* 
-	  (mapcar #'object-id *user-blacklist*)))
-  (when (member user *user-blacklist*) t))
+(defun blacklisted-patient-p (patient)
+  (unless *patient-blacklist*
+    (setf *patient-blacklist*
+	  (mapcar #'get-patient-home-patient
+                  (delete nil
+                          (mapcar #'get-user
+                                  '("eslick" "rme" "charlest" "Charles" "clozure" 
+                                    "Dugan" "david" "lpolzer")))))
+    (setf *patient-blacklist-oids* 
+	  (mapcar #'object-id *patient-blacklist*)))
+  (when (member patient *patient-blacklist*) t))
 
-(defun blacklisted-user-oids ()
-  (unless *user-blacklist-oids*
-    (setf *user-blacklist*
-	  (mapcar #'get-user '("eslick" "rme" "charlest" "Charles" "clozure" 
-			       "Dugan" "david" "lpolzer")))
-    (setf *user-blacklist-oids* 
-	  (mapcar #'object-id *user-blacklist*)))
-  *user-blacklist-oids*)
+(defun blacklisted-patient-oids ()
+  (blacklisted-patient-p nil)
+  *patient-blacklist-oids*)
+
 
 (defparameter *total-patients* nil)
 
@@ -214,24 +213,11 @@
   *total-patients*)
 
 (defun all-patients ()
-;;  (filter-if #'blacklisted-user-p (all-users)))
-  (let ((patients nil))
-    (map-class (lambda (user)
-		 (when (lam-patient-p user)
-		   (push user patients)))
-	       'user)
-    patients))
+  (get-instances-by-value 'patient 'center (current-center)))
 
 (defun all-patient-oids ()
   (mapcar #'object-id (all-patients)))
 
-(defun patient-p (user)
-  (and (not (blacklisted-user-p user))
-       (or (lam-patient-p user))))
-
-(defun lam-patient-p (user)
-  (get-preference 'lam-patient-p user))
-  
 ;;   (unless *patient-question* 
 ;;     (setf *patient-question* (get-question 5818)))
 ;;   (let ((answer (get-answer *patient-question* user)))
@@ -251,7 +237,7 @@
 (defun get-filtered-answers (question constraints)
   "NOTE: We can clean this up by implementing an oid join on 
    indexed slots containing objects"
-  (let ((users (compute-users constraints)))
+  (let ((users (compute-patients constraints)))
     (values (select-if (lambda (x) (member (user x) users))
 		       (get-answers question))
 	    (length users))))

@@ -397,7 +397,7 @@
 (defun simple-coverage-stat (question viz)
   (format nil "~A / ~A~A" 
 	  (length (get-filtered-answers question (constraints viz)))
-	  (length (compute-user-oids (constraints viz)))
+	  (length (compute-patient-oids (constraints viz)))
 	  #!" of patients responded"))
 
 ;; ===================================================
