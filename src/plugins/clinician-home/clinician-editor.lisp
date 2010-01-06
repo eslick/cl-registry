@@ -52,8 +52,8 @@
                                               ((eq col 'center-admin-p)
                                                #'center-admin-p)))))))
              (when range
-               (setf res (subseq res (car range) (cdr range)))))
-          res)))
+               (setf res (subseq res (car range) (cdr range))))
+             res))))
 
 (defun make-clinician-editor-widget ()
   (let ((edw (make-instance 'clinician-editor))
