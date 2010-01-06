@@ -42,6 +42,32 @@
 	      (t value)))))
 
 ;; ===================================
+;; Update from old lamsight database
+;; ===================================
+
+(defun update-answers-with-user-patients ()
+  "Update all the ANSWER objects so that the USER slot contains a PATIENT,
+   not a USER, instance."
+  (let ((oids (map-class 'identity 'answer :collect t :oids t))
+        (transaction-size 200)
+        (changed-count 0))
+    (loop
+       while oids
+       do
+         (with-transaction ()
+           (loop
+              for count from 0 below transaction-size
+              while oids
+              for oid = (pop oids)
+              for answer = (get-object oid)
+              for user = (user answer)
+              when (typep user 'user)
+              do
+                (setf (user answer) (get-patient-home-patient user))
+                (incf changed-count))))
+    changed-count))
+
+;; ===================================
 ;;  Accessors and Search
 ;; ===================================
 
