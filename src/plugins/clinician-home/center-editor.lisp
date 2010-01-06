@@ -37,8 +37,8 @@
                                    :key (cond ((eq col 'short-name) #'short-name)
                                               ((eq col 'name) #'center-name)))))))
              (when range
-               (setf res (subseq res (car range) (cdr range)))))
-          res)))
+               (setf res (subseq res (car range) (cdr range))))
+             res))))
 
 (defun delete-centers-confirmation-string (obj items)
   (declare (ignore obj))

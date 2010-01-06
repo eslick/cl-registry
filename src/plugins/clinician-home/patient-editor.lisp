@@ -54,8 +54,8 @@
                                              #'patient-center-short-name)
                                             (t #'id))))))
              (when range
-               (setf res (subseq res (car range) (cdr range)))))
-          res)))
+               (setf res (subseq res (car range) (cdr range))))
+             res))))
 
 (defun delete-patients-confirmation-string (obj items)
   (declare (ignore obj))
@@ -111,5 +111,3 @@
         (setf (composite-widgets edw) (list gred))))
     ;; Returns
     edw))
-
-    
