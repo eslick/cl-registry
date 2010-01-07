@@ -37,38 +37,40 @@
 	  (make-instance 'survey-group
 			 :name "SF36 Part 1"
 			 :order *questions1
-			 :advice "<EM>Instructions:</EM> This survey asks for your views about your health.
+			 :advice "<EM>Instructions:</EM> This survey asks for your views about your health. 
 This information will help keep track of how you feel and how well you are able to do your usual activities.
-<P>Answer every question by marking the answer as indicated. If you are unsure about how to answer a question, give the best answer you can."
+<P>Answer every question by marking the answer as indicated. 
+If you are unsure about how to answer a question, give the best answer you can."
 			 :owner *default-study-owner*))
 	 (*questions2
 	  (loop for name in
-	       '( "a.Vigorous activities, such as running, lifting heavy objects, participating in strenuous sports"
-		 "b.Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf"
-		 "c.Lifting or carrying groceries"
-		 "d.Climbing several flights of stairs"
-		 "e.Climbing one flight of stairs"
-		 "f.Bending, kneeling, or stooping"
-		 "g.Walking more than a mile"
-		 "h.Walking several blocks"
-		 "i.Walking one block"
-		 "j.Bathing or dressing yourself")
+	       '( "a. Vigorous activities, such as running, lifting heavy objects, participating in strenuous sports"
+		 "b. Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf"
+		 "c. Lifting or carrying groceries"
+		 "d. Climbing several flights of stairs"
+		 "e. Climbing one flight of stairs"
+		 "f. Bending, kneeling, or stooping"
+		 "g. Walking more than a mile"
+		 "h. Walking several blocks"
+		 "i. Walking one block"
+		 "j. Bathing or dressing yourself")
 	       collect
 	       (apply #'make-question name :prompt name
 		      (choices-options-numbered
-		       '("Yes. Limited A Lot" "Yes, Limited A Little" "No, Not Limited At All")))))
+		       '("Yes, Limited A Lot" "Yes, Limited A Little" "No, Not Limited At All")))))
 	 (*group2
 	  (make-instance 'survey-group
 			 :name "SF36 Part 2"
 			 :order *questions2
-			 :advice "The following items are about activities you might do during a typical day. Does <B>your health now limit you</B> in these activities?  If so, how much?"
+			 :advice "The following items are about activities you might do during a typical day. 
+Does <B>your health now limit you</B> in these activities?  If so, how much?"
 			 :owner *default-study-owner*))
 	 (*questions3
 	  (loop for name in
-	       '("a.Cut down on the amount of time you spent on work or other activities"
-		 "b.Accomplished less than you would like"
-		 "c.Were limited in the kind of work or other activities"
-		 "d.Had difficulty performing the work or other activities (for example, it took extra effort)")
+	       '("a. Cut down on the amount of time you spent on work or other activities"
+		 "b. Accomplished less than you would like"
+		 "c. Were limited in the kind of work or other activities"
+		 "d. Had difficulty performing the work or other activities (for example, it took extra effort)")
 	       collect
 	       (apply #'make-question name :prompt name
 		      (choices-options-yes-no))))
@@ -80,9 +82,9 @@ This information will help keep track of how you feel and how well you are able 
 			 :owner *default-study-owner*))
 	 (*questions4
 	  (loop for name in
-	       '("a.Cut down the amount of time you spent on work or other activities"
-		 "b.Accomplished less than you would like"
-		 "c.Didn’t do work or other activities as carefully as usual")
+	       '("a. Cut down the amount of time you spent on work or other activities"
+		 "b. Accomplished less than you would like"
+		 "c. Didn’t do work or other activities as carefully as usual")
 	       collect
 	       (apply #'make-question name :prompt name
 		      (choices-options-yes-no))))
@@ -114,15 +116,15 @@ This information will help keep track of how you feel and how well you are able 
 			 :owner *default-study-owner*))
 	 (*questions6
 	  (loop for name in
-	       '("a.Did you feel full of pep?"
-		 "b.Have you been a very nervous person?"
-		 "c.Have you felt so down in the dumps that nothing could cheer you up?"
-		 "d.Have you felt calm and peaceful?"
-		 "e.Did you have a lot of energy?"
-		 "f.Have you felt downhearted and blue?"
-		 "g.Did you feel worn out?"
-		 "h.Have you been a happy person?"
-		 "i.Did you feel tired?")
+	       '("a. Did you feel full of pep?"
+		 "b. Have you been a very nervous person?"
+		 "c. Have you felt so down in the dumps that nothing could cheer you up?"
+		 "d. Have you felt calm and peaceful?"
+		 "e. Did you have a lot of energy?"
+		 "f. Have you felt downhearted and blue?"
+		 "g. Did you feel worn out?"
+		 "h. Have you been a happy person?"
+		 "i. Did you feel tired?")
 	       collect
 	       (apply #'make-question name :prompt name
 		      (choices-options-numbered
@@ -131,7 +133,9 @@ This information will help keep track of how you feel and how well you are able 
 	  (make-instance 'survey-group
 			 :name "SF36 Part 6"
 			 :order *questions6
-			 :advice "These questions are about how you feel and how things have been with you during the past 4 weeks.  For each question, please give the one answer that comes closest to the way you have been feeling.  How much of the time during the <B>past 4 weeks</B>..." 
+			 :advice "These questions are about how you feel and how things have been with you during the past 4 weeks.
+For each question, please give the one answer that comes closest to the way you have been feeling.
+How much of the time during the <B>past 4 weeks</B>..." 
 			 :owner *default-study-owner*))
 	 (*questions7
 	  (list
@@ -151,19 +155,19 @@ This information will help keep track of how you feel and how well you are able 
 			 :owner *default-study-owner*))
 	 (*questions8
 	  (loop for name in
-	       '("a.I seem to get sick a little easier than other people"
-		 "b.I am as healthy as anybody I know"
-		 "c.I expect my health to get worse"
-		 "d.My health is excellent")
+	       '("a. I seem to get sick a little easier than other people"
+		 "b. I am as healthy as anybody I know"
+		 "c. I expect my health to get worse"
+		 "d. My health is excellent")
 	       collect
 	       (apply #'make-question name :prompt name
 		      (choices-options-numbered
-		       '("All of the Time" "Most of the Time" "A Good Bit of the Time" "Some of the Time" "A Little of the Time" "None of the Time")))))
+		       '("Definitely True" "Mostly True" "Don't Know" "Mostly False" "Definitely False")))))
 	 (*group8
 	  (make-instance 'survey-group
 			 :name "SF36 Part 8"
 			 :order *questions8
-			 :advice "How TRUE or FALSE is each of the following statements for you?" 
+			 :advice "How TRUE or FALSE is <B>each</B> of the following statements for you?" 
 			 :owner *default-study-owner*))
 	 (*questions9
 	  (list
