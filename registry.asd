@@ -164,6 +164,11 @@
 			       (:file "nlp")
 			       (:file "queries"))
 			      :serial t)
+		     (:module ilr-surveys
+			      :components
+			      ((:file "ilr-surveys")
+			       (:file "sgrq"))
+			      :serial t)
 		     (:module admin
 			      :components
 			      ((:file "admin")
