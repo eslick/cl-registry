@@ -24,10 +24,9 @@
      (mapcar 'drop-instance (get-instances-by-class 'survey-group))
      (mapcar 'drop-instance (get-instances-by-class 'survey)))
     (t
-     (loop for survey in surveys
-        do
-        (loop for group in (survey-groups survey)
-             do (drop-group group))))))
+     (dolist (survey surveys)
+       (dolist (group (survey-groups survey))
+         (and group (drop-group group)))))))
 
 (defmacro choices-options (var)
   `(list :data-type :choice :view-type :dropdown :choices ,var))
