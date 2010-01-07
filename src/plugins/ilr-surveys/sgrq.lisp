@@ -44,7 +44,7 @@
 
 ;;; Define questions
 
-(defun create-sgrq (&key (owner (get-study-owner)))
+(defun create-sgrq (&key (owner (current-user)))
   (let ((*default-study-owner* owner))
     (setq *questions-part-0
 	(list
