@@ -64,7 +64,7 @@
 
 (defun drop-question (question &optional (interactive t))
   (when (or (not interactive)
-	    (let ((answers (length (get-instance-by-value 'answer 'question question))))
+	    (let ((answers (length (get-instances-by-value 'answer 'question question))))
 	      (if (eq answers 0) t
 		  (when (yes-or-no-p "Question ~A has ~A associated answers, do you really want to delete this question?" question answers)
 		    (when (yes-or-no-p "Are you really really sure?")
