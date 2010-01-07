@@ -70,9 +70,8 @@
   (check-type config list)
   (setf config
         (mapcar (lambda (path)
-                  (merge-pathnames path
-                    (merge-pathnames "sites/.config" *source-directory*)))
-                config))
+                  (merge-pathnames path "sites/.config" *source-directory*))
+                config))                                           
   (when port
     (let ((start-registry (find-symbol "START-REGISTRY" :registry)))
       (when (fboundp start-registry)

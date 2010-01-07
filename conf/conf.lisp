@@ -11,7 +11,7 @@
   (cond ((null config)
 	 (error "A site configuration is required to start the registry"))
 	((stringp config)
-	 (read-site-configuration config))
+	 (read-startup-configuration (split-sequence:split-sequence #\space config)))
 	((listp config)
 	 (mapcar #'read-site-configuration config))
 	(t (error "Can't load configuration from ~A" config))))
@@ -25,10 +25,21 @@
     (setf *site-configuration* 
 	  (make-hash-table))))
 
+(defparameter *site-configuration-pathname-defaults* nil)
+
+;; Computed in a function because registry-relative-path isn't
+;; defined at load time.
+(defun site-configuration-pathname-defaults ()
+  (or *site-configuration-pathname-defaults*
+      (setf *site-configuration-pathname-defaults*
+            (merge-pathnames ".config" (registry-relative-path '("sites"))))))
+
 (defun read-site-configuration (filename)
   "Read a single file into the site-configuration hash"
-  (let ((site-config 
-	 (with-open-file (stream filename)
+  (let ((site-config
+	 (with-open-file (stream (merge-pathnames
+                                  filename
+                                  (site-configuration-pathname-defaults)))
 	   (prog1 (read stream)
              (unless (eq (read stream) :EOF)
                (error "Ill-formed configuration file: ~A" filename)))))
