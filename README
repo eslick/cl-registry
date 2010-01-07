@@ -68,7 +68,10 @@ get a full (possibly relative) pathname. The default is
 
 If REGCONFIG is set in the environment, it will be passed by
 REGISTRY-LOADER:START-REGISTRY to REGISTRY:START-REGISTRY as the value
-for the CONFIG parameter.
+for the CONFIG parameter, after being split a list of strings using
+"+" as a delimiter. Hence REGCONFIG="ilr-production+devel" is equivalent
+to passing '("ilr-production" "devel") as the CONFIG parameter
+of REGISTRY:START-REGISTRY.
 
 If REGDEV is set to "true" in the environment, then the build will be
 done with :REGISTRY-DEVELOPMENT in *FEATURES*. This builds with

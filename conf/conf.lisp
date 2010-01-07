@@ -11,7 +11,7 @@
   (cond ((null config)
 	 (error "A site configuration is required to start the registry"))
 	((stringp config)
-	 (read-startup-configuration (split-sequence:split-sequence #\space config)))
+	 (read-site-configuration config))
 	((listp config)
 	 (mapcar #'read-site-configuration config))
 	(t (error "Can't load configuration from ~A" config))))

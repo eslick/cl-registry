@@ -62,9 +62,13 @@
 (defun start-registry (port &optional config)
   (when (stringp port)
     (setq port (ignore-errors (parse-integer port))))
-  (unless config
-    (setf config *default-config*))
-  (check-type config (or list string))
+  (cond ((null config)
+         (setf config *default-config*))
+        ((stringp config)
+         (setf config (funcall (find-symbol "SPLIT-SEQUENCE" :split-sequence)
+                               #\+
+                               config))))
+  (check-type config list)
   (when port
     (let ((start-registry (find-symbol "START-REGISTRY" :registry)))
       (when (fboundp start-registry)
