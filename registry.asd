@@ -167,7 +167,8 @@
 		     (:module ilr-surveys
 			      :components
 			      ((:file "ilr-surveys")
-			       (:file "sgrq"))
+			       (:file "sgrq")
+			       (:file "sf36"))
 			      :serial t)
 		     (:module admin
 			      :components
