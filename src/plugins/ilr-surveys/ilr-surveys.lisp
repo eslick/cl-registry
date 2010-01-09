@@ -31,6 +31,9 @@
 (defmacro choices-options (var)
   `(list :data-type :choice :view-type :dropdown :choices ,var))
 
+(defmacro multi-choices-options (var)
+  `(list :data-type :multichoice :choices ,var))
+
 (defmacro radio-options (var)
   `(list :data-type :choice :view-type :radio :choices ,var))
 
@@ -49,3 +52,7 @@
 (defvar *choices-alist-yes-no '(("Yes" . t) ("No" . nil)))
 
 (defmacro choices-options-yes-no () '(radio-options *choices-alist-yes-no))
+
+(defmacro choices-mirror-alist (choices)
+  `(loop for str in ,choices
+      collect (cons str str)))
