@@ -168,7 +168,8 @@
 			      :components
 			      ((:file "ilr-surveys")
 			       (:file "sgrq")
-			       (:file "sf36"))
+			       (:file "sf36")
+			       (:file "lam-history"))
 			      :serial t)
 		     (:module admin
 			      :components
