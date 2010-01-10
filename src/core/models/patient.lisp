@@ -166,12 +166,61 @@
 (defun (setf current-center) (center)
   (setf (webapp-session-value 'current-center) (get-center center)))
 
+(defpclass current-patient ()
+  ((user :accessor current-patient-user
+         :initarg :user
+         :initform (current-user t)
+         :index t)
+   (patient :accessor current-patient-patient
+            :initarg :patient
+            :initform nil)))
+
 (defun current-patient ()
   (and (boundp 'hunchentoot:*session*)
        (webapp-session-value 'current-patient)))
 
+(defmethod print-object ((o current-patient) stream)
+  (print-unreadable-object (o stream :type t)
+    (let ((user (current-patient-user o))
+          (patient (current-patient-patient o)))
+      (format stream "~a ~a"
+              (and user (username user))
+              (and patient (id patient))))))
+
+(defun get-current-patient-for-user (user &optional create patient)
+  (setf user (get-user user))
+  (let ((res (get-instance-by-value 'current-patient 'user user)))
+    (cond (res
+           (when patient (setf (current-patient-patient res) patient))
+           res)
+          (create (make-instance 'current-patient
+                                 :user user
+                                 :patient patient))
+          (t nil))))
+
 (defun (setf current-patient) (patient)
-  (setf (webapp-session-value 'current-patient) (get-patient patient)))
+  (let* ((patient (get-patient patient))
+         (user (current-user t)))
+    (setf (webapp-session-value 'current-patient) patient)
+    (when user
+      (get-current-patient-for-user user t patient))
+    patient))
+
+(defun initialize-current-patient ()
+  (let ((user (current-user t)))
+    (when user
+      (let* ((current-patient (get-current-patient-for-user user t))
+             (patient (current-patient-patient current-patient))
+             (clinician nil))
+        (unless patient
+          (setf clinician (car (get-clinicians-for-user user))
+                patient (and clinician
+                             (car (get-patients-for-center
+                                   (center clinician))))))
+        (when patient
+          (setf (current-patient) patient
+                (current-center) (center patient)))
+        patient))))
 
 (defun generate-patient-id (&key center sequence)
   (unless center
@@ -202,6 +251,13 @@
          :initform nil
          :index t
          :documentation "If this patient is a user, the USER instance")))
+
+(defmethod print-object ((o patient) stream)
+  (print-unreadable-object (o stream :type t)
+    (format stream "oid:~a ~a ~a"
+            (object-id o)
+            (id o)
+            (short-name (center o)))))
 
 (defun make-patient (id center &optional user)
   (when (stringp user) (setf user (get-user user)))

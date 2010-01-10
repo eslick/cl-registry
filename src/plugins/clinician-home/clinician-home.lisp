@@ -37,6 +37,7 @@
 		(str "&nbsp;")))))
 
 (defun make-clinician-home-page (&key plugins &allow-other-keys)
+  (initialize-current-patient)
   (let ((home (make-instance 'clinician-home 
                 :widgets
 	        `(,(make-instance 'composite
