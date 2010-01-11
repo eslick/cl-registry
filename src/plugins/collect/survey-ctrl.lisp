@@ -290,7 +290,7 @@
 		   (with-html-form (:post (question-response-action ctrl presentations)
 					  :class "survey-form" :id "survey-form")
 ;;		      (render-form-actions ctrl)
-		     (render-group ctrl)
+		     (render-group (current-group ctrl) ctrl)
 		     (render-form-actions ctrl))))
 	(:div :class "survey-right-column"
 	      (:div :class "top"
@@ -524,19 +524,18 @@
 ;; Rendering a group
 ;; ===============================================================
 
-(defmethod render-group (ctrl)
-  (let ((group (current-group ctrl)))
-    (with-html
-      (:div :class "survey-group"
-	    (let ((advice (group-advice group)))
-	      (when advice
-		(htm
-		 (:div :class "survey-advice"
-		       (:p :style "font-size:small;font-style:italic;" (str advice))))))
-;;	    (when (is-admin-p)
-;;	      (render-group-info group))
-	    (mapc #'(lambda (p) (render-question ctrl p))
-		  (presentations-for-group ctrl group))))))
+(defmethod render-group ((group survey-group) ctrl)
+  (with-html
+    (:div :class "survey-group"
+          (let ((advice (group-advice group)))
+            (when advice
+              (htm
+               (:div :class "survey-advice"
+                     (:p :style "font-size:small;font-style:italic;" (str advice))))))
+          ;;	    (when (is-admin-p)
+          ;;	      (render-group-info group))
+          (mapc #'(lambda (p) (render-question ctrl p))
+                (presentations-for-group ctrl group)))))
 
 (defun render-group-info (group)
   (with-html
@@ -554,6 +553,50 @@
 ;;	    (str (format nil "[Group ID: ~A]" (mid group))))
 	  (mapc #'(lambda (p) (render-question ctrl p))
 		(presentations-for-group ctrl group)))))
+
+(defmethod render-group ((group survey-group-table) ctrl)
+  (with-html
+    (:div :class "survey-group"
+      (:table
+       (dolist (p (presentations-for-group ctrl group))
+         (let ((q (metadata p)))
+           (htm
+            (:tr
+             (validate-answers q (current-patient))
+             (htm
+              (:td
+               (:div :class "question-prompt"
+                     (render-prompt p)))
+              (:td ;; Comments
+               (let ((comment-count (comment-count q)))
+                 (htm (render-image-link (f* (do-question-comment-dialog ctrl q))
+                                         "/pub/images/comment-icon.jpg" 
+                                         :alt #!"Add Comment"
+                                         :class (when (> comment-count 0)
+                                                  "question-has-comments"))
+                      (when (> comment-count 0)
+                        (htm (:p :class "question-has-comments"
+                                 (str (format nil "(~D ~A)" comment-count
+                                              (if (= comment-count 1)
+                                                  #!"comment"
+                                                  #!"comments")))))))))
+            
+              (:td (:div :class "question-input"
+                         (render-presentation-editable p)))
+
+              ;; Validation errors
+              (:td
+               (awhen (warning-message p)
+                 (htm (:div :class "question-error"
+                            (str it))))
+
+               ;; Question help
+               (awhen (question-help q)
+                 (when (> (length it) 2)
+                   (htm (:div :class "question-help" 
+                              ;;			   (:img :src "/pub/images/help32.png" :alt "Help")
+                              (str (slot-value-translation q 'question-help)))))))
+              )))))))))
 
 
 ;; ===============================================================
@@ -748,7 +791,7 @@
 						  (survey-groups (survey widget)))))
 	   (str (group-name (current-group widget))))
 	   ;; slot-value-translation (current-group widget) 'name)))
-    (render-group widget)
+    (render-group (current-group widget) widget)
     (render-link (f* (answer widget))
 		 "Close Preview")))
 

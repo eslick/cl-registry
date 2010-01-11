@@ -130,7 +130,7 @@ Does <B>your health now limit you</B> in these activities?  If so, how much?"
 		      (choices-options-numbered
 		       '("All of the Time" "Most of the Time" "A Good Bit of the Time" "Some of the Time" "A Little of the Time" "None of the Time")))))
 	 (*group6
-	  (make-instance 'survey-group
+	  (make-instance 'survey-group-table
 			 :name "SF36 Part 6"
 			 :order *questions6
 			 :advice "These questions are about how you feel and how things have been with you during the past 4 weeks.

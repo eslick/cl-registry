@@ -246,3 +246,18 @@
 (defview survey-group-new-view (:type form)
   name
   advice)
+
+
+;; ===========================================================
+;;  Branching Survey Support
+;; ===========================================================
+
+(defmodel survey-group-table (survey-group)
+  ()
+  (:documentation "A survey-group-table is a compact representation for groups whose answers are all of teh same 'type'"))
+
+(defmethod print-object ((inst survey-group-table) stream)
+  (format stream "#<GROUP-TABLE~A '~A'>"
+	  (object-id inst)
+	  (group-name inst)))
+
