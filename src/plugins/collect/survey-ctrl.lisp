@@ -549,54 +549,54 @@
 (defmethod render-inline-group (ctrl group)
   (with-html
     (:div :class "survey-inline-group"
+          (render-group group ctrl) #| 
 ;;	  (when (is-admin-p)
 ;;	    (str (format nil "[Group ID: ~A]" (mid group))))
 	  (mapc #'(lambda (p) (render-question ctrl p))
-		(presentations-for-group ctrl group)))))
+		(presentations-for-group ctrl group)) |# )))
 
 (defmethod render-group ((group survey-group-table) ctrl)
   (with-html
     (:div :class "survey-group"
       (:table
-       (dolist (p (presentations-for-group ctrl group))
-         (let ((q (metadata p)))
-           (htm
-            (:tr
-             (validate-answers q (current-patient))
+       (dolist (row (group-table-rows group))
+         (htm
+          (:tr
+           (dolist (cell row)
              (htm
               (:td
-               (:div :class "question-prompt"
-                     (render-prompt p)))
-              (:td ;; Comments
-               (let ((comment-count (comment-count q)))
-                 (htm (render-image-link (f* (do-question-comment-dialog ctrl q))
-                                         "/pub/images/comment-icon.jpg" 
-                                         :alt #!"Add Comment"
-                                         :class (when (> comment-count 0)
-                                                  "question-has-comments"))
-                      (when (> comment-count 0)
-                        (htm (:p :class "question-has-comments"
-                                 (str (format nil "(~D ~A)" comment-count
-                                              (if (= comment-count 1)
-                                                  #!"comment"
-                                                  #!"comments")))))))))
-            
-              (:td (:div :class "question-input"
-                         (render-presentation-editable p)))
+               (etypecase cell
+                 (null nil)
+                 (string (str cell))
+                 (question
+                  (htm (let ((presentation (find cell (presentations-for-group ctrl group) :key #'metadata)))
+                         (validate-answers cell (current-patient))
+                         (htm
+                          (:div :class "question-input"
+                                (render-presentation-editable presentation)))
+                         ;; should probably refactor this code from the other render-group method
+                         (let ((comment-count (comment-count cell)))
+                           (htm (render-image-link (f* (do-question-comment-dialog ctrl cell))
+                                                   "/pub/images/comment-icon.jpg" 
+                                                   :alt #!"Add Comment"
+                                                   :class (when (> comment-count 0)
+                                                            "question-has-comments"))
+                                (when (> comment-count 0)
+                                  (htm (:p :class "question-has-comments"
+                                           (str (format nil "(~D ~A)" comment-count
+                                                        (if (= comment-count 1)
+                                                            #!"comment"
+                                                            #!"comments"))))))))
+                         (awhen (warning-message presentation)
+                           (htm (:div :class "question-error"
+                                      (str it))))
 
-              ;; Validation errors
-              (:td
-               (awhen (warning-message p)
-                 (htm (:div :class "question-error"
-                            (str it))))
-
-               ;; Question help
-               (awhen (question-help q)
-                 (when (> (length it) 2)
-                   (htm (:div :class "question-help" 
-                              ;;			   (:img :src "/pub/images/help32.png" :alt "Help")
-                              (str (slot-value-translation q 'question-help)))))))
-              )))))))))
+                         (awhen (question-help cell)
+                           (when (> (length it) 2)
+                             (htm (:div :class "question-help" 
+                                        ;;			   (:img :src "/pub/images/help32.png" :alt "Help")
+                                        (str (slot-value-translation cell 'question-help))))))
+                         ))))))))))))))
 
 
 ;; ===============================================================

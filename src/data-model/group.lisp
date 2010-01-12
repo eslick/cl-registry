@@ -253,7 +253,7 @@
 ;; ===========================================================
 
 (defmodel survey-group-table (survey-group)
-  ()
+  ((rows :accessor group-table-rows :initform nil :initarg :rows))
   (:documentation "A survey-group-table is a compact representation for groups whose answers are all of teh same 'type'"))
 
 (defmethod print-object ((inst survey-group-table) stream)
@@ -261,3 +261,33 @@
 	  (object-id inst)
 	  (group-name inst)))
 
+(defmacro make-survey-group-table ((&rest make-instance-args &key name default-question-args &allow-other-keys) &rest rows)
+  (let ((question-counter 0)
+        (group-name name)
+        (question-bindings '())
+        (table '()))
+    (remf make-instance-args :default-question-args)
+    (setf table
+          (list* 'list
+                (mapcar (lambda (row)
+                          (list* 'list
+                                (mapcar (lambda (cell-data)
+                                          (cond
+                                            ((stringp cell-data) `',cell-data)
+                                            ((eql :question (first cell-data))
+                                             (destructuring-bind (&rest args
+                                                                        &key (name (incf question-counter))
+                                                                        &allow-other-keys)
+                                                 (cdr cell-data)
+                                               (remf args :name)
+                                               (let* ((name (format nil "~A.~D" group-name name))
+                                                      (var (gensym name)))
+                                                 (push (list var `(make-question ,name ,@args ,@default-question-args)) question-bindings)
+                                                 var)))))
+                                        row)))
+                        rows)))
+    `(let ,question-bindings
+       (make-instance 'survey-group-table
+                      ,@make-instance-args
+                      :order (list ,@(mapcar #'first question-bindings))
+                      :rows ,table))))

@@ -18,7 +18,7 @@
 (defun create-lam-history (&key (owner (current-user)))
   (with-transaction ()
     (let* ((*default-study-owner* owner)
-	   (group-counter 0.)
+           (group-counter 0.)
            (*group0
             (make-instance 'survey-group
                            :name (format nil "LAM History Part ~D - Clinician Header" (incf group-counter))
@@ -291,6 +291,12 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
 		   (radio-options
 		    (choices-mirror-alist
 		     '("Yes" "No" "Unknown")))))
+     (q18-table
+      (make-survey-group-table (:name "q18 related questions" :advice "If yes please complete:" :default-data-type :number)
+        ( nil "Number before diagnosis" "Number after diagnosis" )
+        ( "Full term or premature births" (:question) (:question) )
+        ( "Miscarriages"  (:question) (:question) )
+        ( "Abortions" (:question) (:question) )))
 	   (q19
 	    (apply #'make-question "Has the patient gone through menopause"
 		   :prompt "18. Has the patient gone through menopause?"
@@ -300,15 +306,16 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
            (*questions10 (list q10 q11 q12 q13 q14 q15 q16 q17 q18 q19))
            (*group10
 	    (let ((group10
-		   (make-instance 'survey-group
-				  :name (format nil "LAM History Part ~D" (incf group-counter))
-				  :order *questions10
-				  :owner *default-study-owner*))
-                  (subgroup10o
+             (make-instance 'survey-group
+                            :name (format nil "LAM History Part ~D" (incf group-counter))
+                            :order *questions10
+                            :owner *default-study-owner*))
+            (subgroup10o
                    (make-instance 'survey-group
                                   :order (list q10o)
                                   :owner *default-study-owner*)))
-              (add-rule group10 q10 "Other" subgroup10o :inline)
+        (add-rule group10 q10 "Other" subgroup10o :inline)
+        (add-rule group10 q18 "Yes" q18-table :inline)
 	      ;; Returns
 	      group10))
            ;;

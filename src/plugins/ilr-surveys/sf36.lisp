@@ -114,29 +114,44 @@ Does <B>your health now limit you</B> in these activities?  If so, how much?"
 			 :order *questions5
 			 :advice nil
 			 :owner *default-study-owner*))
-	 (*questions6
+	 #| (*questions6
 	  (loop for name in
 	       '("a. Did you feel full of pep?"
 		 "b. Have you been a very nervous person?"
-		 "c. Have you felt so down in the dumps that nothing could cheer you up?"
-		 "d. Have you felt calm and peaceful?"
-		 "e. Did you have a lot of energy?"
-		 "f. Have you felt downhearted and blue?"
-		 "g. Did you feel worn out?"
-		 "h. Have you been a happy person?"
-		 "i. Did you feel tired?")
+
+         
+		 
+		 
+		 
+		 
+		 )
 	       collect
 	       (apply #'make-question name :prompt name
 		      (choices-options-numbered
-		       '("All of the Time" "Most of the Time" "A Good Bit of the Time" "Some of the Time" "A Little of the Time" "None of the Time")))))
+		       '("All of the Time" "Most of the Time" "A Good Bit of the Time" "Some of the Time" "A Little of the Time" "None of the Time"))))) |#
 	 (*group6
-	  (make-instance 'survey-group-table
-			 :name "SF36 Part 6"
-			 :order *questions6
-			 :advice "These questions are about how you feel and how things have been with you during the past 4 weeks.
+    (make-survey-group-table (:name "SF36 Part 6"
+                              :advice "These questions are about how you feel and how things have been with you during the past 4 weeks.
 For each question, please give the one answer that comes closest to the way you have been feeling.
-How much of the time during the <B>past 4 weeks</B>..." 
-			 :owner *default-study-owner*))
+How much of the time during the <B>past 4 weeks</B>..."
+                              :owner *default-study-owner*
+                              :default-question-args (:data-type :choice
+                                                      :view-type :dropdown
+                                                      :choices '(("(1) All of the Time" . 1)
+                                                                 ("(2) Most of the Time" . 2)
+                                                                 ("(3) A Good Bit of the Time" . 3)
+                                                                 ("(4) Some of the Time" . 4)
+                                                                 ("(5) A Little of the Time" . 5)
+                                                                 ("(6) None of the Time" . 6))))
+                             ("a." "Did you feel full of pep?" (:question))
+                             ("b." "Have you been a very nervous person?" (:question))
+                             ("c." "Have you felt so down in the dumps that nothing could cheer you up?" (:question))
+                             ("d." "Have you felt calm and peaceful?" (:question))
+                             ("e." "Did you have a lot of energy?" (:question))
+                             ("f." "Have you felt downhearted and blue?" (:question))
+                             ("g." "Did you feel worn out?" (:question))
+                             ("h." "Have you been a happy person?" (:question))
+                             ("i." "Did you feel tired?" (:question))))
 	 (*questions7
 	  (list
 	   (apply #'make-question "During the past 4 weeks, how much of the time has your physical health or emotional problems interfered with your social activities (like visiting with friends, relatives, etc.)"
@@ -190,5 +205,6 @@ How much of the time during the <B>past 4 weeks</B>..."
 			 :ranking-record (make-ranking-record :ranking nil :distribution nil))))
     ;; Returns
     *survey))
+
 
 		 
