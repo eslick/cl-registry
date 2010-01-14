@@ -1,7 +1,9 @@
 # Boring file regexps:
 ^pub/.*/vzn$
 ^pub/bundles$
+^pub/mod-record$
 ^data/
+^uploads/
 ^logs/
 ^intl/po-out/
 \..*fsl
