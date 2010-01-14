@@ -63,6 +63,20 @@
   ()
   (:default-initargs :show-date-p nil))
 
+;;;; * validator
+
+(defclass datetime-validator (non-nil-validator)
+  ()
+  (:default-initargs :error-message "Unable to determine date."))
+
+(defmethod client-validate ((validator datetime-validator) (client-value string))
+  (handler-case
+      (cl-l10n:parse-time client-value :error-on-mismatch t)
+    (cl-l10n:parser-error (c)
+      (fail-validation (cl-l10n::reason c)))))
+
+(defmethod lisp-validate ((validator datetime-validator) (lisp-value cons))
+  t)
 ;;;; * a range of dates
 
 (defclass date-range-presentation (date-presentation)
@@ -89,12 +103,12 @@
 			    :show-time nil :stream stream))
       (call-next-method)))
 
-(defclass datetime-validator (non-nil-validator)
+(defclass date-range-validator (non-nil-validator)
   ()
-  (:default-initargs :error "Unable to determine date."))
+  (:default-initargs :error-message "Unable to determine date."))
 
-(defmethod client-validate ((validator datetime-validator) (client-value string))
-  (handler-case
-      (cl-l10n:parse-time client-value :error-on-mismatch t)
-    (cl-l10n:parser-error (c)
-      (fail-validation (cl-l10n::reason c)))))
+(defmethod client-validate ((validator date-range-validator) (client-value string))
+  t)
+
+(defmethod lisp-validate ((validator date-range-validator) (lisp-value cons))
+  t)

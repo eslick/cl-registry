@@ -216,9 +216,11 @@
 		  :metadata question 
 		  :css-class "question-presentation"
 		  (flatten1 (cons initargs args)))))
-      (when (eq type 'number-presentation)
-	(push (make-instance 'number-validator)
-	      (validators presentation)))
+      (case type
+        (number-presentation
+         (push (make-instance 'number-validator) (validators presentation)))
+        ((or datetime-presentation date-presentation)
+         (push (make-instance 'datetime-validator) (validators presentation))))
       (setf (dom-id presentation) (query-name presentation))
       (aif (get-answer question (current-patient) id)
 	   (setf (lisp-value presentation) (value it))
