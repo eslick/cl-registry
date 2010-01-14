@@ -574,7 +574,7 @@
                          (htm
                           (:div :class "question-input"
                                 (render-presentation-editable presentation)))
-                         ;; should probably refactor this code from the other render-group method
+                         #| ;; should probably refactor this code from the other render-group method
                          (let ((comment-count (comment-count cell)))
                            (htm (render-image-link (f* (do-question-comment-dialog ctrl cell))
                                                    "/pub/images/comment-icon.jpg" 
@@ -586,7 +586,7 @@
                                            (str (format nil "(~D ~A)" comment-count
                                                         (if (= comment-count 1)
                                                             #!"comment"
-                                                            #!"comments"))))))))
+                                                            #!"comments")))))))) |#
                          (awhen (warning-message presentation)
                            (htm (:div :class "question-error"
                                       (str it))))
