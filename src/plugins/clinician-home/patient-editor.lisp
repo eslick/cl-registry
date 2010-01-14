@@ -107,7 +107,7 @@
                                  #!"Please select patients to delete"
                                  :delete-confirmation-string-function
                                  'delete-patients-confirmation-string
-                                 :on-delete-items #'delete-patients-and-answers)))
+                                 :on-delete-items 'delete-patients-and-answers)))
         (setf (composite-widgets edw) (list gred))))
     ;; Returns
     edw))

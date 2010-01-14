@@ -205,6 +205,11 @@
 			       (:file "explorer"))
 			      :depends-on (collect analytics)
 			      :serial t)
+                     (:module uploads
+                              :components
+                              ((:file "uploads")
+                               (:file "upload-ctrl"))
+                              :serial t)
 		     (:module patient-home
 			      :components
 			      ((:file "user-controls")
