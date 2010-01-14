@@ -259,6 +259,7 @@
     ((:integer nil)        'integer-presentation)
     ((:range nil)          'range-limited-number-presentation)
     ((:date nil)           'date-presentation)
+    ((:date-range nil)     'date-range-presentation)
     ((:time nil)           'time-presentation)
     ((:number :measurement) 'measurement-presentation)
     ((:measurement :number) 'measurement-presentation)
@@ -279,6 +280,7 @@
      (:choice      :dropdown)
      (:multichoice :multiple-dropdown)
      (:date    :text-field)
+     (:date-range :text-field)
      (:range   :text-field)))
 
 (defmethod subtype-text-value ((data-type (eql :measurement)) subtype)
@@ -299,6 +301,7 @@
     (:string "")
     (:number 0)
     (:date (get-universal-time))
+    (:date-range (cons (get-universal-time) (get-universal-time)))
     (:time (get-universal-time))
     (:measurement 0)
     (:choice (first (question-choices question)))
@@ -313,6 +316,7 @@
 (defparameter *default-errors*
   '((:boolean . "Answer must be yes or no or true and false")
     (:date . "You must provide a valid date (MM/DD/YY or DD/MM/YY)")
+    (:date-range . "You must provide a valid date range ('MM/DD/YY to DD/MM/YY')")
     (:string . "You must provide an answer")
     (:number . "You must provide a valid number such as 10, 1.4, etc")
     (:measurement . "Please enter a number in the units specified")

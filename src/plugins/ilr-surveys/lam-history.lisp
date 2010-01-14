@@ -285,6 +285,12 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
 		   (radio-options
 		    (choices-mirror-alist
 		     '("Yes" "No" "Unknown")))))
+     (q17b
+      (make-instance 'survey-group
+                     :name "Dates of contraceptive use."
+                     :advice ""
+                     :order (list (make-question "Please specify type of contraceptive" :data-type :string)
+                                  (make-question "Dates of use" :data-type :date-range))))
 	   (q18
 	    (apply #'make-question "Has the patient ever been pregnant"
 		   :prompt "18. Has the patient ever been pregnant?"
@@ -316,6 +322,7 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
                                   :owner *default-study-owner*)))
         (add-rule group10 q10 "Other" subgroup10o :inline)
         (add-rule group10 q18 "Yes" q18-table :inline)
+        (add-rule group10 q17 "Yes" q17b :inline)
 	      ;; Returns
 	      group10))
            ;;
