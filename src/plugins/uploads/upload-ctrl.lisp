@@ -221,18 +221,25 @@
               (get-upload-directory-root)))
     form))
 
-(defun smart-rename-file (from to)
-  (format *debug-io* "~&Renaming ~s to ~s~%" from to)
-  (ensure-directories-exist to)
-  (or (ignore-errors (rename-file from to))
-      (metatilities::move-file from to)))
-
 (defun add-upload-file (grid file)
   (let* ((file-name (upload-file-name file))
+         (creator (creator file))
          (from (merge-pathnames file-name (upload-file-temp-directory)))
          (to-dir (upload-full-pathname (upload-file-grid-directory grid)))
          (to (merge-pathnames file-name to-dir)))
-    (smart-rename-file from to)))
+    (smart-rename-file from to :if-exists :supersede)
+    (let* ((files (delete-if-not
+                   ;; Should be string-equal in a case-insensitive file system
+                   (lambda (x) (equal file-name (upload-file-name x)))
+                   (upload-directory-files (upload-file-directory file))))
+           (to-keep (loop for file in files
+                       when (and (eq creator (creator file))
+                                 (null (upload-file-size file)))
+                       return file)))
+      (unless to-keep (setf to-keep (car (last files))))
+      (dolist (file files)
+        (unless (eq file to-keep)
+          (drop-instance-only file))))))
 
 (defun make-upload-file-grid ()
   (make-instance 'upload-file-grid

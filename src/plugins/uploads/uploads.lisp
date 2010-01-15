@@ -55,10 +55,17 @@
         :initarg :acl
         :initform nil)))
 
+(defvar *dont-delete-upload-file-file* nil)
+
+(defun drop-instance-only (file)
+  (let ((*dont-delete-upload-file-file* t))
+    (drop-instance file)))
+
 (defmethod drop-instance :before ((file upload-file))
   (let ((path (upload-full-pathname file)))
-    (when (probe-file path)
-      (delete-file path))))
+    (unless *dont-delete-upload-file-file*
+      (when (probe-file path)
+        (delete-file path)))))
 
 (defun get-upload-directory-root ()
   (or (get-from-root 'upload-directory-root)
@@ -103,7 +110,23 @@
                  :creator (if creator-p creator (current-user t))
                  :acl acl))
 
+(defun size-string (n)
+  (let ((abs (abs n)))
+    (cond ((< abs 10000) n)
+          ((< abs (expt 10 6)) (format nil "~,3f KB" (/ n 1000)))
+          ((< abs (expt 10 9)) (format nil "~,3f MB" (/ n (expt 10 6))))
+          (t (format nil "~,3f GB" (/ n (expt 10 9)))))))
+
 (defun upload-directory-files (dir)
+  (let ((files (upload-directory-files-internal dir)))
+    (dolist (file files)
+      (unless (upload-file-size file)
+        (setf (upload-file-size file)
+              (with-open-file (s (upload-full-pathname file) :if-does-not-exist nil)
+                (and s (size-string (file-length s)))))))
+    files))
+
+(defun upload-directory-files-internal (dir)
   (sort
    (get-instances-by-value
     'upload-file 'directory
