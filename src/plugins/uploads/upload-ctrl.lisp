@@ -139,7 +139,9 @@
 (defmethod dataedit-create-new-item-widget :around ((grid upload-directory-grid))
   (let* ((form (call-next-method))
          (dir (dataform-data form)))
-    (setf (upload-directory-parent dir) (upload-directory-grid-directory grid))
+    (setf (upload-directory-parent dir)
+          (or (upload-directory-grid-directory grid)
+              (get-upload-directory-root)))
     form))
 
 (defun render-upload-file-grid-header ()
@@ -211,14 +213,26 @@
                (format nil #!"Delete ~a files?" (length (cdr items))))))
         (t (values "You do not have permission to delete one or more of the checked files!" t))))
 
-(defun add-upload-file (grid file)
-  (setf (upload-file-directory file) (upload-directory-grid-directory grid)))
-
 (defmethod dataedit-create-new-item-widget :around ((grid upload-file-grid))
   (let* ((form (call-next-method))
          (file (dataform-data form)))
-    (setf (upload-file-directory file) (upload-file-grid-directory grid))
+    (setf (upload-file-directory file)
+          (or (upload-file-grid-directory grid)
+              (get-upload-directory-root)))
     form))
+
+(defun smart-rename-file (from to)
+  (format *debug-io* "~&Renaming ~s to ~s~%" from to)
+  (ensure-directories-exist to)
+  (or (ignore-errors (rename-file from to))
+      (metatilities::move-file from to)))
+
+(defun add-upload-file (grid file)
+  (let* ((file-name (upload-file-name file))
+         (from (merge-pathnames file-name (upload-file-temp-directory)))
+         (to-dir (upload-full-pathname (upload-file-grid-directory grid)))
+         (to (merge-pathnames file-name to-dir)))
+    (smart-rename-file from to)))
 
 (defun make-upload-file-grid ()
   (make-instance 'upload-file-grid
@@ -231,6 +245,7 @@
                  :delete-confirmation-string-function
                  'delete-upload-files-confirmation-string
                  ;; :on-delete-items 'delete-upload-files
+                 :on-add-item-completed 'add-upload-file
                  :allow-drilldown-p t
                  :on-drilldown (cons :do-upload-directory 'return-upload-file)
                  :autoset-drilled-down-item-p nil

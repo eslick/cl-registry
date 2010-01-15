@@ -4,6 +4,7 @@
 ^pub/mod-record$
 ^data/
 ^uploads/
+^uploads-tmp/
 ^logs/
 ^intl/po-out/
 \..*fsl

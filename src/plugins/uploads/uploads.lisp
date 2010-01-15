@@ -165,13 +165,6 @@
 (defmethod print-object ((file upload-file) stream)
   (print-upload-file-or-directory file stream))
 
-;; After an upload to the temp directory, we do this
-(defmethod rename-file-to-upload-file-pathname (pathname file)
-  (check-type file upload-file)
-  (let ((file-path (upload-full-pathname file)))
-    (ensure-directories-exist file-path)
-    (rename-file pathname file-path)))
-
 (defview upload-file-table-view (:type table
                                        :inherit-from '(:scaffold upload-file))
   (directory :hidep t)
@@ -180,10 +173,34 @@
   (size)
   (acl :hidep t))
 
+(defun upload-file-form-view-reader (obj)
+  obj nil)
+
+(defun upload-file-form-view-writer (value obj)
+  ;; Value is the file name in the (upload-file-temp-directory)
+  ;; Need to put it in a session variable
+  ;; And then move it to the proper position in an on-added function
+  ;; set up in make-upload-file-grid
+  (format *debug-io* "~&upload-file value: ~s~%" value)
+  obj nil)
+
+;; This is evaluated at compile time 
+(defun upload-file-temp-directory ()
+  (registry-relative-path '("uploads-tmp")))
+
 (defview upload-file-form-view (:type form
-                                     :inherit-from '(:scaffold upload-file))
+                                     :inherit-from '(:scaffold upload-file)
+                                     :use-ajax-p nil
+                                     :enctype "multipart/form-data")
   (directory :hidep t)
-  (name)
+  (name :label #!"File"
+        :present-as file-upload
+        :parse-as (file-upload :upload-directory (upload-file-temp-directory)
+                               ;; This could cause collisions.
+                               ;; Really need a unique directory per upload,
+                               ;; and code to manage that, and clean it
+                               ;; up at startup.
+                               :file-name :browser))
   (creator :hidep t)
   (size :hidep t)
   (acl :hidep t))
