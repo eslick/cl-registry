@@ -113,9 +113,9 @@
 (defun size-string (n)
   (let ((abs (abs n)))
     (cond ((< abs 10000) n)
-          ((< abs (expt 10 6)) (format nil "~,3f KB" (/ n 1000)))
-          ((< abs (expt 10 9)) (format nil "~,3f MB" (/ n (expt 10 6))))
-          (t (format nil "~,3f GB" (/ n (expt 10 9)))))))
+          ((< abs (expt 10 6)) (format nil "~,2f KB" (/ n 1000)))
+          ((< abs (expt 10 9)) (format nil "~,2f MB" (/ n (expt 10 6))))
+          (t (format nil "~,2f GB" (/ n (expt 10 9)))))))
 
 (defun upload-directory-files (dir)
   (let ((files (upload-directory-files-internal dir)))
