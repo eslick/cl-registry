@@ -534,7 +534,7 @@
                      (:p :style "font-size:small;font-style:italic;" (str advice))))))
           ;;	    (when (is-admin-p)
           ;;	      (render-group-info group))
-          (mapc #'(lambda (p) (render-question ctrl p))
+          (mapc #'(lambda (p) (render-question ctrl group p))
                 (presentations-for-group ctrl group)))))
 
 (defun render-group-info (group)
@@ -552,7 +552,7 @@
           (render-group group ctrl) #| 
 ;;	  (when (is-admin-p)
 ;;	    (str (format nil "[Group ID: ~A]" (mid group))))
-	  (mapc #'(lambda (p) (render-question ctrl p))
+	  (mapc #'(lambda (p) (render-question ctrl group p))
 		(presentations-for-group ctrl group)) |# )))
 
 (defmethod render-group ((group survey-group-table) ctrl)
@@ -603,10 +603,10 @@
 ;;  Rendering a question
 ;; ===============================================================
 
-(defmethod render-question (ctrl p)
+(defun render-question (ctrl group p)
   (let* ((q (metadata p))
 	 (active-inline-groups 
-	  (inline-groups (current-group ctrl) q (lisp-value p))))
+	  (inline-groups group q (lisp-value p))))
 ;;    (log-message :survey :debug "render question: ~A (~A) with value ~A"
 ;;		 (question-name q) q (lisp-value p))
     (validate-answers q (current-patient))
