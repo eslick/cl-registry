@@ -13,14 +13,14 @@
   (or (cl-l10n:parse-time client-value) :none))
 
 (define-lisp-value-setter datetime-presentation (lisp-value show-time-p show-date-p)
-  (if lisp-value
-      (with-string-stream (stream)
-	(cl-l10n:print-time lisp-value
-			    :show-date show-date-p
-			    :show-time show-time-p
-			    :locale (user-locale (current-user))
-			    :stream stream))
-      ""))
+  (cond ((eq lisp-value :none) nil)
+        (lisp-value (with-string-stream (stream)
+                      (cl-l10n:print-time lisp-value
+                                          :show-date show-date-p
+                                          :show-time show-time-p
+                                          :locale (user-locale (current-user))
+                                          :stream stream)))
+        (t "")))
 
 (defmethod render-presentation-editable ((presentation datetime-presentation))
   (with-html
@@ -40,13 +40,21 @@
 (defmethod render-presentation-editable :after ((presentation date-presentation))
   (let ((parse-output-span-id (genweb-field-name)))
     (with-html
+      " "
       (cond
         ((string-starts-with "en_US" (cl-l10n:locale-name (user-locale (current-user))))
-         (str #!"(mm/dd/yyyy)"))
+         (str
+          (if (typep presentation 'date-range-presentation)
+              #!"(mm/dd/yyyy[ to mm/dd/yyyy])"
+              #!"(mm/dd/yyyy)")))
         #| ((string-starts-with "ja" (cl-l10n:locale-name (user-locale (current-user)))) (str #!"(yyyy/mm/dd)")) |#
         (t
-         (str #!"(dd/mm/yyyy)")))
+         (str
+          (if (typep presentation 'date-range-presentation)
+              #!"(dd/mm/yyyy[ to dd/mm/yyyy)"
+              #!"(dd/mm/yyyy)"))))
       (:span :id parse-output-span-id  ""))))
+
       ;; should use parenscript here, not adding a dependency this
       ;; late in the game.
 ;;      (js-for-date-parsing (dom-id presentation) parse-output-span-id
@@ -80,12 +88,17 @@
 ;;;; * a range of dates
 
 (defclass date-range-presentation (date-presentation)
-  ())
+  ()
+  (:default-initargs :css-style "width: 24em"))
+
 
 (define-lisp-value-getter date-range-presentation (date-presentation client-value)
   (mvbind (string dates)
-     (cl-ppcre:scan-to-strings "(.*)[\s]+to[\s]+(.*)" client-value)
-   (declare (ignore string))
+      (cl-ppcre:scan-to-strings "(.+)[\\s]+to[\\s]+(.+)" client-value)
+    (declare (ignorable string))
+    (unless dates
+      (multiple-value-setq (string dates)
+        (cl-ppcre:scan-to-strings "(.+)" client-value)))
    (case (length dates)
      (0 :none)
      (1 (call-next-method))
@@ -101,7 +114,8 @@
 	(princ " to " stream)
 	(cl-l10n:print-time (cdr date-pair) :show-date t 
 			    :show-time nil :stream stream))
-      (call-next-method)))
+      (progn (call-next-method)
+             (return-from lisp-value date-pair))))
 
 (defclass date-range-validator (non-nil-validator)
   ()
