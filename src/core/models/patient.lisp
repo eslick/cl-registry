@@ -246,6 +246,10 @@
            :initform (current-center)
            :index t
            :documentation "The CENTER for this patient")
+   (external-id :accessor external-id
+                :initarg :external-id
+                :initform nil
+                :index t)
    (user :accessor user
          :initarg :user
          :initform nil
@@ -324,7 +328,7 @@
 (defview patient-table-view (:type table
                              :inherit-from '(:scaffold patient))
   (center :reader 'patient-center-short-name)
-  (user :reader 'patient-username)
+  (user :hidep t :reader 'patient-username)
   )
 
 (defclass patient-id-parser (parser)
@@ -332,10 +336,10 @@
   (:default-initargs :error-message nil))
 
 (defmethod parse-view-field-value ((parser patient-id-parser) value obj view field &rest args)
-  (declare (ignore obj view field args))
+  (declare (ignore view field args))
   (let* ((center (current-center))
          (patient (get-patient value center t)))
-    (cond (patient
+    (cond ((and patient (not (eq patient obj)))
            (setf (parser-error-message parser)
                  (format nil "There is already a patient with that Id"))
                (return-from parse-view-field-value nil))
