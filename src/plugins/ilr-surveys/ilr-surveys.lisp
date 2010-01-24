@@ -17,16 +17,17 @@
 ;;; Utilities
 
 (defun drop-ilr-surveys (surveys &key force)
-  (cond
-    (force
-     (mapcar 'drop-instance (get-instances-by-class 'answer))
-     (mapcar 'drop-instance (get-instances-by-class 'question))
-     (mapcar 'drop-instance (get-instances-by-class 'survey-group))
-     (mapcar 'drop-instance (get-instances-by-class 'survey)))
-    (t
-     (dolist (survey surveys)
-       (dolist (group (survey-groups survey))
-         (and group (drop-group group)))))))
+  (with-transaction ()
+    (cond
+      (force
+       (mapcar 'drop-instance (get-instances-by-class 'answer))
+       (mapcar 'drop-instance (get-instances-by-class 'question))
+       (mapcar 'drop-instance (get-instances-by-class 'survey-group))
+       (mapcar 'drop-instance (get-instances-by-class 'survey)))
+      (t
+       (dolist (survey surveys)
+         (dolist (group (survey-groups survey))
+           (and group (drop-group group))))))))
 
 (defmacro choices-options (var)
   `(list :data-type :choice :view-type :dropdown :choices ,var))
@@ -56,3 +57,13 @@
 (defmacro choices-mirror-alist (choices)
   `(loop for str in ,choices
       collect (cons str str)))
+
+(defmacro choices-breaks-alist (choices)
+  `(loop for thing in ,choices
+        collect
+        (multiple-value-bind (car cdr)
+            (if (atom thing)
+                (values thing thing)
+                (values (car thing) (cdr thing)))
+          ;; Returns
+          (cons (concatenate 'string car "<BR>") cdr))))
