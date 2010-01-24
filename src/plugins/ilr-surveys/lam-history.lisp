@@ -24,14 +24,12 @@
                     :name (format nil "LAM History Part ~D" (incf *survey-group-counter*))
                     args))
            (lmake-survey-sub-group (&rest args)
-             (apply #'make-instance 'survey-group
-                    :name (symbol-name (gensym)) :owner *default-study-owner* args))
+             (apply #'make-instance 'survey-group :name (symbol-name (gensym)) :owner *default-study-owner* args))
            (lmake-question (num name &rest args)
-             (apply #'make-instance 'question
-                    :name name :prompt (format nil "<SUP>~D</SUP> ~A:" num name)
-                    args)))
+             (apply #'make-question name :prompt-prefix (format nil "<SUP>~D</SUP>" num) args)))
       (let* ((*default-study-owner* owner)
              (*survey-group-counter* 0.)
+             (*question-prompt-suffix* ":")
              (*group0
               (lmake-survey-page-group
                :advice "<B>Clinician Header</B>
@@ -66,7 +64,7 @@ You may save your work at any point to complete at a later time.
                       (lmake-question 2. "Date of diagnosis of LAM or TSC-LAM"
                                       :data-type :date))
                      (q3i
-                      (lmake-question 3. "Age at time of diagnosis (years)" :data-type :number))
+                      (lmake-question 3. "Age at time of diagnosis" :prompt-suffix "(years)" :data-type :number))
                      (q5
                       (apply #'lmake-question 4. "Diagnosis type"
                              (radio-options
@@ -75,9 +73,8 @@ You may save your work at any point to complete at a later time.
                                 ("Unknown" . "Unknown")))))
                      ;; Rule: if q5 answer is TSC-LAM...
                      (q6
-                      (apply #'make-question "If the patient has TSC-LAM, what symptoms does the patient have"
-                             :prompt "<SUP>5</SUP>If the patient has TSC-LAM, what symptoms does the patient have?
-<P>Please check all that apply:"
+                      (apply #'lmake-question 5. "If the patient has TSC-LAM, what symptoms does the patient have"
+                             :prompt-suffix "?<BR>Please check all that apply:"
                              (multi-choices-options
                               (choices-mirror-alist
                                '("None" "Developmental delay" "Behavioral problem" "Other" "Unknown")))))
@@ -86,9 +83,8 @@ You may save your work at any point to complete at a later time.
                       (make-question "Other TSC-LAM symptoms" :data-type :string :view-type :text-field))
                      ;; Rule: if q5 answer is TSC-LAM...
                      (q7
-                      (apply #'make-question "If the patient has TSC-LAM, what organ systems are affected by tumors"
-                             :prompt "<SUP>6</SUP> If the patient has TSC-LAM, what organ systems are affected by tumors?
-<P>Please check all that apply:"
+                      (apply #'lmake-question 6. "If the patient has TSC-LAM, what organ systems are affected by tumors"
+                             :prompt-suffix "?<BR>Please check all that apply:"
                              (multi-choices-options
                               (choices-mirror-alist
                                '("Kidneys" "Heart" "Eyes" "Skin" "Lungs" "Other" "Unknown")))))
@@ -110,8 +106,8 @@ You may save your work at any point to complete at a later time.
              ;; How was LAM diagnosed?
              (*group8
               (let* ((q8
-                      (apply #'make-question "How was LAM diagnosed"
-                             :prompt "<SUP>7</SUP> How was LAM diagnosed?"
+                      (apply #'lmake-question 7  "How was LAM diagnosed"
+                             :prompt-suffix "?"
                              (multi-choices-options
                               (choices-mirror-alist
                                '("Pathological diagnosis" "Clinical diagnosis without biopsy" "Other" "Unknown")))))
@@ -119,7 +115,8 @@ You may save your work at any point to complete at a later time.
                      (group8 (lmake-survey-page-group :order questions8))
                      ;; Rule: if q8 was pathological diagnosis
                      (q8a
-                      (apply #'make-question "If pathological diagnosis, please indicate the type of biopsy (check all that apply)"
+                      (apply #'make-question "If pathological diagnosis, please indicate the type of biopsy"
+                             :prompt-suffix "(check all that apply)"
                              (multi-choices-options
                               (choices-mirror-alist
                                '("Lung biopsy" "Biopsy of lymph node" "Biopsy of other mass")))))
@@ -131,19 +128,20 @@ You may save your work at any point to complete at a later time.
                                  ("Video-assisted thorascopic surgery (VATS) biopsy" . "VATS")
                                  ("Transbronchial lung biopsy" . "Transbronchial"))))))
                      (q8b
-                      (apply #'make-question "If clinical diagnosis, what was used to make the diagnosis? Please check all that apply:"
+                      (apply #'make-question "If clinical diagnosis, what was used to make the diagnosis"
+                             :prompt-suffix "? Please check all that apply:"
                              (multi-choices-options
                               (choices-breaks-alist
                                '("Chest CT" "Other imaging findings" "Cliniical picture" "Pulmonary function tests" "Other")))))
                      ;; Rule: if q8b is "Other imaging findings"
-                     (q8bo1 (make-question "Other imaging findings. Please specify" :data-type :string))
+                     (q8bo1 (make-question "Other imaging findings" :prompt-suffix ". Please specify" :data-type :string))
                      (q8bo2 (make-question "Other" :data-type :string))
                      (subgroup8a (lmake-survey-sub-group :order (list q8a)))
                      (subgroup8a2 (lmake-survey-sub-group :order (list q8a2)))
                      (subgroup8b (lmake-survey-sub-group :order (list q8b)))
                      (subgroup8bo1 (lmake-survey-sub-group :order (list q8bo1)))
                      (subgroup8bo2 (lmake-survey-sub-group :order (list q8bo2)))
-                     (q8c (make-question "Other diagnosis please specify" :data-type :string))
+                     (q8c (make-question "Other diagnosis" :prompt-suffix "please specify" :data-type :string))
                      (subgroup8c (lmake-survey-sub-group :order (list q8c))))
                 ;; Group rules
                 (add-rule group8 q8 "Pathological diagnosis" subgroup8a ':inline)
@@ -192,9 +190,8 @@ You may save your work at any point to complete at a later time.
                 group9))
              (*group10
               (let* ((q10
-                      (apply #'make-question "How did the patient originally present"
-                             :prompt "<SUP>9</SUP> How did the patient originally present?
-What symptom, finding or event led to the eventual diagnosis of LAM?"
+                      (apply #'lmake-question 9. "How did the patient originally present"
+                             :prompt-suffix "? What symptom, finding or event led to the eventual diagnosis of LAM?"
                              (multi-choices-options
                               (choices-mirror-alist
                                '("Exertional dyspnea"
@@ -210,16 +207,19 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
                                       :data-type :number))
                      (q12
                       (apply #'lmake-question 11. "What is the patient's smoking history"
+                             :prompt-suffix "?"
                              (radio-options
                               (choices-breaks-alist
                                '("Current smoker" "Former smoker" "Never a smoker" "Unknown")))))
                      (q13
                       (apply #'lmake-question 12. "Has the patient ever had a pneumothorax"
+                             :prompt-suffix "?"
                              (radio-options
                               (choices-mirror-alist
                                '("Yes" "No" "Unknown")))))
                      (q14
                       (apply #'lmake-question 13. "Has the patient ever had a pleural effusion"
+                             :prompt-suffix "?"
                              (radio-options
                               (choices-mirror-alist
                                '("Yes" "No" "Unknown")))))
@@ -233,9 +233,8 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
                 group10))
              (*group15
               (let* ((q15
-                      (apply #'make-question "What extrapulmonary lesions does the patient have"
-                             :prompt "<SUP>14</SUP>What extrapulmonary lesions does the patient have?
-<P>Please check all that apply:"
+                      (apply #'lmake-question 14. "What extrapulmonary lesions does the patient have"
+                             :prompt-suffix "?<BR>Please check all that apply:"
                              (multi-choices-options
                               (choices-mirror-alist
                                '("None" "Renal angiomyolipoma" "Non-renal angiomyolipoma" "Lymphangiomyoma"
@@ -251,10 +250,12 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
              (*group16
               (let* ((q16
                       (lmake-question 15. "What was the patient's age of menarche"
+                                      :prompt-suffix "?"
                                       ;; ?? TODO: "Unknown" checkbox for Q16 ??
                                       :data-type :number))
                      (q17
                       (apply #'lmake-question 16. "Did the patient take oral contraceptive pills before diagnosed with LAM"
+                             :prompt-suffix "?"
                              (radio-options
                               (choices-mirror-alist
                                '("Yes" "No" "Unknown")))))
@@ -278,6 +279,7 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
 
                      (q19
                       (apply #'lmake-question 18. "Has the patient gone through menopause"
+                             :prompt-suffix "?"
                              (radio-options
                               (choices-mirror-alist
                                '("Yes" "No" "Unknown")))))
@@ -371,8 +373,8 @@ Please check all that apply:"))
                 group20))
              (*group21
               (let* ((q21
-                      (apply #'make-question "Does/did the patient use oxygen at home"
-                             :prompt "<SUP>20</SUP> Does/did the patient use oxygen at home?"
+                      (apply #'lmake-question 20. "Does/did the patient use oxygen at home"
+                             :prompt-suffix "?"
                              (choices-options-yes-no)))
                      (group21 (lmake-survey-page-group :order (list q21)))
                      (q21a
@@ -384,7 +386,7 @@ Please check all that apply:"))
                      (q21b (make-question "Average #liters/min" :data-type :number))
                      (q21c
                       (make-question "When did the patient initiate home oxygen"
-                                     :prompt "When did the patient initiate home oxygen?"
+                                     :prompt-suffix "?"
                                      :data-type :date))
                      (subgroup21
                       (lmake-survey-sub-group :order (list q21a q21b q21c))))
@@ -394,8 +396,8 @@ Please check all that apply:"))
                 group21))
              (*group22
               (let* ((q22
-                      (apply #'make-question "What is the patient's vital status"
-                             :prompt "<SUP>21</SUP>What is the patient's vital status?"
+                      (apply #'lmake-question 21. "What is the patient's vital status"
+                             :prompt-suffix "?"
                              (radio-options
                               (choices-mirror-alist
                                '("Living" "Deceased")))))
@@ -405,7 +407,7 @@ Please check all that apply:"))
                      (q22b (make-question "Date of death" :data-type :date))
                      (q22c
                       (apply #'make-question "What was the cause of death"
-                             :prompt "What was the cause of death?"
+                             :prompt-suffix "?"
                              (radio-options
                               (choices-breaks-alist
                                '("Respiratory failure" "Infection" "Pulmonary thromboembolism" "Cancer" "Other")))))
