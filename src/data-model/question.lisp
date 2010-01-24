@@ -74,9 +74,13 @@
 
 (defparameter *question-prompt-suffix* ":")
 
-(defun make-question (name &rest args &key (prompt name prompt-supplied-p) &allow-other-keys)
+(defun make-question (name &rest args &key (prompt name prompt-supplied-p) (prompt-suffix *question-prompt-suffix*) &allow-other-keys)
+  "Shortcut for (APPLY MAKE-INSTANCE 'QUESTION :NAME NAME :PROMPT PROMPT ARGS)
+  PROMPT defaults to NAME but can be overridden.
+  PROMPT-SUFFIX is concatenated to PROMPT. Default PROMPT-SUFFIX is special *QUESTION-PROMPT-SUFFIX*"
   (if (not prompt-supplied-p)
-      (setq prompt (concatenate 'string prompt *question-prompt-suffix*)))
+      (setq prompt (concatenate 'string prompt prompt-suffix)))
+  (remf args ':prompt-suffix)
   (apply #'make-instance 'question :name name :prompt prompt args))
 
 ;;
