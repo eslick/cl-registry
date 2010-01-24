@@ -38,11 +38,11 @@
 <P>Thank you for your involvement in this research study and your collaboration with the International LAM Registry!
 <P>We will use this information to examine whether women diagnosed with LAM under age 25 have a more rapid pulmonary function decline relative to those over the age of 55.
 <P>This study involves a retrospective medical record review, with a particular focus on pulmonary function tests.  
-In completing the following form, we ask that you comply with your local laws and regulations regarding access and use of patient records, and obtain consent for record use whenever indicated.
-Data identifiers such as name and date of birth are used to eliminate duplicate records for patients receiving care at multiple institutions, however records will be given a unique identifier and stored in de-identified form.  
+In completing the following form, we ask that you comply with your local laws and regulations regarding access and use of patient records, and obtain consent whenever indicated.
+Data identifiers such as name and date of birth will not be used, and each record will be given a unique identifier for the purpose of data storage.
 For further information about data use please see our
 <A HREF=\"/forms/ilr-data-use\">International LAM Registry data use form</A>.
-<P>For this study, please complete the following data entry form for current and former LAM patients in your care who were:
+<P>For this study, please complete the following data entry form for <B>current</B> and <B>former</B> LAM patients in your care who were:
 <UL>
 <LI>diagnosed with LAM at age 25 or under
 <LI>diagnosed with LAM at age 55 or older
@@ -51,19 +51,24 @@ For further information about data use please see our
 You may save your work at any point to complete at a later time.
 <P> Additionally, please encourage all of your LAM patients to register on LAMsight.org!"))
              (*group1
-              (let* ((q1
+              (let* (
+                     #|
+                     (q1
                       (lmake-question 1. "Patient name" :data-type :string))
                      (q2
                       (lmake-question 2. "Patient date of birth" :data-type :date))
+                     |#
                      (q3
-                      (lmake-question 3. "Country where patient receives medical care"
+                      (lmake-question 1. "Country where patient receives medical care"
                                       ;; !! TODO: Country names from database !!
                                       :data-type :string))
                      (q4
-                      (lmake-question 4. "Date of diagnosis of LAM or TSC-LAM"
+                      (lmake-question 2. "Date of diagnosis of LAM or TSC-LAM"
                                       :data-type :date))
+                     (q3i
+                      (lmake-question 3. "Age at time of diagnosis (years)" :data-type :number))
                      (q5
-                      (apply #'lmake-question 5. "Diagnosis type"
+                      (apply #'lmake-question 4. "Diagnosis type"
                              (radio-options
                               '(("Sporadic LAM" . "LAM")
                                 ("Tuberous Sclerosis Complex and LAM (TSC-LAM)" . "TSC-LAM")
@@ -71,7 +76,7 @@ You may save your work at any point to complete at a later time.
                      ;; Rule: if q5 answer is TSC-LAM...
                      (q6
                       (apply #'make-question "If the patient has TSC-LAM, what symptoms does the patient have"
-                             :prompt "<SUP>6</SUP>If the patient has TSC-LAM, what symptoms does the patient have?
+                             :prompt "<SUP>5</SUP>If the patient has TSC-LAM, what symptoms does the patient have?
 <P>Please check all that apply:"
                              (multi-choices-options
                               (choices-mirror-alist
@@ -82,7 +87,7 @@ You may save your work at any point to complete at a later time.
                      ;; Rule: if q5 answer is TSC-LAM...
                      (q7
                       (apply #'make-question "If the patient has TSC-LAM, what organ systems are affected by tumors"
-                             :prompt "<SUP>7</SUP> If the patient has TSC-LAM, what organ systems are affected by tumors?
+                             :prompt "<SUP>6</SUP> If the patient has TSC-LAM, what organ systems are affected by tumors?
 <P>Please check all that apply:"
                              (multi-choices-options
                               (choices-mirror-alist
@@ -90,7 +95,7 @@ You may save your work at any point to complete at a later time.
                      ;; Rule: if previous answer included Other...
                      (q7o
                       (make-question "Other TSC-LAM symptoms" :data-type :string :view-type :text-field))
-                     (questions1 (list q1 q2 q3 q4 q5))
+                     (questions1 (list q3 q4 q3i q5))
                      (group1 (lmake-survey-page-group :order questions1))
                      ;; Subgroups
                      (subgroup1 (lmake-survey-sub-group :order (list q6 q7)))
@@ -106,7 +111,7 @@ You may save your work at any point to complete at a later time.
              (*group8
               (let* ((q8
                       (apply #'make-question "How was LAM diagnosed"
-                             :prompt "<SUP>8</SUP> How was LAM diagnosed?"
+                             :prompt "<SUP>7</SUP> How was LAM diagnosed?"
                              (multi-choices-options
                               (choices-mirror-alist
                                '("Pathological diagnosis" "Clinical diagnosis without biopsy" "Other" "Unknown")))))
@@ -154,7 +159,7 @@ You may save your work at any point to complete at a later time.
              (*group9
               (let* ((group9
                       (lmake-survey-page-group
-                       :advice "<SUP>9</SUP> If a biopsy was performed, what were the histopathological findings?"))
+                       :advice "<SUP>8</SUP> If a biopsy was performed, what were the histopathological findings?"))
                      (questions
                       (loop for spec in
                            '(("HMB-45 immunostaining" (("Completed" "Positive" "Negative") ("Not completed")))
@@ -188,7 +193,7 @@ You may save your work at any point to complete at a later time.
              (*group10
               (let* ((q10
                       (apply #'make-question "How did the patient originally present"
-                             :prompt "<SUP>10</SUP> How did the patient originally present?
+                             :prompt "<SUP>9</SUP> How did the patient originally present?
 What symptom, finding or event led to the eventual diagnosis of LAM?"
                              (multi-choices-options
                               (choices-mirror-alist
@@ -201,20 +206,20 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
                      (q10o
                       (make-question "Other symptom(s) originally presented" :data-type :string))
                      (q11
-                      (lmake-question 11. "How old was the patient at time of the first symptoms attributed to LAM"
+                      (lmake-question 10. "How old was the patient at time of the first symptoms attributed to LAM"
                                       :data-type :number))
                      (q12
-                      (apply #'lmake-question 12. "What is the patient's smoking history"
+                      (apply #'lmake-question 11. "What is the patient's smoking history"
                              (radio-options
                               (choices-breaks-alist
                                '("Current smoker" "Former smoker" "Never a smoker" "Unknown")))))
                      (q13
-                      (apply #'lmake-question 13. "Has the patient ever had a pneumothorax"
+                      (apply #'lmake-question 12. "Has the patient ever had a pneumothorax"
                              (radio-options
                               (choices-mirror-alist
                                '("Yes" "No" "Unknown")))))
                      (q14
-                      (apply #'lmake-question 14. "Has the patient ever had a pleural effusion"
+                      (apply #'lmake-question 13. "Has the patient ever had a pleural effusion"
                              (radio-options
                               (choices-mirror-alist
                                '("Yes" "No" "Unknown")))))
@@ -229,7 +234,7 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
              (*group15
               (let* ((q15
                       (apply #'make-question "What extrapulmonary lesions does the patient have"
-                             :prompt "<SUP>15</SUP>What extrapulmonary lesions does the patient have?
+                             :prompt "<SUP>14</SUP>What extrapulmonary lesions does the patient have?
 <P>Please check all that apply:"
                              (multi-choices-options
                               (choices-mirror-alist
@@ -245,11 +250,11 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
                 group15))
              (*group16
               (let* ((q16
-                      (lmake-question 16. "What was the patient's age of menarche"
+                      (lmake-question 15. "What was the patient's age of menarche"
                                       ;; ?? TODO: "Unknown" checkbox for Q16 ??
                                       :data-type :number))
                      (q17
-                      (apply #'lmake-question 17. "Did the patient take oral contraceptive pills before diagnosed with LAM"
+                      (apply #'lmake-question 16. "Did the patient take oral contraceptive pills before diagnosed with LAM"
                              (radio-options
                               (choices-mirror-alist
                                '("Yes" "No" "Unknown")))))
@@ -260,7 +265,7 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
                                      :order (list (make-question "Please specify type of contraceptive" :data-type :string)
                                                   (make-question "Dates of use" :data-type :date-range))))
                      (q18
-                      (apply #'lmake-question 18. "Has the patient ever been pregnant"
+                      (apply #'lmake-question 17. "Has the patient ever been pregnant"
                              (radio-options
                               (choices-mirror-alist
                                '("Yes" "No" "Unknown")))))
@@ -272,7 +277,7 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
                                                ( "Abortions" (:question) (:question) )))
 
                      (q19
-                      (apply #'lmake-question 19. "Has the patient gone through menopause"
+                      (apply #'lmake-question 18. "Has the patient gone through menopause"
                              (radio-options
                               (choices-mirror-alist
                                '("Yes" "No" "Unknown")))))
@@ -286,7 +291,8 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
                 group16))
              (*group20
               (let* ((group20
-                      (lmake-survey-page-group :advice "<SUP>20</SUP> What is the patient's LAM-related <B>treatment</B> history?"))
+                      (lmake-survey-page-group :advice "<SUP>19</SUP> What is the patient's LAM related <B>treatment</B> history?
+Please check all that apply:"))
                      (questions20
                       (loop for spec in
                            `(("No treatment")
@@ -366,7 +372,7 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
              (*group21
               (let* ((q21
                       (apply #'make-question "Does/did the patient use oxygen at home"
-                             :prompt "<SUP>21</SUP> Does/did the patient use oxygen at home?"
+                             :prompt "<SUP>20</SUP> Does/did the patient use oxygen at home?"
                              (choices-options-yes-no)))
                      (group21 (lmake-survey-page-group :order (list q21)))
                      (q21a
@@ -389,7 +395,7 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
              (*group22
               (let* ((q22
                       (apply #'make-question "What is the patient's vital status"
-                             :prompt "<SUP>22</SUP>What is the patient's vital status?"
+                             :prompt "<SUP>21</SUP>What is the patient's vital status?"
                              (radio-options
                               (choices-mirror-alist
                                '("Living" "Deceased")))))
@@ -405,11 +411,14 @@ What symptom, finding or event led to the eventual diagnosis of LAM?"
                                '("Respiratory failure" "Infection" "Pulmonary thromboembolism" "Cancer" "Other")))))
                      (subgroup22-dead (lmake-survey-sub-group :order (list q22b q22c)))
                      (q22d (make-question "Please indicate type of infection if known" :data-type :string))
-                     (subgroup22-infection (lmake-survey-sub-group :order (list q22d))))
+                     (subgroup22-infection (lmake-survey-sub-group :order (list q22d)))
+                     (q22e (make-question "Please indicate type of cancer if known" :data-type :string))
+                     (subgroup22-cancer (lmake-survey-sub-group :order (list q22e))))
                 ;; Group rules
                 (add-rule group22 q22 "Living" subgroup22-living ':inline)
                 (add-rule group22 q22 "Deceased" subgroup22-dead ':inline)
                 (add-rule subgroup22-dead q22c "Infection" subgroup22-infection :inline)
+                (add-rule subgroup22-dead q22c "Cancer" subgroup22-cancer :inline)
                 ;; Returns
                 group22))
              ;;
