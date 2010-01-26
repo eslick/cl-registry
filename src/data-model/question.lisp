@@ -32,7 +32,7 @@
 
 (defmethod print-object ((inst question) stream)
   (format stream "#<QUESTION (~A) '~A'>"
-	  (object-id inst)
+	  (mid inst)
 	  (when (slot-boundp inst 'prompt)
 	    (question-prompt inst))))
 

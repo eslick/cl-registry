@@ -1,4 +1,4 @@
-(in-package :ls2-flashex)
+(in-package :flashex)
 
 ;; =============================================================
 ;;  
@@ -50,12 +50,12 @@
 		   values #(0 0 2000 21000 12000 16500 11000 10000 21000 16000) )
 		 )))
 
-(define-api-handler (ls2ex-chart1 :mime "text/plain")
+(define-api-handler (fx-chart1 :mime "text/plain")
     (tokens params auth-p)
   (with-html
     (str *chart1*)))
 
-(define-api-handler (ls2ex-io :mime "text/plain")
+(define-api-handler (fx-io :mime "text/plain")
     (tokens params auth-p)
   (let ((dset (assoc-get "dataset" params #'equal)))
     (with-html
@@ -70,7 +70,7 @@
 ;; =============================================================
 
 (defparameter *test-treemap* nil)
-(define-api-handler (ls2ex-treemap :mime "text/plain")
+(define-api-handler (fx-treemap :mime "text/plain")
     (tokens params auth-p)
   (with-html
       (json:encode-json-to-string *test-treemap*)))
@@ -99,7 +99,7 @@
 
 (defparameter *test-data* nil)
 
-(define-api-handler (ls2ex-table1 :mime "text/plain") (tokens params auth-p)
+(define-api-handler (fx-table1 :mime "text/plain") (tokens params auth-p)
   (with-html
     (json:encode-json-to-string *test-data*)))
 ;;    (cxml-xmls:map-node (cxml:make-character-stream-sink *weblocks-output-stream*)

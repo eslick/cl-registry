@@ -10,7 +10,7 @@
 (defsystem registry
     :name "Medical Registry"
     :version "0.9"
-    :maintainer ""
+    :maintainer "Clozure Associates"
     :author "MIT Media Lab / Clozure Associates"
     :licence "Soon to be BSD?"
     :description "A general medical registry platform for patients and clinicians"
@@ -242,3 +242,22 @@
 			   :drakma :montezuma))
 
 
+(defsystem registry-flashex 
+  :name "New Registry Explorer"
+  :version "0.1"
+  :maintainer "Ian Eslick"
+  :components ((:module src
+	       :components
+	       ((:module plugins
+                :components
+		((:module flashex
+		 :components
+		 ((:file "package")
+		  (:file "listserv")
+		  (:file "cgraph")
+		  (:file "concept-graph")
+		  (:file "charting")
+		  (:file "charts")
+		  (:file "flashex"))
+		 :serial t))))))
+  :depends-on (:registry :smart :cl-mathstats))

@@ -15,7 +15,7 @@
    (height :accessor height :initarg :height :initform 300)
    (src :accessor flash-src :initarg :src
 	     :initform "/pub/flash/")
-   (parameters :accessor flash-parameters :initarg :params)
+   (parameters :accessor flash-parameters :initarg :params :initform nil)
    (file-path :accessor file-path :initarg :file-path
 	      :initform nil)
    (deep-linking :accessor deep-linking :initarg :deep-linking 

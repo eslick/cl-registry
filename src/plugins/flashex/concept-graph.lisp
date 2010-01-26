@@ -97,16 +97,18 @@
 
 
 (defun make-query-graph (query)
-  (let* ((qtree (make-question-subgraph query))
-	 (nodes (remove-duplicates 
-		 (get-term-nodes query)
-		 :test #'equal :key (f_ (assoc-get :id _)))))
+  (let* ((qtree (make-question-subgraph query)))
+;;	 (nodes (remove-duplicates 
+;;	 (get-term-nodes query)
+;;		 :test #'equal :key (f_ (assoc-get :id _)))))
     (setf (cdr (assoc :links (first qtree)))
 	  (mapcar (f_ (assoc-get :id _)) (rest qtree)))
     (cons (make-graph-node query query 0 "query"
 			   (mapcar (f_ (assoc-get :id _)) 
-				   (cons (first qtree) nodes)))
-	  (append qtree nodes))))
+				   qtree)) ;;(first qtree)))
+	  qtree)))
+;;				   (cons (first qtree) nodes)))
+;;	  (append qtree nodes))))
 
 
 (defun make-question-subgraph (query)

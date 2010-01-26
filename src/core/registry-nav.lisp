@@ -41,14 +41,17 @@
 	   ((and tokens (equal (first tokens) "dashboard"))
 	    (pop-tokens uri-tokens 1)
 	    (home-page dispatcher))
-	  ;; Generic content pages
-	  ((and tokens (= (length tokens) 1)
-		(assoc (first tokens) (content-pages dispatcher) :test #'equal))
-	   (pop-tokens uri-tokens (length tokens))
-	   (make-article-widget (cdr it) :render-title-p nil :dom-id "tour"))
-	  ;; Unsubscribe user URL
-          ((get-unsubscribe-widget-from-uri-tokens uri-tokens))
-	  (t (home-page dispatcher)))))
+	   ;; API Handler
+	   ((and tokens (equal (first tokens) *api-root-url*))
+	    (dispatch-api-handler (subseq (remaining-tokens uri-tokens) 1)))
+	   ;; Generic content pages
+	   ((and tokens (= (length tokens) 1)
+		 (assoc (first tokens) (content-pages dispatcher) :test #'equal))
+	    (pop-tokens uri-tokens (length tokens))
+	    (make-article-widget (cdr it) :render-title-p nil :dom-id "tour"))
+	   ;; Unsubscribe user URL
+	   ((get-unsubscribe-widget-from-uri-tokens uri-tokens))
+	   (t (home-page dispatcher)))))
 
 ;;
 ;; Construction the dashboard widget (move to widgets eventually)

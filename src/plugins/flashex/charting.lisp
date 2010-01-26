@@ -151,7 +151,7 @@
 (defun convert-discrete-argument (value)
   (cond ((eq value t) "True")
 	((null value) "False")
-	(t (lamsight2::humanize-name value))))
+	(t (registry::humanize-name value))))
     
 
 ;;;; Strings

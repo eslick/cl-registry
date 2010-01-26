@@ -106,8 +106,8 @@
 		    :allow-drilldown-p t
 		    :on-drilldown (cons :do-survey 'goto-survey-viewer)
 		    :autoset-drilled-down-item-p nil
-		    :on-query `(:filter-fn ,(lambda (survey) 
-					      (not (include-survey-p survey diary-p))))
+;;		    :on-query `(:filter-fn ,(lambda (survey) 
+;;					      (not (include-survey-p survey diary-p))))
 		    :sort '(sort-key . :asc)))))
 
 (defun include-survey-p (survey diary-p)
@@ -130,20 +130,20 @@
     ;; 		(str #!"This section of the site is dedicated to constructing the database for LAM.  It currently focuses on background information via a set of surveys.  We will include other methods of data gathering in the near future."))
     ;; 	    (:p :style "font-size: 100%;" 
     ;; 		(str #!"Surveys consist of a collection of related questions. Surveys may contain one or more pages of questions.  You can fill these out one at a time.  You can leave a survey at any time and return later to complete it.  If you have any problems, please post a request for help in the <a href=\"/dashboard/discuss/\">Discussion Forums</a>.")))))
-    (:p :class "select-view"
-	(if diary-view-p
-	    (with-html
-	      (:div :class "button-select"
-		    (:a :href "/dashboard/collect/survey/" :class "button"
-			(str #! "View Surveys"))
-		    (:a :href "/dashboard/collect/diary" :class "button-active"
-			(str #! "View Diaries"))))
-	    (with-html
-	      (:div :class "button-select"
-		    (:a :href "/dashboard/collect/survey" :class "button-active"
-			(str #! "View Surveys"))
-		    (:a :href "/dashboard/collect/diary" :class "button"
-			(str #! "View Diaries"))))))
+;;     (:p :class "select-view"
+;; 	(if diary-view-p
+;; 	    (with-html
+;; 	      (:div :class "button-select"
+;; 		    (:a :href "/dashboard/collect/survey/" :class "button"
+;; 			(str #! "View Surveys"))
+;; 		    (:a :href "/dashboard/collect/diary" :class "button-active"
+;; 			(str #! "View Diaries"))))
+;; 	    (with-html
+;; 	      (:div :class "button-select"
+;; 		    (:a :href "/dashboard/collect/survey" :class "button-active"
+;; 			(str #! "View Surveys"))
+;; 		    (:a :href "/dashboard/collect/diary" :class "button"
+;; 			(str #! "View Diaries"))))))
     (if (current-patient)
         (htm (:p (str (format nil "~A ~A." #!"Please choose from the following"
                               (if diary-view-p #!"diaries" #!"surveys")))))
