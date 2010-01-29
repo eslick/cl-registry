@@ -524,14 +524,18 @@
 ;; Rendering a group
 ;; ===============================================================
 
+(defmethod render-advice ((group survey-group) ctrl)
+  (declare (ignore ctrl))
+  (let ((advice (group-advice group)))
+    (when advice
+      (with-html
+       (:div :class "survey-advice"
+	     (:p :style "font-size:small;font-style:italic;" (str advice)))))))
+
 (defmethod render-group ((group survey-group) ctrl)
   (with-html
     (:div :class "survey-group"
-          (let ((advice (group-advice group)))
-            (when advice
-              (htm
-               (:div :class "survey-advice"
-                     (:p :style "font-size:small;font-style:italic;" (str advice))))))
+	  (render-advice group ctrl)
           ;;	    (when (is-admin-p)
           ;;	      (render-group-info group))
           (mapc #'(lambda (p) (render-question ctrl group p))
@@ -558,35 +562,36 @@
 (defmethod render-group ((group survey-group-table) ctrl)
   (with-html
     (:div :class "survey-group"
-      (:table
-       (dolist (row (group-table-rows group))
-         (htm
-          (:tr
-           (dolist (cell row)
-             (htm
-              (:td
-               (etypecase cell
-                 (null nil)
-                 (string (str cell))
-                 (question
-                  (htm (let ((presentation (find cell (presentations-for-group ctrl group) :key #'metadata)))
-                         (validate-answers cell (current-patient))
-                         (htm
-                          (:div :class "question-input"
-                                (render-presentation-editable presentation)))
-                         #| ;; should probably refactor this code from the other render-group method
-                         (let ((comment-count (comment-count cell)))
-                           (htm (render-image-link (f* (do-question-comment-dialog ctrl cell))
-                                                   "/pub/images/comment-icon.jpg" 
-                                                   :alt #!"Add Comment"
-                                                   :class (when (> comment-count 0)
-                                                            "question-has-comments"))
-                                (when (> comment-count 0)
-                                  (htm (:p :class "question-has-comments"
-                                           (str (format nil "(~D ~A)" comment-count
-                                                        (if (= comment-count 1)
-                                                            #!"comment"
-                                                            #!"comments")))))))) |#
+	  (render-advice group ctrl)
+	  (:table
+	   (dolist (row (group-table-rows group))
+	     (htm
+	      (:tr
+	       (dolist (cell row)
+		 (htm
+		  (:td
+		   (etypecase cell
+		     (null nil)
+		     (string (str cell))
+		     (question
+		      (htm (let ((presentation (find cell (presentations-for-group ctrl group) :key #'metadata)))
+			     (validate-answers cell (current-patient))
+			     (htm
+			      (:div :class "question-input"
+				    (render-presentation-editable presentation)))
+			     #| ;; should probably refactor this code from the other render-group method
+			     (let ((comment-count (comment-count cell)))
+			     (htm (render-image-link (f* (do-question-comment-dialog ctrl cell))
+			     "/pub/images/comment-icon.jpg" 
+			     :alt #!"Add Comment"
+			     :class (when (> comment-count 0)
+			     "question-has-comments"))
+			     (when (> comment-count 0)
+			     (htm (:p :class "question-has-comments"
+			     (str (format nil "(~D ~A)" comment-count
+			     (if (= comment-count 1)
+			     #!"comment"
+			     #!"comments")))))))) |#
                          (awhen (warning-message presentation)
                            (htm (:div :class "question-error"
                                       (str it))))
