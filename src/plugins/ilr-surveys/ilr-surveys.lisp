@@ -10,10 +10,6 @@
 (define-plugin ilr-surveys ()
   )
 
-;;; Globals
-
-(defvar *default-study-owner*)
-
 ;;; Utilities
 
 (defun drop-ilr-surveys (surveys &key force)
@@ -29,7 +25,7 @@
          (dolist (group (survey-groups survey))
            (and group (drop-group group))))))))
 
-(defmacro choices-options (var)
+(defmacro dropdown-options (var)
   `(list :data-type :choice :view-type :dropdown :choices ,var))
 
 (defmacro multi-choices-options (var)
@@ -41,14 +37,13 @@
 (defmacro choices-options-numbered (labels &key (start 1.))
   (let ((countsym (gensym)))
     `(let ((,countsym ,start))
-       (choices-options
-  (loop for item in ,labels
-        collect
-        (prog1
-      (cons
-       (format nil "(~D) ~A" ,countsym item)
-       ,countsym)
-    (incf ,countsym)))))))
+       (loop for item in ,labels
+          collect
+          (prog1
+              (cons
+               (format nil "(~D) ~A" ,countsym item)
+               ,countsym)
+            (incf ,countsym))))))
 
 (defvar *choices-alist-yes-no '(("Yes" . t) ("No" . nil)))
 
@@ -67,3 +62,42 @@
                 (values (car thing) (cdr thing)))
           ;; Returns
           (cons (concatenate 'string car "<BR>") cdr))))
+
+(defun formatted-question-number (num &optional stream)
+  (and num (format stream "<SUP>~D</SUP>" num)))
+  
+(defun make-survey-group-named-and-numbered (survey name num &rest args)
+  (let* ((groups (survey-groups survey))
+         (group
+          (apply #'make-instance 'survey-group
+                 :owner (owner survey)
+                 :name (format nil "~A Section~@[ ~D~]"
+                               name
+                               (cond
+                                 ((null num) nil)
+                                 ((numberp num) num)
+                                 ((eq num t) (1+ (length groups)))))
+                 args)))
+    ;;(format t "~&Add group ~S to groups ~S" group groups)
+    (if groups
+        (setf (survey-groups survey) (append groups (list group)))
+        (setf (survey-groups survey) (list group)))
+    ;; Returns
+    group))
+
+
+(defun make-survey-sub-group-named (group name &rest args)
+  (setq name (or name (gensym)))
+  (apply #'make-instance 'survey-group
+         :name (format nil "~A ~A" (group-name group) name)
+         :owner (owner group) args))
+
+(defgeneric make-question-named-and-numbered (arg1 arg2 &rest args))
+
+(defmethod make-question-named-and-numbered ((num integer) (name string) &rest args)
+  (apply #'make-question-named-and-numbered name num args))
+
+(defmethod make-question-named-and-numbered ((name string) (num integer) &rest args)
+  (apply #'make-question name
+         :prompt-prefix (formatted-question-number num)
+         args))
