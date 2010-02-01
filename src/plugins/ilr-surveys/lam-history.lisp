@@ -30,8 +30,28 @@
                            :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (survey-pft
             (make-instance 'survey
-                           :name "LAM History PFT diary"
+                           :name "LAM History Pulmonary Function Test (PFT) Diary"
                            :description "Enter PFT results for LAM patient."
+                           :owner owner
+                           :published t
+                           :priority 1
+                           :diary-p t
+                           :diary-description "One result per date"
+                           :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+           (survey-6mwd
+            (make-instance 'survey
+                           :name "LAM History Six Minute Walking Distance (6MWD) Diary"
+                           :description "Enter 6MWD results for LAM patient."
+                           :owner owner
+                           :published t
+                           :priority 1
+                           :diary-p t
+                           :diary-description "One result per date"
+                           :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+           (survey-sgrq
+            (make-instance 'survey
+                           :name "LAM History Saint George's Respiratory Questionnaire (SGRQ) Diary"
+                           :description "Enter SGRQ results for LAM patient."
                            :owner owner
                            :published t
                            :priority 1
@@ -530,14 +550,16 @@ You may save your work at any point to complete at a later time.
                    as q3.4-choices = (third spec)
                    append
                    (let* ((q3.1
-                           (make-question (format nil "~A Result" q3.1-name)
+                           (make-question (format nil "~A - Result" q3.1-name)
                                           :prompt-prefix "<HR>"
-                                          :prompt-suffix "" :data-type :string :data-help q3.1-units))
+                                          :prompt-suffix (format nil " (~A)" q3.1-units) :data-type :string))
                           (q3.2
-                           (make-question (format nil "~A Percent Predicted" q3.1-name)
-                                          :prompt-suffix "" :data-type :string :data-help "%"))
+                           (make-question (format nil "~A - Percent Predicted" q3.1-name)
+                                          :prompt "Percent Predicted:"
+                                          :prompt-suffix " %" :data-type :string))
                           (q3.3
-                           (apply #'make-question (format nil "~A Test not performed" q3.1-name)
+                           (apply #'make-question (format nil "~A - Test not performed" q3.1-name)
+                                  :prompt "Test not performed:"
                                   (choices-options-yes-no)))
                           (q3.4
                            (and q3.4-choices
@@ -565,5 +587,30 @@ You may save your work at any point to complete at a later time.
         ;; Survey diary question
         (setf (diary-question survey-pft) q1))
 
+      ;;
+      ;; Survey 3 - 6MWD
+      ;;
+      (let* ((q1 (make-question "Date" :data-type :date))
+             (q2 (make-question "Result" :prompt-suffix " (feet/meters)" :data-type :number))
+             (*group*
+              (make-survey-group-named-and-numbered survey-6mwd "LAM History 6MWD" nil :order (list q1 q2))))
+        (declare (ignore *group*))
+        ;; Survey diary question
+        (setf (diary-question survey-6mwd) q1))
+
+      ;;
+      ;; Survey 4 - SGRQ
+      ;;
+      (let* ((q1 (make-question "Date" :data-type :date))
+             (q2 (make-question "Total Score" :data-type :number))
+             (q3 (make-question "Symptoms Score" :data-type :number))
+             (q4 (make-question "Activity Score" :data-type :number))
+             (q5 (make-question "Impacts Score" :data-type :number))
+             (*group*
+              (make-survey-group-named-and-numbered survey-sgrq "LAM History SGRQ" nil :order (list q1 q2 q3 q4 q5))))
+        (declare (ignore *group*))
+        ;; Survey diary question
+        (setf (diary-question survey-sgrq) q1))
+
       ;; Returns
-      (list survey survey-pft))))
+      (list survey survey-pft survey-6mwd survey-sgrq))))
