@@ -512,18 +512,37 @@ You may save your work at any point to complete at a later time.
       ;;
       (let* ((q22
               (apply #'make-question-named-and-numbered 22. "Do you have pulmonary function test (PFT) reports for the patient"
-                     :prompt-suffix "? Please enter <B>all</B> the results that you have for the patient on the separate PFT patient diary."
+                     :prompt-suffix "?"
+                     (choices-options-yes-no)))
+             (q22-confirm
+              (apply #'make-question "Confirm that all PFT results have been entered for the patient"
+                     :prompt-prefix "Please enter <B>all</B> the results that you have for the patient on the separate PFT patient diary.<BR>"
                      (choices-options-yes-no)))
              (q23
               (apply #'make-question-named-and-numbered 23. "Does the patient have <B>six minute walk distance</B> (6MWD) results"
-                     :prompt-suffix "? Please enter <B>all</B> the results that you have for the patient on the separate 6MWD patient diary."
+                     :prompt-suffix "?"
                      (choices-options-yes-no)))
-             (Q24
+             (q23-confirm
+              (apply #'make-question "Confirm that all 6MWD results have been entered for the patient"
+                     :prompt-prefix "Please enter <B>all</B> the results that you have for the patient on the separate 6MWD patient diary.<BR>"
+                     (choices-options-yes-no)))
+             (q24
               (apply #'make-question-named-and-numbered 24. "Has the patient taken the <B>St. George's Respiratory Questionnaire (SGRQ)</B>"
-                     :prompt-suffix "? Please enter <B>all</B> the results that you have for the patient on the separate SGRQ patient diary."
+                     :prompt-suffix "?"
                      (choices-options-yes-no)))
-             (*group* (make-survey-group-named-and-numbered survey "LAM History" t :order (list q22 q23 q24))))
-        (declare (ignore *group*)))
+             (q24-confirm
+              (apply #'make-question "Confirm that all SGRQ results have been entered for the patient"
+                     :prompt-prefix "Please enter <B>all</B> the results that you have for the patient on the separate SGRQ patient diary.<BR>"
+                     (choices-options-yes-no)))
+             (*group* (make-survey-group-named-and-numbered survey "LAM History" t :order (list q22 q23 q24)))
+             ;; Subgroups
+             (subgroup22 (make-survey-sub-group-named *group* nil :order (list q22-confirm)))
+             (subgroup23 (make-survey-sub-group-named *group* nil :order (list q23-confirm)))
+             (subgroup24 (make-survey-sub-group-named *group* nil :order (list q24-confirm))))
+        ;; Group rules
+        (add-rule *group* q22 t subgroup22 ':inline)
+        (add-rule *group* q23 t subgroup23 ':inline)
+        (add-rule *group* q24 t subgroup24 ':inline))
 
       ;;
       ;; Survey 2 - PFT diary
