@@ -81,7 +81,10 @@
   (handler-case
       (cl-l10n:parse-time client-value :error-on-mismatch t)
     (cl-l10n:parser-error (c)
-      (fail-validation (cl-l10n::reason c)))))
+      (fail-validation (cl-l10n::reason c)))
+    (error (c)
+      (declare (ignore c))
+      (fail-validation (format nil "~S is not a valid date/time" client-value)))))
 
 (defmethod lisp-validate ((validator datetime-validator) (lisp-value cons))
   t)
