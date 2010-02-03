@@ -65,7 +65,18 @@
 
 (defun formatted-question-number (num &optional stream)
   (and num (format stream "<SUP>~D</SUP>" num)))
-  
+
+;;
+;; Survey objects - functional API
+;; Hash table contains arrays of questions
+;;
+
+(defvar *survey-question-table* (make-hash-table :test 'equal))
+
+(defun make-survey-named (name &rest args)
+  (setf (gethash name *survey-question-table*) (make-array 10. :element-type 'question :adjustable t))
+  (apply #'make-instance 'survey :name name args))
+
 (defun make-survey-group-named-and-numbered (survey name num &rest args)
   (let* ((groups (survey-groups survey))
          (group
@@ -92,12 +103,27 @@
          :name (format nil "~A ~A" (group-name group) name)
          :owner (owner group) args))
 
-(defgeneric make-question-named-and-numbered (arg1 arg2 &rest args))
+(defgeneric make-question-named-and-numbered (survey name number &rest args))
 
-(defmethod make-question-named-and-numbered ((num integer) (name string) &rest args)
-  (apply #'make-question-named-and-numbered name num args))
+(defmethod make-question-named-and-numbered ((survey string) name num &rest args)
+  (let ((obj (get-survey survey)))
+    (aif obj
+         (apply #'make-question-named-and-numbered it name num args)
+         (error "Survey does not exist: ~S" survey))))
 
-(defmethod make-question-named-and-numbered ((name string) (num integer) &rest args)
-  (apply #'make-question name
-         :prompt-prefix (formatted-question-number num)
-         args))
+(defmethod make-question-named-and-numbered ((survey survey) (num integer) (name string) &rest args)
+  (apply #'make-question-named-and-numbered survey name num args))
+
+(defmethod make-question-named-and-numbered ((survey survey) (name string) (num integer) &rest args)
+  (let ((question
+         (apply #'make-question name
+                :prompt-prefix (formatted-question-number num)
+                args))
+        (questions (gethash (name survey) *survey-question-table*)))
+    ;; Save this question
+    (when questions
+      (if (>= num (length questions))
+          (adjust-array questions (+ num 8.)))
+      (setf (aref questions num) question))
+    ;; Returns
+    question))
