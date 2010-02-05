@@ -366,6 +366,15 @@ div.search-bar
     font-size: 10pt;
 }
 
+.survey-left-column {
+    width: 730px!important;
+}
+
+.survey-right-column {
+    width: 190px!important;
+
+}
+
 div.workspace-sidebar{
     margin-right: 24px;
 }

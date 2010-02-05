@@ -181,6 +181,21 @@ div.survey-group .question-prompt p.question-has-comments
     font-size: small;
 }
 
+div.survey-group table td {
+    vertical-align: top;
+}
+
+div.survey-group table tr td div.question-input input.question-data-type-DATE /* [type="text"] */ {
+    /* we're assuming the date iput needs 9 chars, this is not always true */
+    width: 6em;
+}
+
+div.survey-group table span.date-presentation-format-label {
+    /* don't 'decorate' the input fields with the "mm/dd/yy" or "dd/mm/yy" , we'll assume it's specified elsewhere in the page */
+    display: none;
+}
+
+
 .survey-form-actions
 {
     margin-top: 20px;

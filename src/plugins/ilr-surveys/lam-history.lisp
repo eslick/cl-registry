@@ -342,7 +342,7 @@ You may save your work at any point to complete at a later time.
                       (choices-mirror-alist
                        '("Yes" "No" "Unknown")))))
              (q17-table
-              (make-survey-group-table (:name "question 17 if yes" :advice "If yes: please complete:" :default-data-type :number)
+              (make-survey-group-table (:name "question 17 if yes" :advice "If yes: please complete:" :default-question-args (:data-type :number))
                                        ( nil "Number <B>before<B> diagnosis of LAM"
                                              "Number <B>during</B> or <B>after</b> diagnosis of LAM" )
                                        ( "Full term or premature births" (:question) (:question) )
@@ -374,7 +374,25 @@ You may save your work at any point to complete at a later time.
       (let* ((*group*
               (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t
                                                     :advice "<SUP>19</SUP> What is the patient's LAM related <B>treatment</B> history? Please check all that apply:"))
-             (*questions*
+             (hormone-therapy/question (apply #'make-question "Hormone therapy" (choices-options-yes-no)))
+             (hormone-therapy/table (make-survey-group-table (:name "Hormone therapy table" :default-question-args (:data-type :date))
+                                      (nil "Treatment" nil "From (mm/yy)" "To (mm/yy)" nil)
+                                      ((:question :data-type :boolean :view-type :checkbox ) "Gn-RH agonist" nil (:question) (:question) nil)
+                                      ((:question :data-type :boolean :view-type :checkbox ) "Progesterone" nil (:question) (:question) nil)
+                                      ((:question :data-type :boolean :view-type :checkbox ) "Tamoxifen" nil (:question) (:question) nil)
+                                      ((:question :data-type :boolean :view-type :checkbox ) "Surgical oophorectomy" nil (:question) (:question) nil)
+                                      ((:question :data-type :boolean :view-type :checkbox ) "Other" (:question :data-type :string) (:question) (:question))))
+             (bronchiactasis/question (apply #'make-question "Bronchodilator/Pulminary medications" (choices-options-yes-no)))
+             (bronchiactasis/table (make-survey-group-table (:name "Bronchodilator/Pulminary medications table" :default-question-args (:data-type :date))
+                                     (nil "Treatment" nil "From (mm/yy)" "To (mm/yy)")
+                                     ((:question :data-type :boolean :view-type :checkbox ) "Long acting B agonist" nil (:question) (:question))
+                                     ((:question :data-type :boolean :view-type :checkbox ) "Oral B agonist" nil (:question) (:question))
+                                     ((:question :data-type :boolean :view-type :checkbox ) "Transdermal B agonist" nil (:question) (:question))
+                                     ((:question :data-type :boolean :view-type :checkbox ) "Anti-cholinergic" nil (:question) (:question))
+                                     ((:question :data-type :boolean :view-type :checkbox ) "Aminophylline" nil (:question) (:question))
+                                     ((:question :data-type :boolean :view-type :checkbox ) "Inhaled steroids" nil (:question) (:question))
+                                     ((:question :data-type :boolean :view-type :checkbox ) "Other" (:question :data-type :string) (:question) (:question))))
+             #| (*questions*
               (loop for spec in
                    `(("No treatment")
                      ("Hormone therapy"
@@ -451,8 +469,11 @@ You may save your work at any point to complete at a later time.
                      ;; Group rules
                      (add-rule *group* q19a t subgroup19a ':inline)
                      ;; Returns
-                     q19a))))
-        (setf (group-questions *group*) *questions*))
+                     q19a))) |# )
+        (add-rule *group* hormone-therapy/question t hormone-therapy/table ':inline)
+        (add-rule *group* bronchiactasis/question t bronchiactasis/table ':inline)
+        (setf (group-questions *group*) (list hormone-therapy/question bronchiactasis/question #| hormone-therapy/table |# )) #| 
+        (setf (group-questions *group*) *questions*) |# )
 
       ;;
       ;; Group 9

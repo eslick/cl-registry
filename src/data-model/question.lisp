@@ -225,7 +225,8 @@
     (let ((presentation 
 	   (apply #'make-instance type 
 		  :metadata question 
-		  :css-class "question-presentation"
+		  :css-class (with-standard-io-syntax
+                               (format nil "question-presentation question-data-type-~A" (question-data-type question)))
 		  (flatten1 (cons initargs args)))))
       (case type
         (number-presentation

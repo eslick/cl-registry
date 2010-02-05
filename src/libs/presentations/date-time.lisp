@@ -41,18 +41,19 @@
   (let ((parse-output-span-id (genweb-field-name)))
     (with-html
       " "
-      (cond
-        ((string-starts-with "en_US" (cl-l10n:locale-name (user-locale (current-user))))
-         (str
-          (if (typep presentation 'date-range-presentation)
-              #!"(mm/dd/yyyy[ to mm/dd/yyyy])"
-              #!"(mm/dd/yyyy)")))
-        #| ((string-starts-with "ja" (cl-l10n:locale-name (user-locale (current-user)))) (str #!"(yyyy/mm/dd)")) |#
-        (t
-         (str
-          (if (typep presentation 'date-range-presentation)
-              #!"(dd/mm/yyyy[ to dd/mm/yyyy)"
-              #!"(dd/mm/yyyy)"))))
+      (:span :class "date-presentation-format-label"
+             (cond
+               ((string-starts-with "en_US" (cl-l10n:locale-name (user-locale (current-user))))
+                (str
+                 (if (typep presentation 'date-range-presentation)
+                     #!"(mm/dd/yyyy[ to mm/dd/yyyy])"
+                     #!"(mm/dd/yyyy)")))
+               #| ((string-starts-with "ja" (cl-l10n:locale-name (user-locale (current-user)))) (str #!"(yyyy/mm/dd)")) |#
+               (t
+                (str
+                 (if (typep presentation 'date-range-presentation)
+                     #!"(dd/mm/yyyy[ to dd/mm/yyyy)"
+                     #!"(dd/mm/yyyy)")))))
       (:span :id parse-output-span-id  ""))))
 
       ;; should use parenscript here, not adding a dependency this
