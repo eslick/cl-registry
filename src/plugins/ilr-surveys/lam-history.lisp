@@ -550,13 +550,13 @@ You may save your work at any point to complete at a later time.
       ;;
       (flet ((make-pft-questions ()
                (loop for spec in
-                    '(("Vital Capacity (VC)" "ml")
-                      ("Forced Vital Capacity (FVC)" "ml")
-                      ("Forced Expiratory Volume in 1 sec (FEV1)" "ml")
-                      ("Carbon Monoxide Diffusing Capacity (DLCO)" "ml/min/mm Hg")
-                      ("DLCO/(alveolar volume)(V<SUB>A</SUB>))" "ml/min/mm Hg/L")
-                      ("Total Lung Capacity (TLC)" "ml" ("Body box method" "Washing method"))
-                      ("Residual Volume (RV)" "ml" ("Body box method" "Washing method")))
+                    '(("Vital Capacity (VC)" "ml.")
+                      ("Forced Vital Capacity (FVC)" "ml.")
+                      ("Forced Expiratory Volume in 1 sec (FEV1)" "ml.")
+                      ("Carbon Monoxide Diffusing Capacity (DLCO)" "ml/min/mm Hg.")
+                      ("DLCO/(alveolar volume)(V<SUB>A</SUB>))" "ml/min/mm Hg/L.")
+                      ("Total Lung Capacity (TLC)" "ml." ("Body box method" "Washing method"))
+                      ("Residual Volume (RV)" "ml." ("Body box method" "Washing method")))
                     as qt1-name = (first spec)
                     as qt1-units = (second spec)
                     as qt4-choices = (third spec)
@@ -564,11 +564,11 @@ You may save your work at any point to complete at a later time.
                     (let* ((qt1
                             (make-question (format nil "~A - Result" qt1-name)
                                            :prompt-prefix "<HR>"
-                                           :prompt-suffix (format nil " (~A)" qt1-units) :data-type :number))
+                                           :help qt1-units :data-type :number))
                            (qt2
                             (make-question (format nil "~A - Percent Predicted" qt1-name)
                                            :prompt "Percent Predicted:"
-                                           :prompt-suffix " %" :data-type :number))
+                                           :help "(%)" :data-type :number))
                            (qt3
                             (apply #'make-question (format nil "~A - Test not performed" qt1-name)
                                    :prompt "Test not performed:"
