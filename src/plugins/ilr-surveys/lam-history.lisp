@@ -636,7 +636,7 @@ You may save your work at any point to complete at a later time.
       ;; Returns
       (list survey survey-pft survey-6mwd survey-sgrq))))
 
-(defun create-lam-history-data (&key (count 10.) (center "lamhtest") #+NIL (owner (current-user)))
+(defun create-lam-history-data (&key (count 100.) (center "lamhtest"))
   (let ((questions (gethash +survey-name-lam-history+ *survey-question-table*)))
     (assert (not (null questions)) nil "Survey questions not found for ~S" +survey-name-lam-history+)
     (with-transaction ()
@@ -646,8 +646,6 @@ You may save your work at any point to complete at a later time.
               (or (get-center center t)
                   (make-center center "LAM History survey - test center"))))
       (check-type center center)
-      ;; Coerce owner / user
-      #+NIL (when (stringp owner) (setf owner (get-user owner)))
       ;; Create / init test patients
       (mapcar 'drop-instance (get-patients-for-center center)))
     (with-transaction ()
@@ -659,6 +657,7 @@ You may save your work at any point to complete at a later time.
             (q6-symptoms-rs (make-random-state t))
             (q7-diagnosis-method-rs (make-random-state t))
             (q9-origin-rs (make-random-state t))
+            (q20-rs (make-random-state t))
             )
 
       (dotimes (n count)
@@ -672,6 +671,7 @@ You may save your work at any point to complete at a later time.
                (q9 (aref questions 9.)) ;Original symptom or finding
                (q10 (aref questions 10.)) ;Age of first symptoms
                (q15 (aref questions 15.)) ;Age of menarche
+               (q20 (aref questions 20.)) ;Use oxygen?
                )
           (setf (external-id patient) (symbol-name (gensym)))
 
@@ -734,12 +734,13 @@ You may save your work at any point to complete at a later time.
                                 (return-from gather-symptoms))
                               (push symptom answer))))
                         answer))
-          
+          (add-answer q20 patient (= (random 7. q20-rs) 1.))
+                      
           ))))
     ;; Done
     ))
 
-(defun create-lam-history-report (&key (questions '(3 4 5 6 7 9 10 15)) (center "lamhtest")
+(defun create-lam-history-report (&key (questions '(3 4 5 6 7 9 10 15 20)) (center "lamhtest")
                                   (stream *standard-output*))
   (if (stringp center)
       (setq center (get-center center)))
