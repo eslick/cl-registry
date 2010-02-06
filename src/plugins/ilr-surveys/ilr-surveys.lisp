@@ -23,7 +23,8 @@
       (t
        (dolist (survey surveys)
          (dolist (group (survey-groups survey))
-           (and group (drop-group group))))))))
+           (and group (drop-group group)))
+         (drop-instance survey))))))
 
 (defmacro dropdown-options (var)
   `(list :data-type :choice :view-type :dropdown :choices ,var))
