@@ -256,6 +256,7 @@
 		  (:file "listserv")
 		  (:file "cgraph")
 		  (:file "concept-graph")
+		  (:file "flashex-test")
 		  (:file "charting")
 		  (:file "charts")
 		  (:file "flashex"))

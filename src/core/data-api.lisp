@@ -62,8 +62,15 @@
   (hunchentoot:abort-request-handler
    (funcall (lookup-api-handler (first tokens))
 	    (rest tokens)
-	    (request-parameters)
+	    (alist-as-keywords (request-parameters))
 	    (authenticatedp))))
+
+(defun alist-as-keywords (alist)
+  "Don't share structure"
+  (mapcar (f (pair)
+	    (cons (as-keyword (car pair)) (cdr pair)))
+	  alist))
+	  
 
      
 ;;      
@@ -76,7 +83,6 @@
     (hunchentoot:abort-request-handler
      (funcall (lookup-api-handler (first tokens))
 	      (rest tokens)
-	      (remove-keyword-parameters args :path :action)
+	      (pairs (remove-keyword-parameters args :path :action))
 	      (authenticatedp)))))
-
 

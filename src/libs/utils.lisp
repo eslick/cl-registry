@@ -130,7 +130,7 @@
 
 (defun as-keyword (obj)
   (typecase obj
-    (string (intern obj :keyword))
+    (string (intern (string-upcase obj) :keyword)) ;; avoid mixed char syms
     (symbol (intern (symbol-name obj) :keyword))))
 
 (defun render-image-link (action image-url &key alt class id 

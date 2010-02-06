@@ -1,17 +1,15 @@
 (in-package :flashex)
 
 (define-api-handler (fx-chart :mime "text/html") (token params auth-p)
-  (let ((question (assoc-get "query" params #'equal))
-	(population (assoc-get "pop" params #'equal))
-	(style (assoc-get "style" params #'equal)))
-    (print params)
+  (let ((question (assoc-get :query params))
+	(population (assoc-get :pop params))
+	(style (assoc-get :style params)))
     (with-html
       (json:encode-json-to-string 
        (if (equal question "test")
 	   (map-chart *chart1*)
 	   (awhen (parse-integer question)
 	     (get-summary-chart it population style)))))))
-			  
 
 (defparameter *current-skin*
   '((:bg-color . "#FFFFFF")
