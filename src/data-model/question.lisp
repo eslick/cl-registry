@@ -11,7 +11,7 @@
 
 (defmodel question (fulltext-mixin user-translation-mixin)
   (;; Prompt
-   (name :accessor question-name :initarg :name)
+   (name :accessor question-name :initarg :name :index t)
    (prompt :accessor question-prompt :initarg :prompt :index t) ;; statisfy via fulltext!
    (question-help :accessor question-help :initarg :help :initform "")
    (data-help :accessor question-data-help :initarg :data-help :initform "")
