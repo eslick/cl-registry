@@ -374,106 +374,122 @@ You may save your work at any point to complete at a later time.
       (let* ((*group*
               (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t
                                                     :advice "<SUP>19</SUP> What is the patient's LAM related <B>treatment</B> history? Please check all that apply:"))
-             (hormone-therapy/question (apply #'make-question "Hormone therapy" (choices-options-yes-no)))
-             (hormone-therapy/table (make-survey-group-table (:name "Hormone therapy table" :default-question-args (:data-type :date))
-                                      (nil "Treatment" nil "From (mm/yy)" "To (mm/yy)" nil)
-                                      ((:question :data-type :boolean :view-type :checkbox ) "Gn-RH agonist" nil (:question) (:question) nil)
-                                      ((:question :data-type :boolean :view-type :checkbox ) "Progesterone" nil (:question) (:question) nil)
-                                      ((:question :data-type :boolean :view-type :checkbox ) "Tamoxifen" nil (:question) (:question) nil)
-                                      ((:question :data-type :boolean :view-type :checkbox ) "Surgical oophorectomy" nil (:question) (:question) nil)
-                                      ((:question :data-type :boolean :view-type :checkbox ) "Other" (:question :data-type :string) (:question) (:question))))
-             (bronchiactasis/question (apply #'make-question "Bronchodilator/Pulminary medications" (choices-options-yes-no)))
-             (bronchiactasis/table (make-survey-group-table (:name "Bronchodilator/Pulminary medications table" :default-question-args (:data-type :date))
-                                     (nil "Treatment" nil "From (mm/yy)" "To (mm/yy)")
-                                     ((:question :data-type :boolean :view-type :checkbox ) "Long acting B agonist" nil (:question) (:question))
-                                     ((:question :data-type :boolean :view-type :checkbox ) "Oral B agonist" nil (:question) (:question))
-                                     ((:question :data-type :boolean :view-type :checkbox ) "Transdermal B agonist" nil (:question) (:question))
-                                     ((:question :data-type :boolean :view-type :checkbox ) "Anti-cholinergic" nil (:question) (:question))
-                                     ((:question :data-type :boolean :view-type :checkbox ) "Aminophylline" nil (:question) (:question))
-                                     ((:question :data-type :boolean :view-type :checkbox ) "Inhaled steroids" nil (:question) (:question))
-                                     ((:question :data-type :boolean :view-type :checkbox ) "Other" (:question :data-type :string) (:question) (:question))))
-             #| (*questions*
-              (loop for spec in
-                   `(("No treatment")
-                     ("Hormone therapy"
-                      nil
-                      (("Gn-RH agonist" :date-range)
-                       ("Progesterone" :date-range)
-                       ("Tamoxifen" :date-range)
-                       ("Surgical oophorectomy" :date)
-                       ("Other" :date-range :other)))
-                     ("Bronchiectasis treatment"
-                      nil
-                      (("Long acting B agonist" :date-range)
-                       ("Oral B agonist" :date-range)
-                       ("Transdermal B agonist" :date-range)
-                       ("Anti-cholinergic" :date-range)
-                       ("Aminophylline" :date-range)
-                       ("Inhaled steroids" :date-range)
-                       ("Other" :date-range :other))
-                      ("Other medical treatment"
-                       nil
-                       ("Sirolimus/Rapamune" :date-range)
-                       ("Other" :date-range :other)))
-                     ("Pneumothorax or pleural effusion treatment"
-                      nil
-                      (("Chest tube placement / pleural drainage.")
-                       ("Open chest surgery")
-                       ("Thorascopic / minimally invasive chest surgery")
-                       ("Pleurodesis")
-                       ("Other" :other)))
-                     ("Other surgery"
-                      nil
-                      (("Thoracic duct ligation" :date)
-                       ("Nephrectomy" :date)
-                       ("Hysterectomy" :date)
-                       ("Other" :date :other)))
-                     ("Transplant" 
-                      ,(radio-options
-                        (choices-breaks-alist
-                         '(("The Patient has required transplant evaluation" . "none")
-                           ("The Patient was evaluated, but has not had a transplant" . "evaluated")
-                           ("The patient had a transplant" . "transplant"))))))
-                   as name19a = (first spec)
-                   as options19a = (second spec)
-                   as q19a = (apply #'make-question name19a :prompt name19a
-                                    (or options19a (choices-options-yes-no)))
-                   as specs19b = (third spec)
-                   collect
-                   (let* ((subgroup19a (make-survey-sub-group-named *group* nil))
-                          (qs19b
-                           (loop for spec19b in specs19b
-                              as name19b = (first spec19b)
-                              as other-p = (member ':other (rest spec19b))
-                              as date-range-p = (member ':date-range (rest spec19b))
-                              as q19b = (apply #'make-question name19b (choices-options-yes-no))
-                              as q19c =
-                              (make-question (format nil "~A date" name19b)
-                                             :data-type
-                                             ;; !! TODO: generalize this !!
-                                             (if date-range-p ':date-range ':date))
-                              as subgroup19b = (make-survey-sub-group-named *group* nil :order (list q19c))
-                              collect
-                              (progn
-                                ;; Group rules
-                                (when other-p
-                                  (let ((q19b-other
-                                         (make-question "Other, please specify" :data-type :string)))
-                                    (push q19b-other (group-questions subgroup19b))
-                                    (add-rule *group* q19b t subgroup19b ':inline)))
-                                (add-rule subgroup19a q19b t subgroup19b ':inline)
-                                ;; Returns
-                                q19b))))
-                     ;; Questions for group
-                     (setf (group-questions subgroup19a) qs19b)
-                     ;; Group rules
-                     (add-rule *group* q19a t subgroup19a ':inline)
-                     ;; Returns
-                     q19a))) |# )
+             (hormone-therapy/question
+              (apply #'make-question "Hormone therapy" :prompt-suffix "" (choices-options-yes-no)))
+             (hormone-therapy/table
+              (make-survey-group-table
+               (:name "hormone therapy table" :default-question-args (:data-type :date))
+               (nil "Treatment" nil "Start Date" "End Date")
+               ((:question :name "hormone therapy: Gn-RH agonist" :data-type :boolean :view-type :checkbox )
+                "Gn-RH agonist" nil
+                (:question :name "hormone therapy: Gn-RH agonist: from") (:question :name "hormone therapy: Gn-RH agonist: to"))
+               ((:question :name "hormone therapy: Progesterone" :data-type :boolean :view-type :checkbox )
+                "Progesterone" nil
+                (:question :name "hormone therapy: Progesterone: from") (:question :name "hormone therapy: Progesterone: to"))
+               ((:question :name "hormone therapy: Tamoxifen" :data-type :boolean :view-type :checkbox )
+                "Tamoxifen" nil
+                (:question :name "hormone therapy: Tamoxifen: from") (:question :name "hormone therapy: Tamoxifen: to"))
+               ((:question :name "hormone therapy: surgical oophorectomy" :data-type :boolean :view-type :checkbox )
+                "Surgical oophorectomy" nil
+                (:question :name "hormone therapy: surgical oophorectomy: date") nil #+NIL (:question :name "hormone therapy: surgical oophorectomy: to"))
+               ((:question :name "hormone therapy: other" :data-type :boolean :view-type :checkbox )
+                "Other" (:question :data-type :string)
+                (:question :name "hormone therapy: other: from") (:question :name "hormone therapy: other: to"))))
+             (bronchiactasis/question
+              (apply #'make-question "Bronchodilator/Pulminary medications" :prompt-suffix "" (choices-options-yes-no)))
+             (bronchiactasis/table
+              (make-survey-group-table
+               (:name "bronchodilator/pulminary medications table" :default-question-args (:data-type :date))
+               (nil "Treatment" nil "Start Date" "End Date")
+               ((:question :name "bronch/pulm meds therapy: long acting B agonist" :data-type :boolean :view-type :checkbox )
+                "Long acting B agonist" nil (:question) (:question))
+               ((:question :name "bronch/pulm meds therapy: oral B agonist" :data-type :boolean :view-type :checkbox )
+                "Oral B agonist" nil
+                (:question :name "bronch/pulm meds therapy: oral B agonist: from") (:question :name "bronch/pulm meds therapy: oral B agonist: to"))
+               ((:question :name "bronch/pulm meds therapy: transdermal B agonist" :data-type :boolean :view-type :checkbox )
+                "Transdermal B agonist" nil
+                (:question :name "bronch/pulm meds therapy: transdermal B agonist: from") (:question :name "bronch/pulm meds therapy: transdermal B agonist: to"))
+               ((:question :name "bronch/pulm meds therapy: anti-cholinergic" :data-type :boolean :view-type :checkbox )
+                "Anti-cholinergic" nil
+                (:question :name "bronch/pulm meds therapy: anti-cholinergic: from") (:question :name "bronch/pulm meds therapy: anti-cholinergic: to"))
+               ((:question :name "bronch/pulm meds therapy: Aminophylline" :data-type :boolean :view-type :checkbox )
+                "Aminophylline" nil
+                (:question :name "bronch/pulm meds therapy: Aminophylline: from") (:question :name "bronch/pulm meds therapy: Aminophylline: to"))
+               ((:question :name "bronch/pulm meds therapy: inhaled steroids" :data-type :boolean :view-type :checkbox )
+                "Inhaled steroids" nil
+                (:question :name "bronch/pulm meds therapy: inhaled steroids: from") (:question :name "bronch/pulm meds therapy: inhaled steroids: to"))
+               ((:question :name "bronch/pulm meds therapy: other" :data-type :boolean :view-type :checkbox )
+                "Other" (:question :data-type :string)
+                (:question :name "bronch/pulm meds therapy: other: from") (:question :name "bronch/pulm meds therapy: other: to"))))
+             (other/meds/question
+              (apply #'make-question "Other medical treatment" :prompt-suffix "" (choices-options-yes-no)))
+             (other/med/table
+              (make-survey-group-table
+               (:name "other medical treatment table" :default-question-args (:data-type :date))
+               (nil "Treatment" nil "Start Date" "End Date")
+               ((:question :name "other medical treatment: Sirolimus/Rapamune" :data-type :boolean :view-type :checkbox )
+                "Sirolimus/Rapamune" nil
+                (:question :name "other medical treatment: Sirolimus/Rapamune: from") (:question :name "other medical treatment: Sirolimus/Rapamune: to"))
+               ((:question :name "other medical treatment: other" :data-type :boolean :view-type :checkbox )
+                "Other" (:question :name "other medical treatment: other: specify" :data-type :string)
+                (:question :name "other medical treatment: other: from") (:question :name "other medical treatment: other: to"))))
+             (pneumothorax/pleural-effusion/question
+              (let* ((question
+                      (apply #'make-question "Pneumothorax or pleural effusion treatment" :prompt-suffix "" (choices-options-yes-no)))
+                     (question2
+                      (apply #'make-question "Confirm that all treatments for pneumothorax or pleural effusion have been entered for the patient"
+                             :prompt-prefix"Please enter <B>all</B> information on treatments for pneumothorax or pleural effusion on the separate Pneumothorax Or Pleural Effusion Treatment Diary.<BR>"
+                             (choices-options-yes-no)))
+                     (subgroup
+                      (make-survey-sub-group-named *group* "pneumothorax/pleural-effusion/question subgroup" :order (list question2))))
+                ;; Group rules
+                (add-rule *group* question t subgroup ':inline)
+                ;; Returns
+                question))
+             (other/surgery/question
+              (apply #'make-question "Other surgery" :prompt-suffix "" (choices-options-yes-no)))
+             (other/surgery/table
+              (make-survey-group-table
+               (:name "other surgery table" :default-question-args (:data-type :date))
+               (nil "Surgery" nil "Date")
+               ((:question :name "other surgery: thoracic duct ligation" :data-type :boolean :view-type :checkbox )
+                "Thoracic duct ligation" nil (:question :name "other surgery: thoracic duct ligation: date"))
+               ((:question :name "other surgery: nephrectomy" :data-type :boolean :view-type :checkbox )
+                "Nephrectomy" nil (:question :name "other surgery: nephrectomy: date"))
+               ((:question :name "other surgery: hysterectomy" :data-type :boolean :view-type :checkbox )
+                "Hysterectomy" nil (:question :name "other surgery: hysterectomy: date"))
+               ((:question :name "other surgery: other" :data-type :boolean :view-type :checkbox )
+                "Other" (:question :name "other surgery: other: specify" :data-type :string)
+                (:question :name "other surgery: other: date"))))
+             (transplant/question
+              (let* ((question
+                      (apply #'make-question "Transplant/Transplant Evaluation" :prompt-suffix ""
+                             (radio-options
+                              (choices-breaks-alist
+                               '(("The patient has not required transplant evaluation" . "none")
+                                 ("The patient was evaluated, but has not had a transplant" . "evaluated")
+                                 ("The patient had a transplant" . "transplant"))))))
+                     (question2
+                      (apply #'make-question "transplant lungs" :prompt nil
+                             (radio-options '(("One lung" . 1) ("Both lungs" . 2)))))
+                     (question3 (make-question "Transplant date" :data-type :date))
+                     (subgroup
+                      (make-survey-sub-group-named *group* "transplant/transplant evaluation question subgroup"
+                                                   :order (list question2 question3))))
+                ;; Group rules
+                (add-rule *group* question "transplant" subgroup ':inline)
+                ;; Returns
+                question)))
+        ;; Group rules
         (add-rule *group* hormone-therapy/question t hormone-therapy/table ':inline)
         (add-rule *group* bronchiactasis/question t bronchiactasis/table ':inline)
-        (setf (group-questions *group*) (list hormone-therapy/question bronchiactasis/question #| hormone-therapy/table |# )) #| 
-        (setf (group-questions *group*) *questions*) |# )
+        (add-rule *group* other/meds/question t other/med/table ':inline)
+        (add-rule *group* other/surgery/question t other/surgery/table ':inline)
+        ;; Questions
+        (setf (group-questions *group*)
+              (list hormone-therapy/question bronchiactasis/question other/meds/question
+                    pneumothorax/pleural-effusion/question other/surgery/question
+                    transplant/question)))
 
       ;;
       ;; Group 9
@@ -569,38 +585,41 @@ You may save your work at any point to complete at a later time.
       ;;
       ;; Survey 2 - PFT diary
       ;;
-      (flet ((make-pft-questions ()
-               (loop for spec in
-                    '(("Vital Capacity (VC)" "ml.")
-                      ("Forced Vital Capacity (FVC)" "ml.")
-                      ("Forced Expiratory Volume in 1 sec (FEV1)" "ml.")
-                      ("Carbon Monoxide Diffusing Capacity (DLCO)" "ml/min/mm Hg.")
-                      ("DLCO/(alveolar volume)(V<SUB>A</SUB>))" "ml/min/mm Hg/L.")
-                      ("Total Lung Capacity (TLC)" "ml." ("Body box method" "Washing method"))
-                      ("Residual Volume (RV)" "ml." ("Body box method" "Washing method")))
-                    as qt1-name = (first spec)
-                    as qt1-units = (second spec)
-                    as qt4-choices = (third spec)
-                    append
-                    (let* ((qt1
-                            (make-question (format nil "~A - Result" qt1-name)
-                                           :prompt-prefix "<HR>"
-                                           :help qt1-units :data-type :number))
-                           (qt2
-                            (make-question (format nil "~A - Percent Predicted" qt1-name)
-                                           :prompt "Percent Predicted:"
-                                           :help "(%)" :data-type :number))
-                           (qt3
-                            (apply #'make-question (format nil "~A - Test not performed" qt1-name)
-                                   :prompt "Test not performed:"
-                                   (choices-options-yes-no)))
-                           (qt4
-                            (and qt4-choices
-                                 (apply #'make-question (format nil "~A method" qt1-name)
-                                        (radio-options
-                                         (choices-breaks-alist qt4-choices))))))
-                      ;; Returns
-                      (append (list qt1 qt2 qt3) (if qt4 (list qt4)))))))
+      (labels ((before-after-str (str &optional before)
+                 (format nil "~A: ~A" str (if before "before" "after")))
+               (make-pft-question-table (&key before advice)
+                 ;; TBD: use before flag to munge the :NAME properties!!
+                 (declare (ignore before))
+                 (let ((table
+                        (make-survey-group-table
+                         (:name "pft results table" :default-question-args (:data-type :number))
+                         ("Test" "Result" "Percent Predicted" "Test not performed")
+                         ("Vital Capacity (VC)" 
+                          (:question :name "VC result" :data-type :number :help "ml.") (:question :name "VC pct" :data-type :number :help "(%)")
+                          (:question :name "VC tested" :data-type :boolean :view-type :checkbox))
+                         ("Forced Vital Capacity (FVC)"
+                          (:question :name "FVC result" :help "ml.") (:question :name "FVC pct" :help "(%)")
+                          (:question :name "FVC tested" :data-type :boolean :view-type :checkbox))
+                         ("Forced Expiratory Volume in 1 sec (FEV1)"
+                          (:question :name "FEV1 result" :help "ml.") (:question :name "FEV1 pct" :help "(%)")
+                          (:question :name "FEV1 tested" :data-type :boolean :view-type :checkbox))
+                         ("Carbon Monoxide Diffusing Capacity (DLCO)"
+                          (:question :name "DLCO result" :help "ml/min/mm Hg.") (:question :name "DLCO pct" :help "(%)")
+                          (:question :name "DLCO tested" :data-type :boolean :view-type :checkbox))
+                         ("DLCO/(alveolar volume)(V<SUB>A</SUB>))"
+                          (:question :name "DLCO/Va result" :help"ml/min/mm Hg/L.") (:question :name "DLCO/Va pct" :help "(%)")
+                          (:question :name "DLCO/Va tested" :data-type :boolean :view-type :checkbox))
+                         ("Total Lung Capacity (TLC)"
+                          (:question :name "TLC result" :help "ml.") (:question :name "TLC pct" :help "(%)")
+                          (:question :name "TLC tested" :data-type :boolean :view-type :checkbox))
+                         ("Residual Volume (RV)"
+                          (:question :name "RV result" :help "ml.") (:question :name "RV pct" :help "(%)")
+                          (:question :name "RV tested" :data-type :boolean :view-type :checkbox)))))
+                   ;; Group properties
+                   (setf (group-advice table) advice)
+                   (setf (owner table) owner)
+                   ;; Returns
+                   table)))
         (let* ((q1
                 (make-question "Date of Pulmnonary Function Test" :data-type :date))
                (q2
@@ -608,24 +627,28 @@ You may save your work at any point to complete at a later time.
                        (multi-choices-options
                         (choices-breaks-alist
                          '("Pneumothorax" "Pleural effusion" "Pneumonia" "Chest surgery within the previous 6 months" "Unknown")))))
-               ;; Q3 is really a table of questions
-               (q3s (make-pft-questions))
                (group1
                 (make-survey-group-named-and-numbered survey-pft "LAM History PFT" nil
-                                                      :order (append (list q1 q2) q3s)))
+                                                      :order (list q1 q2)))
+               #+NIL
+               (q3
+                (apply #'make-question "Were tests performed <B>PRE-BRONCHODILATOR</B>"
+                       :prompt-suffix " (examples: albuterol or ipratroprium inhaler/nebulizer)?"
+                       (choices-options-yes-no)))
+               ;; group 2 is a table of questions
+               (group2 (make-pft-question-table :before t :advice "These results are <B>PRE-BRONCHODILATOR</B> results:"))
                ;; Second set, repeat of questions post-bronchodilator
                (q4
                 (apply #'make-question "Were tests performed <B>POST-BRONCHODILATOR</B>"
                        :prompt-suffix " (examples: albuterol or ipratroprium inhaler/nebulizer)?"
                        (choices-options-yes-no)))
-               (group2
+               (group3
                 (make-survey-group-named-and-numbered survey-pft "LAM History PFT" nil
                                                       :order (append (list q4))))
-               (q4subgroup
-                (make-survey-sub-group-named group2 nil :order (make-pft-questions))))
-          (declare (ignore group1))
+               (q4subgroup (make-pft-question-table :before nil)))
+          (setf (survey-groups survey-pft) (list group1 group2 group3))
           ;; Group rules
-          (add-rule group2 q4 t q4subgroup ':successor)
+          (add-rule group3 q4 t q4subgroup ':successor)
           ;; Survey diary question
           (setf (diary-question survey-pft) q1)))
 
