@@ -78,17 +78,20 @@
   (setf (gethash name *survey-question-table*) (make-array 10. :element-type 'question :adjustable t))
   (apply #'make-instance 'survey :name name args))
 
+(defun group-section-name-and-number (survey name &optional (num t))
+  (format nil "~A Section~@[ ~D~]"
+          name
+          (cond
+            ((null num) nil)
+            ((numberp num) num)
+            ((eq num t) (1+ (length (survey-groups survey)))))))
+
 (defun make-survey-group-named-and-numbered (survey name num &rest args)
   (let* ((groups (survey-groups survey))
          (group
           (apply #'make-instance 'survey-group
                  :owner (owner survey)
-                 :name (format nil "~A Section~@[ ~D~]"
-                               name
-                               (cond
-                                 ((null num) nil)
-                                 ((numberp num) num)
-                                 ((eq num t) (1+ (length groups)))))
+                 :name (group-section-name-and-number survey name num)
                  args)))
     ;;(format t "~&Add group ~S to groups ~S" group groups)
     (if groups
