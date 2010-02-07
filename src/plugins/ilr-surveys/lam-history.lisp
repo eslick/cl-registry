@@ -28,6 +28,16 @@
                                :priority 1
                                :diary-p nil
                                :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+           (survey-treatment
+            (make-instance 'survey
+                           :name "LAM History Pneumothorax or Pulmonary Effusion Treatment Diary"
+                           :description "Enter information about surgery/treatments for LAM patient."
+                           :owner owner
+                           :published t
+                           :priority 1
+                           :diary-p t
+                           :diary-description "One result per date"
+                           :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (survey-pft
             (make-instance 'survey
                            :name "LAM History Pulmonary Function Test (PFT) Diary"
@@ -58,6 +68,10 @@
                            :diary-p t
                            :diary-description "One result per date"
                            :ranking-record (make-ranking-record :ranking nil :distribution nil))))
+
+      ;;
+      ;; Main survey - LAM History
+      ;;
 
       ;;
       ;; Group 1 - clinician header page
@@ -583,13 +597,74 @@ You may save your work at any point to complete at a later time.
         (add-rule *group* q24 t subgroup24 ':inline))
 
       ;;
-      ;; Survey 2 - PFT diary
+      ;; Survey - treatment/surgery
+      ;;
+      (let* ((q1 (make-question "Date of treatment/surgery" :prompt-suffix ":" :data-type :date))
+             (*group*
+              (make-survey-group-named-and-numbered survey-treatment "LAM History Treatment Diary" t))
+             (q2
+              (let* ((question
+                      (apply #'make-question "Pneumothroax or pleural effusion treatment"
+                             :prompt-suffix "<BR>Please specify:"
+                             (radio-options
+                              (choices-breaks-alist
+                               '("Chest tube placement/pleural drainage"
+                                 "Open chest surgery"
+                                 "Thorascopic/minimally invasive chest surgery"
+                                 "Pleurodesis"
+                                 "Other")))))
+                     (subq1 (make-question "Type of open chest surgery"))
+                     (subg1
+                      (let ((subgroup
+                             (make-survey-sub-group-named *group* "open chest surgery subgroup" :order (list subq1))))
+                        (add-rule *group* question "Open chest surgery" subgroup ':inline)
+                        subgroup))
+                     (subq2 (make-question "Type of thorascopic/minimally invasive chest surgery"))
+                     (subg2
+                      (let ((subgroup
+                             (make-survey-sub-group-named *group* "thorascopic/minimally invasive chest surgery subgroup" :order (list subq2))))
+                        (add-rule *group* question "Thorascopic/minimally invasive chest surgery" subgroup ':inline)
+                        subgroup))
+                     (subg3
+                      (let* ((q1 (apply #'make-question "Pleurodesis side"
+                                        (radio-options (choices-mirror-alist '("Left" "Right" "Both")))))
+                             (subgroup
+                              (make-survey-sub-group-named *group* "pleurodesis subgroup"))
+                             (q2
+                              (let* ((question
+                                      (apply #'make-question "Type of pleurodesis"
+                                             (radio-options (choices-mirror-alist '("Chemical" "Surgical/mechanical")))))
+                                     (subquestion (make-question "Pleurodesis drug name"))
+                                     (subgroup-drug (make-survey-sub-group-named subgroup "pleurodesis drug name subgroup" :order (list subquestion))))
+                                (add-rule subgroup question "Chemical" subgroup-drug ':inline)
+                                ;; Returns
+                                question)))
+                        ;; Group rules
+                        (add-rule *group* question "Pleurodesis" subgroup ':inline)
+                        (setf (group-questions subgroup) (list q1 q2))
+                        ;; Returns
+                        subgroup))
+                     (subq4 (make-question "Other treatment - please specify"))
+                     (subg4
+                      (let ((subgroup
+                             (make-survey-sub-group-named *group* "other treatment - specify" :order (list subq4))))
+                        (add-rule *group* question "Other" subgroup ':inline)
+                        subgroup)))
+
+                (declare (ignore subg1 subg2 subg3 subg4))
+                ;; Returns
+                question)))
+        ;; Survey properties
+        (setf (group-questions *group*) (list q1 q2))
+        (setf (diary-question survey-treatment) q1))
+
+      ;;
+      ;; Survey - PFT diary
       ;;
       (labels ((before-after-str (str &optional before)
                  (format nil "~A: ~A" str (if before "before" "after")))
                (make-pft-question-table (&key before advice)
                  ;; TBD: use before flag to munge the :NAME properties!!
-                 (declare (ignore before))
                  (let ((table
                         (make-survey-group-table
                          (:name "pft results table" :default-question-args (:data-type :number))
@@ -615,6 +690,10 @@ You may save your work at any point to complete at a later time.
                          ("Residual Volume (RV)"
                           (:question :name "RV result" :help "ml.") (:question :name "RV pct" :help "(%)")
                           (:question :name "RV tested" :data-type :boolean :view-type :checkbox)))))
+                   ;; Modify all question names based on before/after flag
+                   (dolist (question (group-questions table))
+                     (setf (question-name question)
+                           (format nil "~A ~:[post~;pre~]-bronchodilator" (question-name question) before)))
                    ;; Group properties
                    (setf (group-advice table) advice)
                    (setf (owner table) owner)
@@ -628,32 +707,37 @@ You may save your work at any point to complete at a later time.
                         (choices-breaks-alist
                          '("Pneumothorax" "Pleural effusion" "Pneumonia" "Chest surgery within the previous 6 months" "Unknown")))))
                (group1
-                (make-survey-group-named-and-numbered survey-pft "LAM History PFT" nil
-                                                      :order (list q1 q2)))
+                (make-survey-group-named-and-numbered survey-pft "LAM History PFT Diary" t :order (list q1 q2)))
                #+NIL
                (q3
                 (apply #'make-question "Were tests performed <B>PRE-BRONCHODILATOR</B>"
                        :prompt-suffix " (examples: albuterol or ipratroprium inhaler/nebulizer)?"
                        (choices-options-yes-no)))
                ;; group 2 is a table of questions
-               (group2 (make-pft-question-table :before t :advice "These results are <B>PRE-BRONCHODILATOR</B> results:"))
+               (group2
+                (let ((table
+                       (make-pft-question-table :before t :advice "These results are <B>PRE-BRONCHODILATOR</B> results:")))
+                  (setf (group-name table)
+                        (group-section-name-and-number survey-pft "LAM History PFT Diary" t))
+                  (setf (survey-groups survey-pft) (append (survey-groups survey-pft) (list table)))
+                  ;; Returns
+                  table))
                ;; Second set, repeat of questions post-bronchodilator
                (q4
                 (apply #'make-question "Were tests performed <B>POST-BRONCHODILATOR</B>"
                        :prompt-suffix " (examples: albuterol or ipratroprium inhaler/nebulizer)?"
                        (choices-options-yes-no)))
                (group3
-                (make-survey-group-named-and-numbered survey-pft "LAM History PFT" nil
-                                                      :order (append (list q4))))
+                (make-survey-group-named-and-numbered survey-pft "LAM History PFT t" t :order (append (list q4))))
                (q4subgroup (make-pft-question-table :before nil)))
-          (setf (survey-groups survey-pft) (list group1 group2 group3))
+          (declare (ignore group1 group2))
           ;; Group rules
           (add-rule group3 q4 t q4subgroup ':successor)
-          ;; Survey diary question
+          ;; Survey properties
           (setf (diary-question survey-pft) q1)))
 
       ;;
-      ;; Survey 3 - 6MWD
+      ;; Survey - 6MWD diary
       ;;
       (let* ((q1 (make-question "Date" :data-type :date))
              (q2 (make-question "Result" :prompt-suffix " (feet/meters)" :data-type :number))
@@ -664,7 +748,7 @@ You may save your work at any point to complete at a later time.
         (setf (diary-question survey-6mwd) q1))
 
       ;;
-      ;; Survey 4 - SGRQ
+      ;; Survey - SGRQ diary
       ;;
       (let* ((q1 (make-question "Date" :data-type :date))
              (q2 (make-question "Total Score" :data-type :number))
@@ -678,7 +762,7 @@ You may save your work at any point to complete at a later time.
         (setf (diary-question survey-sgrq) q1))
 
       ;; Returns
-      (list survey survey-pft survey-6mwd survey-sgrq))))
+      (list survey survey-treatment survey-pft survey-6mwd survey-sgrq))))
 
 (defun create-lam-history-data (&key (count 100.) (center "lamhtest"))
   (let ((questions (gethash +survey-name-lam-history+ *survey-question-table*)))
