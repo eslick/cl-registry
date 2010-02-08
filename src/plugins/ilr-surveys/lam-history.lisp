@@ -146,50 +146,59 @@ You may save your work at any point to complete at a later time.
       ;;
       ;; Group 3 - How was LAM diagnosed?
       ;;
-      (let* ((q7
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 7  "How was LAM diagnosed"
-                     :prompt-suffix "?"
-                     (multi-choices-options
-                      (choices-mirror-alist
-                       '("Pathological diagnosis" "Clinical diagnosis without biopsy" "Other" "Unknown")))))
-             (*group* (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t :order (list q7)))
-             ;; Rule: if q7 was pathological diagnosis
-             (q7a
-              (apply #'make-question "If pathological diagnosis, please indicate the type of biopsy"
-                     :prompt-suffix "(check all that apply)"
-                     (multi-choices-options
-                      (choices-mirror-alist
-                       '("Lung biopsy" "Biopsy of lymph node" "Biopsy of other mass")))))
-             (q7a2
-              (apply #'make-question "If lung biopsy, please specify type"
-                     (radio-options
-                      (choices-breaks-alist
-                       '(("Open lung biopsy" . "open")
-                         ("Video-assisted thorascopic surgery (VATS) biopsy" . "VATS")
-                         ("Transbronchial lung biopsy" . "Transbronchial"))))))
-             (q7b
-              (apply #'make-question "If clinical diagnosis, what was used to make the diagnosis"
-                     :prompt-suffix "? Please check all that apply:"
-                     (multi-choices-options
-                      (choices-breaks-alist
-                       '("Chest CT" "Other imaging findings" "Cliniical picture" "Pulmonary function tests" "Other")))))
-             ;; Rule: if q7b is "Other imaging findings"
-             (q7bo1 (make-question "Other imaging findings" :prompt-suffix ". Please specify" :data-type :string))
-             (q7bo2 (make-question "Other" :data-type :string))
-             (subgroup7a (make-survey-sub-group-named *group* nil :order (list q7a)))
-             (subgroup7a2 (make-survey-sub-group-named *group* nil :order (list q7a2)))
-             (subgroup7b (make-survey-sub-group-named *group* nil :order (list q7b)))
-             (subgroup7bo1 (make-survey-sub-group-named *group* nil :order (list q7bo1)))
-             (subgroup7bo2 (make-survey-sub-group-named *group* nil :order (list q7bo2)))
-             (q7c (make-question "Other diagnosis" :prompt-suffix "please specify" :data-type :string))
-             (subgroup7c (make-survey-sub-group-named *group* nil :order (list q7c))))
-        ;; Group rules
-        (add-rule *group* q7 "Pathological diagnosis" subgroup7a ':inline)
-        (add-rule subgroup7a q7a "Lung biopsy" subgroup7a2 ':inline)
-        (add-rule *group* q7 "Clinical diagnosis without biopsy" subgroup7b ':inline)
-        (add-rule subgroup7b q7b "Other imaging findings" subgroup7bo1 ':inline)
-        (add-rule subgroup7b q7b "Other" subgroup7bo2 ':inline)
-        (add-rule *group* q7 "Other" subgroup7c ':inline))
+      (let* ((*group* (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t))
+             (q7
+              (let* ((question-diagnosis
+                      (apply #'make-question-named-and-numbered +survey-name-lam-history+ 7  "How was LAM diagnosed"
+                             :prompt-suffix "?"
+                             (radio-options
+                              (choices-breaks-alist
+                               '("Lung biopsy" ; see group rule below
+                                 "CT thorax and other tissue biopsy" ;see group rule below
+                                 "CT thorax and AML" "CT thorax and chylous collection"
+                                 "CT thorax and TSC" "CT thorax and VEGF-D >800"
+                                 "Other" ;see group rule below
+                                 "Unknown")))))
+                     (subgroup-lung-biopsy
+                      (make-survey-sub-group-named *group* "diagnosis lung biopsy subgroup"))
+                     (question-biopsy-type
+                      (let ((question
+                             (apply #'make-question "If lung biopsy, please specify type"
+                                    (radio-options
+                                     (choices-breaks-alist
+                                      '(("Open lung biopsy" . "open")
+                                        ("Video-assisted thorascopic surgery (VATS) biopsy" . "VATS")
+                                        ("Transbronchial lung biopsy" . "Transbronchial")
+                                        "Other" ;see group rule below
+                                        "Unknown")))))
+                            (subgroup-other
+                             (make-survey-sub-group-named subgroup-lung-biopsy "diagnosis lung biopsy other subgroup"))
+                            (question-other
+                             (make-question "Other lung biopsy type - Please specify")))
+                        ;; Group
+                        (setf (group-questions subgroup-other) (list question-other))
+                        (add-rule subgroup-lung-biopsy question "Other" subgroup-other ':inline)
+                        ;; Returns
+                        question))
+                     (subgroup-ct-thorax-other-tissue-biopsy
+                      (make-survey-sub-group-named *group* "diagnosis ct thorax other tissue biopsy subgroup"))
+                     (question-ct-other-biopsy-type
+                      (make-question "CT thorax and other tissue biopsy - Please specity"))
+                     (subgroup-other
+                      (make-survey-sub-group-named *group* "diagnosis other subgroup"))
+                     (question-other
+                      (make-question "Other - Please specity")))
+                ;; Group
+                (setf (group-questions subgroup-lung-biopsy) (list question-biopsy-type))
+                (add-rule *group* question-diagnosis "Lung biopsy" subgroup-lung-biopsy ':inline)
+                (setf (group-questions subgroup-ct-thorax-other-tissue-biopsy) (list question-ct-other-biopsy-type))
+                (add-rule *group* question-diagnosis "CT thorax and other tissue biopsy" subgroup-ct-thorax-other-tissue-biopsy ':inline)
+                (setf (group-questions subgroup-other) (list question-other))
+                (add-rule *group* question-diagnosis "Other" subgroup-other ':inline)
+                ;; Returns
+                question-diagnosis)))
+        ;; Group
+        (setf (group-questions *group*) (list q7)))
 
       ;;
       ;; Group 4
