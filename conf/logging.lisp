@@ -1,6 +1,6 @@
 (in-package :registry)
 
-(proclaim '(optimize (speed 3) (space 2) (safety 1) (debug 1)))
+(registry-proclamations)
 
 (defparameter *default-log-level* :error)
 

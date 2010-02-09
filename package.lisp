@@ -16,6 +16,6 @@
 (in-package :registry)
 
 (defmacro registry-proclamations ()
-  (proclaim 
-   #+registry-development '(optimize (speed 1) (space 1) (debug 3) (safety 3))
-   #-registry-development '(optimize (speed 3) (debug 1) (safety 1) (space 2))))
+  (declaim
+   #+registry-development (optimize (speed 1) (space 1) (debug 3) (safety 3))
+   #-registry-development (optimize (speed 3) (debug 1) (safety 1) (space 2))))
