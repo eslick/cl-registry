@@ -26,14 +26,23 @@
            (and group (drop-group group)))
          (drop-instance survey))))))
 
-(defmacro dropdown-options (var)
-  `(list :data-type :choice :view-type :dropdown :choices ,var))
+(defmacro dropdown-options (var &rest args &key (help t) &allow-other-keys)
+  (remf args ':help)
+  `(list :data-type :choice :view-type :dropdown
+         ,@(if help '(:help "Please choose one"))
+         :choices ,var ,@args))
 
-(defmacro multi-choices-options (var)
-  `(list :data-type :multichoice :choices ,var))
+(defmacro multi-choices-options (var &rest args &key (help t) &allow-other-keys)
+  (remf args ':help)
+  `(list :data-type :multichoice
+         ,@(if help '(:help "Please choose all that apply"))
+         :choices ,var ,@args))
 
-(defmacro radio-options (var)
-  `(list :data-type :choice :view-type :radio :choices ,var))
+(defmacro radio-options (var &rest args &key (help t) &allow-other-keys)
+  (remf args ':help)
+  `(list :data-type :choice :view-type :radio
+         ,@(if help '(:help "Please choose one"))
+         :choices ,var ,@args))
 
 (defmacro choices-options-numbered (labels &key (start 1.))
   (let ((countsym (gensym)))
@@ -48,7 +57,8 @@
 
 (defvar *choices-alist-yes-no '(("Yes" . t) ("No" . nil)))
 
-(defmacro choices-options-yes-no () '(radio-options *choices-alist-yes-no))
+(defmacro choices-options-yes-no (&key (help t))
+  `(radio-options *choices-alist-yes-no ,@(if help '(:help "Answer yes or no"))))
 
 (defmacro choices-mirror-alist (choices)
   `(loop for str in ,choices
@@ -66,17 +76,6 @@
 
 (defun formatted-question-number (num &optional stream)
   (and num (format stream "<SUP>~D</SUP>" num)))
-
-;;
-;; Survey objects - functional API
-;; Hash table contains arrays of questions
-;;
-
-(defvar *survey-question-table* (make-hash-table :test 'equal))
-
-(defun make-survey-named (name &rest args)
-  (setf (gethash name *survey-question-table*) (make-array 10. :element-type 'question :adjustable t))
-  (apply #'make-instance 'survey :name name args))
 
 (defun group-section-name-and-number (survey name &optional (num t))
   (format nil "~A Section~@[ ~D~]"
@@ -106,28 +105,3 @@
   (apply #'make-instance 'survey-group
          :name (format nil "~A ~A" (group-name group) name)
          :owner (owner group) args))
-
-(defgeneric make-question-named-and-numbered (survey name number &rest args))
-
-(defmethod make-question-named-and-numbered ((survey string) name num &rest args)
-  (let ((obj (get-survey survey)))
-    (aif obj
-         (apply #'make-question-named-and-numbered it name num args)
-         (error "Survey does not exist: ~S" survey))))
-
-(defmethod make-question-named-and-numbered ((survey survey) (num integer) (name string) &rest args)
-  (apply #'make-question-named-and-numbered survey name num args))
-
-(defmethod make-question-named-and-numbered ((survey survey) (name string) (num integer) &rest args)
-  (let ((question
-         (apply #'make-question name
-                :prompt-prefix (formatted-question-number num)
-                args))
-        (questions (gethash (name survey) *survey-question-table*)))
-    ;; Save this question
-    (when questions
-      (if (>= num (length questions))
-          (adjust-array questions (+ num 8.)))
-      (setf (aref questions num) question))
-    ;; Returns
-    question))

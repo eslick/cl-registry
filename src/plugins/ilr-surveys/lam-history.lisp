@@ -19,15 +19,18 @@
 
 (defun create-lam-history (&key (owner (current-user)))
   (with-transaction ()
-    (let* ((*question-prompt-suffix* ":")
+    (let* ((prompt-format-colon "~A:")
+           (prompt-format-question "~A?")
+           (prompt-format-numbered-colon "~*<SUP>~D</SUP>~*&nbsp;~A:")
+           (prompt-format-numbered-question "~*<SUP>~D</SUP>~*&nbsp;~A?")
            (survey
-            (make-survey-named +survey-name-lam-history+
-                               :description "This study involves a retrospective medical record review, with a particular focus on pulmonary function tests."
-                               :owner owner
-                               :published t
-                               :priority 1
-                               :diary-p nil
-                               :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+            (make-instance 'survey :name +survey-name-lam-history+
+                                   :description "This study involves a retrospective medical record review, with a particular focus on pulmonary function tests."
+                                   :owner owner
+                                   :published t
+                                   :priority 1
+                                   :diary-p nil
+                                   :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (survey-treatment
             (make-instance 'survey
                            :name "LAM History Pneumothorax or Pulmonary Effusion Treatment Diary"
@@ -98,25 +101,29 @@ You may save your work at any point to complete at a later time.
       ;; Group 2 - Patient info
       ;;
       (let* ((q1
-              (make-question-named-and-numbered +survey-name-lam-history+ 1. "Country where patient receives medical care"
-                                                ;; !! TODO: Country names from database !!
-                                                :data-type :string))
+              (make-question "Country where patient receives medical care" :number 1.
+                             :prompt-format prompt-format-numbered-colon
+                             :data-type :string))
              (q2
-              (make-question-named-and-numbered +survey-name-lam-history+ 2. "Date of diagnosis of LAM or TSC-LAM"
-                                                :data-type :date))
+              (make-question "Date of diagnosis of LAM or TSC-LAM" :number 2.
+                             :prompt-format prompt-format-numbered-colon
+                             :data-type :date))
              (q3
-              (make-question-named-and-numbered +survey-name-lam-history+ 3. "Age at time of diagnosis"
-                                                :prompt-suffix "(years)" :data-type :number))
+              (make-question "Age at time of diagnosis" :number 3.
+                             :prompt-format prompt-format-numbered-colon
+                             :help "(years)"
+                             :data-type :number))
              (q4
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 4. "Diagnosis type"
+              (apply #'make-question "Diagnosis type" :number 4.
+                     :prompt-format prompt-format-numbered-colon
                      (radio-options
                       '(("Sporadic LAM" . "LAM")
                         ("Tuberous Sclerosis Complex and LAM (TSC-LAM)" . "TSC-LAM")
                         ("Unknown" . "Unknown")))))
              ;; Rule: if q4 answer is TSC-LAM...
              (q5
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 5. "If the patient has TSC-LAM, what symptoms does the patient have"
-                     :prompt-suffix "?<BR>Please check all that apply:"
+              (apply #'make-question "If the patient has TSC-LAM, what symptoms does the patient have" :number 5.
+                     :prompt-format prompt-format-numbered-question
                      (multi-choices-options
                       (choices-mirror-alist
                        '("Developmental delay" "Behavioral problem" "Seizures" "Other" "None" "Unknown")))))
@@ -125,8 +132,8 @@ You may save your work at any point to complete at a later time.
               (make-question "Other TSC-LAM symptoms" :data-type :string :view-type :text-field))
              ;; Rule: if q4 answer is TSC-LAM...
              (q6
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 6. "If the patient has TSC-LAM, what organ systems are affected by tumors"
-                     :prompt-suffix "?<BR>Please check all that apply:"
+              (apply #'make-question "If the patient has TSC-LAM, what organ systems are affected by tumors" :number 6.
+                     :prompt-format prompt-format-numbered-question
                      (multi-choices-options
                       (choices-mirror-alist
                        '("Brain" "Kidneys" "Heart" "Eyes" "Skin" "Lungs" "Other" "Unknown/Not screened")))))
@@ -149,8 +156,8 @@ You may save your work at any point to complete at a later time.
       (let* ((*group* (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t))
              (q7
               (let* ((question-diagnosis
-                      (apply #'make-question-named-and-numbered +survey-name-lam-history+ 7  "How was LAM diagnosed"
-                             :prompt-suffix "?"
+                      (apply #'make-question "How was LAM diagnosed" :number 7.
+                             :prompt-format prompt-format-numbered-question
                              (radio-options
                               (choices-breaks-alist
                                '("Lung biopsy" ; see group rule below
@@ -236,13 +243,14 @@ You may save your work at any point to complete at a later time.
                      ;; Return 
                      question))))
         (setf (group-questions *group*) *questions*))
-          
+
       ;;
       ;; Group 5
       ;;
       (let* ((q9
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 9. "How did the patient originally present"
-                     :prompt-suffix "? What symptom, finding or event led to the eventual diagnosis of LAM?"
+              (apply #'make-question "How did the patient originally present" :number 9.
+                     :prompt-format (concatenate 'string prompt-format-numbered-question
+                                                 " What symptom, finding or event led to the eventual diagnosis of LAM?")
                      (radio-options
                       (choices-breaks-alist
                        '("Exertional dyspnea"
@@ -257,36 +265,42 @@ You may save your work at any point to complete at a later time.
              (q9o
               (make-question "Other symptom(s) originally presented" :prompt "Other:" :data-type :string))
              (q10
-              (make-question-named-and-numbered +survey-name-lam-history+ 10. "How old was the patient at time of the first symptoms attributed to LAM"
-                                                :prompt-suffix "? (years)" :data-type :number))
+              (make-question "How old was the patient at time of the first symptoms attributed to LAM" :number 10.
+                             :prompt-format prompt-format-numbered-question
+                             :help "(years)" :data-type :number))
              (q11
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 11. "What is the patient's smoking history"
-                     :prompt-suffix "?"
+              (apply #'make-question "What is the patient's smoking history" :number 11.
+                     :prompt-format prompt-format-numbered-question
                      (radio-options
                       (choices-breaks-alist
                        '("Current smoker" "Former smoker" "Never a smoker" "Unknown")))))
              (q11a
               (make-question "On average the patient smokes how many packs per day"
-                             :prompt-suffix "?" :data-type :number))
+                             :prompt-format prompt-format-question
+                             :data-type :number))
              (q11b
               (make-question "How many years has the patient smoked"
-                             :prompt "How many years has the patient smoked?" :data-type :number))
+                             :prompt-format prompt-format-question
+                             :data-type :number))
              (q11c
               (make-question "Total pack years"
-                             :prompt "<B>Or</B> enter total pack years:" :data-type :number))
+                             :prompt "<B>Or</B> enter total pack years:"
+                             :data-type :number))
              (q12
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 12. "Has the patient ever had a pneumothorax"
-                     :prompt-suffix "?"
+              (apply #'make-question "Has the patient ever had a pneumothorax" :number 12.
+                     :prompt-format prompt-format-numbered-question
                      (radio-options
                       (choices-mirror-alist
                        '("Yes" "No" "Unknown")))))
              (q12a
-              (make-question "If yes how many total" :prompt-suffix "?" :data-type :number))
+              (make-question "If yes how many total"
+                             :prompt-format prompt-format-question :data-type :number))
              (q12b
-              (make-question "If yes how many in the past year" :prompt-suffix "?" :data-type :number))
+              (make-question "If yes how many in the past year"
+                             :prompt-format prompt-format-question :data-type :number))
              (q13
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 13. "Has the patient ever had a pleural effusion"
-                     :prompt-suffix "?"
+              (apply #'make-question "Has the patient ever had a pleural effusion" :number 13.
+                     :prompt-format prompt-format-numbered-question
                      (radio-options
                       (choices-mirror-alist
                        '("Yes" "No" "Unknown")))))
@@ -305,11 +319,11 @@ You may save your work at any point to complete at a later time.
       ;; Group 6
       ;;
       (let* ((q14
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 14. "What extrapulmonary lesions does the patient have"
-                     :prompt-suffix "?<BR>Please check all that apply:"
+              (apply #'make-question "What extrapulmonary lesions does the patient have" :number 14.
+                     :prompt-format prompt-format-numbered-question
                      (multi-choices-options
                       (choices-mirror-alist
-                       '("Renal angiomyolipoma" "Non-renal angiomyolipoma" "Lymphangiomyoma"
+                       '("Renal angiomyolipoma" "Non-renal angiomyolipoma" "Lymphangioleiomyoma"
                          "Chylous ascites" "Chylous pleural effusion"
                          "Other" "None")))))
              (*group* (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t :order (list q14)))
@@ -321,8 +335,7 @@ You may save your work at any point to complete at a later time.
               (apply #'make-question "Non-renal angiomyolipoma - Please indicate location"
                      (radio-options
                       (choices-mirror-alist '("Lung" "Liver" "Pancreas" "Other")))))
-             (q14b2 (make-question "Other"))                  
-             ;;Is it necessary to avoid re-cycling the previous question??
+             (q14b2 (make-question "Other location"))
              (q14c
               (apply #'make-question "Chylous pleural effusion - Please indicate location"
                      (radio-options
@@ -345,13 +358,14 @@ You may save your work at any point to complete at a later time.
       ;; Group 7
       ;;
       (let* ((q15
-              (make-question-named-and-numbered +survey-name-lam-history+ 15. "What was the patient's age of menarche"
-                                                :prompt-suffix "? (years)"
-                                                ;; ?? TODO: "Unknown" checkbox for Q15 ??
-                                                :data-type :number))
+              (make-question "What was the patient's age of menarche" :number 15.
+                             :prompt-format prompt-format-numbered-question
+                             :help "(years)"
+                             ;; ?? TODO "Unknown" checkbox for Q15 ??
+                             :data-type :number))
              (q16
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 16. "Did the patient take oral contraceptive pills before diagnosed with LAM"
-                     :prompt-suffix "?"
+              (apply #'make-question "Did the patient take oral contraceptive pills before diagnosed with LAM" :number 16.
+                     :prompt-format prompt-format-numbered-question
                      (radio-options
                       (choices-mirror-alist
                        '("Yes" "No" "Unknown")))))
@@ -360,7 +374,8 @@ You may save your work at any point to complete at a later time.
              (q16b
               (make-question "Dates of use" :data-type :date-range))
              (q17
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 17. "Has the patient ever been pregnant"
+              (apply #'make-question "Has the patient ever been pregnant" :number 17.
+                     :prompt-format prompt-format-numbered-question
                      (radio-options
                       (choices-mirror-alist
                        '("Yes" "No" "Unknown")))))
@@ -373,13 +388,15 @@ You may save your work at any point to complete at a later time.
                                        ( "Abortions" (:question) (:question) )))
 
              (q18
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 18. "Has the patient gone through menopause"
-                     :prompt-suffix "? (years)"
+              (apply #'make-question "Has the patient gone through menopause" :number 18.
+                     :prompt-format prompt-format-numbered-question
                      (radio-options
                       (choices-mirror-alist
                        '("Yes" "No" "Unknown")))))
              (q18a
-              (make-question "age at time of menopause" :prompt-prefix "If yes, " :prompt-suffix "?" :data-type :number))
+              (make-question "Age at time of menopause"
+                             :prompt "If yes, age at time of menopause?"
+                             :help "(years)" :data-type :number))
              (*group*
               (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t :order (list q15 q16 q17 q18)))
              ;; Subgroups
@@ -396,9 +413,9 @@ You may save your work at any point to complete at a later time.
       ;;
       (let* ((*group*
               (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t
-                                                    :advice "<SUP>19</SUP> What is the patient's LAM related <B>treatment</B> history? Please check all that apply:"))
+                                                    :advice "<SUP>19</SUP> What is the patient's LAM related <B>treatment</B> history? <SMALL>Please check all that apply</SMALL>"))
              (hormone-therapy/question
-              (apply #'make-question "Hormone therapy" :prompt-suffix "" (choices-options-yes-no)))
+              (apply #'make-question "Hormone therapy" (choices-options-yes-no)))
              (hormone-therapy/table
               (make-survey-group-table
                (:name "hormone therapy table" :default-question-args (:data-type :date))
@@ -419,7 +436,7 @@ You may save your work at any point to complete at a later time.
                 "Other" (:question :data-type :string)
                 (:question :name "hormone therapy: other: from") (:question :name "hormone therapy: other: to"))))
              (bronchiactasis/question
-              (apply #'make-question "Bronchodilator/Pulminary medications" :prompt-suffix "" (choices-options-yes-no)))
+              (apply #'make-question "Bronchodilator/Pulminary medications" (choices-options-yes-no)))
              (bronchiactasis/table
               (make-survey-group-table
                (:name "bronchodilator/pulminary medications table" :default-question-args (:data-type :date))
@@ -445,7 +462,7 @@ You may save your work at any point to complete at a later time.
                 "Other" (:question :data-type :string)
                 (:question :name "bronch/pulm meds therapy: other: from") (:question :name "bronch/pulm meds therapy: other: to"))))
              (other/meds/question
-              (apply #'make-question "Other medical treatment" :prompt-suffix "" (choices-options-yes-no)))
+              (apply #'make-question "Other medical treatment" (choices-options-yes-no)))
              (other/med/table
               (make-survey-group-table
                (:name "other medical treatment table" :default-question-args (:data-type :date))
@@ -458,10 +475,10 @@ You may save your work at any point to complete at a later time.
                 (:question :name "other medical treatment: other: from") (:question :name "other medical treatment: other: to"))))
              (pneumothorax/pleural-effusion/question
               (let* ((question
-                      (apply #'make-question "Pneumothorax or pleural effusion treatment" :prompt-suffix "" (choices-options-yes-no)))
+                      (apply #'make-question "Pneumothorax or pleural effusion treatment" (choices-options-yes-no)))
                      (question2
                       (apply #'make-question "Confirm that all treatments for pneumothorax or pleural effusion have been entered for the patient"
-                             :prompt-prefix"Please enter <B>all</B> information on treatments for pneumothorax or pleural effusion on the separate Pneumothorax Or Pleural Effusion Treatment Diary.<BR>"
+                             :prompt-format "Please enter <B>all</B> information on treatments for pneumothorax or pleural effusion on the separate Pneumothorax Or Pleural Effusion Treatment Diary.<BR>~A."
                              (choices-options-yes-no)))
                      (subgroup
                       (make-survey-sub-group-named *group* "pneumothorax/pleural-effusion/question subgroup" :order (list question2))))
@@ -470,7 +487,7 @@ You may save your work at any point to complete at a later time.
                 ;; Returns
                 question))
              (other/surgery/question
-              (apply #'make-question "Other surgery" :prompt-suffix "" (choices-options-yes-no)))
+              (apply #'make-question "Other surgery" (choices-options-yes-no)))
              (other/surgery/table
               (make-survey-group-table
                (:name "other surgery table" :default-question-args (:data-type :date))
@@ -486,14 +503,14 @@ You may save your work at any point to complete at a later time.
                 (:question :name "other surgery: other: date"))))
              (transplant/question
               (let* ((question
-                      (apply #'make-question "Transplant/Transplant Evaluation" :prompt-suffix ""
+                      (apply #'make-question "Transplant/Transplant Evaluation"
                              (radio-options
                               (choices-breaks-alist
                                '(("The patient has not required transplant evaluation" . "none")
                                  ("The patient was evaluated, but has not had a transplant" . "evaluated")
                                  ("The patient had a transplant" . "transplant"))))))
                      (question2
-                      (apply #'make-question "transplant lungs" :prompt nil
+                      (apply #'make-question "transplant lungs" :prompt ""
                              (radio-options '(("One lung" . 1) ("Both lungs" . 2)))))
                      (question3 (make-question "Transplant date" :data-type :date))
                      (subgroup
@@ -518,8 +535,8 @@ You may save your work at any point to complete at a later time.
       ;; Group 9
       ;;
       (let* ((q20
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 20. "Does/did the patient use oxygen at home"
-                     :prompt-suffix "?"
+              (apply #'make-question "Does/did the patient use oxygen at home" :number 20.
+                     :prompt-format prompt-format-numbered-question
                      (choices-options-yes-no)))
              (*group* (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t :order (list q20)))
              (q20a
@@ -528,10 +545,12 @@ You may save your work at any point to complete at a later time.
                      (multi-choices-options
                       (choices-mirror-alist
                        '("Continuous" "With activities" "At night" "Other")))))
-             (q20b (make-question "Average #liters/min" :data-type :number))
+             (q20b (make-question "Average #liters/min"
+                                  :prompt-format prompt-format-colon
+                                  :data-type :number))
              (q20c
               (make-question "When did the patient initiate home oxygen"
-                             :prompt-suffix "?"
+                             :prompt-format prompt-format-question
                              :data-type :date))
              (subgroup20
               (make-survey-sub-group-named *group* nil :order (list q20a q20b q20c))))
@@ -542,13 +561,15 @@ You may save your work at any point to complete at a later time.
       ;; Group 10
       ;;
       (let* ((q21
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 21. "What is the patient's vital status"
-                     :prompt-suffix "?"
+              (apply #'make-question "What is the patient's vital status" :number 21.
+                     :prompt-format prompt-format-numbered-question
                      (radio-options
                       (choices-mirror-alist
                        '("Living" "Deceased")))))
              (*group* (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t :order (list q21)))
-             (q21a (make-question "Date of last confirmation" :data-type :date))
+             (q21a (make-question "Date of last confirmation"
+                                  :prompt-format prompt-format-colon
+                                  :data-type :date))
              (subgroup21-living (make-survey-sub-group-named *group* nil :order (list q21a)))
              (q21b (make-question "Date of death" :data-type :date))
              (q21c
@@ -572,28 +593,28 @@ You may save your work at any point to complete at a later time.
       ;; Group 11 - results from other surveys
       ;;
       (let* ((q22
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 22. "Do you have pulmonary function test (PFT) reports for the patient"
-                     :prompt-suffix "?"
+              (apply #'make-question "Do you have pulmonary function test (PFT) reports for the patient" :number 22.
+                     :prompt-format prompt-format-numbered-question
                      (choices-options-yes-no)))
              (q22-confirm
               (apply #'make-question "Confirm that all PFT results have been entered for the patient"
-                     :prompt-prefix "Please enter <B>all</B> the results that you have for the patient on the separate PFT patient diary.<BR>"
+                     :prompt-format "Please enter <B>all</B> the results that you have for the patient on the separate PFT patient diary.<BR>~A."
                      (choices-options-yes-no)))
              (q23
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 23. "Does the patient have <B>six minute walk distance</B> (6MWD) results"
-                     :prompt-suffix "?"
+              (apply #'make-question "Does the patient have <B>six minute walk distance</B> (6MWD) results" :number 23.
+                     :prompt-format prompt-format-numbered-question
                      (choices-options-yes-no)))
              (q23-confirm
               (apply #'make-question "Confirm that all 6MWD results have been entered for the patient"
-                     :prompt-prefix "Please enter <B>all</B> the results that you have for the patient on the separate 6MWD patient diary.<BR>"
+                     :prompt-format "Please enter <B>all</B> the results that you have for the patient on the separate 6MWD patient diary.<BR>~A."
                      (choices-options-yes-no)))
              (q24
-              (apply #'make-question-named-and-numbered +survey-name-lam-history+ 24. "Has the patient taken the <B>St. George's Respiratory Questionnaire (SGRQ)</B>"
-                     :prompt-suffix "?"
+              (apply #'make-question "Has the patient taken the <B>St. George's Respiratory Questionnaire (SGRQ)</B>" :number 24.
+                     :prompt-format prompt-format-numbered-question
                      (choices-options-yes-no)))
              (q24-confirm
               (apply #'make-question "Confirm that all SGRQ results have been entered for the patient"
-                     :prompt-prefix "Please enter <B>all</B> the results that you have for the patient on the separate SGRQ patient diary.<BR>"
+                     :prompt-format "Please enter <B>all</B> the results that you have for the patient on the separate SGRQ patient diary.<BR>~A."
                      (choices-options-yes-no)))
              (*group* (make-survey-group-named-and-numbered survey +survey-name-lam-history+ t :order (list q22 q23 q24)))
              ;; Subgroups
