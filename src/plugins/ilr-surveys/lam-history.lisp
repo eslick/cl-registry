@@ -23,54 +23,39 @@
            (prompt-format-question "~A?")
            (prompt-format-numbered-colon "~*<SUP>~D</SUP>~*&nbsp;~A:")
            (prompt-format-numbered-question "~*<SUP>~D</SUP>~*&nbsp;~A?")
+           (survey-args `(:owner ,owner :origin "researcher" :published t :priority 1 :diary-p nil
+                          :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+           (diary-args `(:owner ,owner :origin "researcher" :published t :priority 2 :diary-p t
+                         :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (survey
-            (make-instance 'survey :name +survey-name-lam-history+
-                                   :description "This study involves a retrospective medical record review, with a particular focus on pulmonary function tests."
-                                   :owner owner
-                                   :published t
-                                   :priority 1
-                                   :diary-p nil
-                                   :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+            (apply #'make-instance 'survey
+                   :name +survey-name-lam-history+
+                   :description "This study involves a retrospective medical record review, with a particular focus on pulmonary function tests."
+                   survey-args))
            (survey-treatment
-            (make-instance 'survey
-                           :name "LAM History Pneumothorax or Pulmonary Effusion Treatment Diary"
-                           :description "Enter information about surgery/treatments for LAM patient."
-                           :owner owner
-                           :published t
-                           :priority 1
-                           :diary-p t
-                           :diary-description "One result per date"
-                           :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+            (apply #'make-instance 'survey
+                   :name "LAM History Pneumothorax or Pulmonary Effusion Treatment Diary"
+                   :description "Enter information about surgery/treatments for LAM patient."
+                   :diary-description "One result per date"
+                   diary-args))
            (survey-pft
-            (make-instance 'survey
-                           :name "LAM History Pulmonary Function Test (PFT) Diary"
-                           :description "Enter PFT results for LAM patient."
-                           :owner owner
-                           :published t
-                           :priority 1
-                           :diary-p t
-                           :diary-description "One result per date"
-                           :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+            (apply #'make-instance 'survey
+                   :name "LAM History Pulmonary Function Test (PFT) Diary"
+                   :description "Enter PFT results for LAM patient."
+                   :diary-description "One result per date"
+                   diary-args))
            (survey-6mwd
-            (make-instance 'survey
-                           :name "LAM History Six Minute Walking Distance (6MWD) Diary"
-                           :description "Enter 6MWD results for LAM patient."
-                           :owner owner
-                           :published t
-                           :priority 1
-                           :diary-p t
-                           :diary-description "One result per date"
-                           :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+            (apply #'make-instance 'survey
+                   :name "LAM History Six Minute Walking Distance (6MWD) Diary"
+                   :description "Enter 6MWD results for LAM patient."
+                   :diary-description "One result per date"
+                   diary-args))
            (survey-sgrq
-            (make-instance 'survey
-                           :name "LAM History Saint George's Respiratory Questionnaire (SGRQ) Diary"
-                           :description "Enter SGRQ results for LAM patient."
-                           :owner owner
-                           :published t
-                           :priority 1
-                           :diary-p t
-                           :diary-description "One result per date"
-                           :ranking-record (make-ranking-record :ranking nil :distribution nil))))
+            (apply #'make-instance 'survey
+                   :name "LAM History Saint George's Respiratory Questionnaire (SGRQ) Diary"
+                   :description "Enter SGRQ results for LAM patient."
+                   :diary-description "One result per date"
+                   diary-args)))
 
       ;;
       ;; Main survey - LAM History
