@@ -14,20 +14,21 @@
 (defun create-sgrq (&key (owner (current-user)))
   (with-transaction ()
 
+   (values
+
     ;;
     ;; Survey part 0
     ;;
     (let* ((survey0
             (make-instance 'survey
                            :name "St George's Respiratory Questionnaire (SGRQ) - Complete this part first"
-                           :owner owner
-                           :published t
+                           :owner owner :origin "researcher" :published t
                            :priority 1
                            :diary-p nil
                            :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (q0
             (apply #'make-question "Please check one box to show how you describe your current health"
-                   :prompt-prefix "Before completing the rest of the questionnaire:<BR>"
+                   :prompt-format "Before completing the rest of the questionnaire:<BR>~A:"
                    (radio-options
                     (choices-mirror-alist
                      '("Very good" "Good" "Fair" "Poor" "Very poor")))))
@@ -38,7 +39,9 @@
                            :advice "This questionnaire is designed to help us learn much more about how your breathing is troubling you and how it affects your life. We are using it to find out which aspects of your illness cause you most problems, rather than what the doctors and nurses think your problems are.
 <P>Please read the instructions carefully and ask if you do not understand anything. Do not spend too long deciding about your answers."
                            :order (list q0))))
-      (setf (survey-groups survey0) (list p0g0)))
+      (setf (survey-groups survey0) (list p0g0))
+      ;; Returns
+      survey0)
 
     ;;
     ;; Survey part 1
@@ -46,9 +49,7 @@
     (let* ((survey1
             (make-instance 'survey
                            :name "St George's Respiratory Questionnaire (SGRQ) - Part 1"
-                           :owner owner
-                           :published t
-                           :priority 1
+                           :owner owner :origin "researcher" :published t :priority 2
                            :diary-p nil
                            :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (p1g1
@@ -72,10 +73,11 @@
               (setf (survey-groups survey1) (append (survey-groups survey1) (list group)))
               ;; Returns
               group))
+           (prompt-format-number "~*<SUP>~D</SUP>&nbsp;~*~A")
            (p1q5
-            (apply #'make-question "How many times during the past 4 weeks have you suffered from severe or very unpleasant respiratory attacks"
-                   :prompt-prefix (formatted-question-number 5)
-                   :prompt-suffix "? Please check one:"
+            (apply #'make-question "How many times during the past 4 weeks have you suffered from severe or very unpleasant respiratory attacks?"
+                   :number 5.
+                   :prompt-format prompt-format-number
                    (radio-options
                     (choices-breaks-alist
                      '(("more than 3 attacks" . 4)
@@ -84,9 +86,10 @@
                        ("1 attack" . 1)
                        ("no attacks" . 0))))))
            (p1q6
-            (apply #'make-question "How long did the worst attack of chest trouble last"
-                   :prompt-prefix (formatted-question-number 6)
-                   :prompt-suffix "? <EM>(Go to question 7 if you did not have a severe attack)</EM> Please check one:"
+            (apply #'make-question "How long did the worst attack of chest trouble last?"
+                   :number 6.
+                   :prompt-format (concatenate 'string prompt-format-number
+                                               "<BR><EM>(Go to question 7 if you did not have a severe attack)</EM>")
                    (radio-options
                     (choices-breaks-alist
                      '(("a week or more" . 4)
@@ -94,9 +97,9 @@
                        ("1 or 2 days" . 2)
                        ("less than a day" . 1))))))
            (p1q7
-            (apply #'make-question "Over the last 4 weeks, in a typical week, how many good days (with few respiratory problems) have you had"
-                   :prompt-prefix (formatted-question-number 7)
-                   :prompt-suffix "? Please check one:"
+            (apply #'make-question "Over the last 4 weeks, in a typical week, how many good days (with few respiratory problems) have you had?"
+                   :number 7.
+                   :prompt-format prompt-format-number
                    (radio-options
                     (choices-breaks-alist
                      '(("No good days" . 0)
@@ -105,13 +108,15 @@
                        ("nearly every day was good" . 3)
                        ("every day was good" . 4))))))
            (p1q8
-            (apply #'make-question "If you wheeze, is it worse when you get up in the morning"
-                   :prompt-prefix (formatted-question-number 8)
-                   :prompt-suffix "? Please check one:"
+            (apply #'make-question "If you wheeze, is it worse when you get up in the morning?"
+                   :number 8.
+                   :prompt-format prompt-format-number
                    (choices-options-yes-no)))
            (p1g2 (make-survey-group-named-and-numbered survey1 "SGRQ Part 1" t :order (list p1q5 p1q6 p1q7 p1q8)))
            )
-      (declare (ignore p1g1 p1g2)))
+      (declare (ignore p1g1 p1g2))
+      ;; Returns
+      survey1)
 
     ;;
     ;; Survey part 2
@@ -119,15 +124,12 @@
     (let* ((survey2
             (make-instance 'survey
                            :name "St George's Respiratory Questionnaire (SGRQ) - Part 2"
-                           :owner owner
-                           :published t
-                           :priority 1
+                           :owner owner :origin "researcher" :published t :priority 2
                            :diary-p nil
                            :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            ;; Section 1
            (p2g1q1
-            (apply #'make-question "How would you describe your respiratory condition"
-                   :prompt-suffix "? Please choose one"
+            (apply #'make-question "How would you describe your respiratory condition?"
                    (radio-options
                     (choices-breaks-alist
                      '(("The most important problem I have" . 1)
@@ -135,8 +137,7 @@
                        ("Causes me a few problems" . 3)
                        ("Causes no problem" . 4))))))
            (p2g1q2
-            (apply #'make-question "If you have ever held a job"
-                   :prompt-suffix ": Please choose one"
+            (apply #'make-question "If you have ever held a job:"
                    (radio-options
                     (choices-breaks-alist
                      '(("My respiratory problems made me stop working altogether" . 1)
@@ -289,9 +290,8 @@
 </ul>
 Please write in any other important activities that your respiratory problems may stop you from doing:"
                                     :data-type :string
-                                    :view-type :paragraph)
-                     (apply #'make-question "Now, please choose (one only) that you think best describes how your respiratory problems affect you"
-                            :prompt-suffix ":"
+                                               :view-type :paragraph)
+                     (apply #'make-question "Now, please choose (one only) that you think best describes how your respiratory problems affect you:"
                             (radio-options
                              (choices-breaks-alist
                               '(("It does not stop me from doing anything I would like to do." . 0)
@@ -302,7 +302,11 @@ Please write in any other important activities that your respiratory problems ma
                     (make-survey-group-named-and-numbered survey2 "SGRQ Part 2" t :order questions)))
               ;; Returns
               group)))
+
       ;; Ignore these for now they get attached to the survey as a side effect
       (declare (ignore p2g1 p2g2 p2g3 p2g4 p2g5 p2g6 p2g7 p2g8))
 
-      )))
+      ;; Returns
+      survey2)
+
+    )))
