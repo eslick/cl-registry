@@ -208,6 +208,7 @@
 
 
 (defmethod (setf current-id) :after (id (ctrl survey-ctrl))
+  ;; Diary survey? Set default value for diary question if no answer
   (let* ((survey (survey ctrl))
 	 (question (diary-question survey))
 	 (user (current-patient)))
@@ -426,6 +427,18 @@
 ;; better list view; fixed height div with scrollbar
 ;; show | hide
 
+
+;; ===============================================================
+;; User feedback / comments
+;; ===============================================================
+
+(defparameter *comment-view-enabled-p* ':unknown)
+
+(defun comment-view-enabled-p ()
+  (if (eq *comment-view-enabled-p* ':unknown)
+      (setq *comment-view-enabled-p* (get-site-config-param :survey-viewer-show-comments))
+      *comment-view-enabled-p*))
+
 ;; ===============================================================
 ;;  Progress and navigation
 ;; ==============================================================
@@ -461,8 +474,10 @@
 	     ;;		 (:p :class "no-noscript" (str #!"Your survey answers are automatically saved as you click on or finish entering text.  This can cause the display to jump a bit when questions are removed.")))
 	     ;;		 (:script :type "text/javascript"
 					;			 "$$('.no-noscript').each(function (e) { e.hide() });"))
-	     (:li
-	      (str #!"If a question is confusing, or needs improving, you can provide feedback by clicking on the comment icon " ))
+	     (if (comment-view-enabled-p)
+		 (htm
+		  (:li
+		   (str #!"If a question is confusing, or needs improving, you can provide feedback by clicking on the comment icon " ))))
 	     (:li
 	      (str #!"For the best experience, we recommend downloading and using ")
 	      (:a :href "http://www.firefox.org/" (str #!"the Firefox web browser"))
@@ -617,21 +632,24 @@
     (validate-answers q (current-patient))
     (with-html 
       (:div :class "question inline-trigger"
+
  	    (:div :class "question-prompt"
 		  (render-prompt p)
-		  ;; Comments
- 		  (let ((comment-count (comment-count q)))
- 		    (htm (render-image-link (f* (do-question-comment-dialog ctrl q))
- 					    "/pub/images/comment-icon.jpg" 
- 					    :alt #!"Add Comment"
- 					    :class (when (> comment-count 0)
- 						     "question-has-comments"))
- 			 (when (> comment-count 0)
- 			   (htm (:p :class "question-has-comments"
- 				    (str (format nil "(~D ~A)" comment-count
- 						 (if (= comment-count 1)
- 						     #!"comment"
- 						     #!"comments")))))))))
+
+		  (when (comment-view-enabled-p)
+		    ;; Comments
+		    (let ((comment-count (comment-count q)))
+		      (htm (render-image-link (f* (do-question-comment-dialog ctrl q))
+					      "/pub/images/comment-icon.jpg" 
+					      :alt #!"Add Comment"
+					      :class (when (> comment-count 0)
+						       "question-has-comments"))
+			   (when (> comment-count 0)
+			     (htm (:p :class "question-has-comments"
+				      (str (format nil "(~D ~A)" comment-count
+						   (if (= comment-count 1)
+						       #!"comment"
+						       #!"comments"))))))))))
 	    (:div :class "question-input"
 		  (render-presentation-editable p))
 		   
