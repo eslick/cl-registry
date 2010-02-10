@@ -12,7 +12,9 @@
 (defmodel question (fulltext-mixin user-translation-mixin)
   (;; Prompt
    (name :accessor question-name :initarg :name :index t)
+   (number :accessor question-number :initarg :number)
    (prompt :accessor question-prompt :initarg :prompt :index t) ;; statisfy via fulltext!
+   (prompt-format :accessor question-prompt-format :initarg :prompt-format :initform nil)
    (question-help :accessor question-help :initarg :help :initform "")
    (data-help :accessor question-data-help :initarg :data-help :initform "")
    ;; Type and view
@@ -72,22 +74,28 @@
     (mapcar #'drop-instance (get-instances-by-value 'answer 'question question))
     t))
 
-(defparameter *question-prompt-prefix* "")
-(defparameter *question-prompt-suffix* ":")
+(defmethod format-prompt ((inst question) &key (format nil format-supplied-p) (default-format "~A"))
+  (let ((qnum (and (slot-boundp inst 'number) (question-number inst)))
+	(qname (and (slot-boundp inst 'name) (question-name inst)))
+	(qprompt
+	 ;; Prompt slot may be translated into current language
+	 ;; This is == (question-prompt inst)
+	 (and (slot-boundp inst 'prompt)
+	      (slot-value-translation inst 'prompt))))
+    (cond
+      ((null qprompt) "")
+      ((ignore-errors
+	 (format nil
+		 (or (and format-supplied-p format) (question-prompt-format inst) default-format)
+		 qprompt qnum qname qprompt)))
+      (t
+       ;; No formatting
+       qprompt))))
 
-(defun make-question (name &rest args
-		      &key (prompt name prompt-supplied-p)
-		      (prompt-prefix *question-prompt-prefix*)
-		      (prompt-suffix *question-prompt-suffix*)
+(defun make-question (name &rest args &key (prompt name)
 		      &allow-other-keys)
   "Shortcut for (APPLY MAKE-INSTANCE 'QUESTION :NAME NAME :PROMPT PROMPT ARGS)
-  PROMPT defaults to NAME but can be overridden.
-  PROMPT-PREFIX and PROMPT-SUFFIX are concatenated to PROMPT.
-  Prompt prefix and suffix defaults are from special *QUESTION-PROMPT-PREFIX* and *QUESTION-PROMPT-SUFFIX*"
-  (if (not prompt-supplied-p)
-      (setq prompt (concatenate 'string prompt-prefix prompt prompt-suffix)))
-  (remf args ':prompt-prefix)
-  (remf args ':prompt-suffix)
+  PROMPT defaults to NAME but can be overridden."
   (apply #'make-instance 'question :name name :prompt prompt args))
 
 ;;
@@ -202,7 +210,7 @@
 			    
 (defmethod make-presentation ((question question) id &rest initargs)
   (let ((type (presentation-type-for-question question))
-	(args `((:prompt ,(slot-value-translation question 'prompt)))))
+	(args (list (list :prompt (format-prompt question)))))
     (cond ((subtypep type 'member-choice-presentation)
 	   (if (eq type 'number-radio-presentation)
 	     (let ((pair (question-data-constraint question)))
