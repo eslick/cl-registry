@@ -779,9 +779,37 @@ You may save your work at any point to complete at a later time.
       ;; Returns
       (list survey survey-treatment survey-pft survey-6mwd survey-sgrq))))
 
+(defun get-lam-history-questions ()
+  (let* ((last-question 30.)
+         (questions (make-array (1+ last-question) :element-type 'question :adjustable t)))
+    ;; Cache numbered questions
+    (with-transaction ()
+      (let* ((survey (or (get-survey +survey-name-lam-history+)
+                         (error "Survey not found: ~A" +survey-name-lam-history+)))
+             (question-count 0.)
+             (groups
+              (loop for group in (survey-groups survey)
+                   append (find-subgroups group))))
+        (dolist (group groups)
+          (dolist (question (group-questions group))
+            (when  (slot-boundp question 'number)
+              (let ((num (question-number question)))
+                (when (typep num '(integer 1))
+                  (setf last-question (max num last-question))
+                  (when (> last-question (1+ (length questions)))
+                    (adjust-array questions (+ last-question 8.)))
+                  (setf (aref questions num) question)
+                  (incf question-count))))))
+        ;; Returns
+        (values questions question-count)))))
+
 (defun create-lam-history-data (&key (count 100.) (center "lamhtest"))
-  (let ((questions (gethash +survey-name-lam-history+ *survey-question-table*)))
-    (assert (not (null questions)) nil "Survey questions not found for ~S" +survey-name-lam-history+)
+  (multiple-value-bind (questions question-count) (get-lam-history-questions)
+
+    (unless (plusp question-count)
+      (error "Survey questions not found for ~S" +survey-name-lam-history+))
+
+    ;; Create or initialize center
     (with-transaction ()
       ;; Coerce center
       (when (stringp center)
@@ -789,8 +817,10 @@ You may save your work at any point to complete at a later time.
               (or (get-center center t)
                   (make-center center "LAM History survey - test center"))))
       (check-type center center)
-      ;; Create / init test patients
+      ;; Delete any existing patients
       (mapcar 'drop-instance (get-patients-for-center center)))
+
+    ;; Create test data
     (with-transaction ()
       (let (
             ;; Random states for questions that define strata for our "sample"
@@ -802,7 +832,7 @@ You may save your work at any point to complete at a later time.
             (q9-origin-rs (make-random-state t))
             (q20-rs (make-random-state t))
             )
-
+        
       (dotimes (n count)
         (let* ((patient (make-patient (generate-patient-id :center center) center))
                age-now ;; see below
@@ -887,7 +917,7 @@ You may save your work at any point to complete at a later time.
                                   (stream *standard-output*))
   (if (stringp center)
       (setq center (get-center center)))
-  (let* ((qarray (gethash +survey-name-lam-history+ *survey-question-table*))
+  (let* ((qarray (get-lam-history-questions))
          (patients (get-patients-for-center center)))
     (format stream "~&Patients: ~D" (length patients))
     (dolist (patient patients)
