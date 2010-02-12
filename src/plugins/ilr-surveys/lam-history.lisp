@@ -825,18 +825,20 @@ You may save your work at any point to complete at a later time.
       (let (
             ;; Random states for questions that define strata for our "sample"
             (q3-age-rs (make-random-state t))
+            (q3-age-group-rs (make-random-state t))
             (q4-diagnosis-rs (make-random-state t))
             (q5-symptoms-rs (make-random-state t))
             (q6-symptoms-rs (make-random-state t))
             (q7-diagnosis-method-rs (make-random-state t))
             (q9-origin-rs (make-random-state t))
+            (q10-age-pct-rs (make-random-state t))
             (q20-rs (make-random-state t))
             )
         
       (dotimes (n count)
         (let* ((patient (make-patient (generate-patient-id :center center) center))
-               age-now ;; see below
-               (q3 (aref questions 3.)) ;age
+               patient-age ;; see below
+               (q3 (aref questions 3.)) ;age at diagnosis
                (q4 (aref questions 4.)) ;diagnosis
                (q5 (aref questions 5.)) ;TSC-LAM symptoms
                (q6 (aref questions 6.)) ;TSC-LAM organs affected
@@ -851,10 +853,20 @@ You may save your work at any point to complete at a later time.
           ;; Create test survey answers
 
           ;; Age-related answers
-          ;; Fix this!! need to create a spread between the min and max possible ages
-          (add-answer q3 patient (setq age-now (+ 18. (random 62. q3-age-rs))))
-          (add-answer q10 patient (min age-now (+ 18. (random 22. q3-age-rs))))
-          (add-answer q15 patient (min 13. age-now (+ 11. (random 5. q3-age-rs))))
+          ;; Create a (more or less) bi-modal distribution for age at diagnosis young vs. old
+          ;; First flip a coin to assign this patient to one or the other group
+          (add-answer q3 patient
+                      (setq patient-age
+                            (floor 
+                             (if (= (random 2. q3-age-group-rs) 1.) ;flip a coin
+                                 ;; Age 15 - 25
+                                 (statistics:random-normal :mean 25. :sd 5.)
+                                 ;; Age 55 - 75
+                                 (statistics:random-normal :mean 55. :sd 5.)))))
+          ;; Age of first symptoms: range from 50% - 100% of age of diagnosis
+          (add-answer q10 patient (floor (* patient-age (/ (1+ (random 100. q10-age-pct-rs)) 100.))))
+          ;; Age of menarche: range from 12 - age of diagnosis
+          (add-answer q15 patient (min patient-age (+ 12. (random 5. q3-age-rs))))
 
           ;; Diagnosis answers
           (add-answer q4 patient
