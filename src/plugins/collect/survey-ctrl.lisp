@@ -408,14 +408,13 @@
     (:li (render-link 
 	  (f* (setf (current-id ctrl) (answer-id answer))
 	      (create-current-presentations ctrl))
-	  (lambda ()
+	  description
+	  :render-fn
+	  (lambda (label)
 	    (render-presentation
 	     (make-presentation series (answer-id answer)))
 	    (with-html
-	      (str "&nbsp;"))
-	    (when description 
-	      (render-presentation
-	       (make-presentation description (answer-id answer)))))
+	      (str (format nil "&nbsp;" label))))
 	  :class (if (eq (current-id ctrl) (answer-id answer))
 		     "diary-selected-answer-entry"
 		     "diary-answer-entry")))))
