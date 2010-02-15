@@ -38,6 +38,12 @@
          ,@(if help '(:help "Please choose all that apply"))
          :choices ,var ,@args))
 
+(defmacro checkbox-options (&rest args &key (help t) &allow-other-keys)
+  (remf args ':help)
+  `(list :data-type :boolean :view-type :checkbox
+         ,@(if help '(:help "Select if applicable"))
+         ,@args))
+
 (defmacro radio-options (var &rest args &key (help t) &allow-other-keys)
   (remf args ':help)
   `(list :data-type :choice :view-type :radio
