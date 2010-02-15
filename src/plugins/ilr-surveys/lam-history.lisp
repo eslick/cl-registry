@@ -1,4 +1,4 @@
-;;; -*- Mode:Lisp; tab-width:2; indent-tabs-mode:nil -*-
+;; -*- Mode:Lisp; tab-width:2; indent-tabs-mode:nil -*-
 
 ;;; Copyright (c) 2008-2010, Massachusetts Institute of;Technology. All rights reserved. 
 ;;; Copyright (c) 2008-2010, LAM Treatment Alliance. All rights reserved. 
@@ -8,23 +8,62 @@
 (in-package :registry)
 
 ;;;
-;;; Define LAM History surveys
+;;; Define LAM QOL/PFT surveys
+;;; QOL/PFT == Quality of Life / Pulmonary Function Tests
 ;;;
 
 ;;; Globals
 
-(defconstant +survey-name+ "LAM History QOL/PFT")
+(defconstant +survey-name+ "LAM QOL/PFT")
 (defconstant +survey-name-clinician+ "ILR QOL/PFT Clinician Questionnaire")
 (defconstant +survey-short-name-clinician+ "QOL/PFT Study")
 (defconstant +survey-name-patient+ "LAMsight QOL/PFT Patient Questionnaire")
 (defconstant +survey-short-name-patient+ "QOL/PFT Study")
 
+;;; Utilities
+
 (defmacro prepend-survey-name (str survey)
   `(format nil "~A - ~A" ,survey ,str))
 
+(defun make-pft-question-table (&key before advice (owner (current-user)))
+  (let ((table
+         (make-survey-group-table
+          (:name "pft results table" :default-question-args (:data-type :number))
+          ("Test" "Result" "Percent Predicted" "Test not performed")
+          ("Vital Capacity (VC)" 
+           (:question :name "VC result" :data-type :number :help "ml.") (:question :name "VC pct" :data-type :number :help "(%)")
+           (:question :name "VC tested" :data-type :boolean :view-type :checkbox))
+          ("Forced Vital Capacity (FVC)"
+           (:question :name "FVC result" :help "ml.") (:question :name "FVC pct" :help "(%)")
+           (:question :name "FVC tested" :data-type :boolean :view-type :checkbox))
+          ("Forced Expiratory Volume in 1 sec (FEV1)"
+           (:question :name "FEV1 result" :help "ml.") (:question :name "FEV1 pct" :help "(%)")
+           (:question :name "FEV1 tested" :data-type :boolean :view-type :checkbox))
+          ("Carbon Monoxide Diffusing Capacity (DLCO)"
+           (:question :name "DLCO result" :help "ml/min/mm Hg.") (:question :name "DLCO pct" :help "(%)")
+           (:question :name "DLCO tested" :data-type :boolean :view-type :checkbox))
+          ("DLCO/(alveolar volume)(V<SUB>A</SUB>))"
+           (:question :name "DLCO/Va result" :help"ml/min/mm Hg/L.") (:question :name "DLCO/Va pct" :help "(%)")
+           (:question :name "DLCO/Va tested" :data-type :boolean :view-type :checkbox))
+          ("Total Lung Capacity (TLC)"
+           (:question :name "TLC result" :help "ml.") (:question :name "TLC pct" :help "(%)")
+           (:question :name "TLC tested" :data-type :boolean :view-type :checkbox))
+          ("Residual Volume (RV)"
+           (:question :name "RV result" :help "ml.") (:question :name "RV pct" :help "(%)")
+           (:question :name "RV tested" :data-type :boolean :view-type :checkbox)))))
+    ;; Modify all question names based on before/after flag
+    (dolist (question (group-questions table))
+      (setf (question-name question)
+            (format nil "~A ~:[post~;pre~]-bronchodilator" (question-name question) before)))
+    ;; Group properties
+    (setf (group-advice table) advice)
+    (setf (owner table) owner)
+    ;; Returns
+    table))
+
 ;;; Create surveys
 
-(defun create-lam-history (&key (owner (current-user)))
+(defun create-ilr-qol/pft-surveys (&key (owner (current-user)))
   (with-transaction ()
     (let* ((prompt-format-colon "~A:")
            (prompt-format-question "~A?")
@@ -34,7 +73,7 @@
                           :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (diary-args `(:owner ,owner :origin "researcher" :published t :priority 2 :diary-p t
                          :ranking-record (make-ranking-record :ranking nil :distribution nil)))
-           (survey
+           (survey-clinician
             (apply #'make-instance 'survey
                    :name +survey-name-clinician+
                    :description "This study involves a retrospective medical record review, with a particular focus on pulmonary function tests."
@@ -65,14 +104,14 @@
                    diary-args)))
 
       ;;
-      ;; Main survey - LAM ILR Clinician Questionnaire
+      ;; Main survey - ILR QOL/PFT Clinician Questionnaire
       ;;
 
       ;;
       ;; Group 1 - clinician header page
       ;;
-      (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t
-                                            :advice "<B>ILR Clinician Header</B>
+      (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
+                                            :advice "<B>ILR Clinician Data Entry Form Header</B>
 <P>Thank you for your involvement in this research study and your collaboration with the International LAM Registry.
 <P>We will use this information to examine whether women diagnosed with LAM under age 25 have a more rapid pulmonary function decline relative to those over the age of 55.
 <P>This study involves a retrospective medical record review, with a particular focus on pulmonary function tests.  
@@ -132,7 +171,9 @@ You may save your work at any point to complete at a later time.
              ;; Rule: if previous answer included Other...
              (q6o
               (make-question "Other TSC-LAM symptoms" :data-type :string :view-type :text-field))
-             (*group* (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t :order (list q1 q2 q3 q4)))
+             (*group*
+              (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
+                                                    :order (list q1 q2 q3 q4)))
              ;; Subgroups
              (subgroup1 (make-survey-sub-group-named *group* nil :order (list q5 q6)))
              (subgroup2 (make-survey-sub-group-named *group* nil :order (list q5o)))
@@ -145,7 +186,8 @@ You may save your work at any point to complete at a later time.
       ;;
       ;; Group 3 - How was LAM diagnosed?
       ;;
-      (let* ((*group* (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t))
+      (let* ((*group*
+              (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t))
              (q7
               (let* ((question-diagnosis
                       (apply #'make-question "How was LAM diagnosed" :number 7.
@@ -196,15 +238,15 @@ You may save your work at any point to complete at a later time.
                 (add-rule *group* question-diagnosis "Other" subgroup-other ':inline)
                 ;; Returns
                 question-diagnosis)))
-        ;; Group
+        ;; Questions
         (setf (group-questions *group*) (list q7)))
 
       ;;
       ;; Group 4
       ;;
       (let* ((*group*
-              (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t
-               :advice "<SUP>8</SUP> If a biopsy was performed, what were the histopathological findings?"))
+              (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
+                                                    :advice "<SUP>8</SUP> If a biopsy was performed, what were the histopathological findings?"))
              (*questions*
               (loop for spec in
                    '(("HMB-45 immunostaining" (("Completed" "Positive" "Negative") ("Not completed")))
@@ -234,6 +276,7 @@ You may save your work at any point to complete at a later time.
                           (add-rule subgroup1 question8a "Other" subgroup2 ':inline)))
                      ;; Return 
                      question))))
+        ;; Questions
         (setf (group-questions *group*) *questions*))
 
       ;;
@@ -297,7 +340,8 @@ You may save your work at any point to complete at a later time.
                       (choices-mirror-alist
                        '("Yes" "No" "Unknown")))))
              (*group*
-              (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t :order (list q9 q10 q11 q12 q13)))
+              (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
+                                                    :order (list q9 q10 q11 q12 q13)))
              ;; Subgroups
              (subgroup9o (make-survey-sub-group-named *group* nil :order (list q9o)))
              (subgroup11 (make-survey-sub-group-named *group* nil :order (list q11a q11b q11c)))
@@ -318,7 +362,8 @@ You may save your work at any point to complete at a later time.
                        '("Renal angiomyolipoma" "Non-renal angiomyolipoma" "Lymphangioleiomyoma"
                          "Chylous ascites" "Chylous pleural effusion"
                          "Other" "None")))))
-             (*group* (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t :order (list q14)))
+             (*group* (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
+                                                            :order (list q14)))
              (q14a
               (apply #'make-question "Renal angiomyolipoma - Please indicate location"
                      (radio-options
@@ -373,8 +418,8 @@ You may save your work at any point to complete at a later time.
                        '("Yes" "No" "Unknown")))))
              (q17-table
               (make-survey-group-table (:name "question 17 if yes" :advice "If yes: please complete:" :default-question-args (:data-type :number))
-                                       ( nil "Number <B>before<B> diagnosis of LAM"
-                                             "Number <B>during</B> or <B>after</b> diagnosis of LAM" )
+                                       ( nil "Number <B>before</B> diagnosis of LAM"
+                                             "Number <B>during</B> or <B>after</B> diagnosis of LAM" )
                                        ( "Full term or premature births" (:question) (:question) )
                                        ( "Miscarriages"  (:question) (:question) )
                                        ( "Abortions" (:question) (:question) )))
@@ -390,7 +435,8 @@ You may save your work at any point to complete at a later time.
                              :prompt "If yes, age at time of menopause?"
                              :help "(years)" :data-type :number))
              (*group*
-              (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t :order (list q15 q16 q17 q18)))
+              (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
+                                                    :order (list q15 q16 q17 q18)))
              ;; Subgroups
              (subgroup16
               (make-survey-sub-group-named *group* "Dates of contraceptive use." :order (list q16a q16b)))
@@ -404,7 +450,7 @@ You may save your work at any point to complete at a later time.
       ;; Group 8
       ;;
       (let* ((*group*
-              (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t
+              (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
                                                     :advice "<SUP>19</SUP> What is the patient's LAM related <B>treatment</B> history? <SMALL>Please check all that apply</SMALL>"))
              (hormone-therapy/question
               (apply #'make-question "Hormone therapy" (choices-options-yes-no)))
@@ -427,11 +473,11 @@ You may save your work at any point to complete at a later time.
                ((:question :name "hormone therapy: other" :data-type :boolean :view-type :checkbox )
                 "Other" (:question :data-type :string)
                 (:question :name "hormone therapy: other: from") (:question :name "hormone therapy: other: to"))))
-             (bronchiactasis/question
-              (apply #'make-question "Bronchodilator/Pulminary medications" (choices-options-yes-no)))
-             (bronchiactasis/table
+             (bronch/meds/question
+              (apply #'make-question "Bronchodilator/Pulmonary medications" (choices-options-yes-no)))
+             (bronch/meds/table
               (make-survey-group-table
-               (:name "bronchodilator/pulminary medications table" :default-question-args (:data-type :date))
+               (:name "bronchodilator/pulmonary medications table" :default-question-args (:data-type :date))
                (nil "Treatment" nil "Start Date" "End Date")
                ((:question :name "bronch/pulm meds therapy: long acting B agonist" :data-type :boolean :view-type :checkbox )
                 "Long acting B agonist" nil (:question) (:question))
@@ -514,12 +560,12 @@ You may save your work at any point to complete at a later time.
                 question)))
         ;; Group rules
         (add-rule *group* hormone-therapy/question t hormone-therapy/table ':inline)
-        (add-rule *group* bronchiactasis/question t bronchiactasis/table ':inline)
+        (add-rule *group* bronch/meds/question t bronch/meds/table ':inline)
         (add-rule *group* other/meds/question t other/med/table ':inline)
         (add-rule *group* other/surgery/question t other/surgery/table ':inline)
         ;; Questions
         (setf (group-questions *group*)
-              (list hormone-therapy/question bronchiactasis/question other/meds/question
+              (list hormone-therapy/question bronch/meds/question other/meds/question
                     pneumothorax/pleural-effusion/question other/surgery/question
                     transplant/question)))
 
@@ -530,7 +576,9 @@ You may save your work at any point to complete at a later time.
               (apply #'make-question "Does/did the patient use oxygen at home" :number 20.
                      :prompt-format prompt-format-numbered-question
                      (choices-options-yes-no)))
-             (*group* (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t :order (list q20)))
+             (*group*
+              (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
+                                                            :order (list q20)))
              (q20a
               (apply #'make-question "If yes the patient uses oxygen at home"
                      :prompt "If yes:"
@@ -558,7 +606,9 @@ You may save your work at any point to complete at a later time.
                      (radio-options
                       (choices-mirror-alist
                        '("Living" "Deceased")))))
-             (*group* (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t :order (list q21)))
+             (*group*
+              (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
+                                                    :order (list q21)))
              (q21a (make-question "Date of last confirmation"
                                   :prompt-format prompt-format-colon
                                   :data-type :date))
@@ -566,7 +616,7 @@ You may save your work at any point to complete at a later time.
              (q21b (make-question "Date of death" :data-type :date))
              (q21c
               (apply #'make-question "What was the cause of death"
-                     :prompt-suffix "?"
+                     :prompt-format prompt-format-question
                      (radio-options
                       (choices-breaks-alist
                        '("Respiratory failure" "Infection" "Pulmonary thromboembolism" "Cancer" "Other")))))
@@ -608,7 +658,9 @@ You may save your work at any point to complete at a later time.
               (apply #'make-question "Confirm that all SGRQ results have been entered for the patient"
                      :prompt-format "Please enter <B>all</B> the results that you have for the patient on the separate SGRQ patient diary.<BR>~A."
                      (choices-options-yes-no)))
-             (*group* (make-survey-group-named-and-numbered survey +survey-short-name-clinician+ t :order (list q22 q23 q24)))
+             (*group*
+              (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
+                                                    :order (list q22 q23 q24)))
              ;; Subgroups
              (subgroup22 (make-survey-sub-group-named *group* nil :order (list q22-confirm)))
              (subgroup23 (make-survey-sub-group-named *group* nil :order (list q23-confirm)))
@@ -621,13 +673,13 @@ You may save your work at any point to complete at a later time.
       ;;
       ;; Survey - treatment/surgery
       ;;
-      (let* ((q1 (make-question "Date of treatment/surgery" :prompt-suffix ":" :data-type :date))
+      (let* ((q1 (make-question "Date of treatment/surgery" :prompt-format prompt-format-colon :data-type :date))
              (*group*
               (make-survey-group-named-and-numbered survey-treatment (prepend-survey-name "Treatment Diary" +survey-short-name-clinician+) t))
              (q2
               (let* ((question
                       (apply #'make-question "Pneumothroax or pleural effusion treatment"
-                             :prompt-suffix "<BR>Please specify:"
+                             :prompt-format prompt-format-colon
                              (radio-options
                               (choices-breaks-alist
                                '("Chest tube placement/pleural drainage"
@@ -635,13 +687,15 @@ You may save your work at any point to complete at a later time.
                                  "Thorascopic/minimally invasive chest surgery"
                                  "Pleurodesis"
                                  "Other")))))
-                     (subq1 (make-question "Type of open chest surgery"))
+                     (subq1 (make-question "Type of open chest surgery"
+                                           :prompt-format prompt-format-colon))
                      (subg1
                       (let ((subgroup
                              (make-survey-sub-group-named *group* "open chest surgery subgroup" :order (list subq1))))
                         (add-rule *group* question "Open chest surgery" subgroup ':inline)
                         subgroup))
-                     (subq2 (make-question "Type of thorascopic/minimally invasive chest surgery"))
+                     (subq2 (make-question "Type of thorascopic/minimally invasive chest surgery"
+                                           :prompt-format prompt-format-colon))
                      (subg2
                       (let ((subgroup
                              (make-survey-sub-group-named *group* "thorascopic/minimally invasive chest surgery subgroup" :order (list subq2))))
@@ -649,14 +703,17 @@ You may save your work at any point to complete at a later time.
                         subgroup))
                      (subg3
                       (let* ((q1 (apply #'make-question "Pleurodesis side"
+                                        :prompt-format prompt-format-colon
                                         (radio-options (choices-mirror-alist '("Left" "Right" "Both")))))
                              (subgroup
                               (make-survey-sub-group-named *group* "pleurodesis subgroup"))
                              (q2
                               (let* ((question
                                       (apply #'make-question "Type of pleurodesis"
+                                             :prompt-format prompt-format-colon
                                              (radio-options (choices-mirror-alist '("Chemical" "Surgical/mechanical")))))
-                                     (subquestion (make-question "Pleurodesis drug name"))
+                                     (subquestion (make-question "Pleurodesis drug name"
+                                                                 :prompt-format prompt-format-colon))
                                      (subgroup-drug (make-survey-sub-group-named subgroup "pleurodesis drug name subgroup" :order (list subquestion))))
                                 (add-rule subgroup question "Chemical" subgroup-drug ':inline)
                                 ;; Returns
@@ -666,7 +723,8 @@ You may save your work at any point to complete at a later time.
                         (setf (group-questions subgroup) (list q1 q2))
                         ;; Returns
                         subgroup))
-                     (subq4 (make-question "Other treatment - please specify"))
+                     (subq4 (make-question "Other treatment - please specify"
+                                           :prompt-format prompt-format-colon))
                      (subg4
                       (let ((subgroup
                              (make-survey-sub-group-named *group* "other treatment - specify" :order (list subq4))))
@@ -676,88 +734,55 @@ You may save your work at any point to complete at a later time.
                 (declare (ignore subg1 subg2 subg3 subg4))
                 ;; Returns
                 question)))
-        ;; Survey properties
+        ;; Questions
         (setf (group-questions *group*) (list q1 q2))
+        ;; Survey properties
         (setf (diary-question survey-treatment) q1))
 
       ;;
       ;; Survey - PFT diary
       ;;
-      (labels ((before-after-str (str &optional before)
-                 (format nil "~A: ~A" str (if before "before" "after")))
-               (make-pft-question-table (&key before advice)
-                 ;; TBD: use before flag to munge the :NAME properties!!
-                 (let ((table
-                        (make-survey-group-table
-                         (:name "pft results table" :default-question-args (:data-type :number))
-                         ("Test" "Result" "Percent Predicted" "Test not performed")
-                         ("Vital Capacity (VC)" 
-                          (:question :name "VC result" :data-type :number :help "ml.") (:question :name "VC pct" :data-type :number :help "(%)")
-                          (:question :name "VC tested" :data-type :boolean :view-type :checkbox))
-                         ("Forced Vital Capacity (FVC)"
-                          (:question :name "FVC result" :help "ml.") (:question :name "FVC pct" :help "(%)")
-                          (:question :name "FVC tested" :data-type :boolean :view-type :checkbox))
-                         ("Forced Expiratory Volume in 1 sec (FEV1)"
-                          (:question :name "FEV1 result" :help "ml.") (:question :name "FEV1 pct" :help "(%)")
-                          (:question :name "FEV1 tested" :data-type :boolean :view-type :checkbox))
-                         ("Carbon Monoxide Diffusing Capacity (DLCO)"
-                          (:question :name "DLCO result" :help "ml/min/mm Hg.") (:question :name "DLCO pct" :help "(%)")
-                          (:question :name "DLCO tested" :data-type :boolean :view-type :checkbox))
-                         ("DLCO/(alveolar volume)(V<SUB>A</SUB>))"
-                          (:question :name "DLCO/Va result" :help"ml/min/mm Hg/L.") (:question :name "DLCO/Va pct" :help "(%)")
-                          (:question :name "DLCO/Va tested" :data-type :boolean :view-type :checkbox))
-                         ("Total Lung Capacity (TLC)"
-                          (:question :name "TLC result" :help "ml.") (:question :name "TLC pct" :help "(%)")
-                          (:question :name "TLC tested" :data-type :boolean :view-type :checkbox))
-                         ("Residual Volume (RV)"
-                          (:question :name "RV result" :help "ml.") (:question :name "RV pct" :help "(%)")
-                          (:question :name "RV tested" :data-type :boolean :view-type :checkbox)))))
-                   ;; Modify all question names based on before/after flag
-                   (dolist (question (group-questions table))
-                     (setf (question-name question)
-                           (format nil "~A ~:[post~;pre~]-bronchodilator" (question-name question) before)))
-                   ;; Group properties
-                   (setf (group-advice table) advice)
-                   (setf (owner table) owner)
-                   ;; Returns
-                   table)))
-        (let* ((q1
-                (make-question "Date of Pulmonnary Function Test" :data-type :date))
-               (q2
-                (apply #'make-question "Please check if the patient had any of the following at the time of this PFT result"
-                       (multi-choices-options
-                        (choices-breaks-alist
-                         '("Pneumothorax" "Pleural effusion" "Pneumonia" "Chest surgery within the previous 6 months" "Unknown")))))
-               (group1
-                (make-survey-group-named-and-numbered survey-pft (prepend-survey-name "PFT Diary" +survey-short-name-clinician+) t :order (list q1 q2)))
-               ;; Group 2 is a table of questions
-               (group2
-                (let ((table
-                       (make-pft-question-table :before t :advice "These results are <B>PRE-BRONCHODILATOR</B> results:")))
-                  (setf (group-name table)
-                        (group-section-name-and-number survey-pft (prepend-survey-name "PFT Diary" +survey-short-name-clinician+) t))
-                  (setf (survey-groups survey-pft) (append (survey-groups survey-pft) (list table)))
-                  ;; Returns
-                  table))
-               ;; Second set, repeat of questions post-bronchodilator
-               (q4
-                (apply #'make-question "Were tests performed <B>POST-BRONCHODILATOR</B>"
-                       :prompt-suffix " (examples: albuterol or ipratroprium inhaler/nebulizer)?"
-                       (choices-options-yes-no)))
-               (group3
-                (make-survey-group-named-and-numbered survey-pft (prepend-survey-name "PFT Diary" +survey-short-name-clinician+) t :order (append (list q4))))
-               (q4subgroup (make-pft-question-table :before nil)))
-          (declare (ignore group1 group2))
-          ;; Group rules
-          (add-rule group3 q4 t q4subgroup ':successor)
-          ;; Survey properties
-          (setf (diary-question survey-pft) q1)))
+      (let* ((q1
+              (make-question "Date of Pulmonary Function Test"
+                             :prompt-format prompt-format-colon :data-type :date))
+             (q2
+              (apply #'make-question "Please check if the patient had any of the following at the time of this PFT result"
+                     :prompt-format prompt-format-colon
+                     (multi-choices-options
+                      (choices-breaks-alist
+                       '("Pneumothorax" "Pleural effusion" "Pneumonia" "Chest surgery within the previous 6 months" "Unknown")))))
+             (group1
+              (make-survey-group-named-and-numbered survey-pft (prepend-survey-name "PFT Diary" +survey-short-name-clinician+) t :order (list q1 q2)))
+             ;; Group 2 is a table of questions
+             (group2
+              (let ((table
+                     (make-pft-question-table :before t
+                                              :owner owner
+                                              :advice "These results are <B>PRE-BRONCHODILATOR</B> results:")))
+                (setf (group-name table)
+                      (group-section-name-and-number survey-pft (prepend-survey-name "PFT Diary" +survey-short-name-clinician+) t))
+                (setf (survey-groups survey-pft) (append (survey-groups survey-pft) (list table)))
+                ;; Returns
+                table))
+             ;; Second set, repeat of questions post-bronchodilator
+             (q4
+              (apply #'make-question "Were tests performed <B>POST-BRONCHODILATOR</B>"
+                     :prompt-format "~A (examples: albuterol or ipratroprium inhaler/nebulizer)?"
+                     (choices-options-yes-no)))
+             (group3
+              (make-survey-group-named-and-numbered survey-pft (prepend-survey-name "PFT Diary" +survey-short-name-clinician+) t :order (append (list q4))))
+             (q4subgroup (make-pft-question-table :before nil :owner owner)))
+        (declare (ignore group1 group2))
+        ;; Group rules
+        (add-rule group3 q4 t q4subgroup ':successor)
+        ;; Survey properties
+        (setf (diary-question survey-pft) q1))
 
       ;;
       ;; Survey - 6MWD diary
       ;;
-      (let* ((q1 (make-question "Date" :data-type :date))
-             (q2 (make-question "Result" :prompt-suffix " (feet/meters)" :data-type :number))
+      (let* ((q1 (make-question "Date" :prompt-format prompt-format-colon :data-type :date))
+             (q2 (make-question "Result" :prompt-format prompt-format-colon :help "(feet/meters)" :data-type :number))
              (*group*
               (make-survey-group-named-and-numbered survey-6mwd (prepend-survey-name"6MWD" +survey-short-name-clinician+) nil :order (list q1 q2))))
         (declare (ignore *group*))
@@ -767,11 +792,11 @@ You may save your work at any point to complete at a later time.
       ;;
       ;; Survey - SGRQ diary
       ;;
-      (let* ((q1 (make-question "Date" :data-type :date))
-             (q2 (make-question "Total Score" :data-type :number))
-             (q3 (make-question "Symptoms Score" :data-type :number))
-             (q4 (make-question "Activity Score" :data-type :number))
-             (q5 (make-question "Impacts Score" :data-type :number))
+      (let* ((q1 (make-question "Date" :prompt-format prompt-format-colon :data-type :date))
+             (q2 (make-question "Total Score" :prompt-format prompt-format-colon :data-type :number))
+             (q3 (make-question "Symptoms Score" :prompt-format prompt-format-colon :data-type :number))
+             (q4 (make-question "Activity Score" :prompt-format prompt-format-colon :data-type :number))
+             (q5 (make-question "Impacts Score" :prompt-format prompt-format-colon :data-type :number))
              (*group*
               (make-survey-group-named-and-numbered survey-sgrq (prepend-survey-name "SGRQ" +survey-short-name-clinician+) nil :order (list q1 q2 q3 q4 q5))))
         (declare (ignore *group*))
@@ -779,9 +804,632 @@ You may save your work at any point to complete at a later time.
         (setf (diary-question survey-sgrq) q1))
 
       ;; Returns
-      (list survey survey-treatment survey-pft survey-6mwd survey-sgrq))))
+      (list survey-clinician survey-treatment survey-pft survey-6mwd survey-sgrq))))
 
-(defun get-lam-history-questions (survey)
+(defun create-lamsight-qol/pft-surveys (&key (owner (current-user)))
+  (with-transaction ()
+    (let* ((prompt-format-colon "~A:")
+           (prompt-format-question "~A?")
+           (prompt-format-numbered-colon "~*<SUP>~D</SUP>~*&nbsp;~A:")
+           (prompt-format-numbered-question "~*<SUP>~D</SUP>~*&nbsp;~A?")
+           (survey-args `(:owner ,owner :origin "researcher" :published t :priority 1 :diary-p nil
+                          :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+           (survey-patient
+            (apply #'make-instance 'survey
+                   :name +survey-name-patient+
+                   :description "This study involves a retrospective medical record review, with a particular focus on pulmonary function tests."
+                   survey-args)))
+
+      ;;
+      ;; Main survey - LAMsight QOL/PFTPatient Questionnaire
+      ;;
+
+      ;;
+      ;; Group 1 - Patient header page
+      ;;
+      (make-survey-group-named-and-numbered survey-patient +survey-short-name-clinician+ t
+                                            :advice "<B>LAMsight QOL/PFT Data Entry Form Header</B>
+<P>Thank you for agreeing to take part in this research study! We hope to use this information to answer questions that are important to you and the LAM community.
+<P>We expect that the following questionnaires will take you about 20-30 minutes. You do not need to complete all of the questions in one setting, however we do ask that you complete two of the surveys (the SF-36 and SGRQ) within one week of each other. You may skip any question that you are uncomfortable answering. If any of the questions are unclear, please feel free to contact
+<A HREF=\"mailto:LAM.research.study@gmail.com\">LAM.research.study@gmail.com</A> with comments or questions.
+<P>You will need copies of your pulmonary function test (PFT) reports to complete this study. You may need to contact your health care provider to obtain these reports. In the last part of this study, we will ask you to enter your most recent PFT results on an online collection form. Finally, we will ask you to submit to us all of your previous pulmonary function test (PFT) results, including your most recent report. Your pulmonary function results can be entered and submitted at any time.")
+
+      ;;
+      ;; Group 2 - Patient info
+      ;;
+      (let* ((*group* (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t))
+             (q1 (make-question "Name" :number 1. :prompt "Name (First, Last)" :prompt-format prompt-format-numbered-colon))
+             (q2 (make-question "Date of birth" :number 2. :prompt-format prompt-format-numbered-colon))
+             (q3 (make-question "What country do you live in" :number 3. :prompt-format prompt-format-numbered-colon))
+             (q4 (make-question "How many total years of schooling or education have you completed"
+                                :number 4. 
+                                :prompt-format prompt-format-numbered-question :data-type :number))
+             (q5
+              (let* ((question
+                      (apply #'make-question "Are you completing this survey in a language other than your primary language"
+                             :number 5. 
+                             :prompt-format prompt-format-numbered-question
+                             (radio-options
+                              (choices-mirror-alist '("Yes" "No" "I don't know")))))
+                     (q/lang
+                      (make-question "what is your primary language"
+                                     :prompt-format "If yes ~A?" ))
+                     (q/years
+                      (make-question "how many years of education have you had in English"
+                                     :prompt-format "If yes ~A?" :data-type :number))
+                     (subgroup
+                      (make-survey-sub-group-named *group* "language questions" :order (list q/lang q/years))))
+                (add-rule *group* question "Yes" subgroup ':inline)
+                ;; Returns
+                question))
+             (q6 (make-question "What is your height"
+                                :number 6.
+                                :prompt-format prompt-format-numbered-question
+                                :data-type :measurement
+                                :data-subtype :length))
+             (q7 (make-question "What is your weight"
+                                :number 7.
+                                :prompt-format prompt-format-numbered-question
+                                :data-type :measurement
+                                :data-subtype :weight))
+             (q8 (apply #'make-question "What is your ethnicity"
+                        :number 8.
+                        :prompt-format prompt-format-numbered-question
+                        (radio-options
+                         (choices-breaks-alist '(("Hispanic or Latino" . t) ("Not Hispanic or Latino" . nil))))))
+             (q9
+              (let* ((question
+                      (apply #'make-question "What is your race"
+                             :number 9.
+                             :prompt-format prompt-format-numbered-question
+                             (radio-options
+                              (choices-breaks-alist
+                               '("American Indian/Alaska Native"
+                                 "Asian" "Native Hawaiian or Other Pacific Islander"
+                                 "Black or African American"
+                                 "White" "Other")))))
+                     (q/other (make-question "Other race" :prompt-format prompt-format-colon))
+                     (subgroup
+                      (make-survey-sub-group-named *group* "race questions - other" :order (list q/other))))
+                (add-rule *group* question "Other" subgroup ':inline)
+                ;; Returns
+                question))
+             (q10
+              (let* ((question
+                      (apply #'make-question "What is your marital status"
+                             :number 10.
+                             :prompt-format prompt-format-colon
+                             (radio-options
+                              (choices-breaks-alist
+                               '("Single" "Married" "Separated" "Divorced" "Widowed" "Other")))))
+                     (q/other (make-question "Other marital status" :prompt-format prompt-format-colon))
+                     (subgroup
+                      (make-survey-sub-group-named *group* "marital status questions - other" :order (list q/other))))
+                (add-rule *group* question "Other" subgroup ':inline)
+                ;; Returns
+                question)))
+        ;; Questions
+        (setf (group-questions *group*) (list q1 q2 q3 q4 q5 q6 q7 q8 q9 q10)))
+        
+      ;; Group 3 - Diagnosis
+      ;;
+      (let* ((*group*
+              (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t))
+             (q11
+              (apply #'make-question "Diagnosis type"
+                     :number 11.
+                     :prompt "I was diagnosed with"                     
+                     :prompt-format prompt-format-numbered-colon
+                     (radio-options
+                      '(("Sporadic LAM" . "LAM")
+                        ("Tuberous Sclerosis Complex with LAM (TSC-LAM)" . "TSC-LAM")
+                        ("I don't know" . "Unknown")))))
+             ;; Rule: if q11 answer is TSC-LAM...
+             (q12
+              (apply #'make-question  "If you have TSC-LAM, what signs of TSC do you have"
+                     :number 12.
+                     :prompt-format prompt-format-numbered-question
+                     (multi-choices-options
+                      (choices-mirror-alist
+                       '("Skin" "Brain" "Kidney" "Eye" "Other")))))
+             ;; Rule: if previous answer included Other...
+             (q12o
+              (make-question "Other TSC-LAM symptoms" :prompt-format prompt-format-colon
+                                                      :data-type :string :view-type :text-field))
+
+             (q13
+              (make-question "Date of diagnosis of LAM or TSC-LAM"
+                             :number 13.
+                             :prompt-format prompt-format-numbered-colon
+                             :data-type :date))
+             (q14
+              (make-question "When did you first have LAM related symptoms"
+                             :number 14.
+                             :prompt-format prompt-format-numbered-colon
+                             :data-type :date))
+             (q15
+              (let* ((question
+                      (apply #'make-question "What were your main symptoms that led to your diagnosis of LAM"
+                             :number 15.
+                             :prompt-format prompt-format-numbered-question
+                             (radio-options
+                              (choices-breaks-alist
+                               '("Shortness of breath" "Chest pain" "Abdominal pain" "Coughing up blood"
+                                 "I did not have symptoms" "Other")))))
+                     (q/other (make-question "Other symptoms"))
+                     (subgroup (make-survey-sub-group-named *group* "symptoms - other" :order (list q/other))))
+                (add-rule *group* question "Other" subgroup ':inline)
+                ;; Returns
+                question))
+             (q16
+              (let* ((question
+                      (apply #'make-question "How were you diagnosed with LAM"
+                             :number 16.
+                             :prompt-format prompt-format-numbered-question
+                             (radio-options
+                              (choices-breaks-alist
+                               '("By lung biopsy" "By biopsy of lymph node or other mass" "By CT (CAT) scan or imaging"
+                                 "Other" "I don't know")))))
+                     (q/other (make-question "Other diagnosis"))
+                     (subgroup (make-survey-sub-group-named *group* "diagnosis - other" :order (list q/other))))
+                (add-rule *group* question "Other" subgroup ':inline)
+                ;; Returns
+                question))
+             ;; Subgroups
+             (subgroup1 (make-survey-sub-group-named *group* nil :order (list q12)))
+             (subgroup2 (make-survey-sub-group-named *group* nil :order (list q12o))))
+        ;; Group rules
+        (add-rule *group* q11 "TSC-LAM" subgroup1 ':successor)
+        (add-rule subgroup1 q12 "Other" subgroup2 ':successor)
+        ;; Questions
+        (setf (group-questions *group*) (list q11 q13 q14 q15 q16)))
+      
+      ;;
+      ;; Group 4 - Problems and symptoms
+      ;;
+      (let* ((*group*
+              (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t))
+             (q17
+              (let* ((question
+                      (apply #'make-question "Do you smoke or did you smoke in the past"
+                             :number 17.
+                             :prompt-format prompt-format-numbered-question
+                             (radio-options
+                              (choices-breaks-alist '("Yes I smoke" "I quit" "I never smoked")))))
+                     (table/yes
+                      (make-survey-group-table
+                       (:name "smoking? yes table" :default-question-args (:data-type :number))
+                       (nil nil nil)
+                       ("On average I smoke" (:question :name "cigarettes per day") "cigarettes per day")
+                       ("How long have you been smoking?" (:question :name "smoking years" ) "years")))
+                     (table/quit
+                      (make-survey-group-table
+                       (:name "smoking? quit table" :default-question-args (:data-type :number))
+                       (nil nil nil)
+                       ("On average I used to smoke" (:question :name "cigarettes per day before quit") "cigarettes per day")
+                       ("I smoked for?" (:question :name "smoked years before quit" ) "years before I quit")
+                       ("I quit" (:question :name "quit months past") "months/years ago"))))
+                (add-rule *group* question "Yes I smoke" table/yes ':inline)
+                (add-rule *group* question "I quit" table/quit ':inline)
+                ;; Returns
+                question))
+             (q18
+              (let* ((question
+                      (apply #'make-question "Have you ever had a pneumothorax"
+                             :number 18.
+                             :prompt-format (concatenate 'string
+                                                         prompt-format-numbered-question
+                                                         " A pneumothorax is air between the lung and chest wall,
+which can cause a collapsed lung.")
+                             (radio-options
+                              (choices-mirror-alist '("Yes" "No" "I don't know")))))
+                     (q/how-many-ever
+                      (make-question "how many pneumothoraces ever"
+                                     :prompt "If yes how many?" :data-type :number))
+                     (q/how-many-ever-past-year
+                      (make-question "how many pneumothoraces past year"
+                                     :prompt "If yes how pneumothoraces have you had in the past year?"
+                                     :data-type :number))
+                     (subgroup (make-survey-sub-group-named *group* "pneumothoraces subgroup"
+                                                            :order (list q/how-many-ever q/how-many-ever-past-year))))
+                (add-rule *group* question "Yes" subgroup ':inline)
+                ;; Returns
+                question))
+             (q19
+              (apply #'make-question "Have you ever had a pleural effusion"
+                     :number 19.
+                     :prompt-format (concatenate 'string
+                                                 prompt-format-numbered-question
+                                                 " A pleural effusion is a fluid collection between the lung and chest wall that sometimes requires drainage.")
+                     (radio-options
+                      (choices-mirror-alist '("Yes" "No" "I don't know")))))
+             (q20
+              (apply #'make-question "Have you ever had abdominal fluid or ascites"
+                     :number 20.
+                     :prompt-format prompt-format-numbered-question
+                     (radio-options
+                      (choices-mirror-alist '("Yes" "No" "I don't know"))))))
+        ;; Questions
+        (setf (group-questions *group*) (list q17 q18 q19 q20)))
+
+      ;;
+      ;; Group 5
+      ;; 
+      (let* ((*group*
+              (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t))
+             (q21
+              (let* ((question
+                      (apply #'make-question "Have you ever had a pleurodesis"
+                             :number 21.
+                             :prompt-format (concatenate 'string
+                                                         prompt-format-numbered-question
+                                                         " This is a procedure to make your lung adhere to your chest wall to treat a pleural effusion or pneumothorax.")
+                             (radio-options
+                              (choices-mirror-alist '("Yes" "No" "I don't know")))))
+                     (q/how-many
+                      (make-question "If yes how many pleurodeses"
+                                     :prompt-format prompt-format-question
+                                     :data-type :number))
+                     (q/which-lungs
+                      (apply #'make-question "pleurodesis which lungs"
+                             :prompt-format ""
+                             (radio-options
+                              (choices-mirror-alist '("One lung" "Both lungs")))))
+                     (q/how-often
+                      (make-question "If yes how many times have you had a pleurodesis in the last year"
+                                     :prompt-format prompt-format-question
+                                     :data-type :number))
+                     (subgroup
+                      (make-survey-sub-group-named *group* "pleurodesis subgroup" :order (list q/how-many q/which-lungs q/how-often))))
+                ;; Group rules
+                (add-rule *group* question "Yes" subgroup ':inline)
+                ;; Returns
+                question))
+             (q22
+              (let* ((question
+                      (apply #'make-question "Have you ever had other surgical treatments for a pneumothorax or pleural effusion"
+                             :number 22.
+                             :prompt-format prompt-format-numbered-question
+                             (radio-options
+                              (choices-mirror-alist '("Yes" "No" "I don't know")))))
+                     (q/treatments
+                      (apply #'make-question "Other treatments"
+                             :prompt-format ""
+                             (radio-options
+                              (choices-breaks-alist
+                               '("I had a chest tube placed" "I had a thoracoscopic or minimally invasive procedure"
+                                 "I had open chest surgery" "Other")))))
+                     (subgroup
+                      (make-survey-sub-group-named *group* "treatments subgroup" :order (list q/treatments))))
+                ;; Group rules
+                (add-rule *group* question "Yes" subgroup ':inline)
+                ;; Returns
+                question))
+             (q23
+              (let* ((question
+                      (apply #'make-question "Have you had a lung transplant"
+                             :number 23.
+                             :prompt-format prompt-format-numbered-question
+                             (choices-options-yes-no)))
+                     (q/which-lungs
+                      (apply #'make-question "transplant which lungs" :prompt-format ""
+                             (radio-options '(("One lung" . 1) ("Both lungs" . 2)))))
+                     (q/date (make-question "Transplant date" :data-type :date))
+                     (subgroup
+                      (make-survey-sub-group-named *group* "transplant question subgroup"
+                                                   :order (list q/which-lungs q/date))))
+                ;; Group rules
+                (add-rule *group* question t subgroup ':inline)
+                ;; Returns
+                question)))
+        ;; Questions
+        (setf (group-questions *group*) (list q21 q22 q23)))
+
+      ;;
+      ;; Group 6
+      ;;
+      (let* ((*group*
+              (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t))
+             (q24
+              (let* ((subgroup
+                      (make-survey-sub-group-named *group* "q24 subgroup"))
+                     (question
+                      (apply #'make-question "Do you use oxygen at home"
+                             :number 24.
+                             :prompt-format prompt-format-numbered-question
+                             (choices-options-yes-no)))
+                     (q/how
+                      (let* ((question
+                              (apply #'make-question "If yes the patient uses oxygen at home"
+                                     :prompt "If yes:"
+                                     (multi-choices-options
+                                      (choices-mirror-alist
+                                       '("Continuous" "With activities" "At night" "Other")))))
+                             (q/other (make-question "uses oxygen - other"))
+                             (subgroup2 (make-survey-sub-group-named subgroup nil :order (list q/other))))
+                        ;; Group rules
+                        (add-rule subgroup question "Other" subgroup2 ':inline)
+                        ;; Returns
+                        question))
+                     (q/how-much
+                      (make-question "Average #liters/min"
+                                     :prompt-format prompt-format-colon
+                                     :data-type :number))
+                     (q/how-long
+                      (make-question "When did the patient initiate home oxygen"
+                                     :prompt-format prompt-format-question
+                                     :data-type :date)))
+                ;; Questions
+                (setf (group-questions subgroup) (list q/how q/how-much q/how-long))
+                ;; Group rules
+                (add-rule *group* question t subgroup ':inline)
+                ;; Returns
+                question))
+             (q25
+              (apply #'make-question "Do you have kidney disease (for example, angiomyolipomas (AMLs))"
+                     :number 25.
+                     :prompt-format prompt-format-numbered-question
+                     (radio-options
+                      (choices-mirror-alist '("Yes" "No" "I don't know")))))
+             (q26
+              (apply #'make-question "What <B>best</B> describes your level of breathlessness during activity"
+                     :number 26.
+                     :prompt-format prompt-format-numbered-question
+                     (radio-options
+                      (choices-breaks-alist
+                       '(("I do not have breathlessness during activities of daily living" . 0)
+                         ("I get breathless with strenuous exercise" . 1)
+                         ("I get short of breath when hurrying on level ground or walking up a slight hill" . 2)
+                         ("I walk slower than people of the same age on level ground or stop for breath while walking at my own pace on level ground" . 3)
+                         ("I stop for breath after walking 100 yards (100 meters)" . 4)
+                         ("I am too breathless to leave the house, or become breathless when dressing or undressing" . 5)))))))
+        ;; Questions
+        (setf (group-questions *group*) (list q24 q25 q26)))
+
+      ;;
+      ;; Group 7
+      ;;
+      (let* ((*group*
+              (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t))
+             (q16
+              (let* ((question
+                      (apply #'make-question "Did you take hormonal contraception (birth control pills) before you were diagnosed with LAM"
+                             ;;:number 16.
+                             ;;:prompt-format prompt-format-numbered-question
+                             (radio-options
+                              (choices-mirror-alist '("Yes" "No" "I don't know")))))
+                     (q/type
+                      (make-question "Please specify type"
+                                     :prompt-format prompt-format-colon
+                                     :data-type :string))
+                     (q/date
+                      (make-question "Dates of use"
+                                     :prompt-format prompt-format-colon
+                                     :data-type :date-range))
+                     (subgroup
+                      (make-survey-sub-group-named *group* "q16" :order (list q/type q/date))))
+                ;; Group rules
+                (add-rule *group* question "Yes" subgroup ':inline)
+                ;; Returns
+                question))
+             (q27
+              (let* ((question
+                      (apply #'make-question "Have you ever been or are you currently pregnant"
+                             :number 27.
+                             :prompt-format prompt-format-numbered-question
+                             (radio-options
+                              (choices-mirror-alist '("Yes" "No" "I don't know")))))
+                     (table27
+                      (make-survey-group-table (:name "question27 if yes" :advice "If yes: please complete:" :default-question-args (:data-type :number))
+                                       ( nil "Number <B>before</B> your diagnosis of LAM"
+                                             "Number <B>during</B> or <B>after</b> your diagnosis of LAM" )
+                                       ( "Full term or premature births" (:question) (:question) )
+                                       ( "Miscarriages"  (:question) (:question) )
+                                       ( "Abortions" (:question) (:question) ))))
+                ;; Group rules
+                (add-rule *group* question "Yes" table27 ':successor)
+                ;; Returns
+                question))
+             (q28
+              (let* ((question
+                      (apply #'make-question "Have you gone through menopause"
+                             :number 28.
+                             :prompt-format prompt-format-numbered-question
+                             (radio-options
+                              (choices-mirror-alist '("Yes" "No" "I don't know")))))
+                     (q/age
+                      (make-question "Age at time of menopause"
+                                     :prompt "If yes, age at time of menopause?"
+                                     :help "(years)" :data-type :number))
+                     (subgroup
+                      (make-survey-sub-group-named *group* "q28 subgroup" :order (list q/age))))
+                ;; Group rules
+                (add-rule *group* question "Yes" subgroup ':inline)
+                ;; Returns
+                question)))
+        ;; Questions
+        (setf (group-questions *group*) (list q16 q27 q28)))
+
+      ;;
+      ;; Group 8 - treatments
+      ;;
+      (flet ((make-table-current-past-use (prefix)
+               (let ((table
+                      (make-survey-group-table
+                       (:name "current or past use table" :default-question-args (:data-type :date))
+                       (nil nil nil nil nil)
+                       ((:question :name "current use answer" :data-type :boolean :view-type :checkbox)
+                        "Current use."
+                        "When did you start?" (:question :name "Start date" :data-type :date) 
+                        nil nil)
+                       ((:question :name "past use answer" :data-type :boolean :view-type :checkbox)
+                        "Past use."
+                        "Start date:" (:question :name "Start date" :data-type :date)
+                        "End date:" (:question :name "End date" :data-type :date)))))
+                 ;; Modify all question names based on before/after flag
+                 (dolist (question (group-questions table))
+                   (setf (question-name question)
+                         (format nil "~A - ~A" prefix (question-name question))))
+                 ;; Returns
+                 table)))
+        (let* ((*group*
+                (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t
+                                                      :advice "<SUP>19</SUP> What LAM related <B>treatments</B> have you had or are you currently using? <SMALL>Please check all that apply</SMALL>"))
+               (none/question
+                (apply #'make-question "None" (choices-options-yes-no)))
+               (bronch/meds/question
+                (let* ((question
+                        (apply #'make-question "Bronchodilator therapy"
+                               :prompt "Bronchodilators (Examples: albuterol, ipratroprium inhalers or nebulizers)"
+                               (choices-options-yes-no)))
+                       (table (make-table-current-past-use "Bronchodilator")))
+                  ;; Group rules
+                  (add-rule *group* question t table ':inline)
+                  ;; Returns
+                  question))
+               (steroids/meds/question
+                (let* ((question
+                        (apply #'make-question "Inhaled steroids therapy"
+                               :prompt "Inhaled steroids"
+                               (choices-options-yes-no)))
+                       (table (make-table-current-past-use "Inhaled steroids")))
+                  ;; Group rules
+                  (add-rule *group* question t table ':inline)
+                  ;; Returns
+                  question))
+               (hormone-therapy/question
+                (let* ((question
+                        (apply #'make-question "Hormone therapy"
+                               :prompt "Anti-estrogen (hormonal) medical therapy (Examples: progesterone pills or injection, GnRH, Tamoxifen)"
+                               (choices-options-yes-no)))
+                       (table (make-table-current-past-use "Hormones")))
+                  ;; Group rules
+                  (add-rule *group* question t table ':inline)
+                  ;; Returns
+                  question))
+               (sirolimus/rapamune/question
+                (let* ((question
+                        (apply #'make-question "Sirolimus/Rapamune therapy"
+                               :prompt "Sirolimus/Rapamune"
+                               (choices-options-yes-no)))
+                       (table (make-table-current-past-use "Sirolimus/Rapamune")))
+                  ;; Group rules
+                  (add-rule *group* question t table ':inline)
+                  ;; Returns
+                  question))
+               (ovaries/question
+                (let* ((question
+                        (apply #'make-question "I have had my ovaries removed"
+                               (choices-options-yes-no)))
+                       (q/date (make-question "Date ovaries removed"
+                                              :prompt "Date:"
+                                              :data-type :date))
+                       (q/therapy
+                        (apply #'make-question "If yes do/did you use hormone replacement therapy"
+                               :prompt-format prompt-format-question
+                               (radio-options
+                                (choices-mirror-alist '("Yes" "No" "I don't know")))))
+                       (subgroup (make-survey-sub-group-named *group* "ovaries removed subgroup" :order (list q/date q/therapy))))
+                  ;; Group rules
+                  (add-rule *group* question t subgroup ':inline)
+                  ;; Returns
+                  question))
+               (other/question
+                (let* ((question
+                        (apply #'make-question "Other therapy" :prompt "Other:"
+                               (choices-options-yes-no)))
+                       (q/other (make-question "Other therapy - please specify"
+                                               :prompt-format prompt-format-colon))
+                       (subgroup (make-survey-sub-group-named *group* "other therapy subgroup" :order (list q/other))))
+                  ;; Group rules
+                  (add-rule *group* question t subgroup ':inline)
+                  ;; Returns
+                  question)))
+          ;; Questions
+          (setf (group-questions *group*)
+                (list none/question bronch/meds/question steroids/meds/question
+                      hormone-therapy/question sirolimus/rapamune/question ovaries/question
+                      other/question))))
+
+      ;;
+      ;; Groups 9, 10, 11 - PFT
+      (let* ((*group*
+              (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t
+                                                    :advice "You will need a copy of your <B>most recent</B> pulmonary function test report to complete this part of the study. You may need to contact your health care provider to get a copy of this report."))
+             (q1
+              (make-question "Date of your most recent Pulmonary Function Test"
+                             :prompt "Date of your <B>most recent</B> Pulmonary Function Test:"
+                             :data-type :date))
+             (q2
+              (make-question "Check here if you have not had pulmonary function tests performed in the last 5 years."
+                             :data-type :boolean :view-type :checkbox))
+             (q3
+              (apply #'make-question "Did you have any of the following at the time of this PFT result"
+                       :prompt-format prompt-format-question
+                       (multi-choices-options
+                        (choices-breaks-alist
+                         '("Pneumothorax" "Pleural Effusion" "Pneumonia or respiratory infection"
+                           "Chest Surgery within the previous 6 months"
+                           "I don't know")))))
+             ;; Group 2 is a table of questions
+             (group2
+              (let ((table
+                     (make-pft-question-table :before t
+                                              :owner owner
+                                              :advice "These results are <B>PRE-BRONCHODILATOR</B> results:")))
+                (setf (group-name table)
+                      (group-section-name-and-number survey-patient +survey-short-name-patient+ t))
+                  (setf (survey-groups survey-patient) (append (survey-groups survey-patient) (list table)))
+                  ;; Returns
+                  table))
+             ;; Second set, repeat of questions post-bronchodilator
+             (q4
+              (apply #'make-question "Did you have tests performed <B>POST-BRONCHODILATOR</B>"
+                     :prompt-format "~A (examples: albuterol or ipratroprium inhaler/nebulizer)?"
+                     (radio-options
+                      (choices-mirror-alist '("Yes" "No" "I don't know")))))
+             (group3
+              (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t
+                                                    :order (append (list q4))))
+             (q4subgroup (make-pft-question-table :before nil :owner owner)))
+          (declare (ignore group2))
+          ;; Questions
+          (setf (group-questions *group*) (list q1 q2 q3))
+          ;; Group rules
+          (add-rule group3 q4 "Yes"  q4subgroup ':successor)
+          ;; Survey properties
+          (setf (diary-question survey-patient) q1))
+
+      ;; 
+      ;; Group 12 - Conclusion
+      ;;
+      (let ((*group*
+             (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t
+                                                   :advice "<P>Thank you for completing this form!
+<P>Please submit a copy of all of your pulmonary function test reports including your most recent PFT report (the same report that you used to enter information on this site for this study).
+<P>You may do this in any of the following ways:
+<P>Web drop box:Click here to upload file 
+<P>Email: <A HREF=\"mailto:LAM.research.study@gmail.com\">LAM.research.study@gmail.com</A>
+<P>Fax: (001) 617-380-0046 Please use a cover sheet for your fax!
+<P>Mail:
+<ADDRESS>
+  Sarah Billmeier, MD
+  Brigham and Women’s Hospital
+  Surgical Education Office
+  75 Francis St
+  Boston, MA 02130  USA
+</ADDRESS>
+<P>This will allow us to show that your entry of your pulmonary function test information is accurate enough to use in future research studies and to see how your quality of life is affected by your rate of change of pulmonary function.
+<P>Thank you for sending in your pulmonary function reports!"
+                                                   )))
+        (declare (ignore *group*)))
+
+      ;; Returns
+      (list survey-patient))))
+
+;;; Data analysis and reporting
+
+(defun get-lam-qol/pft-questions (survey)
   ;; Coerce survey
   (unless (typep survey 'survey)
     (setq survey (or (get-survey survey) (error "Survey not found: ~A" survey))))
@@ -806,9 +1454,9 @@ You may save your work at any point to complete at a later time.
         ;; Returns
         (values questions question-count)))))
 
-(defun create-lam-history-data (&key survey (count 100.) (center "lamhtest"))
-  (assert (not (null survey)))
-  (multiple-value-bind (questions question-count) (get-lam-history-questions survey)
+(defun create-lam-qol/pft-data (&key (count 100.) (center "lamhtest"))
+ (let ((survey +survey-name-clinician+))
+  (multiple-value-bind (questions question-count) (get-lam-qol/pft-questions survey)
 
     (unless (plusp question-count)
       (error "Survey questions not found for ~S" survey))
@@ -927,15 +1575,15 @@ You may save your work at any point to complete at a later time.
                       
           ))))
     ;; Done
-    ))
+    )))
 
-(defun create-lam-history-report (&key survey (center "lamhtest")
+(defun create-lam-qol/pft-report (&key survey (center "lamhtest")
                                   (questions '(3 4 5 6 7 9 10 15 20))
                                   (stream *standard-output*))
   (assert (not (null survey)))
   (if (stringp center)
       (setq center (get-center center)))
-  (let* ((qarray (get-lam-history-questions survey))
+  (let* ((qarray (get-lam-qol/pft-questions survey))
          (patients (get-patients-for-center center)))
     (format stream "~&Patients: ~D" (length patients))
     (dolist (patient patients)
