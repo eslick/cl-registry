@@ -122,7 +122,8 @@ confirmation link has been sent to your email address.")))
                or other non-alphabetical character."))
 	   (:p (str #!"Your e-mail will be maintained by the system and will never
                be disclosed to anyone without your express consent.  We take
-               privacy very seriously.")))))))
+               privacy very seriously."))
+	   (:p (str #!"To complete your registration, fill in the form below and click the \"Submit\" button, then read and scroll to the bottom of each of the three subsequent screens, and, if you agree to the conditions, click \"Accept\" on each page.")))))))
 
 (defun valid-registration-p (data)
   (flet ((find-field-for-slot-name (slot-name fields)
