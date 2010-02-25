@@ -170,6 +170,7 @@
 			       (:file "sgrq")
 			       (:file "sf36")
 			       (:file "lam-history"))
+			      :depends-on (analytics)
 			      :serial t)
 		     (:module admin
 			      :components
