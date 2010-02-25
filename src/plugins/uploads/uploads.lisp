@@ -139,7 +139,7 @@
         :test #'string-equal
         :key #'upload-file-name))
 
-(defun make-upload-file (name directory &key (creator nil creator-p) acl)
+(defun make-upload-file (name directory &key (creator nil creator-p) size acl)
   (check-upload-name name)
   (setf directory (ensure-upload-directory directory))
   (assert (null (find-upload-file directory name)))
@@ -147,6 +147,7 @@
                  :name name
                  :directory directory
                  :creator (if creator-p creator (current-user t))
+		 :size size
                  :acl acl))
 
 (defmethod upload-directory-ancestry (dir)
