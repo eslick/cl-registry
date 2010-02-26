@@ -1191,11 +1191,11 @@ which can cause a collapsed lung.")
       ;;
       (let* ((*group*
               (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t))
-             (q16
+             (q27
               (let* ((question
                       (apply #'make-question "Did you take hormonal contraception (birth control pills) before you were diagnosed with LAM"
-                             ;;:number 16.
-                             ;;:prompt-format prompt-format-numbered-question
+                             :number 27.
+                             :prompt-format prompt-format-numbered-question
                              (radio-options
                               (choices-mirror-alist '("Yes" "No" "I don't know")))))
                      (q/type
@@ -1212,14 +1212,14 @@ which can cause a collapsed lung.")
                 (add-rule *group* question "Yes" subgroup ':inline)
                 ;; Returns
                 question))
-             (q27
+             (q28
               (let* ((question
                       (apply #'make-question "Have you ever been or are you currently pregnant"
-                             :number 27.
+                             :number 28.
                              :prompt-format prompt-format-numbered-question
                              (radio-options
                               (choices-mirror-alist '("Yes" "No" "I don't know")))))
-                     (table27
+                     (table28
                       (make-survey-group-table (:name "question27 if yes" :advice "If yes: please complete:" :default-question-args (:data-type :number))
                                        ( nil "Number <B>before</B> your diagnosis of LAM"
                                              "Number <B>during</B> or <B>after</b> your diagnosis of LAM" )
@@ -1227,13 +1227,13 @@ which can cause a collapsed lung.")
                                        ( "Miscarriages"  (:question) (:question) )
                                        ( "Abortions" (:question) (:question) ))))
                 ;; Group rules
-                (add-rule *group* question "Yes" table27 ':successor)
+                (add-rule *group* question "Yes" table28 ':successor)
                 ;; Returns
                 question))
-             (q28
+             (q29
               (let* ((question
                       (apply #'make-question "Have you gone through menopause"
-                             :number 28.
+                             :number 29.
                              :prompt-format prompt-format-numbered-question
                              (radio-options
                               (choices-mirror-alist '("Yes" "No" "I don't know")))))
@@ -1248,7 +1248,7 @@ which can cause a collapsed lung.")
                 ;; Returns
                 question)))
         ;; Questions
-        (setf (group-questions *group*) (list q16 q27 q28)))
+        (setf (group-questions *group*) (list q27 q28 q29)))
 
       ;;
       ;; Group 8 - treatments
@@ -1274,7 +1274,7 @@ which can cause a collapsed lung.")
                  table)))
         (let* ((*group*
                 (make-survey-group-named-and-numbered survey-patient +survey-short-name-patient+ t
-                                                      :advice "<SUP>19</SUP> What LAM related <B>treatments</B> have you had or are you currently using? <SMALL>Please check all that apply</SMALL>"))
+                                                      :advice "<SUP>30</SUP> What LAM related <B>treatments</B> have you had or are you currently using? <SMALL>Please check all that apply</SMALL>"))
                (none/question
                 (apply #'make-question "None" (choices-options-yes-no)))
                (bronch/meds/question
@@ -1412,13 +1412,13 @@ which can cause a collapsed lung.")
 <P>Email: <A HREF=\"mailto:LAM.research.study@gmail.com\">LAM.research.study@gmail.com</A>
 <P>Fax: (001) 617-380-0046 Please use a cover sheet for your fax!
 <P>Mail:
-<ADDRESS>
+<PRE>
   Sarah Billmeier, MD
   Brigham and Women’s Hospital
   Surgical Education Office
   75 Francis St
   Boston, MA 02130  USA
-</ADDRESS>
+</PRE>
 <P>This will allow us to show that your entry of your pulmonary function test information is accurate enough to use in future research studies and to see how your quality of life is affected by your rate of change of pulmonary function.
 <P>Thank you for sending in your pulmonary function reports!"
                                                    )))
