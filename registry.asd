@@ -187,8 +187,10 @@
 			      :serial t)
 		     (:module collect
 			      :components
-			      ((:file "survey-ctrl"))
-			      :depends-on (comments))
+			      ((:file "survey-state")
+			       (:file "survey-ctrl"))
+			      :depends-on (comments)
+			      :serial t)
 		     (:module create
 			      :components
 			      ((:file "survey-widgets")

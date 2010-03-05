@@ -168,16 +168,15 @@
 			      :survey survey))
 	 (ctrl-composite (make-instance 'composite :widgets
 					(list ctrl))))
-    (setf (current-group ctrl) (first (survey-groups survey)))
+    ;; Returns
     ctrl-composite))
-
 
 (defwidget survey-ctrl ()
   ((survey :accessor survey :initarg :survey)
    (current-id :accessor current-id :initarg :current-id :initform 1
 	       :documentation "The current ID associated with answers to
                                groups in this survey")
-;;   (survey-state :accessor survey-state)
+   (survey-state :accessor survey-state)
    (group :accessor current-group :initform nil
 	  :documentation "The list of current renderable questions")
    (presentations :accessor current-presentations :initarg :presentations :initform nil
@@ -194,18 +193,20 @@
 
 (defmethod initialize-instance :after ((ctrl survey-ctrl) &rest args)
   (declare (ignore args))
-;;   (initialize-control-from-state 
-;;    ctrl 
-;;    (setf (survey-state ctrl) 
-;; 	 (aif-ret (get-survey-state (survey ctrl) (current-user))
-;; 		  (make-survey-state (survey ctrl) (current-user)))))
+  (initialize-control-from-state
+   ctrl
+   (setf (survey-state ctrl) 
+ 	 (or (get-survey-state (survey ctrl) (current-patient))
+	     ;; No saved survey state? Go to first group in survey
+	     (make-survey-state (survey ctrl) (current-patient)
+				:last-group (first (survey-groups (survey ctrl)))))))
   (when (and (survey ctrl) (diary-p (survey ctrl)))
     (setf (current-id ctrl)
 	  (aif (latest-answer (diary-question (survey ctrl)) (current-patient))
 	       (answer-id it)
 	       1)))
+  ;; Traverse group / subgroup / question hierarchy and create presentations
   (create-current-presentations ctrl))
-
 
 (defmethod (setf current-id) :after (id (ctrl survey-ctrl))
   ;; Diary survey? Set default value for diary question if no answer
@@ -784,7 +785,11 @@
   (goto-group ctrl (first (survey-groups (survey ctrl)))))
 
 (defun goto-group (ctrl group)
-  (setf (current-group ctrl) group))
+  (prog1
+      (setf (current-group ctrl) group)
+    ;; Remember this group in survey state
+    (awhen (survey-state ctrl)
+      (setf (last-group it) group))))
 
 
 ;; ==============================================================
@@ -816,35 +821,3 @@
     (render-group (current-group widget) widget)
     (render-link (f* (answer widget))
 		 "Close Preview")))
-
-;; ==============================================================
-;;  Maintaining user state in a survey
-;; ==============================================================
-
-(defpclass survey-state ()
-  ((user :accessor user :initarg :user :index t)
-   (survey :accessor survey :initarg :survey)
-   (ranking :accessor ranking :initarg :ranking :initform nil)
-   (last-values :accessor last-values :initarg :last-values :initform nil)
-   (last-group :accessor last-group :initarg :last-group :initform nil)
-   (percent-answered :accessor percent-answered :initarg :percent-answered :initform 0)
-   (finished-p :accessor finished-p :initarg :finished-p :initform nil))
-  (:documentation "The state of a user survey session so we can continue later"))
-
-(defun get-survey-state (survey user)
-  (find survey (get-instances-by-value 'survey-state 'user user) :key #'survey))
-
-(defun make-survey-state (survey user)
-  (make-instance 'survey-state
-		 :survey survey
-		 :user user))
-
-(defun initialize-control-from-state (ctrl state)
-  (declare (ignorable ctrl state))
-  #+nil(awhen (last-group state)
-	 (goto-group ctrl it)))
-
-
-
-
-			   
