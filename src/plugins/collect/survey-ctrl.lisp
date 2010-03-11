@@ -84,7 +84,6 @@
 
 	     
 
-
 ;; =============================================================
 ;;  Survey Grid View
 ;; =============================================================
@@ -106,8 +105,8 @@
 		    :allow-drilldown-p t
 		    :on-drilldown (cons :do-survey 'goto-survey-viewer)
 		    :autoset-drilled-down-item-p nil
-;;		    :on-query `(:filter-fn ,(lambda (survey) 
-;;					      (not (include-survey-p survey diary-p))))
+		    :on-query `(:filter-fn ,(lambda (survey) 
+						    (not (include-survey-p survey diary-p))))
 		    :sort '(sort-key . :asc)))))
 
 (defun include-survey-p (survey diary-p)
@@ -117,7 +116,8 @@
 	   (eq (current-user) (owner survey))
 	   (member (current-user) (survey-acl survey)))
        (not (edit-lock survey))
-       (or (and (not diary-p) (not (diary-p survey)))
+       (or (not (get-site-config-param :survey-viewer-show-diaries-separate))
+	   (and (not diary-p) (not (diary-p survey)))
 	   (and diary-p (diary-p survey)))))
 
 (defun render-survey-list-header (diary-view-p)
@@ -190,6 +190,11 @@
 ;;	   :documentation "An alist of errors mapped to given questions by ref")
 ;;   (values :accessor current-values :initarg :values :initform nil))
   (:documentation "The survey widget manages a branching survey session"))
+
+(defun initialize-control-from-state (ctrl state)
+  (awhen (last-group state)
+    (goto-group ctrl it)
+    it))
 
 (defmethod initialize-instance :after ((ctrl survey-ctrl) &rest args)
   (declare (ignore args))
