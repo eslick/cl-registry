@@ -184,9 +184,9 @@
 	     (get-instances-by-class 'survey)))
 
 (defun group-answered-p (user group)
-  (some (curry2 'get-user-answers user)
-	(group-questions group)))
-
+  (let ((questions (group-questions group)))
+    (or (null questions)
+	(some (curry2 'get-user-answers user) questions))))
 
 ;;
 ;; Group linking
