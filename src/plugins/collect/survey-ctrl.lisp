@@ -128,102 +128,106 @@
 
 (defmethod render-widget-body ((widget study-list) &rest args)
   (declare (ignore args))
-  (let* ((patient (current-patient)))
+  (let* ((patient (current-patient))
+	 (studies (get-instances-by-class 'study)))
     (declare (ignore patient))
     (with-html
       (:DIV
        :CLASS "study-list"
-       (:H2 "Studies")
-       (:UL
-	(loop for study in (get-instances-by-class 'study)
-	   when (include-study-p study) do
+       (:H2 #!"Studies")
+       (if (null studies)
+	   (htm (:P :CLASS "study-list-message" (str #!"No studies are defined")))
 	   (htm
-	    (:DIV
-	     :CLASS "study-list-item"
-	     (:LI :CLASS "study-list-study-name" (str (name study))
-		  (:P :CLASS "study-list-description" (str (description study)))
-		  (let ((this-study-complete-p ':maybe)
-			(surveys
-			 (loop for survey in (surveys study)
-			    when (include-study-survey-p study survey)
-			    collect survey)))
-		    (cond
-		      ((null surveys)
-		       (setq this-study-complete-p nil)
-		       (htm
-			(:P :CLASS "study-list-message" "No surveys for study")))
-		      ;; Generate list of survey items
-		      (t
-		       (htm
-			(:UL
-			 ;; Check survey rules and completion status, then display surveys
-			 (let (next-survey
-			       suppress-links-p)
-			   (dolist (survey surveys)
-			     (let ((this-survey-complete-p (survey-complete-p (current-patient) survey))
-				   (enable-this-link-p (not suppress-links-p))
-				   message
-				   (survey-rule (find survey (survey-rules study) :key #'survey-rule-survey)))
-			       ;; If survey not completed, then study not completed
-			       (setq this-study-complete-p (and this-study-complete-p this-survey-complete-p))
-			       ;; Display study list item for survey 
-			       (htm
-				(:LI
-				 (:IMG :SRC
-				       (format nil "/pub/images/surveys/~A.gif"
-					       (if this-survey-complete-p "check" "circle")))
-				 "&nbsp;"
-				 (when survey-rule
-				   (case (survey-rule-type survey-rule)
-				     (:DOFIRST
+	    (:UL
+	     (loop for study in studies
+		when (include-study-p study) do
+		(htm
+		 (:DIV
+		  :CLASS "study-list-item"
+		  (:LI :CLASS "study-list-study-name" (str (name study))
+		       (:P :CLASS "study-list-description" (str (description study)))
+		       (let ((this-study-complete-p ':maybe)
+			     (surveys
+			      (loop for survey in (surveys study)
+				 when (include-study-survey-p study survey)
+				 collect survey)))
+			 (cond
+			   ((null surveys)
+			    (setq this-study-complete-p nil)
+			    (htm
+			     (:P :CLASS "study-list-message" "No surveys for study")))
+			   ;; Generate list of survey items
+			   (t
+			    (htm
+			     (:UL
+			      ;; Check survey rules and completion status, then display surveys
+			      (let (next-survey
+				    suppress-links-p)
+				(dolist (survey surveys)
+				  (let ((this-survey-complete-p (survey-complete-p (current-patient) survey))
+					(enable-this-link-p (not suppress-links-p))
+					message
+					(survey-rule (find survey (survey-rules study) :key #'survey-rule-survey)))
+				    ;; If survey not completed, then study not completed
+				    (setq this-study-complete-p (and this-study-complete-p this-survey-complete-p))
+				    ;; Display study list item for survey 
+				    (htm
+				     (:LI
+				      (:IMG :SRC
+					    (format nil "/pub/images/surveys/~A.gif"
+						    (if this-survey-complete-p "check" "circle")))
+				      "&nbsp;"
+				      (when survey-rule
+					(case (survey-rule-type survey-rule)
+					  (:DOFIRST
+					   (cond
+					     (this-survey-complete-p)
+					     ((null next-survey)
+					      (setq next-survey survey
+						    suppress-links-p t
+						    message #!"Complete this survey first"))))
+					  (:REQUIRED
+					   (cond
+					     (this-survey-complete-p)
+					     (suppress-links-p)
+					     ((null next-survey)
+					      (setq next-survey survey
+						    message #!"Complete this survey next"))
+					     (t
+					      (setq message #!"This survey is required"))))
+					  (:OPTIONAL)))
+				      (if enable-this-link-p
+					  (htm
+					   (:A :HREF (format nil "/dashboard/collect/~A/~A/" "survey" (mid survey))
+					       (:SPAN :CLASS "study-list-survey-name-alink"
+						      (str (name survey)))
+					       (:SPAN :CLASS "study-list-survey-description-alink"
+						      (str (description survey)))))
+					  (htm
+					   (:SPAN
+					    :CLASS "study-list-survey-name"
+					    (str (name survey)))))
 				      (cond
-					(this-survey-complete-p)
-					((null next-survey)
-					 (setq next-survey survey
-					       suppress-links-p t
-					       message #!"Complete this survey first"))))
-				     (:REQUIRED
-				      (cond
-					(this-survey-complete-p)
-					(suppress-links-p)
-					((null next-survey)
-					 (setq next-survey survey
-					       message #!"Complete this survey next"))
+					((null message))
+					((compact-format-p widget)
+					 (htm
+					  (:SPAN
+					   :CLASS "study-list-message-small"
+					   (:IMG :SRC "/pub/images/surveys/arrow-left.gif")
+					   "&nbsp;"
+					   (str message))))
 					(t
-					 (setq message #!"This survey is required"))))
-				     (:OPTIONAL)))
-				 (if enable-this-link-p
-				     (htm
-				      (:A :HREF (format nil "/dashboard/collect/~A/~A/" "survey" (mid survey))
-					  (:SPAN :CLASS "study-list-survey-name-alink"
-						 (str (name survey)))
-					  (:SPAN :CLASS "study-list-survey-description-alink"
-						 (str (description survey)))))
-				     (htm
-				      (:SPAN
-				       :CLASS "study-list-survey-name"
-				       (str (name survey)))))
-				 (cond
-				   ((null message))
-				   ((compact-format-p widget)
-				    (htm
-				      (:SPAN
-				       :CLASS "study-list-message-small"
-				       (:IMG :SRC "/pub/images/surveys/arrow-left.gif")
-				       "&nbsp;"
-				       (str message))))
-				   (t
-				    (htm
-				     (:BR)
-				     (:SPAN
-				       :CLASS "study-list-message"
-				       (:IMG :SRC "/pub/images/surveys/arrow-up.gif")
-				       "&nbsp;"
-				       (str message))))))))))))))
-		    ;; Check completed status
-		    ;; TBD: check study completed status at beginning and display at top
-		    (when this-study-complete-p
-		      (htm (:P :CLASS "study-list-message" (str #!"Study is completed"))))))))))))))
+					 (htm
+					  (:BR)
+					  (:SPAN
+					   :CLASS "study-list-message"
+					   (:IMG :SRC "/pub/images/surveys/arrow-up.gif")
+					   "&nbsp;"
+					   (str message))))))))))))))
+			 ;; Check completed status
+			 ;; TBD: check study completed status at beginning and display at top
+			 (when this-study-complete-p
+			   (htm (:P :CLASS "study-list-message" (str #!"Study is completed"))))))))))))))))
 
       
 ;; =============================================================
