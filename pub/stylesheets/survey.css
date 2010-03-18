@@ -473,3 +473,93 @@ div.survey-form-actions input.survey-form-button{
 div.button-select{
     margin-top: -10px;
 }
+
+/* Study list table */
+
+div.study-list table tr {
+    line-height: 185%;
+    left-margin: 55;
+}
+
+/* Study list */
+
+div.study-list ul {
+    list-style: disc url(/pub/images/surveys/arrow-down.gif) inside;
+}
+
+div.study-list-item ul {
+   # list-style: disc url(/pub/images/surveys/arrow-right.gif) inside;
+   list-style: none;
+    margin-left: 2em;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+div.study-list-item {
+    border: 1px solid #000;
+    margin: 1em;
+    padding: 2px;
+    margin-left: 2em;
+    padding-left: 20px;
+}
+
+.study-list-study-name {
+    color: brown;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.study-list-study-description {
+    color: black;
+    font-weight: normal;
+    font-size: 100;
+}
+
+.study-list-survey-name {
+    color: darkgrey;
+    font-size: 80%;
+}
+
+.study-list-survey-name A:link {
+    color: darkgreen;
+    font-size: 110%;
+}
+
+.study-list-survey-name-alink {
+    color: darkgreen;
+    font-size: 110%;
+}
+
+.study-list-survey-name A {
+}
+
+A .study-list-survey-description-alink {
+    display: none;
+}
+
+A:hover .study-list-survey-description-alink {
+    display: block;
+    position: relative;
+    left: 1em;
+    padding: 8px;
+    background: #fdd
+    border: 1px solid orange;
+    font-weight: normal;
+    color: green;
+}
+
+.study-list-survey-name A:hover {
+    font-size: 150%;
+}
+
+.study-list-message {
+    color: grey;
+    margin-left: 2em;
+    font-style: italic;
+}
+
+.study-list-message-small {
+    color: grey;
+    font-style: italic;
+    font-size: 75%;
+}

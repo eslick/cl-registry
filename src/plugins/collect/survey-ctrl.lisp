@@ -24,15 +24,20 @@
 
 (defun make-survey-viewer (&rest args)
   (declare (ignore args))
-  (make-instance 'survey-dispatcher))
+  (let ((default-view (get-site-config-param :survey-viewer-default-view)))
+    (apply #'make-instance 'survey-dispatcher
+	   (if default-view
+	       (list :default-view default-view)))))
 
 (defwidget survey-dispatcher (dispatcher)
-  ((survey-list-widget :accessor survey-list-widget
+  ((study-list-widget :accessor study-list-widget
+		      :initform (make-study-list))
+   (survey-list-widget :accessor survey-list-widget
 		       :initform (make-survey-grid))
    (diary-list-widget :accessor diary-list-widget
 		      :initform (make-survey-grid t))
    (default-view :accessor default-view
-     :initform "survey"))
+     :initform "survey" :initarg :default-view))
   (:default-initargs :on-dispatch 'survey-dispatcher-handler))
 
 (defmethod dependencies append ((grid survey-dispatcher))
@@ -58,15 +63,22 @@
 	 (tok (first tokens)))
     (prog1
 	(cond ((equal tok "survey")
-	       (setf (default-view disp) "survey")
+	       ;; TODO: set session variable before we get here to remember where to send user back
+	       ;; (setf (default-view disp) "survey")
 	       (if (rest tokens)
 		   (populate-survey-ctrl disp (first (rest tokens)) uri-tokens)
 		   (survey-list-widget disp)))
 	      ((equal tok "diary")
-	       (setf (default-view disp) "diary")
+	       ;; TODO: set session variable before we get here to remember where to send user back
+	       ;; (setf (default-view disp) "diary")
 	       (if (rest tokens)
 		   (populate-survey-ctrl disp (first (rest tokens)) uri-tokens)
 		   (diary-list-widget disp)))
+	      ((equal tok "study")
+	       ;; TODO: set session variable before we get here to remember where to send user back
+	       ;; (setf (default-view disp) "study")
+	       ;; TBD: get study from tokens as above for surveys and diaries
+	       (study-list-widget disp))
 	      (t (goto-default-survey-view disp uri-tokens)))
       (pop-tokens uri-tokens (length (remaining-tokens uri-tokens))))))
 
@@ -84,6 +96,136 @@
 
 	     
 
+;; =============================================================
+;;  Study List View
+;; =============================================================
+
+(defwidget study-list ()
+  ((compact-format-p :accessor compact-format-p :initarg :compact-format :initform nil)))
+
+(defun make-study-list (&key compact-format)
+  (make-instance 'composite :widgets
+		 (list
+		  (make-choose-patient-widget :hr-p nil :mark-siblings-dirty-p t)
+		  (make-instance 'study-list :compact-format compact-format))))
+
+(defun include-study-p (study)
+  (and (current-patient)
+       (or (published-p study)
+	   (is-admin-p)
+	   (eq (current-user) (owner study))
+	   #+NIL (member (current-user) (survey-acl survey)))
+       #+NIL (not (edit-lock survey))))
+
+(defun include-study-survey-p (study survey)
+  (declare (ignore study))
+  (and (current-patient)
+       (or (published-p survey)
+	   (is-admin-p)
+	   (eq (current-user) (owner survey))
+	   (member (current-user) (survey-acl survey)))
+       (not (edit-lock survey))))
+
+(defmethod render-widget-body ((widget study-list) &rest args)
+  (declare (ignore args))
+  (let* ((patient (current-patient)))
+    (declare (ignore patient))
+    (with-html
+      (:DIV
+       :CLASS "study-list"
+       (:H2 "Studies")
+       (:UL
+	(loop for study in (get-instances-by-class 'study)
+	   when (include-study-p study) do
+	   (htm
+	    (:DIV
+	     :CLASS "study-list-item"
+	     (:LI :CLASS "study-list-study-name" (str (name study))
+		  (:P :CLASS "study-list-description" (str (description study)))
+		  (let ((this-study-complete-p ':maybe)
+			(surveys
+			 (loop for survey in (surveys study)
+			    when (include-study-survey-p study survey)
+			    collect survey)))
+		    (cond
+		      ((null surveys)
+		       (setq this-study-complete-p nil)
+		       (htm
+			(:P :CLASS "study-list-message" "No surveys for study")))
+		      ;; Generate list of survey items
+		      (t
+		       (htm
+			(:UL
+			 ;; Check survey rules and completion status, then display surveys
+			 (let (next-survey
+			       suppress-links-p)
+			   (dolist (survey surveys)
+			     (let ((this-survey-complete-p (survey-complete-p (current-patient) survey))
+				   (enable-this-link-p (not suppress-links-p))
+				   message
+				   (survey-rule (find survey (survey-rules study) :key #'survey-rule-survey)))
+			       ;; If survey not completed, then study not completed
+			       (setq this-study-complete-p (and this-study-complete-p this-survey-complete-p))
+			       ;; Display study list item for survey 
+			       (htm
+				(:LI
+				 (:IMG :SRC
+				       (format nil "/pub/images/surveys/~A.gif"
+					       (if this-survey-complete-p "check" "circle")))
+				 "&nbsp;"
+				 (when survey-rule
+				   (case (survey-rule-type survey-rule)
+				     (:DOFIRST
+				      (cond
+					(this-survey-complete-p)
+					((null next-survey)
+					 (setq next-survey survey
+					       suppress-links-p t
+					       message #!"Complete this survey first"))))
+				     (:REQUIRED
+				      (cond
+					(this-survey-complete-p)
+					(suppress-links-p)
+					((null next-survey)
+					 (setq next-survey survey
+					       message #!"Complete this survey next"))
+					(t
+					 (setq message #!"This survey is required"))))
+				     (:OPTIONAL)))
+				 (if enable-this-link-p
+				     (htm
+				      (:A :HREF (format nil "/dashboard/collect/~A/~A/" "survey" (mid survey))
+					  (:SPAN :CLASS "study-list-survey-name-alink"
+						 (str (name survey)))
+					  (:SPAN :CLASS "study-list-survey-description-alink"
+						 (str (description survey)))))
+				     (htm
+				      (:SPAN
+				       :CLASS "study-list-survey-name"
+				       (str (name survey)))))
+				 (cond
+				   ((null message))
+				   ((compact-format-p widget)
+				    (htm
+				      (:SPAN
+				       :CLASS "study-list-message-small"
+				       (:IMG :SRC "/pub/images/surveys/arrow-left.gif")
+				       "&nbsp;"
+				       (str message))))
+				   (t
+				    (htm
+				     (:BR)
+				     (:SPAN
+				       :CLASS "study-list-message"
+				       (:IMG :SRC "/pub/images/surveys/arrow-up.gif")
+				       "&nbsp;"
+				       (str message))))))))))))))
+		    ;; Check completed status
+		    ;; TBD: check study completed status at beginning and display at top
+		    (when this-study-complete-p
+		      (htm (:P :CLASS "study-list-message" (str #!"Study is completed"))))))))))))))
+
+      
 ;; =============================================================
 ;;  Survey Grid View
 ;; =============================================================
@@ -366,9 +508,13 @@
                    (str (id patient))
                    (:br)(:br))))
 	  (:span :class "survey-bar-title"
-		 (if (diary-p ctrl)
-		     (htm (:a :href "/dashboard/collect/diary/" (str #!"Diaries:")))
-		     (htm (:a :href "/dashboard/collect/survey/" (str #!"Surveys:"))))
+		 (cond
+		   ((not (get-site-config-param :survey-viewer-show-diaries-separate))
+		    (htm (:a :href "/dashboard/collect/" (str #!"Collect:"))))
+		   ((diary-p ctrl)
+		    (htm (:a :href "/dashboard/collect/diary/" (str #!"Diaries:"))))
+		   (t
+		    (htm (:a :href "/dashboard/collect/survey/" (str #!"Surveys:")))))
 		 (:span :class "survey-bar-group-title" 
 			(str (slot-value-translation (survey ctrl) 'name))))
 	  (:div :class "newline survey-bar-description"
@@ -382,10 +528,7 @@
 		    (render-survey-action ctrl 'next #!"Next Page" "next-group-link")
 		    (htm (str #!"Next Page")))
 		" | "
-		(:a :href "/dashboard/collect/" 
-		    (if (diary-p ctrl)
-			(str #!"Return to Diary List")
-			(str #!"Return to Survey List"))))
+		(:a :href "/dashboard/collect/" (str #!"Return to Collect")))
 	  (when (diary-p ctrl)
 	    (render-diary-header ctrl))
 	  (:div :style "height: 15px;")

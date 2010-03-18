@@ -20,6 +20,8 @@
 (defconstant +survey-name-patient+ "LAMsight QOL/PFT Patient Questionnaire")
 (defconstant +survey-short-name-patient+ "QOL/PFT Study")
 
+(defconstant +study-name-clinician+ "ILR QOL/PFT Study")
+
 ;;; Utilities
 
 (defmacro prepend-survey-name (str survey)
@@ -635,7 +637,7 @@ You may save your work at any point to complete at a later time.
       ;; Group 11 - results from other surveys
       ;;
       (let* ((q22
-              (apply #'make-question "Do you have pulmonary function test (PFT) reports for the patient" :number 22.
+              (apply #'make-question "Do you have at least two (2) pulmonary function test (PFT) reports for the patient from different dates" :number 22.
                      :prompt-format prompt-format-numbered-question
                      (choices-options-yes-no)))
              (q22-confirm
@@ -662,13 +664,16 @@ You may save your work at any point to complete at a later time.
               (make-survey-group-named-and-numbered survey-clinician +survey-short-name-clinician+ t
                                                     :order (list q22 q23 q24)))
              ;; Subgroups
-             (subgroup22 (make-survey-sub-group-named *group* nil :order (list q22-confirm)))
-             (subgroup23 (make-survey-sub-group-named *group* nil :order (list q23-confirm)))
-             (subgroup24 (make-survey-sub-group-named *group* nil :order (list q24-confirm))))
+             (subgroup22yes (make-survey-sub-group-named *group* nil :order (list q22-confirm)))
+             (subgroup22no (make-survey-sub-group-named *group* nil :order nil
+                                                        :advice "This patient is not eligible for this study."))
+             (subgroup23yes (make-survey-sub-group-named *group* nil :order (list q23-confirm)))
+             (subgroup24yes (make-survey-sub-group-named *group* nil :order (list q24-confirm))))
         ;; Group rules
-        (add-rule *group* q22 t subgroup22 ':inline)
-        (add-rule *group* q23 t subgroup23 ':inline)
-        (add-rule *group* q24 t subgroup24 ':inline))
+        (add-rule *group* q22 t subgroup22yes ':inline)
+        (add-rule *group* q22 nil subgroup22no ':inline)
+        (add-rule *group* q23 t subgroup23yes ':inline)
+        (add-rule *group* q24 t subgroup24yes ':inline))
 
       ;;
       ;; Survey - treatment/surgery
@@ -1426,6 +1431,17 @@ which can cause a collapsed lung.")
 
       ;; Returns
       (list survey-patient))))
+
+;;; Create studies
+
+(defun create-ilr-qol/pft-study (&key (owner (current-user)))
+  (let ((study
+         (make-instance 'study :name +study-name-clinician+
+                               :description "Young / old patient study"
+                               :surveys (create-ilr-qol/pft-surveys :owner owner)
+                               :published t :owner owner :priority 1 :origin "researcher")))
+    ;; Returns
+    study))
 
 ;;; Data analysis and reporting
 

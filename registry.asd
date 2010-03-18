@@ -130,6 +130,8 @@
 		     (:file "group")
 		     (:file "group-rules")
 		     (:file "survey")
+		     (:file "study")
+		     (:file "survey-rules")
                      (:file "provenance"))
 		    :depends-on (core)
 		    :serial t)
