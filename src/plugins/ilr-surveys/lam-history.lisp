@@ -809,7 +809,12 @@ You may save your work at any point to complete at a later time.
         (setf (diary-question survey-sgrq) q1))
 
       ;; Returns
-      (list survey-clinician survey-treatment survey-pft survey-6mwd survey-sgrq))))
+      `( (,survey-clinician :DOFIRST)
+         (,survey-pft :REQUIRED)
+         (,survey-treatment :OPTIONAL)
+         (,survey-6mwd :OPTIONAL)
+         (,survey-sgrq :OPTIONAL))
+      )))
 
 (defun create-lamsight-qol/pft-surveys (&key (owner (current-user)))
   (with-transaction ()
@@ -1435,11 +1440,20 @@ which can cause a collapsed lung.")
 ;;; Create studies
 
 (defun create-ilr-qol/pft-study (&key (owner (current-user)))
-  (let ((study
+  (let ((survey-rule-alist (create-ilr-qol/pft-surveys :owner owner))
+        (study
          (make-instance 'study :name +study-name-clinician+
                                :description "Young / old patient study"
-                               :surveys (create-ilr-qol/pft-surveys :owner owner)
                                :published t :owner owner :priority 1 :origin "researcher")))
+    (loop for spec in survey-rule-alist
+         with surveys 
+         with rules
+         do (let ((survey (first spec))
+                  (rule-type (second spec)))
+              (push survey surveys)
+              (push (make-survey-rule :survey survey :type rule-type) rules))
+         finally
+         (setf (surveys study) (reverse surveys) (survey-rules study) rules))
     ;; Returns
     study))
 
