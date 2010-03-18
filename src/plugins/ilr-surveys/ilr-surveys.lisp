@@ -19,7 +19,8 @@
        (mapcar 'drop-instance (get-instances-by-class 'answer))
        (mapcar 'drop-instance (get-instances-by-class 'question))
        (mapcar 'drop-instance (get-instances-by-class 'survey-group))
-       (mapcar 'drop-instance (get-instances-by-class 'survey)))
+       (mapcar 'drop-instance (get-instances-by-class 'survey))
+       (mapcar 'drop-instance (get-instances-by-class 'study)))
       (t
        (dolist (survey surveys)
          (dolist (group (survey-groups survey))
