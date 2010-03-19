@@ -134,7 +134,7 @@
     (with-html
       (:DIV
        :CLASS "study-list"
-       (:H2 #!"Studies")
+       (:H2 (str #!"Studies"))
        (if (null studies)
 	   (htm (:P :CLASS "study-list-message" (str #!"No studies are defined")))
 	   (htm
@@ -145,7 +145,7 @@
 		 (:DIV
 		  :CLASS "study-list-item"
 		  (:LI :CLASS "study-list-study-name" (str (name study))
-		       (:P :CLASS "study-list-description" (str (description study)))
+		       (:P :CLASS "study-list-study-description" (str (description study)))
 		       (let ((this-study-complete-p ':maybe)
 			     (surveys
 			      (loop for survey in (surveys study)
@@ -198,15 +198,15 @@
 					  (:OPTIONAL)))
 				      (if enable-this-link-p
 					  (htm
-					   (:A :HREF (format nil "/dashboard/collect/~A/~A/" "survey" (mid survey))
-					       (:SPAN :CLASS "study-list-survey-name-alink"
-						      (str (name survey)))
-					       (:SPAN :CLASS "study-list-survey-description-alink"
-						      (str (description survey)))))
+					   (:SPAN :CLASS "study-list-survey-name"
+						  (:A :HREF (format nil "/dashboard/collect/~A/~A/" "survey" (mid survey))
+						      (:SPAN :CLASS "study-list-survey-name-alink"
+							     (str (name survey)))
+						      (:SPAN :CLASS "study-list-survey-description-alink"
+							     (str (description survey))))))
 					  (htm
-					   (:SPAN
-					    :CLASS "study-list-survey-name"
-					    (str (name survey)))))
+					   (:SPAN :CLASS "study-list-survey-name"
+						  (str (name survey)))))
 				      (cond
 					((null message))
 					((compact-format-p widget)
