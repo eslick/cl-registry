@@ -175,7 +175,7 @@
 				     (:LI
 				      (:IMG :SRC
 					    (format nil "/pub/images/surveys/~A.gif"
-						    (if this-survey-complete-p "check" "circle")))
+						    (if this-survey-complete-p "check" "checkbox")))
 				      "&nbsp;"
 				      (when survey-rule
 					(case (survey-rule-type survey-rule)
