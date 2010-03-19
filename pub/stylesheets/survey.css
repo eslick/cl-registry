@@ -504,7 +504,7 @@ div.study-list-item {
 }
 
 .study-list-study-name {
-    color: brown;
+    color: orange;
     font-weight: bold;
     font-size: 120%;
 }
@@ -513,6 +513,8 @@ div.study-list-item {
     color: black;
     font-weight: normal;
     font-size: 100;
+    margin-left: 1.5em;
+    margin-right: 1.52em;
 }
 
 .study-list-survey-name {
@@ -531,6 +533,7 @@ div.study-list-item {
 }
 
 .study-list-survey-name A {
+    position: relative;
 }
 
 A .study-list-survey-description-alink {
@@ -539,13 +542,15 @@ A .study-list-survey-description-alink {
 
 A:hover .study-list-survey-description-alink {
     display: block;
-    position: relative;
-    left: 1em;
+    position: absolute;
+    top: 45px;
+    left: 30px;
     padding: 8px;
-    background: #fdd
+    text-indent: 0;
+    background-color: white;
     border: 1px solid orange;
     font-weight: normal;
-    color: green;
+    color: black;
 }
 
 .study-list-survey-name A:hover {
