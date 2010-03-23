@@ -1,0 +1,11 @@
+#!/bin/bash
+# Usage is: "lamsight [slimeport]"
+
+REGPORT=8080
+REGCONFIG="lamsight-production+devel"
+export REGPORT REGCONFIG
+
+ccl -e '(load "registry-loader.lisp")' \
+    -e '(in-package :registry-loader)' \
+    -e '(when (find-package :registry) (in-package :registry))' \
+    -e "(registry-loader:load-swank $1)"
