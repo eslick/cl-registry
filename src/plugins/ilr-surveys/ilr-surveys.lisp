@@ -92,12 +92,12 @@
             ((numberp num) num)
             ((eq num t) (1+ (length (survey-groups survey)))))))
 
-(defun make-survey-group-named-and-numbered (survey name num &rest args)
+(defun make-survey-group-named (survey name &rest args)
   (let* ((groups (survey-groups survey))
          (group
           (apply #'make-instance 'survey-group
                  :owner (owner survey)
-                 :name (group-section-name-and-number survey name num)
+                 :name name
                  args)))
     ;;(format t "~&Add group ~S to groups ~S" group groups)
     (if groups
@@ -106,9 +106,17 @@
     ;; Returns
     group))
 
+(defun make-survey-group-named-and-numbered (survey name num &rest args)
+  (apply #'make-survey-group-named survey (group-section-name-and-number survey name num) args))
 
 (defun make-survey-sub-group-named (group name &rest args)
   (setq name (or name (gensym)))
   (apply #'make-instance 'survey-group
          :name (format nil "~A ~A" (group-name group) name)
          :owner (owner group) args))
+
+(defmethod survey-name-append ((survey-name string) string2)
+  (format nil "~A - ~A" survey-name string2))
+
+(defmethod survey-name-append ((inst survey) str)
+  (survey-name-append (name survey) str))
