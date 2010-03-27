@@ -1,4 +1,10 @@
 ;;;; -*- Mode: Lisp; Syntax: ANSI-Common-Lisp; Base: 10 -*-
+
+;;; Copyright (c) 2008-2010, Massachusetts Institute of;Technology. All rights reserved. 
+;;; Copyright (c) 2008-2010, LAM Treatment Alliance. All rights reserved. 
+;;; Released under a BSD-style license: http://www.opensource.org/licenses/bsd-license.php 
+;;; See LICENSE file 
+
 (defpackage #:registry-asd
   (:use :cl :asdf))
 
