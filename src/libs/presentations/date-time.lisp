@@ -42,6 +42,7 @@
     (with-html
       " "
       (:span :class "date-presentation-format-label"
+	  (:div :class "question-help"
              (cond
                ((string-starts-with "en_US" (cl-l10n:locale-name (user-locale (current-user))))
                 (str
@@ -53,7 +54,7 @@
                 (str
                  (if (typep presentation 'date-range-presentation)
                      #!"(dd/mm/yyyy[ to dd/mm/yyyy)"
-                     #!"(dd/mm/yyyy)")))))
+                     #!"(dd/mm/yyyy)"))))))
       (:span :id parse-output-span-id  ""))))
 
       ;; should use parenscript here, not adding a dependency this
