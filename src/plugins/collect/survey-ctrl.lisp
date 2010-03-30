@@ -276,20 +276,23 @@
     ;; 		(str #!"This section of the site is dedicated to constructing the database for LAM.  It currently focuses on background information via a set of surveys.  We will include other methods of data gathering in the near future."))
     ;; 	    (:p :style "font-size: 100%;" 
     ;; 		(str #!"Surveys consist of a collection of related questions. Surveys may contain one or more pages of questions.  You can fill these out one at a time.  You can leave a survey at any time and return later to complete it.  If you have any problems, please post a request for help in the <a href=\"/dashboard/discuss/\">Discussion Forums</a>.")))))
-;;     (:p :class "select-view"
-;; 	(if diary-view-p
-;; 	    (with-html
-;; 	      (:div :class "button-select"
-;; 		    (:a :href "/dashboard/collect/survey/" :class "button"
-;; 			(str #! "View Surveys"))
-;; 		    (:a :href "/dashboard/collect/diary" :class "button-active"
-;; 			(str #! "View Diaries"))))
-;; 	    (with-html
-;; 	      (:div :class "button-select"
-;; 		    (:a :href "/dashboard/collect/survey" :class "button-active"
-;; 			(str #! "View Surveys"))
-;; 		    (:a :href "/dashboard/collect/diary" :class "button"
-;; 			(str #! "View Diaries"))))))
+    (:p :class "select-view"
+	(let ((diary-button-class "button")
+	      (survey-button-class "button")
+	      (study-button-class "button"))
+	  (if diary-view-p
+	      (setq diary-button-class "button-active")
+	      (setq survey-button-class "button-active"))
+	  (with-html
+	    (:div :class "button-select"
+		  (:a :href "/dashboard/collect/survey/" :class survey-button-class
+		      (str #!"View Surveys"))
+		  (:a :href "/dashboard/collect/diary" :class diary-button-class
+		      (str #!"View Diaries"))
+		  (if (get-site-config-param :survey-viewer-show-view-studies-button)
+		      (htm
+		       (:a :href "/dashboard/collect/study" :class study-button-class
+			   (str #!"View Studies"))))))))
     (if (current-patient)
         (htm (:p (str (format nil "~A ~A." #!"Please choose from the following"
                               (if diary-view-p #!"diaries" #!"surveys")))))
