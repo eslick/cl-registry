@@ -31,7 +31,7 @@
 			,(make-local-dependency :script "discovery/viz")
 			,(make-local-dependency :script "discovery/explorer")
 			,(make-instance 'script-dependency :url 
-					(get-site-config-param :google-api-url))))))
+					(get-site-config-param :google-api-key))))))
 
 (defun make-explorer (&rest args)
   (declare (ignore args))
