@@ -1,0 +1,675 @@
+msgid "World"
+msgstr "Världen"
+
+msgid "Help"
+msgstr "Hjälp"
+
+msgid "The ultimate aim of LAMsight is to support more efficient and effective design and implementation of clinical trials for LAM patients. Another goal is to lower the cost and time associated with research efforts to learn about larger samples of LAM patients. LAMsight will open up the world of LAM research to a broader research and clinical community. It can also help patients share new aspects of the disease that may be relevant to treatment. This effort was led by the <a href=\"http://admissions.media.mit.edu/research/group/new-media-medicine\">New Media Medicine</a> group of the <a href=\"http://www.media.mit.edu/\">MIT Media Laboratory</a> in cooperation with the <a href=\"http://www.curelam.org/\">LAM Treatment Alliance</a> and the <a href=\"http://www.dana-farber.com/\">Dana Farber Cancer Institute</a>."
+msgstr "Det viktigaste målet med LAMsight är att stödja större effektivitet och en mer effektiv utformning och implementation av kliniska tester för LAM-patienter. Ett annat mål är att minska kostnaderna och tidsåtgången för de forskningsansträngningar som görs genom att dra lärdom från större grupper med LAM-patienter. LAMsight kommer att öppna världen av LAM-forskning för en bredare forskningsgrupp och en bredare grupp av kliniker. Den kan också hjälpa patienter att dela nya synpunkter på sjukdomen vilka kan vara relevanta för behandlingen. Detta arbete leddes av <a href=\"http://admissions.media.mit.edu/research/group/new-media-medicine\">New Media Medicine</a>-gruppen från <a href=\"http://www.media.mit.edu/\">MIT Media Laboratory</a> i samarbete med <a href=\"http://www.curelam.org/\">LAM Treatment Alliance</a> och <a href=\"http://www.dana-farber.com/\">Dana Farber Cancer Institute</a>."
+
+msgid "Receive site update and reminder emails?"
+msgstr "Vill du få e-postmeddelanden med uppdateringar av webbplatsen och påminnelser?"
+
+msgid "Owner"
+msgstr "Ägare"
+
+msgid "To follow up and verify any data I have entered"
+msgstr "För att följa upp och kontrollera data som jag har registrerat"
+
+msgid "Acl"
+msgstr "Acl"
+
+msgid "(You are not on this map, "
+msgstr "(Du finns inte med på denna karta, "
+
+msgid "First Name: "
+msgstr "Förnamn: "
+
+msgid "home"
+msgstr "startsida"
+
+msgid "I work in another area of research."
+msgstr "Jag arbetar inom ett annat forskningsområde."
+
+msgid "No relevant posts since your last update"
+msgstr "Inga relevanta poster sedan din sista uppdatering"
+
+msgid "Date Created"
+msgstr "Skapad datum"
+
+msgid "Days Ago"
+msgstr "Antal dagar sedan"
+
+msgid "Date Joined"
+msgstr "Datum du gick med"
+
+msgid "on page"
+msgstr "på sidan"
+
+msgid "Diary Question"
+msgstr "Fråga diariet"
+
+msgid "Number"
+msgstr "Nummer"
+
+msgid "Explore this map"
+msgstr "Utforska denna karta"
+
+msgid "Groups"
+msgstr "Grupper"
+
+msgid "Subject"
+msgstr "Ämne"
+
+msgid "Where are our users?"
+msgstr "Var finns våra användare?"
+
+msgid "explore"
+msgstr "utforska"
+
+msgid ""Your e-mail will be maintained by the system and will never be disclosed to anyone without your express consent.  We take privacy very seriously."
+msgstr ""Din e-postadress kommer att finnas i systemet och kommer aldrig att lämnas ut till någon utan ditt uttryckliga medgivande.  Vi tar sekretessen på allvar."
+
+msgid "Language"
+msgstr "Språk"
+
+msgid "Ranking Record"
+msgstr "Bedömningspost"
+
+msgid "Users in the USA"
+msgstr "Användare i USA"
+
+msgid "Address 2: "
+msgstr "Adress 2: "
+
+msgid "Grant Edit Permission"
+msgstr "Tillåt redigeringsbehörighet"
+
+msgid "Welcome to LAMsight"
+msgstr "Välkommen till LAMsight"
+
+msgid "Original"
+msgstr "Original"
+
+msgid "Are you new to LAMsight? If so, please click the register link above to create a new user account. All that is needed is a valid e-mail address."
+msgstr "Är du ny hos LAMsight? I så fall ber vi dig att klicka på ovanstående registreringslänk för att skapa ett nytt användarkonto. Allt du behöver är en giltig e-postadress."
+
+msgid "Permissions"
+msgstr "Behörigheter"
+
+msgid "I am a LAM patient."
+msgstr "Jag är en LAM-patient."
+
+msgid "G0"
+msgstr "GÅ"
+
+msgid "I am a family member of a patient."
+msgstr "Jag är anhörig till en patient."
+
+msgid "Submit"
+msgstr "Skicka"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Survey List"
+msgstr "Undersökningslista"
+
+msgid "User"
+msgstr "Användare"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Required"
+msgstr "Obligatorisk"
+
+msgid "Enter some search terms"
+msgstr "Ange några söktermer"
+
+msgid "Date Updated"
+msgstr "Uppdaterad datum"
+
+msgid "Users around the World"
+msgstr "Användare i hela världen"
+
+msgid "Enter some search terms:&nbsp;"
+msgstr "Ange några söktermer:&nbsp;"
+
+msgid "Prompt"
+msgstr "Ledtext"
+
+msgid "Question preview: "
+msgstr "Förhandsgranska fråga: "
+
+msgid "Explorer Version: "
+msgstr "Version av Utforskaren: "
+
+msgid "Next >"
+msgstr "Nästa >"
+
+msgid "I am a TSC patient without LAM."
+msgstr "Jag är en TSC-patient utan LAM."
+
+msgid "Europe"
+msgstr "Europa"
+
+msgid "Address"
+msgstr "Adress"
+
+msgid "Archived Questions"
+msgstr "Arkiverade frågor"
+
+msgid "admin"
+msgstr "admin"
+
+msgid "New Features:~%"
+msgstr "Nya funktioner:~%"
+
+msgid "Question answer type: "
+msgstr "Svarstyp för fråga: "
+
+msgid "Your session has timed out, if you were using the site please log back in to continue working"
+msgstr "Tiden har gått ut för din session. Om du använder sidan ber vi dig logga in igen för att fortsätta ditt arbete"
+
+msgid "Welcome"
+msgstr "Välkommen"
+
+msgid "LAMsight password reset"
+msgstr "Återställ lösenordet för LAMsight"
+
+msgid "How frequently do you want updates and reminders?"
+msgstr "Hur ofta vill du få uppdateringar och påminnelser?"
+
+msgid "Down Ratings"
+msgstr "Nedvärderingar"
+
+msgid "User Options"
+msgstr "Användaralternativ"
+
+msgid "Post Permissions"
+msgstr "Behörigheter för att posta"
+
+msgid "Editedp"
+msgstr "Editedp"
+
+msgid "Question (~d)"
+msgstr "Fråga (~d)"
+
+msgid "Preferences Btree"
+msgstr "Önskat Btree"
+
+msgid "Log In"
+msgstr "Logga in"
+
+msgid "You are not on this map, please read below!"
+msgstr "Du finns inte med på denna karta. Var vänlig läs nedan!"
+
+msgid "Confirm Password"
+msgstr "Bekräfta lösenord"
+
+msgid "Get help here"
+msgstr "Här får du hjälp"
+
+msgid "Compare Population"
+msgstr "Jämför befolkning"
+
+msgid "Ratings"
+msgstr "Bedömningar"
+
+msgid "under question"
+msgstr "under fråga"
+
+msgid "Trustedp"
+msgstr "Trusted"
+
+msgid "Done"
+msgstr "Klar"
+
+msgid "Country: "
+msgstr "Land: "
+
+msgid "I am none of the above."
+msgstr "Jag är inget av ovanstående."
+
+msgid "Home Phone #: "
+msgstr "Hemtelefonnummer: "
+
+msgid "Please choose from the following"
+msgstr "Välj bland följande"
+
+msgid "Their LAMsight username:"
+msgstr "Deras användarnamn i LAMsight:"
+
+msgid "Next survey to work on:~%"
+msgstr "Nästa undersökning att arbeta på:~%"
+
+msgid "Category"
+msgstr "Kategori"
+
+msgid "Root"
+msgstr "Rot"
+
+msgid "(drag questions here to create a population)"
+msgstr "(dra frågor hit när du vill skapa en population)"
+
+msgid "Author"
+msgstr "Författare"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Show Surveys"
+msgstr "Visa undersökningar"
+
+msgid "User Preferences"
+msgstr "Användarinställningar"
+
+msgid "Submit Request"
+msgstr "Skicka förfrågan"
+
+msgid "On page:"
+msgstr "På sidan:"
+
+msgid "Last Name"
+msgstr "Efternamn"
+
+msgid "Oid"
+msgstr "Oid"
+
+msgid "For a potential study"
+msgstr "För en potentiell studie"
+
+msgid "Rating"
+msgstr "Bedömning"
+
+msgid "USA"
+msgstr "USA"
+
+msgid "To confirm my identity"
+msgstr "Bekräfta min identitet"
+
+msgid "[Create New Survey]"
+msgstr "[Skapa ny undersökning]"
+
+msgid "Users in Europe"
+msgstr "Användare i Europa"
+
+msgid "Question Context"
+msgstr "Frågesammanhang"
+
+msgid "Do Survey"
+msgstr "Gör undersökningen"
+
+msgid "Page"
+msgstr "Sida"
+
+msgid "Recent Forum Activity:~%~%~a"
+msgstr "Senaste aktivitet i forum:~%~%~a"
+
+msgid "Users South American"
+msgstr "Sydamerikanska användare"
+
+msgid "Diary Description"
+msgstr "Beskrivning av diarium"
+
+msgid "Avg Rating"
+msgstr "Genomsn. bedömning"
+
+msgid "Enable the interactive agent Laura"
+msgstr "Aktivera den interaktiva agenten Laura"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Enlarge: &nbsp;"
+msgstr "Förstora: &nbsp;"
+
+msgid "Diary P"
+msgstr "Diarium P"
+
+msgid "Exploring: "
+msgstr "Utforska: "
+
+msgid "All Users"
+msgstr "Alla användare"
+
+msgid "Forgot your username or password?"
+msgstr "Har du glömt ditt användarnamn eller lösenord?"
+
+msgid "New Password"
+msgstr "Nytt lösenord"
+
+msgid "The Scratchpad is a place to store groups and questions if you want to move them from one editor to another.  A question can only have one parent, so when you drag it back to a different group, it will disappear from the first."
+msgstr "Anteckningsblocket är en plats där du kan spara grupper och frågor om du vill flytta dem från en redigerare till en annan.  En fråga kan bara ha en överordad nivå, så när du drar tillbaka den till en annan grupp kommer den att försvinna från den första."
+
+msgid "I work directly on LAM research."
+msgstr "Jag arbetar direkt med LAM-forskning."
+
+msgid "LAMsight is a centralized database that will enable new forms of information-gathering and collaboration by patients, family members, clinicians, and researchers. Its goal is to overcome the barriers that researchers face in accessing up-to-date data about the global LAM population. LAMsight enables idea-generation by researchers through information exchange between patients and researchers in “real time”."
+msgstr "LAMsight är en centraliserad databas som kommer att möjliggöra nya former av informationsinsamling och samarbete mellan patienter, familjemedlemmar, kliniker och forskare. Målet med den är att övervinna de barriärer som forskare möter när det gäller att nå aktuella data om den globala LAM-populationen. LAMsight gör det möjligt för forskare att generera idéer genom informationsutbyte mellan patienter och forskare i "realtid"."
+
+msgid "patients"
+msgstr "patienter"
+
+msgid "Street"
+msgstr "Gata"
+
+msgid "After registration, click the 'Login' link at the very top of this page. Upon successful entry more information will be provided."
+msgstr "När du har registrerat dig klickar du på länken "Logga in" högst upp på den här sidan. När du har loggat in får till tillgång till mer information."
+
+msgid "Collect Data"
+msgstr "Samla in data"
+
+msgid "Basic Screen"
+msgstr "Basskärmbild"
+
+msgid "Tags"
+msgstr "Taggar"
+
+msgid "By any of these methods"
+msgstr "Genom någon av dessa metoder"
+
+msgid "Ask a Question"
+msgstr "Ställ en fråga"
+
+msgid "Register Now >>"
+msgstr "Registrera dig nu >>"
+
+msgid "A username is a short name that will be used by the system to identify you to other users.  If you are concerned about privacy, pick a username that you can remember, but doesn't include anything about you like your name."
+msgstr "Ett användarnamn är ett kortnamn som systemet kommer att använda för att identifiera dig för andra användare.  Om du är oroad över sekretessen väljer du ett användarnamn som du kan komma ihåg men som varken innehåller någonting om dig eller liknar ditt namn."
+
+msgid "Please choose from one of the following surveys or create your own!"
+msgstr "Välj någon av följande undersökningar eller skapa en egen!"
+
+msgid "Name"
+msgstr "Namn"
+
+msgid "Translation Alist"
+msgstr "Alist för översättning"
+
+msgid "Login"
+msgstr "Logga in"
+
+msgid "How frequently do you want forum updates?"
+msgstr "Hur ofta vill du få uppdateringar av forumet?"
+
+msgid "Description"
+msgstr "Beskrivning"
+
+msgid "Question Help"
+msgstr "Hjälp om fråga"
+
+msgid "Registration Instructions"
+msgstr "Instruktioner för registrering"
+
+msgid "New User?"
+msgstr "Ny användare?"
+
+msgid "Address: "
+msgstr "Adress: "
+
+msgid "Work Phone #: "
+msgstr "Arbetstelefonnummer: "
+
+msgid "Under question:"
+msgstr "Under fråga:"
+
+msgid "State"
+msgstr "Stat"
+
+msgid "Cancel"
+msgstr "Avbryt"
+
+msgid "The survey editor will require some time to become familiar with.  It allows you to create, organize, and edit all elements of a survey.  We will be expanding this help section after some feedback from users and some more improvements in the features and the look."
+msgstr "Det tar lite tid att vänja sig vid undersökningsredigeraren.  Med den kan du skapa, organisera och redigera alla element i en undersökning.  Vi kommer att utöka detta hjälpavsnitt efter feedback från användare samt göra en del förbättringar av funktioner och utseende."
+
+msgid "Priority"
+msgstr "Prioritet"
+
+msgid "Search Results"
+msgstr "Sökresultat"
+
+msgid "Content"
+msgstr "Innehåll"
+
+msgid "Sound Screen"
+msgstr "Ljudskärm"
+
+msgid "State/Province: "
+msgstr "Stat/provins: "
+
+msgid "Related Content"
+msgstr "Relaterat innehåll"
+
+msgid "Postal code: "
+msgstr "Postnummer: "
+
+msgid "View Diaries"
+msgstr "Visa diarier"
+
+msgid "Create a population"
+msgstr "Skapa en population"
+
+msgid "[LAMsight Help Request]"
+msgstr "[Fråga om hjälp för LAMsight]"
+
+msgid "Privacy Policy"
+msgstr "Sekretesspolicy"
+
+msgid "create"
+msgstr "skapa"
+
+msgid "Preferred Language: "
+msgstr "Önskat språk: "
+
+msgid "City"
+msgstr "Stad"
+
+msgid "Group advice"
+msgstr "Råd för grupp"
+
+msgid "Show Forums"
+msgstr "Visa forum"
+
+msgid "Page (~d)"
+msgstr "Sida (~d)"
+
+msgid "Creating Surveys"
+msgstr "Skapa undersökningar"
+
+msgid "Hello. The password for the username: ~a has been reset to ~a After you log in, you can change the password to something you can remember."
+msgstr "Hej! Lösenord för användarnamnet: ~a har återställts till ~a När du har loggat in kan du ändra lösenordet till något du kommer ihåg."
+
+msgid "A password should be at least 6 characters and include a number or other non-alphabetical character."
+msgstr "Ett lösenord ska bestå av minst 6 tecken och inkludera en siffra eller något annat tecken som inte är en bokstav."
+
+msgid "Body"
+msgstr "Brödtext"
+
+msgid "Published"
+msgstr "Publicerad"
+
+msgid "In survey:"
+msgstr "I undersökning:"
+
+msgid "logout"
+msgstr "logga ut"
+
+msgid " of patients responded"
+msgstr " av patienterna svarade"
+
+msgid "First Name"
+msgstr "Förnamn"
+
+msgid "Up Ratings"
+msgstr "Uppvärderingar"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "[Close this View]"
+msgstr "[Stäng denna vy]"
+
+msgid "Old Password"
+msgstr "Gammalt lösenord"
+
+msgid "Password"
+msgstr "Lösenord"
+
+msgid "Magic Key"
+msgstr "Magisk tangent"
+
+msgid "Locale"
+msgstr "Språkanpassning"
+
+msgid "Post Datetime"
+msgstr "Posta datum och tid"
+
+msgid "Topic"
+msgstr "Ämne"
+
+msgid "Number Of Ratings"
+msgstr "Antal bedömningar"
+
+msgid "Order"
+msgstr "Ordning"
+
+msgid "Editor Help"
+msgstr "Hjälp för redigerare"
+
+msgid "Register"
+msgstr "Registrera"
+
+msgid "Allow my city, state and country information to be used on the patient map."
+msgstr "Tillåt att information om min stad, mitt område och mitt land används på patientkartan."
+
+msgid "View Surveys"
+msgstr "Visa undersökningar"
+
+msgid "Group name"
+msgstr "Gruppnamn"
+
+msgid "I am involved in disease research."
+msgstr "Jag är involverad i sjukdomsforskning."
+
+msgid "Terms of Use"
+msgstr "Villkor för användning"
+
+msgid "I'm having a problem with LAMsight and have provided details on my problem below."
+msgstr "Jag har problem med LAMsight och har gett en detaljerad beskrivning av mitt problem nedan."
+
+msgid "Content Type"
+msgstr "Typ av innehåll"
+
+msgid "Username"
+msgstr "Användarnamn"
+
+msgid "Population Filter"
+msgstr "Filter för population"
+
+msgid "Site Announcements:~%"
+msgstr "Uttalanden på webbplatsen:~%"
+
+msgid "Short"
+msgstr "Kort"
+
+msgid "Most Popular Discussions"
+msgstr "De populäraste diskussionerna"
+
+msgid "Go"
+msgstr "GÅ"
+
+msgid "discuss"
+msgstr "diskutera"
+
+msgid "Edit sub-groups: "
+msgstr "Redigera undergrupper: "
+
+msgid "City: "
+msgstr "Stad: "
+
+msgid "If you joined LAMsight last spring, your user account and any information you entered has been preserved. No re-registration or new registration is needed.  Please contact our support team if you need assistance with lost user accounts or passwords."
+msgstr "Om du gick med i LAMsight förra våren har ditt användarkonto och den information du angav sparats. Du behöver inte omregistrera dig eller göra en ny registrering.  Kontakta vårt supportteam om du behöver hjälp med borttappade användarkonton eller lösenord."
+
+msgid "Related questions"
+msgstr "Relaterade frågor"
+
+msgid "Surveys"
+msgstr "Undersökningar"
+
+msgid "South America"
+msgstr "Sydamerika"
+
+msgid "Event"
+msgstr "Evenemang"
+
+msgid "About the Site"
+msgstr "Om webbplatsen"
+
+msgid "Question answer type (existing answers will disallow some changes): "
+msgstr "Svarstyp för fråga (befintliga svar kan inte ändras): "
+
+msgid "Ascending"
+msgstr "Ökande"
+
+msgid "Receive e-mail updates to the discussion forums?"
+msgstr "Ta emot uppdateringar av diskussionforumet via e-post?"
+
+msgid "LAMsight is an evolving project and new functionality and improved usability will occur every few weeks. Updates about the site can be received by setting preferences as described on the login page. By registering now, you are agreeing to receive at least one e-mail letting you know when the site is formally launched with the most important set of features as well as a clear privacy policy and terms of use."
+msgstr "LAMsight är ett projekt som utvecklas. Nya funktioner och förbättrad användbarhet kommer att göras med några veckors mellanrum. Du kan få uppdateringar av webbplatsen genom att ställa in inställningar på det sätt som beskrivs på inloggningssidan. Om du registrerar dig nu accepterar du att ta emot minst ett e-postmeddelande som talar om när sidan formellt lanseras med de viktigaste funktionerna samt en tydlig sekretesspolicy och användarvillkor."
+
+msgid "Advice"
+msgstr "Råd"
+
+msgid "Change password"
+msgstr "Ändra lösenord"
+
+msgid "Last Name: "
+msgstr "Efternamn: "
+
+msgid "Getting Started"
+msgstr "Komma igång"
+
+msgid "Widget"
+msgstr "Pryl"
+
+msgid "The survey editor consists of a set of <b>views</b>.  Each view has its own tab at the top of the screen.  Surveys are made up of <b>groups</b>, each group is made up of <b>questions</b>.  There is a view that allows you to see, review and change each of these components of a survey.  Please post your questions in the forums so we can respond to the most important questions."
+msgstr "Undersökningsredigeraren består av en uppsättning av<b>vyer</b>.  Varje vy har en egen flik längst upp på skärmbilden.  Undersökningar består av <b>grupper</b> och varje grupp består av <b>frågor</b>.  Det finns en vy där du kan se, granska och ändra var och en av dessa komponenter i en undersökning.  Posta dina frågor i forum så att vi kan svara på de viktigaste frågorna."
+
+msgid "collect"
+msgstr "samla in"
+
+msgid "patient"
+msgstr "patient"
+
+msgid "I cannot find that e-mail address."
+msgstr "Jag kan inte hitta den e-postadressen."
+
+msgid "LAMTV"
+msgstr "LAMTV"
+
+msgid "Email"
+msgstr "E-post"
+
+msgid "Current Post Number"
+msgstr "Aktuellt postnummer"
+
+msgid "Target"
+msgstr "Mål"
+
+msgid "I am a LAM clinican."
+msgstr "Jag är en LAM-kliniker."
+
+msgid "Controller"
+msgstr "Controller"
+
+msgid "Your browser has disabled Javascript.  Many, but not all, features of this site depend on Javascript.  You can use the 'Collect' and 'Discuss' sections but for now the 'Explore' section may not function for you.  You can find out about how to enable Javascript from "
+msgstr "Din webbläsare har inaktiverat Javascript.  Många, men inte alla, funktioner på denna webbplats är beroende av Javascript.  Du kan använda sektionerna "Samla in" och "Diskutera" men just nu kanske avsnittet "Utforska" inte fungerar för dig.  Du kan ta reda på hur du aktiverar Javascript på "
+
+msgid "Population Creator"
+msgstr "Skapa population"
+
+msgid "Fulltext"
+msgstr "Fulltext"
+

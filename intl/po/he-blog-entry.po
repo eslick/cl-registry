@@ -1,0 +1,130 @@
+﻿msgid ""
+msgstr ""
+"Project-Id-Version: ja-blog-entry.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# BLOG-ENTRY TITLE
+#: 10235 TITLE
+msgid "The last mile"
+msgstr "הקילומטר האחרון"
+
+# BLOG-ENTRY CONTENT
+#: 10235 CONTENT
+msgid "I've been working hard to cross off the last few tasks before releasing the site to our initial group of patient reviewers.  The remaining tasks to get here include:\n\n<ul>\n<li> Add a simple visualization interface to survey content\n<li> Implement a simple home page\n<li> Provide basic access to user preferences\n</ul>\n\nI will update this post with the status as these items get resolved.\n<p>\nIan"
+msgstr "התאמצתי מאד לסיים מספר משימות אחרונות לפני שאשחרר את האתר לביקורתה של קבוצת המטופלות הראשונה שלנו.  המשימות שנותרו כאן כוללות:\n\n<ul>\n<li> להוסיף ממשק חזותי לתוכן הסקר\n<li> לבצע דף בית פשוט\n<li> לספק גישה בסיסית להעדפות משתמש\n</ul>\n\nברגע שנושאים אלה יפתרו אני אעדכן על ידי פרסום הודעה.\n<p>\nאיאן"
+
+# BLOG-ENTRY TITLE
+#: 11502 TITLE
+msgid "Friday the 1st"
+msgstr "יום שישי ה-‏1 בחודש"
+
+# BLOG-ENTRY CONTENT
+#: 11502 CONTENT
+msgid "This week we have been working on various parts of the site in response to some early feedback.<p>\n\nToday we've made available a few of the features we've been working on:\n<ul>\n<li>The 'Explore' section now responds to some very simple queries and shows you a brief sample of the question data</li>\n<li>There is a new preferences section with some simple preferences.  We will turn on the automatic e-mail updates when our first group of users has been satisfied by the site.\n</li>\n<li>\nSome minor navigation and display issues you may have noticed earlier have been fixed</li>\n</ul>\n<p>\n\nOther work this week includes significant efforts to improve navigation and performance, the initial design of the survey creation module, some background work that will lead to better searching and visualization in the Explorer section, and some steps toward an overhaul of the site layout and visual design. <p>\n\nStay tuned for more updates!<p>\n\nRegards,\nIan "
+msgstr "השבוע עבדנו על חלקים שונים באתר בתגובה למשובים המוקדמים שקיבלנו.<p>\n\nהיום שחררנו כמה מהתכונות עליהן עבדנו:\n<ul>\n<li>החלק של ה'חיפוש' מגיב כעת לכמה שאלות פשוטות ומראה לכם דגימה קטנה מנתוני השאלה</li>\n<li>יש אזור העדפות חדש עם העדפות פשוטות.  אנחנו נפעיל את עדכוני הדוא"ל האוטומטיים כשקבוצת המשתמשות הראשונה תביע את שביעות רצונה מהאתר.\n</li>\n<li>\nתוקנו כמה בעיות קלות של תצוגה וניווט שאולי לא הבחנתם בהן קודם לכן</li>\n</ul>\n<p>\n\nעבודות אחרות שנעשו השבוע כוללות מאמצים מיוחדים לשיפור הניווט והביצוע, העיצוב הראשוני של דגם יצירת סקר, מעט עבודת רקע שתוביל לחיפוש והדמיה טובים יותר באזור האקספלורר וכן מספר צעדים לשיפוץ כללי של מערך האתר והעיצוב החזותי. <p>\n\nבקרוב עדכונים נוספים!<p>\n\nבברכה,\nאיאן "
+
+# BLOG-ENTRY TITLE
+#: 12802 TITLE
+msgid "mid-August update"
+msgstr "עדכון אמצע אוגוסט"
+
+# BLOG-ENTRY CONTENT
+#: 12802 CONTENT
+msgid "Now that summer vacations are over, we are back at work and looking forward to showing off LAMsight in the UK in mid-September.<p>\n\nWe have updated the survey navigation and it should be much easier to use now.  \n\nThere may still be some problems when you return to the survey page.  Try reloading the page if you find you can't select a new survey.  We will fix this soon.<p>\n\nOur major projects right now are:\n<ul>\n<li> Updating the explorer\n<li> A survey editor\n<li> And a new look for the site\n</ul>\n\nLook back for more early next week!"
+msgstr "כעת, משהסתיימה חופשת הקיץ, חזרנו לעבודה ואנו מצפים להציג את LAMsight בבריטניה באמצע חודש ספטמבר.<p>\n\nעדכנו את ניווט הסקרים וכעת יהיה קל יותר להשתמש בו.  \n\nייתכן ויהיו עדיין כמה בעיות כשתחזרו לדף הסקר.  נסו לטעון את הדף אם תגלו שאינכם יכולים לבחור סקר חדש.  בקרוב נתקן תקלה זו.<p>\n\nהפרויקטים העיקריים שלנו כעת הם:\n<ul>\n<li> עדכון הסייר\n<li> עורך סקרים\n<li> ומראה חדש לאתר\n</ul>\n\nצפו לשינויים חדשים בתחילת שבוע הבא!"
+
+# BLOG-ENTRY TITLE
+#: 12902 TITLE
+msgid "For the technically minded"
+msgstr "לאלה המבינים בעניינים טכניים"
+
+# BLOG-ENTRY CONTENT
+#: 12902 CONTENT
+msgid "We have a publicly visible issue tracking repository.  Here we keep track of both internal and user-provided comments about problems or potential features.  You are welcome to browse or volunteer to submit and review problem reports.\n<p>\nThe system is called <a href="http://lamsight.media.mit.edu/trac">Trac</a>.\n<p>\nIf you have any questions simply write to lamsight-admin@media.mit.edu.\n\nThank you,\nThe Administrators"
+msgstr "יש לנו עניין פומבי ברור במעקב אחר המאגר.  כאן אנו עוקבים גם אחרי הערות פנימיות וגם אחרי הערות שנשלחו מהמשתמשים לגבי בעיות שמתעוררות או תכונות אפשריות.  אתם מוזמנים לגלוש, או להתנדב לשלוח דיווחים על בעיות או לעבור עליהם.\n<p>\nהמערכת נקראת<a href="http://lamsight.media.mit.edu/trac">טראק (Trac)</a>.\n<p>\nאם יש לכם שאלות תוכלו לכתוב ל- lamsight-admin@media.mit.edu.\n\nתודה,\nהמנהלים"
+
+# BLOG-ENTRY TITLE
+#: 14145 TITLE
+msgid "Surveys are ready"
+msgstr "הסקרים מוכנים"
+
+# BLOG-ENTRY CONTENT
+#: 14145 CONTENT
+msgid "There are still a few small issues and the new design to work out but the questionnaires are now in pretty good shape.  Give them a try and give us your feedback in the forums.\n\nThank you!"
+msgstr "עדיין צריך לפתור מספר נושאים קלים ואת העיצוב החדש אך השאלונים נמצאים במצב טוב למדי.  נסו אותם וחוו את דעתכם בפורום.\n\nתודה!"
+
+# BLOG-ENTRY TITLE
+#: 15920 TITLE
+msgid "A smoother running site"
+msgstr "אתר הפועל בצורה חלקה יותר"
+
+# BLOG-ENTRY CONTENT
+#: 15920 CONTENT
+msgid "Over the weekend we made many small improvements to the Collect and Discuss sections of the site.  Your experience should be much better now.  We will continue to clean up the small problems that have been mentioned in the forums.  Thank you for your comments!\n<p>\nResponses to the comments on the survey content in Collect are forthcoming, probably by Monday the 8th.  Please keep submitting your feedback, it will help us continue to improve and showcase the site.\n<p>\nRegards,\nThe LAMsight Development Team "
+msgstr "בסוף השבוע ערכנו מספר שיפורים קטנים באזורי האיסוף והדיון באתר.  חוויית הגלישה שלכם תהיה כעת טובה בהרבה.  נמשיך לסדר הבעיות הקטנות שעליהן דיווחתם בפורומים.  תודה לכם על כל ההערות!\n<p>\nבקרוב תוכלו לצפות בתגובות להערות על תוכן הסקר במדור האיסוף, ככל הנראה עד יום שני ה-‏8 לחודש.  אנא המשיכו לשלוח משובים, הדבר מסייע לנו להמשיך ולשפר את תצוגת האתר.\n<p>\nבברכה,\nצוות הפיתוח של LAMsight "
+
+# BLOG-ENTRY TITLE
+#: 16802 TITLE
+msgid "Welcome Back"
+msgstr "ברוכים השבים"
+
+# BLOG-ENTRY CONTENT
+#: 16802 CONTENT
+msgid "LAMsight is ready for use!  We are rapidly improving the features of the site and will report any new developments here. <p>\n\nWe very much look forward to hearing your thoughts and opinions about the new site in the <a href="/dashboard/discuss/">Discussion area</a>. <p>\n\nThe LAMsight Administrators"
+msgstr "LAMsight  מוכן לשימוש!  אנו משפרים במהירות את התכונות של האתר ונדווח כאן על כל התפתחות חדשה. <p>\n\nאנו מצפים לשמוע מה אתם חושבים ומה דעתכם על האתר החדש ב- <a href="/dashboard/discuss/">אזור הדיונים</a>. <p>\n\nמנהלי LAMsight"
+
+# BLOG-ENTRY TITLE
+#: 18506 TITLE
+msgid "LAMsight updates 9/11/08"
+msgstr "LAMsight עדכונים מתאריך 9/11/08"
+
+# BLOG-ENTRY CONTENT
+#: 18506 CONTENT
+msgid "We made another significant upgrade to the site today.  There are a few issues to resolve as part of this transition.  You can read more at:<br>\n<a href="https://www.lamsight.org/dashboard/discuss/topic/15">my forum post on this topic.</a>\n\nThank you,\nIan"
+msgstr "היום ערכנו עוד שדרוג משמעותי לאתר.  נותרו מספר נושאים לפתור כחלק מהשינוי הזה.  לקריאה נוספת:<br>\n<a href="https://www.lamsight.org/dashboard/discuss/topic/15">הודעת הפורום שלי בעניין זה.</a>\n\nתודה,\nאיאן"
+
+# BLOG-ENTRY TITLE
+#: 22100 TITLE
+msgid "November update"
+msgstr "עדכון נובמבר"
+
+# BLOG-ENTRY CONTENT
+#: 22100 CONTENT
+msgid "We made additional improvements to the site last week.  The primary improvements were to the editor application for those given permissions to edit surveys."
+msgstr "בשבוע שעבר הוספנו מספר שיפורים לאתר.  השיפורים הראשונים בוצעו לבקשת העורך לכל אלה שניתנה להם ההרשאה לערוך סקרים."
+
+# BLOG-ENTRY TITLE
+#: 23543 TITLE
+msgid "Getting closer"
+msgstr "מתקרב"
+
+# BLOG-ENTRY CONTENT
+#: 23543 CONTENT
+msgid "We were slowed down in our plans a bit by the holiday season.  However, we have added four new part time professionals to our team to support and grow LAMsight after launch.\n\nStay tuned!  "
+msgstr "עונת החגים האטה קלות את תכניותינו.  אך הוספנו לצוות שלנו ארבעה אנשי מקצוע במשרה חלקית כדי לשמש כתמיכה וכדי להגדיל את LAMsight לאחר ההשקה .\n\nהישארו אתנו!   "
+
+# BLOG-ENTRY TITLE
+#: 25613 TITLE
+msgid "Surveys and content"
+msgstr "סקרים ותוכן"
+
+# BLOG-ENTRY CONTENT
+#: 25613 CONTENT
+msgid "We are currently working hard on improving the content.  This includes the introductory content and the key surveys.  <br><br>\nThis has taken longer than expected and we don't want to announce the site until we get it right.  At this point the functionality should be in good shape, so please report problems to lamsight-admin@media.mit.edu if you find any.\n\nThank you,\nThe Administrators"
+msgstr "בימים אלה אנו עובדים קשה על שיפור התוכן.  מאמץ זה כולל תוכן מקדים וסקרים עיקריים.  <br><br>\nהעניין נמשך זמן רב מהצפוי ואנו לא רוצים לפתוח את האתר לפני שהוא יהיה במיטבו.  בשלב זה התפקודיות אמורה  להיות תקינה, אנא דווחו ל-lamsight-admin@media.mit.edu על כל תקלה שתגלו.\n\nתודה,\nהמנהלים"
+
+# BLOG-ENTRY TITLE
+#: 26938 TITLE
+msgid "LAMsight Launch"
+msgstr "השקת LAMsight"
+
+# BLOG-ENTRY CONTENT
+#: 26938 CONTENT
+msgid "We are launching LAMsight today.  We thank you for your patience and hope that you find the new site to be stable and useful.  Please direct basic questions about using the site to the forums and technical problems with the site to lamsight-admin@media.mit.edu.  <br><br>\n\nWe have a number of people who will be available to help you, but as this site is run mostly by volunteers, it may take a little time for us to respond.  We appreciate your patience and look forward to your feedback and input.<br><br>\n\nTranslation of the major site content will commence as soon as we are confident in the quality of the content.  Your feedback is important to this!<br><br>\n\nThe LAMsight Administrators"
+msgstr "היום אנחנו משיקים את LAMsight.  אנו מודים לכם על סבלנותכם ומקווים שהאתר החדש יהיה יציב ומועיל בעיניכם.  אנא הפנו שאלות ישירות בסיסיות לגבי שימוש באתר לפורומים ובעיות טכניות עם האתר לדוא"ל lamsight-admin@media.mit.edu.  <br><br>\n\nברשותנו מספר אנשים שישמחו לעזור לכם, אך מכיוון שהאתר מנוהל בעיקר על ידי מתנדבים ייתכן שיעבור זמן מה עד שתקבלו מאיתנו תשובה.  אנו מעריכים את סבלנותכם ומצפים למשוב ולתגובה שלכם.<br><br>\n\nתרגומו של התוכן העיקרי באתר יחל ברגע שנהיה בטוחים באיכות התוכן.  המשוב שלכם חיוני למאמץ זה!<br><br>\n\nמנהלי LAMsight"

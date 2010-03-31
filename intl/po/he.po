@@ -1,0 +1,675 @@
+﻿msgid "World"
+msgstr "עולם"
+
+msgid "Help"
+msgstr "עזרה"
+
+msgid "The ultimate aim of LAMsight is to support more efficient and effective design and implementation of clinical trials for LAM patients. Another goal is to lower the cost and time associated with research efforts to learn about larger samples of LAM patients. LAMsight will open up the world of LAM research to a broader research and clinical community. It can also help patients share new aspects of the disease that may be relevant to treatment. This effort was led by the <a href=\"http://admissions.media.mit.edu/research/group/new-media-medicine\">New Media Medicine</a> group of the <a href=\"http://www.media.mit.edu/\">MIT Media Laboratory</a> in cooperation with the <a href=\"http://www.curelam.org/\">LAM Treatment Alliance</a> and the <a href=\"http://www.dana-farber.com/\">Dana Farber Cancer Institute</a>."
+msgstr "המטרה העיקרית של LAMsight היא לתמוך בעיצוב אפקטיבי ויעיל יותר ובביצוע ניסויים קליניים עבור מטופלות עם LAM. מטרה נוספת היא לצמצם את העלויות ואת הזמן הדרושים למאמצים המושקעים במחקר בלימוד על מדגמים גדולים יותר של מטופלות עם LAM. LAMsight יפתח את עולם המחקר של LAM לקהילה רחבה יותר של חוקרים ומטפלים. הוא גם יכול לסייע למטופלות עצמן לחלוק היבטים חדשים של המחלה העשויים להיות רלבנטיים לטיפול. את המאמץ הובילה <a href=\"http://admissions.media.mit.edu/research/group/new-media-medicine\">New Media Medicine</a> (רפואה תקשורתית חדשה) קבוצה של <a href=\"http://www.media.mit.edu/\">MIT Media Laboratory</a> הפועלת בשיתוף עם ברית הטיפול ב-LAM <a href=\"http://www.curelam.org/\">LAM Treatment Alliance</a>ועם המכון לחקר הסרטן ע"ש דנה פרבר <a href=\"http://www.dana-farber.com/\">Dana Farber Cancer Institute</a>."
+
+msgid "Receive site update and reminder emails?"
+msgstr "לקבל עדכונים ותזכורות בדוא"ל?"
+
+msgid "Owner"
+msgstr "בעלים"
+
+msgid "To follow up and verify any data I have entered"
+msgstr "לעקוב ולאמת כל נתון שהכנסתי"
+
+msgid "Acl"
+msgstr "רצועה צולבת קדמית"
+
+msgid "(You are not on this map, "
+msgstr "(את לא על המפה הזאת, "
+
+msgid "First Name: "
+msgstr "שם פרטי: "
+
+msgid "home"
+msgstr "בית"
+
+msgid "I work in another area of research."
+msgstr "אני עובדת בתחום מחקר אחר."
+
+msgid "No relevant posts since your last update"
+msgstr "אין הודעות נוספות מאז העדכון האחרון שלך"
+
+msgid "Date Created"
+msgstr "תאריך שבו נוצר"
+
+msgid "Days Ago"
+msgstr "לפני (X) ימים"
+
+msgid "Date Joined"
+msgstr "תאריך הצטרפות"
+
+msgid "on page"
+msgstr "בעמוד"
+
+msgid "Diary Question"
+msgstr "שאלת יומן"
+
+msgid "Number"
+msgstr "מספר"
+
+msgid "Explore this map"
+msgstr "חקרי את המפה"
+
+msgid "Groups"
+msgstr "קבוצות"
+
+msgid "Subject"
+msgstr "נושא"
+
+msgid "Where are our users?"
+msgstr "היכן המשתמשים שלנו?"
+
+msgid "explore"
+msgstr "לחקור"
+
+msgid ""Your e-mail will be maintained by the system and will never be disclosed to anyone without your express consent.  We take privacy very seriously."
+msgstr ""המערכת תשמור את כתובת הדוא"ל שלך ולעולם לא תמסור אותו למישהו אחר ללא קבלת רשות מפורשת ממך.  אנו מתייחסים לפרטיות במלוא הרצינות.."
+
+msgid "Language"
+msgstr "שפה"
+
+msgid "Ranking Record"
+msgstr "רישום דירוג"
+
+msgid "Users in the USA"
+msgstr "משתמשים בארה"ב"
+
+msgid "Address 2: "
+msgstr "כתובת 2: "
+
+msgid "Grant Edit Permission"
+msgstr "הענקת רשות עריכה"
+
+msgid "Welcome to LAMsight"
+msgstr "ברוכים הבאים ל-LAMsight"
+
+msgid "Original"
+msgstr "מקורי"
+
+msgid "Are you new to LAMsight? If so, please click the register link above to create a new user account. All that is needed is a valid e-mail address."
+msgstr "אתם חדשים ב-LAMsight? אם כן, לחצו בבקשה על הקישור לרישום הנמצא לעיל כדי ליצור חשבון משתמש חדש. כל שנחוץ הוא כתובת דוא"ל בתוקף."
+
+msgid "Permissions"
+msgstr "הרשאות"
+
+msgid "I am a LAM patient."
+msgstr "אני מטופלת הסובלת ממחלת LAM."
+
+msgid "G0"
+msgstr "קדימה"
+
+msgid "I am a family member of a patient."
+msgstr "אני בן/ת משפחה של מטופלת."
+
+msgid "Submit"
+msgstr "שלח"
+
+msgid "Status"
+msgstr "מעמד"
+
+msgid "Survey List"
+msgstr "רשימת מחקר"
+
+msgid "User"
+msgstr "משתמש"
+
+msgid "Title"
+msgstr "תואר"
+
+msgid "Required"
+msgstr "דרוש"
+
+msgid "Enter some search terms"
+msgstr "הכנס מונחי חיפוש"
+
+msgid "Date Updated"
+msgstr "עדכון תאריך"
+
+msgid "Users around the World"
+msgstr "משתמשים בעולם"
+
+msgid "Enter some search terms:&nbsp;"
+msgstr "הכנס מונחי חיפוש:&nbsp;"
+
+msgid "Prompt"
+msgstr "בקשה"
+
+msgid "Question preview: "
+msgstr "תצוגה מקדימה לשאלה: "
+
+msgid "Explorer Version: "
+msgstr "גרסת אקספלורר: "
+
+msgid "Next >"
+msgstr "הבא >"
+
+msgid "I am a TSC patient without LAM."
+msgstr "יש לי טרשת קרשית בלי LAM."
+
+msgid "Europe"
+msgstr "אירופה"
+
+msgid "Address"
+msgstr "כתובת"
+
+msgid "Archived Questions"
+msgstr "שאלות ארכיון"
+
+msgid "admin"
+msgstr "מנהל"
+
+msgid "New Features:~%"
+msgstr "מאפיינים חדשים:~%"
+
+msgid "Question answer type: "
+msgstr "סוג תשובה לשאלה: "
+
+msgid "Your session has timed out, if you were using the site please log back in to continue working"
+msgstr "זמנך תם, אם השתמשת באתר אנא התחברי שנית על מנת להמשיך לעבוד"
+
+msgid "Welcome"
+msgstr "ברוך הבא"
+
+msgid "LAMsight password reset"
+msgstr "איפוס סיסמת LAMsight"
+
+msgid "How frequently do you want updates and reminders?"
+msgstr "באיזו תדירות תרצי לקבל עדכונים ותזכורות ?"
+
+msgid "Down Ratings"
+msgstr "מדרוג יורד"
+
+msgid "User Options"
+msgstr "אפשרויות משתמש"
+
+msgid "Post Permissions"
+msgstr "לאחר הרשאות"
+
+msgid "Editedp"
+msgstr "עריכת תמונה"
+
+msgid "Question (~d)"
+msgstr "שאלה (~d)"
+
+msgid "Preferences Btree"
+msgstr "העדפות עץ נתונים בינארי"
+
+msgid "Log In"
+msgstr "התחבר"
+
+msgid "You are not on this map, please read below!"
+msgstr "את לא על המפה, נא לקרוא להלן!"
+
+msgid "Confirm Password"
+msgstr "אישור סיסמה"
+
+msgid "Get help here"
+msgstr "עזרה"
+
+msgid "Compare Population"
+msgstr "השווה אוכלוסייה"
+
+msgid "Ratings"
+msgstr "מידרוגים"
+
+msgid "under question"
+msgstr "בחקירה"
+
+msgid "Trustedp"
+msgstr "Trustedp"
+
+msgid "Done"
+msgstr "סיום"
+
+msgid "Country: "
+msgstr "ארץ: "
+
+msgid "I am none of the above."
+msgstr "אף לא אחד מהנ"ל."
+
+msgid "Home Phone #: "
+msgstr "טלפון בבית: "
+
+msgid "Please choose from the following"
+msgstr "נא לבחור"
+
+msgid "Their LAMsight username:"
+msgstr "שם המשתמש שלהם ב-LAMsight:"
+
+msgid "Next survey to work on:~%"
+msgstr "המחקר הבא  עליו יש לעבוד:~%"
+
+msgid "Category"
+msgstr "קטגוריה"
+
+msgid "Root"
+msgstr "שורש"
+
+msgid "(drag questions here to create a population)"
+msgstr "(יש לגרור את השאלות לכאן כדי ליצור אוכלוסייה)"
+
+msgid "Author"
+msgstr "מחבר"
+
+msgid "Date"
+msgstr "תאריך"
+
+msgid "Show Surveys"
+msgstr "הראה מחקרים"
+
+msgid "User Preferences"
+msgstr "העדפות משתמש"
+
+msgid "Submit Request"
+msgstr "שלח בקשה"
+
+msgid "On page:"
+msgstr "בעמוד:"
+
+msgid "Last Name"
+msgstr "שם משפחה"
+
+msgid "Oid"
+msgstr "Oid"
+
+msgid "For a potential study"
+msgstr "למחקר אפשרי"
+
+msgid "Rating"
+msgstr "מידרוג"
+
+msgid "USA"
+msgstr "ארה"ב"
+
+msgid "To confirm my identity"
+msgstr "לאשר את זהותי"
+
+msgid "[Create New Survey]"
+msgstr "[צור סקר חדש]"
+
+msgid "Users in Europe"
+msgstr "משתמשים באירופה"
+
+msgid "Question Context"
+msgstr "הקשר השאלה"
+
+msgid "Do Survey"
+msgstr "ערוך סקר"
+
+msgid "Page"
+msgstr "עמוד"
+
+msgid "Recent Forum Activity:~%~%~a"
+msgstr "פעילות פורום שנעשתה לאחרונה:~%~%~a"
+
+msgid "Users South American"
+msgstr "משתמשים דרום אמריקנים"
+
+msgid "Diary Description"
+msgstr "תיאור יומן"
+
+msgid "Avg Rating"
+msgstr "מדרוג ממוצע"
+
+msgid "Enable the interactive agent Laura"
+msgstr "אישור ללורה, הסוכנת האינטראקטיבית"
+
+msgid "Contact"
+msgstr "איש קשר"
+
+msgid "Enlarge: &nbsp;"
+msgstr "הגדל: &nbsp;"
+
+msgid "Diary P"
+msgstr "יומן P"
+
+msgid "Exploring: "
+msgstr "חוקר: "
+
+msgid "All Users"
+msgstr "כל המשתמשים"
+
+msgid "Forgot your username or password?"
+msgstr "שכחת את שם המשתמש או הסיסמה שלך?"
+
+msgid "New Password"
+msgstr "סיסמה חדשה"
+
+msgid "The Scratchpad is a place to store groups and questions if you want to move them from one editor to another.  A question can only have one parent, so when you drag it back to a different group, it will disappear from the first."
+msgstr "פנקס הרשימות נועד לאכסן קבוצות ושאלות שאת רוצה להעביר מעורך אחד למשנהו.  לשאלה יש רק הורה אחד לכן כשאת גוררת אותה חזרה לקבוצה שונה היא תיעלם מהקבוצה הראשונה."
+
+msgid "I work directly on LAM research."
+msgstr "אני עובדת ישירות על מחקר LAM."
+
+msgid "LAMsight is a centralized database that will enable new forms of information-gathering and collaboration by patients, family members, clinicians, and researchers. Its goal is to overcome the barriers that researchers face in accessing up-to-date data about the global LAM population. LAMsight enables idea-generation by researchers through information exchange between patients and researchers in “real time”."
+msgstr "LAMsight – הוא מאגר נתונים מרוכז המאפשר צורות חדשות של איסוף מידע ושיתוף פעולה בין מטופלים, בני משפחה, מטפלים וחוקרים. המטרה של LAMsight היא להתגבר על מכשולים הניצבים לפני החוקרים בבואם לחפש נתונים עדכניים הקשורים לאוכלוסייה עם LAM בכל העולם. LAMsight מאפשר לחוקרים להעלות רעיונות בעזרת המידע שעובר בין המטופלות לחוקרים "בזמן אמת"."
+
+msgid "patients"
+msgstr "מטופלות"
+
+msgid "Street"
+msgstr "רחוב"
+
+msgid "After registration, click the 'Login' link at the very top of this page. Upon successful entry more information will be provided."
+msgstr "אחרי הרישום לחצו על קישור ההתחברות שנמצא בחלק העליון של דף זה. לאחר שתתחברו בהצלחה תוכלו לקבל מידע נוסף."
+
+msgid "Collect Data"
+msgstr "איסוף נתונים"
+
+msgid "Basic Screen"
+msgstr "מסך בסיסי"
+
+msgid "Tags"
+msgstr "תגיות"
+
+msgid "By any of these methods"
+msgstr "בכל אחת מהשיטות הללו"
+
+msgid "Ask a Question"
+msgstr "שאלי שאלה"
+
+msgid "Register Now >>"
+msgstr "הירשמי כעת  >>"
+
+msgid "A username is a short name that will be used by the system to identify you to other users.  If you are concerned about privacy, pick a username that you can remember, but doesn't include anything about you like your name."
+msgstr "שם משתמש הוא שם קצר שהמערכת תשתמש בו כדי לזהות אותך בפני משתמשים אחרים.  אם את מוטרדת בגלל הפרטיות בחרי שם שתוכלי לזכור אבל שלא יכלול פרטים שיזהו אותך בשמך."
+
+msgid "Please choose from one of the following surveys or create your own!"
+msgstr "נא לבחור סקר מתוך הסקרים הבאים או ליצור אחד בעצמך!"
+
+msgid "Name"
+msgstr "שם"
+
+msgid "Translation Alist"
+msgstr "תרגום Alist"
+
+msgid "Login"
+msgstr "התחבר"
+
+msgid "How frequently do you want forum updates?"
+msgstr "באיזו תדירות את מעוניינת לקבל עדכונים מהפורום?"
+
+msgid "Description"
+msgstr "תיאור"
+
+msgid "Question Help"
+msgstr "עזרה בשאלה"
+
+msgid "Registration Instructions"
+msgstr "הוראות הרשמה"
+
+msgid "New User?"
+msgstr "משתמש חדש?"
+
+msgid "Address: "
+msgstr "כתובת: "
+
+msgid "Work Phone #: "
+msgstr "טלפון בעבודה #: "
+
+msgid "Under question:"
+msgstr "נמצא בבדיקה:"
+
+msgid "State"
+msgstr "מדינה"
+
+msgid "Cancel"
+msgstr "ביטול"
+
+msgid "The survey editor will require some time to become familiar with.  It allows you to create, organize, and edit all elements of a survey.  We will be expanding this help section after some feedback from users and some more improvements in the features and the look."
+msgstr "עורך הסקר יצטרך זמן מה להתוודע לנושא.  הדבר מאפשר לך ליצור, לארגן ולערוך את כל פרטי הסקר.  אנחנו נרחיב את פרק העזרה לאחר שנקבל משוב מהמשתמשים וכניס שיפורים נוספים במאפיינים ובמראה."
+
+msgid "Priority"
+msgstr "קדימות"
+
+msgid "Search Results"
+msgstr "תוצאות חיפוש"
+
+msgid "Content"
+msgstr "תוכן"
+
+msgid "Sound Screen"
+msgstr "מסך קול"
+
+msgid "State/Province: "
+msgstr "מדינה: "
+
+msgid "Related Content"
+msgstr "תוכן קשור"
+
+msgid "Postal code: "
+msgstr "מיקוד: "
+
+msgid "View Diaries"
+msgstr "צפי ביומנים"
+
+msgid "Create a population"
+msgstr "צרי אוכלוסייה"
+
+msgid "[LAMsight Help Request]"
+msgstr "[בקשת עזרה מ-LAMsight]"
+
+msgid "Privacy Policy"
+msgstr "מדיניות פרטיות"
+
+msgid "create"
+msgstr "צרי"
+
+msgid "Preferred Language: "
+msgstr "שפה מועדפת: "
+
+msgid "City"
+msgstr "עיר"
+
+msgid "Group advice"
+msgstr "עצה קבוצתית"
+
+msgid "Show Forums"
+msgstr "הראה פורומים"
+
+msgid "Page (~d)"
+msgstr "עמוד (~d)"
+
+msgid "Creating Surveys"
+msgstr "צרי סקרים"
+
+msgid "Hello. The password for the username: ~a has been reset to ~a After you log in, you can change the password to something you can remember."
+msgstr "שלום. הסיסמה למשתמש: ~a הוחלפה ל:~a. לאחר ההתחברות ניתן להחליף את הסיסמה לססמה שקל לזכור."
+
+msgid "A password should be at least 6 characters and include a number or other non-alphabetical character."
+msgstr "סיסמה צריכה לכלול 6 תווים ובתוכם מספר אחד או תו אחד שאינו אות."
+
+msgid "Body"
+msgstr "גוף"
+
+msgid "Published"
+msgstr "התפרסם"
+
+msgid "In survey:"
+msgstr "בסקר:"
+
+msgid "logout"
+msgstr "התנתק"
+
+msgid " of patients responded"
+msgstr " מהמטופלות שהגיבו"
+
+msgid "First Name"
+msgstr "שם פרטי"
+
+msgid "Up Ratings"
+msgstr "מדרוגים עולים"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "[Close this View]"
+msgstr "[סגרי חלון]"
+
+msgid "Old Password"
+msgstr "סיסמה ישנה"
+
+msgid "Password"
+msgstr "סיסמה"
+
+msgid "Magic Key"
+msgstr "מפתח קסם"
+
+msgid "Locale"
+msgstr "מקום"
+
+msgid "Post Datetime"
+msgstr "לאחר מועד"
+
+msgid "Topic"
+msgstr "נושא"
+
+msgid "Number Of Ratings"
+msgstr "מספר מדרוגים"
+
+msgid "Order"
+msgstr "סדר"
+
+msgid "Editor Help"
+msgstr "עזרת העורך"
+
+msgid "Register"
+msgstr "רישום"
+
+msgid "Allow my city, state and country information to be used on the patient map."
+msgstr "אפשרו לצפות במידע על העיר, המדינה והארץ שלי כדי שניתן יהיה להשתמש בו במפה של המטופלת."
+
+msgid "View Surveys"
+msgstr "צפי בסקרים"
+
+msgid "Group name"
+msgstr "שם הקבוצה"
+
+msgid "I am involved in disease research."
+msgstr "אני קשורה למחקר של מחלה."
+
+msgid "Terms of Use"
+msgstr "תנאי שימוש"
+
+msgid "I'm having a problem with LAMsight and have provided details on my problem below."
+msgstr "יש לי בעיה עם LAMsight וציינתי בהמשך את פרטי הבעיה."
+
+msgid "Content Type"
+msgstr "סוג התוכן"
+
+msgid "Username"
+msgstr "שם משתמש"
+
+msgid "Population Filter"
+msgstr "מסנן אוכלוסייה"
+
+msgid "Site Announcements:~%"
+msgstr "הודעות אתר:~%"
+
+msgid "Short"
+msgstr "קצר"
+
+msgid "Most Popular Discussions"
+msgstr "הדיונים הנפוצים ביותר"
+
+msgid "Go"
+msgstr "קדימה"
+
+msgid "discuss"
+msgstr "דיון"
+
+msgid "Edit sub-groups: "
+msgstr "עריכת תת-קבוצות: "
+
+msgid "City: "
+msgstr "עיר: "
+
+msgid "If you joined LAMsight last spring, your user account and any information you entered has been preserved. No re-registration or new registration is needed.  Please contact our support team if you need assistance with lost user accounts or passwords."
+msgstr "אם הצטרפת ל-LAMsight באביב שעבר פרטי חשבון המשתמש שלך וכל מידע אחר שהכנסת נשמרו. אין צורך ברישום חוזר או ברישום חדש.  נא ליצור קשר עם צוות התמיכה שלנו אם דרושה לך עזרה באיתור חשבון המשתמש או הסיסמה."
+
+msgid "Related questions"
+msgstr "שאלות קשורות לעניין"
+
+msgid "Surveys"
+msgstr "סקרים"
+
+msgid "South America"
+msgstr "דרום אמריקה"
+
+msgid "Event"
+msgstr "אירוע"
+
+msgid "About the Site"
+msgstr "על האתר"
+
+msgid "Question answer type (existing answers will disallow some changes): "
+msgstr "סוג תשובה לשאלה (תשובות שקיימות כבר לא יאפשרו שינויים מסוימים): "
+
+msgid "Ascending"
+msgstr "עולה"
+
+msgid "Receive e-mail updates to the discussion forums?"
+msgstr "לקבל עדכוני דוא"ל מהפורומים בהם מתקיימים דיונים?"
+
+msgid "LAMsight is an evolving project and new functionality and improved usability will occur every few weeks. Updates about the site can be received by setting preferences as described on the login page. By registering now, you are agreeing to receive at least one e-mail letting you know when the site is formally launched with the most important set of features as well as a clear privacy policy and terms of use."
+msgstr "LAMsight הוא פרויקט מתפתח ומדי מספר שבועות יופיעו תפקודים חדשים ושימושים משופרים. עדכונים לגבי האתר ניתן לקבל על-ידי התאמה של העדפות כמוסבר בדף ההתחברות. בהרשמתך כעת הנך מסכימה לקבל לפחות דוא"ל אחד המודיע לך כשהאתר משיק באופן רשמי את מערך המאפיינים החשוב ביותר, וגם מדיניות פרטיות ברורה ותנאי שימוש.""
+
+msgid "Advice"
+msgstr "עצה"
+
+msgid "Change password"
+msgstr "החליפי סיסמה"
+
+msgid "Last Name: "
+msgstr "שם משפחה: "
+
+msgid "Getting Started"
+msgstr "כיצד להתחיל"
+
+msgid "Widget"
+msgstr "לחצן"
+
+msgid "The survey editor consists of a set of <b>views</b>.  Each view has its own tab at the top of the screen.  Surveys are made up of <b>groups</b>, each group is made up of <b>questions</b>.  There is a view that allows you to see, review and change each of these components of a survey.  Please post your questions in the forums so we can respond to the most important questions."
+msgstr "עורך הסקר מכיל מערכת <b>תצוגות</b>.    לכל תצוגה יש תווית משלה בקצה המסך.  הסקרים מסודרים ב<b>קבוצות</b>, וכל קבוצה בנויה מ<b>שאלות</b> בודדות.  קיימת תצוגה המאפשרת לך לראות, לסקור ולשנות כל אחד מהרכיבים הללו בסקר.  נא לרשום את השאלות בפורומים כדי שנוכל להגיב על השאלות החשובות ביותר."
+
+msgid "collect"
+msgstr "לאסוף"
+
+msgid "patient"
+msgstr "מטופלת"
+
+msgid "I cannot find that e-mail address."
+msgstr "אני לא יכולה למצוא את כתובת הדוא"ל הזו."
+
+msgid "LAMTV"
+msgstr "LAMTV"
+
+msgid "Email"
+msgstr "דוא"ל"
+
+msgid "Current Post Number"
+msgstr "מספר הודעה נוכחי"
+
+msgid "Target"
+msgstr "יעד"
+
+msgid "I am a LAM clinican."
+msgstr "אני מומחה קליני במחלת LAM."
+
+msgid "Controller"
+msgstr "מבקר"
+
+msgid "Your browser has disabled Javascript.  Many, but not all, features of this site depend on Javascript.  You can use the 'Collect' and 'Discuss' sections but for now the 'Explore' section may not function for you.  You can find out about how to enable Javascript from "
+msgstr "הדפדפן שלך הפסיק את פעולת Javascript. ייתכן כי רבים מהסממנים באתר, אם כי לא כולם, תלויים בתוכנה זו.  תוכלי להשתמש בחלק של "לאסוף" או "לדון" אבל בינתיים יכול להיות שהחלק "לחקור" לא יהיה פעיל   עבורך.  את יכולה למצוא כיצד ניתן לאפשר שימוש ב-Javascript ב... "
+
+msgid "Population Creator"
+msgstr "יוצר אוכלוסייה"
+
+msgid "Fulltext"
+msgstr "טקסט מלא"
+

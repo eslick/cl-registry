@@ -1,0 +1,675 @@
+msgid "World"
+msgstr "世界"
+
+msgid "Help"
+msgstr "ヘルプ"
+
+msgid "The ultimate aim of LAMsight is to support more efficient and effective design and implementation of clinical trials for LAM patients. Another goal is to lower the cost and time associated with research efforts to learn about larger samples of LAM patients. LAMsight will open up the world of LAM research to a broader research and clinical community. It can also help patients share new aspects of the disease that may be relevant to treatment. This effort was led by the <a href=\"http://admissions.media.mit.edu/research/group/new-media-medicine\">New Media Medicine</a> group of the <a href=\"http://www.media.mit.edu/\">MIT Media Laboratory</a> in cooperation with the <a href=\"http://www.curelam.org/\">LAM Treatment Alliance</a> and the <a href=\"http://www.dana-farber.com/\">Dana Farber Cancer Institute</a>."
+msgstr "LAMsight の最終的な目標は、LAM の患者さまを対象とした臨床試験の設計や実施を、より効率的および効果的に行えるよう支援することです。もう 1 つの目標としては、より大規模な LAM の患者集団についての研究に要する費用と時間を削減することが挙げられます。LAMsight の設立によって、LAM に関する研究が、より一般的な研究として広まり、臨床コミュニティが形成されることでしょう。また、LAM の治療につがなるような新しい知見を患者さまが共有できるようお手伝いしています。この取り組みは、<a href=\"http://www.media.mit.edu/\">MIT メディアラボラトリー</a> の一員である <a href=\"http://admissions.media.mit.edu/research/group/new-media-medicine\">ニューメディアメディスン</a>が、<a href=\"http://www.curelam.org/\">LAM トリートメントアライアンス</a>および<a href=\"http://www.dana-farber.com/\">ダナ・ファーバー癌研究所</a>と共同で実施しました。"
+
+msgid "Receive site update and reminder emails?"
+msgstr "当サイトの更新情報やお知らせを電子メールで受信することを希望されますか？"
+
+msgid "Owner"
+msgstr "所有者"
+
+msgid "To follow up and verify any data I have entered"
+msgstr "入力したデータを追跡および確認するには"
+
+msgid "Acl"
+msgstr "Acl"
+
+msgid "(You are not on this map, "
+msgstr "（あなたはこのマップに属していません。 "
+
+msgid "First Name: "
+msgstr "名： "
+
+msgid "home"
+msgstr "自宅"
+
+msgid "I work in another area of research."
+msgstr "別の研究分野で働いています。"
+
+msgid "No relevant posts since your last update"
+msgstr "最後の更新以降、関連性のある投稿はありません。"
+
+msgid "Date Created"
+msgstr "データが作成されました"
+
+msgid "Days Ago"
+msgstr "日前"
+
+msgid "Date Joined"
+msgstr "加入日"
+
+msgid "on page"
+msgstr "ページ："
+
+msgid "Diary Question"
+msgstr "ダイアリーの質問"
+
+msgid "Number"
+msgstr "番号"
+
+msgid "Explore this map"
+msgstr "このマップを探索"
+
+msgid "Groups"
+msgstr "グループ"
+
+msgid "Subject"
+msgstr "件名"
+
+msgid "Where are our users?"
+msgstr "ユーザーはどこですか？"
+
+msgid "explore"
+msgstr "探索"
+
+msgid ""Your e-mail will be maintained by the system and will never be disclosed to anyone without your express consent.  We take privacy very seriously."
+msgstr "「あなたの電子メールはシステムによって管理されます。この情報は、あなたの明確な同意なしに他者に公開されることは一切ありません。当サイトではプライバシーの保護を重視しています。"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "Ranking Record"
+msgstr "評価の記録"
+
+msgid "Users in the USA"
+msgstr "アメリカのユーザー"
+
+msgid "Address 2: "
+msgstr "住所（2 行目）： "
+
+msgid "Grant Edit Permission"
+msgstr "編集を許可"
+
+msgid "Welcome to LAMsight"
+msgstr "LAMsight へようこそ"
+
+msgid "Original"
+msgstr "オリジナル"
+
+msgid "Are you new to LAMsight? If so, please click the register link above to create a new user account. All that is needed is a valid e-mail address."
+msgstr "LAMsight を初めてご利用ですか？初めての方は、上記の「登録」のリンクをクリックして、新しいユーザーアカウントを作成してください。必要なのは有効な電子メールアドレスだけです。"
+
+msgid "Permissions"
+msgstr "許可"
+
+msgid "I am a LAM patient."
+msgstr "私は LAM 患者です。"
+
+msgid "G0"
+msgstr "進む"
+
+msgid "I am a family member of a patient."
+msgstr "私は患者の家族です。"
+
+msgid "Submit"
+msgstr "送信"
+
+msgid "Status"
+msgstr "状態"
+
+msgid "Survey List"
+msgstr "調査リスト"
+
+msgid "User"
+msgstr "ユーザー"
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "Required"
+msgstr "必須"
+
+msgid "Enter some search terms"
+msgstr "検索用語を入力してください。"
+
+msgid "Date Updated"
+msgstr "日付が更新されました"
+
+msgid "Users around the World"
+msgstr "世界中のユーザー"
+
+msgid "Enter some search terms:&nbsp;"
+msgstr "検索用語を入力してください：&nbsp;"
+
+msgid "Prompt"
+msgstr "プロンプト"
+
+msgid "Question preview: "
+msgstr "質問のプレビュー： "
+
+msgid "Explorer Version: "
+msgstr "エクスプローラーのバージョン： "
+
+msgid "Next >"
+msgstr "次へ >"
+
+msgid "I am a TSC patient without LAM."
+msgstr "私は TSC 患者ですが、LAM は患っていません。"
+
+msgid "Europe"
+msgstr "ヨーロッパ"
+
+msgid "Address"
+msgstr "住所"
+
+msgid "Archived Questions"
+msgstr "アーカイブ化された質問"
+
+msgid "admin"
+msgstr "管理者"
+
+msgid "New Features:~%"
+msgstr "新機能：~%"
+
+msgid "Question answer type: "
+msgstr "質問・回答のタイプ： "
+
+msgid "Your session has timed out, if you were using the site please log back in to continue working"
+msgstr "セッションがタイムアウトしました。本サイトを使用していた場合は、再度ログインして作業を続行してください"
+
+msgid "Welcome"
+msgstr "ようこそ"
+
+msgid "LAMsight password reset"
+msgstr "LAMsight のパスワードがリセットされました"
+
+msgid "How frequently do you want updates and reminders?"
+msgstr "どれくらいの頻度で更新情報やお知らせを受信したいですか？"
+
+msgid "Down Ratings"
+msgstr "評価を下げる"
+
+msgid "User Options"
+msgstr "ユーザーオプション"
+
+msgid "Post Permissions"
+msgstr "投稿許可"
+
+msgid "Editedp"
+msgstr "編集済み"
+
+msgid "Question (~d)"
+msgstr "質問（~d）"
+
+msgid "Preferences Btree"
+msgstr "環境設定ツリー"
+
+msgid "Log In"
+msgstr "ログイン"
+
+msgid "You are not on this map, please read below!"
+msgstr "あなたはこのマップに属していません。以下の情報をお読みください！"
+
+msgid "Confirm Password"
+msgstr "パスワードの確認"
+
+msgid "Get help here"
+msgstr "ヘルプを取得"
+
+msgid "Compare Population"
+msgstr "患者集団を比較"
+
+msgid "Ratings"
+msgstr "評価"
+
+msgid "under question"
+msgstr "次の質問において："
+
+msgid "Trustedp"
+msgstr "信頼できる"
+
+msgid "Done"
+msgstr "完了"
+
+msgid "Country: "
+msgstr "国： "
+
+msgid "I am none of the above."
+msgstr "上記のいずれにも当てはまりません。"
+
+msgid "Home Phone #: "
+msgstr "電話番号（自宅）： "
+
+msgid "Please choose from the following"
+msgstr "以下からお選びください。"
+
+msgid "Their LAMsight username:"
+msgstr "該当者の LAMsight でのユーザー名："
+
+msgid "Next survey to work on:~%"
+msgstr "次回の調査実施日：~%"
+
+msgid "Category"
+msgstr "カテゴリー"
+
+msgid "Root"
+msgstr "ルート"
+
+msgid "(drag questions here to create a population)"
+msgstr "（ここに質問をドラッグして、患者集団を作成します）"
+
+msgid "Author"
+msgstr "作成者"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Show Surveys"
+msgstr "調査を表示"
+
+msgid "User Preferences"
+msgstr "ユーザー環境設定"
+
+msgid "Submit Request"
+msgstr "要求の送信"
+
+msgid "On page:"
+msgstr "ページ："
+
+msgid "Last Name"
+msgstr "姓"
+
+msgid "Oid"
+msgstr "ID"
+
+msgid "For a potential study"
+msgstr "潜在的調査用"
+
+msgid "Rating"
+msgstr "評価"
+
+msgid "USA"
+msgstr "アメリカ"
+
+msgid "To confirm my identity"
+msgstr "自分の ID を確認するには"
+
+msgid "[Create New Survey]"
+msgstr "[新規調査の作成]"
+
+msgid "Users in Europe"
+msgstr "ヨーロッパのユーザー"
+
+msgid "Question Context"
+msgstr "質問の前後情報"
+
+msgid "Do Survey"
+msgstr "調査を実施"
+
+msgid "Page"
+msgstr "ページ"
+
+msgid "Recent Forum Activity:~%~%~a"
+msgstr "最新のフォーラム活動：~%~%~a"
+
+msgid "Users South American"
+msgstr "南米のユーザー"
+
+msgid "Diary Description"
+msgstr "ダイアリーの説明"
+
+msgid "Avg Rating"
+msgstr "平均評価"
+
+msgid "Enable the interactive agent Laura"
+msgstr "インタラクティブエージェント「Laura」を有効化"
+
+msgid "Contact"
+msgstr "連絡先"
+
+msgid "Enlarge: &nbsp;"
+msgstr "拡大：&nbsp;"
+
+msgid "Diary P"
+msgstr "ダイアリー"
+
+msgid "Exploring: "
+msgstr "探索中： "
+
+msgid "All Users"
+msgstr "すべてのユーザー"
+
+msgid "Forgot your username or password?"
+msgstr "ユーザー名またはパスワードをお忘れの方"
+
+msgid "New Password"
+msgstr "新しいパスワード"
+
+msgid "The Scratchpad is a place to store groups and questions if you want to move them from one editor to another.  A question can only have one parent, so when you drag it back to a different group, it will disappear from the first."
+msgstr "スクラッチパッドとは、グループや質問をエディター間で移動する際に、一時的に保存する場所です。質問に含めることができるのは 1 つの親に限定されているため、これを別のグループに移動すると、元の場所から消えてしまいます。"
+
+msgid "I work directly on LAM research."
+msgstr "私は LAM の研究に直接携わっています。"
+
+msgid "LAMsight is a centralized database that will enable new forms of information-gathering and collaboration by patients, family members, clinicians, and researchers. Its goal is to overcome the barriers that researchers face in accessing up-to-date data about the global LAM population. LAMsight enables idea-generation by researchers through information exchange between patients and researchers in “real time”."
+msgstr "LAMsight は、患者さま、そして家族、臨床医、研究者の方々が互いに協力して情報収集を行える、新しい形態の集中データベースです。現在、研究者が世界中の LAM 患者集団に関する最新のデータを入手することは困難なため、この問題を解決することを当データベースの目標として掲げています。研究者の方々が LAMsight をご利用になれば、患者さまや研究者との情報交換をリアルタイムで行うことで、新たな発想を得られるようになります。"
+
+msgid "patients"
+msgstr "患者さま"
+
+msgid "Street"
+msgstr "番地"
+
+msgid "After registration, click the 'Login' link at the very top of this page. Upon successful entry more information will be provided."
+msgstr "登録を終えたら、本ページ最上部の「ログイン」のリンクをクリックしてください。ログインが完了すると、詳しい情報が表示されます。"
+
+msgid "Collect Data"
+msgstr "データの収集"
+
+msgid "Basic Screen"
+msgstr "基本画面"
+
+msgid "Tags"
+msgstr "タグ"
+
+msgid "By any of these methods"
+msgstr "どの方法でもよい"
+
+msgid "Ask a Question"
+msgstr "質問をする"
+
+msgid "Register Now >>"
+msgstr "今すぐ登録 >>"
+
+msgid "A username is a short name that will be used by the system to identify you to other users.  If you are concerned about privacy, pick a username that you can remember, but doesn't include anything about you like your name."
+msgstr "ユーザー名とは、システムが各ユーザーを識別するために使用する短い名前です。プライバシーについて不安を感じられる方は、ユーザー名にご自身に関する情報（名前など）を含めず、なおかつ覚えやすいものをお選びください。"
+
+msgid "Please choose from one of the following surveys or create your own!"
+msgstr "以下のいずれかの調査を選択するか、ご自身で作成してください！"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Translation Alist"
+msgstr "翻訳リスト"
+
+msgid "Login"
+msgstr "ログイン"
+
+msgid "How frequently do you want forum updates?"
+msgstr "フォーラムの更新情報をどれくらいの頻度で受信することを希望されますか？"
+
+msgid "Description"
+msgstr "説明"
+
+msgid "Question Help"
+msgstr "質問のヘルプ"
+
+msgid "Registration Instructions"
+msgstr "登録についてのご説明"
+
+msgid "New User?"
+msgstr "新規ユーザーですか？"
+
+msgid "Address: "
+msgstr "住所： "
+
+msgid "Work Phone #: "
+msgstr "電話番号（職場）： "
+
+msgid "Under question:"
+msgstr "次の質問について："
+
+msgid "State"
+msgstr "都道府県"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "The survey editor will require some time to become familiar with.  It allows you to create, organize, and edit all elements of a survey.  We will be expanding this help section after some feedback from users and some more improvements in the features and the look."
+msgstr "調査エディターの操作に慣れるまでは、少々時間がかかります。ここでは、調査におけるあらゆる要素を作成、整理、編集できます。当サイトでは、ユーザーの方々のフィードバックに基づいて、このヘルプセクションを拡張する予定です。また、機能や外観についても改良いたします。"
+
+msgid "Priority"
+msgstr "優先度"
+
+msgid "Search Results"
+msgstr "検索結果"
+
+msgid "Content"
+msgstr "内容"
+
+msgid "Sound Screen"
+msgstr "音声画面"
+
+msgid "State/Province: "
+msgstr "都道府県： "
+
+msgid "Related Content"
+msgstr "関連した内容"
+
+msgid "Postal code: "
+msgstr "郵便番号： "
+
+msgid "View Diaries"
+msgstr "ダイアリーを表示"
+
+msgid "Create a population"
+msgstr "患者集団の作成"
+
+msgid "[LAMsight Help Request]"
+msgstr "[LAMsight ヘルプ要求]"
+
+msgid "Privacy Policy"
+msgstr "プライバシーに関する方針"
+
+msgid "create"
+msgstr "作成"
+
+msgid "Preferred Language: "
+msgstr "希望する言語： "
+
+msgid "City"
+msgstr "市区町村"
+
+msgid "Group advice"
+msgstr "グループアドバイス"
+
+msgid "Show Forums"
+msgstr "フォーラムを表示"
+
+msgid "Page (~d)"
+msgstr "ページ（~d）"
+
+msgid "Creating Surveys"
+msgstr "調査の作成"
+
+msgid "Hello. The password for the username: ~a has been reset to ~a After you log in, you can change the password to something you can remember."
+msgstr "ようこそ。ユーザー名「~a」のパスワードは「~a」にリセットされました。このパスワードは、ログイン後に自由に変更できます。"
+
+msgid "A password should be at least 6 characters and include a number or other non-alphabetical character."
+msgstr "パスワードは少なくとも 6 文字で、数字またはアルファベット以外の文字を 1 文字以上含める必要があります。"
+
+msgid "Body"
+msgstr "本文"
+
+msgid "Published"
+msgstr "発行済み"
+
+msgid "In survey:"
+msgstr "次の調査において："
+
+msgid "logout"
+msgstr "ログアウト"
+
+msgid " of patients responded"
+msgstr " 人の患者さまが返答"
+
+msgid "First Name"
+msgstr "名"
+
+msgid "Up Ratings"
+msgstr "評価を上げる"
+
+msgid "Slug"
+msgstr "遅れ"
+
+msgid "[Close this View]"
+msgstr "[このビューを閉じる]"
+
+msgid "Old Password"
+msgstr "これまでに使用していたパスワード"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Magic Key"
+msgstr "マジックキー"
+
+msgid "Locale"
+msgstr "場所"
+
+msgid "Post Datetime"
+msgstr "投稿日時"
+
+msgid "Topic"
+msgstr "トピック"
+
+msgid "Number Of Ratings"
+msgstr "評価の数"
+
+msgid "Order"
+msgstr "並べ替え"
+
+msgid "Editor Help"
+msgstr "エディターのヘルプ"
+
+msgid "Register"
+msgstr "登録"
+
+msgid "Allow my city, state and country information to be used on the patient map."
+msgstr "私が住んでいる市区町村、都道府県、国の情報を、患者マップに公開することを承諾します。"
+
+msgid "View Surveys"
+msgstr "調査を表示"
+
+msgid "Group name"
+msgstr "グループ名"
+
+msgid "I am involved in disease research."
+msgstr "私は疾病研究に携わっています。"
+
+msgid "Terms of Use"
+msgstr "利用規約"
+
+msgid "I'm having a problem with LAMsight and have provided details on my problem below."
+msgstr "LAMsight に問題が発生しているため、以下の通り問題の詳細を提示しました。"
+
+msgid "Content Type"
+msgstr "内容のタイプ"
+
+msgid "Username"
+msgstr "ユーザー名"
+
+msgid "Population Filter"
+msgstr "患者集団フィルター"
+
+msgid "Site Announcements:~%"
+msgstr "サイトについてのお知らせ：~%"
+
+msgid "Short"
+msgstr "短文"
+
+msgid "Most Popular Discussions"
+msgstr "一番人気のあるディスカッション"
+
+msgid "Go"
+msgstr "進む"
+
+msgid "discuss"
+msgstr "ディスカッション"
+
+msgid "Edit sub-groups: "
+msgstr "サブグループの編集： "
+
+msgid "City: "
+msgstr "市区町村： "
+
+msgid "If you joined LAMsight last spring, your user account and any information you entered has been preserved. No re-registration or new registration is needed.  Please contact our support team if you need assistance with lost user accounts or passwords."
+msgstr "昨春に LAMsight に登録された場合、ユーザーアカウントと入力された情報はすべて保存されています。再登録や新規登録は必要ありません。ユーザーアカウントやパスワードをなくされた方は、当サイトのサポートチームまでお問い合わせください。"
+
+msgid "Related questions"
+msgstr "関連した質問"
+
+msgid "Surveys"
+msgstr "調査"
+
+msgid "South America"
+msgstr "南米"
+
+msgid "Event"
+msgstr "イベント"
+
+msgid "About the Site"
+msgstr "当サイトについて"
+
+msgid "Question answer type (existing answers will disallow some changes): "
+msgstr "質問・回答のタイプ（既存の回答を変更することはできません）： "
+
+msgid "Ascending"
+msgstr "昇順"
+
+msgid "Receive e-mail updates to the discussion forums?"
+msgstr "ディスカッションフォーラムに関する更新情報を電子メールで受信することを希望されますか？"
+
+msgid "LAMsight is an evolving project and new functionality and improved usability will occur every few weeks. Updates about the site can be received by setting preferences as described on the login page. By registering now, you are agreeing to receive at least one e-mail letting you know when the site is formally launched with the most important set of features as well as a clear privacy policy and terms of use."
+msgstr "LAMsight は常に進化を続けているプロジェクトであり、数週間おきに新しい機能が加えられたり、操作性が改善されたりしています。ログインページに記されている通り、当サイトの更新情報を受け取るよう設定することもできます。ここで登録すると、本サイトが正式に立ち上げられた際に、最も重要な機能セットが使用可能となったこと、そしてプライバシーに関する方針や利用規約が明確に定められたことを通知する電子メールを、最低 1 件受け取ることに同意したものとみなされます。"
+
+msgid "Advice"
+msgstr "アドバイス"
+
+msgid "Change password"
+msgstr "パスワードの変更"
+
+msgid "Last Name: "
+msgstr "姓： "
+
+msgid "Getting Started"
+msgstr "はじめに"
+
+msgid "Widget"
+msgstr "ウィジェット"
+
+msgid "The survey editor consists of a set of <b>views</b>.  Each view has its own tab at the top of the screen.  Surveys are made up of <b>groups</b>, each group is made up of <b>questions</b>.  There is a view that allows you to see, review and change each of these components of a survey.  Please post your questions in the forums so we can respond to the most important questions."
+msgstr "調査エディターは、一連の<b>ビュー</b>から構成されています。それぞれのビューの画面上部には、独自のタブがあります。調査は<b>グループ</b>によって構成されており、それぞれのグループは<b>質問</b>によって構成されています。調査におけるこれらの各要素を表示、確認、変更できるビューもあります。質問はフォーラムに投稿してください。これにより、当方が重要な質問に対応することができます。"
+
+msgid "collect"
+msgstr "収集"
+
+msgid "patient"
+msgstr "患者さま"
+
+msgid "I cannot find that e-mail address."
+msgstr "該当する電子メールが見つかりません。"
+
+msgid "LAMTV"
+msgstr "LAMTV"
+
+msgid "Email"
+msgstr "電子メール"
+
+msgid "Current Post Number"
+msgstr "現在の投稿数"
+
+msgid "Target"
+msgstr "目標"
+
+msgid "I am a LAM clinican."
+msgstr "私は LAM に携わっている臨床医です。"
+
+msgid "Controller"
+msgstr "管理者"
+
+msgid "Your browser has disabled Javascript.  Many, but not all, features of this site depend on Javascript.  You can use the 'Collect' and 'Discuss' sections but for now the 'Explore' section may not function for you.  You can find out about how to enable Javascript from "
+msgstr "お使いのブラウザーでは Javascript が無効になっています。当サイトには、Javascript がなければ使用できない機能が数多くあります。このままでも「収集」および「ディスカッション」のセクションはご利用になれますが、「探索」のセクションは機能しない可能性があります。Javascript を有効にする方法については、以下を参照してください： "
+
+msgid "Population Creator"
+msgstr "患者集団クリエーター"
+
+msgid "Fulltext"
+msgstr "全文"
+

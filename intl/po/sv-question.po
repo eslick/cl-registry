@@ -1,0 +1,3925 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sv-question.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# QUESTION PROMPT
+#: 5940 PROMPT
+msgid "What kind of exercises do you do?"
+msgstr "Vilken typ av träning ägnar du dig åt?"
+
+# QUESTION PROMPT
+#: 5937 PROMPT
+msgid "Do you exercise?"
+msgstr "Tränar du?"
+
+# QUESTION PROMPT
+#: 5975 PROMPT
+msgid "Have you tried Herbal treatments?"
+msgstr "Har du provat örtbehandlingar?"
+
+# QUESTION PROMPT
+#: 24834 PROMPT
+msgid "Have you ever been diagnosed with osteoporosis?"
+msgstr "Har du någonsin diagnostiserats med benskörhet?"
+
+# QUESTION PROMPT
+#: 24824 PROMPT
+msgid "Has your bone loss been rated for severity?"
+msgstr "Har allvarlighetsgraden för din benförlust bedömts?"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "mild"
+msgstr "lindrig"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "moderate"
+msgstr "måttlig"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "severe"
+msgstr "allvarlig"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "other"
+msgstr "annan"
+
+# QUESTION PROMPT
+#: 30003 PROMPT
+msgid "Have you been tested for Alpha-1 Antitrypsin Deficiency?"
+msgstr "Har du testats för Alpha-1 Antitrypsin-brist?"
+
+# QUESTION PROMPT
+#: 5844 PROMPT
+msgid "Date of spirometer test"
+msgstr "Datum för spirometerprov"
+
+# QUESTION PROMPT
+#: 5845 PROMPT
+msgid "FEV1"
+msgstr "FEV1"
+
+# QUESTION QUESTION-HELP
+#: 5845 QUESTION-HELP
+msgid "Forced Expiratory Volume for 1 second.  Data should be entered in liters."
+msgstr "Tvingad utandningsvolym under en sekund.  Ange data i liter."
+
+# QUESTION PROMPT
+#: 26217 PROMPT
+msgid "Date of PFT Measurement"
+msgstr "Datum för PFT-mätning"
+
+# QUESTION PROMPT
+#: 26218 PROMPT
+msgid "Your temperature today"
+msgstr "Din temperatur idag"
+
+# QUESTION QUESTION-HELP
+#: 26218 QUESTION-HELP
+msgid "Take your temperature under your tongue, hold for 30 seconds using the same thermometer each day."
+msgstr "Ta temperaturen under tungan. Håll kvar under 30 sekunder och använd samma termometer varje dag."
+
+# QUESTION PROMPT
+#: 23561 PROMPT
+msgid "FEV6"
+msgstr "FEV6"
+
+# QUESTION CHOICES
+#: 23561 CHOICES
+msgid "test1"
+msgstr "test1"
+
+# QUESTION CHOICES
+#: 23561 CHOICES
+msgid "test2"
+msgstr "test2"
+
+# QUESTION QUESTION-HELP
+#: 23561 QUESTION-HELP
+msgid "Forced expiratory volume at 6 seconds of exhalation. (Enter in liters) This is a measure from most home spirometers that acts as a surrogate for FVC.  If you have a device that gives you FVC instead, please write to lamsight-admin@media.mit.edu and we will add a new field to this survey."
+msgstr "Tvingad utandningsvolym vid 6 sekunders utandning. (Ange i liter) Detta är ett mått från de flesta hem-spirometrar. Måttet fungerar som ersättning för FVC.  Om du har en enhet som istället ger FVC skriver du till lamsight-admin@media.mit.edu och vi kommer att lägga till ett nytt fält för den här undersökningen."
+
+# QUESTION PROMPT
+#: 23560 PROMPT
+msgid "What spirometer was used?"
+msgstr "Vilken spirometer användes?"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "PiKo-1"
+msgstr "PiKo-1"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "PiKo-6"
+msgstr "PiKo-6"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "KoKo Peak Pro"
+msgstr "KoKo Peak Pro"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 5858 PROMPT
+msgid "What was the primary condition that led to the eventual diagnosis of LAM?"
+msgstr "Vilket var det ursprungliga tillståndet som ledde till den eventuella diagnosen LAM?"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Pulmonary symptoms"
+msgstr "Lungsymptom"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms present but a subnormal breathing test led to testing"
+msgstr "Det finns inga lungsymptom men ett onormalt andningstest ledde till undersökning"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Abnormal chest x-ray or CT scan"
+msgstr "Onormal bröströntgen eller datortomografi"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Spontaneous pneumothorax"
+msgstr "Spontan lungkollaps"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Angiomyolipoma"
+msgstr "Neoplasma i njuren"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Ascites"
+msgstr "Ascites (vätska i bukhålan)"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Pleural effusion"
+msgstr "Vätska i lungorna"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Assessment for lung transplant without prior suspicion of LAM"
+msgstr "Bedömning för lungtransplantation utan föregående misstanke om LAM"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms but a family member has LAM"
+msgstr "Inga lungsymptom men en familjemedlem har LAM"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms but family member with Tuberous Sclerosis Complex (TSC)"
+msgstr "Inga lungsymptom men familjemedlem med TSC (tuberös skleroskomplex)"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Dermatology or skin specialist"
+msgstr "Dermatologi eller hudspecialist"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Unknown"
+msgstr "Okänt"
+
+# QUESTION PROMPT
+#: 5854 PROMPT
+msgid "Date of original diagnosis"
+msgstr "Datum för ursprunglig diagnos"
+
+# QUESTION PROMPT
+#: 5855 PROMPT
+msgid "Diagnosing physician name"
+msgstr "Namn på diagnostiserande läkare"
+
+# QUESTION QUESTION-HELP
+#: 5855 QUESTION-HELP
+msgid "This is an optional entry if you have extra concerns about privacy"
+msgstr "Detta är valfritt om du är extra oroad över sekretess"
+
+# QUESTION PROMPT
+#: 5856 PROMPT
+msgid "Speciality of diagnosing physician"
+msgstr "Diagnostiserande läkares specialitet"
+
+# QUESTION PROMPT
+#: 5857 PROMPT
+msgid "Institution of physician"
+msgstr "Läkarens institution"
+
+# QUESTION PROMPT
+#: 5878 PROMPT
+msgid "Weight"
+msgstr "Vikt"
+
+# QUESTION PROMPT
+#: 5879 PROMPT
+msgid "Height"
+msgstr "Längd"
+
+# QUESTION PROMPT
+#: 5880 PROMPT
+msgid "Body-Mass Index"
+msgstr "BMI"
+
+# QUESTION PROMPT
+#: 5885 PROMPT
+msgid "Do you feel aches or pains of any kind of discomfort on a regular basis?"
+msgstr "Har du regelbundet någon typ av ont, värk eller obehag?"
+
+# QUESTION PROMPT
+#: 5889 PROMPT
+msgid "Do you experience pain and/or discomfort related to the reproductive organs?"
+msgstr "Upplever du smärta och/eller obehag som är relaterat till de reproduktiva organen?"
+
+# QUESTION PROMPT
+#: 5894 PROMPT
+msgid "Do you experience pain and/or discomfort related to any surgery related to ovaries?"
+msgstr "Upplever du smärta och/eller obehag som är relaterat till äggstockskirurgi?"
+
+# QUESTION PROMPT
+#: 5899 PROMPT
+msgid "Do you have a history of any abnormal blood test results?"
+msgstr "Har du en historik med onormala resultat vid blodtester?"
+
+# QUESTION PROMPT
+#: 5903 PROMPT
+msgid "Have any members of your family suffered from genetic conditions or diseases?"
+msgstr "Har några medlemmar av din familj drabbats av genetiska tillstånd eller sjukdomar?"
+
+# QUESTION PROMPT
+#: 5905 PROMPT
+msgid "Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews died prematurely?"
+msgstr "Har några medlemmar av din direkta familj, inklusive far-/morföräldrar, fastrar, mostrar, farbröder, morbröder eller syskonbarn dött i förtid?"
+
+# QUESTION PROMPT
+#: 5907 PROMPT
+msgid "Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews suffered from disabling disorders?"
+msgstr "Har några medlemmar av din direkta familj, inklusive far-/morföräldrar, fastrar, mostrar, farbröder, morbröder eller syskonbarn drabbats av invalidiserande sjukdomar?"
+
+# QUESTION PROMPT
+#: 5909 PROMPT
+msgid "Any other comments on family history"
+msgstr "Har du fler kommentarer om familjehistoriken"
+
+# QUESTION PROMPT
+#: 5912 PROMPT
+msgid "What are your favorite foods?"
+msgstr "Vilket är din favoritmat?"
+
+# QUESTION PROMPT
+#: 5913 PROMPT
+msgid "What are your least favorite foods?"
+msgstr "Vilken mat tycker du minst om?"
+
+# QUESTION PROMPT
+#: 13836 PROMPT
+msgid "Do you avoid eating certain foods?"
+msgstr "Undviker du att äta viss typ av mat?"
+
+# QUESTION PROMPT
+#: 5916 PROMPT
+msgid "Do you have symptoms, related to LAM or unrelated to LAM that you associate with a particular food/ drink or food group?"
+msgstr "Har du symptom som är relaterade till LAM eller inte relaterade till LAM och som du relaterar till något visst födoämne/dryck eller grupp av födoämnen/drycker?"
+
+# QUESTION PROMPT
+#: 5920 PROMPT
+msgid "Are you a vegetarian?"
+msgstr "Är du vegetarian?"
+
+# QUESTION PROMPT
+#: 5921 PROMPT
+msgid "If yes, pick the following foods that you do eat"
+msgstr "Om du är det väljer du ut det du äter bland nedanstående mat"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "fish"
+msgstr "fisk"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "shellfish"
+msgstr "skaldjur"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "dairy"
+msgstr "mjölkprodukter"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "eggs"
+msgstr "ägg"
+
+# QUESTION PROMPT
+#: 26390 PROMPT
+msgid "Do you eat one or more of the following high oestrogen foods?"
+msgstr "Äter du en eller flera av följande produkter med hög östrogenhalt?"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Soy"
+msgstr "Soja"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Tofu"
+msgstr "Tofu"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Legumes"
+msgstr "Grönsaker"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Nuts"
+msgstr "Nötter"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Chicken"
+msgstr "Kyckling"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 26460 PROMPT
+msgid "How would you characterize your appetite relative to your peers?"
+msgstr "Hur skulle du bedöma din aptit i förhållande till dina kamraters aptit?"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Normal"
+msgstr "Normal"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Poor"
+msgstr "Dålig"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Large"
+msgstr "Stor"
+
+# QUESTION PROMPT
+#: 5923 PROMPT
+msgid "Do you try to follow a fat-free or low-fat diet?"
+msgstr "Försöker du att följa en fettfri diet eller en diet med lågt fettinnehåll?"
+
+# QUESTION PROMPT
+#: 5927 PROMPT
+msgid "Do you have high-cholesterol?"
+msgstr "Har du högt kolesterol?"
+
+# QUESTION PROMPT
+#: 5928 PROMPT
+msgid "Do you find it difficult to maintain your weight?"
+msgstr "Tycker du att det är svårt att behålla vikten?"
+
+# QUESTION PROMPT
+#: 5931 PROMPT
+msgid "Do you take vitamin or mineral supplements?"
+msgstr "Tar du tilläggsvitaminer eller -mineraler?"
+
+# QUESTION PROMPT
+#: 5934 PROMPT
+msgid "Any other comments on diet"
+msgstr "Övriga kommentarer om kosten"
+
+# QUESTION PROMPT
+#: 5954 PROMPT
+msgid "Have you given up any type of exercise because of LAM?"
+msgstr "Har du slutat med någon typ av träning på grund av LAM?"
+
+# QUESTION PROMPT
+#: 5945 PROMPT
+msgid "Do you desaturate on exertion?"
+msgstr "Drabbas du av desaturering vid ansträngning?"
+
+# QUESTION PROMPT
+#: 5948 PROMPT
+msgid "If you exercise, do you see positive effects of exercise?"
+msgstr "Om du tränar, ser du positiva effekter av träningen?"
+
+# QUESTION PROMPT
+#: 5957 PROMPT
+msgid "Can you walk 100 meters on level ground without stopping?"
+msgstr "Kan du promenera 100 meter på plant underlag utan att stanna?"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "Yes"
+msgstr "Ja"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "Yes with oxygen"
+msgstr "Ja, med syre"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "No"
+msgstr "Nej"
+
+# QUESTION PROMPT
+#: 5958 PROMPT
+msgid "Can you carry small loads (up to 2kg/4.4lbs)?"
+msgstr "Kan du bära små vikter (upp till 2 kg)?"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "Yes"
+msgstr "Ja"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "Yes with oxygen"
+msgstr "Ja, med syre"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "No"
+msgstr "Nej"
+
+# QUESTION PROMPT
+#: 5959 PROMPT
+msgid "Do you get breathless easily from relatively simple motions (from bending down to pick something up or getting dressed)?"
+msgstr "Tappar du andan vid relativt enkla rörelser (när du böjer dig ner för att plocka upp någonting eller när du klär på dig)?"
+
+# QUESTION PROMPT
+#: 5960 PROMPT
+msgid "What activities can you not do because of LAM?"
+msgstr "Vilka aktiviteter kan du inte genomföra på grund av LAM?"
+
+# QUESTION PROMPT
+#: 5961 PROMPT
+msgid "What activities can you do but in a modified way because of LAM? What modifications have you made to make these activities possible?"
+msgstr "Vilka aktiviteter kan du genomföra men på ett annorlunda sätt på grund av LAM? Vilka ändringar har du gjort för att göra dessa aktiviteter möjliga?"
+
+# QUESTION PROMPT
+#: 5963 PROMPT
+msgid "Have you been referred to pulmonary rehabilitation?"
+msgstr "Har du remitterats till lungrehabilitering?"
+
+# QUESTION PROMPT
+#: 5970 PROMPT
+msgid "Have you ever taken recreational drugs (excluding cigarettes and alcohol)?"
+msgstr "Har du någonsin tagit rekreationsdroger (utom cigaretter och alkohol)?"
+
+# QUESTION PROMPT
+#: 5972 PROMPT
+msgid "Have you tried Chinese medicine"
+msgstr "Har du provat kinesisk medicin"
+
+# QUESTION PROMPT
+#: 5974 PROMPT
+msgid "Have you tried Acupuncture?"
+msgstr "Har du provat akupunktur?"
+
+# QUESTION PROMPT
+#: 5977 PROMPT
+msgid "Have you tried Shiatsu massage?"
+msgstr "Har du provat Shiatsu-massage?"
+
+# QUESTION PROMPT
+#: 5978 PROMPT
+msgid "Have you tried Hypnosis?"
+msgstr "Har du provat hypnos?"
+
+# QUESTION PROMPT
+#: 5980 PROMPT
+msgid "Have you tried Meditation?"
+msgstr "Har du provat meditation?"
+
+# QUESTION PROMPT
+#: 5983 PROMPT
+msgid "Any other forms of complementary or alternative medicine?"
+msgstr "Någon annan typ av komplimentär eller alternativ medicin?"
+
+# QUESTION PROMPT
+#: 5985 PROMPT
+msgid "Have you noticed an effect on your breathing from these interventions?"
+msgstr "Har du lagt märke till någon påverkan på din andning efter dessa behandlingar?"
+
+# QUESTION PROMPT
+#: 5986 PROMPT
+msgid "Have you noticed an effect on your  well-being from any of these interventions?"
+msgstr "Har du lagt märke till någon påverkan på hur du mår efter dessa behandlingar?"
+
+# QUESTION PROMPT
+#: 5987 PROMPT
+msgid "Any other comments on alternative therapies"
+msgstr "Övriga kommentarer om alternativa behandlingar"
+
+# QUESTION PROMPT
+#: 5991 PROMPT
+msgid "How many people live in your home (including yourself)?"
+msgstr "Hur många personer bor i ditt hem (inklusive dig)?"
+
+# QUESTION PROMPT
+#: 5999 PROMPT
+msgid "Does your daily routine vary a lot?"
+msgstr "Varierar dina dagliga rutiner mycket?"
+
+# QUESTION PROMPT
+#: 6000 PROMPT
+msgid "Is your daily routine fairly physically active?"
+msgstr "Ingår rimlig fysisk aktivitet i dina dagliga rutiner?"
+
+# QUESTION PROMPT
+#: 5994 PROMPT
+msgid "Do you leave the house every day to work/run errands/etc?"
+msgstr "Lämnar du huset varje dag för att arbeta/göra ärenden/etc?"
+
+# QUESTION PROMPT
+#: 13702 PROMPT
+msgid "Do you have a job?"
+msgstr "Har du ett jobb?"
+
+# QUESTION PROMPT
+#: 5990 PROMPT
+msgid "Do you care for the home and family as your primary form of work?"
+msgstr "Är du hemmafru och ser det som din primära uppgift?"
+
+# QUESTION PROMPT
+#: 5998 PROMPT
+msgid "Briefly describe your daily routine (wake up time, meals, activities of the day, bedtime)"
+msgstr "Beskriv kort dina dagliga rutiner (uppvakningstid, måltider, aktiviteter under dagen, tid för sänggående)"
+
+# QUESTION PROMPT
+#: 6002 PROMPT
+msgid "What type of environment do you live in?"
+msgstr "I vilken typ av miljö lever du?"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "city"
+msgstr "innerstad"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "town"
+msgstr "stad"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "countryside"
+msgstr "på landet"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "village"
+msgstr "i en by"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "farm"
+msgstr "på en gård"
+
+# QUESTION PROMPT
+#: 6003 PROMPT
+msgid "Please describe the air quality where you live as"
+msgstr "Beskriv luftkvaliteten där du lever"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "good"
+msgstr "bra"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "average"
+msgstr "genomsnittlig"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "poor"
+msgstr "dålig"
+
+# QUESTION PROMPT
+#: 6004 PROMPT
+msgid "Are there potential environmental risks where you live now?"
+msgstr "Finns det möjliga miljörisker där du lever nu?"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "fumes"
+msgstr "rök"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "dust"
+msgstr "damm"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "asbestos"
+msgstr "asbest"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "pesticides"
+msgstr "bekämpningsmedel för insekter"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "cigarette smoke"
+msgstr "cigarettrök"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "smog"
+msgstr "smog"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in air"
+msgstr "annat i luften"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in land"
+msgstr "annat i jorden"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in water"
+msgstr "annat i vattnet"
+
+# QUESTION PROMPT
+#: 6005 PROMPT
+msgid "Were there environmental risks where you lived for a significant period in your past?"
+msgstr "Fanns det miljörisker där du har levt under en väsentlig period tidigare?"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "fumes"
+msgstr "rök"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "dust"
+msgstr "damm"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "asbestos"
+msgstr "asbest"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "pesticides"
+msgstr "bekämpningsmedel för insekter"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "cigarette smoke"
+msgstr "cigarettrök"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "smog"
+msgstr "smog"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in air"
+msgstr "annat i luften"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in land"
+msgstr "annat i jorden"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in water"
+msgstr "annat i vattnet"
+
+# QUESTION PROMPT
+#: 6006 PROMPT
+msgid "Have you ever smoked?"
+msgstr "Har du någonsin rökt?"
+
+# QUESTION PROMPT
+#: 6009 PROMPT
+msgid "Have you ever used alcohol?"
+msgstr "Har du någonsin använt alkohol?"
+
+# QUESTION PROMPT
+#: 6012 PROMPT
+msgid "Were there environmental risks that your parents were exposed to?"
+msgstr "Vilka miljörisker utsattes dina föräldrar för?"
+
+# QUESTION PROMPT
+#: 6016 PROMPT
+msgid "Do certain types of weather affect your body?"
+msgstr "Påverkas din kropp av vissa vädertyper?"
+
+# QUESTION PROMPT
+#: 6021 PROMPT
+msgid "Do you travel by airplane?"
+msgstr "Reser du med flygplan?"
+
+# QUESTION PROMPT
+#: 6053 PROMPT
+msgid "Has your sleep routine changed since being diagnosed with LAM?"
+msgstr "Har din sömnrutin ändrats sedan du fick diagnosen LAM?"
+
+# QUESTION CHOICES
+#: 6053 CHOICES
+msgid "No"
+msgstr "Nej"
+
+# QUESTION CHOICES
+#: 6053 CHOICES
+msgid "Yes"
+msgstr "Ja"
+
+# QUESTION PROMPT
+#: 6041 PROMPT
+msgid "Do you have problems falling or staying asleep?"
+msgstr "Har du problem med att du somnar eller förblir sovande?"
+
+# QUESTION PROMPT
+#: 6042 PROMPT
+msgid "How many hours on average do you sleep each night?"
+msgstr "Hur många timmar sover du i genomsnitt varje natt?"
+
+# QUESTION PROMPT
+#: 6043 PROMPT
+msgid "Do you wake up too early on a regular basis?"
+msgstr "Vaknar du regelbundet för tidigt?"
+
+# QUESTION PROMPT
+#: 6045 PROMPT
+msgid "Do you take naps or short sleeps during the day?"
+msgstr "Tar du korta sömnpauser under dagen?"
+
+# QUESTION PROMPT
+#: 6046 PROMPT
+msgid "Do you sleep with oxygen?"
+msgstr "Sover du med syrgas?"
+
+# QUESTION PROMPT
+#: 6048 PROMPT
+msgid "Do you feel particularly cold when going to sleep or waking up?"
+msgstr "Känner du dig särskilt kall när du går till sängs eller vaknar upp?"
+
+# QUESTION PROMPT
+#: 6050 PROMPT
+msgid "Do you have cold feet or hands in bed?"
+msgstr "Har du kalla fötter eller händer när du är i sängen?"
+
+# QUESTION PROMPT
+#: 6051 PROMPT
+msgid "Do you have cold feet or hands when not in bed?"
+msgstr "Har du kalla fötter eller händer när du inte är i sängen?"
+
+# QUESTION PROMPT
+#: 6054 PROMPT
+msgid "Any other comments about sleep?"
+msgstr "Eventuella övriga kommentarer om sömn?"
+
+# QUESTION PROMPT
+#: 26403 PROMPT
+msgid "Have you ever had a tissue biopsy?"
+msgstr "Har du någonsin gjort en vävnadsbiopsi?"
+
+# QUESTION PROMPT
+#: 26406 PROMPT
+msgid "Has your blood [serum] ever been stored for research purposes?"
+msgstr "Har ditt blod [serum] någon gång lagrats för forskningsändamål?"
+
+# QUESTION PROMPT
+#: 26258 PROMPT
+msgid "Have you ever taken birth control pills?"
+msgstr "Har du någon gång tagit p-piller?"
+
+# QUESTION PROMPT
+#: 6074 PROMPT
+msgid "Have you ever been pregnant?"
+msgstr "Har du någonsin varit gravid?"
+
+# QUESTION PROMPT
+#: 6076 PROMPT
+msgid "Do you have children?"
+msgstr "Har du barn?"
+
+# QUESTION PROMPT
+#: 6095 PROMPT
+msgid "Do you have any other comments regarding your reproductive history?"
+msgstr "Har du några andra kommentarer relaterade till din reproduktiva historik?"
+
+# QUESTION PROMPT
+#: 6084 PROMPT
+msgid "Were you diagnosed with LAM during your pregnancy?"
+msgstr "Fick du diagnosen LAM under din graviditet?"
+
+# QUESTION PROMPT
+#: 6079 PROMPT
+msgid "Did you know you had LAM during one or more pregnancies?"
+msgstr "Visste du att du hade LAM under en eller flera graviditeter?"
+
+# QUESTION PROMPT
+#: 6097 PROMPT
+msgid "At what age did you start having a period?"
+msgstr "Vid vilken ålder fick du din första menstruation?"
+
+# QUESTION PROMPT
+#: 6098 PROMPT
+msgid "Are your periods regular?"
+msgstr "Har du regelbundna menstruationer?"
+
+# QUESTION PROMPT
+#: 6099 PROMPT
+msgid "How many days is your menstrual cycle?"
+msgstr "Hur många dagar är din menstruationscykel?"
+
+# QUESTION PROMPT
+#: 6100 PROMPT
+msgid "For how many days do you bleed each month?"
+msgstr "Hur många dagar blöder du varje månad?"
+
+# QUESTION PROMPT
+#: 6102 PROMPT
+msgid "Would you say that your periods are:"
+msgstr "Skulle du säga att din menstruation är:"
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Strong"
+msgstr "Kraftig"
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Normal"
+msgstr "Normal"
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Light"
+msgstr "Lindrig"
+
+# QUESTION PROMPT
+#: 6103 PROMPT
+msgid "Has this become more or less over time?"
+msgstr "Har den blivit kraftigare eller lindrigare med tiden?"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "More"
+msgstr "Kraftigare"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "Less"
+msgstr "Lindrigare"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "Stayed the same"
+msgstr "Har varit lika"
+
+# QUESTION PROMPT
+#: 6104 PROMPT
+msgid "Would you say that your periods are so painful that you find it difficult to do normal activities during your period?"
+msgstr "Skulle du säga att dina menstruationer är så smärtsamma att du tycker det är svårt att genomföra normala aktiviteter under din menstruation?"
+
+# QUESTION CHOICES
+#: 6104 CHOICES
+msgid "No"
+msgstr "Nej"
+
+# QUESTION CHOICES
+#: 6104 CHOICES
+msgid "Yes"
+msgstr "Ja"
+
+# QUESTION PROMPT
+#: 6105 PROMPT
+msgid "Is ovulation so painful that you find it difficult to do normal activities at times?"
+msgstr "Är ägglossningen så smärtsam att du har svårigheter att ibland genomföra normala aktiviteter?"
+
+# QUESTION PROMPT
+#: 6113 PROMPT
+msgid "Do you experience any difference in your breathing or pain in your body at difference parts of your monthly cycle?"
+msgstr "Upplever du skillnader i andning eller smärta i kroppen vid olika perioder av din menstruationscykel?"
+
+# QUESTION PROMPT
+#: 6110 PROMPT
+msgid "Have you taken birth control pills since your diagnosis with LAM?"
+msgstr "Har du tagit p-piller sedan du fick diagnosen LAM?"
+
+# QUESTION PROMPT
+#: 14141 PROMPT
+msgid "Are you post- or peri-menopausal"
+msgstr "Befinner du dig före eller efter menopaus"
+
+# QUESTION PROMPT
+#: 6118 PROMPT
+msgid "Have you ever been on hormone replacement therapy?"
+msgstr "Har du någon gång fått behandling med hormonersättningar?"
+
+# QUESTION PROMPT
+#: 6123 PROMPT
+msgid "Have you been diagnosed with Tuberous Sclerosis?"
+msgstr "Har du fått diagnosen tuberös skleros?"
+
+# QUESTION PROMPT
+#: 6129 PROMPT
+msgid "Has any member of your family (including second cousins, grandparents, great aunts/uncles, etc) ever been diagnosed with Tuberous Sclerosis?"
+msgstr "Har någon medlem i din familj (inklusive sysslingar, far-/morföräldrar, deras syskon etc) någonsin fått diagnosen tuberös skleros?"
+
+# QUESTION PROMPT
+#: 6131 PROMPT
+msgid "Has any member of your family (including second cousins, grandparents, etc) ever experienced any symptom potentially associated with Tuberous Sclerosis?"
+msgstr "Har någon medlem i din familj (inklusive sysslingar, far-/morföräldrar etc) någonsin upplevt några symptom som eventuellt kan relateras till tuberös skleros?"
+
+# QUESTION PROMPT
+#: 6134 PROMPT
+msgid "Do you have any other significant illness in addition to LAM?"
+msgstr "Har du någon annan allvarlig sjukdom utöver LAM?"
+
+# QUESTION PROMPT
+#: 6138 PROMPT
+msgid "Have you had ovarian surgery?"
+msgstr "Har du genomgått äggstockskirurgi?"
+
+# QUESTION QUESTION-HELP
+#: 6138 QUESTION-HELP
+msgid "If not, please skip this section of questions."
+msgstr "Om du inte har det hoppar du över detta avsnitt med frågor."
+
+# QUESTION PROMPT
+#: 6101 PROMPT
+msgid "Have you ever had an internal ultrasound test of your uterus?"
+msgstr "Har du någonsin genomgått ett ultraljudstest av din livmoder?"
+
+# QUESTION PROMPT
+#: 25621 PROMPT
+msgid "Have you ever had your uterus removed or other uterine surgery?"
+msgstr "Har du fått livmodern borttagen eller genomgått annan livmoderskirurgi?"
+
+# QUESTION PROMPT
+#: 6146 PROMPT
+msgid "Have you ever experienced any of the following symptoms of LAM?"
+msgstr "Har du någon gång upplevt något av följande symptom på LAM?"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Chylothorax"
+msgstr "Lymfvätska"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Pleural Effusion"
+msgstr "Vätska i lungorna"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Ascites"
+msgstr "Ascites (vätska i bukhålan)"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Chylous Ascites"
+msgstr "Mjölkaktig peritonealvätska"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Kidney angiomyolipoma"
+msgstr "Neoplasma i njuren"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Pneumothorax"
+msgstr "Lungkollaps"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Hemoptysis"
+msgstr "Upphostning av blod"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Protein-losing Enteropathy [bowel disease]"
+msgstr "Protein-losing Enteropathy [tarmsjukdom]"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Vaginal discharge of chyle [lymph]"
+msgstr "Vaginala flytningar av chyle [lymfa] (mjölkliknande vätska)"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 6156 PROMPT
+msgid "Have you ever had or been suspected of having renal cell carcinoma?"
+msgstr "Har du haft eller misstänkt att du har haft njurcellscancer?"
+
+# QUESTION PROMPT
+#: 6161 PROMPT
+msgid "Have you taken part in one or more of the following?"
+msgstr "Har du deltagit i något av följande?"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "A Treatment Trial addressing LAM lung disease"
+msgstr "En provbehandling mot lungsjukdomen LAM"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "A Treatment Trial addressing one or more AMLs"
+msgstr "En provbehandling mot en eller flera AML:er (angiomyolipomas)"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "An off-label experiment using a drug to address LAM lung disease"
+msgstr "Ett experiment med icke godkänd medicin mot lungsjukdomen LAM"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "An observational trial"
+msgstr "Ett observationstest"
+
+# QUESTION PROMPT
+#: 6166 PROMPT
+msgid "Are you willing to be contacted for a potential trial?"
+msgstr "Vill du bli kontaktad för eventuell provbehandling?"
+
+# QUESTION PROMPT
+#: 6141 PROMPT
+msgid "For what reason?"
+msgstr "Av vilken orsak?"
+
+# QUESTION PROMPT
+#: 6139 PROMPT
+msgid "What was the procedure?"
+msgstr "Vilken var proceduren?"
+
+# QUESTION PROMPT
+#: 6140 PROMPT
+msgid "How old were you?"
+msgstr "Hur gammal var du?"
+
+# QUESTION PROMPT
+#: 6142 PROMPT
+msgid "When was this relative to your diagnosis with LAM?"
+msgstr "När skedde detta i relation till när du fick diagnosen LAM?"
+
+# QUESTION QUESTION-HELP
+#: 6142 QUESTION-HELP
+msgid "Please enter the number of years before by entering a negative number (e.g. -4) or the number of years after with a positive number."
+msgstr "Ange antal år tidigare genom att ange ett negativt tal (t.ex. -4) eller antal år efter med ett positivt tal."
+
+# QUESTION PROMPT
+#: 6143 PROMPT
+msgid "Did you notice any change in the progression of your disease since the surgery?"
+msgstr "Har du lagt märke till någon förändring av din sjukdom sedan operationen?"
+
+# QUESTION PROMPT
+#: 6144 PROMPT
+msgid "Are you having hormone replacement therapy as a result of the surgery?"
+msgstr "Får du behandling med hormonersättning som ett resultat av operationen?"
+
+# QUESTION PROMPT
+#: 6007 PROMPT
+msgid "If so, for how many years?"
+msgstr "Om svaret är ja, under hur många år?"
+
+# QUESTION PROMPT
+#: 6008 PROMPT
+msgid "How many cigarettes per day did you smoke at your heaviest time?"
+msgstr "Hur många cigaretter per dag rökte du som mest?"
+
+# QUESTION PROMPT
+#: 6010 PROMPT
+msgid "How many glasses of alcohol (glass of wine/beer or a shot of hard liquor) have you consumed per week at your heaviest time?"
+msgstr "Hur många glas alkohol (glas med vin/öl eller snaps/ett shot) har du konsumerat per vecka som mest?"
+
+# QUESTION PROMPT
+#: 6011 PROMPT
+msgid "How much alcohol do you currently consume per week?"
+msgstr "Hur mycket alkohol konsumerar du för närvarande per vecka?"
+
+# QUESTION PROMPT
+#: 6013 PROMPT
+msgid "If so, what were they?"
+msgstr "Om svaret är ja, vilka var de?"
+
+# QUESTION PROMPT
+#: 6017 PROMPT
+msgid "If yes, what type of weather?"
+msgstr "Om svaret var ja, vilken typ av väder?"
+
+# QUESTION PROMPT
+#: 6018 PROMPT
+msgid "What kind of effects?"
+msgstr "Vilken typ av påverkan?"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "mental"
+msgstr "mental"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "breathing"
+msgstr "andningen"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "infections"
+msgstr "infektioner"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "exercise tolerance"
+msgstr "träningstolerans"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "allergic reaction"
+msgstr "allergisk reaktion"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "other"
+msgstr "annan"
+
+# QUESTION PROMPT
+#: 6022 PROMPT
+msgid "How often do you fly?"
+msgstr "Hur ofta flyger du?"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "Once a year"
+msgstr "En gång per år"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "A few times a year"
+msgstr "Några gånger per åt"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "Once a month"
+msgstr "En gång per månad"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "More than once a month"
+msgstr "Mer än en gång per månad"
+
+# QUESTION PROMPT
+#: 6023 PROMPT
+msgid "How long is the average flight in hours?"
+msgstr "Hur lång är din genomsnittliga flygtid angivet i timmar?"
+
+# QUESTION PROMPT
+#: 6024 PROMPT
+msgid "How many days between flights?"
+msgstr "Hur många dagar mellan flygturerna?"
+
+# QUESTION PROMPT
+#: 6025 PROMPT
+msgid "Do you try to fly only on non-stop flights?"
+msgstr "Försöker du att endast flyga direkt (utan mellanlandningar)?"
+
+# QUESTION PROMPT
+#: 6026 PROMPT
+msgid "Do you fly over the ocean?"
+msgstr "Flyger du över oceanen?"
+
+# QUESTION PROMPT
+#: 6027 PROMPT
+msgid "Have you ever experienced any discomfort while on the plane?"
+msgstr "Har du någon gång upplevt obehag ombord på flyget?"
+
+# QUESTION PROMPT
+#: 6028 PROMPT
+msgid "If so, did you experience this during one or more of"
+msgstr "Om svaret är ja, upplevde du detta under en eller flera av "
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Take off"
+msgstr "Vid start"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "At cruising altitude"
+msgstr "På normal flyghöjd"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "During landing"
+msgstr "Under landning"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Immediately after getting off of the plane"
+msgstr "Omedelbart efter att du hade gått av planet"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Sometime soon after getting off of the plane"
+msgstr "Ganska snart efter att du hade gått av planet"
+
+# QUESTION PROMPT
+#: 6029 PROMPT
+msgid "Please describe the pain/ discomfort that you felt?"
+msgstr "Beskriv den smärta/det obehag du upplevde?"
+
+# QUESTION PROMPT
+#: 6030 PROMPT
+msgid "Do you regularly use oxygen on the plane?"
+msgstr "Använder du regelbundet syrgas på flygplan?"
+
+# QUESTION PROMPT
+#: 6031 PROMPT
+msgid "If so, how much (liters per minute)?"
+msgstr "Om svaret är ja, hur mycket (liter per minut)?"
+
+# QUESTION PROMPT
+#: 6032 PROMPT
+msgid "If you do not use oxygen regularly on the plane, do you ever tell airplane staff that you have a lung condition when you get on the plane?"
+msgstr "Om du inte använder syrgas regelbundet på flygplanet, talar du då någon gång om för flygplanspersonalen att du har en lungsjukdom när du går ombord på planet?"
+
+# QUESTION PROMPT
+#: 6033 PROMPT
+msgid "Do you take any precautions when you fly (x-ray before flying, etc)?"
+msgstr "Vidtar du några åtgärder när du flyger (röntgen innan flygningen etc)?"
+
+# QUESTION PROMPT
+#: 6034 PROMPT
+msgid "What are these?"
+msgstr "Vilka är dessa?"
+
+# QUESTION PROMPT
+#: 6035 PROMPT
+msgid "Have you had a pneumathorax (collapsed lung) or any other medical problem within a week after flying?"
+msgstr "Har du drabbats av en pneumathorax (lungkollaps) eller något annat medicinskt problem inom en vecka efter en flygning?"
+
+# QUESTION PROMPT
+#: 6036 PROMPT
+msgid "At what approximate altitude (meters) do you live (1 meter=3.3 feet)?"
+msgstr "Ungefär på vilken höjd lever du (anges i meter)?"
+
+# QUESTION PROMPT
+#: 6037 PROMPT
+msgid "Do you feel that this affects your breathing?"
+msgstr "Känner du att detta påverkar din andning?"
+
+# QUESTION PROMPT
+#: 6038 PROMPT
+msgid "When you travel, do you visit locations at high altitude?"
+msgstr "När du reser, brukar du besöka platser på hög höjd?"
+
+# QUESTION PROMPT
+#: 6039 PROMPT
+msgid "If so, how do you feel"
+msgstr "Om svaret är ja, hur mår du"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "No effect"
+msgstr "Ingen påverkan"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "some discomfort"
+msgstr "lite obehag"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "significant difficulty"
+msgstr "märkbara svårigheter"
+
+# QUESTION PROMPT
+#: 5997 PROMPT
+msgid "Do you work part-time or full-time?"
+msgstr "Arbetar du deltid eller heltid?"
+
+# QUESTION CHOICES
+#: 5997 CHOICES
+msgid "Part time"
+msgstr "Deltid"
+
+# QUESTION CHOICES
+#: 5997 CHOICES
+msgid "Full time"
+msgstr "Heltid"
+
+# QUESTION PROMPT
+#: 5993 PROMPT
+msgid "Are you the sole income-earner in your family?"
+msgstr "Är du den enda inkomsttagaren i din familj?"
+
+# QUESTION PROMPT
+#: 5995 PROMPT
+msgid "Do you have a job outside of the home?"
+msgstr "Har du ett jobb utanför hemmet?"
+
+# QUESTION PROMPT
+#: 5996 PROMPT
+msgid "Do you work from home?"
+msgstr "Arbetar du hemifrån?"
+
+# QUESTION PROMPT
+#: 5992 PROMPT
+msgid "Are you the sole home-maker in your family?"
+msgstr "Är du den enda hemmafrun/(hemmamannen) i din familj?"
+
+# QUESTION PROMPT
+#: 6014 PROMPT
+msgid "On average, is the climate where you now live wet, temperate or dry?"
+msgstr "Är det genomsnittliga klimatet där du lever fuktigt, tempererat eller torrt?"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Rains alot and very humid"
+msgstr "Regnar mycket och är mycket fuktigt"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Moderate humidity and rain"
+msgstr "Måttlig fuktighet och måttliga regn"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Dry and desert like"
+msgstr "Torrt och ökenliknande"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Humid summers; cold, dry winters"
+msgstr "Fuktiga somrar; kalla och torra vintrar"
+
+# QUESTION PROMPT
+#: 6015 PROMPT
+msgid "Is the climate on average hot, temperate, or cold?"
+msgstr "Är klimatet i genomsnitt hett, tempererat eller kallt?"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "hot"
+msgstr "hett"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "temperate"
+msgstr "tempererat"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "cold"
+msgstr "kallt"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "variable"
+msgstr "varierande"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "unknown"
+msgstr "okänt"
+
+# QUESTION PROMPT
+#: 6019 PROMPT
+msgid "Other comments on climate and its impact on your health?"
+msgstr "Övriga kommentarer om klimatet och dess påverkan på din hälsa?"
+
+# QUESTION PROMPT
+#: 6044 PROMPT
+msgid "Is this due to one or more of the following?"
+msgstr "Beror det på något av följande?"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Anxiety"
+msgstr "Oro"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Not being able to breathe well"
+msgstr "Att inte kunna andas ordentligt"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Waking up frequently to urinate, etc"
+msgstr "Att ofta vakna upp för att urinera etc"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Other pain or discomfort unrelated to breathing"
+msgstr "Annan smärta eller obehag som inte är relaterad till andningen"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Demands of work or family"
+msgstr "Krav från arbetet eller familjen"
+
+# QUESTION PROMPT
+#: 6047 PROMPT
+msgid "If yes, on how many litres per minute of oxygen?"
+msgstr "Om svaret är ja, hur många liter syrgas per minut?"
+
+# QUESTION PROMPT
+#: 6049 PROMPT
+msgid "Has this become worse over time?"
+msgstr "Har detta förvärrats med tiden?"
+
+# QUESTION PROMPT
+#: 6052 PROMPT
+msgid "Has this sensation become worse over time?"
+msgstr "Har denna känsla förvärrats med tiden?"
+
+# QUESTION PROMPT
+#: 13809 PROMPT
+msgid "Has this sensation become worse over time?"
+msgstr "Har denna känsla förvärrats med tiden?"
+
+# QUESTION PROMPT
+#: 5971 PROMPT
+msgid "Did you use these drugs regularly during more than a year of your life?"
+msgstr "Använde du dessa receptbelagda mediciner regelbundet under mer än ett år av ditt liv?"
+
+# QUESTION PROMPT
+#: 5973 PROMPT
+msgid "What remedies?"
+msgstr "Vilka läkemedel?"
+
+# QUESTION PROMPT
+#: 5976 PROMPT
+msgid "What treatments or herbs have you tried?"
+msgstr "Vilka behandlingar eller örter har du provat?"
+
+# QUESTION PROMPT
+#: 5979 PROMPT
+msgid "What kind or format?"
+msgstr "Av vilken typ eller form?"
+
+# QUESTION PROMPT
+#: 5982 PROMPT
+msgid "For what symptoms or underlying cause?"
+msgstr "Mot vilka symptom eller vilken underliggande orsak?"
+
+# QUESTION PROMPT
+#: 5981 PROMPT
+msgid "What kind or form?"
+msgstr "Av vilken typ eller form?"
+
+# QUESTION PROMPT
+#: 5984 PROMPT
+msgid "If so, please name them"
+msgstr "Om svaret är ja, var vänlig och namnge dem"
+
+# QUESTION PROMPT
+#: 5955 PROMPT
+msgid "Which ones?"
+msgstr "Vilka?"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Chinese medicine"
+msgstr "Kinesisk medicin"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Acupuncture"
+msgstr "Akupunktur"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Herbal treatments"
+msgstr "Örtbehandlingar"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Shiatsu massage"
+msgstr "Shiatsu-massage"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Hypnosis"
+msgstr "Hypnos"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Meditation"
+msgstr "Meditation"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 13821 PROMPT
+msgid "Please describe"
+msgstr "Var vänlig beskriv"
+
+# QUESTION PROMPT
+#: 5917 PROMPT
+msgid "If yes, what are these symptoms?"
+msgstr "Om svaret är ja, vilka är dessa symptom?"
+
+# QUESTION PROMPT
+#: 5918 PROMPT
+msgid "What food / group do you associate with each symptom?"
+msgstr "Vilken mat/vilka typer av mat associerar du med vart och ett av symptomen?"
+
+# QUESTION PROMPT
+#: 5919 PROMPT
+msgid "Which food or food groups do you avoid to alleviate this symptom?"
+msgstr "Vilken mat/vilka typer av mat undviker du för att lindra dessa symptom?"
+
+# QUESTION PROMPT
+#: 5914 PROMPT
+msgid "Are there any foods or food groups you avoid eating?"
+msgstr "Finns det någon mat eller typer av mat som du undviker att äta?"
+
+# QUESTION PROMPT
+#: 5915 PROMPT
+msgid "If yes, do you avoid eating these due to"
+msgstr "Om svaret är ja, undviker du att äta dessa på grund av"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "General health concerns"
+msgstr "Generell oro för hälsan"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Weight and body image"
+msgstr "Vikt och kroppsbild"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Effect on lung function"
+msgstr "Påverkan på lungfunktionen"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Effect on lymphatic symptoms"
+msgstr "Påverkan på lymfatiska symptom"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "other symptoms"
+msgstr "andra symptom"
+
+# QUESTION PROMPT
+#: 5924 PROMPT
+msgid "For how long have you done this (in years)?"
+msgstr "Hur länge har du gjort detta (i år)?"
+
+# QUESTION PROMPT
+#: 5925 PROMPT
+msgid "What prompted you to follow this diet?"
+msgstr "Vad fick dig att följa denna diet?"
+
+# QUESTION PROMPT
+#: 5926 PROMPT
+msgid "Do you follow this due to a weight concern related to one or more of:"
+msgstr "Följer du detta på grund av att du tänker på vikten relaterat till något av:"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Body image"
+msgstr "Kroppsbild"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Heart health"
+msgstr "Hjärthälsa"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "LAM"
+msgstr "LAM"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Breathing issues"
+msgstr "Andningsproblem"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Chyle issues in the thoracic cavity"
+msgstr "Chyle-problem i brösthålan"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "chyle issues in the abdominal cavity"
+msgstr "chyle-problem i bukhålan"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "lymphatic discomfort/ disorder generally"
+msgstr "lymfobehag/allmän sjukdom"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 5929 PROMPT
+msgid "Do you find it difficult to lose weight?"
+msgstr "Tycker du att det är svårt att förlora vikt?"
+
+# QUESTION PROMPT
+#: 5930 PROMPT
+msgid "Do you find it difficult to gain weight?"
+msgstr "Tycker du att det är svårt att gå upp i vikt?"
+
+# QUESTION PROMPT
+#: 26389 PROMPT
+msgid "Do you regularly take fish oil or any other antioxidants?"
+msgstr "Tar du regelbundet fiskolja eller andra oxidanter?"
+
+# QUESTION PROMPT
+#: 5933 PROMPT
+msgid "Please list supplements and symptoms/issues they are meant to address"
+msgstr "Skriv en lista på vilka tilläggsprodukter du tar och vilka symptom/problem de är ämnade att lindra"
+
+# QUESTION QUESTION-HELP
+#: 5933 QUESTION-HELP
+msgid "Please put one supplement and symptom or condition per line"
+msgstr "Skriv en tilläggsprodukt och ett symptom eller förhållande per rad"
+
+# QUESTION PROMPT
+#: 5946 PROMPT
+msgid "If so, does that stop you from exercising?"
+msgstr "Om svaret är ja, hindrar det dig från att träna?"
+
+# QUESTION PROMPT
+#: 5947 PROMPT
+msgid "If you desaturate, what are your symptoms?"
+msgstr "Om du drabbas av desaturation, vilka är dina symptom?"
+
+# QUESTION PROMPT
+#: 5949 PROMPT
+msgid "If so, please describe"
+msgstr "Om svaret är ja, var vänlig beskriv"
+
+# QUESTION PROMPT
+#: 5964 PROMPT
+msgid "If yes, because of what symptom?"
+msgstr "Om svaret är ja, på grund av vilka symptom?"
+
+# QUESTION PROMPT
+#: 5965 PROMPT
+msgid "Did you do pulmonary rehabilitation?"
+msgstr "Har du genomgått lungrehabilitering?"
+
+# QUESTION PROMPT
+#: 5966 PROMPT
+msgid "For how long (in months)?"
+msgstr "Under hur lång tid (i månader)?"
+
+# QUESTION PROMPT
+#: 5967 PROMPT
+msgid "Did you find it helpful?"
+msgstr "Var det till någon hjälp?"
+
+# QUESTION PROMPT
+#: 5938 PROMPT
+msgid "Is your exercise"
+msgstr "Är din träning"
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Regular"
+msgstr "Regelbunden"
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Variable"
+msgstr "Varierande"
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Infrequent"
+msgstr "Oregelbunden"
+
+# QUESTION PROMPT
+#: 5939 PROMPT
+msgid "Is this exercise targeted at endurance?"
+msgstr "Är syftet med träningen att förbättra konditionen?"
+
+# QUESTION PROMPT
+#: 5941 PROMPT
+msgid "How many times a week on average?"
+msgstr "Hur många gånger per vecka i genomsnitt?"
+
+# QUESTION PROMPT
+#: 5942 PROMPT
+msgid "and for how many minutes?"
+msgstr "och under hur många minuter?"
+
+# QUESTION PROMPT
+#: 5943 PROMPT
+msgid "Do you not use oxygen normally but use oxygen when you exercise?"
+msgstr "Använder du inte normalt syrgas men använder syrgas när du tränar?"
+
+# QUESTION PROMPT
+#: 5944 PROMPT
+msgid "If you use oxygen normally, do you exercise with oxygen?"
+msgstr "Om du normalt använder syrgas, tränar du med syrgas?"
+
+# QUESTION PROMPT
+#: 5950 PROMPT
+msgid "Do you experience any discomfort or pain while exercising?"
+msgstr "Upplever du något obehag eller någon smärta när du tränar?"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Coughing blood"
+msgstr "Hostar blod"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Acute breathlessness"
+msgstr "Akut andnöd"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Dizziness"
+msgstr "Yrsel"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Nausea"
+msgstr "Illamående"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 5951 PROMPT
+msgid "What is your favorite kind of exercise?"
+msgstr "Vad är din favoritträning?"
+
+# QUESTION PROMPT
+#: 6063 PROMPT
+msgid "Location of the tissue"
+msgstr "Vävnadsplats"
+
+# QUESTION PROMPT
+#: 6064 PROMPT
+msgid "Type of sample"
+msgstr "Typ av prov"
+
+# QUESTION PROMPT
+#: 6065 PROMPT
+msgid "Date of sample"
+msgstr "Datum för prov"
+
+# QUESTION PROMPT
+#: 5895 PROMPT
+msgid "If yes, please describe"
+msgstr "Om svaret är ja, var vänlig beskriv"
+
+# QUESTION PROMPT
+#: 5896 PROMPT
+msgid "Do you take any medications for this?"
+msgstr "Tar du någon medicin mot detta?"
+
+# QUESTION PROMPT
+#: 5897 PROMPT
+msgid "Any other comments on pain and discomfort"
+msgstr "Övriga kommentarer om smärta eller obehag"
+
+# QUESTION PROMPT
+#: 5886 PROMPT
+msgid "What part of your body hurts?"
+msgstr "I vilken kroppsdel känner du smärta?"
+
+# QUESTION PROMPT
+#: 5888 PROMPT
+msgid "How often do you experience these pains?"
+msgstr "Hur ofta upplever du dessa smärtor?"
+
+# QUESTION PROMPT
+#: 5887 PROMPT
+msgid "During which activities does it hurt?"
+msgstr "Under vilka aktiviteter känner du smärta?"
+
+# QUESTION PROMPT
+#: 5884 PROMPT
+msgid "How would you rate this pain overall?"
+msgstr "Hur skulle du generellt bedöma denna smärta?"
+
+# QUESTION QUESTION-HELP
+#: 5884 QUESTION-HELP
+msgid "Use a scale from 1 to 10, where 1 is the lightest pain you have ever felt and 10 the greatest pain."
+msgstr "Använd en skala från 1 till 10 där 1 är den minsta smärta du någonsin har känt och 10 är den största smärtan."
+
+# QUESTION PROMPT
+#: 5891 PROMPT
+msgid "Do you take any medications to address this?"
+msgstr "Tar du någon medicin för att lindra detta?"
+
+# QUESTION PROMPT
+#: 5882 PROMPT
+msgid "If yes, please list the medications"
+msgstr "Om svaret är ja, skriv en lista över medicinerna"
+
+# QUESTION QUESTION-HELP
+#: 5882 QUESTION-HELP
+msgid "Please enter: medication, dose, duration of time taken. One line per medication"
+msgstr "Skriv in: medicin, dos, hur lång tid du har tagit den. En rad per medicin"
+
+# QUESTION PROMPT
+#: 5883 PROMPT
+msgid "Do/did these medications have an impact on your pain / discomfort?"
+msgstr "Hade/har dessa mediciner någon påverkan på din smärta/dina obehag?"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Completely resolve"
+msgstr "Tar bort fullständigt"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Partially resolve"
+msgstr "Tar delvis bort"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Partially resolve"
+msgstr "Tar delvis bort"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "No effect"
+msgstr "Ingen påverkan"
+
+# QUESTION PROMPT
+#: 5890 PROMPT
+msgid "Please describe"
+msgstr "Var vänlig beskriv"
+
+# QUESTION PROMPT
+#: 5892 PROMPT
+msgid "If yes, please list the medication(s)"
+msgstr "Om svaret är ja, skriv en lista över medicinerna"
+
+# QUESTION QUESTION-HELP
+#: 5892 QUESTION-HELP
+msgid "Please enter: medication, dose, duration of time taken. One line per medication"
+msgstr "Skriv in: medicin, dos, hur lång tid du har tagit den. En rad per medicin"
+
+# QUESTION PROMPT
+#: 5893 PROMPT
+msgid "Does this medication completely or patially resolve your pain / discomfort?"
+msgstr "Tar denna medicin helt eller delvis bort din smärta/dina obehag?"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "Completely resolve"
+msgstr "Tar bort fullständigt"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "Partially resolve"
+msgstr "Tar delvis bort"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "No effect"
+msgstr "Ingen påverkan"
+
+# QUESTION PROMPT
+#: 5900 PROMPT
+msgid "If so, which and when?"
+msgstr "Om svaret är ja, vilka och när?"
+
+# QUESTION PROMPT
+#: 5901 PROMPT
+msgid "Has the problem persisted?"
+msgstr "Finns problemet kvar?"
+
+# QUESTION PROMPT
+#: 5902 PROMPT
+msgid "For how many years (1 if recent)?"
+msgstr "Under hur många år (1 om det är nyligen)?"
+
+# QUESTION PROMPT
+#: 5904 PROMPT
+msgid "If so, which disease or condition and who suffered from it?"
+msgstr "Om svaret är ja, vilken sjukdom eller vilket tillstånd och vem drabbades av det?"
+
+# QUESTION PROMPT
+#: 5906 PROMPT
+msgid "If yes, from what cause?"
+msgstr "Om svaret är ja, av vilken orsak?"
+
+# QUESTION PROMPT
+#: 5908 PROMPT
+msgid "If yes, which?"
+msgstr "Om svaret är ja, vilka?"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Asthma"
+msgstr "Astma"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Emphysema"
+msgstr "Emfysem"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Bronchiectasis"
+msgstr "Bronkiektasi"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Other lunch disease"
+msgstr "Annan lungsjukdom"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Diabetes"
+msgstr "Diabetes"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Epilepsy"
+msgstr "Epilepsi"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Malignancy"
+msgstr "Elakartad tumör"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 6124 PROMPT
+msgid "If no, by what form of testing was the possibility that you have Tuberous Sclerosis ruled out?"
+msgstr "Om svaret är nej, vilket test gjorde att tuberös skleros avfärdades?"
+
+# QUESTION PROMPT
+#: 6125 PROMPT
+msgid "If yes, how old were you?"
+msgstr "Om svaret är jag, hur gammal var du?"
+
+# QUESTION PROMPT
+#: 6126 PROMPT
+msgid "Do you currently have any symptoms associated with your Tuberous Sclerosis?"
+msgstr "Har du för närvarande några symptom som är relaterade till din tuberösa skleros?"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Skin problems"
+msgstr "Hudproblem"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Epilepsy"
+msgstr "Epilepsi"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Brain tumors"
+msgstr "Hjärntumörer"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Kidney tumors"
+msgstr "Njurtumörer"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 6127 PROMPT
+msgid "Do you currently have any symptoms not definitely related to Tuberous Sclerosis?"
+msgstr "Har du för närvarande några symptom som inte är definitivt relaterade till din tuberösa skleros?"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Skin problems"
+msgstr "Hudproblem"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Epilepsy"
+msgstr "Epilepsi"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Brain tumors"
+msgstr "Hjärntumörer"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Kidney tumors"
+msgstr "Njurtumörer"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Austism"
+msgstr "Autism"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 6128 PROMPT
+msgid "If other, please describe"
+msgstr "Om svaret är annan, var vänlig beskriv"
+
+# QUESTION PROMPT
+#: 6130 PROMPT
+msgid "Please provide details (current age and relation to you)"
+msgstr "Ange detaljinformation (aktuell ålder och relation till dig)"
+
+# QUESTION PROMPT
+#: 6132 PROMPT
+msgid "If yes, please choose from the following"
+msgstr "Om svaret är ja väljer du från följande"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Skin problems"
+msgstr "Hudproblem"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Epilepsy"
+msgstr "Epilepsi"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Brain tumors"
+msgstr "Hjärntumörer"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Kidney tumors"
+msgstr "Njurtumörer"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Austism"
+msgstr "Autism"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 6133 PROMPT
+msgid "Please describe your relationship to the affected members of your family"
+msgstr "Beskriv din relation till den påverkade familjemedlemmen"
+
+# QUESTION PROMPT
+#: 6135 PROMPT
+msgid "Please describe the condition and date of diagnosis"
+msgstr "Beskriv tillstånden och datum för diagnosen"
+
+# QUESTION PROMPT
+#: 6077 PROMPT
+msgid "If so, how many children do you have, if any?"
+msgstr "Om svaret är ja, hur många barn har du (om du har några)?"
+
+# QUESTION PROMPT
+#: 6078 PROMPT
+msgid "What are the sexes and birth years of each child?"
+msgstr "Vilket kön och vilka födelseår har de olika barnen?"
+
+# QUESTION QUESTION-HELP
+#: 6078 QUESTION-HELP
+msgid "Please list: sex followed by birth year, one per line"
+msgstr "Skriv i listform: kön följt av födelseår, ett barn per rad"
+
+# QUESTION PROMPT
+#: 6091 PROMPT
+msgid "Do you have any children through"
+msgstr "Har du några barn genom"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Adoption"
+msgstr "Adoption"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Inherited through marriage"
+msgstr "Bonusbarn genom giftermål"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Gestational surrogacy"
+msgstr "Surrogatmamma, donerade ägg"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 26415 PROMPT
+msgid "If you gave birth to any of your children, what was the date of your last delivery?"
+msgstr "Om du har fött något av dina barn, vilket datum föddes det senaste?"
+
+# QUESTION PROMPT
+#: 6080 PROMPT
+msgid "Was your pregnancy uneventful?"
+msgstr "Var din graviditet händelselös?"
+
+# QUESTION PROMPT
+#: 6081 PROMPT
+msgid "If not, what challenges did you face?"
+msgstr "Om svaret är nej, vilka utmaningar stod du inför?"
+
+# QUESTION PROMPT
+#: 6082 PROMPT
+msgid "Do you think these challenges may be LAM-related?"
+msgstr "Tror du att dessa utmaningar kan vara relaterade till LAM?"
+
+# QUESTION PROMPT
+#: 6083 PROMPT
+msgid "What makes you think this?"
+msgstr "Vad får dig att tro detta?"
+
+# QUESTION PROMPT
+#: 6085 PROMPT
+msgid "If yes, based on what clues was the diagnosis made?"
+msgstr "Om svaret är ja, baserat på vilka ledtrådar gjordes diagnosen?"
+
+# QUESTION PROMPT
+#: 26257 PROMPT
+msgid "Your age at your first pregnancy?"
+msgstr "Vilken ålder hade du vid din första graviditet?"
+
+# QUESTION PROMPT
+#: 26246 PROMPT
+msgid "Number of pregnancies carried to term"
+msgstr "Antal graviditeter som fullföljts"
+
+# QUESTION QUESTION-HELP
+#: 26246 QUESTION-HELP
+msgid "This means live births, whether naturally or surgically"
+msgstr "Detta innebär levande födda barn, naturligt eller med hjälp av kirurgi"
+
+# QUESTION PROMPT
+#: 6075 PROMPT
+msgid "Number of pregnancies not carried to term"
+msgstr "Antal graviditeter som inte fullföljts"
+
+# QUESTION QUESTION-HELP
+#: 6075 QUESTION-HELP
+msgid "Please enter a number: 0 if none"
+msgstr "Ange ett tal: 0 om det inte är någon"
+
+# QUESTION PROMPT
+#: 26256 PROMPT
+msgid "Have you ever had difficulty becoming pregnant?"
+msgstr "Har du någonsin haft problem med att bli gravid?"
+
+# QUESTION PROMPT
+#: 26255 PROMPT
+msgid "Have you ever had IVF?"
+msgstr "Har du någon gång genomgått IVF?"
+
+# QUESTION QUESTION-HELP
+#: 26255 QUESTION-HELP
+msgid "IVF: In-vitro fertilization"
+msgstr "IVF: Provrörsbefruktning"
+
+# QUESTION PROMPT
+#: 26254 PROMPT
+msgid "Were you ever given DES to prevent miscarriage?"
+msgstr "Har du någon gång fått DES för att förhindra missfall?"
+
+# QUESTION QUESTION-HELP
+#: 26254 QUESTION-HELP
+msgid "DES: Diethylstilbestrol"
+msgstr "DES: Diethylstilbestrol (DES)"
+
+# QUESTION PROMPT
+#: 6106 PROMPT
+msgid "Has this become worse or better over time?"
+msgstr "Har detta blivit sämre eller bättre med tiden?"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Stayed the same"
+msgstr "Har varit lika"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Worse over time"
+msgstr "Sämre med tiden"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Better over time"
+msgstr "Bättre med tiden"
+
+# QUESTION PROMPT
+#: 6112 PROMPT
+msgid "Are you on the pill now?"
+msgstr "Äter du p-piller nu?"
+
+# QUESTION PROMPT
+#: 6109 PROMPT
+msgid "For how many years have you been on birth control pills?"
+msgstr "Under hur många år har du ätit p-piller?"
+
+# QUESTION PROMPT
+#: 6108 PROMPT
+msgid "For what purpose(s) were you on birth control pills?"
+msgstr "Vilket är ditt syfte med att äta p-piller?"
+
+# QUESTION PROMPT
+#: 6111 PROMPT
+msgid "For what purpose?"
+msgstr "Av vilken orsak?"
+
+# QUESTION PROMPT
+#: 6119 PROMPT
+msgid "If so, for how long?"
+msgstr "Om svaret är ja, under hur lång tid?"
+
+# QUESTION PROMPT
+#: 6120 PROMPT
+msgid "Also, are you on hormone replacement therapy now?"
+msgstr "Genomgår du också nu behandling med hormonersättningar?"
+
+# QUESTION PROMPT
+#: 6115 PROMPT
+msgid "At what age did you stop getting regular periods?"
+msgstr "Vid vilken ålder slutade dina regelbundna menstruationer?"
+
+# QUESTION PROMPT
+#: 6116 PROMPT
+msgid "What changes has your body undergone since you stopped menstruating?"
+msgstr "Vilka ändringar har din kropp genomgått sedan din menstruation upphörde?"
+
+# QUESTION PROMPT
+#: 6117 PROMPT
+msgid "Do you think any of these changes are LAM-specific?"
+msgstr "Tror du att någon av dessa förändringar är LAM-specifika?"
+
+# QUESTION PROMPT
+#: 23551 PROMPT
+msgid "Have you taken medications specifically for LAM?"
+msgstr "Har du tagit medicin specifikt mot LAM?"
+
+# QUESTION CHOICES
+#: 23551 CHOICES
+msgid "Yes"
+msgstr "Ja"
+
+# QUESTION CHOICES
+#: 23551 CHOICES
+msgid "No"
+msgstr "Nej"
+
+# QUESTION PROMPT
+#: 23549 PROMPT
+msgid "Which types of drugs have you tried?"
+msgstr "Vilka typer av läkemedel har du provat?"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Statins"
+msgstr "Statiner"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Rapamycin (Sirolimus)"
+msgstr "Rapamycin (Sirolimus)"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Certican R (Everolimus)"
+msgstr "Certican R (Everolimus)"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Doxycycline"
+msgstr "Doxycyklin"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Metformin"
+msgstr "Metformin"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Anti-oestrogen"
+msgstr "Antiöstrogen"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION QUESTION-HELP
+#: 23549 QUESTION-HELP
+msgid "Please select one or more categories"
+msgstr "Välj en eller flera kategorier"
+
+# QUESTION PROMPT
+#: 26416 PROMPT
+msgid "If you have taken LAM medications"
+msgstr "Om du har tagit medicin mot LAM"
+
+# QUESTION QUESTION-HELP
+#: 26416 QUESTION-HELP
+msgid "Please list the medications, dates you took them and the reason you stopped, if any."
+msgstr "Skriv en lista över medicinerna, vilka datum du tog dem och orsaken till att du slutade (om det finns en orsak)."
+
+# QUESTION PROMPT
+#: 36601 PROMPT
+msgid "Please share any other observations about your off-label use."
+msgstr "Dela också med dig av andra observationer om användning av ej godkända mediciner."
+
+# QUESTION QUESTION-HELP
+#: 36601 QUESTION-HELP
+msgid "We will use your answers to this question to formulate a more detailed questionnaire for off-label users."
+msgstr "Vi kommer att använda dina svar på dessa frågor för att formulera ett mer detaljerat frågeformulär för användare som tar ej godkända mediciner."
+
+# QUESTION PROMPT
+#: 23550 PROMPT
+msgid "Please select over the counter drugs you have used"
+msgstr "Välj de receptfria mediciner du har använt"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Aspirin"
+msgstr "Aspirin"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Omega 3 Fatty Acids"
+msgstr "Omega 3-fettsyror"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Other Vitamins"
+msgstr "Andra vitaminer"
+
+# QUESTION PROMPT
+#: 23565 PROMPT
+msgid "Weight"
+msgstr "Vikt"
+
+# QUESTION QUESTION-HELP
+#: 23565 QUESTION-HELP
+msgid "Weight on a home scale.  "
+msgstr "Vikt på en hemmavåg.  "
+
+# QUESTION PROMPT
+#: 23564 PROMPT
+msgid "Body Temperature"
+msgstr "Kroppstemperatur"
+
+# QUESTION QUESTION-HELP
+#: 23564 QUESTION-HELP
+msgid "Collecting your daily temperature at the same time as your spirometer readings may help us understand the role of hormones in variations in FEV1.  Please use under the tongue readings. "
+msgstr "Genom att vi sammanställer din dagliga temperatur vid samma tidpunkt som du läser av spirometern kan det hjälpa oss att förstå vilken roll hormoner har för variationer i FEV1.  Ta temperaturen under tungan. "
+
+# QUESTION PROMPT
+#: 32622 PROMPT
+msgid "Do you experience incontinence?"
+msgstr "Upplever du inkontinens?"
+
+# QUESTION QUESTION-HELP
+#: 32622 QUESTION-HELP
+msgid "Please answer yes if you have, sometimes or always experience incontinence.  The rest of the questions will help fill in the details."
+msgstr "Svara ja om du någon gång har upplevt eller alltid upplever inkontinens.  Resten av frågorna hjälper till med att fylla i detaljinformation."
+
+# QUESTION PROMPT
+#: 24513 PROMPT
+msgid "Before you go out, do you consciously think about whether you need to visit the toilet?"
+msgstr "Tänker du medvetet på om du behöver besöka toaletten innan du går ut?"
+
+# QUESTION CHOICES
+#: 24513 CHOICES
+msgid "Yes"
+msgstr "Ja"
+
+# QUESTION CHOICES
+#: 24513 CHOICES
+msgid "No"
+msgstr "Nej"
+
+# QUESTION PROMPT
+#: 24514 PROMPT
+msgid "Do you sometimes go to the toilet "just to be safe" even if you don't feel you need to?"
+msgstr "Går du ibland på toaletten för att "vara på den säkra sidan" även om du inte känner att du behöver det?"
+
+# QUESTION PROMPT
+#: 24516 PROMPT
+msgid "Have you ever worried that you would not get to the toilet in time due to shortness of breath?"
+msgstr "Har du någonsin oroat dig för att du inte ska hinna till toaletten i tid för att du får andnöd?"
+
+# QUESTION PROMPT
+#: 24517 PROMPT
+msgid "Have you ever experienced a slight leak of urine due to coughing, sneezing, or laughing?"
+msgstr "Har du någon gång upplevt ett litet läckage av urin när du har hostat, nyst eller skrattat?"
+
+# QUESTION PROMPT
+#: 24533 PROMPT
+msgid "Do you avoid certain drinks?"
+msgstr "Undviker du vissa drycker?"
+
+# QUESTION QUESTION-HELP
+#: 24533 QUESTION-HELP
+msgid "Such as coffee, tea, or other diuretics?"
+msgstr "Såsom kaffe, te eller andra urindrivande medel?"
+
+# QUESTION PROMPT
+#: 24523 PROMPT
+msgid "Have you been incontinent of feces?"
+msgstr "Har du haft avföringsinkontinens?"
+
+# QUESTION PROMPT
+#: 24520 PROMPT
+msgid "Have you been incontinent of urine?"
+msgstr "Har du haft urininkontinens?"
+
+# QUESTION PROMPT
+#: 24522 PROMPT
+msgid "Roughly how often?"
+msgstr "Ungefär hur ofta?"
+
+# QUESTION PROMPT
+#: 24529 PROMPT
+msgid "On a scale of 1 (least significant) to 10 (most significant) who significant is incontinence compared to the other challenges you face as a LAM patient?"
+msgstr "På en skala från 1 (minst betydelsefullt) till 10 (mest betydelsefullt) hur betydelsefullt är inkontinens jämfört med andra utmaningar du möter som LAM-patient?"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION PROMPT
+#: 24530 PROMPT
+msgid "Does incontinence prevent you from doing certain things such as shopping or going for walks?"
+msgstr "Hindrar inkontinens dig från att göra vissa saker som att shoppa eller gå på promenader?"
+
+# QUESTION PROMPT
+#: 24531 PROMPT
+msgid "Does incontinence limit you in any other way?"
+msgstr "Begränsar inkontinensen dig på något annat sätt?"
+
+# QUESTION PROMPT
+#: 24532 PROMPT
+msgid "Do you limit your liquid intake?"
+msgstr "Begränsa du ditt intag av drycker?"
+
+# QUESTION QUESTION-HELP
+#: 24532 QUESTION-HELP
+msgid "For example, are worried about finding a toilet when you are out, or getting upstairs when you are home?"
+msgstr "Är du t.ex. oroad över om du ska hitta en toalett när du är ute eller att du behöver gå upp till övervåningen när du är hemma?"
+
+# QUESTION PROMPT
+#: 24526 PROMPT
+msgid "Please describe any coping strategies that have helped to reduce or avoid incontinence"
+msgstr "Beskriv vilka strategier som har hjälpt dig att hantera detta och som hjälpt dig att reducera eller undvika inkontinens"
+
+# QUESTION PROMPT
+#: 24515 PROMPT
+msgid "If you have a chest infection, do you find that you have to be more aware of continence issues than you would be normally?"
+msgstr "Om du har en bröstinfektion, tycker du att du har blivit mer medveten om avhållsamhetsproblem än vad du normalt skulle ha varit?"
+
+# QUESTION PROMPT
+#: 24518 PROMPT
+msgid "Has you incontinence become worse as your breathlessness increased over the years?"
+msgstr "Har din inkontinens blivit värre i takt med att din andnöd har ökat under åren?"
+
+# QUESTION PROMPT
+#: 26454 PROMPT
+msgid "Is your incontinence cyclical?"
+msgstr "Är din inkontinens cyklisk?"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "None"
+msgstr "Ingen"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Monthly"
+msgstr "Månadsvis"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "With menstruation"
+msgstr "Med menstruation"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Seasonal"
+msgstr "Säsongsrelaterad"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 24525 PROMPT
+msgid "What do you believe to be the major cause of your incontinence?"
+msgstr "Vad tror du är huvudorsaken till din inkontinens?"
+
+# QUESTION PROMPT
+#: 24519 PROMPT
+msgid "Do you think your incontinence occurs because of"
+msgstr "Tror du att din inkontinens uppstår på grund av "
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "oxygen desaturation"
+msgstr "syredesaturering"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "breathlessness keeps you from getting there in time"
+msgstr "andnöd hindrar dig från att komma dit i tid"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "other"
+msgstr "annan"
+
+# QUESTION QUESTION-HELP
+#: 24519 QUESTION-HELP
+msgid "i.e. desaturation leads you to lose control of the muscles"
+msgstr "dvs desaturering leder till att du förlorar kontrollen över musklerna"
+
+# QUESTION PROMPT
+#: 24528 PROMPT
+msgid "Would you feel comfortable talking to your doctor or pulmonologist about incontinence problems?"
+msgstr "Skulle det kännas bekvämt för dig att prata med din läkare eller lungläkare om inkontinensproblem?"
+
+# QUESTION PROMPT
+#: 24527 PROMPT
+msgid "Have you ever asked for professional help with incontinence?"
+msgstr "Har du någon gång sökt professionell hjälp mot inkontinens?"
+
+# QUESTION PROMPT
+#: 24817 PROMPT
+msgid "Do you have a family history of osteoporosis?"
+msgstr "Finns det en familjehistorik över benskörhet?"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "yes"
+msgstr "ja"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "no"
+msgstr "nej"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "I don't know"
+msgstr "Jag vet inte"
+
+# QUESTION PROMPT
+#: 24818 PROMPT
+msgid "Do you suffer from bone loss?"
+msgstr "Lider du av benförlust?"
+
+# QUESTION PROMPT
+#: 25733 PROMPT
+msgid "Do you suffer from back, joint or bone pain?"
+msgstr "Lider du av rygg-, led- eller bensmärtor?"
+
+# QUESTION PROMPT
+#: 24820 PROMPT
+msgid "In which members of your family?"
+msgstr "För vilka familjemedlemmar?"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Siblings"
+msgstr "Syskon"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Parents"
+msgstr "Föräldrar"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Grandparents"
+msgstr "Far-/morföräldrar"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Cousins"
+msgstr "Kusiner"
+
+# QUESTION PROMPT
+#: 24821 PROMPT
+msgid "At approximately what age was that diagnosis made for those family members "
+msgstr "Ungefär vid vilken ålder fick dessa familjemedlemmar diagnosen "
+
+# QUESTION QUESTION-HELP
+#: 24821 QUESTION-HELP
+msgid "Please list one family member and age per line"
+msgstr "Skriv en lista med en familjemedlem och ålder per rad"
+
+# QUESTION PROMPT
+#: 25727 PROMPT
+msgid "Have you ever had a bone density scan?"
+msgstr "Har du någon gång genomgått en skanning av bendensitet?"
+
+# QUESTION PROMPT
+#: 24825 PROMPT
+msgid "Has a clinician said that this may be related to LAM?"
+msgstr "Har en kliniker sagt att detta kan vara relaterat till LAM?"
+
+# QUESTION PROMPT
+#: 24826 PROMPT
+msgid "If so, what connection was described between LAM and bone loss?"
+msgstr "Om svaret är ja, vilket samband har beskrivits mellan LAM och benförlust?"
+
+# QUESTION PROMPT
+#: 24823 PROMPT
+msgid "Any other comments on your loss of bone density?"
+msgstr "Eventuella övriga kommentarer om förlust av bentäthet?"
+
+# QUESTION PROMPT
+#: 24836 PROMPT
+msgid "Date of diagnosis?"
+msgstr "Datum för diagnosen?"
+
+# QUESTION PROMPT
+#: 24837 PROMPT
+msgid "What test was used to arrive at your diagnosis?"
+msgstr "Vilka tester genomfördes för att du skulle få din diagnos?"
+
+# QUESTION PROMPT
+#: 24838 PROMPT
+msgid "Name and address of diagnosing clinician"
+msgstr "Namn och adress till den diagnostiserande klinikern"
+
+# QUESTION PROMPT
+#: 24839 PROMPT
+msgid "Are you now taking any prescription medication for this condition?"
+msgstr "Tar du nu någon receptbelagd medicin mot detta tillstånd?"
+
+# QUESTION PROMPT
+#: 24844 PROMPT
+msgid "Have you taken medication for osteoporosis in the past that you are no longer taking?"
+msgstr "Har du tidigare tagit någon medicin mot benskörhet som du inte längre tar?"
+
+# QUESTION PROMPT
+#: 25732 PROMPT
+msgid "Have you ever taken bisphosophonates?"
+msgstr "Har du någon gång tagit bisfosfonat?"
+
+# QUESTION PROMPT
+#: 25731 PROMPT
+msgid "Are you currently taking bisphosphonates?"
+msgstr "Tar du för närvarande bisfosfonat?"
+
+# QUESTION PROMPT
+#: 24841 PROMPT
+msgid "Which ones?"
+msgstr "Vilka?"
+
+# QUESTION PROMPT
+#: 24843 PROMPT
+msgid "Has this ever been recommended?"
+msgstr "Har detta blivit rekommenderat någon gång?"
+
+# QUESTION PROMPT
+#: 24846 PROMPT
+msgid "Medication?"
+msgstr "Medicin?"
+
+# QUESTION PROMPT
+#: 24847 PROMPT
+msgid "Date when medication started?"
+msgstr "Datum då du startade medicineringen?"
+
+# QUESTION PROMPT
+#: 24848 PROMPT
+msgid "Date when medication stopped?"
+msgstr "Datum då du slutade med medicineringen?"
+
+# QUESTION PROMPT
+#: 24849 PROMPT
+msgid "Reason for stopping medication?"
+msgstr "Orsak för att sluta med medicineringen?"
+
+# QUESTION PROMPT
+#: 24851 PROMPT
+msgid "Do you currently take multivitamins?"
+msgstr "Tar du för närvarande multivitaminer?"
+
+# QUESTION PROMPT
+#: 24852 PROMPT
+msgid "Not counting multi-vitamins, do you take any calcium or vitamin D supplements?"
+msgstr "Om vi inte räknar med multivitaminer, tar du tillägg av kalcium eller vitamin D?"
+
+# QUESTION PROMPT
+#: 24853 PROMPT
+msgid "Do you take any other vitamin supplements?"
+msgstr "Tar du tillägg av andra vitaminer?"
+
+# QUESTION PROMPT
+#: 24854 PROMPT
+msgid "Do you regularly consume any of the following foods?"
+msgstr "Äter du regelbundet några av följande matvaror?"
+
+# QUESTION CHOICES
+#: 24854 CHOICES
+msgid "Green, leafy vegetables"
+msgstr "Gröna bladgrönsaker"
+
+# QUESTION CHOICES
+#: 24854 CHOICES
+msgid "Other bone-health related foods"
+msgstr "Annan mat som är relaterad till benhälsa"
+
+# QUESTION PROMPT
+#: 24856 PROMPT
+msgid "Vitamin D content?"
+msgstr "Vitamin D-innehåll?"
+
+# QUESTION PROMPT
+#: 24857 PROMPT
+msgid "Calcium content?"
+msgstr "Kalcium-innehåll?"
+
+# QUESTION PROMPT
+#: 24859 PROMPT
+msgid "What are the supplements called?"
+msgstr "Vad heter tilläggsprodukterna?"
+
+# QUESTION PROMPT
+#: 24860 PROMPT
+msgid "What formulation?"
+msgstr "Vilken utformning?"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Vitamin D"
+msgstr "Vitamin D"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Calcium"
+msgstr "Kalcium"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Vitamin D & Calcium"
+msgstr "Vitamin D och kalcium"
+
+# QUESTION PROMPT
+#: 24861 PROMPT
+msgid "Amount of Vitamin D taken each day?"
+msgstr "Vilken mängd tar du av vitamin D per dag?"
+
+# QUESTION PROMPT
+#: 24862 PROMPT
+msgid "Amount of Calcium taken each day?"
+msgstr "Vilken mängd tar du av kalcium per dag?"
+
+# QUESTION PROMPT
+#: 25606 PROMPT
+msgid "Are you currently taking any prescription medications?"
+msgstr "Tar du för närvarande några receptbelagda mediciner?"
+
+# QUESTION PROMPT
+#: 25609 PROMPT
+msgid "Are you regularly taking vitamins or supplements?"
+msgstr "Tar du regelbundet vitaminer eller tilläggsprodukter?"
+
+# QUESTION PROMPT
+#: 25608 PROMPT
+msgid "Please list the prescription medications you are taking"
+msgstr "Skriv en lista över de receptbelagda mediciner du tar"
+
+# QUESTION QUESTION-HELP
+#: 25608 QUESTION-HELP
+msgid "To give us more information on your prescriptions, please go to our medication diary and enter the details of your current and past prescription medication use"
+msgstr "För att ge oss mer information om din medicinering går du till vårt medicindiarium och anger detaljinformation om din nuvarande och tidigare användning av receptbelagda mediciner"
+
+# QUESTION PROMPT
+#: 6107 PROMPT
+msgid "Have you ever been on birth control pills?"
+msgstr "Har du någon gång ätit p-piller?"
+
+# QUESTION PROMPT
+#: 25622 PROMPT
+msgid "Have you ever used female hormones other than oral contraceptives?"
+msgstr "Har du använt några andra kvinnliga hormoner än p-piller som du stoppar i munnen?"
+
+# QUESTION PROMPT
+#: 25629 PROMPT
+msgid "Are you currently using over-the-counter hormone replacements or to treat post-menopausal symptoms?"
+msgstr "Använder du för närvarande receptfria hormonersättningar eller tar du något för att behandla symptom efter klimakteriet?"
+
+# QUESTION QUESTION-HELP
+#: 25629 QUESTION-HELP
+msgid "For example herbal, natural or soy-based preparations or supplements?"
+msgstr "Till exempel örtmedel, naturliga eller sojabaserade medel eller tilläggsprodukter?"
+
+# QUESTION PROMPT
+#: 25702 PROMPT
+msgid "Please rate your average level of daily stress"
+msgstr "Bedöm din genomsnittliga nivå av daglig stress"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION QUESTION-HELP
+#: 25702 QUESTION-HELP
+msgid "Where 1 is no stress and 10 is the highest you have experienced."
+msgstr "Där 1 är ingen stress och 10 är den störst stress du har upplevt."
+
+# QUESTION PROMPT
+#: 25703 PROMPT
+msgid "What is the primary cause of your stress?"
+msgstr "Vilken är den primära orsaken till din stress?"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Job"
+msgstr "Jobbet"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Home"
+msgstr "Hemmet"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Family"
+msgstr "Familjen"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Injury"
+msgstr "Skada"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 25704 PROMPT
+msgid "Has your general stress level increased since your LAM diagnosis?"
+msgstr "Har din generella stressnivå ökat sedan du fick diagnosen LAM?"
+
+# QUESTION PROMPT
+#: 25705 PROMPT
+msgid "What is your primary method of coping with stress?"
+msgstr "Vilken metod använder du primärt för att hantera stress?"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Reading"
+msgstr "Läsning"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Exercise"
+msgstr "Träning"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Television"
+msgstr "TV"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Spending time with family"
+msgstr "Spendera tid med familjen"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Spending time with friends"
+msgstr "Spendera tid med vänner"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Work"
+msgstr "Arbeta"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "None"
+msgstr "Ingen"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 26917 PROMPT
+msgid "What estrogens did you take?"
+msgstr "Vilken typ av östrogen tog du?"
+
+# QUESTION QUESTION-HELP
+#: 26917 QUESTION-HELP
+msgid "Please enter one medication and the dates taken, one per line"
+msgstr "Ange medicin och datum när du har tagit den, en per rad"
+
+# QUESTION PROMPT
+#: 25625 PROMPT
+msgid "What prompted you to take estrogens?"
+msgstr "Vad fick dig att ta östrogen?"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Menstrual problems"
+msgstr "Menstruationsproblem"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Bone problems"
+msgstr "Benproblem"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Hysterectomy"
+msgstr "Hysterektomi"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Cancer"
+msgstr "Cancer"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 25626 PROMPT
+msgid "At what age did you first take estrogens?"
+msgstr "Vid vilken ålder började du ta östrogen?"
+
+# QUESTION PROMPT
+#: 25627 PROMPT
+msgid "How long did you take estrogens?"
+msgstr "Hur länge tog du östrogen?"
+
+# QUESTION PROMPT
+#: 25628 PROMPT
+msgid "How were the estrogens administered?"
+msgstr "Hur administrerades östrogenet?"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Injection"
+msgstr "Injektion"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Cream"
+msgstr "Kräm"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Pill"
+msgstr "Piller"
+
+# QUESTION PROMPT
+#: 25631 PROMPT
+msgid "What over the counter estrogens?"
+msgstr "Receptfritt östrogen?"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Soy estrogen products"
+msgstr "Sojaprodukter med östrogen"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Dong quai"
+msgstr "Dong quai"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Natural progesterone cream"
+msgstr "Naturlig progesteronkräm"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Wild yam cream"
+msgstr "Wild yam-kräm"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Black cohash"
+msgstr "Amerikansk silverax"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 25735 PROMPT
+msgid "Where do you primarily experience your pain?"
+msgstr "Var upplever du primärt smärtan?"
+
+# QUESTION PROMPT
+#: 25736 PROMPT
+msgid "How often does the pain occur?"
+msgstr "Hur ofta uppstår smärtan?"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Constant"
+msgstr "Konstant"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Daily"
+msgstr "Dagligen"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Monthly"
+msgstr "Månadsvis"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Occasionally"
+msgstr "Ibland"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 25739 PROMPT
+msgid "Does your pain vary cyclically?"
+msgstr "Varierar smärtan cykliskt?"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "No"
+msgstr "Nej"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Monthly"
+msgstr "Månadsvis"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Seasonally"
+msgstr "Säsongsvis"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 25737 PROMPT
+msgid "How would you rate the pain on average?"
+msgstr "Hur skulle du genomsnittligt bedöma denna smärta?"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION QUESTION-HELP
+#: 25737 QUESTION-HELP
+msgid "Please rate from 1 to 10 where 1 is the most mild and 10 is the worst pain you have ever felt"
+msgstr "Bedöm från 1 till 10 där 1 är den lindrigaste och 10 är den svåraste smärta du någonsin har upplevt"
+
+# QUESTION PROMPT
+#: 25738 PROMPT
+msgid "How has your pain changed over the past year?"
+msgstr "Hur har din smärta ändrats under det senaste året?"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Same"
+msgstr "Samma"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Better"
+msgstr "Bättre"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Worse"
+msgstr "Sämre"
+
+# QUESTION PROMPT
+#: 26211 PROMPT
+msgid "FEV1 - trial 1"
+msgstr "FEV1 - prov 1"
+
+# QUESTION PROMPT
+#: 26212 PROMPT
+msgid "FEV6 - trial 1"
+msgstr "FEV6 - prov 1"
+
+# QUESTION PROMPT
+#: 26213 PROMPT
+msgid "FEV1 - trial 2"
+msgstr "FEV1 - prov 2"
+
+# QUESTION PROMPT
+#: 26214 PROMPT
+msgid "FEV6 - trial 2"
+msgstr "FEV6 - prov 2"
+
+# QUESTION PROMPT
+#: 26215 PROMPT
+msgid "FEV1 - trial 3"
+msgstr "FEV1 - prov 3"
+
+# QUESTION PROMPT
+#: 26216 PROMPT
+msgid "FEV6 - trial 3"
+msgstr "FEV6 - prov 3"
+
+# QUESTION PROMPT
+#: 26220 PROMPT
+msgid "Did your travel routine vary yesterday?"
+msgstr "Varierade dina resvanor igår?"
+
+# QUESTION QUESTION-HELP
+#: 26220 QUESTION-HELP
+msgid "You need to describe only major changes, such as flights, long car trips, etc."
+msgstr "Du behöver bara beskriva större ändringar, t.ex. flyg, långa bilresor etc."
+
+# QUESTION PROMPT
+#: 26222 PROMPT
+msgid "Did your altitude change significantly?"
+msgstr "Ändrades den höjd du befinner dig på väsentligt?"
+
+# QUESTION QUESTION-HELP
+#: 26222 QUESTION-HELP
+msgid "Enter the variation, or 0 if no change.  For example a typical commercial airplane flies up to 12000 meters or 35000 feet."
+msgstr "Ange ändringen eller ange 0 om den inte ändrats.  Ett vanligt kommersiellt flygplan flyger t.ex. på en höjd upp till 12 000 meter."
+
+# QUESTION PROMPT
+#: 26223 PROMPT
+msgid "Did you fly?"
+msgstr "Flög du?"
+
+# QUESTION PROMPT
+#: 26224 PROMPT
+msgid "Any other changes in your routine?"
+msgstr "Gjorde du några andra ändringar av dina rutiner?"
+
+# QUESTION PROMPT
+#: 26226 PROMPT
+msgid "How long were you in the air?"
+msgstr "Hur länge var du i luften?"
+
+# QUESTION PROMPT
+#: 26227 PROMPT
+msgid "Did your breathing change during the flight?"
+msgstr "Ändrades din andning under flygturen?"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "normal"
+msgstr "normal"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "less difficult"
+msgstr "mindre svår"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "varied"
+msgstr "varierade"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "more difficult"
+msgstr "svårare"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "extremely difficult"
+msgstr "extremt svår"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "pnemothorax"
+msgstr "lungkollaps"
+
+# QUESTION PROMPT
+#: 26228 PROMPT
+msgid "How did you feel after the flight?"
+msgstr "Hur kände du dig efter flygningen?"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "no change"
+msgstr "ingen förändring"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "worse"
+msgstr "sämre"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "better"
+msgstr "bättre"
+
+# QUESTION PROMPT
+#: 26230 PROMPT
+msgid "Were you or did you feel sick yesterday?"
+msgstr "Var du sjuk eller kände du dig sjuk igår?"
+
+# QUESTION PROMPT
+#: 26231 PROMPT
+msgid "Was your energy level:"
+msgstr "Var din energinivå:"
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Normal"
+msgstr "Normal"
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Higher than usual"
+msgstr "Högre än vanligt"
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Lower than usual"
+msgstr "Lägre än vanligt"
+
+# QUESTION PROMPT
+#: 26233 PROMPT
+msgid "Type of sickness"
+msgstr "Typ av sjukdom"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "not sure"
+msgstr "ej säker"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "cold"
+msgstr "kallt"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "flu"
+msgstr "influensa"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "physical injury"
+msgstr "fysisk skada"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "other"
+msgstr "annan"
+
+# QUESTION QUESTION-HELP
+#: 26233 QUESTION-HELP
+msgid "The goal of this section is to capture any ordinary ailments that may effect your FEV or temperature readings or other daily information."
+msgstr "Målet med detta avsnitt är att fånga upp vanliga sjukdomar som kan påverka din FEV eller temperaturavläsningarna eller annan daglig information."
+
+# QUESTION PROMPT
+#: 26236 PROMPT
+msgid "Symptoms of sickness"
+msgstr "Symptom på sjukdom"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Runny nose"
+msgstr "Rinnande näsa"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Moderate cough"
+msgstr "Måttlig hosta"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Severe cough"
+msgstr "Allvarlig hosta"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Cough with phlegm or fluid"
+msgstr "Hosta med slem eller vätska"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Fever (more than 102F/39C)"
+msgstr "Feber (mer än 39C)"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Diarrhea"
+msgstr "Diarré"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Cramping"
+msgstr "Kramper"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Vomiting"
+msgstr "Kräkningar"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 26235 PROMPT
+msgid "Please describe sickness or injury"
+msgstr "Beskriv sjukdomen eller skadan"
+
+# QUESTION PROMPT
+#: 26238 PROMPT
+msgid "Please describe your other symptoms"
+msgstr "Beskriv dina andra symptom"
+
+# QUESTION PROMPT
+#: 26240 PROMPT
+msgid "Any variations in your normal diet?"
+msgstr "Ändrade du din normala kost?"
+
+# QUESTION QUESTION-HELP
+#: 26240 QUESTION-HELP
+msgid "We are leaving this question open for now to see what you report.  We will add more detailed questions here later."
+msgstr "Vi lämnar den här frågan öppen nu för att se vad du rapporterar.  Vi kommer att lägga till mer detaljerade frågor här senare."
+
+# QUESTION PROMPT
+#: 26243 PROMPT
+msgid "Did you miss any medications yesterday?"
+msgstr "Missade du att ta någon medicin igår?"
+
+# QUESTION PROMPT
+#: 26242 PROMPT
+msgid "Please describe your dietary changes"
+msgstr "Beskriv de ändringar av kosten som du har gjort"
+
+# QUESTION QUESTION-HELP
+#: 26242 QUESTION-HELP
+msgid "We are leaving this question open for now to see what you report.  We will add more detailed questions here later."
+msgstr "Vi lämnar den här frågan öppen nu för att se vad du rapporterar.  Vi kommer att lägga till mer detaljerade frågor här senare."
+
+# QUESTION PROMPT
+#: 26245 PROMPT
+msgid "Please describe the medication you missed"
+msgstr "Beskriv den medicin du missade att ta"
+
+# QUESTION PROMPT
+#: 6090 PROMPT
+msgid "If not, how many years after your child was born were you diagnosed?"
+msgstr "Om svaret är nej, hur många år efter att ditt barn föddes fick du diagnosen?"
+
+# QUESTION PROMPT
+#: 6089 PROMPT
+msgid "Did you use your husband/partner's sperm?"
+msgstr "Använde du din mans/partners sperma?"
+
+# QUESTION PROMPT
+#: 6094 PROMPT
+msgid "Did you use your own eggs?"
+msgstr "Använde du dina egna ägg?"
+
+# QUESTION PROMPT
+#: 6087 PROMPT
+msgid "If yes, do you think hormonal stimulation to harvest your eggs for transfer progressed your disease?"
+msgstr "Om svaret är ja, tror du att hormonstimulering för att ta ägg från dig påskyndade din sjukdom?"
+
+# QUESTION PROMPT
+#: 6086 PROMPT
+msgid "If yes, what supports that belief?"
+msgstr "Om svaret är ja, vad stöder den tron?"
+
+# QUESTION PROMPT
+#: 6093 PROMPT
+msgid "Was your surrogate a relative?"
+msgstr "Var din surrogatmoder en släkting?"
+
+# QUESTION PROMPT
+#: 26251 PROMPT
+msgid "Please describe "
+msgstr "Var vänlig beskriv "
+
+# QUESTION PROMPT
+#: 26260 PROMPT
+msgid "Age you first took birth control pills?"
+msgstr "Vid vilken ålder tog du dina första p-piller?"
+
+# QUESTION PROMPT
+#: 26261 PROMPT
+msgid "How many years did you take them?"
+msgstr "Under hur många år tog du dem?"
+
+# QUESTION QUESTION-HELP
+#: 26261 QUESTION-HELP
+msgid "Total years, even if you didn't for some years"
+msgstr "Totalt antal år, även om du gjorde uppehåll under några år"
+
+# QUESTION PROMPT
+#: 26262 PROMPT
+msgid "What kind or brand did or do you take?"
+msgstr "Vilket märke tog du?"
+
+# QUESTION PROMPT
+#: 26263 PROMPT
+msgid "If you stopped taking them, what was the reason?"
+msgstr "Om du slutade ta dem, vilken var orsaken?"
+
+# QUESTION PROMPT
+#: 26264 PROMPT
+msgid "If you stopped taking them, did you have irregular or painful periods when you stopped?"
+msgstr "Om du slutade ta dem, hade du oregelbundna eller smärtsamma menstruationer när du slutade?"
+
+# QUESTION PROMPT
+#: 26265 PROMPT
+msgid "Are you still taking birth control pills?"
+msgstr "Tar du fortfarande p-piller?"
+
+# QUESTION PROMPT
+#: 26332 PROMPT
+msgid "How does your breathing feel today?"
+msgstr "Hur känns din andning idag?"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Less difficult"
+msgstr "Mindre svår"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Normal"
+msgstr "Normal"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "More difficult"
+msgstr "Svårare"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Very difficult"
+msgstr "Mycket svår"
+
+# QUESTION QUESTION-HELP
+#: 26332 QUESTION-HELP
+msgid "Your answer to this question should be made relative to your normal experience of breathing; if your breathing is always labored, and hasn't changed, then you should use 'normal' as your answer."
+msgstr "Ditt svar på den här frågan ska vara i förhållande till din upplevelse av din normala andning. Om din andning alltid är jobbig och inte har ändrats ska du svara "Normal"."
+
+# QUESTION PROMPT
+#: 26333 PROMPT
+msgid "Menstrual symptoms"
+msgstr "Menstruationssymptom"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "None"
+msgstr "Ingen"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Spotting"
+msgstr "Spotting"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Bleeding"
+msgstr "Blödning"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Heavy bleeding"
+msgstr "Kraftig blödning"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 26451 PROMPT
+msgid "Did you experience incontinence yesterday?"
+msgstr "Upplevde du inkontinens igår?"
+
+# QUESTION PROMPT
+#: 26388 PROMPT
+msgid "Please record any observations or thoughts you have today"
+msgstr "Registrera eventuella observationer eller tankar du har idag"
+
+# QUESTION QUESTION-HELP
+#: 26388 QUESTION-HELP
+msgid "This can be regarding your monthly cycle, the nature of your symptoms or anything else you feel is relevant."
+msgstr "Detta kan gälla din månadscykel, typen av symptom eller något annat du tycker är relevant."
+
+# QUESTION PROMPT
+#: 26400 PROMPT
+msgid "Are you currently sexually active?"
+msgstr "Är du för närvarande sexuellt aktiv?"
+
+# QUESTION PROMPT
+#: 26402 PROMPT
+msgid "Does sexual activity leave you unusually breathless or unwell?"
+msgstr "Gör sexuell aktivitet att du tappar andan eller inte mår bra?"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "No"
+msgstr "Nej"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "Immediately after"
+msgstr "Omedelbart efter"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "For hours"
+msgstr "Under timmar"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "For days"
+msgstr "Under dagar"
+
+# QUESTION PROMPT
+#: 26405 PROMPT
+msgid "Would you be willing to release this tissue?"
+msgstr "Skulle du vara villig att lämna ifrån dig detta vävnadsprov?"
+
+# QUESTION PROMPT
+#: 6062 PROMPT
+msgid "Is a sample of your tissue available"
+msgstr "Finns det något vävnadsprov från dig"
+
+# QUESTION PROMPT
+#: 26408 PROMPT
+msgid "Do you ever cough up blood after exercise?"
+msgstr "Hostar du någon gång upp blod efter träning?"
+
+# QUESTION PROMPT
+#: 26409 PROMPT
+msgid "Do you regularly cough up blood at the same point in your menstrual cycle?"
+msgstr "Hostar du regelbundet upp blod vid samma tidpunkt i din menstruationscykel?"
+
+# QUESTION PROMPT
+#: 26411 PROMPT
+msgid "Have you ever been treated for any form of malignancy?"
+msgstr "Har du någon gång behandlats för någon form av elakartad tumör?"
+
+# QUESTION PROMPT
+#: 26414 PROMPT
+msgid "If you have had chemotherapy, what drugs were used?"
+msgstr "Om du har genomgått kemoterapi, vilka läkemedel användes?"
+
+# QUESTION QUESTION-HELP
+#: 26414 QUESTION-HELP
+msgid "Please enter one drug name per line"
+msgstr "Ange ett läkemedel per rad"
+
+# QUESTION PROMPT
+#: 26413 PROMPT
+msgid "Has this involved one or more of"
+msgstr "Har detta inkluderat en eller flera av följande"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Surgery"
+msgstr "Operation"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Radiotherapy"
+msgstr "Strålbehandling"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Chemotherapy"
+msgstr "Kemoterapi"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Other"
+msgstr "Annan"
+
+# QUESTION PROMPT
+#: 26456 PROMPT
+msgid "Do you have Diabetes?"
+msgstr "Har du diabetes?"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "No"
+msgstr "Nej"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "Yes, Type I"
+msgstr "Ja, typ 1"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "Yes, Type II"
+msgstr "Ja, typ 2"
+
+# QUESTION PROMPT
+#: 26458 PROMPT
+msgid "If so, do you take medication for your diabetes?"
+msgstr "Om svaret är ja, tar du medicin mot din diabetes?"
+
+# QUESTION PROMPT
+#: 26459 PROMPT
+msgid "Please list medications and dates taken"
+msgstr "Skriv en lista över mediciner och vilka datum du har tagit dem"
+
+# QUESTION QUESTION-HELP
+#: 26459 QUESTION-HELP
+msgid "enter one medication and start or end dates per line.  If current, say current."
+msgstr "ange en medicin och start- eller slutdatum på varje rad.  Om du använder den för närvarande, skriv för närvarande."
+
+# QUESTION PROMPT
+#: 26463 PROMPT
+msgid "What condition led to your LAM diagnosis?"
+msgstr "Vilket tillstånd ledde till att du fick diagnosen LAM?"
+
+# QUESTION PROMPT
+#: 26470 PROMPT
+msgid "Date of last scan"
+msgstr "Datum för senaste skanning"
+
+# QUESTION PROMPT
+#: 26471 PROMPT
+msgid "Were your bone density scan results"
+msgstr "Var resultatet från skanningen av bendensitet"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Normal"
+msgstr "Normal"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Abnormal"
+msgstr "Onormalt"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Don't know"
+msgstr "Vet ej"
+
+# QUESTION PROMPT
+#: 26472 PROMPT
+msgid "What was your T score?"
+msgstr "Vad var ditt T-score?"
+
+# QUESTION QUESTION-HELP
+#: 26472 QUESTION-HELP
+msgid "Leave blank if you don't know"
+msgstr "Lämna tomt om du inte vet"
+
+# QUESTION PROMPT
+#: 26473 PROMPT
+msgid "What was your Z score?"
+msgstr "Vad var ditt Z-score?"
+
+# QUESTION QUESTION-HELP
+#: 26473 QUESTION-HELP
+msgid "Leave blank if you don't know"
+msgstr "Lämna tomt om du inte vet"
+
+# QUESTION PROMPT
+#: 26919 PROMPT
+msgid "What was your last cholesterol measurement?"
+msgstr "När gjordes den senaste mätningen av ditt kolesterol?"
+
+# QUESTION PROMPT
+#: 26920 PROMPT
+msgid "What was the date of your last test?"
+msgstr "Vilket datum gjordes det senaste provet?"
+
+# QUESTION QUESTION-HELP
+#: 26920 QUESTION-HELP
+msgid "Leave both of these blank if you don't know."
+msgstr "Lämna båda dessa tomma om du inte vet"
+
+# QUESTION PROMPT
+#: 30004 PROMPT
+msgid "If you have been tested for Alpha-1 Antitrypsin Deficiency, what were your blood levels and phenotype? "
+msgstr "Om du har testats för Alpha-1 Antitrypsin-brist, vilka var dina blodnivåer och din fenotyp? "
+
+# QUESTION PROMPT
+#: 30005 PROMPT
+msgid "Have you ever had a spontaneous pneumothorax?"
+msgstr "Har du någonsin haft en spontan lungkollaps?"

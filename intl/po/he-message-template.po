@@ -1,0 +1,60 @@
+﻿msgid ""
+msgstr ""
+"Project-Id-Version: ja-message-template.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 23806 SUBJECT
+msgid "LAMsight Update Message"
+msgstr "הודעת עדכון ב-LAMsight"
+
+# MESSAGE-TEMPLATE BODY
+#: 23806 BODY
+msgid "<%author%> writes:\n\n<%title%>\nDate: <%date%>\n\n<%content%>\n"
+msgstr "<%author%>כותבת:\n\n<%title%>\nתאריך: <%date%>\n\n<%content%>\n"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 23813 SUBJECT
+msgid "[LAMsight] New comment"
+msgstr "[LAMsight] הערה חדשה"
+
+# MESSAGE-TEMPLATE BODY
+#: 23813 BODY
+msgid "You are an editor for a LAMsight survey that has a new comment on a question\n\nComment by <%author%> (<%date%>) for question\n"<%question%>"\n\nComment text:\n\n<%comment%>\n\n\n<%context%>\n\n\n"
+msgstr "את העורכת של סקר LAMsight ויש לך הערה חדשה על שאלה\n\n ההערה נכתבה על-ידי <%author%> (<%date%>) לשאלה\n"<%question%>"\n\n מלל ההערה:\n\n<%comment%>\n\n\n<%context%>\n\n\n"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 23816 SUBJECT
+msgid "[LAMsight] New post for <%topic%>"
+msgstr "[LAMsight] הודעה חדשה עבור <%topic%>"
+
+# MESSAGE-TEMPLATE BODY
+#: 23816 BODY
+msgid "<%author%> writes:\n\n<%content%>\n\n<%original%>\n\nVisit this topic "<%topic%>":\n<%url%>\n\n"
+msgstr "<%author%> כותבת:\n\n<%content%>\n\n<%original%>\n\nבקרו בנושא זה "<%topic%>":\n<%url%>\n\n"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 23818 SUBJECT
+msgid "[LAMsight] Forum digest for <%date%>"
+msgstr "[LAMsight] תמצית פורום עבור <%date%>"
+
+# MESSAGE-TEMPLATE BODY
+#: 23818 BODY
+msgid "<%count%> new messages\n\n<%activity%>"
+msgstr "<%count%> הודעות חדשות\n\n<%activity%>"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 23819 SUBJECT
+msgid "LAMsight news and reminders"
+msgstr "חדשות ותזכורות LAMsight"
+
+# MESSAGE-TEMPLATE BODY
+#: 23819 BODY
+msgid "<%news%>\n=========================================\n<%next-steps%>\n=========================================\n<%forum-activity%>"
+msgstr "<%news%>\n=========================================\n<%next-steps%>\n=========================================\n<%forum-activity%>"

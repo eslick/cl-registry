@@ -1,0 +1,3925 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ja-question.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# QUESTION PROMPT
+#: 5940 PROMPT
+msgid "What kind of exercises do you do?"
+msgstr "どのような運動をしていますか？"
+
+# QUESTION PROMPT
+#: 5937 PROMPT
+msgid "Do you exercise?"
+msgstr "運動をしていますか？"
+
+# QUESTION PROMPT
+#: 5975 PROMPT
+msgid "Have you tried Herbal treatments?"
+msgstr "ハーブ療法を試したことがありますか？"
+
+# QUESTION PROMPT
+#: 24834 PROMPT
+msgid "Have you ever been diagnosed with osteoporosis?"
+msgstr "骨粗しょう症と診断されたことはありますか？"
+
+# QUESTION PROMPT
+#: 24824 PROMPT
+msgid "Has your bone loss been rated for severity?"
+msgstr "骨量減少の重度を診断されましたか？"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "mild"
+msgstr "軽度"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "moderate"
+msgstr "中度"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "severe"
+msgstr "重度"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 30003 PROMPT
+msgid "Have you been tested for Alpha-1 Antitrypsin Deficiency?"
+msgstr "アルファ 1 抗トリプシン欠乏症の検査を受けたことがありますか？"
+
+# QUESTION PROMPT
+#: 5844 PROMPT
+msgid "Date of spirometer test"
+msgstr "肺活量計の測定日"
+
+# QUESTION PROMPT
+#: 5845 PROMPT
+msgid "FEV1"
+msgstr "FEV1"
+
+# QUESTION QUESTION-HELP
+#: 5845 QUESTION-HELP
+msgid "Forced Expiratory Volume for 1 second.  Data should be entered in liters."
+msgstr "1 秒間努力呼気容量。データはリットルで入力してください。"
+
+# QUESTION PROMPT
+#: 26217 PROMPT
+msgid "Date of PFT Measurement"
+msgstr "PFT 測定日"
+
+# QUESTION PROMPT
+#: 26218 PROMPT
+msgid "Your temperature today"
+msgstr "今日の体温"
+
+# QUESTION QUESTION-HELP
+#: 26218 QUESTION-HELP
+msgid "Take your temperature under your tongue, hold for 30 seconds using the same thermometer each day."
+msgstr "毎回同じ体温計を舌の裏に 30 秒当ててください。"
+
+# QUESTION PROMPT
+#: 23561 PROMPT
+msgid "FEV6"
+msgstr "FEV6"
+
+# QUESTION CHOICES
+#: 23561 CHOICES
+msgid "test1"
+msgstr "検査 1"
+
+# QUESTION CHOICES
+#: 23561 CHOICES
+msgid "test2"
+msgstr "検査 2"
+
+# QUESTION QUESTION-HELP
+#: 23561 QUESTION-HELP
+msgid "Forced expiratory volume at 6 seconds of exhalation. (Enter in liters) This is a measure from most home spirometers that acts as a surrogate for FVC.  If you have a device that gives you FVC instead, please write to lamsight-admin@media.mit.edu and we will add a new field to this survey."
+msgstr "6 秒間努力呼気容量。（リットルで入力してください。）これは、FVC の代理として機能する、大半の家庭用肺活量計を用いた測定値です。FVC を測定する装置をお持ちの場合は、lamsight-admin@media.mit.edu までお問い合わせいただければ、本調査に新しいフィールドを追加します。"
+
+# QUESTION PROMPT
+#: 23560 PROMPT
+msgid "What spirometer was used?"
+msgstr "どの肺活量計を使用しましたか？"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "PiKo-1"
+msgstr "PiKo-1"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "PiKo-6"
+msgstr "PiKo-6"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "KoKo Peak Pro"
+msgstr "KoKo Peak Pro"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 5858 PROMPT
+msgid "What was the primary condition that led to the eventual diagnosis of LAM?"
+msgstr "主にどのような症状によって、LAM と診断されましたか？"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Pulmonary symptoms"
+msgstr "肺症状"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms present but a subnormal breathing test led to testing"
+msgstr "肺症状はないが、呼吸テストが正常以下だったため、診断を受けた"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Abnormal chest x-ray or CT scan"
+msgstr "胸部の X 線または CT スキャンで異常が見られた"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Spontaneous pneumothorax"
+msgstr "自然気胸"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Angiomyolipoma"
+msgstr "血管筋脂肪腫"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Ascites"
+msgstr "腹水症"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Pleural effusion"
+msgstr "胸水"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Assessment for lung transplant without prior suspicion of LAM"
+msgstr "肺移植の査定（以前は LAM の疑いなし）"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms but a family member has LAM"
+msgstr "肺症状はないが、LAM を患っている家族がいる"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms but family member with Tuberous Sclerosis Complex (TSC)"
+msgstr "肺症状はないが、TSC（結節性硬化症）を患っている家族がいる。"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Dermatology or skin specialist"
+msgstr "皮膚科学または皮膚科専門医"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Unknown"
+msgstr "不明"
+
+# QUESTION PROMPT
+#: 5854 PROMPT
+msgid "Date of original diagnosis"
+msgstr "最初の診断日"
+
+# QUESTION PROMPT
+#: 5855 PROMPT
+msgid "Diagnosing physician name"
+msgstr "診断担当医"
+
+# QUESTION QUESTION-HELP
+#: 5855 QUESTION-HELP
+msgid "This is an optional entry if you have extra concerns about privacy"
+msgstr "プライバシーに関して特にご懸念がある場合には、この入力は任意です。"
+
+# QUESTION PROMPT
+#: 5856 PROMPT
+msgid "Speciality of diagnosing physician"
+msgstr "診断担当医の専門"
+
+# QUESTION PROMPT
+#: 5857 PROMPT
+msgid "Institution of physician"
+msgstr "医師団体"
+
+# QUESTION PROMPT
+#: 5878 PROMPT
+msgid "Weight"
+msgstr "体重"
+
+# QUESTION PROMPT
+#: 5879 PROMPT
+msgid "Height"
+msgstr "身長"
+
+# QUESTION PROMPT
+#: 5880 PROMPT
+msgid "Body-Mass Index"
+msgstr "体格指数"
+
+# QUESTION PROMPT
+#: 5885 PROMPT
+msgid "Do you feel aches or pains of any kind of discomfort on a regular basis?"
+msgstr "定期的にうずきや痛み、または何らかの不快感がありますか？"
+
+# QUESTION PROMPT
+#: 5889 PROMPT
+msgid "Do you experience pain and/or discomfort related to the reproductive organs?"
+msgstr "生殖器に関連した痛みや不快感がありますか？"
+
+# QUESTION PROMPT
+#: 5894 PROMPT
+msgid "Do you experience pain and/or discomfort related to any surgery related to ovaries?"
+msgstr "卵巣への外科手術に関連した痛みや不快感がありますか？"
+
+# QUESTION PROMPT
+#: 5899 PROMPT
+msgid "Do you have a history of any abnormal blood test results?"
+msgstr "血液検査の結果が異常だったことはありますか？"
+
+# QUESTION PROMPT
+#: 5903 PROMPT
+msgid "Have any members of your family suffered from genetic conditions or diseases?"
+msgstr "ご家族の中に、遺伝病や遺伝子疾患を患っている方はいらっしゃいますか？"
+
+# QUESTION PROMPT
+#: 5905 PROMPT
+msgid "Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews died prematurely?"
+msgstr "近親者（祖父母、伯母、伯父、甥、姪を含む）の中に、早世された方はいらっしゃいますか？"
+
+# QUESTION PROMPT
+#: 5907 PROMPT
+msgid "Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews suffered from disabling disorders?"
+msgstr "近親者（祖父母、伯母、伯父、甥、姪を含む）の中に、身体に障害を引き起こす病気を患っている方はいらっしゃいますか？"
+
+# QUESTION PROMPT
+#: 5909 PROMPT
+msgid "Any other comments on family history"
+msgstr "家族暦に関するその他のコメント"
+
+# QUESTION PROMPT
+#: 5912 PROMPT
+msgid "What are your favorite foods?"
+msgstr "好きな食べ物は何ですか？"
+
+# QUESTION PROMPT
+#: 5913 PROMPT
+msgid "What are your least favorite foods?"
+msgstr "嫌いな食べ物は何ですか？"
+
+# QUESTION PROMPT
+#: 13836 PROMPT
+msgid "Do you avoid eating certain foods?"
+msgstr "食べるのを避けている食品はありますか？"
+
+# QUESTION PROMPT
+#: 5916 PROMPT
+msgid "Do you have symptoms, related to LAM or unrelated to LAM that you associate with a particular food/ drink or food group?"
+msgstr "LAM に関係しているかどうかを問わず、特定の飲食物や食品群に関連した症状はありますか？"
+
+# QUESTION PROMPT
+#: 5920 PROMPT
+msgid "Are you a vegetarian?"
+msgstr "ベジタリアンですか？"
+
+# QUESTION PROMPT
+#: 5921 PROMPT
+msgid "If yes, pick the following foods that you do eat"
+msgstr "「はい」の場合、実際に食べる食物を選択してください。"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "fish"
+msgstr "魚"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "shellfish"
+msgstr "甲殻類"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "dairy"
+msgstr "乳製品"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "eggs"
+msgstr "卵"
+
+# QUESTION PROMPT
+#: 26390 PROMPT
+msgid "Do you eat one or more of the following high oestrogen foods?"
+msgstr "エストロゲンを多く含む以下の食品を 1 種類以上食べていますか？"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Soy"
+msgstr "大豆"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Tofu"
+msgstr "豆腐"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Legumes"
+msgstr "豆"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Nuts"
+msgstr "ナッツ"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Chicken"
+msgstr "鶏肉"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 26460 PROMPT
+msgid "How would you characterize your appetite relative to your peers?"
+msgstr "周囲の人々と比べて、あなたの食欲はどのようなものだと言えますか？"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Normal"
+msgstr "普通"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Poor"
+msgstr "少ない"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Large"
+msgstr "多い"
+
+# QUESTION PROMPT
+#: 5923 PROMPT
+msgid "Do you try to follow a fat-free or low-fat diet?"
+msgstr "無脂肪または低脂肪の食品を摂取しようとしていますか？"
+
+# QUESTION PROMPT
+#: 5927 PROMPT
+msgid "Do you have high-cholesterol?"
+msgstr "コレステロール値は高いですか？"
+
+# QUESTION PROMPT
+#: 5928 PROMPT
+msgid "Do you find it difficult to maintain your weight?"
+msgstr "体重を維持することが難しいと思われますか？"
+
+# QUESTION PROMPT
+#: 5931 PROMPT
+msgid "Do you take vitamin or mineral supplements?"
+msgstr "ビタミンまたはミネラルのサプリメントを摂取していますか？"
+
+# QUESTION PROMPT
+#: 5934 PROMPT
+msgid "Any other comments on diet"
+msgstr "食事に関するその他のコメント"
+
+# QUESTION PROMPT
+#: 5954 PROMPT
+msgid "Have you given up any type of exercise because of LAM?"
+msgstr "LAM のせいで運動することをあきらめましたか（運動の種類を問わず）？"
+
+# QUESTION PROMPT
+#: 5945 PROMPT
+msgid "Do you desaturate on exertion?"
+msgstr "激しい運動の後、脱飽和状態になりますか？"
+
+# QUESTION PROMPT
+#: 5948 PROMPT
+msgid "If you exercise, do you see positive effects of exercise?"
+msgstr "運動をすると、運動のプラス効果を感じますか？"
+
+# QUESTION PROMPT
+#: 5957 PROMPT
+msgid "Can you walk 100 meters on level ground without stopping?"
+msgstr "平らな道を 100 メートル止まらずに歩けますか？"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "Yes"
+msgstr "はい"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "Yes with oxygen"
+msgstr "はい（酸素があれば）"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "No"
+msgstr "いいえ"
+
+# QUESTION PROMPT
+#: 5958 PROMPT
+msgid "Can you carry small loads (up to 2kg/4.4lbs)?"
+msgstr "小さな荷物を運べますか（2 kgまで）？"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "Yes"
+msgstr "はい"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "Yes with oxygen"
+msgstr "はい（酸素があれば）"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "No"
+msgstr "いいえ"
+
+# QUESTION PROMPT
+#: 5959 PROMPT
+msgid "Do you get breathless easily from relatively simple motions (from bending down to pick something up or getting dressed)?"
+msgstr "比較的簡単な動作（かがんで何かを取る場合や着替えなど）でもすぐに息切れしますか？"
+
+# QUESTION PROMPT
+#: 5960 PROMPT
+msgid "What activities can you not do because of LAM?"
+msgstr "LAM が原因で、どのような活動ができなくなりましたか？"
+
+# QUESTION PROMPT
+#: 5961 PROMPT
+msgid "What activities can you do but in a modified way because of LAM? What modifications have you made to make these activities possible?"
+msgstr "LAMが原因で、どのような活動を違う方法でやる必要が出てきましたか？これらの活動を行うため、どのように変えましたか？"
+
+# QUESTION PROMPT
+#: 5963 PROMPT
+msgid "Have you been referred to pulmonary rehabilitation?"
+msgstr "呼吸リハビリテーションを紹介されたことはありますか？"
+
+# QUESTION PROMPT
+#: 5970 PROMPT
+msgid "Have you ever taken recreational drugs (excluding cigarettes and alcohol)?"
+msgstr "気晴らしのための麻薬を使用したことはありますか（タバコやアルコールは除く）？"
+
+# QUESTION PROMPT
+#: 5972 PROMPT
+msgid "Have you tried Chinese medicine"
+msgstr "漢方薬を試したことはありますか？"
+
+# QUESTION PROMPT
+#: 5974 PROMPT
+msgid "Have you tried Acupuncture?"
+msgstr "鍼治療を試したことはありますか？"
+
+# QUESTION PROMPT
+#: 5977 PROMPT
+msgid "Have you tried Shiatsu massage?"
+msgstr "指圧を試したことがありますか？"
+
+# QUESTION PROMPT
+#: 5978 PROMPT
+msgid "Have you tried Hypnosis?"
+msgstr "催眠術を試したことはありますか？"
+
+# QUESTION PROMPT
+#: 5980 PROMPT
+msgid "Have you tried Meditation?"
+msgstr "瞑想を試したことはありますか？"
+
+# QUESTION PROMPT
+#: 5983 PROMPT
+msgid "Any other forms of complementary or alternative medicine?"
+msgstr "これ以外の補完療法または代替療法を試したことがありますか？"
+
+# QUESTION PROMPT
+#: 5985 PROMPT
+msgid "Have you noticed an effect on your breathing from these interventions?"
+msgstr "このような介入によって、呼吸に影響があったと感じたことはありますか？"
+
+# QUESTION PROMPT
+#: 5986 PROMPT
+msgid "Have you noticed an effect on your  well-being from any of these interventions?"
+msgstr "このような介入によって、健康に影響があったと感じたことはありますか？"
+
+# QUESTION PROMPT
+#: 5987 PROMPT
+msgid "Any other comments on alternative therapies"
+msgstr "代替療法に関する他のコメント"
+
+# QUESTION PROMPT
+#: 5991 PROMPT
+msgid "How many people live in your home (including yourself)?"
+msgstr "ご自宅には何人で同居なさっていますか（ご自身を含む）？"
+
+# QUESTION PROMPT
+#: 5999 PROMPT
+msgid "Does your daily routine vary a lot?"
+msgstr "毎日の行動は大きく異なりますか？"
+
+# QUESTION PROMPT
+#: 6000 PROMPT
+msgid "Is your daily routine fairly physically active?"
+msgstr "毎日の行動で、よく身体を動かしますか？"
+
+# QUESTION PROMPT
+#: 5994 PROMPT
+msgid "Do you leave the house every day to work/run errands/etc?"
+msgstr "毎日、仕事や所用などのために家から出かけますか？"
+
+# QUESTION PROMPT
+#: 13702 PROMPT
+msgid "Do you have a job?"
+msgstr "就職していますか？"
+
+# QUESTION PROMPT
+#: 5990 PROMPT
+msgid "Do you care for the home and family as your primary form of work?"
+msgstr "家や家族の世話を主な仕事としていますか？"
+
+# QUESTION PROMPT
+#: 5998 PROMPT
+msgid "Briefly describe your daily routine (wake up time, meals, activities of the day, bedtime)"
+msgstr "毎日の生活について簡単に説明してください（起床時刻、食事、日中の活動、就寝時刻）。"
+
+# QUESTION PROMPT
+#: 6002 PROMPT
+msgid "What type of environment do you live in?"
+msgstr "どのような環境にお住まいですか？"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "city"
+msgstr "都市"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "town"
+msgstr "街"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "countryside"
+msgstr "田舎"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "village"
+msgstr "村"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "farm"
+msgstr "農場"
+
+# QUESTION PROMPT
+#: 6003 PROMPT
+msgid "Please describe the air quality where you live as"
+msgstr "お住まいの場所の空気の質について説明してください。"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "good"
+msgstr "良い"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "average"
+msgstr "普通"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "poor"
+msgstr "悪い"
+
+# QUESTION PROMPT
+#: 6004 PROMPT
+msgid "Are there potential environmental risks where you live now?"
+msgstr "現在お住まいの場所には環境リスクが潜在していますか？"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "fumes"
+msgstr "噴煙"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "dust"
+msgstr "粉塵"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "asbestos"
+msgstr "アスベスト"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "pesticides"
+msgstr "殺虫剤"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "cigarette smoke"
+msgstr "タバコの煙"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "smog"
+msgstr "スモッグ"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in air"
+msgstr "その他（空中）"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in land"
+msgstr "その他（地上）"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in water"
+msgstr "その他（水中）"
+
+# QUESTION PROMPT
+#: 6005 PROMPT
+msgid "Were there environmental risks where you lived for a significant period in your past?"
+msgstr "過去長期間住んでいた場所に、環境リスクはありましたか？"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "fumes"
+msgstr "噴煙"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "dust"
+msgstr "粉塵"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "asbestos"
+msgstr "アスベスト"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "pesticides"
+msgstr "殺虫剤"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "cigarette smoke"
+msgstr "タバコの煙"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "smog"
+msgstr "スモッグ"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in air"
+msgstr "その他（空中）"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in land"
+msgstr "その他（地上）"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in water"
+msgstr "その他（水中）"
+
+# QUESTION PROMPT
+#: 6006 PROMPT
+msgid "Have you ever smoked?"
+msgstr "喫煙したことがありますか？"
+
+# QUESTION PROMPT
+#: 6009 PROMPT
+msgid "Have you ever used alcohol?"
+msgstr "アルコールを飲んだことがありますか？"
+
+# QUESTION PROMPT
+#: 6012 PROMPT
+msgid "Were there environmental risks that your parents were exposed to?"
+msgstr "あなたのご両親がさらされていた環境リスクはありますか？"
+
+# QUESTION PROMPT
+#: 6016 PROMPT
+msgid "Do certain types of weather affect your body?"
+msgstr "特定の天気によって身体が影響を受けることはありますか？"
+
+# QUESTION PROMPT
+#: 6021 PROMPT
+msgid "Do you travel by airplane?"
+msgstr "飛行機で旅行していますか？"
+
+# QUESTION PROMPT
+#: 6053 PROMPT
+msgid "Has your sleep routine changed since being diagnosed with LAM?"
+msgstr "LAM と診断されてから、睡眠パターンが変化しましたか？"
+
+# QUESTION CHOICES
+#: 6053 CHOICES
+msgid "No"
+msgstr "いいえ"
+
+# QUESTION CHOICES
+#: 6053 CHOICES
+msgid "Yes"
+msgstr "はい"
+
+# QUESTION PROMPT
+#: 6041 PROMPT
+msgid "Do you have problems falling or staying asleep?"
+msgstr "眠りに入る、または眠り続けるのは難しいですか？"
+
+# QUESTION PROMPT
+#: 6042 PROMPT
+msgid "How many hours on average do you sleep each night?"
+msgstr "毎晩、平均して何時間寝ていますか？"
+
+# QUESTION PROMPT
+#: 6043 PROMPT
+msgid "Do you wake up too early on a regular basis?"
+msgstr "いつも早く目が覚めてしまいますか？"
+
+# QUESTION PROMPT
+#: 6045 PROMPT
+msgid "Do you take naps or short sleeps during the day?"
+msgstr "日中に昼寝やうたた寝をしますか？"
+
+# QUESTION PROMPT
+#: 6046 PROMPT
+msgid "Do you sleep with oxygen?"
+msgstr "酸素を付けて眠りますか？"
+
+# QUESTION PROMPT
+#: 6048 PROMPT
+msgid "Do you feel particularly cold when going to sleep or waking up?"
+msgstr "特に就寝または起床時に冷えを感じますか？"
+
+# QUESTION PROMPT
+#: 6050 PROMPT
+msgid "Do you have cold feet or hands in bed?"
+msgstr "ベッドの中で、手や足が冷たく感じますか？"
+
+# QUESTION PROMPT
+#: 6051 PROMPT
+msgid "Do you have cold feet or hands when not in bed?"
+msgstr "ベッド以外の場所で、手や足が冷たく感じますか？"
+
+# QUESTION PROMPT
+#: 6054 PROMPT
+msgid "Any other comments about sleep?"
+msgstr "睡眠に関する他のコメント"
+
+# QUESTION PROMPT
+#: 26403 PROMPT
+msgid "Have you ever had a tissue biopsy?"
+msgstr "組織生検を受けたことがありますか？"
+
+# QUESTION PROMPT
+#: 26406 PROMPT
+msgid "Has your blood [serum] ever been stored for research purposes?"
+msgstr "あなたの血液 [血清] は研究目的で保存されたことはありますか？"
+
+# QUESTION PROMPT
+#: 26258 PROMPT
+msgid "Have you ever taken birth control pills?"
+msgstr "経口避妊薬を服用したことはありますか？"
+
+# QUESTION PROMPT
+#: 6074 PROMPT
+msgid "Have you ever been pregnant?"
+msgstr "妊娠したことはありますか？"
+
+# QUESTION PROMPT
+#: 6076 PROMPT
+msgid "Do you have children?"
+msgstr "お子さまはいらっしゃいますか？"
+
+# QUESTION PROMPT
+#: 6095 PROMPT
+msgid "Do you have any other comments regarding your reproductive history?"
+msgstr "出産歴について、その他のコメントはありますか？"
+
+# QUESTION PROMPT
+#: 6084 PROMPT
+msgid "Were you diagnosed with LAM during your pregnancy?"
+msgstr "妊娠時に LAM と診断されましたか？"
+
+# QUESTION PROMPT
+#: 6079 PROMPT
+msgid "Did you know you had LAM during one or more pregnancies?"
+msgstr "1 回または複数回の妊娠時に、LAM であることをご存知でしたか？"
+
+# QUESTION PROMPT
+#: 6097 PROMPT
+msgid "At what age did you start having a period?"
+msgstr "生理は何歳のときに始まりましたか？"
+
+# QUESTION PROMPT
+#: 6098 PROMPT
+msgid "Are your periods regular?"
+msgstr "生理は規則的ですか？"
+
+# QUESTION PROMPT
+#: 6099 PROMPT
+msgid "How many days is your menstrual cycle?"
+msgstr "月経周期は何日ですか？"
+
+# QUESTION PROMPT
+#: 6100 PROMPT
+msgid "For how many days do you bleed each month?"
+msgstr "毎月、何日くらい出血しますか？"
+
+# QUESTION PROMPT
+#: 6102 PROMPT
+msgid "Would you say that your periods are:"
+msgstr "生理はどのようなものであると言えますか："
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Strong"
+msgstr "重い"
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Normal"
+msgstr "普通"
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Light"
+msgstr "軽い"
+
+# QUESTION PROMPT
+#: 6103 PROMPT
+msgid "Has this become more or less over time?"
+msgstr "次第に多くなってきていますか？それとも少なくってきていますか？"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "More"
+msgstr "多い"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "Less"
+msgstr "少ない"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "Stayed the same"
+msgstr "同じ"
+
+# QUESTION PROMPT
+#: 6104 PROMPT
+msgid "Would you say that your periods are so painful that you find it difficult to do normal activities during your period?"
+msgstr "生理には激しい痛みが伴うため、生理中は通常の行動が難しいと言えますか？"
+
+# QUESTION CHOICES
+#: 6104 CHOICES
+msgid "No"
+msgstr "いいえ"
+
+# QUESTION CHOICES
+#: 6104 CHOICES
+msgid "Yes"
+msgstr "はい"
+
+# QUESTION PROMPT
+#: 6105 PROMPT
+msgid "Is ovulation so painful that you find it difficult to do normal activities at times?"
+msgstr "排卵には激しい痛みが伴うため、通常の行動が難しくなることがありますか？"
+
+# QUESTION PROMPT
+#: 6113 PROMPT
+msgid "Do you experience any difference in your breathing or pain in your body at difference parts of your monthly cycle?"
+msgstr "月経周期の中で、呼吸や身体の各部位の痛みは変化しますか？"
+
+# QUESTION PROMPT
+#: 6110 PROMPT
+msgid "Have you taken birth control pills since your diagnosis with LAM?"
+msgstr "LAM と診断されて以降、経口避妊薬を服用しましたか？"
+
+# QUESTION PROMPT
+#: 14141 PROMPT
+msgid "Are you post- or peri-menopausal"
+msgstr "閉経後または閉経期のいずれかにありますか？"
+
+# QUESTION PROMPT
+#: 6118 PROMPT
+msgid "Have you ever been on hormone replacement therapy?"
+msgstr "ホルモン補充治療を受けたことがありますか？"
+
+# QUESTION PROMPT
+#: 6123 PROMPT
+msgid "Have you been diagnosed with Tuberous Sclerosis?"
+msgstr "結節硬化症と診断されていますか？"
+
+# QUESTION PROMPT
+#: 6129 PROMPT
+msgid "Has any member of your family (including second cousins, grandparents, great aunts/uncles, etc) ever been diagnosed with Tuberous Sclerosis?"
+msgstr "ご家族の中で（はとこ、祖父母、大伯母/大伯父など）結節硬化症と診断された人はいますか？"
+
+# QUESTION PROMPT
+#: 6131 PROMPT
+msgid "Has any member of your family (including second cousins, grandparents, etc) ever experienced any symptom potentially associated with Tuberous Sclerosis?"
+msgstr "ご家族の中で（はとこ、祖父母など）結節硬化症と関連があると見られる症状を体験したことがある人はいますか？"
+
+# QUESTION PROMPT
+#: 6134 PROMPT
+msgid "Do you have any other significant illness in addition to LAM?"
+msgstr "LAM のほかにも、深刻な疾病を抱えていらっしゃいますか？"
+
+# QUESTION PROMPT
+#: 6138 PROMPT
+msgid "Have you had ovarian surgery?"
+msgstr "卵巣手術を受けたことがありますか？"
+
+# QUESTION QUESTION-HELP
+#: 6138 QUESTION-HELP
+msgid "If not, please skip this section of questions."
+msgstr "受けたことがない場合、次の質問セクションは飛ばしてください。"
+
+# QUESTION PROMPT
+#: 6101 PROMPT
+msgid "Have you ever had an internal ultrasound test of your uterus?"
+msgstr "子宮の内部超音波テストを受けたことがありますか？"
+
+# QUESTION PROMPT
+#: 25621 PROMPT
+msgid "Have you ever had your uterus removed or other uterine surgery?"
+msgstr "子宮を除去したり、他の子宮手術を受けたりしたことがありますか？"
+
+# QUESTION PROMPT
+#: 6146 PROMPT
+msgid "Have you ever experienced any of the following symptoms of LAM?"
+msgstr "LAM がもたらす、次のいずれかの症状を体験したことはありますか？"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Chylothorax"
+msgstr "乳糜胸症"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Pleural Effusion"
+msgstr "胸水"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Ascites"
+msgstr "腹水症"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Chylous Ascites"
+msgstr "乳糜性腹水"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Kidney angiomyolipoma"
+msgstr "腎臓血管筋脂肪腫"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Pneumothorax"
+msgstr "気胸"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Hemoptysis"
+msgstr "喀血"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Protein-losing Enteropathy [bowel disease]"
+msgstr "タンパク喪失性腸症 [腸疾患]"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Vaginal discharge of chyle [lymph]"
+msgstr "乳糜のおりもの [リンパ液]"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 6156 PROMPT
+msgid "Have you ever had or been suspected of having renal cell carcinoma?"
+msgstr "腎細胞癌を患ったことがありますか？またはその疑いがあるとされたことはありますか？"
+
+# QUESTION PROMPT
+#: 6161 PROMPT
+msgid "Have you taken part in one or more of the following?"
+msgstr "以下の 1 つまたは複数の項目に携わっていますか？"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "A Treatment Trial addressing LAM lung disease"
+msgstr "LAM 肺病に対処するための試験的治療"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "A Treatment Trial addressing one or more AMLs"
+msgstr "1 つまたは複数の AML に対処するための試験的治療"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "An off-label experiment using a drug to address LAM lung disease"
+msgstr "LAM 肺病に対処するための薬剤を用いた適応外実験"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "An observational trial"
+msgstr "観測的試験"
+
+# QUESTION PROMPT
+#: 6166 PROMPT
+msgid "Are you willing to be contacted for a potential trial?"
+msgstr "潜在的な試験の機会がある場合に連絡を受けることを希望しますか？"
+
+# QUESTION PROMPT
+#: 6141 PROMPT
+msgid "For what reason?"
+msgstr "その理由は何ですか？"
+
+# QUESTION PROMPT
+#: 6139 PROMPT
+msgid "What was the procedure?"
+msgstr "どのような手順でしたか？"
+
+# QUESTION PROMPT
+#: 6140 PROMPT
+msgid "How old were you?"
+msgstr "そのときの年齢は？"
+
+# QUESTION PROMPT
+#: 6142 PROMPT
+msgid "When was this relative to your diagnosis with LAM?"
+msgstr "これは、LAM の診断と関連して、いつのことでしたか？"
+
+# QUESTION QUESTION-HELP
+#: 6142 QUESTION-HELP
+msgid "Please enter the number of years before by entering a negative number (e.g. -4) or the number of years after with a positive number."
+msgstr "診断前の場合はマイナス記号（たとえば「-4」）、診断後の場合はプラス記号を用いて年数を入力してください。"
+
+# QUESTION PROMPT
+#: 6143 PROMPT
+msgid "Did you notice any change in the progression of your disease since the surgery?"
+msgstr "手術以降、病気の進行に何か変化はありましたか？"
+
+# QUESTION PROMPT
+#: 6144 PROMPT
+msgid "Are you having hormone replacement therapy as a result of the surgery?"
+msgstr "手術の結果、ホルモン補充治療を受けていますか？"
+
+# QUESTION PROMPT
+#: 6007 PROMPT
+msgid "If so, for how many years?"
+msgstr "受けている場合は、何年になりますか？"
+
+# QUESTION PROMPT
+#: 6008 PROMPT
+msgid "How many cigarettes per day did you smoke at your heaviest time?"
+msgstr "一番多いときには、1 日何本たばこを吸っていましたか？"
+
+# QUESTION PROMPT
+#: 6010 PROMPT
+msgid "How many glasses of alcohol (glass of wine/beer or a shot of hard liquor) have you consumed per week at your heaviest time?"
+msgstr "一番多いときには、1 週間に何杯のアルコールを飲んでいましたか（ワイン/ビールならグラス、強い酒ならショット）？"
+
+# QUESTION PROMPT
+#: 6011 PROMPT
+msgid "How much alcohol do you currently consume per week?"
+msgstr "現在、毎週どれくらいのアルコールを飲んでいますか？"
+
+# QUESTION PROMPT
+#: 6013 PROMPT
+msgid "If so, what were they?"
+msgstr "その場合、何を飲んでいますか？"
+
+# QUESTION PROMPT
+#: 6017 PROMPT
+msgid "If yes, what type of weather?"
+msgstr "「はい」の場合、どのような天気ですか？"
+
+# QUESTION PROMPT
+#: 6018 PROMPT
+msgid "What kind of effects?"
+msgstr "どのような影響がありますか？"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "mental"
+msgstr "精神的"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "breathing"
+msgstr "呼吸"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "infections"
+msgstr "感染"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "exercise tolerance"
+msgstr "運動許容量"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "allergic reaction"
+msgstr "アレルギー反応"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 6022 PROMPT
+msgid "How often do you fly?"
+msgstr "どのくらい飛行機で旅行しますか？"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "Once a year"
+msgstr "年に 1 回"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "A few times a year"
+msgstr "年に数回"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "Once a month"
+msgstr "月 1 回"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "More than once a month"
+msgstr "月 2 回以上"
+
+# QUESTION PROMPT
+#: 6023 PROMPT
+msgid "How long is the average flight in hours?"
+msgstr "平均飛行時間は？"
+
+# QUESTION PROMPT
+#: 6024 PROMPT
+msgid "How many days between flights?"
+msgstr "飛行機の利用間隔は何日ですか？"
+
+# QUESTION PROMPT
+#: 6025 PROMPT
+msgid "Do you try to fly only on non-stop flights?"
+msgstr "直行便のみを利用するようにしていますか？"
+
+# QUESTION PROMPT
+#: 6026 PROMPT
+msgid "Do you fly over the ocean?"
+msgstr "飛行機は海の上を通りますか？"
+
+# QUESTION PROMPT
+#: 6027 PROMPT
+msgid "Have you ever experienced any discomfort while on the plane?"
+msgstr "飛行機の乗っている最中に、何らかの不快感を覚えたことはありますか？"
+
+# QUESTION PROMPT
+#: 6028 PROMPT
+msgid "If so, did you experience this during one or more of"
+msgstr "それは、どのようなときですか（複数回答可）？"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Take off"
+msgstr "離陸時"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "At cruising altitude"
+msgstr "安定飛行時"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "During landing"
+msgstr "着陸時"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Immediately after getting off of the plane"
+msgstr "飛行機を降りた直後"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Sometime soon after getting off of the plane"
+msgstr "飛行機を降りてしばらくしてから"
+
+# QUESTION PROMPT
+#: 6029 PROMPT
+msgid "Please describe the pain/ discomfort that you felt?"
+msgstr "どのような痛みや不快感を覚えたか説明してください。"
+
+# QUESTION PROMPT
+#: 6030 PROMPT
+msgid "Do you regularly use oxygen on the plane?"
+msgstr "飛行機に乗っているときは必ず酸素を使用しますか？"
+
+# QUESTION PROMPT
+#: 6031 PROMPT
+msgid "If so, how much (liters per minute)?"
+msgstr "その場合、どれくらいの量ですか（リットル/分）？"
+
+# QUESTION PROMPT
+#: 6032 PROMPT
+msgid "If you do not use oxygen regularly on the plane, do you ever tell airplane staff that you have a lung condition when you get on the plane?"
+msgstr "飛行機でいつも酸素を使用していない場合、搭乗時に、肺疾患を抱えていることをキャビンアテンダントに伝えていますか？"
+
+# QUESTION PROMPT
+#: 6033 PROMPT
+msgid "Do you take any precautions when you fly (x-ray before flying, etc)?"
+msgstr "飛行機に乗る前に予防策を取っていますか（事前にレントゲンを取るなど）？"
+
+# QUESTION PROMPT
+#: 6034 PROMPT
+msgid "What are these?"
+msgstr "どのような内容ですか？"
+
+# QUESTION PROMPT
+#: 6035 PROMPT
+msgid "Have you had a pneumathorax (collapsed lung) or any other medical problem within a week after flying?"
+msgstr "飛行機に乗った後、1 週間以内に気胸（肺の虚脱）や他の医学上の問題を患ったことがありますか？"
+
+# QUESTION PROMPT
+#: 6036 PROMPT
+msgid "At what approximate altitude (meters) do you live (1 meter=3.3 feet)?"
+msgstr "どれくらいの高度（メートル）に住んでいらっしゃいますか？"
+
+# QUESTION PROMPT
+#: 6037 PROMPT
+msgid "Do you feel that this affects your breathing?"
+msgstr "これによって呼吸が影響を受けていると思いますか？"
+
+# QUESTION PROMPT
+#: 6038 PROMPT
+msgid "When you travel, do you visit locations at high altitude?"
+msgstr "旅行中に、高度の高い場所を訪問しますか？"
+
+# QUESTION PROMPT
+#: 6039 PROMPT
+msgid "If so, how do you feel"
+msgstr "その場合、どのように感じますか？"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "No effect"
+msgstr "影響はない"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "some discomfort"
+msgstr "いくらか不快感を覚える"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "significant difficulty"
+msgstr "ものすごく大変である"
+
+# QUESTION PROMPT
+#: 5997 PROMPT
+msgid "Do you work part-time or full-time?"
+msgstr "パートまたは正規の仕事をしていますか？"
+
+# QUESTION CHOICES
+#: 5997 CHOICES
+msgid "Part time"
+msgstr "パート"
+
+# QUESTION CHOICES
+#: 5997 CHOICES
+msgid "Full time"
+msgstr "正社員"
+
+# QUESTION PROMPT
+#: 5993 PROMPT
+msgid "Are you the sole income-earner in your family?"
+msgstr "あなたはご家族の中で唯一の所得者ですか？"
+
+# QUESTION PROMPT
+#: 5995 PROMPT
+msgid "Do you have a job outside of the home?"
+msgstr "ご自宅以外で仕事を持っていらっしゃいますか？"
+
+# QUESTION PROMPT
+#: 5996 PROMPT
+msgid "Do you work from home?"
+msgstr "ご自宅で働いていますか？"
+
+# QUESTION PROMPT
+#: 5992 PROMPT
+msgid "Are you the sole home-maker in your family?"
+msgstr "あなたはご家族の中で唯一の主婦ですか？"
+
+# QUESTION PROMPT
+#: 6014 PROMPT
+msgid "On average, is the climate where you now live wet, temperate or dry?"
+msgstr "平均して、お住まいの地域の気候はどのようなものですか（湿っている、温暖、乾燥している）？"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Rains alot and very humid"
+msgstr "雨がたくさん降り、湿度が非常に高い"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Moderate humidity and rain"
+msgstr "湿度と降雨量は普通である"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Dry and desert like"
+msgstr "乾燥して砂漠のようである"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Humid summers; cold, dry winters"
+msgstr "夏は湿度が高く、冬は寒くて乾燥している"
+
+# QUESTION PROMPT
+#: 6015 PROMPT
+msgid "Is the climate on average hot, temperate, or cold?"
+msgstr "気候は平均的にどのようなものですか（暑い、温暖、寒い）？"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "hot"
+msgstr "暑い"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "temperate"
+msgstr "温暖"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "cold"
+msgstr "寒い"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "variable"
+msgstr "変化が多い"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "unknown"
+msgstr "不明"
+
+# QUESTION PROMPT
+#: 6019 PROMPT
+msgid "Other comments on climate and its impact on your health?"
+msgstr "気候と、気候が健康に及ぼす影響について、他のコメントがあれば記入してください。"
+
+# QUESTION PROMPT
+#: 6044 PROMPT
+msgid "Is this due to one or more of the following?"
+msgstr "これは、以下の 1 つまたは複数を原因としていますか？"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Anxiety"
+msgstr "不安"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Not being able to breathe well"
+msgstr "呼吸しにくい"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Waking up frequently to urinate, etc"
+msgstr "寝ている間、トイレなどに何度も起きてしまう"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Other pain or discomfort unrelated to breathing"
+msgstr "呼吸には関連していない、その他の痛みや不快感"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Demands of work or family"
+msgstr "仕事や家事"
+
+# QUESTION PROMPT
+#: 6047 PROMPT
+msgid "If yes, on how many litres per minute of oxygen?"
+msgstr "「はい」の場合、どれくらいの量の酸素ですか（リットル/分）？"
+
+# QUESTION PROMPT
+#: 6049 PROMPT
+msgid "Has this become worse over time?"
+msgstr "これは、次第に悪化していますか？"
+
+# QUESTION PROMPT
+#: 6052 PROMPT
+msgid "Has this sensation become worse over time?"
+msgstr "この感覚は、次第に悪化していますか？"
+
+# QUESTION PROMPT
+#: 13809 PROMPT
+msgid "Has this sensation become worse over time?"
+msgstr "この感覚は、次第に悪化していますか？"
+
+# QUESTION PROMPT
+#: 5971 PROMPT
+msgid "Did you use these drugs regularly during more than a year of your life?"
+msgstr "これまでに 1 年以上、これらの薬剤を定期的に使用していましたか？"
+
+# QUESTION PROMPT
+#: 5973 PROMPT
+msgid "What remedies?"
+msgstr "どのような治療薬ですか？"
+
+# QUESTION PROMPT
+#: 5976 PROMPT
+msgid "What treatments or herbs have you tried?"
+msgstr "どのような治療法またはハーブを試しましたか？"
+
+# QUESTION PROMPT
+#: 5979 PROMPT
+msgid "What kind or format?"
+msgstr "どのような形式でしたか？"
+
+# QUESTION PROMPT
+#: 5982 PROMPT
+msgid "For what symptoms or underlying cause?"
+msgstr "どのような症状または根本的原因に対するものでしたか？"
+
+# QUESTION PROMPT
+#: 5981 PROMPT
+msgid "What kind or form?"
+msgstr "どのような種類または形式でしたか？"
+
+# QUESTION PROMPT
+#: 5984 PROMPT
+msgid "If so, please name them"
+msgstr "その場合、名前を挙げてください。"
+
+# QUESTION PROMPT
+#: 5955 PROMPT
+msgid "Which ones?"
+msgstr "どれですか？"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Chinese medicine"
+msgstr "漢方薬"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Acupuncture"
+msgstr "鍼治療"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Herbal treatments"
+msgstr "ハーブ療法"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Shiatsu massage"
+msgstr "指圧"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Hypnosis"
+msgstr "催眠術"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Meditation"
+msgstr "瞑想"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 13821 PROMPT
+msgid "Please describe"
+msgstr "詳しく説明してください。"
+
+# QUESTION PROMPT
+#: 5917 PROMPT
+msgid "If yes, what are these symptoms?"
+msgstr "「はい」の場合、どのような症状ですか？"
+
+# QUESTION PROMPT
+#: 5918 PROMPT
+msgid "What food / group do you associate with each symptom?"
+msgstr "それぞれの症状に対して、どの食品や食品群が関連していると思いますか？"
+
+# QUESTION PROMPT
+#: 5919 PROMPT
+msgid "Which food or food groups do you avoid to alleviate this symptom?"
+msgstr "この症状を軽減するため、どのような食品や食品群を避けていますか？"
+
+# QUESTION PROMPT
+#: 5914 PROMPT
+msgid "Are there any foods or food groups you avoid eating?"
+msgstr "食べるのを避けている食品や食品群はありますか？"
+
+# QUESTION PROMPT
+#: 5915 PROMPT
+msgid "If yes, do you avoid eating these due to"
+msgstr "「はい」の場合、どのような理由ですか（以下から選択）？"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "General health concerns"
+msgstr "一般的な健康意識"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Weight and body image"
+msgstr "体重や体型のイメージ"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Effect on lung function"
+msgstr "肺機能への影響"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Effect on lymphatic symptoms"
+msgstr "リンパ管症状への影響"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "other symptoms"
+msgstr "その他の症状"
+
+# QUESTION PROMPT
+#: 5924 PROMPT
+msgid "For how long have you done this (in years)?"
+msgstr "これはどれくらい行っていますか（年数）？"
+
+# QUESTION PROMPT
+#: 5925 PROMPT
+msgid "What prompted you to follow this diet?"
+msgstr "このダイエットを始めた理由は何ですか？"
+
+# QUESTION PROMPT
+#: 5926 PROMPT
+msgid "Do you follow this due to a weight concern related to one or more of:"
+msgstr "これは、どのような体重に関する懸念から行っているのですか（複数回答可）？"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Body image"
+msgstr "体型のイメージ"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Heart health"
+msgstr "心臓の健康"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "LAM"
+msgstr "LAM"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Breathing issues"
+msgstr "呼吸の問題"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Chyle issues in the thoracic cavity"
+msgstr "胸腔における乳糜の問題"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "chyle issues in the abdominal cavity"
+msgstr "腹腔における乳糜の問題"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "lymphatic discomfort/ disorder generally"
+msgstr "一般的なリンパ系の不快感/障害"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 5929 PROMPT
+msgid "Do you find it difficult to lose weight?"
+msgstr "体重を減らすことが難しいと思われますか？"
+
+# QUESTION PROMPT
+#: 5930 PROMPT
+msgid "Do you find it difficult to gain weight?"
+msgstr "体重を増やすことが難しいと思われますか？"
+
+# QUESTION PROMPT
+#: 26389 PROMPT
+msgid "Do you regularly take fish oil or any other antioxidants?"
+msgstr "魚油または他の抗酸化物質を定期的に摂取していますか？"
+
+# QUESTION PROMPT
+#: 5933 PROMPT
+msgid "Please list supplements and symptoms/issues they are meant to address"
+msgstr "サプリメントの種類と、それによって対処される症状/問題を挙げてください。"
+
+# QUESTION QUESTION-HELP
+#: 5933 QUESTION-HELP
+msgid "Please put one supplement and symptom or condition per line"
+msgstr "各行につき、1 つのサプリメントと、対処すべき症状や状態を書いてください。"
+
+# QUESTION PROMPT
+#: 5946 PROMPT
+msgid "If so, does that stop you from exercising?"
+msgstr "その場合、これによって運動ができなくなりましたか？"
+
+# QUESTION PROMPT
+#: 5947 PROMPT
+msgid "If you desaturate, what are your symptoms?"
+msgstr "脱飽和状態になった場合、症状はどのようなものですか？"
+
+# QUESTION PROMPT
+#: 5949 PROMPT
+msgid "If so, please describe"
+msgstr "その場合、説明してください。"
+
+# QUESTION PROMPT
+#: 5964 PROMPT
+msgid "If yes, because of what symptom?"
+msgstr "「はい」の場合、どのような症状が原因ですか？"
+
+# QUESTION PROMPT
+#: 5965 PROMPT
+msgid "Did you do pulmonary rehabilitation?"
+msgstr "呼吸リハビリテーションを行いましたか？"
+
+# QUESTION PROMPT
+#: 5966 PROMPT
+msgid "For how long (in months)?"
+msgstr "どれくらいの期間でしたか（月数）？"
+
+# QUESTION PROMPT
+#: 5967 PROMPT
+msgid "Did you find it helpful?"
+msgstr "役に立ったと思いましたか？"
+
+# QUESTION PROMPT
+#: 5938 PROMPT
+msgid "Is your exercise"
+msgstr "運動は..."
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Regular"
+msgstr "定期的"
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Variable"
+msgstr "特に決まっていない"
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Infrequent"
+msgstr "あまりしない"
+
+# QUESTION PROMPT
+#: 5939 PROMPT
+msgid "Is this exercise targeted at endurance?"
+msgstr "この運動は、持久力を付けるために行っているのですか？"
+
+# QUESTION PROMPT
+#: 5941 PROMPT
+msgid "How many times a week on average?"
+msgstr "平均して週に何回行っていますか？"
+
+# QUESTION PROMPT
+#: 5942 PROMPT
+msgid "and for how many minutes?"
+msgstr "何分間行っていますか？"
+
+# QUESTION PROMPT
+#: 5943 PROMPT
+msgid "Do you not use oxygen normally but use oxygen when you exercise?"
+msgstr "普段は酸素は使用していなくても、運動時には酸素を使用しますか？"
+
+# QUESTION PROMPT
+#: 5944 PROMPT
+msgid "If you use oxygen normally, do you exercise with oxygen?"
+msgstr "普段から酸素を使用している場合、運動時も酸素を使用していますか？"
+
+# QUESTION PROMPT
+#: 5950 PROMPT
+msgid "Do you experience any discomfort or pain while exercising?"
+msgstr "運動中に、何らかの不快感や痛みを感じますか？"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Coughing blood"
+msgstr "吐血"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Acute breathlessness"
+msgstr "息が激しく切れる"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Dizziness"
+msgstr "目まい"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Nausea"
+msgstr "嘔吐"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 5951 PROMPT
+msgid "What is your favorite kind of exercise?"
+msgstr "どのような種類の運動が好きですか？"
+
+# QUESTION PROMPT
+#: 6063 PROMPT
+msgid "Location of the tissue"
+msgstr "組織の場所"
+
+# QUESTION PROMPT
+#: 6064 PROMPT
+msgid "Type of sample"
+msgstr "サンプルのタイプ"
+
+# QUESTION PROMPT
+#: 6065 PROMPT
+msgid "Date of sample"
+msgstr "サンプルの日付"
+
+# QUESTION PROMPT
+#: 5895 PROMPT
+msgid "If yes, please describe"
+msgstr "「はい」の場合、説明してください。"
+
+# QUESTION PROMPT
+#: 5896 PROMPT
+msgid "Do you take any medications for this?"
+msgstr "これについて、薬剤を服用していますか？"
+
+# QUESTION PROMPT
+#: 5897 PROMPT
+msgid "Any other comments on pain and discomfort"
+msgstr "痛みや不快感について、他のコメントはありますか？"
+
+# QUESTION PROMPT
+#: 5886 PROMPT
+msgid "What part of your body hurts?"
+msgstr "身体のどの部位が痛みますか？"
+
+# QUESTION PROMPT
+#: 5888 PROMPT
+msgid "How often do you experience these pains?"
+msgstr "このような痛みはどれくらい頻繁に感じますか？"
+
+# QUESTION PROMPT
+#: 5887 PROMPT
+msgid "During which activities does it hurt?"
+msgstr "どの活動によって痛みますか？"
+
+# QUESTION PROMPT
+#: 5884 PROMPT
+msgid "How would you rate this pain overall?"
+msgstr "全体的に、この痛みはどの程度ですか？"
+
+# QUESTION QUESTION-HELP
+#: 5884 QUESTION-HELP
+msgid "Use a scale from 1 to 10, where 1 is the lightest pain you have ever felt and 10 the greatest pain."
+msgstr "1（あまり痛くない）から 10（とても痛い）の範囲で表してください。"
+
+# QUESTION PROMPT
+#: 5891 PROMPT
+msgid "Do you take any medications to address this?"
+msgstr "これに対処するため、薬剤を服用していますか？"
+
+# QUESTION PROMPT
+#: 5882 PROMPT
+msgid "If yes, please list the medications"
+msgstr "「はい」の場合、薬剤を挙げてください。"
+
+# QUESTION QUESTION-HELP
+#: 5882 QUESTION-HELP
+msgid "Please enter: medication, dose, duration of time taken. One line per medication"
+msgstr "以下を入力してください：薬剤、投薬量、服用期間。各行につき、1 つの薬剤を書いてください。"
+
+# QUESTION PROMPT
+#: 5883 PROMPT
+msgid "Do/did these medications have an impact on your pain / discomfort?"
+msgstr "これらの薬剤によって、痛み/不快感が緩和しますか/しましたか？"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Completely resolve"
+msgstr "完全に緩和した"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Partially resolve"
+msgstr "部分的に緩和した"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Partially resolve"
+msgstr "部分的に緩和した"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "No effect"
+msgstr "効果はない"
+
+# QUESTION PROMPT
+#: 5890 PROMPT
+msgid "Please describe"
+msgstr "詳しく説明してください。"
+
+# QUESTION PROMPT
+#: 5892 PROMPT
+msgid "If yes, please list the medication(s)"
+msgstr "「はい」の場合、薬剤を挙げてください。"
+
+# QUESTION QUESTION-HELP
+#: 5892 QUESTION-HELP
+msgid "Please enter: medication, dose, duration of time taken. One line per medication"
+msgstr "以下を入力してください：薬剤、投薬量、服用期間。各行につき、1 つの薬剤を書いてください。"
+
+# QUESTION PROMPT
+#: 5893 PROMPT
+msgid "Does this medication completely or patially resolve your pain / discomfort?"
+msgstr "この薬剤によって、痛み/不快感が完全に/部分的に緩和しましたか？"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "Completely resolve"
+msgstr "完全に緩和した"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "Partially resolve"
+msgstr "部分的に緩和した"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "No effect"
+msgstr "効果はない"
+
+# QUESTION PROMPT
+#: 5900 PROMPT
+msgid "If so, which and when?"
+msgstr "その場合、どれですか？また、いつですか？"
+
+# QUESTION PROMPT
+#: 5901 PROMPT
+msgid "Has the problem persisted?"
+msgstr "問題は継続しましたか？"
+
+# QUESTION PROMPT
+#: 5902 PROMPT
+msgid "For how many years (1 if recent)?"
+msgstr "何年間ですか（最近の場合は「1」と記入してください）？"
+
+# QUESTION PROMPT
+#: 5904 PROMPT
+msgid "If so, which disease or condition and who suffered from it?"
+msgstr "その場合、どの病気または症状でしたか？また、誰が患っていましたか？"
+
+# QUESTION PROMPT
+#: 5906 PROMPT
+msgid "If yes, from what cause?"
+msgstr "「はい」の場合、原因は何ですか？"
+
+# QUESTION PROMPT
+#: 5908 PROMPT
+msgid "If yes, which?"
+msgstr "「はい」の場合、いずれですか？"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Asthma"
+msgstr "喘息"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Emphysema"
+msgstr "肺気腫"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Bronchiectasis"
+msgstr "気管支拡張症"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Other lunch disease"
+msgstr "他の肺病"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Diabetes"
+msgstr "糖尿病"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Epilepsy"
+msgstr "てんかん"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Malignancy"
+msgstr "悪性腫瘍"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 6124 PROMPT
+msgid "If no, by what form of testing was the possibility that you have Tuberous Sclerosis ruled out?"
+msgstr "「いいえ」の場合、どのような形式の検査によって結節硬化症の可能性を除外しましたか？"
+
+# QUESTION PROMPT
+#: 6125 PROMPT
+msgid "If yes, how old were you?"
+msgstr "「はい」の場合、何歳でしたか？"
+
+# QUESTION PROMPT
+#: 6126 PROMPT
+msgid "Do you currently have any symptoms associated with your Tuberous Sclerosis?"
+msgstr "現在、結節硬化症に関連した症状を患っていますか？"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Skin problems"
+msgstr "皮膚の問題"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Epilepsy"
+msgstr "てんかん"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Brain tumors"
+msgstr "脳腫瘍"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Kidney tumors"
+msgstr "腎腫瘍"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 6127 PROMPT
+msgid "Do you currently have any symptoms not definitely related to Tuberous Sclerosis?"
+msgstr "現在、結節硬化症とは一切関連のない症状を患っていますか？"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Skin problems"
+msgstr "皮膚の問題"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Epilepsy"
+msgstr "てんかん"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Brain tumors"
+msgstr "脳腫瘍"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Kidney tumors"
+msgstr "腎腫瘍"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Austism"
+msgstr "自閉症"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 6128 PROMPT
+msgid "If other, please describe"
+msgstr "「その他」の場合、説明してください。"
+
+# QUESTION PROMPT
+#: 6130 PROMPT
+msgid "Please provide details (current age and relation to you)"
+msgstr "詳細を記入してください（現在の年齢やあなたとの関係など）。"
+
+# QUESTION PROMPT
+#: 6132 PROMPT
+msgid "If yes, please choose from the following"
+msgstr "「はい」の場合、以下から選択してください。"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Skin problems"
+msgstr "皮膚の問題"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Epilepsy"
+msgstr "てんかん"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Brain tumors"
+msgstr "脳腫瘍"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Kidney tumors"
+msgstr "腎腫瘍"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Austism"
+msgstr "自閉症"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 6133 PROMPT
+msgid "Please describe your relationship to the affected members of your family"
+msgstr "その家族とあなたとの関係を説明してください。"
+
+# QUESTION PROMPT
+#: 6135 PROMPT
+msgid "Please describe the condition and date of diagnosis"
+msgstr "症状と診断日について説明してください。"
+
+# QUESTION PROMPT
+#: 6077 PROMPT
+msgid "If so, how many children do you have, if any?"
+msgstr "その場合、お子さまは何人いらっしゃいますか（該当する場合）？"
+
+# QUESTION PROMPT
+#: 6078 PROMPT
+msgid "What are the sexes and birth years of each child?"
+msgstr "それぞれのお子さまの性別と生まれた年は？"
+
+# QUESTION QUESTION-HELP
+#: 6078 QUESTION-HELP
+msgid "Please list: sex followed by birth year, one per line"
+msgstr "各行に性別と生まれた年を記入してください。"
+
+# QUESTION PROMPT
+#: 6091 PROMPT
+msgid "Do you have any children through"
+msgstr "以下を介したお子さまがいらっしゃいますか？"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Adoption"
+msgstr "養子縁組"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Inherited through marriage"
+msgstr "結婚相手の子ども"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Gestational surrogacy"
+msgstr "代理妊娠"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 26415 PROMPT
+msgid "If you gave birth to any of your children, what was the date of your last delivery?"
+msgstr "お子さまをお産みになった場合、最後の出産はいつですか？"
+
+# QUESTION PROMPT
+#: 6080 PROMPT
+msgid "Was your pregnancy uneventful?"
+msgstr "穏やかな妊娠でしたか？"
+
+# QUESTION PROMPT
+#: 6081 PROMPT
+msgid "If not, what challenges did you face?"
+msgstr "そうでない場合、どのような問題がありましたか？"
+
+# QUESTION PROMPT
+#: 6082 PROMPT
+msgid "Do you think these challenges may be LAM-related?"
+msgstr "これらの問題は LAM と関連していると思いますか？"
+
+# QUESTION PROMPT
+#: 6083 PROMPT
+msgid "What makes you think this?"
+msgstr "なぜそのようにお考えですか？"
+
+# QUESTION PROMPT
+#: 6085 PROMPT
+msgid "If yes, based on what clues was the diagnosis made?"
+msgstr "「はい」の場合、どのような手がかりによって診断が行われましたか？"
+
+# QUESTION PROMPT
+#: 26257 PROMPT
+msgid "Your age at your first pregnancy?"
+msgstr "初めて妊娠したときの年齢は？"
+
+# QUESTION PROMPT
+#: 26246 PROMPT
+msgid "Number of pregnancies carried to term"
+msgstr "臨月に達した妊娠回数は？"
+
+# QUESTION QUESTION-HELP
+#: 26246 QUESTION-HELP
+msgid "This means live births, whether naturally or surgically"
+msgstr "これは、自然な方法や代理出産を問わず、あらゆる生児出生を差します。"
+
+# QUESTION PROMPT
+#: 6075 PROMPT
+msgid "Number of pregnancies not carried to term"
+msgstr "臨月まで達しなかった妊娠回数は？"
+
+# QUESTION QUESTION-HELP
+#: 6075 QUESTION-HELP
+msgid "Please enter a number: 0 if none"
+msgstr "数字を入力してください：「なし」の場合は「0」と入力します。"
+
+# QUESTION PROMPT
+#: 26256 PROMPT
+msgid "Have you ever had difficulty becoming pregnant?"
+msgstr "妊娠するのが困難でしたか？"
+
+# QUESTION PROMPT
+#: 26255 PROMPT
+msgid "Have you ever had IVF?"
+msgstr "IVF を行ったことがありますか？"
+
+# QUESTION QUESTION-HELP
+#: 26255 QUESTION-HELP
+msgid "IVF: In-vitro fertilization"
+msgstr "IVF：体外受精"
+
+# QUESTION PROMPT
+#: 26254 PROMPT
+msgid "Were you ever given DES to prevent miscarriage?"
+msgstr "流産を予防するために DES を処方されたことがありますか？"
+
+# QUESTION QUESTION-HELP
+#: 26254 QUESTION-HELP
+msgid "DES: Diethylstilbestrol"
+msgstr "DES：ジエチルスチルベストロール"
+
+# QUESTION PROMPT
+#: 6106 PROMPT
+msgid "Has this become worse or better over time?"
+msgstr "これは、次第に悪化していますか？それとも改善していますか？"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Stayed the same"
+msgstr "同じ"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Worse over time"
+msgstr "次第に悪化している"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Better over time"
+msgstr "次第に改善している"
+
+# QUESTION PROMPT
+#: 6112 PROMPT
+msgid "Are you on the pill now?"
+msgstr "現在、経口避妊薬を服用していますか？"
+
+# QUESTION PROMPT
+#: 6109 PROMPT
+msgid "For how many years have you been on birth control pills?"
+msgstr "経口避妊薬を何年間服用していますか？"
+
+# QUESTION PROMPT
+#: 6108 PROMPT
+msgid "For what purpose(s) were you on birth control pills?"
+msgstr "どのような目的で、経口避妊薬を服用していますか？"
+
+# QUESTION PROMPT
+#: 6111 PROMPT
+msgid "For what purpose?"
+msgstr "その理由は何ですか？"
+
+# QUESTION PROMPT
+#: 6119 PROMPT
+msgid "If so, for how long?"
+msgstr "その場合、どれくらいの期間でしたか？"
+
+# QUESTION PROMPT
+#: 6120 PROMPT
+msgid "Also, are you on hormone replacement therapy now?"
+msgstr "また、現在ホルモン補充治療を受けていますか？"
+
+# QUESTION PROMPT
+#: 6115 PROMPT
+msgid "At what age did you stop getting regular periods?"
+msgstr "定期的に生理がおとずれなくなったのは何歳のときですか？"
+
+# QUESTION PROMPT
+#: 6116 PROMPT
+msgid "What changes has your body undergone since you stopped menstruating?"
+msgstr "生理が止まってから、身体にどのような変化が現れましたか？"
+
+# QUESTION PROMPT
+#: 6117 PROMPT
+msgid "Do you think any of these changes are LAM-specific?"
+msgstr "これらの変化は、LAM に特有のものだと思いますか？"
+
+# QUESTION PROMPT
+#: 23551 PROMPT
+msgid "Have you taken medications specifically for LAM?"
+msgstr "LAM 専用の薬剤を服用していますか？"
+
+# QUESTION CHOICES
+#: 23551 CHOICES
+msgid "Yes"
+msgstr "はい"
+
+# QUESTION CHOICES
+#: 23551 CHOICES
+msgid "No"
+msgstr "いいえ"
+
+# QUESTION PROMPT
+#: 23549 PROMPT
+msgid "Which types of drugs have you tried?"
+msgstr "どのタイプの薬剤を試しましたか？"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Statins"
+msgstr "スタチン"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Rapamycin (Sirolimus)"
+msgstr "ラパマイシン（シロリムス）"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Certican R (Everolimus)"
+msgstr "サーティカン（R）（エベロリムス）"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Doxycycline"
+msgstr "ドキシサイクリン"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Metformin"
+msgstr "メトホルミン"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Anti-oestrogen"
+msgstr "アンチエストロゲン"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION QUESTION-HELP
+#: 23549 QUESTION-HELP
+msgid "Please select one or more categories"
+msgstr "カテゴリーを 1 つ以上選択してください"
+
+# QUESTION PROMPT
+#: 26416 PROMPT
+msgid "If you have taken LAM medications"
+msgstr "LAM 用の薬剤を服用している場合"
+
+# QUESTION QUESTION-HELP
+#: 26416 QUESTION-HELP
+msgid "Please list the medications, dates you took them and the reason you stopped, if any."
+msgstr "薬剤の名前、服用した日付、そしてやめた理由を挙げてください（該当する場合）。"
+
+# QUESTION PROMPT
+#: 36601 PROMPT
+msgid "Please share any other observations about your off-label use."
+msgstr "適応外使用に関する所見について、記入してください。"
+
+# QUESTION QUESTION-HELP
+#: 36601 QUESTION-HELP
+msgid "We will use your answers to this question to formulate a more detailed questionnaire for off-label users."
+msgstr "この質問への回答を使用して、適応外使用に関する詳細なアンケート調査を作成します。"
+
+# QUESTION PROMPT
+#: 23550 PROMPT
+msgid "Please select over the counter drugs you have used"
+msgstr "服用した市販薬を選択してください。"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Aspirin"
+msgstr "アスピリン"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Omega 3 Fatty Acids"
+msgstr "オメガ 3 脂肪酸"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Other Vitamins"
+msgstr "他のビタミン剤"
+
+# QUESTION PROMPT
+#: 23565 PROMPT
+msgid "Weight"
+msgstr "体重"
+
+# QUESTION QUESTION-HELP
+#: 23565 QUESTION-HELP
+msgid "Weight on a home scale.  "
+msgstr "自宅の体重計で調べた体重  "
+
+# QUESTION PROMPT
+#: 23564 PROMPT
+msgid "Body Temperature"
+msgstr "体温"
+
+# QUESTION QUESTION-HELP
+#: 23564 QUESTION-HELP
+msgid "Collecting your daily temperature at the same time as your spirometer readings may help us understand the role of hormones in variations in FEV1.  Please use under the tongue readings. "
+msgstr "肺活量計での測定と同時に毎日体温を測定すると、ホルモンの変化が FEV1 にもたらす影響について、より深く理解できるかもしれません。体温は舌の裏で測定してください。 "
+
+# QUESTION PROMPT
+#: 32622 PROMPT
+msgid "Do you experience incontinence?"
+msgstr "失禁することがありますか？"
+
+# QUESTION QUESTION-HELP
+#: 32622 QUESTION-HELP
+msgid "Please answer yes if you have, sometimes or always experience incontinence.  The rest of the questions will help fill in the details."
+msgstr "その頻度を問わず、失禁があれば「はい」と回答してください。これについて、別の質問で詳しくお聞きします。"
+
+# QUESTION PROMPT
+#: 24513 PROMPT
+msgid "Before you go out, do you consciously think about whether you need to visit the toilet?"
+msgstr "出かける前に、トイレに行かなくてはならないと意識しますか？"
+
+# QUESTION CHOICES
+#: 24513 CHOICES
+msgid "Yes"
+msgstr "はい"
+
+# QUESTION CHOICES
+#: 24513 CHOICES
+msgid "No"
+msgstr "いいえ"
+
+# QUESTION PROMPT
+#: 24514 PROMPT
+msgid "Do you sometimes go to the toilet "just to be safe" even if you don't feel you need to?"
+msgstr "トイレに行く必要性を感じなくても、念のために行っておくことはありますか？"
+
+# QUESTION PROMPT
+#: 24516 PROMPT
+msgid "Have you ever worried that you would not get to the toilet in time due to shortness of breath?"
+msgstr "息切れのため、トイレにたどりつけないのではないかと不安に思ったことはありますか？"
+
+# QUESTION PROMPT
+#: 24517 PROMPT
+msgid "Have you ever experienced a slight leak of urine due to coughing, sneezing, or laughing?"
+msgstr "咳、くしゃみ、笑いなどによって、尿が少し漏れたことはありますか？"
+
+# QUESTION PROMPT
+#: 24533 PROMPT
+msgid "Do you avoid certain drinks?"
+msgstr "特定の飲み物を避けていますか？"
+
+# QUESTION QUESTION-HELP
+#: 24533 QUESTION-HELP
+msgid "Such as coffee, tea, or other diuretics?"
+msgstr "コーヒー、お茶、他の利尿薬は？"
+
+# QUESTION PROMPT
+#: 24523 PROMPT
+msgid "Have you been incontinent of feces?"
+msgstr "便失禁が起きたことはありますか？"
+
+# QUESTION PROMPT
+#: 24520 PROMPT
+msgid "Have you been incontinent of urine?"
+msgstr "尿失禁が起きたことはありますか？"
+
+# QUESTION PROMPT
+#: 24522 PROMPT
+msgid "Roughly how often?"
+msgstr "およそどれくらの頻度ですか？"
+
+# QUESTION PROMPT
+#: 24529 PROMPT
+msgid "On a scale of 1 (least significant) to 10 (most significant) who significant is incontinence compared to the other challenges you face as a LAM patient?"
+msgstr "LAM の患者さまが抱える他の問題と比較して、失禁の深刻さを 1（あまり深刻でない）から 10（とても深刻）の範囲で選んでください。"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION PROMPT
+#: 24530 PROMPT
+msgid "Does incontinence prevent you from doing certain things such as shopping or going for walks?"
+msgstr "失禁によって、ショッピングや散歩などの活動ができなくなっていますか？"
+
+# QUESTION PROMPT
+#: 24531 PROMPT
+msgid "Does incontinence limit you in any other way?"
+msgstr "失禁によって、他に制限されることはありますか？"
+
+# QUESTION PROMPT
+#: 24532 PROMPT
+msgid "Do you limit your liquid intake?"
+msgstr "飲み物の量を制限していますか？"
+
+# QUESTION QUESTION-HELP
+#: 24532 QUESTION-HELP
+msgid "For example, are worried about finding a toilet when you are out, or getting upstairs when you are home?"
+msgstr "たとえば、外出時、または家でも 2 階にいるときには、トイレの場所が気になりますか？"
+
+# QUESTION PROMPT
+#: 24526 PROMPT
+msgid "Please describe any coping strategies that have helped to reduce or avoid incontinence"
+msgstr "失禁を減らす、または避ける上で、対処法があれば説明してください。"
+
+# QUESTION PROMPT
+#: 24515 PROMPT
+msgid "If you have a chest infection, do you find that you have to be more aware of continence issues than you would be normally?"
+msgstr "肺感染症を患っている場合、通常よりも失禁について意識しなくてはならないと思いますか？"
+
+# QUESTION PROMPT
+#: 24518 PROMPT
+msgid "Has you incontinence become worse as your breathlessness increased over the years?"
+msgstr "息切れが激しくなるにつれて、失禁の症状が悪化したと思いますか？"
+
+# QUESTION PROMPT
+#: 26454 PROMPT
+msgid "Is your incontinence cyclical?"
+msgstr "失禁は周期的に起きますか？"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "None"
+msgstr "なし"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Monthly"
+msgstr "毎月"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "With menstruation"
+msgstr "月経とともに"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Seasonal"
+msgstr "季節的"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 24525 PROMPT
+msgid "What do you believe to be the major cause of your incontinence?"
+msgstr "失禁の主な原因は何だと思いますか？"
+
+# QUESTION PROMPT
+#: 24519 PROMPT
+msgid "Do you think your incontinence occurs because of"
+msgstr "失禁は以下が原因と思われますか？"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "oxygen desaturation"
+msgstr "酸素の不飽和化"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "breathlessness keeps you from getting there in time"
+msgstr "息切れによってトイレまでたどり着けない"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "other"
+msgstr "その他"
+
+# QUESTION QUESTION-HELP
+#: 24519 QUESTION-HELP
+msgid "i.e. desaturation leads you to lose control of the muscles"
+msgstr "脱飽和によって筋肉を制御できなくなるなど"
+
+# QUESTION PROMPT
+#: 24528 PROMPT
+msgid "Would you feel comfortable talking to your doctor or pulmonologist about incontinence problems?"
+msgstr "失禁の問題について、医師または呼吸器科医に抵抗なく話すことができますか？"
+
+# QUESTION PROMPT
+#: 24527 PROMPT
+msgid "Have you ever asked for professional help with incontinence?"
+msgstr "失禁について専門家の助けを求めましたか？"
+
+# QUESTION PROMPT
+#: 24817 PROMPT
+msgid "Do you have a family history of osteoporosis?"
+msgstr "家族に骨粗しょう症の人はいますか？"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "yes"
+msgstr "はい"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "no"
+msgstr "いいえ"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "I don't know"
+msgstr "わからない"
+
+# QUESTION PROMPT
+#: 24818 PROMPT
+msgid "Do you suffer from bone loss?"
+msgstr "骨量減少を患っていますか？"
+
+# QUESTION PROMPT
+#: 25733 PROMPT
+msgid "Do you suffer from back, joint or bone pain?"
+msgstr "腰、関節、骨の痛みがありますか？"
+
+# QUESTION PROMPT
+#: 24820 PROMPT
+msgid "In which members of your family?"
+msgstr "その家族とはどのような関係ですか？"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Siblings"
+msgstr "兄弟姉妹"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Parents"
+msgstr "両親"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Grandparents"
+msgstr "祖父母"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Cousins"
+msgstr "いとこ"
+
+# QUESTION PROMPT
+#: 24821 PROMPT
+msgid "At approximately what age was that diagnosis made for those family members "
+msgstr "この家族はおよそ何歳くらいのときに、そのように診断されましたか？ "
+
+# QUESTION QUESTION-HELP
+#: 24821 QUESTION-HELP
+msgid "Please list one family member and age per line"
+msgstr "各行につき、家族 1 人と、その年齢を書いてください。"
+
+# QUESTION PROMPT
+#: 25727 PROMPT
+msgid "Have you ever had a bone density scan?"
+msgstr "骨密度検査を受けたことがありますか？"
+
+# QUESTION PROMPT
+#: 24825 PROMPT
+msgid "Has a clinician said that this may be related to LAM?"
+msgstr "臨床医は、これは LAM と関連している可能性があると言いましたか？"
+
+# QUESTION PROMPT
+#: 24826 PROMPT
+msgid "If so, what connection was described between LAM and bone loss?"
+msgstr "その場合、LAM と骨量減少の間にどのような関係があると言われましたか？"
+
+# QUESTION PROMPT
+#: 24823 PROMPT
+msgid "Any other comments on your loss of bone density?"
+msgstr "骨密度の減少について、何か他のコメントはありますか？"
+
+# QUESTION PROMPT
+#: 24836 PROMPT
+msgid "Date of diagnosis?"
+msgstr "診断日は？"
+
+# QUESTION PROMPT
+#: 24837 PROMPT
+msgid "What test was used to arrive at your diagnosis?"
+msgstr "どのような検査によって、診断結果が出ましたか？"
+
+# QUESTION PROMPT
+#: 24838 PROMPT
+msgid "Name and address of diagnosing clinician"
+msgstr "診断を行った臨床医の名前と住所"
+
+# QUESTION PROMPT
+#: 24839 PROMPT
+msgid "Are you now taking any prescription medication for this condition?"
+msgstr "この症状のため、何か処方薬を服用していますか？"
+
+# QUESTION PROMPT
+#: 24844 PROMPT
+msgid "Have you taken medication for osteoporosis in the past that you are no longer taking?"
+msgstr "骨粗しょう症に対して過去に薬剤を摂取していましたか（今は服用していない）？"
+
+# QUESTION PROMPT
+#: 25732 PROMPT
+msgid "Have you ever taken bisphosophonates?"
+msgstr "ビスフォスフォネートを服用したことがありますか？"
+
+# QUESTION PROMPT
+#: 25731 PROMPT
+msgid "Are you currently taking bisphosphonates?"
+msgstr "現在、ビスフォスフォネートを服用していますか？"
+
+# QUESTION PROMPT
+#: 24841 PROMPT
+msgid "Which ones?"
+msgstr "どれですか？"
+
+# QUESTION PROMPT
+#: 24843 PROMPT
+msgid "Has this ever been recommended?"
+msgstr "これは推奨されましたか？"
+
+# QUESTION PROMPT
+#: 24846 PROMPT
+msgid "Medication?"
+msgstr "どの薬剤ですか？"
+
+# QUESTION PROMPT
+#: 24847 PROMPT
+msgid "Date when medication started?"
+msgstr "薬剤の使用を開始した日付は？"
+
+# QUESTION PROMPT
+#: 24848 PROMPT
+msgid "Date when medication stopped?"
+msgstr "薬剤の使用を停止した日付は？"
+
+# QUESTION PROMPT
+#: 24849 PROMPT
+msgid "Reason for stopping medication?"
+msgstr "薬剤の使用を停止した理由は？"
+
+# QUESTION PROMPT
+#: 24851 PROMPT
+msgid "Do you currently take multivitamins?"
+msgstr "現在、マルチビタミン剤を摂取していますか？"
+
+# QUESTION PROMPT
+#: 24852 PROMPT
+msgid "Not counting multi-vitamins, do you take any calcium or vitamin D supplements?"
+msgstr "カルシウムまたはビタミン D サプリメントを摂取していますか（マルチビタミン剤は除く）？"
+
+# QUESTION PROMPT
+#: 24853 PROMPT
+msgid "Do you take any other vitamin supplements?"
+msgstr "他のビタミン剤は摂取していますか？"
+
+# QUESTION PROMPT
+#: 24854 PROMPT
+msgid "Do you regularly consume any of the following foods?"
+msgstr "以下の食品を定期的に食べていますか？"
+
+# QUESTION CHOICES
+#: 24854 CHOICES
+msgid "Green, leafy vegetables"
+msgstr "緑葉野菜"
+
+# QUESTION CHOICES
+#: 24854 CHOICES
+msgid "Other bone-health related foods"
+msgstr "骨の健康に良いとされる他の食品"
+
+# QUESTION PROMPT
+#: 24856 PROMPT
+msgid "Vitamin D content?"
+msgstr "ビタミン D の含有量は？"
+
+# QUESTION PROMPT
+#: 24857 PROMPT
+msgid "Calcium content?"
+msgstr "カルシウムの含有量は？"
+
+# QUESTION PROMPT
+#: 24859 PROMPT
+msgid "What are the supplements called?"
+msgstr "そのサプリメントの名前は？"
+
+# QUESTION PROMPT
+#: 24860 PROMPT
+msgid "What formulation?"
+msgstr "どのような製剤ですか？"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Vitamin D"
+msgstr "ビタミン D"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Calcium"
+msgstr "カルシウム"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Vitamin D & Calcium"
+msgstr "ビタミン D とカルシウム"
+
+# QUESTION PROMPT
+#: 24861 PROMPT
+msgid "Amount of Vitamin D taken each day?"
+msgstr "毎日摂取するビタミン D の量は？"
+
+# QUESTION PROMPT
+#: 24862 PROMPT
+msgid "Amount of Calcium taken each day?"
+msgstr "毎日摂取するカルシウムの量は？"
+
+# QUESTION PROMPT
+#: 25606 PROMPT
+msgid "Are you currently taking any prescription medications?"
+msgstr "現在、処方薬を服用していますか?"
+
+# QUESTION PROMPT
+#: 25609 PROMPT
+msgid "Are you regularly taking vitamins or supplements?"
+msgstr "ビタミン剤やサプリメントを定期的に摂取していますか？"
+
+# QUESTION PROMPT
+#: 25608 PROMPT
+msgid "Please list the prescription medications you are taking"
+msgstr "現在摂取している処方薬を挙げてください。"
+
+# QUESTION QUESTION-HELP
+#: 25608 QUESTION-HELP
+msgid "To give us more information on your prescriptions, please go to our medication diary and enter the details of your current and past prescription medication use"
+msgstr "処方薬について詳しくお聞きしたいため、薬剤ダイアリーを開いて、現在および過去の処方薬の服用について入力してください。"
+
+# QUESTION PROMPT
+#: 6107 PROMPT
+msgid "Have you ever been on birth control pills?"
+msgstr "経口避妊薬を服用したことはありますか？"
+
+# QUESTION PROMPT
+#: 25622 PROMPT
+msgid "Have you ever used female hormones other than oral contraceptives?"
+msgstr "経口避妊薬以外の女性ホルモンを摂取したことがありますか？"
+
+# QUESTION PROMPT
+#: 25629 PROMPT
+msgid "Are you currently using over-the-counter hormone replacements or to treat post-menopausal symptoms?"
+msgstr "市販のホルモン補充剤、または閉経後の症状を改善する市販薬を現在服用していますか？"
+
+# QUESTION QUESTION-HELP
+#: 25629 QUESTION-HELP
+msgid "For example herbal, natural or soy-based preparations or supplements?"
+msgstr "たとえば、ハーブ/自然成分/大豆の製剤、またはサプリメントなどは？"
+
+# QUESTION PROMPT
+#: 25702 PROMPT
+msgid "Please rate your average level of daily stress"
+msgstr "毎日のストレスの平均値について評価してください。"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION QUESTION-HELP
+#: 25702 QUESTION-HELP
+msgid "Where 1 is no stress and 10 is the highest you have experienced."
+msgstr "1（ストレスがない）から 10（ストレスが多い）の範囲で選んでください。"
+
+# QUESTION PROMPT
+#: 25703 PROMPT
+msgid "What is the primary cause of your stress?"
+msgstr "ストレスの一番の原因は何ですか？"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Job"
+msgstr "仕事"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Home"
+msgstr "自宅"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Family"
+msgstr "家族"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Injury"
+msgstr "怪我"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 25704 PROMPT
+msgid "Has your general stress level increased since your LAM diagnosis?"
+msgstr "LAM と診断されてから、ストレスのレベルは上がりましたか？"
+
+# QUESTION PROMPT
+#: 25705 PROMPT
+msgid "What is your primary method of coping with stress?"
+msgstr "ストレスの一番の対処法は？"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Reading"
+msgstr "読書"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Exercise"
+msgstr "運動"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Television"
+msgstr "テレビ"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Spending time with family"
+msgstr "家族と一緒に過ごす"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Spending time with friends"
+msgstr "友人と一緒に過ごす"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Work"
+msgstr "仕事"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "None"
+msgstr "なし"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 26917 PROMPT
+msgid "What estrogens did you take?"
+msgstr "どのようなエストロゲンを摂取していますか？"
+
+# QUESTION QUESTION-HELP
+#: 26917 QUESTION-HELP
+msgid "Please enter one medication and the dates taken, one per line"
+msgstr "各行につき、薬剤 1 つと、その服用日を書いてください。"
+
+# QUESTION PROMPT
+#: 25625 PROMPT
+msgid "What prompted you to take estrogens?"
+msgstr "エストロゲンを摂取するようになった理由は何ですか？"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Menstrual problems"
+msgstr "月経の問題"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Bone problems"
+msgstr "骨の問題"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Hysterectomy"
+msgstr "子宮摘出"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Cancer"
+msgstr "癌"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 25626 PROMPT
+msgid "At what age did you first take estrogens?"
+msgstr "最初にエストロゲンを摂取したのは何歳のときですか？"
+
+# QUESTION PROMPT
+#: 25627 PROMPT
+msgid "How long did you take estrogens?"
+msgstr "エストロゲンをどれくらいの期間摂取しましたか？"
+
+# QUESTION PROMPT
+#: 25628 PROMPT
+msgid "How were the estrogens administered?"
+msgstr "エストロゲンはどのように投与されましたか？"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Injection"
+msgstr "注射"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Cream"
+msgstr "クリーム"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Pill"
+msgstr "錠剤"
+
+# QUESTION PROMPT
+#: 25631 PROMPT
+msgid "What over the counter estrogens?"
+msgstr "どのような市販のエストロゲンですか？"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Soy estrogen products"
+msgstr "大豆エストロゲン製品"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Dong quai"
+msgstr "ドンクアイ"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Natural progesterone cream"
+msgstr "天然のプロゲステロンクリーム"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Wild yam cream"
+msgstr "天然のヤムイモクリーム"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Black cohash"
+msgstr "ブラックコホッシュ"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 25735 PROMPT
+msgid "Where do you primarily experience your pain?"
+msgstr "主にどこに痛みを感じますか？"
+
+# QUESTION PROMPT
+#: 25736 PROMPT
+msgid "How often does the pain occur?"
+msgstr "この痛みはどれくらいの頻度で生じますか？"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Constant"
+msgstr "いつも"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Daily"
+msgstr "毎日"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Monthly"
+msgstr "毎月"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Occasionally"
+msgstr "たまに"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 25739 PROMPT
+msgid "Does your pain vary cyclically?"
+msgstr "痛みは周期的に変わりますか？"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "No"
+msgstr "いいえ"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Monthly"
+msgstr "毎月"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Seasonally"
+msgstr "季節的"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 25737 PROMPT
+msgid "How would you rate the pain on average?"
+msgstr "平均して、この痛みをどのように評価しますか？"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION QUESTION-HELP
+#: 25737 QUESTION-HELP
+msgid "Please rate from 1 to 10 where 1 is the most mild and 10 is the worst pain you have ever felt"
+msgstr "1（穏やか）から 10（今まで感じたことがないほどの痛み）の範囲で選んでください。"
+
+# QUESTION PROMPT
+#: 25738 PROMPT
+msgid "How has your pain changed over the past year?"
+msgstr "ここ数年で痛みはどのように変化しましたか？"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Same"
+msgstr "同じ"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Better"
+msgstr "良くなった"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Worse"
+msgstr "悪くなった"
+
+# QUESTION PROMPT
+#: 26211 PROMPT
+msgid "FEV1 - trial 1"
+msgstr "FEV1 - 試験 1"
+
+# QUESTION PROMPT
+#: 26212 PROMPT
+msgid "FEV6 - trial 1"
+msgstr "FEV6 - 試験 1"
+
+# QUESTION PROMPT
+#: 26213 PROMPT
+msgid "FEV1 - trial 2"
+msgstr "FEV1 - 試験 2"
+
+# QUESTION PROMPT
+#: 26214 PROMPT
+msgid "FEV6 - trial 2"
+msgstr "FEV6 - 試験 2"
+
+# QUESTION PROMPT
+#: 26215 PROMPT
+msgid "FEV1 - trial 3"
+msgstr "FEV1 - 試験 3"
+
+# QUESTION PROMPT
+#: 26216 PROMPT
+msgid "FEV6 - trial 3"
+msgstr "FEV6 - 試験 3"
+
+# QUESTION PROMPT
+#: 26220 PROMPT
+msgid "Did your travel routine vary yesterday?"
+msgstr "昨日の旅行パターンには変化がありましたか？"
+
+# QUESTION QUESTION-HELP
+#: 26220 QUESTION-HELP
+msgid "You need to describe only major changes, such as flights, long car trips, etc."
+msgstr "飛行機、車での長距離の移動など、大きな変化についてのみ説明してください。"
+
+# QUESTION PROMPT
+#: 26222 PROMPT
+msgid "Did your altitude change significantly?"
+msgstr "高度が著しく変化しましたか？"
+
+# QUESTION QUESTION-HELP
+#: 26222 QUESTION-HELP
+msgid "Enter the variation, or 0 if no change.  For example a typical commercial airplane flies up to 12000 meters or 35000 feet."
+msgstr "変化の度合い、または変化がなければ「0」と入力してください。たとえば、一般の旅客機は 12000 メートル（35000 フィート）まで上昇します。"
+
+# QUESTION PROMPT
+#: 26223 PROMPT
+msgid "Did you fly?"
+msgstr "飛行機に乗りましたか？"
+
+# QUESTION PROMPT
+#: 26224 PROMPT
+msgid "Any other changes in your routine?"
+msgstr "パターンに他の変化はありますか？"
+
+# QUESTION PROMPT
+#: 26226 PROMPT
+msgid "How long were you in the air?"
+msgstr "どれくらい飛行機に乗っていましたか？"
+
+# QUESTION PROMPT
+#: 26227 PROMPT
+msgid "Did your breathing change during the flight?"
+msgstr "飛行中に呼吸が変化しましたか？"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "normal"
+msgstr "普通"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "less difficult"
+msgstr "より簡単だった"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "varied"
+msgstr "常に変化していた"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "more difficult"
+msgstr "より難しくなった"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "extremely difficult"
+msgstr "極めて難しくなった"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "pnemothorax"
+msgstr "気胸"
+
+# QUESTION PROMPT
+#: 26228 PROMPT
+msgid "How did you feel after the flight?"
+msgstr "飛行後にはどのように感じましたか？"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "no change"
+msgstr "変化はない"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "worse"
+msgstr "悪くなった"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "better"
+msgstr "良くなった"
+
+# QUESTION PROMPT
+#: 26230 PROMPT
+msgid "Were you or did you feel sick yesterday?"
+msgstr "昨日は病気にかかっていましたか？それとも具合が悪かったですか？"
+
+# QUESTION PROMPT
+#: 26231 PROMPT
+msgid "Was your energy level:"
+msgstr "あなたの活力のレベルは："
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Normal"
+msgstr "普通"
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Higher than usual"
+msgstr "普通より高い"
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Lower than usual"
+msgstr "普通より低い"
+
+# QUESTION PROMPT
+#: 26233 PROMPT
+msgid "Type of sickness"
+msgstr "病気の種類"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "not sure"
+msgstr "わからない"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "cold"
+msgstr "かぜ"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "flu"
+msgstr "インフルエンザ"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "physical injury"
+msgstr "身体的な怪我"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "other"
+msgstr "その他"
+
+# QUESTION QUESTION-HELP
+#: 26233 QUESTION-HELP
+msgid "The goal of this section is to capture any ordinary ailments that may effect your FEV or temperature readings or other daily information."
+msgstr "本セクションの目的は、一般的な症状が、FEV や体温、または他の毎日の測定値にどのような影響を与えるか把握することを目的としています。"
+
+# QUESTION PROMPT
+#: 26236 PROMPT
+msgid "Symptoms of sickness"
+msgstr "病気の症状"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Runny nose"
+msgstr "鼻水"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Moderate cough"
+msgstr "軽い咳"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Severe cough"
+msgstr "激しい咳"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Cough with phlegm or fluid"
+msgstr "痰や体液がでる咳"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Fever (more than 102F/39C)"
+msgstr "熱（39度以上）"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Diarrhea"
+msgstr "下痢"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Cramping"
+msgstr "けいれん"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Vomiting"
+msgstr "嘔吐"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 26235 PROMPT
+msgid "Please describe sickness or injury"
+msgstr "病気や怪我について説明してください。"
+
+# QUESTION PROMPT
+#: 26238 PROMPT
+msgid "Please describe your other symptoms"
+msgstr "他の症状について説明してください。"
+
+# QUESTION PROMPT
+#: 26240 PROMPT
+msgid "Any variations in your normal diet?"
+msgstr "通常の食事から何か変化がありましたか？"
+
+# QUESTION QUESTION-HELP
+#: 26240 QUESTION-HELP
+msgid "We are leaving this question open for now to see what you report.  We will add more detailed questions here later."
+msgstr "ここからは自由回答形式となっているため、お好きなようにお答えいただけます。今後、より詳細な質問を追加します。"
+
+# QUESTION PROMPT
+#: 26243 PROMPT
+msgid "Did you miss any medications yesterday?"
+msgstr "昨日、薬剤の摂取を忘れましたか？"
+
+# QUESTION PROMPT
+#: 26242 PROMPT
+msgid "Please describe your dietary changes"
+msgstr "食事の変化について説明してください。"
+
+# QUESTION QUESTION-HELP
+#: 26242 QUESTION-HELP
+msgid "We are leaving this question open for now to see what you report.  We will add more detailed questions here later."
+msgstr "ここからは自由回答形式となっているため、お好きなようにお答えいただけます。今後、より詳細な質問を追加します。"
+
+# QUESTION PROMPT
+#: 26245 PROMPT
+msgid "Please describe the medication you missed"
+msgstr "服用を忘れた薬剤について説明してください。"
+
+# QUESTION PROMPT
+#: 6090 PROMPT
+msgid "If not, how many years after your child was born were you diagnosed?"
+msgstr "そうでない場合、お子様が生まれてから何年後に診断されましたか？"
+
+# QUESTION PROMPT
+#: 6089 PROMPT
+msgid "Did you use your husband/partner's sperm?"
+msgstr "夫/パートナーの精子を使用しましたか？"
+
+# QUESTION PROMPT
+#: 6094 PROMPT
+msgid "Did you use your own eggs?"
+msgstr "ご自身の卵子を使用しましたか？"
+
+# QUESTION PROMPT
+#: 6087 PROMPT
+msgid "If yes, do you think hormonal stimulation to harvest your eggs for transfer progressed your disease?"
+msgstr "「はい」の場合、ホルモンの刺激によって卵子を取得することが、病気の進行を促進したと思いますか？"
+
+# QUESTION PROMPT
+#: 6086 PROMPT
+msgid "If yes, what supports that belief?"
+msgstr "「はい」の場合、何がそのような考えの根拠となっていますか？"
+
+# QUESTION PROMPT
+#: 6093 PROMPT
+msgid "Was your surrogate a relative?"
+msgstr "代理母は親戚でしたか？"
+
+# QUESTION PROMPT
+#: 26251 PROMPT
+msgid "Please describe "
+msgstr "説明してください。 "
+
+# QUESTION PROMPT
+#: 26260 PROMPT
+msgid "Age you first took birth control pills?"
+msgstr "最初に経口避妊薬を服用した年齢は？"
+
+# QUESTION PROMPT
+#: 26261 PROMPT
+msgid "How many years did you take them?"
+msgstr "何年間服用しましたか？"
+
+# QUESTION QUESTION-HELP
+#: 26261 QUESTION-HELP
+msgid "Total years, even if you didn't for some years"
+msgstr "途中に間があっても構わないので、合計年数を入力してください。"
+
+# QUESTION PROMPT
+#: 26262 PROMPT
+msgid "What kind or brand did or do you take?"
+msgstr "どの種類またはブランドを服用していますか/服用していましたか？"
+
+# QUESTION PROMPT
+#: 26263 PROMPT
+msgid "If you stopped taking them, what was the reason?"
+msgstr "服用をやめた場合、その理由は何でしたか？"
+
+# QUESTION PROMPT
+#: 26264 PROMPT
+msgid "If you stopped taking them, did you have irregular or painful periods when you stopped?"
+msgstr "服用をやめた後、不定期な、または痛みを伴う月経がおとずれましたか？"
+
+# QUESTION PROMPT
+#: 26265 PROMPT
+msgid "Are you still taking birth control pills?"
+msgstr "まだ経口避妊薬を服用していますか？"
+
+# QUESTION PROMPT
+#: 26332 PROMPT
+msgid "How does your breathing feel today?"
+msgstr "今日の呼吸はどのような感じですか？"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Less difficult"
+msgstr "より簡単だった"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Normal"
+msgstr "普通"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "More difficult"
+msgstr "より難しかった"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Very difficult"
+msgstr "極めて難しかった"
+
+# QUESTION QUESTION-HELP
+#: 26332 QUESTION-HELP
+msgid "Your answer to this question should be made relative to your normal experience of breathing; if your breathing is always labored, and hasn't changed, then you should use 'normal' as your answer."
+msgstr "この質問については、通常の呼吸時と比較してお答えください。常に強制呼吸をしていて変化がない場合は、回答に「普通」と記入してください。"
+
+# QUESTION PROMPT
+#: 26333 PROMPT
+msgid "Menstrual symptoms"
+msgstr "月経の症状"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "None"
+msgstr "なし"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Spotting"
+msgstr "染み"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Bleeding"
+msgstr "出血"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Heavy bleeding"
+msgstr "激しい出血"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 26451 PROMPT
+msgid "Did you experience incontinence yesterday?"
+msgstr "昨日、失禁しましたか？"
+
+# QUESTION PROMPT
+#: 26388 PROMPT
+msgid "Please record any observations or thoughts you have today"
+msgstr "今日の観察や考えたことについて記録してください。"
+
+# QUESTION QUESTION-HELP
+#: 26388 QUESTION-HELP
+msgid "This can be regarding your monthly cycle, the nature of your symptoms or anything else you feel is relevant."
+msgstr "これは、月経周期、症状のパターン、または何か感じたことでも構いません。"
+
+# QUESTION PROMPT
+#: 26400 PROMPT
+msgid "Are you currently sexually active?"
+msgstr "現在、性生活は活発ですか？"
+
+# QUESTION PROMPT
+#: 26402 PROMPT
+msgid "Does sexual activity leave you unusually breathless or unwell?"
+msgstr "性行動によって、息切れが激しくなったり気分が悪くなったりしますか？"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "No"
+msgstr "いいえ"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "Immediately after"
+msgstr "直後に"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "For hours"
+msgstr "数時間"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "For days"
+msgstr "数日"
+
+# QUESTION PROMPT
+#: 26405 PROMPT
+msgid "Would you be willing to release this tissue?"
+msgstr "この組織を提出する意思はありますか？"
+
+# QUESTION PROMPT
+#: 6062 PROMPT
+msgid "Is a sample of your tissue available"
+msgstr "組織のサンプルがありますか？"
+
+# QUESTION PROMPT
+#: 26408 PROMPT
+msgid "Do you ever cough up blood after exercise?"
+msgstr "運動後に吐血したことはありますか？"
+
+# QUESTION PROMPT
+#: 26409 PROMPT
+msgid "Do you regularly cough up blood at the same point in your menstrual cycle?"
+msgstr "月経と同時に、定期的に吐血したことはありますか？"
+
+# QUESTION PROMPT
+#: 26411 PROMPT
+msgid "Have you ever been treated for any form of malignancy?"
+msgstr "何らかの悪性腫瘍に対する治療を受けたことがありますか？"
+
+# QUESTION PROMPT
+#: 26414 PROMPT
+msgid "If you have had chemotherapy, what drugs were used?"
+msgstr "化学療法を用いた場合、どの薬剤を使用しましたか？"
+
+# QUESTION QUESTION-HELP
+#: 26414 QUESTION-HELP
+msgid "Please enter one drug name per line"
+msgstr "各行につき、薬剤名を 1 つ書いてください。"
+
+# QUESTION PROMPT
+#: 26413 PROMPT
+msgid "Has this involved one or more of"
+msgstr "これには、以下を伴いましたか（複数回答可）"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Surgery"
+msgstr "外科手術"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Radiotherapy"
+msgstr "放射線治療"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Chemotherapy"
+msgstr "化学療法"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Other"
+msgstr "その他"
+
+# QUESTION PROMPT
+#: 26456 PROMPT
+msgid "Do you have Diabetes?"
+msgstr "糖尿病を患っていますか？"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "No"
+msgstr "いいえ"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "Yes, Type I"
+msgstr "はい、I 型です。"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "Yes, Type II"
+msgstr "はい、II 型です。"
+
+# QUESTION PROMPT
+#: 26458 PROMPT
+msgid "If so, do you take medication for your diabetes?"
+msgstr "その場合、糖尿病の治療薬を服用していますか？"
+
+# QUESTION PROMPT
+#: 26459 PROMPT
+msgid "Please list medications and dates taken"
+msgstr "薬剤の名前と服用日を挙げてください。"
+
+# QUESTION QUESTION-HELP
+#: 26459 QUESTION-HELP
+msgid "enter one medication and start or end dates per line.  If current, say current."
+msgstr "各行につき、薬剤の名前 1 つと、その服用開始日または終了日を書いてください。現在も使用していれば、使用中と書いてください。"
+
+# QUESTION PROMPT
+#: 26463 PROMPT
+msgid "What condition led to your LAM diagnosis?"
+msgstr "どのような症状から LAM と診断されましたか？"
+
+# QUESTION PROMPT
+#: 26470 PROMPT
+msgid "Date of last scan"
+msgstr "最終スキャン日"
+
+# QUESTION PROMPT
+#: 26471 PROMPT
+msgid "Were your bone density scan results"
+msgstr "骨密度スキャンの結果"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Normal"
+msgstr "正常"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Abnormal"
+msgstr "異常"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Don't know"
+msgstr "わからない"
+
+# QUESTION PROMPT
+#: 26472 PROMPT
+msgid "What was your T score?"
+msgstr "Tスコアは？"
+
+# QUESTION QUESTION-HELP
+#: 26472 QUESTION-HELP
+msgid "Leave blank if you don't know"
+msgstr "わからない場合は空白のままにしてください。"
+
+# QUESTION PROMPT
+#: 26473 PROMPT
+msgid "What was your Z score?"
+msgstr "Zスコアは？"
+
+# QUESTION QUESTION-HELP
+#: 26473 QUESTION-HELP
+msgid "Leave blank if you don't know"
+msgstr "わからない場合は空白のままにしてください。"
+
+# QUESTION PROMPT
+#: 26919 PROMPT
+msgid "What was your last cholesterol measurement?"
+msgstr "最後のコレステロール測定値は？"
+
+# QUESTION PROMPT
+#: 26920 PROMPT
+msgid "What was the date of your last test?"
+msgstr "最後の検査日は？"
+
+# QUESTION QUESTION-HELP
+#: 26920 QUESTION-HELP
+msgid "Leave both of these blank if you don't know."
+msgstr "わからない場合は、両方とも空白のままにしてください。"
+
+# QUESTION PROMPT
+#: 30004 PROMPT
+msgid "If you have been tested for Alpha-1 Antitrypsin Deficiency, what were your blood levels and phenotype? "
+msgstr "アルファ 1 アンチトリプシン欠乏症の検査を受けたことがある場合、血中濃度と表現型は何でしたか？ "
+
+# QUESTION PROMPT
+#: 30005 PROMPT
+msgid "Have you ever had a spontaneous pneumothorax?"
+msgstr "自然気胸を患ったことがありますか？"

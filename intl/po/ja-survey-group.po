@@ -1,0 +1,775 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ja-survey-group.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# SURVEY-GROUP NAME
+#: 5843 NAME
+msgid "Daily Home Spirometer Readings"
+msgstr "肺活量計を用いた毎日の自宅での測定"
+
+# SURVEY-GROUP ADVICE
+#: 5843 ADVICE
+msgid "This page captures the basic information available from most home spirometers."
+msgstr "このページには、大半の家庭用肺活量計に付随している情報が記載されています。"
+
+# SURVEY-GROUP NAME
+#: 23563 NAME
+msgid "Home Measurements"
+msgstr "家庭での測定"
+
+# SURVEY-GROUP NAME
+#: 5853 NAME
+msgid "Original Diagnosis"
+msgstr "最初の診断"
+
+# SURVEY-GROUP ADVICE
+#: 5853 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 6137 NAME
+msgid "Surgical Procedures"
+msgstr "外科手術"
+
+# SURVEY-GROUP NAME
+#: 6145 NAME
+msgid "LAM Related Conditions"
+msgstr "LAM 関連の症状"
+
+# SURVEY-GROUP NAME
+#: 6160 NAME
+msgid "Clinical Trial Participation"
+msgstr "臨床試験への参加"
+
+# SURVEY-GROUP ADVICE
+#: 6160 ADVICE
+msgid "Please enter information for you most recent trial participation, if any."
+msgstr "最近参加した臨床試験に関する情報を入力してください（該当する場合）。"
+
+# SURVEY-GROUP NAME
+#: 5876 NAME
+msgid "Personal Measurements"
+msgstr "個人の測定値"
+
+# SURVEY-GROUP ADVICE
+#: 5876 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 5881 NAME
+msgid "Pain and Discomfort"
+msgstr "痛みと不快感"
+
+# SURVEY-GROUP ADVICE
+#: 5881 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 5898 NAME
+msgid "Family History"
+msgstr "家族歴"
+
+# SURVEY-GROUP ADVICE
+#: 5898 ADVICE
+msgid "Your family includes any known relatives.  Your immediate family includes from your grandparents through your grand children, nieces and nephews.  Also include your first and second cousins."
+msgstr "家族には、既知の親戚を含みます。近親者には、祖父母から孫、甥、姪を含みます。また、いとこやはとこも含みます。"
+
+# SURVEY-GROUP NAME
+#: 5911 NAME
+msgid "General Dietary Information"
+msgstr "食事に関する一般的な情報"
+
+# SURVEY-GROUP ADVICE
+#: 5911 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 5922 NAME
+msgid "Diet and Supplements"
+msgstr "食事とサプリメント"
+
+# SURVEY-GROUP ADVICE
+#: 5922 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 5936 NAME
+msgid "Exercise"
+msgstr "運動"
+
+# SURVEY-GROUP ADVICE
+#: 5936 ADVICE
+msgid "If you answer no to the first question, you can go to the next section"
+msgstr "最初の質問に「いいえ」と回答した場合は、次のセクションに進んでください。"
+
+# SURVEY-GROUP NAME
+#: 5956 NAME
+msgid "Level of Fitness"
+msgstr "健康維持のレベル"
+
+# SURVEY-GROUP ADVICE
+#: 5956 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 5962 NAME
+msgid "Pulmonary Rehabilitation and Therapy"
+msgstr "肺のリハビリと治療"
+
+# SURVEY-GROUP ADVICE
+#: 5962 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 5969 NAME
+msgid "Complementary and Alternative Medicines"
+msgstr "補完代替医療"
+
+# SURVEY-GROUP ADVICE
+#: 5969 ADVICE
+msgid "The answers to these questions will remain private to you.  The information will only be used in a manner that preserves your privacy, unless you give explicit consent otherwise."
+msgstr "これらの質問への回答は、個人情報として処理されます。この情報は、あなたの明確な許可がない限り、プライバシーが保護された状態で使用されます。"
+
+# SURVEY-GROUP NAME
+#: 5989 NAME
+msgid "Your Daily Routine"
+msgstr "毎日の行動"
+
+# SURVEY-GROUP ADVICE
+#: 5989 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 6001 NAME
+msgid "Environmental Factors"
+msgstr "環境要因"
+
+# SURVEY-GROUP NAME
+#: 13802 NAME
+msgid "Climate"
+msgstr "気候"
+
+# SURVEY-GROUP NAME
+#: 6020 NAME
+msgid "Flying and Altitude"
+msgstr "飛行機への搭乗と高度"
+
+# SURVEY-GROUP ADVICE
+#: 6020 ADVICE
+msgid "If you answer no to the first question, please skip the rest of the section"
+msgstr "最初の質問に「いいえ」と回答した場合、このセクションの残りの質問は飛ばしてください。"
+
+# SURVEY-GROUP NAME
+#: 6040 NAME
+msgid "Sleep"
+msgstr "睡眠"
+
+# SURVEY-GROUP ADVICE
+#: 6040 ADVICE
+msgid "test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 26399 NAME
+msgid "Sexual Activity"
+msgstr "性行動"
+
+# SURVEY-GROUP NAME
+#: 6073 NAME
+msgid "Reproductive History"
+msgstr "出産歴"
+
+# SURVEY-GROUP ADVICE
+#: 6073 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 6096 NAME
+msgid "Monthly Cycle"
+msgstr "月経周期"
+
+# SURVEY-GROUP ADVICE
+#: 6096 ADVICE
+msgid "If you are no longer menstruating, then please answer these questions referring the last two years you were menstruating. "
+msgstr "月経が止まっている場合には、月経のあった最後の 2 年間についてお答えください。 "
+
+# SURVEY-GROUP NAME
+#: 6114 NAME
+msgid "Post- or Peri-Menopausal"
+msgstr "閉経後または閉経期"
+
+# SURVEY-GROUP ADVICE
+#: 6114 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 6122 NAME
+msgid "Tuberous Sclerosis"
+msgstr "結節硬化症"
+
+# SURVEY-GROUP ADVICE
+#: 6122 ADVICE
+msgid "Test"
+msgstr "検査"
+
+# SURVEY-GROUP NAME
+#: 26410 NAME
+msgid "Cancer and Malignancy"
+msgstr "癌および悪性腫瘍"
+
+# SURVEY-GROUP NAME
+#: 26455 NAME
+msgid "Diabetes"
+msgstr "糖尿病"
+
+# SURVEY-GROUP NAME
+#: 6061 NAME
+msgid "Tissue and Blood Samples"
+msgstr "組織および血液のサンプル"
+
+# SURVEY-GROUP ADVICE
+#: 6061 ADVICE
+msgid "This section will capture information the availability of tissue and blood.  We hope to update this in time with links to ongoing efforts to capture tissue information."
+msgstr "このセクションでは、組織や血液の入手可能性についてお尋ねします。今後、組織情報を把握するための継続的な取り組みを紹介するリンクを貼れるよう願っています。"
+
+# SURVEY-GROUP NAME
+#: 23548 NAME
+msgid "LAM Medications"
+msgstr "LAM 治療薬"
+
+# SURVEY-GROUP NAME
+#: 24512 NAME
+msgid "Do you experience incontinence?"
+msgstr "失禁することがありますか？"
+
+# SURVEY-GROUP ADVICE
+#: 24512 ADVICE
+msgid "If you don't have any of these symptoms or related concerns, you don't need to fill out the rest of the survey."
+msgstr "これらの症状や、関連した懸念がない場合は、残りの調査に回答していただく必要はありません。"
+
+# SURVEY-GROUP NAME
+#: 24540 NAME
+msgid "Causes and Treatment"
+msgstr "原因と治療"
+
+# SURVEY-GROUP NAME
+#: 24539 NAME
+msgid "Symptoms"
+msgstr "症状"
+
+# SURVEY-GROUP NAME
+#: 24535 NAME
+msgid "Lifestyle challenges"
+msgstr "生活における問題"
+
+# SURVEY-GROUP ADVICE
+#: 24535 ADVICE
+msgid "What lifestyle impacts and challenges have you experienced due to incontinence.  How do you manage these challenges?"
+msgstr "失禁によって、生活にどのような影響や問題が生じましたか？この問題にどのように対処していますか？"
+
+# SURVEY-GROUP NAME
+#: 24816 NAME
+msgid "Osteoporosis Risk Factors"
+msgstr "骨粗しょう症のリスク要因"
+
+# SURVEY-GROUP NAME
+#: 24833 NAME
+msgid "Osteoporosis Diagnosis"
+msgstr "骨粗しょう症の診断"
+
+# SURVEY-GROUP NAME
+#: 24850 NAME
+msgid "Osteoporosis related supplements"
+msgstr "骨粗しょう症関連のサプリメント"
+
+# SURVEY-GROUP NAME
+#: 25617 NAME
+msgid "Estrogen Medication and Supplements"
+msgstr "エストロゲン薬剤およびサプリメント"
+
+# SURVEY-GROUP NAME
+#: 25605 NAME
+msgid "Medication Overview"
+msgstr "薬剤の概要"
+
+# SURVEY-GROUP NAME
+#: 25618 NAME
+msgid "Stress "
+msgstr "ストレス "
+
+# SURVEY-GROUP NAME
+#: 26331 NAME
+msgid "How do you feel today?"
+msgstr "今日のご気分はいかがですか？"
+
+# SURVEY-GROUP NAME
+#: 26210 NAME
+msgid "Daily PFT Log Entry"
+msgstr "毎日の PFT 記録の入力"
+
+# SURVEY-GROUP NAME
+#: 26219 NAME
+msgid "Daily travel log"
+msgstr "毎日の旅行記録"
+
+# SURVEY-GROUP NAME
+#: 26229 NAME
+msgid "Daily health log"
+msgstr "毎日の健康記録"
+
+# SURVEY-GROUP NAME
+#: 26239 NAME
+msgid "Daily diet and medications"
+msgstr "毎日の食事と薬剤"
+
+# SURVEY-GROUP NAME
+#: 26387 NAME
+msgid "Daily Diary"
+msgstr "毎日のダイアリー"
+
+# SURVEY-GROUP NAME
+#: 30002 NAME
+msgid "Alpha-1 Antitrypsin Deficiency"
+msgstr "アルファ 1 アンチトリプシン欠乏症"
+
+# SURVEY-GROUP NAME
+#: 26462 NAME
+msgid "lam diagnosis other"
+msgstr "LAM 診断（その他）"
+
+# SURVEY-GROUP NAME
+#: 14121 NAME
+msgid "5889-Do you experience pain and/or discomfort related to the reproductive organs?"
+msgstr "5889-生殖器に関連した痛みや不快感がありますか？"
+
+# SURVEY-GROUP NAME
+#: 14117 NAME
+msgid "5885-Do you feel aches or pains of any kind of discomfort on a regular basis?"
+msgstr "5885-定期的にうずきや痛み、または何らかの不快感を覚えますか？"
+
+# SURVEY-GROUP NAME
+#: 14116 NAME
+msgid "5894-Do you experience pain and/or discomfort related to any surgery related to ovaries?"
+msgstr "5894-卵巣への外科手術に関連した痛みや不快感がありますか？"
+
+# SURVEY-GROUP NAME
+#: 14127 NAME
+msgid "5907-Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews suffered from disabling disorders?"
+msgstr "5907-近親者（祖父母、伯母、伯父、甥、姪を含む）の中に、身体に障害を引き起こす病気を患っている方はいらっしゃいますか？"
+
+# SURVEY-GROUP NAME
+#: 14126 NAME
+msgid "5905-Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews died prematurely?"
+msgstr "5905-近親者（祖父母、伯母、伯父、甥、姪を含む）の中に、早世された方はいらっしゃいますか？"
+
+# SURVEY-GROUP NAME
+#: 14125 NAME
+msgid "5903-Have any members of your family suffered from genetic conditions or diseases?"
+msgstr "5903-ご家族の中に、遺伝病や遺伝子疾患を患っている方はいらっしゃいますか？"
+
+# SURVEY-GROUP NAME
+#: 14124 NAME
+msgid "5899-Do you have a history of any abnormal blood test results?"
+msgstr "5899-血液検査の結果が異常だったことはありますか？"
+
+# SURVEY-GROUP NAME
+#: 13837 NAME
+msgid "5916-Do you have symptoms, related to LAM or unrelated to LAM that you associate with a particular food/ drink or food group?"
+msgstr "5916-LAM に関係しているかどうかを問わず、特定の飲食物や食品群に関連した症状はありますか？"
+
+# SURVEY-GROUP NAME
+#: 13838 NAME
+msgid "13836-Do you avoid eating certain foods?"
+msgstr "13836-食べるのを避けている食品はありますか？"
+
+# SURVEY-GROUP NAME
+#: 26918 NAME
+msgid "cholesterol details"
+msgstr "コレステロールの詳細"
+
+# SURVEY-GROUP NAME
+#: 13854 NAME
+msgid "5923-Do you try to follow a fat-free diet?"
+msgstr "5923-無脂肪食品を試していますか？"
+
+# SURVEY-GROUP NAME
+#: 13855 NAME
+msgid "5928-Do you find it difficult to maintain your weight?"
+msgstr "5928-体重を維持することが難しいと思われますか？"
+
+# SURVEY-GROUP NAME
+#: 13856 NAME
+msgid "5931-Do you take vitamin supplements?"
+msgstr "5931-ビタミン剤を摂取していますか？"
+
+# SURVEY-GROUP NAME
+#: 13902 NAME
+msgid "5945-Do you desaturate on exertion?"
+msgstr "5945-激しい運動の後、脱飽和状態になりますか？"
+
+# SURVEY-GROUP NAME
+#: 13903 NAME
+msgid "5948-If you exercise, do you see positive effects of exercise?"
+msgstr "5948-運動をすると、運動のプラス効果を感じますか？"
+
+# SURVEY-GROUP NAME
+#: 14103 NAME
+msgid "Exercise Subgroup"
+msgstr "運動の亜集団"
+
+# SURVEY-GROUP NAME
+#: 14102 NAME
+msgid "5963-Have you been referred to pulmonary rehabilitation?"
+msgstr "5963-肺のリハビリを紹介されたことはありますか？"
+
+# SURVEY-GROUP NAME
+#: 13813 NAME
+msgid "5970-Have you ever taken recreational drugs (excluding cigarettes and alcohol)?"
+msgstr "5970-気晴らしのための麻薬を使用したことはありますか（タバコやアルコールは除く）？"
+
+# SURVEY-GROUP NAME
+#: 13814 NAME
+msgid "5972-Have you tried Chinese medicine"
+msgstr "5972-漢方薬を試したことはありますか？"
+
+# SURVEY-GROUP NAME
+#: 13815 NAME
+msgid "5975-Have you tried Herbal treatments?"
+msgstr "5975-ハーブ療法を試したことがありますか？"
+
+# SURVEY-GROUP NAME
+#: 13816 NAME
+msgid "5978-Have you tried Hypnosis?"
+msgstr "5978-催眠術を試したことはありますか？"
+
+# SURVEY-GROUP NAME
+#: 13817 NAME
+msgid "5980-Have you tried Meditation?"
+msgstr "5980-瞑想を試したことはありますか？"
+
+# SURVEY-GROUP NAME
+#: 13819 NAME
+msgid "5983-Any other forms of complementary or alternative medicine?"
+msgstr "5983-これ以外の補完療法または代替療法を試したことがありますか？"
+
+# SURVEY-GROUP NAME
+#: 13820 NAME
+msgid "5985-Have you noticed an effect on your breathing from these interventions?"
+msgstr "5985-このような介入によって、呼吸に影響があったと感じたことはありますか？"
+
+# SURVEY-GROUP NAME
+#: 13822 NAME
+msgid "5986-Have you noticed an effect on your  well-being from any of these interventions?"
+msgstr "5986-このような介入によって、健康に影響があったと感じたことはありますか？"
+
+# SURVEY-GROUP NAME
+#: 13703 NAME
+msgid "daily-routine-work"
+msgstr "毎日の行動 - 仕事"
+
+# SURVEY-GROUP NAME
+#: 13706 NAME
+msgid "home-maker-detail"
+msgstr "主婦 - 詳細"
+
+# SURVEY-GROUP NAME
+#: 12392 NAME
+msgid "6006-Have you ever smoked?"
+msgstr "6006-喫煙したことがありますか？"
+
+# SURVEY-GROUP NAME
+#: 12393 NAME
+msgid "6009-Have you ever used alcohol?"
+msgstr "6009-アルコールを飲んだことがありますか？"
+
+# SURVEY-GROUP NAME
+#: 12394 NAME
+msgid "6012-Are there environmental factors or risks (e.g. pesticides, asbestos) that you know that your mother or father were directly exposed to?"
+msgstr "6012-ご両親が直接さらされたことがわかっている環境要素やリスクはありますか（殺虫剤やアスベストなど）？"
+
+# SURVEY-GROUP NAME
+#: 12395 NAME
+msgid "6016-Do certain types of weather affect your body?"
+msgstr "6016-特定の天気によって身体が影響を受けることはありますか？"
+
+# SURVEY-GROUP NAME
+#: 12396 NAME
+msgid "6021-Do you fly in airplanes since your diagnosis?"
+msgstr "6021-診断されてから飛行機に乗りましたか？"
+
+# SURVEY-GROUP NAME
+#: 13805 NAME
+msgid "6041-Do you have problems falling or staying asleep?"
+msgstr "6041-眠りに入る、または眠り続けるのが難しいですか？"
+
+# SURVEY-GROUP NAME
+#: 13806 NAME
+msgid "6046-Do you sleep with oxygen?"
+msgstr "6046-酸素を付けて眠りますか？"
+
+# SURVEY-GROUP NAME
+#: 13807 NAME
+msgid "6048-Do you feel particularly cold when going to sleep or waking up?"
+msgstr "6048-特に就寝または起床時に冷えを感じますか？"
+
+# SURVEY-GROUP NAME
+#: 13808 NAME
+msgid "6051-Do you have cold feet or hands when not in bed?"
+msgstr "6051-ベッド以外の場所で、手や足が冷たく感じますか？"
+
+# SURVEY-GROUP NAME
+#: 13810 NAME
+msgid "6050-Do you have cold feet or hands in bed?"
+msgstr "6050-ベッドの中で、手や足が冷たく感じますか？"
+
+# SURVEY-GROUP NAME
+#: 26404 NAME
+msgid "tissue biopsy details"
+msgstr "組織生検の詳細"
+
+# SURVEY-GROUP NAME
+#: 26259 NAME
+msgid "have-used-birth-control"
+msgstr "経口避妊薬を使用した"
+
+# SURVEY-GROUP NAME
+#: 14135 NAME
+msgid "6074-Have you ever been pregnant?"
+msgstr "6074-妊娠したことはありますか？"
+
+# SURVEY-GROUP NAME
+#: 14134 NAME
+msgid "6084-If you did not know you had LAM prior to getting pregnant did you know before you gave birth?"
+msgstr "6084-妊娠前に LAM を患っていることを知らなかった場合、出産前には把握していましたか？"
+
+# SURVEY-GROUP NAME
+#: 14133 NAME
+msgid "6079-Did you know you had LAM during one or more pregnancies?"
+msgstr "6079-1 回または複数回の妊娠時に、LAM であることをご存知でしたか？"
+
+# SURVEY-GROUP NAME
+#: 14132 NAME
+msgid "6076-Do you have children?"
+msgstr "6076-お子さまはいらっしゃいますか？"
+
+# SURVEY-GROUP NAME
+#: 14137 NAME
+msgid "6105-Is ovulation so painful that you find it difficult to do normal activities at times?"
+msgstr "6105-排卵には激しい痛みが伴うため、通常の行動が難しくなることがありますか？"
+
+# SURVEY-GROUP NAME
+#: 14139 NAME
+msgid "6110-Have you taken birth control pills since your diagnosis with LAM?"
+msgstr "6110-LAM と診断されて以降、経口避妊薬を服用しましたか？"
+
+# SURVEY-GROUP NAME
+#: 14143 NAME
+msgid "14141-Are you post- or peri-menopausal"
+msgstr "14141-閉経後または閉経期のいずれかにありますか？"
+
+# SURVEY-GROUP NAME
+#: 14142 NAME
+msgid "6118-Have you ever been on hormone replacement therapy?"
+msgstr "6118-ホルモン補充治療を受けたことがありますか？"
+
+# SURVEY-GROUP NAME
+#: 14131 NAME
+msgid "6134-Do you have any other significant illness in addition to LAM?"
+msgstr "6134-LAM のほかにも、深刻な疾病を抱えていらっしゃいますか？"
+
+# SURVEY-GROUP NAME
+#: 14130 NAME
+msgid "6131-Has any member of your family (including second cousins, grandparents, etc) ever experienced any symptom potentially associated with Tuberous Sclerosis?"
+msgstr "6131-ご家族の中で（はとこ、祖父母など）結節硬化症と関連があると見られる症状を体験したことがある人はいますか？"
+
+# SURVEY-GROUP NAME
+#: 14129 NAME
+msgid "6129-Has any member of your family (including second cousins, grandparents, great aunts/uncles, etc) ever been diagnosed with Tuberous Sclerosis?"
+msgstr "6129-ご家族の中で（はとこ、祖父母、大伯母/大伯父など）結節硬化症と診断された人はいますか？"
+
+# SURVEY-GROUP NAME
+#: 14128 NAME
+msgid "6123-Have you been diagnosed with Tuberous Sclerosis?"
+msgstr "6123-結節硬化症と診断されていますか？"
+
+# SURVEY-GROUP NAME
+#: 9527 NAME
+msgid "6138-ovarian-surgery"
+msgstr "6138-卵巣手術"
+
+# SURVEY-GROUP NAME
+#: 26407 NAME
+msgid "hymoptysis"
+msgstr "喀血"
+
+# SURVEY-GROUP NAME
+#: 14115 NAME
+msgid "6062-Is a sample of your tissue available"
+msgstr "6062-組織のサンプルがありますか？"
+
+# SURVEY-GROUP NAME
+#: 26250 NAME
+msgid "had-children-other"
+msgstr "子どもがいる - その他"
+
+# SURVEY-GROUP NAME
+#: 26249 NAME
+msgid "had-children-surrogacy"
+msgstr "子どもがいる - 代理出産"
+
+# SURVEY-GROUP NAME
+#: 26247 NAME
+msgid "pregnant-not-knew-had-lam"
+msgstr "妊娠時に LAM であることを知らなかった"
+
+# SURVEY-GROUP NAME
+#: 14138 NAME
+msgid "6107-Have you ever been on birth control pills?"
+msgstr "6107-経口避妊薬を服用したことはありますか？"
+
+# SURVEY-GROUP NAME
+#: 24534 NAME
+msgid "incontinence-drink-avoidance"
+msgstr "失禁 - 飲み物を制限"
+
+# SURVEY-GROUP NAME
+#: 24524 NAME
+msgid "incontinence of faeces"
+msgstr "便失禁"
+
+# SURVEY-GROUP NAME
+#: 24521 NAME
+msgid "incontinent of urine"
+msgstr "尿失禁"
+
+# SURVEY-GROUP NAME
+#: 25734 NAME
+msgid "back joint or bone pain"
+msgstr "背中、関節、骨の痛み"
+
+# SURVEY-GROUP NAME
+#: 24822 NAME
+msgid "bone loss"
+msgstr "骨量減少"
+
+# SURVEY-GROUP NAME
+#: 24819 NAME
+msgid "osteoporosis family members"
+msgstr "骨粗しょう症を患っている家族"
+
+# SURVEY-GROUP NAME
+#: 26469 NAME
+msgid "bone density scan results"
+msgstr "骨密度スキャン結果"
+
+# SURVEY-GROUP NAME
+#: 24835 NAME
+msgid "osteoporosis diagnosis"
+msgstr "骨粗しょう症の診断"
+
+# SURVEY-GROUP NAME
+#: 24845 NAME
+msgid "osteoporosis medication formerly taken"
+msgstr "以前服用していた骨粗しょう症の薬剤"
+
+# SURVEY-GROUP NAME
+#: 24842 NAME
+msgid "osteoporosis medication no"
+msgstr "骨粗しょう症の薬剤服用なし"
+
+# SURVEY-GROUP NAME
+#: 24840 NAME
+msgid "osteoporosis medication"
+msgstr "骨粗しょう症の薬剤"
+
+# SURVEY-GROUP NAME
+#: 24858 NAME
+msgid "vitamin D and calcium supplements"
+msgstr "ビタミン D およびカルシウムサプリメント"
+
+# SURVEY-GROUP NAME
+#: 24855 NAME
+msgid "multivitamin D and calcium content"
+msgstr "マルチビタミン D およびカルシウムの含有量"
+
+# SURVEY-GROUP NAME
+#: 25607 NAME
+msgid "current medication summary"
+msgstr "現在服用している薬剤 - 要約"
+
+# SURVEY-GROUP NAME
+#: 25630 NAME
+msgid "over-the-counter estrogens"
+msgstr "市販のエストロゲン"
+
+# SURVEY-GROUP NAME
+#: 25624 NAME
+msgid "have used female hormones"
+msgstr "女性ホルモンを使用したことがある"
+
+# SURVEY-GROUP NAME
+#: 26221 NAME
+msgid "varying-travel-routine"
+msgstr "旅行パターンに変化"
+
+# SURVEY-GROUP NAME
+#: 26225 NAME
+msgid "flying-log"
+msgstr "飛行記録"
+
+# SURVEY-GROUP NAME
+#: 26232 NAME
+msgid "daily-log-felt-sick"
+msgstr "毎日の記録 - 具合が悪い"
+
+# SURVEY-GROUP NAME
+#: 26237 NAME
+msgid "health-log-symptoms-other"
+msgstr "健康の記録 - 症状 - その他"
+
+# SURVEY-GROUP NAME
+#: 26234 NAME
+msgid "sickness-type-other"
+msgstr "病気のタイプ - その他"
+
+# SURVEY-GROUP NAME
+#: 26244 NAME
+msgid "daily-log-missed-medication-other"
+msgstr "毎日の記録 - 薬剤服用を忘れた - その他"
+
+# SURVEY-GROUP NAME
+#: 26241 NAME
+msgid "daily-log-diet-changes"
+msgstr "毎日の記録 - 食事の変更"
+
+# SURVEY-GROUP NAME
+#: 26401 NAME
+msgid "sexual activity details"
+msgstr "性行動の詳細"
+
+# SURVEY-GROUP NAME
+#: 26412 NAME
+msgid "malignancy"
+msgstr "悪性腫瘍"
+
+# SURVEY-GROUP NAME
+#: 26457 NAME
+msgid "have diabetes"
+msgstr "糖尿病を患っている"

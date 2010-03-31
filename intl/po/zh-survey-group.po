@@ -1,0 +1,775 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zh-survey-group.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# SURVEY-GROUP NAME
+#: 5843 NAME
+msgid "Daily Home Spirometer Readings"
+msgstr "每日家用肺活量计读数"
+
+# SURVEY-GROUP ADVICE
+#: 5843 ADVICE
+msgid "This page captures the basic information available from most home spirometers."
+msgstr "该网页汇集了目前大多数型号的家用肺活量计的基本信息。"
+
+# SURVEY-GROUP NAME
+#: 23563 NAME
+msgid "Home Measurements"
+msgstr "家庭测量"
+
+# SURVEY-GROUP NAME
+#: 5853 NAME
+msgid "Original Diagnosis"
+msgstr "原始诊断"
+
+# SURVEY-GROUP ADVICE
+#: 5853 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 6137 NAME
+msgid "Surgical Procedures"
+msgstr "外科手术"
+
+# SURVEY-GROUP NAME
+#: 6145 NAME
+msgid "LAM Related Conditions"
+msgstr "LAM 相关病情"
+
+# SURVEY-GROUP NAME
+#: 6160 NAME
+msgid "Clinical Trial Participation"
+msgstr "参加临床试验"
+
+# SURVEY-GROUP ADVICE
+#: 6160 ADVICE
+msgid "Please enter information for you most recent trial participation, if any."
+msgstr "请输入您最近一次参与临床试验的信息，如果有的话。"
+
+# SURVEY-GROUP NAME
+#: 5876 NAME
+msgid "Personal Measurements"
+msgstr "个人测量"
+
+# SURVEY-GROUP ADVICE
+#: 5876 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 5881 NAME
+msgid "Pain and Discomfort"
+msgstr "疼痛和不适"
+
+# SURVEY-GROUP ADVICE
+#: 5881 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 5898 NAME
+msgid "Family History"
+msgstr "家族病史"
+
+# SURVEY-GROUP ADVICE
+#: 5898 ADVICE
+msgid "Your family includes any known relatives.  Your immediate family includes from your grandparents through your grand children, nieces and nephews.  Also include your first and second cousins."
+msgstr "您的家族包括所有已知亲属。您的直系亲属包括从祖父母至孙子/女、侄子/女、外甥/女在内的亲属。也包括您的第一、二代堂表亲。"
+
+# SURVEY-GROUP NAME
+#: 5911 NAME
+msgid "General Dietary Information"
+msgstr "总体饮食信息"
+
+# SURVEY-GROUP ADVICE
+#: 5911 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 5922 NAME
+msgid "Diet and Supplements"
+msgstr "饮食和补充剂"
+
+# SURVEY-GROUP ADVICE
+#: 5922 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 5936 NAME
+msgid "Exercise"
+msgstr "锻炼"
+
+# SURVEY-GROUP ADVICE
+#: 5936 ADVICE
+msgid "If you answer no to the first question, you can go to the next section"
+msgstr "如果您对第一个问题的答案是否，则可直接转到下一部分"
+
+# SURVEY-GROUP NAME
+#: 5956 NAME
+msgid "Level of Fitness"
+msgstr "健身水平"
+
+# SURVEY-GROUP ADVICE
+#: 5956 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 5962 NAME
+msgid "Pulmonary Rehabilitation and Therapy"
+msgstr "肺康复和治疗"
+
+# SURVEY-GROUP ADVICE
+#: 5962 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 5969 NAME
+msgid "Complementary and Alternative Medicines"
+msgstr "补充和替代医药"
+
+# SURVEY-GROUP ADVICE
+#: 5969 ADVICE
+msgid "The answers to these questions will remain private to you.  The information will only be used in a manner that preserves your privacy, unless you give explicit consent otherwise."
+msgstr "这些问题的答案将为您保密。除非您专门授权同意，否则这些信息只会以不透露您隐私的方式使用。"
+
+# SURVEY-GROUP NAME
+#: 5989 NAME
+msgid "Your Daily Routine"
+msgstr "您的每日作息常规"
+
+# SURVEY-GROUP ADVICE
+#: 5989 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 6001 NAME
+msgid "Environmental Factors"
+msgstr "环境因素"
+
+# SURVEY-GROUP NAME
+#: 13802 NAME
+msgid "Climate"
+msgstr "气候"
+
+# SURVEY-GROUP NAME
+#: 6020 NAME
+msgid "Flying and Altitude"
+msgstr "飞行和高度"
+
+# SURVEY-GROUP ADVICE
+#: 6020 ADVICE
+msgid "If you answer no to the first question, please skip the rest of the section"
+msgstr "如果您对第一个问题的答案是否，请跳过本部分其余问题。"
+
+# SURVEY-GROUP NAME
+#: 6040 NAME
+msgid "Sleep"
+msgstr "睡眠"
+
+# SURVEY-GROUP ADVICE
+#: 6040 ADVICE
+msgid "test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 26399 NAME
+msgid "Sexual Activity"
+msgstr "性生活"
+
+# SURVEY-GROUP NAME
+#: 6073 NAME
+msgid "Reproductive History"
+msgstr "生育史"
+
+# SURVEY-GROUP ADVICE
+#: 6073 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 6096 NAME
+msgid "Monthly Cycle"
+msgstr "月经周期"
+
+# SURVEY-GROUP ADVICE
+#: 6096 ADVICE
+msgid "If you are no longer menstruating, then please answer these questions referring the last two years you were menstruating. "
+msgstr "如果您已绝经，请回答下列与您绝经前最后两年相关的问题。 "
+
+# SURVEY-GROUP NAME
+#: 6114 NAME
+msgid "Post- or Peri-Menopausal"
+msgstr "已绝经或将绝经"
+
+# SURVEY-GROUP ADVICE
+#: 6114 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 6122 NAME
+msgid "Tuberous Sclerosis"
+msgstr "结节性硬化症"
+
+# SURVEY-GROUP ADVICE
+#: 6122 ADVICE
+msgid "Test"
+msgstr "检查"
+
+# SURVEY-GROUP NAME
+#: 26410 NAME
+msgid "Cancer and Malignancy"
+msgstr "癌症和恶性肿瘤"
+
+# SURVEY-GROUP NAME
+#: 26455 NAME
+msgid "Diabetes"
+msgstr "糖尿病"
+
+# SURVEY-GROUP NAME
+#: 6061 NAME
+msgid "Tissue and Blood Samples"
+msgstr "组织和血液标本"
+
+# SURVEY-GROUP ADVICE
+#: 6061 ADVICE
+msgid "This section will capture information the availability of tissue and blood.  We hope to update this in time with links to ongoing efforts to capture tissue information."
+msgstr "该部分将收集组织和血液可用性信息。我们希望通过不断地努力来及时更新该部分，以搜集组织信息。"
+
+# SURVEY-GROUP NAME
+#: 23548 NAME
+msgid "LAM Medications"
+msgstr "LAM 药物"
+
+# SURVEY-GROUP NAME
+#: 24512 NAME
+msgid "Do you experience incontinence?"
+msgstr "您出现过失禁症吗？"
+
+# SURVEY-GROUP ADVICE
+#: 24512 ADVICE
+msgid "If you don't have any of these symptoms or related concerns, you don't need to fill out the rest of the survey."
+msgstr "如果您没有上述任何症状或相关担忧，则无需填写问卷其余内容。"
+
+# SURVEY-GROUP NAME
+#: 24540 NAME
+msgid "Causes and Treatment"
+msgstr "病因和治疗"
+
+# SURVEY-GROUP NAME
+#: 24539 NAME
+msgid "Symptoms"
+msgstr "症状"
+
+# SURVEY-GROUP NAME
+#: 24535 NAME
+msgid "Lifestyle challenges"
+msgstr "生活方式挑战"
+
+# SURVEY-GROUP ADVICE
+#: 24535 ADVICE
+msgid "What lifestyle impacts and challenges have you experienced due to incontinence.  How do you manage these challenges?"
+msgstr "失禁症给您的生活方式带来哪些影响和挑战？您如何应对这些挑战？"
+
+# SURVEY-GROUP NAME
+#: 24816 NAME
+msgid "Osteoporosis Risk Factors"
+msgstr "骨质疏松症风险因素"
+
+# SURVEY-GROUP NAME
+#: 24833 NAME
+msgid "Osteoporosis Diagnosis"
+msgstr "骨质疏松症诊断"
+
+# SURVEY-GROUP NAME
+#: 24850 NAME
+msgid "Osteoporosis related supplements"
+msgstr "骨质疏松症相关补充剂"
+
+# SURVEY-GROUP NAME
+#: 25617 NAME
+msgid "Estrogen Medication and Supplements"
+msgstr "雌激素药物和补充剂"
+
+# SURVEY-GROUP NAME
+#: 25605 NAME
+msgid "Medication Overview"
+msgstr "药物概览"
+
+# SURVEY-GROUP NAME
+#: 25618 NAME
+msgid "Stress "
+msgstr "压力 "
+
+# SURVEY-GROUP NAME
+#: 26331 NAME
+msgid "How do you feel today?"
+msgstr "您今天感觉如何？"
+
+# SURVEY-GROUP NAME
+#: 26210 NAME
+msgid "Daily PFT Log Entry"
+msgstr "每日肺功能检查日志录入"
+
+# SURVEY-GROUP NAME
+#: 26219 NAME
+msgid "Daily travel log"
+msgstr "每日旅行日志"
+
+# SURVEY-GROUP NAME
+#: 26229 NAME
+msgid "Daily health log"
+msgstr "每日健康日志"
+
+# SURVEY-GROUP NAME
+#: 26239 NAME
+msgid "Daily diet and medications"
+msgstr "每日饮食和药物"
+
+# SURVEY-GROUP NAME
+#: 26387 NAME
+msgid "Daily Diary"
+msgstr "日志"
+
+# SURVEY-GROUP NAME
+#: 30002 NAME
+msgid "Alpha-1 Antitrypsin Deficiency"
+msgstr "α-1 抗胰蛋白酶缺乏症"
+
+# SURVEY-GROUP NAME
+#: 26462 NAME
+msgid "lam diagnosis other"
+msgstr "LAM 诊断其它"
+
+# SURVEY-GROUP NAME
+#: 14121 NAME
+msgid "5889-Do you experience pain and/or discomfort related to the reproductive organs?"
+msgstr "5889- 您有没有生殖器官疼痛和/或不适的经历？"
+
+# SURVEY-GROUP NAME
+#: 14117 NAME
+msgid "5885-Do you feel aches or pains of any kind of discomfort on a regular basis?"
+msgstr "5885- 您是否有规律地感觉到疼痛等任何不适感？"
+
+# SURVEY-GROUP NAME
+#: 14116 NAME
+msgid "5894-Do you experience pain and/or discomfort related to any surgery related to ovaries?"
+msgstr "5894- 您有没有因做过与卵巢相关的外科手术，而感到疼痛和/或不适？"
+
+# SURVEY-GROUP NAME
+#: 14127 NAME
+msgid "5907-Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews suffered from disabling disorders?"
+msgstr "5907- 您的直系亲属包括您的祖父母、姑/姨妈、叔/舅、侄子/女、外甥/女中是否有人患有致残性疾病？"
+
+# SURVEY-GROUP NAME
+#: 14126 NAME
+msgid "5905-Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews died prematurely?"
+msgstr "5905- 您的直系亲属包括您的祖父母、姑/姨妈、叔/舅、侄子/女、外甥/女中是否有人过早去世的？"
+
+# SURVEY-GROUP NAME
+#: 14125 NAME
+msgid "5903-Have any members of your family suffered from genetic conditions or diseases?"
+msgstr "5903- 您是否有家族成员患有遗传性症状或疾病？"
+
+# SURVEY-GROUP NAME
+#: 14124 NAME
+msgid "5899-Do you have a history of any abnormal blood test results?"
+msgstr "5899- 您有没有异常血检结果的历史？"
+
+# SURVEY-GROUP NAME
+#: 13837 NAME
+msgid "5916-Do you have symptoms, related to LAM or unrelated to LAM that you associate with a particular food/ drink or food group?"
+msgstr "5916- 您是否有某些与 LAM 相关或无关症状，且您认为它们与您的某种或某类饮食相关？"
+
+# SURVEY-GROUP NAME
+#: 13838 NAME
+msgid "13836-Do you avoid eating certain foods?"
+msgstr "13836- 您是否忌食某些食物？"
+
+# SURVEY-GROUP NAME
+#: 26918 NAME
+msgid "cholesterol details"
+msgstr "胆固醇详细信息"
+
+# SURVEY-GROUP NAME
+#: 13854 NAME
+msgid "5923-Do you try to follow a fat-free diet?"
+msgstr "5923- 您是否尝试无脂饮食？"
+
+# SURVEY-GROUP NAME
+#: 13855 NAME
+msgid "5928-Do you find it difficult to maintain your weight?"
+msgstr "5928- 您是否感到很难保持体重？"
+
+# SURVEY-GROUP NAME
+#: 13856 NAME
+msgid "5931-Do you take vitamin supplements?"
+msgstr "5931- 您是否服用维生素补充剂？"
+
+# SURVEY-GROUP NAME
+#: 13902 NAME
+msgid "5945-Do you desaturate on exertion?"
+msgstr "5945- 您用力时会感到氧气不足吗？"
+
+# SURVEY-GROUP NAME
+#: 13903 NAME
+msgid "5948-If you exercise, do you see positive effects of exercise?"
+msgstr "5948- 如果您经常锻炼，是否觉得锻炼带来了积极效果？"
+
+# SURVEY-GROUP NAME
+#: 14103 NAME
+msgid "Exercise Subgroup"
+msgstr "锻炼亚群"
+
+# SURVEY-GROUP NAME
+#: 14102 NAME
+msgid "5963-Have you been referred to pulmonary rehabilitation?"
+msgstr "5963- 有人建议您做肺康复吗？"
+
+# SURVEY-GROUP NAME
+#: 13813 NAME
+msgid "5970-Have you ever taken recreational drugs (excluding cigarettes and alcohol)?"
+msgstr "5970- 您是否服用过消遣性毒品（不包括香烟和酒类）？"
+
+# SURVEY-GROUP NAME
+#: 13814 NAME
+msgid "5972-Have you tried Chinese medicine"
+msgstr "5972- 您尝试过中医药治疗吗？"
+
+# SURVEY-GROUP NAME
+#: 13815 NAME
+msgid "5975-Have you tried Herbal treatments?"
+msgstr "5975- 您尝试过草药治疗吗？"
+
+# SURVEY-GROUP NAME
+#: 13816 NAME
+msgid "5978-Have you tried Hypnosis?"
+msgstr "5978- 您尝试过催眠术吗？"
+
+# SURVEY-GROUP NAME
+#: 13817 NAME
+msgid "5980-Have you tried Meditation?"
+msgstr "5980- 您尝试过冥想疗法吗？"
+
+# SURVEY-GROUP NAME
+#: 13819 NAME
+msgid "5983-Any other forms of complementary or alternative medicine?"
+msgstr "5983- 还有其它补充或替代治疗吗？"
+
+# SURVEY-GROUP NAME
+#: 13820 NAME
+msgid "5985-Have you noticed an effect on your breathing from these interventions?"
+msgstr "5985- 这些疗法对您的呼吸有没有效果？"
+
+# SURVEY-GROUP NAME
+#: 13822 NAME
+msgid "5986-Have you noticed an effect on your  well-being from any of these interventions?"
+msgstr "5986- 这些疗法对您的健康状况有没有效果？"
+
+# SURVEY-GROUP NAME
+#: 13703 NAME
+msgid "daily-routine-work"
+msgstr "每日常规工作"
+
+# SURVEY-GROUP NAME
+#: 13706 NAME
+msgid "home-maker-detail"
+msgstr "家务劳动详情"
+
+# SURVEY-GROUP NAME
+#: 12392 NAME
+msgid "6006-Have you ever smoked?"
+msgstr "6006- 您抽烟吗？"
+
+# SURVEY-GROUP NAME
+#: 12393 NAME
+msgid "6009-Have you ever used alcohol?"
+msgstr "6009- 您饮酒吗？"
+
+# SURVEY-GROUP NAME
+#: 12394 NAME
+msgid "6012-Are there environmental factors or risks (e.g. pesticides, asbestos) that you know that your mother or father were directly exposed to?"
+msgstr "6012- 您的父母是否直接暴露于任何环境危害因素（例如杀虫剂、石棉）中？"
+
+# SURVEY-GROUP NAME
+#: 12395 NAME
+msgid "6016-Do certain types of weather affect your body?"
+msgstr "6016- 某些特定天气是否会影响您的身体？"
+
+# SURVEY-GROUP NAME
+#: 12396 NAME
+msgid "6021-Do you fly in airplanes since your diagnosis?"
+msgstr "6021- 您被确诊后乘坐过飞机吗？"
+
+# SURVEY-GROUP NAME
+#: 13805 NAME
+msgid "6041-Do you have problems falling or staying asleep?"
+msgstr "6041- 您是否很难入睡或保持睡眠？"
+
+# SURVEY-GROUP NAME
+#: 13806 NAME
+msgid "6046-Do you sleep with oxygen?"
+msgstr "6046- 您睡觉时吸氧吗？"
+
+# SURVEY-GROUP NAME
+#: 13807 NAME
+msgid "6048-Do you feel particularly cold when going to sleep or waking up?"
+msgstr "6048- 入睡或醒来时，您会感到格外的冷吗？"
+
+# SURVEY-GROUP NAME
+#: 13808 NAME
+msgid "6051-Do you have cold feet or hands when not in bed?"
+msgstr "6051- 不卧床时您会感到手脚冰凉吗?"
+
+# SURVEY-GROUP NAME
+#: 13810 NAME
+msgid "6050-Do you have cold feet or hands in bed?"
+msgstr "6050- 卧床时您会感到手脚冰凉吗?"
+
+# SURVEY-GROUP NAME
+#: 26404 NAME
+msgid "tissue biopsy details"
+msgstr "组织活检切片详情"
+
+# SURVEY-GROUP NAME
+#: 26259 NAME
+msgid "have-used-birth-control"
+msgstr "已采取避孕措施"
+
+# SURVEY-GROUP NAME
+#: 14135 NAME
+msgid "6074-Have you ever been pregnant?"
+msgstr "6074- 您怀孕过吗？"
+
+# SURVEY-GROUP NAME
+#: 14134 NAME
+msgid "6084-If you did not know you had LAM prior to getting pregnant did you know before you gave birth?"
+msgstr "6084- 如果您在怀孕前不知道自己患有 LAM，在分娩前您知道了吗？"
+
+# SURVEY-GROUP NAME
+#: 14133 NAME
+msgid "6079-Did you know you had LAM during one or more pregnancies?"
+msgstr "6079- 在您过去一次或几次怀孕期间，您知道自己患有 LAM 吗？"
+
+# SURVEY-GROUP NAME
+#: 14132 NAME
+msgid "6076-Do you have children?"
+msgstr "6076- 您有子女吗？"
+
+# SURVEY-GROUP NAME
+#: 14137 NAME
+msgid "6105-Is ovulation so painful that you find it difficult to do normal activities at times?"
+msgstr "6105- 您在排卵时是否会觉得很疼痛以至于有时无法正常活动吗？"
+
+# SURVEY-GROUP NAME
+#: 14139 NAME
+msgid "6110-Have you taken birth control pills since your diagnosis with LAM?"
+msgstr "6110- 诊断出 LAM 后，您服用过避孕药吗？"
+
+# SURVEY-GROUP NAME
+#: 14143 NAME
+msgid "14141-Are you post- or peri-menopausal"
+msgstr "14141- 您已绝经或将要绝经吗？"
+
+# SURVEY-GROUP NAME
+#: 14142 NAME
+msgid "6118-Have you ever been on hormone replacement therapy?"
+msgstr "6118- 您做过激素替代治疗吗？"
+
+# SURVEY-GROUP NAME
+#: 14131 NAME
+msgid "6134-Do you have any other significant illness in addition to LAM?"
+msgstr "6134- 除患有 LAM 外您还得过其它重大疾病吗？"
+
+# SURVEY-GROUP NAME
+#: 14130 NAME
+msgid "6131-Has any member of your family (including second cousins, grandparents, etc) ever experienced any symptom potentially associated with Tuberous Sclerosis?"
+msgstr "6131- 您的家族中（包括第二代堂表亲、祖父母，等等）有人出现过可能与结节性硬化症相关的症状吗？"
+
+# SURVEY-GROUP NAME
+#: 14129 NAME
+msgid "6129-Has any member of your family (including second cousins, grandparents, great aunts/uncles, etc) ever been diagnosed with Tuberous Sclerosis?"
+msgstr "6129- 您的家族中（包括第二代堂表亲、祖父母、姑/姨祖母、叔/舅祖父等）有人患有结节性硬化症吗？"
+
+# SURVEY-GROUP NAME
+#: 14128 NAME
+msgid "6123-Have you been diagnosed with Tuberous Sclerosis?"
+msgstr "6123- 您被诊断出患有结节性硬化症吗？"
+
+# SURVEY-GROUP NAME
+#: 9527 NAME
+msgid "6138-ovarian-surgery"
+msgstr "6138- 卵巢手术"
+
+# SURVEY-GROUP NAME
+#: 26407 NAME
+msgid "hymoptysis"
+msgstr "咯血"
+
+# SURVEY-GROUP NAME
+#: 14115 NAME
+msgid "6062-Is a sample of your tissue available"
+msgstr "6062- 能否采集您的组织切片？"
+
+# SURVEY-GROUP NAME
+#: 26250 NAME
+msgid "had-children-other"
+msgstr "有 - 子女 - 其他"
+
+# SURVEY-GROUP NAME
+#: 26249 NAME
+msgid "had-children-surrogacy"
+msgstr "有 - 子女 - 代孕"
+
+# SURVEY-GROUP NAME
+#: 26247 NAME
+msgid "pregnant-not-knew-had-lam"
+msgstr "怀孕 - 不知 - 自己患 - LAM"
+
+# SURVEY-GROUP NAME
+#: 14138 NAME
+msgid "6107-Have you ever been on birth control pills?"
+msgstr "6107- 您服用过避孕药吗？"
+
+# SURVEY-GROUP NAME
+#: 24534 NAME
+msgid "incontinence-drink-avoidance"
+msgstr "失禁症 - 节制 - 饮水"
+
+# SURVEY-GROUP NAME
+#: 24524 NAME
+msgid "incontinence of faeces"
+msgstr "大便失禁"
+
+# SURVEY-GROUP NAME
+#: 24521 NAME
+msgid "incontinent of urine"
+msgstr "小便失禁"
+
+# SURVEY-GROUP NAME
+#: 25734 NAME
+msgid "back joint or bone pain"
+msgstr "背部关节或骨骼疼痛"
+
+# SURVEY-GROUP NAME
+#: 24822 NAME
+msgid "bone loss"
+msgstr "骨流失"
+
+# SURVEY-GROUP NAME
+#: 24819 NAME
+msgid "osteoporosis family members"
+msgstr "犯骨质疏松症的亲属"
+
+# SURVEY-GROUP NAME
+#: 26469 NAME
+msgid "bone density scan results"
+msgstr "骨密度扫描结果"
+
+# SURVEY-GROUP NAME
+#: 24835 NAME
+msgid "osteoporosis diagnosis"
+msgstr "骨质疏松症诊断"
+
+# SURVEY-GROUP NAME
+#: 24845 NAME
+msgid "osteoporosis medication formerly taken"
+msgstr "过去服用的骨质疏松症药物"
+
+# SURVEY-GROUP NAME
+#: 24842 NAME
+msgid "osteoporosis medication no"
+msgstr "未服用过骨质疏松症药物"
+
+# SURVEY-GROUP NAME
+#: 24840 NAME
+msgid "osteoporosis medication"
+msgstr "骨质疏松症药物"
+
+# SURVEY-GROUP NAME
+#: 24858 NAME
+msgid "vitamin D and calcium supplements"
+msgstr "维生素 D 和钙补充剂"
+
+# SURVEY-GROUP NAME
+#: 24855 NAME
+msgid "multivitamin D and calcium content"
+msgstr "多维生素 D 和钙含量"
+
+# SURVEY-GROUP NAME
+#: 25607 NAME
+msgid "current medication summary"
+msgstr "目前用药总结"
+
+# SURVEY-GROUP NAME
+#: 25630 NAME
+msgid "over-the-counter estrogens"
+msgstr "非处方雌激素"
+
+# SURVEY-GROUP NAME
+#: 25624 NAME
+msgid "have used female hormones"
+msgstr "服用过雌激素"
+
+# SURVEY-GROUP NAME
+#: 26221 NAME
+msgid "varying-travel-routine"
+msgstr "旅行 - 日程 - 多变"
+
+# SURVEY-GROUP NAME
+#: 26225 NAME
+msgid "flying-log"
+msgstr "飞行 - 日志"
+
+# SURVEY-GROUP NAME
+#: 26232 NAME
+msgid "daily-log-felt-sick"
+msgstr "每日 - 感觉不适 - 日志"
+
+# SURVEY-GROUP NAME
+#: 26237 NAME
+msgid "health-log-symptoms-other"
+msgstr "健康 - 日志 - 症状 - 其它"
+
+# SURVEY-GROUP NAME
+#: 26234 NAME
+msgid "sickness-type-other"
+msgstr "疾病 - 类型 - 其它"
+
+# SURVEY-GROUP NAME
+#: 26244 NAME
+msgid "daily-log-missed-medication-other"
+msgstr "每日 - 漏服 - 药物 - 日志 - 其它"
+
+# SURVEY-GROUP NAME
+#: 26241 NAME
+msgid "daily-log-diet-changes"
+msgstr "每日 - 饮食 - 变化 - 日志"
+
+# SURVEY-GROUP NAME
+#: 26401 NAME
+msgid "sexual activity details"
+msgstr "性生活详情"
+
+# SURVEY-GROUP NAME
+#: 26412 NAME
+msgid "malignancy"
+msgstr "恶性肿瘤"
+
+# SURVEY-GROUP NAME
+#: 26457 NAME
+msgid "have diabetes"
+msgstr "患有糖尿病"

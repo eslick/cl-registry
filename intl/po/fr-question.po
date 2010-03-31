@@ -1,0 +1,3925 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: fr-question.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# QUESTION PROMPT
+#: 5940 PROMPT
+msgid "What kind of exercises do you do?"
+msgstr "Quel sorte d'exercice pratiquez-vous ?"
+
+# QUESTION PROMPT
+#: 5937 PROMPT
+msgid "Do you exercise?"
+msgstr "Faites-vous de l'exercice ?"
+
+# QUESTION PROMPT
+#: 5975 PROMPT
+msgid "Have you tried Herbal treatments?"
+msgstr "Avez-vous déjà essayé des traitements à base de plantes ?"
+
+# QUESTION PROMPT
+#: 24834 PROMPT
+msgid "Have you ever been diagnosed with osteoporosis?"
+msgstr "Avez-vous jamais reçu un diagnostic d'ostéoporose ?"
+
+# QUESTION PROMPT
+#: 24824 PROMPT
+msgid "Has your bone loss been rated for severity?"
+msgstr "La sévérité de votre perte osseuse a-t'elle été évaluée ?"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "mild"
+msgstr "légère"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "moderate"
+msgstr "modérée"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "severe"
+msgstr "sévère"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "other"
+msgstr "autre"
+
+# QUESTION PROMPT
+#: 30003 PROMPT
+msgid "Have you been tested for Alpha-1 Antitrypsin Deficiency?"
+msgstr "Avez-vous jamais été testée pour la carence en Antitrypsine Alpha-1 ?"
+
+# QUESTION PROMPT
+#: 5844 PROMPT
+msgid "Date of spirometer test"
+msgstr "Date de la spirométrie"
+
+# QUESTION PROMPT
+#: 5845 PROMPT
+msgid "FEV1"
+msgstr "VEMS"
+
+# QUESTION QUESTION-HELP
+#: 5845 QUESTION-HELP
+msgid "Forced Expiratory Volume for 1 second.  Data should be entered in liters."
+msgstr "Volume expiratoire maximal par seconde.  Les données sont à entrer en litres."
+
+# QUESTION PROMPT
+#: 26217 PROMPT
+msgid "Date of PFT Measurement"
+msgstr "Date de la mesure de l'EFR"
+
+# QUESTION PROMPT
+#: 26218 PROMPT
+msgid "Your temperature today"
+msgstr "Votre température du jour"
+
+# QUESTION QUESTION-HELP
+#: 26218 QUESTION-HELP
+msgid "Take your temperature under your tongue, hold for 30 seconds using the same thermometer each day."
+msgstr "Prenez votre température sous la langue pendant 30 secondes tous les jours avec le même thermomètre."
+
+# QUESTION PROMPT
+#: 23561 PROMPT
+msgid "FEV6"
+msgstr "VEM6S"
+
+# QUESTION CHOICES
+#: 23561 CHOICES
+msgid "test1"
+msgstr "test1"
+
+# QUESTION CHOICES
+#: 23561 CHOICES
+msgid "test2"
+msgstr "test2"
+
+# QUESTION QUESTION-HELP
+#: 23561 QUESTION-HELP
+msgid "Forced expiratory volume at 6 seconds of exhalation. (Enter in liters) This is a measure from most home spirometers that acts as a surrogate for FVC.  If you have a device that gives you FVC instead, please write to lamsight-admin@media.mit.edu and we will add a new field to this survey."
+msgstr "Volume expiratoire maximal en 6 secondes. (à saisir en litres) Il s'agit d'une mesure figurant sur la plupart des spiromètres personnels et qui tient lieu de substitut au CVF.  Si vous possédez un appareil qui vous donne une mesure CVF, veuillez écrire à lamsight-admin@media.mit.edu et nous ajouterons un nouveau champ à cette enquête."
+
+# QUESTION PROMPT
+#: 23560 PROMPT
+msgid "What spirometer was used?"
+msgstr "Quel spiromètre utilisez-vous ?"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "PiKo-1"
+msgstr "PiKo-1"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "PiKo-6"
+msgstr "PiKo-6"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "KoKo Peak Pro"
+msgstr "KoKo Peak Pro"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 5858 PROMPT
+msgid "What was the primary condition that led to the eventual diagnosis of LAM?"
+msgstr "Quelle est le trouble principal qui a entraîné la découverte de la LAM ? Béa"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Pulmonary symptoms"
+msgstr "Des symptômes pulmonaires"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms present but a subnormal breathing test led to testing"
+msgstr "Aucun symptôme pulmonaire mais un test subnormal de la fonction respiratoire a entraîné des examens supplémentaires."
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Abnormal chest x-ray or CT scan"
+msgstr "Une radiographie pulmonaire ou un tomodensitogramme anormal"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Spontaneous pneumothorax"
+msgstr "Un pneumothorax spontané"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Angiomyolipoma"
+msgstr "Un angiomyolipome"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Ascites"
+msgstr "Une ascite"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Pleural effusion"
+msgstr "Un épanchement pleural"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Assessment for lung transplant without prior suspicion of LAM"
+msgstr "Une évaluation dans le cadre d'une greffe de poumon sans suspicion préalable de LAM"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms but a family member has LAM"
+msgstr "Aucun symptôme pulmonaire mais un membre de votre famille est atteint de la LAM"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms but family member with Tuberous Sclerosis Complex (TSC)"
+msgstr "Aucun symptôme pulmonaire mais un membre de votre famille est atteint d'une sclérose tubéreuse de Bourneville (STB)"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Dermatology or skin specialist"
+msgstr "Une dermatologie ou spécialiste de la peau"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Unknown"
+msgstr "Inconnu"
+
+# QUESTION PROMPT
+#: 5854 PROMPT
+msgid "Date of original diagnosis"
+msgstr "Date du diagnostic d'origine"
+
+# QUESTION PROMPT
+#: 5855 PROMPT
+msgid "Diagnosing physician name"
+msgstr "Nom du médecin diagnostiqueur"
+
+# QUESTION QUESTION-HELP
+#: 5855 QUESTION-HELP
+msgid "This is an optional entry if you have extra concerns about privacy"
+msgstr "Il s'agit d'une entrée facultative au cas où vous ayez quelques inquiétudes en matière de confidentialité"
+
+# QUESTION PROMPT
+#: 5856 PROMPT
+msgid "Speciality of diagnosing physician"
+msgstr "Spécialité du médecin diagnostiqueur"
+
+# QUESTION PROMPT
+#: 5857 PROMPT
+msgid "Institution of physician"
+msgstr "Établissement du médecin"
+
+# QUESTION PROMPT
+#: 5878 PROMPT
+msgid "Weight"
+msgstr "Poids"
+
+# QUESTION PROMPT
+#: 5879 PROMPT
+msgid "Height"
+msgstr "Taille"
+
+# QUESTION PROMPT
+#: 5880 PROMPT
+msgid "Body-Mass Index"
+msgstr "Indice de masse corporelle"
+
+# QUESTION PROMPT
+#: 5885 PROMPT
+msgid "Do you feel aches or pains of any kind of discomfort on a regular basis?"
+msgstr "Ressentez-vous des douleurs ou de la gêne de façon régulière ?"
+
+# QUESTION PROMPT
+#: 5889 PROMPT
+msgid "Do you experience pain and/or discomfort related to the reproductive organs?"
+msgstr "Ressentez-vous des douleurs et/ou une gêne associées aux organes reproducteurs ?"
+
+# QUESTION PROMPT
+#: 5894 PROMPT
+msgid "Do you experience pain and/or discomfort related to any surgery related to ovaries?"
+msgstr "Ressentez-vous des douleurs et/ou une gêne associées à une opération relative aux ovaires ?"
+
+# QUESTION PROMPT
+#: 5899 PROMPT
+msgid "Do you have a history of any abnormal blood test results?"
+msgstr "Avez-vous des antécédents anormaux en termes de résultats d'examens sanguins ?"
+
+# QUESTION PROMPT
+#: 5903 PROMPT
+msgid "Have any members of your family suffered from genetic conditions or diseases?"
+msgstr "Un membre de votre famille souffre t-il d'un problème ou d'une maladie génétique ?"
+
+# QUESTION PROMPT
+#: 5905 PROMPT
+msgid "Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews died prematurely?"
+msgstr "Un membre de votre famille proche, y compris grands-parents, tantes, oncles, nièces et neveux, est-il mort de façon prématurée ?"
+
+# QUESTION PROMPT
+#: 5907 PROMPT
+msgid "Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews suffered from disabling disorders?"
+msgstr "Un membre de votre famille proche, y compris grands-parents, tantes, oncles, nièces et neveux, souffre-t-il d'une affection invalidante ?"
+
+# QUESTION PROMPT
+#: 5909 PROMPT
+msgid "Any other comments on family history"
+msgstr "Autres commentaires sur vos antécédents familiaux"
+
+# QUESTION PROMPT
+#: 5912 PROMPT
+msgid "What are your favorite foods?"
+msgstr "Quelles sont vos aliments préférés ?"
+
+# QUESTION PROMPT
+#: 5913 PROMPT
+msgid "What are your least favorite foods?"
+msgstr "Quels sont les aliments que vous appréciez le moins ?"
+
+# QUESTION PROMPT
+#: 13836 PROMPT
+msgid "Do you avoid eating certain foods?"
+msgstr "Évitez-vous de manger certains aliments ?"
+
+# QUESTION PROMPT
+#: 5916 PROMPT
+msgid "Do you have symptoms, related to LAM or unrelated to LAM that you associate with a particular food/ drink or food group?"
+msgstr "Ressentez-vous des symptômes, associés ou non à la LAM, que vous rattachez à un aliment, une boisson ou un groupe alimentaire particulier ?"
+
+# QUESTION PROMPT
+#: 5920 PROMPT
+msgid "Are you a vegetarian?"
+msgstr "Êtes-vous végétarienne ?"
+
+# QUESTION PROMPT
+#: 5921 PROMPT
+msgid "If yes, pick the following foods that you do eat"
+msgstr "Si oui, choisissez les aliments que vous mangez"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "fish"
+msgstr "poissons"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "shellfish"
+msgstr "crustacées"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "dairy"
+msgstr "produits laitiers"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "eggs"
+msgstr "œufs"
+
+# QUESTION PROMPT
+#: 26390 PROMPT
+msgid "Do you eat one or more of the following high oestrogen foods?"
+msgstr "Mangez-vous certains des aliments suivants riches en oestrogènes ?"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Soy"
+msgstr "Soja"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Tofu"
+msgstr "Tofu"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Legumes"
+msgstr "Légumineuses"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Nuts"
+msgstr "Noix"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Chicken"
+msgstr "Poulet"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 26460 PROMPT
+msgid "How would you characterize your appetite relative to your peers?"
+msgstr "Comment caractériseriez-vous votre appétit par rapport à vos pairs ?"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Normal"
+msgstr "Normal"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Poor"
+msgstr "Médiocre"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Large"
+msgstr "Gros"
+
+# QUESTION PROMPT
+#: 5923 PROMPT
+msgid "Do you try to follow a fat-free or low-fat diet?"
+msgstr "Essayez-vous de suivre un régime sans graisse ou pauvre en lipide ?"
+
+# QUESTION PROMPT
+#: 5927 PROMPT
+msgid "Do you have high-cholesterol?"
+msgstr "Votre cholestérol est-il élevé ?"
+
+# QUESTION PROMPT
+#: 5928 PROMPT
+msgid "Do you find it difficult to maintain your weight?"
+msgstr "Avez-vous des difficultés à maintenir votre poids ?"
+
+# QUESTION PROMPT
+#: 5931 PROMPT
+msgid "Do you take vitamin or mineral supplements?"
+msgstr "Prenez-vous des vitamines ou des compléments minéraux ?"
+
+# QUESTION PROMPT
+#: 5934 PROMPT
+msgid "Any other comments on diet"
+msgstr "Autres commentaires sur le régime alimentaire"
+
+# QUESTION PROMPT
+#: 5954 PROMPT
+msgid "Have you given up any type of exercise because of LAM?"
+msgstr "Avez-vous arrêté de faire de l'exercice à cause de la LAM ?"
+
+# QUESTION PROMPT
+#: 5945 PROMPT
+msgid "Do you desaturate on exertion?"
+msgstr "Est-ce que vous vous désaturez au cours de l'effort ?"
+
+# QUESTION PROMPT
+#: 5948 PROMPT
+msgid "If you exercise, do you see positive effects of exercise?"
+msgstr "Si vous faites de l'exercice, constatez-vous des effets positifs ?"
+
+# QUESTION PROMPT
+#: 5957 PROMPT
+msgid "Can you walk 100 meters on level ground without stopping?"
+msgstr "Êtes-vous capable de marcher 100 mètres sur terrain plat sans vous arrêter ?"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "Yes"
+msgstr "Oui"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "Yes with oxygen"
+msgstr "Oui avec de l'oxygène"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "No"
+msgstr "Non"
+
+# QUESTION PROMPT
+#: 5958 PROMPT
+msgid "Can you carry small loads (up to 2kg/4.4lbs)?"
+msgstr "Êtes-vous capable de porter de petites charges (jusqu'à 2 kg) ?"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "Yes"
+msgstr "Oui"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "Yes with oxygen"
+msgstr "Oui avec de l'oxygène"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "No"
+msgstr "Non"
+
+# QUESTION PROMPT
+#: 5959 PROMPT
+msgid "Do you get breathless easily from relatively simple motions (from bending down to pick something up or getting dressed)?"
+msgstr "Vous essoufflez-vous facilement suite à des mouvements simples (lorsque vous vous baissez pour ramassez quelque chose ou que vous vous habillez) ?"
+
+# QUESTION PROMPT
+#: 5960 PROMPT
+msgid "What activities can you not do because of LAM?"
+msgstr "Quelles sont les activités que vous évitez à cause de de la LAM ?"
+
+# QUESTION PROMPT
+#: 5961 PROMPT
+msgid "What activities can you do but in a modified way because of LAM? What modifications have you made to make these activities possible?"
+msgstr "Quelles sont les activités que vous pouvez réaliser, mais de façon modifiée, à cause de la LAM ? Quelles modifications avez-vous apporté pour rendre ces activités possibles ?"
+
+# QUESTION PROMPT
+#: 5963 PROMPT
+msgid "Have you been referred to pulmonary rehabilitation?"
+msgstr "Avez-vous été aiguillé vers une rééducation pulmonaire ?"
+
+# QUESTION PROMPT
+#: 5970 PROMPT
+msgid "Have you ever taken recreational drugs (excluding cigarettes and alcohol)?"
+msgstr "Avez-vous déjà pris des drogues à usage récréatif (cigarettes et alcool exclus) ?"
+
+# QUESTION PROMPT
+#: 5972 PROMPT
+msgid "Have you tried Chinese medicine"
+msgstr "Avez-vous essayé la médecine chinoise ?"
+
+# QUESTION PROMPT
+#: 5974 PROMPT
+msgid "Have you tried Acupuncture?"
+msgstr "Avez-vous essayé l'acuponcture ?"
+
+# QUESTION PROMPT
+#: 5977 PROMPT
+msgid "Have you tried Shiatsu massage?"
+msgstr "Avez-vous essayé les massages Shiatsu ?"
+
+# QUESTION PROMPT
+#: 5978 PROMPT
+msgid "Have you tried Hypnosis?"
+msgstr "Avez-vous essayé l'hypnose ?"
+
+# QUESTION PROMPT
+#: 5980 PROMPT
+msgid "Have you tried Meditation?"
+msgstr "Avez-vous essayé la méditation ?"
+
+# QUESTION PROMPT
+#: 5983 PROMPT
+msgid "Any other forms of complementary or alternative medicine?"
+msgstr "Autres formes de médecine d'appoint ou parralèle ?"
+
+# QUESTION PROMPT
+#: 5985 PROMPT
+msgid "Have you noticed an effect on your breathing from these interventions?"
+msgstr "Avez-vous constaté un effet sur votre respiration de par ces interventions ?"
+
+# QUESTION PROMPT
+#: 5986 PROMPT
+msgid "Have you noticed an effect on your  well-being from any of these interventions?"
+msgstr "Avez-vous constaté un effet sur votre bien-être de par ces interventions ?"
+
+# QUESTION PROMPT
+#: 5987 PROMPT
+msgid "Any other comments on alternative therapies"
+msgstr "Autres commentaires sur  les thérapies parallèles"
+
+# QUESTION PROMPT
+#: 5991 PROMPT
+msgid "How many people live in your home (including yourself)?"
+msgstr "Combien de personnes habitent chez vous (y compris vous-même) ?"
+
+# QUESTION PROMPT
+#: 5999 PROMPT
+msgid "Does your daily routine vary a lot?"
+msgstr "Votre quotidien varie-t-il beaucoup ?"
+
+# QUESTION PROMPT
+#: 6000 PROMPT
+msgid "Is your daily routine fairly physically active?"
+msgstr "Votre quotidien est-il plutôt actif en termes physique ?"
+
+# QUESTION PROMPT
+#: 5994 PROMPT
+msgid "Do you leave the house every day to work/run errands/etc?"
+msgstr "Quittez-vous la maison tous les jours pour travailler/courir/faire des courses, etc. ?"
+
+# QUESTION PROMPT
+#: 13702 PROMPT
+msgid "Do you have a job?"
+msgstr "Avez-vous un emploi ?"
+
+# QUESTION PROMPT
+#: 5990 PROMPT
+msgid "Do you care for the home and family as your primary form of work?"
+msgstr "Votre activité principale consiste-t-elle vous occuper de votre foyer et de votre famille ?"
+
+# QUESTION PROMPT
+#: 5998 PROMPT
+msgid "Briefly describe your daily routine (wake up time, meals, activities of the day, bedtime)"
+msgstr "Décrivez brièvement vos habitudes (réveil, repas, activités de la journée, coucher)"
+
+# QUESTION PROMPT
+#: 6002 PROMPT
+msgid "What type of environment do you live in?"
+msgstr "Dans quel type d'environnement vivez-vous ?"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "city"
+msgstr "grande ville"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "town"
+msgstr "petite ville"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "countryside"
+msgstr "campagne"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "village"
+msgstr "village"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "farm"
+msgstr "ferme"
+
+# QUESTION PROMPT
+#: 6003 PROMPT
+msgid "Please describe the air quality where you live as"
+msgstr "Veuillez décrire la qualité de l'air que vous respirez là où vous vivez :"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "good"
+msgstr "bonne"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "average"
+msgstr "moyenne"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "poor"
+msgstr "médiocre"
+
+# QUESTION PROMPT
+#: 6004 PROMPT
+msgid "Are there potential environmental risks where you live now?"
+msgstr "Existe-t-il des risques environnementaux là où vous habitez maintenant ?"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "fumes"
+msgstr "vapeurs"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "dust"
+msgstr "poussière"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "asbestos"
+msgstr "amiante"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "pesticides"
+msgstr "pesticides"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "cigarette smoke"
+msgstr "fumée de cigarette"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "smog"
+msgstr "brouillard de fumée"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in air"
+msgstr "autre au niveau de l'air"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in land"
+msgstr "autre au niveau de la terre"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in water"
+msgstr "autre au niveau de l'eau"
+
+# QUESTION PROMPT
+#: 6005 PROMPT
+msgid "Were there environmental risks where you lived for a significant period in your past?"
+msgstr "Y a-t-il eu des risques environnementaux là où vous viviez avant et ce pendant une période prolongée ?"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "fumes"
+msgstr "vapeurs"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "dust"
+msgstr "poussière"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "asbestos"
+msgstr "amiante"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "pesticides"
+msgstr "pesticides"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "cigarette smoke"
+msgstr "fumée de cigarette"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "smog"
+msgstr "brouillard de fumée"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in air"
+msgstr "autre au niveau de l'air"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in land"
+msgstr "autre au niveau de la terre"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in water"
+msgstr "autre au niveau de l'eau"
+
+# QUESTION PROMPT
+#: 6006 PROMPT
+msgid "Have you ever smoked?"
+msgstr "Avez-vous fumé dans le passé ?"
+
+# QUESTION PROMPT
+#: 6009 PROMPT
+msgid "Have you ever used alcohol?"
+msgstr "Avez-vous consommé de l'alcool ?"
+
+# QUESTION PROMPT
+#: 6012 PROMPT
+msgid "Were there environmental risks that your parents were exposed to?"
+msgstr "Vos parents ont-ils été exposés à des risque environnementaux ?"
+
+# QUESTION PROMPT
+#: 6016 PROMPT
+msgid "Do certain types of weather affect your body?"
+msgstr "Certains types de temps affectent-ils votre corps ?"
+
+# QUESTION PROMPT
+#: 6021 PROMPT
+msgid "Do you travel by airplane?"
+msgstr "Prenez-vous l'avion ?"
+
+# QUESTION PROMPT
+#: 6053 PROMPT
+msgid "Has your sleep routine changed since being diagnosed with LAM?"
+msgstr "Votre rythme de sommeil a-t-il changé depuis que la LAM a été diagnostiquée ?"
+
+# QUESTION CHOICES
+#: 6053 CHOICES
+msgid "No"
+msgstr "Non"
+
+# QUESTION CHOICES
+#: 6053 CHOICES
+msgid "Yes"
+msgstr "Oui"
+
+# QUESTION PROMPT
+#: 6041 PROMPT
+msgid "Do you have problems falling or staying asleep?"
+msgstr "Vous est-il difficile de vous endormir ou de rester endormie ?"
+
+# QUESTION PROMPT
+#: 6042 PROMPT
+msgid "How many hours on average do you sleep each night?"
+msgstr "Combien d'heures en moyenne dormez-vous chaque nuit ?"
+
+# QUESTION PROMPT
+#: 6043 PROMPT
+msgid "Do you wake up too early on a regular basis?"
+msgstr "Vous réveillez-vous trop tôt de façon régulière ?"
+
+# QUESTION PROMPT
+#: 6045 PROMPT
+msgid "Do you take naps or short sleeps during the day?"
+msgstr "Faites-vous des siestes ou des petits sommes au cours de la journée ?"
+
+# QUESTION PROMPT
+#: 6046 PROMPT
+msgid "Do you sleep with oxygen?"
+msgstr "Dormez-vous avec de l'oxygène ?"
+
+# QUESTION PROMPT
+#: 6048 PROMPT
+msgid "Do you feel particularly cold when going to sleep or waking up?"
+msgstr "Avez-vous particulièrement froid lorsque vous vous endormez ou vous réveillez ?"
+
+# QUESTION PROMPT
+#: 6050 PROMPT
+msgid "Do you have cold feet or hands in bed?"
+msgstr "Vos pieds et mains sont-ils froids dans le lit ?"
+
+# QUESTION PROMPT
+#: 6051 PROMPT
+msgid "Do you have cold feet or hands when not in bed?"
+msgstr "Vos pieds et mains sont-ils froids en dehors du lit ?"
+
+# QUESTION PROMPT
+#: 6054 PROMPT
+msgid "Any other comments about sleep?"
+msgstr "Autres commentaires relatifs au sommeil ?"
+
+# QUESTION PROMPT
+#: 26403 PROMPT
+msgid "Have you ever had a tissue biopsy?"
+msgstr "Avez-vous déjà subi une biopsie tissulaire ?"
+
+# QUESTION PROMPT
+#: 26406 PROMPT
+msgid "Has your blood [serum] ever been stored for research purposes?"
+msgstr "Votre sang [sérum] a-t-il déjà été conservé à des fins de recherche ?"
+
+# QUESTION PROMPT
+#: 26258 PROMPT
+msgid "Have you ever taken birth control pills?"
+msgstr "Avez-vous jamais pris des pilules contraceptives ?"
+
+# QUESTION PROMPT
+#: 6074 PROMPT
+msgid "Have you ever been pregnant?"
+msgstr "Avez-vous jamais été enceinte ?"
+
+# QUESTION PROMPT
+#: 6076 PROMPT
+msgid "Do you have children?"
+msgstr "Avez-vous des enfants ?"
+
+# QUESTION PROMPT
+#: 6095 PROMPT
+msgid "Do you have any other comments regarding your reproductive history?"
+msgstr "Avez-vous d'autres commentaires relatifs à vos antécédents de reproduction ?"
+
+# QUESTION PROMPT
+#: 6084 PROMPT
+msgid "Were you diagnosed with LAM during your pregnancy?"
+msgstr "La LAM a-t-elle été diagnostiquée durant votre grossesse ?"
+
+# QUESTION PROMPT
+#: 6079 PROMPT
+msgid "Did you know you had LAM during one or more pregnancies?"
+msgstr "Saviez que vous souffriez de la LAM au cours de votre ou vos grossesses ?"
+
+# QUESTION PROMPT
+#: 6097 PROMPT
+msgid "At what age did you start having a period?"
+msgstr "À quel âge vos menstruations ont-elles débuté ?"
+
+# QUESTION PROMPT
+#: 6098 PROMPT
+msgid "Are your periods regular?"
+msgstr "Vos menstruations sont-elles régulières ?"
+
+# QUESTION PROMPT
+#: 6099 PROMPT
+msgid "How many days is your menstrual cycle?"
+msgstr "Combien de jours dure votre cycle menstruel ?"
+
+# QUESTION PROMPT
+#: 6100 PROMPT
+msgid "For how many days do you bleed each month?"
+msgstr "Pendant combien de jours avez-vous des saignements ?"
+
+# QUESTION PROMPT
+#: 6102 PROMPT
+msgid "Would you say that your periods are:"
+msgstr "Diriez-vous que vos menstruations sont "
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Strong"
+msgstr "Abondantes"
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Normal"
+msgstr "Normales"
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Light"
+msgstr "Légères"
+
+# QUESTION PROMPT
+#: 6103 PROMPT
+msgid "Has this become more or less over time?"
+msgstr "Cela a-t-il changé au fil du temps ?"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "More"
+msgstr "En plus"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "Less"
+msgstr "En moins"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "Stayed the same"
+msgstr "Pareil"
+
+# QUESTION PROMPT
+#: 6104 PROMPT
+msgid "Would you say that your periods are so painful that you find it difficult to do normal activities during your period?"
+msgstr "Diriez-vous que vos menstruations sont douloureuses au point d'avoir des difficultés à réaliser des activités normales ?"
+
+# QUESTION CHOICES
+#: 6104 CHOICES
+msgid "No"
+msgstr "Non"
+
+# QUESTION CHOICES
+#: 6104 CHOICES
+msgid "Yes"
+msgstr "Oui"
+
+# QUESTION PROMPT
+#: 6105 PROMPT
+msgid "Is ovulation so painful that you find it difficult to do normal activities at times?"
+msgstr "L'ovulation est-elle douloureuse au point d'avoir des difficultés, par moment, à réaliser des activités normales ?"
+
+# QUESTION PROMPT
+#: 6113 PROMPT
+msgid "Do you experience any difference in your breathing or pain in your body at difference parts of your monthly cycle?"
+msgstr "Ressentez-vous une différence au niveau de votre respiration ou des douleurs corporelles à différents moments de votre cycle mensuel ?"
+
+# QUESTION PROMPT
+#: 6110 PROMPT
+msgid "Have you taken birth control pills since your diagnosis with LAM?"
+msgstr "Avez-vous pris des pilules contraceptives depuis votre diagnostic de LAM ?"
+
+# QUESTION PROMPT
+#: 14141 PROMPT
+msgid "Are you post- or peri-menopausal"
+msgstr "Êtes-vous en postménopause ou périménopause ?"
+
+# QUESTION PROMPT
+#: 6118 PROMPT
+msgid "Have you ever been on hormone replacement therapy?"
+msgstr "Avez-vous déjà suivi un traitement hormonal substitutif ?"
+
+# QUESTION PROMPT
+#: 6123 PROMPT
+msgid "Have you been diagnosed with Tuberous Sclerosis?"
+msgstr "Vous a-t-on diagnostiqué une sclérose tubéreuse ?"
+
+# QUESTION PROMPT
+#: 6129 PROMPT
+msgid "Has any member of your family (including second cousins, grandparents, great aunts/uncles, etc) ever been diagnosed with Tuberous Sclerosis?"
+msgstr "Une sclérose tubéreuse a-t-elle été diagnostiquée chez un membre de votre famille (y compris, cousins issus de germains, grands-parents, grands-tantes, grands-oncles, etc.) ?"
+
+# QUESTION PROMPT
+#: 6131 PROMPT
+msgid "Has any member of your family (including second cousins, grandparents, etc) ever experienced any symptom potentially associated with Tuberous Sclerosis?"
+msgstr "Un membre de votre famille (y compris, cousins issus de germains, grands-parents, etc.) a-t-il déjà ressenti ou ressent-il des symptômes potentiellement associés à la sclérose tubéreuse ?"
+
+# QUESTION PROMPT
+#: 6134 PROMPT
+msgid "Do you have any other significant illness in addition to LAM?"
+msgstr "Avez-vous d'autres maladies signifiantes, outre la LAM ?"
+
+# QUESTION PROMPT
+#: 6138 PROMPT
+msgid "Have you had ovarian surgery?"
+msgstr "Avez-vous subi une chirurgie ovarienne ?"
+
+# QUESTION QUESTION-HELP
+#: 6138 QUESTION-HELP
+msgid "If not, please skip this section of questions."
+msgstr "Dans la négative, ignorez cette section du questionnaire."
+
+# QUESTION PROMPT
+#: 6101 PROMPT
+msgid "Have you ever had an internal ultrasound test of your uterus?"
+msgstr "Avez-vous déjà fait une échographie endovaginale de votre utérus ?"
+
+# QUESTION PROMPT
+#: 25621 PROMPT
+msgid "Have you ever had your uterus removed or other uterine surgery?"
+msgstr "Votre utérus a-t-il été retiré ou avez-vous subi d'autres chirurgies de l'utérus ?"
+
+# QUESTION PROMPT
+#: 6146 PROMPT
+msgid "Have you ever experienced any of the following symptoms of LAM?"
+msgstr "Avez-vous ressenti les symptômes suivants de la LAM ?"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Chylothorax"
+msgstr "Chylothorax"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Pleural Effusion"
+msgstr "Épanchement pleural"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Ascites"
+msgstr "Ascite"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Chylous Ascites"
+msgstr "Ascite chyleuse"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Kidney angiomyolipoma"
+msgstr "Angiomyolipome rénal"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Pneumothorax"
+msgstr "Pneumothorax"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Hemoptysis"
+msgstr "Hémoptysie"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Protein-losing Enteropathy [bowel disease]"
+msgstr "Entéropathie avec perte protéique [maladie entérique]"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Vaginal discharge of chyle [lymph]"
+msgstr "Décharge vaginale de chyle [lymphe]"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 6156 PROMPT
+msgid "Have you ever had or been suspected of having renal cell carcinoma?"
+msgstr "Avez-vous eu ou avez-vous été suspecté d'avoir un hypernéphrome ?"
+
+# QUESTION PROMPT
+#: 6161 PROMPT
+msgid "Have you taken part in one or more of the following?"
+msgstr "Avez-vous participé à un ou plusieurs des traitements suivants ?"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "A Treatment Trial addressing LAM lung disease"
+msgstr "Essai thérapeutique destiné à la pneumopathie LAM"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "A Treatment Trial addressing one or more AMLs"
+msgstr "Essai thérapeutique destiné aux différentes formes de LMA (Leucémie Myéloïde Aiguë)"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "An off-label experiment using a drug to address LAM lung disease"
+msgstr "Expérimentation hors AMM avec un médicament destiné à la pneumopathie de la LAM"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "An observational trial"
+msgstr "Essai d'observation"
+
+# QUESTION PROMPT
+#: 6166 PROMPT
+msgid "Are you willing to be contacted for a potential trial?"
+msgstr "Consentez-vous à être contactée dans le cadre d'un essai potentiel ?"
+
+# QUESTION PROMPT
+#: 6141 PROMPT
+msgid "For what reason?"
+msgstr "Pour quelles raisons ?"
+
+# QUESTION PROMPT
+#: 6139 PROMPT
+msgid "What was the procedure?"
+msgstr "Quelle était la procédure ?"
+
+# QUESTION PROMPT
+#: 6140 PROMPT
+msgid "How old were you?"
+msgstr "Quel âge aviez-vous ?"
+
+# QUESTION PROMPT
+#: 6142 PROMPT
+msgid "When was this relative to your diagnosis with LAM?"
+msgstr "Quand est-ce que la LAM a été diagnostiquée chez votre parent ?"
+
+# QUESTION QUESTION-HELP
+#: 6142 QUESTION-HELP
+msgid "Please enter the number of years before by entering a negative number (e.g. -4) or the number of years after with a positive number."
+msgstr "Veuillez entrer le nombre d'années avant au moyen d'un nombre négatif (par exemple, -4) ou le nombre d'années après au moyen d'un nombre positif."
+
+# QUESTION PROMPT
+#: 6143 PROMPT
+msgid "Did you notice any change in the progression of your disease since the surgery?"
+msgstr "Avez-vous constaté un changement dans l'avancement de votre maladie depuis l'opération ?"
+
+# QUESTION PROMPT
+#: 6144 PROMPT
+msgid "Are you having hormone replacement therapy as a result of the surgery?"
+msgstr "Suivez-vous un traitement hormonal substitutif par suite de l'opération ?"
+
+# QUESTION PROMPT
+#: 6007 PROMPT
+msgid "If so, for how many years?"
+msgstr "Dans l'affirmative, depuis combien de temps ?"
+
+# QUESTION PROMPT
+#: 6008 PROMPT
+msgid "How many cigarettes per day did you smoke at your heaviest time?"
+msgstr "Combien de cigarettes fumiez-vous par jour à la période où vous fumiez le plus ?"
+
+# QUESTION PROMPT
+#: 6010 PROMPT
+msgid "How many glasses of alcohol (glass of wine/beer or a shot of hard liquor) have you consumed per week at your heaviest time?"
+msgstr "Combien de verres d'alcool (verre de vin/bière/boisson alcoolisée) consommiez-vous par jour à la période où vous buviez le plus ?"
+
+# QUESTION PROMPT
+#: 6011 PROMPT
+msgid "How much alcohol do you currently consume per week?"
+msgstr "Combien d'alcool consommez-vous par semaine à l'heure actuelle ?"
+
+# QUESTION PROMPT
+#: 6013 PROMPT
+msgid "If so, what were they?"
+msgstr "Dans l'affirmative, de quoi s'agissait-il ?"
+
+# QUESTION PROMPT
+#: 6017 PROMPT
+msgid "If yes, what type of weather?"
+msgstr "Si oui, quel type de temps ?"
+
+# QUESTION PROMPT
+#: 6018 PROMPT
+msgid "What kind of effects?"
+msgstr "Quelle sorte d'effets ?"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "mental"
+msgstr "mental"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "breathing"
+msgstr "respiratoire"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "infections"
+msgstr "infections"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "exercise tolerance"
+msgstr "tolérance en termes d'exercice"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "allergic reaction"
+msgstr "réaction allergique"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "other"
+msgstr "autre"
+
+# QUESTION PROMPT
+#: 6022 PROMPT
+msgid "How often do you fly?"
+msgstr "À quelle fréquence prenez-vous l'avion ?"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "Once a year"
+msgstr "Une fois par an"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "A few times a year"
+msgstr "Quelques fois par an"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "Once a month"
+msgstr "Une fois par mois"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "More than once a month"
+msgstr "Plus d'une fois par mois"
+
+# QUESTION PROMPT
+#: 6023 PROMPT
+msgid "How long is the average flight in hours?"
+msgstr "Quelle est la longueur moyenne des vols ?"
+
+# QUESTION PROMPT
+#: 6024 PROMPT
+msgid "How many days between flights?"
+msgstr "Combien de jours s'intercalent entre les vols ?"
+
+# QUESTION PROMPT
+#: 6025 PROMPT
+msgid "Do you try to fly only on non-stop flights?"
+msgstr "Essayez-vous de choisir des vols sans escale ?"
+
+# QUESTION PROMPT
+#: 6026 PROMPT
+msgid "Do you fly over the ocean?"
+msgstr "Traversez-vous des océans ?"
+
+# QUESTION PROMPT
+#: 6027 PROMPT
+msgid "Have you ever experienced any discomfort while on the plane?"
+msgstr "Ressentez-vous de la gêne lorsque vous vous trouvez en avion ?"
+
+# QUESTION PROMPT
+#: 6028 PROMPT
+msgid "If so, did you experience this during one or more of"
+msgstr "Dans l'affirmative, l'avez-vous ressentie"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Take off"
+msgstr "Au décollage"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "At cruising altitude"
+msgstr "À l'altitude de croisière"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "During landing"
+msgstr "À l'atterrissage"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Immediately after getting off of the plane"
+msgstr "Immédiatement après le débarquement"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Sometime soon after getting off of the plane"
+msgstr "Peu de temps après le débarquement"
+
+# QUESTION PROMPT
+#: 6029 PROMPT
+msgid "Please describe the pain/ discomfort that you felt?"
+msgstr "Veuillez décrire la douleur/la gêne que vous avez ressentie ?"
+
+# QUESTION PROMPT
+#: 6030 PROMPT
+msgid "Do you regularly use oxygen on the plane?"
+msgstr "Utilisez-vous régulièrement de l'oxygène en avion ?"
+
+# QUESTION PROMPT
+#: 6031 PROMPT
+msgid "If so, how much (liters per minute)?"
+msgstr "Dans l'affirmative, combien (litres par minute) ?"
+
+# QUESTION PROMPT
+#: 6032 PROMPT
+msgid "If you do not use oxygen regularly on the plane, do you ever tell airplane staff that you have a lung condition when you get on the plane?"
+msgstr "Si vous n'utilisez pas régulièrement d'oxygène en avion, informez-vous le personnel volant à l'embarquement que vous avez des troubles pulmonaires ?"
+
+# QUESTION PROMPT
+#: 6033 PROMPT
+msgid "Do you take any precautions when you fly (x-ray before flying, etc)?"
+msgstr "Prenez-vous des précautions lorsque vous prenez l'avion (radiographie avant le vol, etc.) ?"
+
+# QUESTION PROMPT
+#: 6034 PROMPT
+msgid "What are these?"
+msgstr "En quoi cela consiste-t-il ?"
+
+# QUESTION PROMPT
+#: 6035 PROMPT
+msgid "Have you had a pneumathorax (collapsed lung) or any other medical problem within a week after flying?"
+msgstr "Avez-vous eu un pneumothorax (poumon collabé) ou autre problème médical dans la semaine suivant un voyage en avion ?"
+
+# QUESTION PROMPT
+#: 6036 PROMPT
+msgid "At what approximate altitude (meters) do you live (1 meter=3.3 feet)?"
+msgstr "À quelle altitude environ vivez-vous ? (1 mètre=3,3 pieds) ?"
+
+# QUESTION PROMPT
+#: 6037 PROMPT
+msgid "Do you feel that this affects your breathing?"
+msgstr "Pensez-vous que votre respiration s'en trouve affectée ?"
+
+# QUESTION PROMPT
+#: 6038 PROMPT
+msgid "When you travel, do you visit locations at high altitude?"
+msgstr "Lorsque vous voyagez, allez-vous dans des endroits à haute altitude ?"
+
+# QUESTION PROMPT
+#: 6039 PROMPT
+msgid "If so, how do you feel"
+msgstr "Dans l'affirmative, comment vous sentez-vous ?"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "No effect"
+msgstr "Aucun effet"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "some discomfort"
+msgstr "une certaine gêne"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "significant difficulty"
+msgstr "des difficultés certaines"
+
+# QUESTION PROMPT
+#: 5997 PROMPT
+msgid "Do you work part-time or full-time?"
+msgstr "Travaillez-vous à temps complet ou partiel ?"
+
+# QUESTION CHOICES
+#: 5997 CHOICES
+msgid "Part time"
+msgstr "Partiel"
+
+# QUESTION CHOICES
+#: 5997 CHOICES
+msgid "Full time"
+msgstr "Complet"
+
+# QUESTION PROMPT
+#: 5993 PROMPT
+msgid "Are you the sole income-earner in your family?"
+msgstr "Êtes-vous la seule à soutenir économiquement votre foyer ?"
+
+# QUESTION PROMPT
+#: 5995 PROMPT
+msgid "Do you have a job outside of the home?"
+msgstr "Avez-vous un travail en dehors de la maison ?"
+
+# QUESTION PROMPT
+#: 5996 PROMPT
+msgid "Do you work from home?"
+msgstr "Travaillez-vous chez vous ?"
+
+# QUESTION PROMPT
+#: 5992 PROMPT
+msgid "Are you the sole home-maker in your family?"
+msgstr "Êtes-vous la seule personne à vous occuper des tâches ménagères dans votre famille ?"
+
+# QUESTION PROMPT
+#: 6014 PROMPT
+msgid "On average, is the climate where you now live wet, temperate or dry?"
+msgstr "En moyenne, le climat dans lequel vous vivez actuellement est-il humide, tempéré ou sec ?"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Rains alot and very humid"
+msgstr "Beaucoup de pluie et d'humidité"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Moderate humidity and rain"
+msgstr "Humidité et pluie modérées"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Dry and desert like"
+msgstr "Sec et désertique"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Humid summers; cold, dry winters"
+msgstr "Étés humides ; hivers froids et secs"
+
+# QUESTION PROMPT
+#: 6015 PROMPT
+msgid "Is the climate on average hot, temperate, or cold?"
+msgstr "Le climat est-il en moyenne chaud, tempéré ou froid ?"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "hot"
+msgstr "chaud"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "temperate"
+msgstr "tempéré"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "cold"
+msgstr "froid"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "variable"
+msgstr "variable"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "unknown"
+msgstr "inconnu"
+
+# QUESTION PROMPT
+#: 6019 PROMPT
+msgid "Other comments on climate and its impact on your health?"
+msgstr "Autres commentaires relatifs au climat et son incidence sur votre santé ?"
+
+# QUESTION PROMPT
+#: 6044 PROMPT
+msgid "Is this due to one or more of the following?"
+msgstr "Quelle en est/sont la/les causes ?"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Anxiety"
+msgstr "Anxiété"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Not being able to breathe well"
+msgstr "Incapacité à respirer correctement"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Waking up frequently to urinate, etc"
+msgstr "Réveil fréquent pour uriner, etc."
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Other pain or discomfort unrelated to breathing"
+msgstr "Autre douleur ou sensation gênante ne concernant pas la respiration"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Demands of work or family"
+msgstr "La pression due au travail et à la famille"
+
+# QUESTION PROMPT
+#: 6047 PROMPT
+msgid "If yes, on how many litres per minute of oxygen?"
+msgstr "Dans l'affirmative, combien de litres d'oxygène par minute ?"
+
+# QUESTION PROMPT
+#: 6049 PROMPT
+msgid "Has this become worse over time?"
+msgstr "Cela a-t-il empiré au fil du temps ?"
+
+# QUESTION PROMPT
+#: 6052 PROMPT
+msgid "Has this sensation become worse over time?"
+msgstr "Cette sensation a-t-elle empiré au fil du temps ?"
+
+# QUESTION PROMPT
+#: 13809 PROMPT
+msgid "Has this sensation become worse over time?"
+msgstr "Cette sensation a-t-elle empiré au fil du temps ?"
+
+# QUESTION PROMPT
+#: 5971 PROMPT
+msgid "Did you use these drugs regularly during more than a year of your life?"
+msgstr "Avez-vous utilisé ces médicaments régulièrement pendant plus d'un an ?"
+
+# QUESTION PROMPT
+#: 5973 PROMPT
+msgid "What remedies?"
+msgstr "Quels remèdes ?"
+
+# QUESTION PROMPT
+#: 5976 PROMPT
+msgid "What treatments or herbs have you tried?"
+msgstr "Quel traitement ou plante avez-vous essayé ?"
+
+# QUESTION PROMPT
+#: 5979 PROMPT
+msgid "What kind or format?"
+msgstr "Sous quel format ?"
+
+# QUESTION PROMPT
+#: 5982 PROMPT
+msgid "For what symptoms or underlying cause?"
+msgstr "Pour quels symptômes ou causes fondamentales ?"
+
+# QUESTION PROMPT
+#: 5981 PROMPT
+msgid "What kind or form?"
+msgstr "Sous quelle forme ?"
+
+# QUESTION PROMPT
+#: 5984 PROMPT
+msgid "If so, please name them"
+msgstr "Dans l'affirmative, veuillez les nommer"
+
+# QUESTION PROMPT
+#: 5955 PROMPT
+msgid "Which ones?"
+msgstr "Lesquels ?"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Chinese medicine"
+msgstr "Médecine chinoise"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Acupuncture"
+msgstr "Acuponcture"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Herbal treatments"
+msgstr "Traitements aux plantes"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Shiatsu massage"
+msgstr "Massages Shiatsu"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Hypnosis"
+msgstr "Hypnose"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Meditation"
+msgstr "Méditation"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 13821 PROMPT
+msgid "Please describe"
+msgstr "Veuillez expliquer"
+
+# QUESTION PROMPT
+#: 5917 PROMPT
+msgid "If yes, what are these symptoms?"
+msgstr "Dans l'affirmative, quels sont ces symptômes ?"
+
+# QUESTION PROMPT
+#: 5918 PROMPT
+msgid "What food / group do you associate with each symptom?"
+msgstr "Quel aliment / groupe associez-vous à chaque symptôme ?"
+
+# QUESTION PROMPT
+#: 5919 PROMPT
+msgid "Which food or food groups do you avoid to alleviate this symptom?"
+msgstr "Quel aliment / groupe évitez-vous de consommer pour atténuer ce symptôme ?"
+
+# QUESTION PROMPT
+#: 5914 PROMPT
+msgid "Are there any foods or food groups you avoid eating?"
+msgstr "Y a-t-il des aliments ou groupes alimentaires que vous évitez de consommer ?"
+
+# QUESTION PROMPT
+#: 5915 PROMPT
+msgid "If yes, do you avoid eating these due to"
+msgstr "Dans l'affirmative, évitez-vous de les consommer"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "General health concerns"
+msgstr "pour des raisons de santé générales"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Weight and body image"
+msgstr "à cause de votre poids et image corporelle"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Effect on lung function"
+msgstr "à cause des effets sur la fonction pulmonaire"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Effect on lymphatic symptoms"
+msgstr "à cause des effets sur les symptômes lymphatiques"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "other symptoms"
+msgstr "autres symptômes"
+
+# QUESTION PROMPT
+#: 5924 PROMPT
+msgid "For how long have you done this (in years)?"
+msgstr "Depuis combien de temps faites-vous cela (en années) ?"
+
+# QUESTION PROMPT
+#: 5925 PROMPT
+msgid "What prompted you to follow this diet?"
+msgstr "Qu'est-ce qui vous a poussé à suivre ce régime ?"
+
+# QUESTION PROMPT
+#: 5926 PROMPT
+msgid "Do you follow this due to a weight concern related to one or more of:"
+msgstr "Le suivez-vous pour des raisons de poids associés à :"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Body image"
+msgstr "Votre image corporelle"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Heart health"
+msgstr "Votre santé cardiaque"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "LAM"
+msgstr "La LAM"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Breathing issues"
+msgstr "Des problèmes respiratoires"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Chyle issues in the thoracic cavity"
+msgstr "Des problèmes de chyles dans la cavité thoracique"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "chyle issues in the abdominal cavity"
+msgstr "Des problèmes de chyles dans la cavité abdominale"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "lymphatic discomfort/ disorder generally"
+msgstr "Des sensations gênantes / troubles lymphatiques généraux"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 5929 PROMPT
+msgid "Do you find it difficult to lose weight?"
+msgstr "Avez-vous des difficultés à perdre du poids ?"
+
+# QUESTION PROMPT
+#: 5930 PROMPT
+msgid "Do you find it difficult to gain weight?"
+msgstr "Avez-vous des difficultés à prendre du poids ?"
+
+# QUESTION PROMPT
+#: 26389 PROMPT
+msgid "Do you regularly take fish oil or any other antioxidants?"
+msgstr "Prenez-vous régulièrement de l'huile de poisson ou autres antioxydants ?"
+
+# QUESTION PROMPT
+#: 5933 PROMPT
+msgid "Please list supplements and symptoms/issues they are meant to address"
+msgstr "Veuillez répertorier les compléments alimentaires que vous prenez ainsi que les symptômes/problèmes qu'ils sont sensés résoudre"
+
+# QUESTION QUESTION-HELP
+#: 5933 QUESTION-HELP
+msgid "Please put one supplement and symptom or condition per line"
+msgstr "Veuillez placer un complément et symptôme/trouble par ligne"
+
+# QUESTION PROMPT
+#: 5946 PROMPT
+msgid "If so, does that stop you from exercising?"
+msgstr "Dans l'affirmative, cela vous empêche-t-il de faire de l'exercice ?"
+
+# QUESTION PROMPT
+#: 5947 PROMPT
+msgid "If you desaturate, what are your symptoms?"
+msgstr "Si vous vous désaturez, quels sont vos symptômes ?"
+
+# QUESTION PROMPT
+#: 5949 PROMPT
+msgid "If so, please describe"
+msgstr "Dans l'affirmative, veuillez expliquer"
+
+# QUESTION PROMPT
+#: 5964 PROMPT
+msgid "If yes, because of what symptom?"
+msgstr "Si oui, à cause de quel symptôme ?"
+
+# QUESTION PROMPT
+#: 5965 PROMPT
+msgid "Did you do pulmonary rehabilitation?"
+msgstr "Avez-vous effectué une rééducation pulmonaire ?"
+
+# QUESTION PROMPT
+#: 5966 PROMPT
+msgid "For how long (in months)?"
+msgstr "Pendant combien de temps (en mois) ?"
+
+# QUESTION PROMPT
+#: 5967 PROMPT
+msgid "Did you find it helpful?"
+msgstr "Avez-vous trouvez cela utile ?"
+
+# QUESTION PROMPT
+#: 5938 PROMPT
+msgid "Is your exercise"
+msgstr "L'exercice que vous prenez est-il "
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Regular"
+msgstr "Régulier"
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Variable"
+msgstr "Variable"
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Infrequent"
+msgstr "Infréquent"
+
+# QUESTION PROMPT
+#: 5939 PROMPT
+msgid "Is this exercise targeted at endurance?"
+msgstr "Est-ce que cet exercice est ciblé pour l'endurance ?"
+
+# QUESTION PROMPT
+#: 5941 PROMPT
+msgid "How many times a week on average?"
+msgstr "Combien de fois par semaine en moyenne ?"
+
+# QUESTION PROMPT
+#: 5942 PROMPT
+msgid "and for how many minutes?"
+msgstr "et pour combien de minutes ?"
+
+# QUESTION PROMPT
+#: 5943 PROMPT
+msgid "Do you not use oxygen normally but use oxygen when you exercise?"
+msgstr "Utilisez-vous de l'oxygène lorsque vous faites de l'exercice uniquement ?Béa"
+
+# QUESTION PROMPT
+#: 5944 PROMPT
+msgid "If you use oxygen normally, do you exercise with oxygen?"
+msgstr "Si vous utilisez de l'oxygène de façon habituelle, faites-vous de l'exercice avec de l'oxygène ?"
+
+# QUESTION PROMPT
+#: 5950 PROMPT
+msgid "Do you experience any discomfort or pain while exercising?"
+msgstr "Ressentez-vous de la gêne ou de la douleur lorsque vous faites de l'exercice ?"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Coughing blood"
+msgstr "Du sang dans la toux"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Acute breathlessness"
+msgstr "Dyspnée aiguë (essoufflement)"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Dizziness"
+msgstr "Vertige"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Nausea"
+msgstr "Nausée"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 5951 PROMPT
+msgid "What is your favorite kind of exercise?"
+msgstr "Quelle est la forme d'exercice que vous préférez ?"
+
+# QUESTION PROMPT
+#: 6063 PROMPT
+msgid "Location of the tissue"
+msgstr "Emplacement du tissu"
+
+# QUESTION PROMPT
+#: 6064 PROMPT
+msgid "Type of sample"
+msgstr "Type d'échantillon"
+
+# QUESTION PROMPT
+#: 6065 PROMPT
+msgid "Date of sample"
+msgstr "Date de l'échantillon"
+
+# QUESTION PROMPT
+#: 5895 PROMPT
+msgid "If yes, please describe"
+msgstr "Si oui, veuillez expliquer"
+
+# QUESTION PROMPT
+#: 5896 PROMPT
+msgid "Do you take any medications for this?"
+msgstr "Prenez-vous des médicaments pour cela ?"
+
+# QUESTION PROMPT
+#: 5897 PROMPT
+msgid "Any other comments on pain and discomfort"
+msgstr "Autres commentaires sur la douleur et la gêne"
+
+# QUESTION PROMPT
+#: 5886 PROMPT
+msgid "What part of your body hurts?"
+msgstr "Quelle partie de votre corps vous fait mal ?"
+
+# QUESTION PROMPT
+#: 5888 PROMPT
+msgid "How often do you experience these pains?"
+msgstr "À quelle fréquence ressentez-vous ces douleurs ?"
+
+# QUESTION PROMPT
+#: 5887 PROMPT
+msgid "During which activities does it hurt?"
+msgstr "Au cours de quelles activités ressentez-vous de la douleur ?"
+
+# QUESTION PROMPT
+#: 5884 PROMPT
+msgid "How would you rate this pain overall?"
+msgstr "Comment noteriez-vous cette douleur globalement ?"
+
+# QUESTION QUESTION-HELP
+#: 5884 QUESTION-HELP
+msgid "Use a scale from 1 to 10, where 1 is the lightest pain you have ever felt and 10 the greatest pain."
+msgstr "Sur une échelle de 1 à 10 où 1 désigne la douleur la plus légère que vous ayez jamais ressentie et 10 la douleur la plus élevée"
+
+# QUESTION PROMPT
+#: 5891 PROMPT
+msgid "Do you take any medications to address this?"
+msgstr "Prenez-vous des médicaments pour résoudre ce problème ?"
+
+# QUESTION PROMPT
+#: 5882 PROMPT
+msgid "If yes, please list the medications"
+msgstr "Si oui, veuillez répertorier ces médicaments"
+
+# QUESTION QUESTION-HELP
+#: 5882 QUESTION-HELP
+msgid "Please enter: medication, dose, duration of time taken. One line per medication"
+msgstr "Veuillez entrer : le médicament, la dose, la durée de prise. Un médicament par ligne, s'il vous plaît"
+
+# QUESTION PROMPT
+#: 5883 PROMPT
+msgid "Do/did these medications have an impact on your pain / discomfort?"
+msgstr "Ces médicaments ont-il (eu) une incidence sur votre douleur / sensation gênante ?"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Completely resolve"
+msgstr "Résolution complète"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Partially resolve"
+msgstr "Résolution partielle"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Partially resolve"
+msgstr "Résolution partielle"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "No effect"
+msgstr "Aucun effet"
+
+# QUESTION PROMPT
+#: 5890 PROMPT
+msgid "Please describe"
+msgstr "Veuillez expliquer"
+
+# QUESTION PROMPT
+#: 5892 PROMPT
+msgid "If yes, please list the medication(s)"
+msgstr "Si oui, veuillez répertorier ce(s) médicament(s)"
+
+# QUESTION QUESTION-HELP
+#: 5892 QUESTION-HELP
+msgid "Please enter: medication, dose, duration of time taken. One line per medication"
+msgstr "Veuillez entrer : le médicament, la dose, la durée de prise. Un médicament par ligne, s'il vous plaît"
+
+# QUESTION PROMPT
+#: 5893 PROMPT
+msgid "Does this medication completely or patially resolve your pain / discomfort?"
+msgstr "Ce médicament résout-il complètement ou partiellement votre douleur / gêne ?"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "Completely resolve"
+msgstr "Résolution complète"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "Partially resolve"
+msgstr "Résolution partielle"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "No effect"
+msgstr "Aucun effet"
+
+# QUESTION PROMPT
+#: 5900 PROMPT
+msgid "If so, which and when?"
+msgstr "Dans l'affirmative, lequel et quand ?"
+
+# QUESTION PROMPT
+#: 5901 PROMPT
+msgid "Has the problem persisted?"
+msgstr "Le problème persiste-t-il ?"
+
+# QUESTION PROMPT
+#: 5902 PROMPT
+msgid "For how many years (1 if recent)?"
+msgstr "Depuis combien d'années (1 si récent) ?"
+
+# QUESTION PROMPT
+#: 5904 PROMPT
+msgid "If so, which disease or condition and who suffered from it?"
+msgstr "Dans l'affirmative, quel trouble ou maladie et qui en a souffert ?"
+
+# QUESTION PROMPT
+#: 5906 PROMPT
+msgid "If yes, from what cause?"
+msgstr "Si oui, quelle est la cause ?"
+
+# QUESTION PROMPT
+#: 5908 PROMPT
+msgid "If yes, which?"
+msgstr "Si oui, laquelle ?"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Asthma"
+msgstr "Asthme"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Emphysema"
+msgstr "Emphysème"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Bronchiectasis"
+msgstr "Bronchectasie"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Other lunch disease"
+msgstr "Autre maladie pulmonaire"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Diabetes"
+msgstr "Diabète"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Epilepsy"
+msgstr "Épilepsie"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Malignancy"
+msgstr "Malignité"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 6124 PROMPT
+msgid "If no, by what form of testing was the possibility that you have Tuberous Sclerosis ruled out?"
+msgstr "Dans la négative, quelle forme d'examen a permis d'éliminer le diagnostic de sclérose tubéreuse ?"
+
+# QUESTION PROMPT
+#: 6125 PROMPT
+msgid "If yes, how old were you?"
+msgstr "Si oui, quel âge aviez-vous ?"
+
+# QUESTION PROMPT
+#: 6126 PROMPT
+msgid "Do you currently have any symptoms associated with your Tuberous Sclerosis?"
+msgstr "Avez-vous à l'heure actuelle des symptômes associés à votre sclérose tubéreuse ?"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Skin problems"
+msgstr "Problèmes de peau"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Epilepsy"
+msgstr "Épilepsie"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Brain tumors"
+msgstr "Tumeurs cérébrales"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Kidney tumors"
+msgstr "Tumeurs rénales"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 6127 PROMPT
+msgid "Do you currently have any symptoms not definitely related to Tuberous Sclerosis?"
+msgstr "Avez-vous à l'heure actuelle des symptômes qui ne sont pas catégoriquement associés à votre sclérose tubéreuse ?"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Skin problems"
+msgstr "Problèmes de peau"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Epilepsy"
+msgstr "Épilepsie"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Brain tumors"
+msgstr "Tumeurs cérébrales"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Kidney tumors"
+msgstr "Tumeurs rénales"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Austism"
+msgstr "Autisme"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 6128 PROMPT
+msgid "If other, please describe"
+msgstr "Si vous avez choisi autre, veuillez expliquer"
+
+# QUESTION PROMPT
+#: 6130 PROMPT
+msgid "Please provide details (current age and relation to you)"
+msgstr "Veuillez fournir des détails (âge actuel et lien de parenté)"
+
+# QUESTION PROMPT
+#: 6132 PROMPT
+msgid "If yes, please choose from the following"
+msgstr "Si oui, faites-un choix ci-dessous"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Skin problems"
+msgstr "Problèmes de peau"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Epilepsy"
+msgstr "Épilepsie"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Brain tumors"
+msgstr "Tumeurs cérébrales"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Kidney tumors"
+msgstr "Tumeurs rénales"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Austism"
+msgstr "Autisme"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 6133 PROMPT
+msgid "Please describe your relationship to the affected members of your family"
+msgstr "Veuillez décrire le lien de parenté avec les membres concernés"
+
+# QUESTION PROMPT
+#: 6135 PROMPT
+msgid "Please describe the condition and date of diagnosis"
+msgstr "Veuillez décrire le problème et indiquer la date du diagnostic"
+
+# QUESTION PROMPT
+#: 6077 PROMPT
+msgid "If so, how many children do you have, if any?"
+msgstr "Dans l'affirmative, combien d'enfants avez-vous, le cas échéant ?"
+
+# QUESTION PROMPT
+#: 6078 PROMPT
+msgid "What are the sexes and birth years of each child?"
+msgstr "Quel est le sexe et l'année de naissance de chaque enfant ?"
+
+# QUESTION QUESTION-HELP
+#: 6078 QUESTION-HELP
+msgid "Please list: sex followed by birth year, one per line"
+msgstr "Veuillez répertorier : le sexe suivi de l'année de naissance, un par ligne"
+
+# QUESTION PROMPT
+#: 6091 PROMPT
+msgid "Do you have any children through"
+msgstr "Avez-vous des enfants"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Adoption"
+msgstr "issus de l'adoption"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Inherited through marriage"
+msgstr "présents suite à un remariage"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Gestational surrogacy"
+msgstr "issus d'une maternité gestationnelle"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 26415 PROMPT
+msgid "If you gave birth to any of your children, what was the date of your last delivery?"
+msgstr "Si vous avez enfanté, quel est la date de votre dernier accouchement ?"
+
+# QUESTION PROMPT
+#: 6080 PROMPT
+msgid "Was your pregnancy uneventful?"
+msgstr "Votre grossesse s'est-elle bien passée ?"
+
+# QUESTION PROMPT
+#: 6081 PROMPT
+msgid "If not, what challenges did you face?"
+msgstr "Dans la négative, à quelles difficultés avez-vous fait face ?"
+
+# QUESTION PROMPT
+#: 6082 PROMPT
+msgid "Do you think these challenges may be LAM-related?"
+msgstr "Pensez-vous que ces difficultés soient en rapport avec la LAM ?"
+
+# QUESTION PROMPT
+#: 6083 PROMPT
+msgid "What makes you think this?"
+msgstr "Pourquoi le pensez-vous ?"
+
+# QUESTION PROMPT
+#: 6085 PROMPT
+msgid "If yes, based on what clues was the diagnosis made?"
+msgstr "Si oui, sur quelles bases le diagnostic a-t-il été fait ?"
+
+# QUESTION PROMPT
+#: 26257 PROMPT
+msgid "Your age at your first pregnancy?"
+msgstr "Votre âge lors de votre première grossesse ?"
+
+# QUESTION PROMPT
+#: 26246 PROMPT
+msgid "Number of pregnancies carried to term"
+msgstr "Nombre de grossesses à terme"
+
+# QUESTION QUESTION-HELP
+#: 26246 QUESTION-HELP
+msgid "This means live births, whether naturally or surgically"
+msgstr "C'est à dire enfants viables, nés de façon naturelle ou chirurgicale"
+
+# QUESTION PROMPT
+#: 6075 PROMPT
+msgid "Number of pregnancies not carried to term"
+msgstr "Nombre de grossesses non menées à terme ?"
+
+# QUESTION QUESTION-HELP
+#: 6075 QUESTION-HELP
+msgid "Please enter a number: 0 if none"
+msgstr "Veuillez entrer un nombre : 0 si aucune"
+
+# QUESTION PROMPT
+#: 26256 PROMPT
+msgid "Have you ever had difficulty becoming pregnant?"
+msgstr "Avez-vous jamais eu des difficultés à tomber enceinte ?"
+
+# QUESTION PROMPT
+#: 26255 PROMPT
+msgid "Have you ever had IVF?"
+msgstr "Avez-vous déjà eu une FIV ?"
+
+# QUESTION QUESTION-HELP
+#: 26255 QUESTION-HELP
+msgid "IVF: In-vitro fertilization"
+msgstr "FIV : Fécondation in vitro"
+
+# QUESTION PROMPT
+#: 26254 PROMPT
+msgid "Were you ever given DES to prevent miscarriage?"
+msgstr "Vous a-t-on jamais donné de DES pour empêcher les fausses-couches ?"
+
+# QUESTION QUESTION-HELP
+#: 26254 QUESTION-HELP
+msgid "DES: Diethylstilbestrol"
+msgstr "DES  Diéthylstilbestrol"
+
+# QUESTION PROMPT
+#: 6106 PROMPT
+msgid "Has this become worse or better over time?"
+msgstr "Cela a-t-il empiré ou cela s'est-il amélioré au fil du temps ?"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Stayed the same"
+msgstr "Pareil"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Worse over time"
+msgstr "Pire au fil du temps"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Better over time"
+msgstr "Mieux au fil du temps"
+
+# QUESTION PROMPT
+#: 6112 PROMPT
+msgid "Are you on the pill now?"
+msgstr "Prenez-vous la pilule à l'heure actuelle ?"
+
+# QUESTION PROMPT
+#: 6109 PROMPT
+msgid "For how many years have you been on birth control pills?"
+msgstr "Depuis combien d'années prenez-vous une pilule contraceptive ?"
+
+# QUESTION PROMPT
+#: 6108 PROMPT
+msgid "For what purpose(s) were you on birth control pills?"
+msgstr "Quelle était la ou les raisons pour lesquelles vous preniez une pilule contraceptive ?"
+
+# QUESTION PROMPT
+#: 6111 PROMPT
+msgid "For what purpose?"
+msgstr "Pour quelle raison ?"
+
+# QUESTION PROMPT
+#: 6119 PROMPT
+msgid "If so, for how long?"
+msgstr "Dans l'affirmative, pendant combien de temps ?"
+
+# QUESTION PROMPT
+#: 6120 PROMPT
+msgid "Also, are you on hormone replacement therapy now?"
+msgstr "En outre, suivez-vous un traitement hormonal substitutif à l'heure actuelle ?"
+
+# QUESTION PROMPT
+#: 6115 PROMPT
+msgid "At what age did you stop getting regular periods?"
+msgstr "À quel âge avez-vous arrêté d'avoir des menstruations régulières ?"
+
+# QUESTION PROMPT
+#: 6116 PROMPT
+msgid "What changes has your body undergone since you stopped menstruating?"
+msgstr "Quels changements corporels avez-vous constaté depuis que vous n'avez plus de menstruations ?"
+
+# QUESTION PROMPT
+#: 6117 PROMPT
+msgid "Do you think any of these changes are LAM-specific?"
+msgstr "Pensez-vous que certains de ces changements sont propres à la LAM ?"
+
+# QUESTION PROMPT
+#: 23551 PROMPT
+msgid "Have you taken medications specifically for LAM?"
+msgstr "Avez-vous pris des médicaments qui sont spécifiquement destinés à la LAM ?"
+
+# QUESTION CHOICES
+#: 23551 CHOICES
+msgid "Yes"
+msgstr "Oui"
+
+# QUESTION CHOICES
+#: 23551 CHOICES
+msgid "No"
+msgstr "Non"
+
+# QUESTION PROMPT
+#: 23549 PROMPT
+msgid "Which types of drugs have you tried?"
+msgstr "Quels types de médicaments avez-vous essayé ?"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Statins"
+msgstr "Statines"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Rapamycin (Sirolimus)"
+msgstr "Rapamycine (Sirolimus)"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Certican R (Everolimus)"
+msgstr "Certican R (Everolimus)"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Doxycycline"
+msgstr "Doxycycline"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Metformin"
+msgstr "Metformin"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Anti-oestrogen"
+msgstr "Anti-œstrogène"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION QUESTION-HELP
+#: 23549 QUESTION-HELP
+msgid "Please select one or more categories"
+msgstr "Veuillez sélectionner une ou plusieurs catégories"
+
+# QUESTION PROMPT
+#: 26416 PROMPT
+msgid "If you have taken LAM medications"
+msgstr "Si vous avez pris des médicaments contre la LAM"
+
+# QUESTION QUESTION-HELP
+#: 26416 QUESTION-HELP
+msgid "Please list the medications, dates you took them and the reason you stopped, if any."
+msgstr "Veuillez répertorier les médicaments, les dates auxquelles vous les avez pris et la raison pour laquelle vous avez arrêté, le cas échéant."
+
+# QUESTION PROMPT
+#: 36601 PROMPT
+msgid "Please share any other observations about your off-label use."
+msgstr "Veuillez nous confier vos observations quant à tout emploi hors AMM."
+
+# QUESTION QUESTION-HELP
+#: 36601 QUESTION-HELP
+msgid "We will use your answers to this question to formulate a more detailed questionnaire for off-label users."
+msgstr "Nous nous servirons de vos réponses à cette question pour élaborer un questionnaire plus complet pour les utilisateurs de thérapies hors AMM."
+
+# QUESTION PROMPT
+#: 23550 PROMPT
+msgid "Please select over the counter drugs you have used"
+msgstr "Sélectionnez les médicaments en vente libre que vous avez utilisés ?"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Aspirin"
+msgstr "Aspirine"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Omega 3 Fatty Acids"
+msgstr "Acides gras Oméga 3"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Other Vitamins"
+msgstr "Autres vitamines"
+
+# QUESTION PROMPT
+#: 23565 PROMPT
+msgid "Weight"
+msgstr "Poids"
+
+# QUESTION QUESTION-HELP
+#: 23565 QUESTION-HELP
+msgid "Weight on a home scale.  "
+msgstr "Poids sur une balance personnelle.  "
+
+# QUESTION PROMPT
+#: 23564 PROMPT
+msgid "Body Temperature"
+msgstr "Température corporelle"
+
+# QUESTION QUESTION-HELP
+#: 23564 QUESTION-HELP
+msgid "Collecting your daily temperature at the same time as your spirometer readings may help us understand the role of hormones in variations in FEV1.  Please use under the tongue readings. "
+msgstr "La prise de votre température en même temps que vos mesures spirométriques pourrait nous aider à comprendre le rôle des hormones dans les variations de VEMS.  Veuillez mesurer votre température sous la langue. "
+
+# QUESTION PROMPT
+#: 32622 PROMPT
+msgid "Do you experience incontinence?"
+msgstr "Souffrez-vous d'incontinence ?"
+
+# QUESTION QUESTION-HELP
+#: 32622 QUESTION-HELP
+msgid "Please answer yes if you have, sometimes or always experience incontinence.  The rest of the questions will help fill in the details."
+msgstr "Répondez oui si vous en souffrez de temps en temps ou tout le temps.  Le reste des questions permettra davantage de détails."
+
+# QUESTION PROMPT
+#: 24513 PROMPT
+msgid "Before you go out, do you consciously think about whether you need to visit the toilet?"
+msgstr "Avant de sortir, vous demandez-vous si vous avez besoin d'aller aux toilettes ?"
+
+# QUESTION CHOICES
+#: 24513 CHOICES
+msgid "Yes"
+msgstr "Oui"
+
+# QUESTION CHOICES
+#: 24513 CHOICES
+msgid "No"
+msgstr "Non"
+
+# QUESTION PROMPT
+#: 24514 PROMPT
+msgid "Do you sometimes go to the toilet "just to be safe" even if you don't feel you need to?"
+msgstr "Allez-vous parfois aux toilettes juste pour être sûre même si vous n'en ressentez pas le besoin ?"
+
+# QUESTION PROMPT
+#: 24516 PROMPT
+msgid "Have you ever worried that you would not get to the toilet in time due to shortness of breath?"
+msgstr "Cela vous est-il déjà arrivé de ne pas être sûre d'arriver à temps parce que vous étiez trop essoufflée "
+
+# QUESTION PROMPT
+#: 24517 PROMPT
+msgid "Have you ever experienced a slight leak of urine due to coughing, sneezing, or laughing?"
+msgstr "Avez-vous jamais constaté des petites fuites urinaires en toussant, éternuant ou riant ?"
+
+# QUESTION PROMPT
+#: 24533 PROMPT
+msgid "Do you avoid certain drinks?"
+msgstr "Évitez-vous certaines boissons ?"
+
+# QUESTION QUESTION-HELP
+#: 24533 QUESTION-HELP
+msgid "Such as coffee, tea, or other diuretics?"
+msgstr "Notamment le café, le thé ou autres diurétiques ?"
+
+# QUESTION PROMPT
+#: 24523 PROMPT
+msgid "Have you been incontinent of feces?"
+msgstr "Souffrez-vous d'incontinence anale ?"
+
+# QUESTION PROMPT
+#: 24520 PROMPT
+msgid "Have you been incontinent of urine?"
+msgstr "Souffrez-vous d'incontinence urinaire ?"
+
+# QUESTION PROMPT
+#: 24522 PROMPT
+msgid "Roughly how often?"
+msgstr "À quelle fréquence environ ?"
+
+# QUESTION PROMPT
+#: 24529 PROMPT
+msgid "On a scale of 1 (least significant) to 10 (most significant) who significant is incontinence compared to the other challenges you face as a LAM patient?"
+msgstr "Sur une échelle de 1 (le moins signifiant) et 10 (le plus signifiant) quelle est l'importance de l'incontinence par rapport aux autres enjeux auxquels vous faites face en tant que malade de la LAM ?"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION PROMPT
+#: 24530 PROMPT
+msgid "Does incontinence prevent you from doing certain things such as shopping or going for walks?"
+msgstr "L'incontinence vous empêche-t-elle de faire certaines choses telles que les courses ou des promenades ?"
+
+# QUESTION PROMPT
+#: 24531 PROMPT
+msgid "Does incontinence limit you in any other way?"
+msgstr "L'incontinence vous limite-t-elle d'autres façons ?"
+
+# QUESTION PROMPT
+#: 24532 PROMPT
+msgid "Do you limit your liquid intake?"
+msgstr "Limitez-vous votre prise de liquide ?"
+
+# QUESTION QUESTION-HELP
+#: 24532 QUESTION-HELP
+msgid "For example, are worried about finding a toilet when you are out, or getting upstairs when you are home?"
+msgstr "Par exemple, craignez-vous de ne pas trouver de toilettes lorsque vous sortez ou de ne pas arriver à monter à l'étage lorsque vous êtes chez vous ?"
+
+# QUESTION PROMPT
+#: 24526 PROMPT
+msgid "Please describe any coping strategies that have helped to reduce or avoid incontinence"
+msgstr "Veuillez expliquer les stratégies d'adaptation que vous avez établies pour vous aider à amenuiser ou éviter l'incontinence."
+
+# QUESTION PROMPT
+#: 24515 PROMPT
+msgid "If you have a chest infection, do you find that you have to be more aware of continence issues than you would be normally?"
+msgstr "Si vous avez une infection pulmonaire, constatez-vous que vous devez faire plus attention aux problèmes d'incontinence que d'habitude ?"
+
+# QUESTION PROMPT
+#: 24518 PROMPT
+msgid "Has you incontinence become worse as your breathlessness increased over the years?"
+msgstr "Votre incontinence a-t-elle empiré à mesure que votre essoufflement a augmenté au fil des années ?"
+
+# QUESTION PROMPT
+#: 26454 PROMPT
+msgid "Is your incontinence cyclical?"
+msgstr "Votre incontinence est-elle cyclique ?"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "None"
+msgstr "Aucune"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Monthly"
+msgstr "Mensuelle"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "With menstruation"
+msgstr "Avec les menstruations"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Seasonal"
+msgstr "Saisonnière"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 24525 PROMPT
+msgid "What do you believe to be the major cause of your incontinence?"
+msgstr "Selon vous, quelle est la cause principale de votre incontinence ?"
+
+# QUESTION PROMPT
+#: 24519 PROMPT
+msgid "Do you think your incontinence occurs because of"
+msgstr "Pensez-vous que votre incontinence survient du fait"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "oxygen desaturation"
+msgstr "d'une désaturation en oxygène"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "breathlessness keeps you from getting there in time"
+msgstr "de l'essoufflement qui vous empêche d'arriver à temps"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "other"
+msgstr "autre"
+
+# QUESTION QUESTION-HELP
+#: 24519 QUESTION-HELP
+msgid "i.e. desaturation leads you to lose control of the muscles"
+msgstr "c-à-d. la désaturation cause la perte de contrôle musculaire"
+
+# QUESTION PROMPT
+#: 24528 PROMPT
+msgid "Would you feel comfortable talking to your doctor or pulmonologist about incontinence problems?"
+msgstr "Seriez-vous mal à l'aise de parler avec votre docteur ou votre pneumologue de vos problèmes d'incontinence ?"
+
+# QUESTION PROMPT
+#: 24527 PROMPT
+msgid "Have you ever asked for professional help with incontinence?"
+msgstr "Avez-vous déjà demandé de l'aide d'un professionnel dans le cadre de votre incontinence ?"
+
+# QUESTION PROMPT
+#: 24817 PROMPT
+msgid "Do you have a family history of osteoporosis?"
+msgstr "Avez-vous des antécédents familiaux d'ostéoporose ?"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "yes"
+msgstr "oui"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "no"
+msgstr "non"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "I don't know"
+msgstr "Je ne sais pas"
+
+# QUESTION PROMPT
+#: 24818 PROMPT
+msgid "Do you suffer from bone loss?"
+msgstr "Souffrez-vous de déperdition osseuse ?"
+
+# QUESTION PROMPT
+#: 25733 PROMPT
+msgid "Do you suffer from back, joint or bone pain?"
+msgstr "Souffrez-vous de douleur au dos, aux articulations ou aux os ?"
+
+# QUESTION PROMPT
+#: 24820 PROMPT
+msgid "In which members of your family?"
+msgstr "Chez quels membres de votre famille ?"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Siblings"
+msgstr "Frères ou sœurs"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Parents"
+msgstr "Parents"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Grandparents"
+msgstr "Grands-parents"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Cousins"
+msgstr "Cousins"
+
+# QUESTION PROMPT
+#: 24821 PROMPT
+msgid "At approximately what age was that diagnosis made for those family members "
+msgstr "À quel âge environ ce diagnostic a-t-il été fait pour ces proches ? "
+
+# QUESTION QUESTION-HELP
+#: 24821 QUESTION-HELP
+msgid "Please list one family member and age per line"
+msgstr "Veuillez indiquer un proche et son âge par ligne"
+
+# QUESTION PROMPT
+#: 25727 PROMPT
+msgid "Have you ever had a bone density scan?"
+msgstr "Avez-vous déjà fait une ostéodensitométrie ?"
+
+# QUESTION PROMPT
+#: 24825 PROMPT
+msgid "Has a clinician said that this may be related to LAM?"
+msgstr "Un clinicien vous a t-il indiqué que cela pourrait avoir un rapport avec la LAM ?"
+
+# QUESTION PROMPT
+#: 24826 PROMPT
+msgid "If so, what connection was described between LAM and bone loss?"
+msgstr "Dans l'affirmative, quel rapport vous a été expliqué entre la LAM et la déperdition osseuse ?"
+
+# QUESTION PROMPT
+#: 24823 PROMPT
+msgid "Any other comments on your loss of bone density?"
+msgstr "Autres commentaires sur votre perte de densité osseuse ?"
+
+# QUESTION PROMPT
+#: 24836 PROMPT
+msgid "Date of diagnosis?"
+msgstr "Date du diagnostic ?"
+
+# QUESTION PROMPT
+#: 24837 PROMPT
+msgid "What test was used to arrive at your diagnosis?"
+msgstr "Quel examen a été réalisé pour arriver à ce diagnostic ?"
+
+# QUESTION PROMPT
+#: 24838 PROMPT
+msgid "Name and address of diagnosing clinician"
+msgstr "Nom et adresse du clinicien diagnostiqueur"
+
+# QUESTION PROMPT
+#: 24839 PROMPT
+msgid "Are you now taking any prescription medication for this condition?"
+msgstr "Prenez-vous à l'heure actuelle des médicaments sur ordonnance pour ce problème ?"
+
+# QUESTION PROMPT
+#: 24844 PROMPT
+msgid "Have you taken medication for osteoporosis in the past that you are no longer taking?"
+msgstr "Preniez-vous des médicaments pour l'ostéoporose que vous ne prenez plus ?"
+
+# QUESTION PROMPT
+#: 25732 PROMPT
+msgid "Have you ever taken bisphosophonates?"
+msgstr "Avez-vous déjà pris des bisphosphonates "
+
+# QUESTION PROMPT
+#: 25731 PROMPT
+msgid "Are you currently taking bisphosphonates?"
+msgstr "Prenez-vous des bisphosphonates à l'heure actuelle ?"
+
+# QUESTION PROMPT
+#: 24841 PROMPT
+msgid "Which ones?"
+msgstr "Lesquels ?"
+
+# QUESTION PROMPT
+#: 24843 PROMPT
+msgid "Has this ever been recommended?"
+msgstr "Cela a-t-il fait l'objet d'une recommandation ?"
+
+# QUESTION PROMPT
+#: 24846 PROMPT
+msgid "Medication?"
+msgstr "Médicament ?"
+
+# QUESTION PROMPT
+#: 24847 PROMPT
+msgid "Date when medication started?"
+msgstr "Date du début de prise du médicament ?"
+
+# QUESTION PROMPT
+#: 24848 PROMPT
+msgid "Date when medication stopped?"
+msgstr "Date d'arrêt de prise du médicament ?"
+
+# QUESTION PROMPT
+#: 24849 PROMPT
+msgid "Reason for stopping medication?"
+msgstr "Raison de l'arrêt de la prise du médicament ?"
+
+# QUESTION PROMPT
+#: 24851 PROMPT
+msgid "Do you currently take multivitamins?"
+msgstr "Prenez-vous à l'heure actuelle des multivitamines ?"
+
+# QUESTION PROMPT
+#: 24852 PROMPT
+msgid "Not counting multi-vitamins, do you take any calcium or vitamin D supplements?"
+msgstr "Sans compter les multivitamines, prenez-vous des compléments de calcium et de vitamine D ?"
+
+# QUESTION PROMPT
+#: 24853 PROMPT
+msgid "Do you take any other vitamin supplements?"
+msgstr "Prenez-vous d'autres compléments vitaminés ?"
+
+# QUESTION PROMPT
+#: 24854 PROMPT
+msgid "Do you regularly consume any of the following foods?"
+msgstr "Consommez-vous régulièrement les aliments suivants ?"
+
+# QUESTION CHOICES
+#: 24854 CHOICES
+msgid "Green, leafy vegetables"
+msgstr "Légumes à feuilles"
+
+# QUESTION CHOICES
+#: 24854 CHOICES
+msgid "Other bone-health related foods"
+msgstr "Autres aliments associés à la santé des os"
+
+# QUESTION PROMPT
+#: 24856 PROMPT
+msgid "Vitamin D content?"
+msgstr "Teneur en vitamine D ?"
+
+# QUESTION PROMPT
+#: 24857 PROMPT
+msgid "Calcium content?"
+msgstr "Teneur en calcium ?"
+
+# QUESTION PROMPT
+#: 24859 PROMPT
+msgid "What are the supplements called?"
+msgstr "Comment s'appellent ces compléments ?"
+
+# QUESTION PROMPT
+#: 24860 PROMPT
+msgid "What formulation?"
+msgstr "Quelle composition ?"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Vitamin D"
+msgstr "Vitamine D"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Calcium"
+msgstr "Calcium"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Vitamin D & Calcium"
+msgstr "Vitamine D et calcium"
+
+# QUESTION PROMPT
+#: 24861 PROMPT
+msgid "Amount of Vitamin D taken each day?"
+msgstr "Quantité de vitamine D prise chaque jour ?"
+
+# QUESTION PROMPT
+#: 24862 PROMPT
+msgid "Amount of Calcium taken each day?"
+msgstr "Quantité de calcium prise chaque jour ?"
+
+# QUESTION PROMPT
+#: 25606 PROMPT
+msgid "Are you currently taking any prescription medications?"
+msgstr "Prenez-vous à l'heure actuelle des médicaments sur ordonnance ?"
+
+# QUESTION PROMPT
+#: 25609 PROMPT
+msgid "Are you regularly taking vitamins or supplements?"
+msgstr "Prenez-vous régulièrement des vitamines ou des compléments ?"
+
+# QUESTION PROMPT
+#: 25608 PROMPT
+msgid "Please list the prescription medications you are taking"
+msgstr "Veuillez répertorier les médicaments sur ordonnance que vous prenez"
+
+# QUESTION QUESTION-HELP
+#: 25608 QUESTION-HELP
+msgid "To give us more information on your prescriptions, please go to our medication diary and enter the details of your current and past prescription medication use"
+msgstr "Pour nous donner davantage d'informations sur vos ordonnances, veuillez saisir les renseignements portant sur vos médicaments actuels et passés dans votre carnet des médicaments."
+
+# QUESTION PROMPT
+#: 6107 PROMPT
+msgid "Have you ever been on birth control pills?"
+msgstr "Avez-vous déjà pris des pilules contraceptives ?"
+
+# QUESTION PROMPT
+#: 25622 PROMPT
+msgid "Have you ever used female hormones other than oral contraceptives?"
+msgstr "Avez-vous déjà utilisé des hormones femelles autres que des contraceptifs oraux ?"
+
+# QUESTION PROMPT
+#: 25629 PROMPT
+msgid "Are you currently using over-the-counter hormone replacements or to treat post-menopausal symptoms?"
+msgstr "Utilisez-vous à l'heure actuelle des hormone de substitution sans ordonnance pour traiter, par exemple, les symptômes de la postménopause ?"
+
+# QUESTION QUESTION-HELP
+#: 25629 QUESTION-HELP
+msgid "For example herbal, natural or soy-based preparations or supplements?"
+msgstr "Par exemple, des préparations ou des compléments naturels à base de plantes ou de soja ?"
+
+# QUESTION PROMPT
+#: 25702 PROMPT
+msgid "Please rate your average level of daily stress"
+msgstr "Veuillez évaluer votre niveau de stress quotidien moyen"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION QUESTION-HELP
+#: 25702 QUESTION-HELP
+msgid "Where 1 is no stress and 10 is the highest you have experienced."
+msgstr "Où 1 indique aucun stress et 10 le niveau le plus haut que vous ayez jamais ressenti."
+
+# QUESTION PROMPT
+#: 25703 PROMPT
+msgid "What is the primary cause of your stress?"
+msgstr "Quelle est la cause principale de votre stress ?"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Job"
+msgstr "Travail"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Home"
+msgstr "Maison"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Family"
+msgstr "Famille"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Injury"
+msgstr "Blessure"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 25704 PROMPT
+msgid "Has your general stress level increased since your LAM diagnosis?"
+msgstr "Votre niveau de stress général a-t-il augmenté depuis votre diagnostic de la LAM ?"
+
+# QUESTION PROMPT
+#: 25705 PROMPT
+msgid "What is your primary method of coping with stress?"
+msgstr "Quelle est votre réponse d'adaptation principale face au stress ?"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Reading"
+msgstr "Lecture"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Exercise"
+msgstr "Exercice"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Television"
+msgstr "Télévision"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Spending time with family"
+msgstr "Passer du temps en famille"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Spending time with friends"
+msgstr "Passer du temps entre ami(e)s"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Work"
+msgstr "Travail"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "None"
+msgstr "Aucune"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 26917 PROMPT
+msgid "What estrogens did you take?"
+msgstr "Quels œstrogènes avez-vous pris ?"
+
+# QUESTION QUESTION-HELP
+#: 26917 QUESTION-HELP
+msgid "Please enter one medication and the dates taken, one per line"
+msgstr "Veuillez indiquer un médicament par ligne avec les dates de prise"
+
+# QUESTION PROMPT
+#: 25625 PROMPT
+msgid "What prompted you to take estrogens?"
+msgstr "Qu'est-ce qui vous a poussé à prendre des oestrogènes ?"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Menstrual problems"
+msgstr "Problèmes menstruels"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Bone problems"
+msgstr "Problèmes osseux"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Hysterectomy"
+msgstr "Hystérectomie"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Cancer"
+msgstr "Cancer"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 25626 PROMPT
+msgid "At what age did you first take estrogens?"
+msgstr "Quel âge aviez-vous lorsque vous avez pris des œstrogènes pour la première fois ?"
+
+# QUESTION PROMPT
+#: 25627 PROMPT
+msgid "How long did you take estrogens?"
+msgstr "Pendant combien de temps avez-vous pris des oestrogènes ?"
+
+# QUESTION PROMPT
+#: 25628 PROMPT
+msgid "How were the estrogens administered?"
+msgstr "Comment les œstrogènes ont-il été administrés ?"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Injection"
+msgstr "Injection"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Cream"
+msgstr "Crème"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Pill"
+msgstr "Comprimé"
+
+# QUESTION PROMPT
+#: 25631 PROMPT
+msgid "What over the counter estrogens?"
+msgstr "Et, en ce qui concerne les œstrogènes sans ordonnance ?"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Soy estrogen products"
+msgstr "Produits œstrogènes à base de soja"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Dong quai"
+msgstr "Dong quai"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Natural progesterone cream"
+msgstr "Crème à la progestérone naturelle"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Wild yam cream"
+msgstr "Crème à l'igname sauvage"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Black cohash"
+msgstr "Cohosh noir (actée à grappes noires)"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 25735 PROMPT
+msgid "Where do you primarily experience your pain?"
+msgstr "Où ressentez-vous principalement la douleur ?"
+
+# QUESTION PROMPT
+#: 25736 PROMPT
+msgid "How often does the pain occur?"
+msgstr "À quelle fréquence la douleur survient-elle ?"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Constant"
+msgstr "Constamment"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Daily"
+msgstr "Quotidiennement"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Monthly"
+msgstr "Mensuellement"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Occasionally"
+msgstr "Occasionnellement"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 25739 PROMPT
+msgid "Does your pain vary cyclically?"
+msgstr "La douleur varie-t-elle selon les cycles ?"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "No"
+msgstr "Non"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Monthly"
+msgstr "Mensuellement"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Seasonally"
+msgstr "Saisonnièrement"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 25737 PROMPT
+msgid "How would you rate the pain on average?"
+msgstr "Comment noteriez-vous cette douleur en moyenne ?"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION QUESTION-HELP
+#: 25737 QUESTION-HELP
+msgid "Please rate from 1 to 10 where 1 is the most mild and 10 is the worst pain you have ever felt"
+msgstr "Veuillez noter de 1 à 10 où 1 indique la douleur la plus légère et 10 la douleur la plus forte que vous ayez jamais ressentie"
+
+# QUESTION PROMPT
+#: 25738 PROMPT
+msgid "How has your pain changed over the past year?"
+msgstr "De quelle façon votre douleur a-t-elle changé au fil des ans ?"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Same"
+msgstr "Pareil"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Better"
+msgstr "Mieux"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Worse"
+msgstr "Pire"
+
+# QUESTION PROMPT
+#: 26211 PROMPT
+msgid "FEV1 - trial 1"
+msgstr "VEMS - essai 1"
+
+# QUESTION PROMPT
+#: 26212 PROMPT
+msgid "FEV6 - trial 1"
+msgstr "VEM6S - essai 1"
+
+# QUESTION PROMPT
+#: 26213 PROMPT
+msgid "FEV1 - trial 2"
+msgstr "VEMS - essai 2"
+
+# QUESTION PROMPT
+#: 26214 PROMPT
+msgid "FEV6 - trial 2"
+msgstr "VEM6S - essai 2"
+
+# QUESTION PROMPT
+#: 26215 PROMPT
+msgid "FEV1 - trial 3"
+msgstr "VEMS - essai 3"
+
+# QUESTION PROMPT
+#: 26216 PROMPT
+msgid "FEV6 - trial 3"
+msgstr "VEM6S - essai 3"
+
+# QUESTION PROMPT
+#: 26220 PROMPT
+msgid "Did your travel routine vary yesterday?"
+msgstr "Vos habitudes de sortie ont-elles changé hier ?"
+
+# QUESTION QUESTION-HELP
+#: 26220 QUESTION-HELP
+msgid "You need to describe only major changes, such as flights, long car trips, etc."
+msgstr "Ne décrivez que les changements importants tels que vols en avion, longs trajets en voiture, etc."
+
+# QUESTION PROMPT
+#: 26222 PROMPT
+msgid "Did your altitude change significantly?"
+msgstr "Votre altitude a-t-elle changé de façon significative ?"
+
+# QUESTION QUESTION-HELP
+#: 26222 QUESTION-HELP
+msgid "Enter the variation, or 0 if no change.  For example a typical commercial airplane flies up to 12000 meters or 35000 feet."
+msgstr "Saisissez l'écart ou entrez 0 si aucun changement.  Par exemple, un avion commercial traditionnel se déplace à une altitude de 12 000 mètres ou 35 000 pieds."
+
+# QUESTION PROMPT
+#: 26223 PROMPT
+msgid "Did you fly?"
+msgstr "Avez-vous pris l'avion ?"
+
+# QUESTION PROMPT
+#: 26224 PROMPT
+msgid "Any other changes in your routine?"
+msgstr "Autres changements dans vos habitudes ?"
+
+# QUESTION PROMPT
+#: 26226 PROMPT
+msgid "How long were you in the air?"
+msgstr "Combien de temps êtes-vous restée en altitude ?"
+
+# QUESTION PROMPT
+#: 26227 PROMPT
+msgid "Did your breathing change during the flight?"
+msgstr "Votre respiration s'est-elle modifiée pendant le vol ?"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "normal"
+msgstr "normale"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "less difficult"
+msgstr "moins difficile"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "varied"
+msgstr "variée"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "more difficult"
+msgstr "plus difficile"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "extremely difficult"
+msgstr "extrêmement difficile"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "pnemothorax"
+msgstr "pneumothorax"
+
+# QUESTION PROMPT
+#: 26228 PROMPT
+msgid "How did you feel after the flight?"
+msgstr "Comment vous sentiez-vous après le vol ?"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "no change"
+msgstr "pas de changement"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "worse"
+msgstr "pire"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "better"
+msgstr "mieux"
+
+# QUESTION PROMPT
+#: 26230 PROMPT
+msgid "Were you or did you feel sick yesterday?"
+msgstr "Étiez-vous ou vous sentiez-vous indisposée hier ?"
+
+# QUESTION PROMPT
+#: 26231 PROMPT
+msgid "Was your energy level:"
+msgstr "Votre niveau d'énergie était :"
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Normal"
+msgstr "Normal"
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Higher than usual"
+msgstr "Plus élevé que d'habitude"
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Lower than usual"
+msgstr "Plus faible que d'habitude"
+
+# QUESTION PROMPT
+#: 26233 PROMPT
+msgid "Type of sickness"
+msgstr "Type d'indisposition"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "not sure"
+msgstr "incertaine"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "cold"
+msgstr "rhume"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "flu"
+msgstr "grippe"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "physical injury"
+msgstr "blessure"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "other"
+msgstr "autre"
+
+# QUESTION QUESTION-HELP
+#: 26233 QUESTION-HELP
+msgid "The goal of this section is to capture any ordinary ailments that may effect your FEV or temperature readings or other daily information."
+msgstr "L'objectif de cette section est de rassembler les affections ordinaires qui pourraient avoir une incidence sur votre VEM, température ou autres mesures quotidiennes."
+
+# QUESTION PROMPT
+#: 26236 PROMPT
+msgid "Symptoms of sickness"
+msgstr "Symptômes de l'indisposition"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Runny nose"
+msgstr "Nez qui coule"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Moderate cough"
+msgstr "Toux modérée"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Severe cough"
+msgstr "Toux sévère"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Cough with phlegm or fluid"
+msgstr "Toux accompagnée de mucus ou sécrétion"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Fever (more than 102F/39C)"
+msgstr "Fièvre (supérieure à 102 ºF/39º C)"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Diarrhea"
+msgstr "Diarrhée"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Cramping"
+msgstr "Crampes"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Vomiting"
+msgstr "Vomissements"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 26235 PROMPT
+msgid "Please describe sickness or injury"
+msgstr "Veuillez décrire votre indisposition ou blessure"
+
+# QUESTION PROMPT
+#: 26238 PROMPT
+msgid "Please describe your other symptoms"
+msgstr "Veuillez décrire les autres symptômes"
+
+# QUESTION PROMPT
+#: 26240 PROMPT
+msgid "Any variations in your normal diet?"
+msgstr "Changement dans votre régime alimentaire habituel ?"
+
+# QUESTION QUESTION-HELP
+#: 26240 QUESTION-HELP
+msgid "We are leaving this question open for now to see what you report.  We will add more detailed questions here later."
+msgstr "Nous laissons cette question ouverte pour l'instant pour analyser vos réponses.  Nous ajouterons des questions plus détaillées par la suite."
+
+# QUESTION PROMPT
+#: 26243 PROMPT
+msgid "Did you miss any medications yesterday?"
+msgstr "Avez-vous oublié de prendre des médicaments hier ?"
+
+# QUESTION PROMPT
+#: 26242 PROMPT
+msgid "Please describe your dietary changes"
+msgstr "Veuillez décrire votre changement d'alimentation"
+
+# QUESTION QUESTION-HELP
+#: 26242 QUESTION-HELP
+msgid "We are leaving this question open for now to see what you report.  We will add more detailed questions here later."
+msgstr "Nous laissons cette question ouverte pour l'instant pour analyser vos réponses.  Nous ajouterons des questions plus détaillées par la suite."
+
+# QUESTION PROMPT
+#: 26245 PROMPT
+msgid "Please describe the medication you missed"
+msgstr "Veuillez indiquer les médicaments que vous avez oubliés"
+
+# QUESTION PROMPT
+#: 6090 PROMPT
+msgid "If not, how many years after your child was born were you diagnosed?"
+msgstr "Dans la négative, combien d'années après la naissance de votre enfant avez-vous été diagnostiquée ?"
+
+# QUESTION PROMPT
+#: 6089 PROMPT
+msgid "Did you use your husband/partner's sperm?"
+msgstr "S'agissait-il du sperme de votre conjoint/partenaire ?"
+
+# QUESTION PROMPT
+#: 6094 PROMPT
+msgid "Did you use your own eggs?"
+msgstr "S'agissait-il de vos propres oeufs ?"
+
+# QUESTION PROMPT
+#: 6087 PROMPT
+msgid "If yes, do you think hormonal stimulation to harvest your eggs for transfer progressed your disease?"
+msgstr "Si oui, pensez-vous que la stimulation hormonale pour prélever vos œufs en vue du transfert a fait progresser votre maladie ?"
+
+# QUESTION PROMPT
+#: 6086 PROMPT
+msgid "If yes, what supports that belief?"
+msgstr "Si oui, qu'est-ce qui étaye/appuie cette conviction ?"
+
+# QUESTION PROMPT
+#: 6093 PROMPT
+msgid "Was your surrogate a relative?"
+msgstr "Avez-vous un lien de parenté avec votre mère porteuse ?"
+
+# QUESTION PROMPT
+#: 26251 PROMPT
+msgid "Please describe "
+msgstr "Veuillez expliquer "
+
+# QUESTION PROMPT
+#: 26260 PROMPT
+msgid "Age you first took birth control pills?"
+msgstr "Âge auquel vous avez commencé à prendre la pilule contraceptive ?"
+
+# QUESTION PROMPT
+#: 26261 PROMPT
+msgid "How many years did you take them?"
+msgstr "Pendant combien d'années les avez-vous pris ?"
+
+# QUESTION QUESTION-HELP
+#: 26261 QUESTION-HELP
+msgid "Total years, even if you didn't for some years"
+msgstr "Total des années, même si vous avez interrompu le traitement pendant quelques années"
+
+# QUESTION PROMPT
+#: 26262 PROMPT
+msgid "What kind or brand did or do you take?"
+msgstr "Quelle sorte ou quelle marque avez-vous pris ou prenez-vous ?"
+
+# QUESTION PROMPT
+#: 26263 PROMPT
+msgid "If you stopped taking them, what was the reason?"
+msgstr "Si vous avez arrêté, quelle en était la raison ?"
+
+# QUESTION PROMPT
+#: 26264 PROMPT
+msgid "If you stopped taking them, did you have irregular or painful periods when you stopped?"
+msgstr "Si vous avez arrêté, souffriez-vous de menstruations douloureuse ou irrégulières ?"
+
+# QUESTION PROMPT
+#: 26265 PROMPT
+msgid "Are you still taking birth control pills?"
+msgstr "Prenez-vous toujours la pilule contraceptive ?"
+
+# QUESTION PROMPT
+#: 26332 PROMPT
+msgid "How does your breathing feel today?"
+msgstr "Comment se trouve votre respiration aujourd'hui ?"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Less difficult"
+msgstr "Moins difficile"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Normal"
+msgstr "Normale"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "More difficult"
+msgstr "Plus difficile"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Very difficult"
+msgstr "Très difficile"
+
+# QUESTION QUESTION-HELP
+#: 26332 QUESTION-HELP
+msgid "Your answer to this question should be made relative to your normal experience of breathing; if your breathing is always labored, and hasn't changed, then you should use 'normal' as your answer."
+msgstr "Votre réponse doit se rapporter à votre façon normale de respirer ; si votre souffle est toujours laborieux et n'a pas changé, vous devez choisir la réponse " normale "."
+
+# QUESTION PROMPT
+#: 26333 PROMPT
+msgid "Menstrual symptoms"
+msgstr "Symptômes menstruelles"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "None"
+msgstr "Aucun"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Spotting"
+msgstr "Petites pertes sanglantes"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Bleeding"
+msgstr "Saignements"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Heavy bleeding"
+msgstr "Saignements importants"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 26451 PROMPT
+msgid "Did you experience incontinence yesterday?"
+msgstr "Avez-vous constaté une incontinence hier ?"
+
+# QUESTION PROMPT
+#: 26388 PROMPT
+msgid "Please record any observations or thoughts you have today"
+msgstr "Veuillez inscrire toute observation ou pensée que vous avez eues aujourd'hui"
+
+# QUESTION QUESTION-HELP
+#: 26388 QUESTION-HELP
+msgid "This can be regarding your monthly cycle, the nature of your symptoms or anything else you feel is relevant."
+msgstr "Cela peut se rapporter à votre cycle mensuel, à la nature de vos symptôme ou à tout autre chose que vous jugez pertinent"
+
+# QUESTION PROMPT
+#: 26400 PROMPT
+msgid "Are you currently sexually active?"
+msgstr "Êtes-vous sexuellement active actuellement ?"
+
+# QUESTION PROMPT
+#: 26402 PROMPT
+msgid "Does sexual activity leave you unusually breathless or unwell?"
+msgstr "L'activité sexuelle vous laisse-t-elle essoufflée ou indisposée ?"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "No"
+msgstr "Non"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "Immediately after"
+msgstr "Tout de suite après"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "For hours"
+msgstr "Pendant des heures"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "For days"
+msgstr "Pendant des jours"
+
+# QUESTION PROMPT
+#: 26405 PROMPT
+msgid "Would you be willing to release this tissue?"
+msgstr "Seriez-vous disposée à nous remettre ce tissu ?"
+
+# QUESTION PROMPT
+#: 6062 PROMPT
+msgid "Is a sample of your tissue available"
+msgstr "Un échantillon tissulaire est-il disponible ?"
+
+# QUESTION PROMPT
+#: 26408 PROMPT
+msgid "Do you ever cough up blood after exercise?"
+msgstr "Avez-vous jamais expectoré du sang après avoir fait de l'exercice ?"
+
+# QUESTION PROMPT
+#: 26409 PROMPT
+msgid "Do you regularly cough up blood at the same point in your menstrual cycle?"
+msgstr "Expectorez-vous régulièrement du sang au même moment au cours de vos menstruations ?"
+
+# QUESTION PROMPT
+#: 26411 PROMPT
+msgid "Have you ever been treated for any form of malignancy?"
+msgstr "Avez-vous été traitée pour une forme de maladie maligne ?"
+
+# QUESTION PROMPT
+#: 26414 PROMPT
+msgid "If you have had chemotherapy, what drugs were used?"
+msgstr "Si vous avez fait de la chimiothérapie, quels médicaments ont-été utilisés ?"
+
+# QUESTION QUESTION-HELP
+#: 26414 QUESTION-HELP
+msgid "Please enter one drug name per line"
+msgstr "Veuillez inscrire un nom de médicament par ligne"
+
+# QUESTION PROMPT
+#: 26413 PROMPT
+msgid "Has this involved one or more of"
+msgstr "Ce problème a-t-il donné lieu à"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Surgery"
+msgstr "Une chirurgie"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Radiotherapy"
+msgstr "De la radiothérapie"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Chemotherapy"
+msgstr "De la chimiothérapie"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Other"
+msgstr "Autre"
+
+# QUESTION PROMPT
+#: 26456 PROMPT
+msgid "Do you have Diabetes?"
+msgstr "Êtes-vous diabétique ?"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "No"
+msgstr "Non"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "Yes, Type I"
+msgstr "Oui, de type I"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "Yes, Type II"
+msgstr "Oui, de type II"
+
+# QUESTION PROMPT
+#: 26458 PROMPT
+msgid "If so, do you take medication for your diabetes?"
+msgstr "Dans l'affirmative, prenez-vous des médicaments pour votre diabète ?"
+
+# QUESTION PROMPT
+#: 26459 PROMPT
+msgid "Please list medications and dates taken"
+msgstr "Veuillez répertorier les médicaments ainsi que les dates de prise"
+
+# QUESTION QUESTION-HELP
+#: 26459 QUESTION-HELP
+msgid "enter one medication and start or end dates per line.  If current, say current."
+msgstr "inscrivez un médicament et dates de début ou de fin par ligne  Si vous le prenez toujours, saisissez Actuel."
+
+# QUESTION PROMPT
+#: 26463 PROMPT
+msgid "What condition led to your LAM diagnosis?"
+msgstr "Quelle est le problème qui a mené au diagnostic de la LAM chez vous ?"
+
+# QUESTION PROMPT
+#: 26470 PROMPT
+msgid "Date of last scan"
+msgstr "Date de la dernière densitométrie"
+
+# QUESTION PROMPT
+#: 26471 PROMPT
+msgid "Were your bone density scan results"
+msgstr "Les résultats de votre ostéodensitométrie étaient"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Normal"
+msgstr "Normaux"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Abnormal"
+msgstr "Anormaux"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Don't know"
+msgstr "Ne sais pas"
+
+# QUESTION PROMPT
+#: 26472 PROMPT
+msgid "What was your T score?"
+msgstr "Quel était votre T score ?"
+
+# QUESTION QUESTION-HELP
+#: 26472 QUESTION-HELP
+msgid "Leave blank if you don't know"
+msgstr "Ne renseignez pas si vous ne le savez pas"
+
+# QUESTION PROMPT
+#: 26473 PROMPT
+msgid "What was your Z score?"
+msgstr "Quel était votre Z score ?"
+
+# QUESTION QUESTION-HELP
+#: 26473 QUESTION-HELP
+msgid "Leave blank if you don't know"
+msgstr "Ne renseignez pas si vous ne le savez pas"
+
+# QUESTION PROMPT
+#: 26919 PROMPT
+msgid "What was your last cholesterol measurement?"
+msgstr "Quel était votre taux de cholestérol le plus récent ?"
+
+# QUESTION PROMPT
+#: 26920 PROMPT
+msgid "What was the date of your last test?"
+msgstr "Quand avez-vous passé votre dernier examen ?"
+
+# QUESTION QUESTION-HELP
+#: 26920 QUESTION-HELP
+msgid "Leave both of these blank if you don't know."
+msgstr "Ne renseignez pas ces deux points si vous ne savez pas."
+
+# QUESTION PROMPT
+#: 30004 PROMPT
+msgid "If you have been tested for Alpha-1 Antitrypsin Deficiency, what were your blood levels and phenotype? "
+msgstr "Si vous avez été testé pour la carence en antitrypsine Alpha-1, quels étaient vos niveaux sanguins et phénotype? "
+
+# QUESTION PROMPT
+#: 30005 PROMPT
+msgid "Have you ever had a spontaneous pneumothorax?"
+msgstr "Avez-vous déjà souffert d'un pneumothorax spontané ?"

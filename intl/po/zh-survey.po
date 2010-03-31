@@ -1,0 +1,170 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zh-survey.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# SURVEY NAME
+#: 5842 NAME
+msgid "Home Pulmonary Function Testing"
+msgstr "家庭肺功能检查"
+
+# SURVEY DESCRIPTION
+#: 5842 DESCRIPTION
+msgid "This form will enable you to keep a history of all  pulmonary function tests you take at home.  You can input all your tests over time.  This data is critically important for us to establish the potential benefit of any given therapy for LAM.  We will provide the ability for you to visualize this history in the explore section over time.\n"
+msgstr "这份表格会帮助您记录您在家中所作的所有肺功能检查。您可以输入以往做过的所有检查的数据。该数据非常有助于我们考察任一特定 LAM 疗法的潜在治疗效益。随着时间的推移我们会在本网站的探索部分将这一历史记录以可视化形式展示给您。\n"
+
+# SURVEY HELP
+#: 5842 HELP
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
+msgstr "实验室检查的数据应输入到临床检查记录日志中。如您对该日志有疑问请致信 lamsight-admin@media.mit.edu。   "
+
+# SURVEY NAME
+#: 5875 NAME
+msgid "General Personal and Family Information"
+msgstr "个人和家庭总体信息"
+
+# SURVEY DESCRIPTION
+#: 5875 DESCRIPTION
+msgid "General personal physical profile and experiences of any form of pain and\ndiscomfort "
+msgstr "个人总体身体状况和任何形式的疼痛及\n不适经历 "
+
+# SURVEY NAME
+#: 5910 NAME
+msgid "Dietary Information"
+msgstr "饮食信息"
+
+# SURVEY DESCRIPTION
+#: 5910 DESCRIPTION
+msgid " Information about diet, dietary habits, use of supplements and relationship\nto health (use of vitamins, control of cholesterol, avoided foods, etc.)."
+msgstr " 关于日常饮食、饮食习惯、营养补充剂使用状况以及与\n健康的关系（服用维生素、控制胆固醇、饮食禁忌等）几方面的信息。"
+
+# SURVEY NAME
+#: 5935 NAME
+msgid "Exercise and Fitness"
+msgstr "锻炼和健身"
+
+# SURVEY DESCRIPTION
+#: 5935 DESCRIPTION
+msgid " Physical exercise profile (sports - frequency, intensity, etc.) and general\nfitness information"
+msgstr " 体育锻炼状况（运动——频率、强度等）和总体\n健身信息"
+
+# SURVEY NAME
+#: 5968 NAME
+msgid "Complementary and Alternative Medicines"
+msgstr "补充和替代医药"
+
+# SURVEY DESCRIPTION
+#: 5968 DESCRIPTION
+msgid " Descriptions of uses and perceived effects of complementary and alternative\nmedicine"
+msgstr " 补充和替代\n医药使用情况和效果感受的描述"
+
+# SURVEY NAME
+#: 5988 NAME
+msgid "Behavior and Environment"
+msgstr "生活习惯和环境因素"
+
+# SURVEY DESCRIPTION
+#: 5988 DESCRIPTION
+msgid "This survey covers daily activities (work schedule, level of daily physical\nactivity, sleep, etc.) along with information regarding flying on airplanes\nand living at different altitudes an in different climates. "
+msgstr "该问卷涵盖了日常活动（工作时间表、每日体力活动\n水平、睡眠等）以及乘坐飞机\n和在不同海拔、气候下生活的信息。 "
+
+# SURVEY NAME
+#: 6072 NAME
+msgid "Reproductive Health"
+msgstr "生殖健康"
+
+# SURVEY DESCRIPTION
+#: 6072 DESCRIPTION
+msgid "Information on reproductive health history, monthly cycle, surgical\nprocedures, birth control, pregnancy,  and menopause"
+msgstr "生殖健康史、月经周期、外科手术\n步骤、避孕、怀孕和绝经期等信息"
+
+# SURVEY NAME
+#: 6121 NAME
+msgid "General Medical History"
+msgstr "总体病史"
+
+# SURVEY DESCRIPTION
+#: 6121 DESCRIPTION
+msgid "Other pertinent medical history (i.e. tuberous sclerosis or other pre-existing conditions. Also family history of any pertinent illness)\n"
+msgstr "其它相关病史（即结节性硬化症或其它原有病情。还包括家族中所有相关疾病医疗史）\n"
+
+# SURVEY NAME
+#: 6136 NAME
+msgid "LAM Diagnosis"
+msgstr "LAM 诊断"
+
+# SURVEY DESCRIPTION
+#: 6136 DESCRIPTION
+msgid "This section captures essential information about your LAM diagnosis (for patients only)"
+msgstr "该部分收集关于您的 LAM 诊断的重要信息（仅对患者）"
+
+# SURVEY NAME
+#: 23547 NAME
+msgid "LAM Medications [on and off label uses]"
+msgstr "LAM 药物 [各种标签和标签外用药]"
+
+# SURVEY DESCRIPTION
+#: 23547 DESCRIPTION
+msgid "Not all medications are officially approved treatments.  Because of the urgency of treatment, some patients and doctors use unapproved medications or use "approved" medications for unapproved purposes.  These are called "off-label".  Information about off-label drugs may be very helpful.  \n\nThis is a history survey meant to identify who in the patient population has taken off-label medications for LAM.  This includes medication intended to slow or stop LAM progression as well as medications that impact LAM symptoms.  Your responses to this question will help us formulate diary forms for you to record your history of off-label use."
+msgstr "并非所有药物都是官方认证的治疗药。由于治疗的紧迫性，某些患者和医生可能使用未经批准的药物或将“已批准”药物用于未批准的用途。这些情况被称为“标签外”用药。标签外用药的信息可能很有帮助的。\n\n该问卷旨在调查 LAM 患者中有哪些人服用了非标签药物。其中包括用于延缓或遏止 LAM 发展的药物和减轻 LAM 症状的药物。您对该问题的回答将帮助我们为您制定每日表格以记录您的非标签用药历史。"
+
+# SURVEY NAME
+#: 24511 NAME
+msgid "Incontinence"
+msgstr "失禁症"
+
+# SURVEY DESCRIPTION
+#: 24511 DESCRIPTION
+msgid "Many patients report incontinence as a significant side effect of LAM.  This survey seeks to gather more information about the prevalence and patient's experiences managing this problem."
+msgstr "许多患者都报告说失禁症是 LAM 的一个显著并发症。该问卷旨在调查该症状的普遍性和患者治疗该症状的经验。"
+
+# SURVEY NAME
+#: 24815 NAME
+msgid "Bone Dysfunction and LAM"
+msgstr "骨功能障碍与 LAM"
+
+# SURVEY DESCRIPTION
+#: 24815 DESCRIPTION
+msgid "LAM researchers recently observed that there may be a link between LAM and osteoporosis.  This survey helps us gather information that may yield new ideas about ways to treat LAM."
+msgstr "LAM 研究者最近发现，LAM 与骨质疏松症之间可能存在关联。该问卷将收集相关信息并可能帮助我们找到关于 LAM 治疗方法的新思路。"
+
+# SURVEY NAME
+#: 25604 NAME
+msgid "Hormones and Pulmonary Function"
+msgstr "激素和肺功能"
+
+# SURVEY DESCRIPTION
+#: 25604 DESCRIPTION
+msgid "This study is an extended background survey for information related to an our patient-driven Estrogen Study.  The pages up to Exercise are the most important, however you can complete this survey at whatever pace is most comfortable for you.<br><br>\nData you enter here will be reused in other surveys.\n\n"
+msgstr "该问卷是一份扩展背景问卷，用于收集与由我们的患者驱动的“雌激素研究”相关的信息。“锻炼”及其之前各页的问卷都是最为重要的，但是您仍可以选择任何自己认为最方便的速度来完成该问卷。<br><br>\n您在此处输入的数据将在其它问卷中被重复使用。\n\n"
+
+# SURVEY NAME
+#: 26209 NAME
+msgid "Estrogen Study Diary"
+msgstr "雌激素研究日志"
+
+# SURVEY DESCRIPTION
+#: 26209 DESCRIPTION
+msgid "This diary allows you to capture important information for each day you are part of the study as well as track information for your own information afterwards.  The first page contains the essential information.  The remaining pages only need to be filled out if something changed or something unusual happened."
+msgstr "该日志可帮助您收集参加研究后每一天的重要信息，并在今后提供关于您自身信息的追踪信息。第一页包含了最重要的信息。其余各页只需在某些情况改变或异常事件发生时填写。"
+
+# SURVEY NAME
+#: 29822 NAME
+msgid "Alpha-1 Antitrypsin Deficiency "
+msgstr "α-1 抗胰蛋白酶缺乏症 "
+
+# SURVEY DESCRIPTION
+#: 29822 DESCRIPTION
+msgid "Relationship betwen LAM, Pneumothorax and Alpha-1 Antitrypsin Deficiency "
+msgstr "LAM、气胸与 α-1 抗胰蛋白酶缺乏症间的关系 "
+
+# SURVEY HELP
+#: 29822 HELP
+msgid "Alpha-1 is one of the most common genetic disorders in the world. The symptoms include shortness of breath, a chronic cough, and abnormal liver test results. If you have any of these symptoms there is a simple blood test that can detect alpha-1 antitrypsin levels"
+msgstr "α-1 抗胰蛋白酶缺乏症是全世界最常见的一种遗传性疾病。该病的症状包括气短、慢性咳嗽、肝检结果异常等。如果您出现上述任何症状，可以通过一次简单的血检来检测自身 α-1 抗胰蛋白酶的水平。"

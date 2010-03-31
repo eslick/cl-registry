@@ -1,0 +1,675 @@
+msgid "World"
+msgstr "Monde"
+
+msgid "Help"
+msgstr "Aide"
+
+msgid "The ultimate aim of LAMsight is to support more efficient and effective design and implementation of clinical trials for LAM patients. Another goal is to lower the cost and time associated with research efforts to learn about larger samples of LAM patients. LAMsight will open up the world of LAM research to a broader research and clinical community. It can also help patients share new aspects of the disease that may be relevant to treatment. This effort was led by the <a href=\"http://admissions.media.mit.edu/research/group/new-media-medicine\">New Media Medicine</a> group of the <a href=\"http://www.media.mit.edu/\">MIT Media Laboratory</a> in cooperation with the <a href=\"http://www.curelam.org/\">LAM Treatment Alliance</a> and the <a href=\"http://www.dana-farber.com/\">Dana Farber Cancer Institute</a>."
+msgstr "Le but suprême de LAMsight est de favoriser une conception et une mise en œuvre plus efficaces des essais cliniques destinés aux patientes atteintes de la LAM. En parallèle, nous souhaitons réduire les coûts et le temps associés aux efforts de recherche visant à en savoir davantage sur une population plus grande de malades souffrant de la LAM. LAMsight va faire découvrir le monde de la recherche sur la LAM à une communauté de recherche et clinique élargie. Il est également en mesure d'aider les patientes à mettre en commun de nouveaux aspects de la maladie pouvant être pertinents au traitement. Cet effort a été mené par le groupe <a href=\"http://admissions.media.mit.edu/research/group/new-media-medicine\">New Media Medicine</a> du <a href=\"http://www.media.mit.edu/\">MIT Media Laboratory</a> en coopération avec la <a href=\"http://www.curelam.org/\">LAM Treatment Alliance</a> et le <a href=\"http://www.dana-farber.com/\">Dana Farber Cancer Institute</a>."
+
+msgid "Receive site update and reminder emails?"
+msgstr "Recevoir des mises à jour du site et des courriels de rappel ?"
+
+msgid "Owner"
+msgstr "Propriétaire"
+
+msgid "To follow up and verify any data I have entered"
+msgstr "Pour suivre er vérifier les données que j'ai saisies"
+
+msgid "Acl"
+msgstr "Acl"
+
+msgid "(You are not on this map, "
+msgstr "(Vous ne vous trouvez pas sur cette carte, "
+
+msgid "First Name: "
+msgstr "Prénom : "
+
+msgid "home"
+msgstr "domicile"
+
+msgid "I work in another area of research."
+msgstr "Je travaille dans une autre domaine de recherche."
+
+msgid "No relevant posts since your last update"
+msgstr "Aucun article pertinent depuis votre dernière mise à jour"
+
+msgid "Date Created"
+msgstr "Date de création"
+
+msgid "Days Ago"
+msgstr "Jours auparavant"
+
+msgid "Date Joined"
+msgstr "Date d'adhésion"
+
+msgid "on page"
+msgstr "à la page"
+
+msgid "Diary Question"
+msgstr "Question du carnet"
+
+msgid "Number"
+msgstr "Nombre/Numéro"
+
+msgid "Explore this map"
+msgstr "Explorer cette carte"
+
+msgid "Groups"
+msgstr "Groupes"
+
+msgid "Subject"
+msgstr "Sujet"
+
+msgid "Where are our users?"
+msgstr "Où se trouvent nos utilisateurs ?"
+
+msgid "explore"
+msgstr "explorer"
+
+msgid ""Your e-mail will be maintained by the system and will never be disclosed to anyone without your express consent.  We take privacy very seriously."
+msgstr "" Votre adresse électronique est gérée par le système et ne sera jamais divulguée à un tiers sans votre consentement express.  Nous traitons la protection des renseignements personnels avec sérieux."
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Ranking Record"
+msgstr "Fiche de classement"
+
+msgid "Users in the USA"
+msgstr "Utilisateurs aux USA"
+
+msgid "Address 2: "
+msgstr "Adresse 2 : "
+
+msgid "Grant Edit Permission"
+msgstr "Octroyer l'autorisation de modification"
+
+msgid "Welcome to LAMsight"
+msgstr "Bienvenue à LAMsight"
+
+msgid "Original"
+msgstr "Original"
+
+msgid "Are you new to LAMsight? If so, please click the register link above to create a new user account. All that is needed is a valid e-mail address."
+msgstr "Est-ce la première fois que vous visitez LAMsight ? Si tel est le cas, veuillez cliquer sur le lien d'inscription ci-dessus pour créer un compte d'utilisateur. Tout ce dont vous avez besoin est une adresse électronique valable."
+
+msgid "Permissions"
+msgstr "Autorisations"
+
+msgid "I am a LAM patient."
+msgstr "Je souffre de la LAM."
+
+msgid "G0"
+msgstr "G0"
+
+msgid "I am a family member of a patient."
+msgstr "Je suis apparenté à une malade."
+
+msgid "Submit"
+msgstr "Soumettre"
+
+msgid "Status"
+msgstr "Statut"
+
+msgid "Survey List"
+msgstr "Liste des enquêtes"
+
+msgid "User"
+msgstr "Utilisateur"
+
+msgid "Title"
+msgstr "Intitulé"
+
+msgid "Required"
+msgstr "Obligatoire"
+
+msgid "Enter some search terms"
+msgstr "Saisissez quelques termes de recherche"
+
+msgid "Date Updated"
+msgstr "Date de mise à jour"
+
+msgid "Users around the World"
+msgstr "Les utilisateurs autour du monde"
+
+msgid "Enter some search terms:&nbsp;"
+msgstr "Saisissez quelques termes de recherche :&nbsp;"
+
+msgid "Prompt"
+msgstr "Inviter"
+
+msgid "Question preview: "
+msgstr "Aperçu de la question : "
+
+msgid "Explorer Version: "
+msgstr "Version d'Explorer : "
+
+msgid "Next >"
+msgstr "Suivant >"
+
+msgid "I am a TSC patient without LAM."
+msgstr "Je suis un malade STB sans LAM."
+
+msgid "Europe"
+msgstr "Europe"
+
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Archived Questions"
+msgstr "Questions archivées"
+
+msgid "admin"
+msgstr "admin"
+
+msgid "New Features:~%"
+msgstr "Nouvelles fonctions :~%"
+
+msgid "Question answer type: "
+msgstr "Type question-réponse : "
+
+msgid "Your session has timed out, if you were using the site please log back in to continue working"
+msgstr "Votre session a expiré ; si vous utilisiez le site veuillez vous reconnecter pour poursuivre"
+
+msgid "Welcome"
+msgstr "Bienvenue"
+
+msgid "LAMsight password reset"
+msgstr "Réinitialisation du mot de passe pour LAMsight"
+
+msgid "How frequently do you want updates and reminders?"
+msgstr "À quel intervalle souhaitez-vous recevoir mises à jour et rappels ?"
+
+msgid "Down Ratings"
+msgstr "Notation en baisse"
+
+msgid "User Options"
+msgstr "Options d'utilisateur"
+
+msgid "Post Permissions"
+msgstr "Autorisations de dépôt"
+
+msgid "Editedp"
+msgstr "Modifié"
+
+msgid "Question (~d)"
+msgstr "Question (~d)"
+
+msgid "Preferences Btree"
+msgstr "Arbre balancé des préférences"
+
+msgid "Log In"
+msgstr "Connexion"
+
+msgid "You are not on this map, please read below!"
+msgstr "Vous ne vous trouvez pas sur cette carte, veuillez prendre connaissance de ce qui figure ci-dessous !"
+
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe"
+
+msgid "Get help here"
+msgstr "Obtenir de l'aide ici"
+
+msgid "Compare Population"
+msgstr "Comparer la population"
+
+msgid "Ratings"
+msgstr "Notations"
+
+msgid "under question"
+msgstr "sous question?"
+
+msgid "Trustedp"
+msgstr "Fiable"
+
+msgid "Done"
+msgstr "Terminé"
+
+msgid "Country: "
+msgstr "Pays : "
+
+msgid "I am none of the above."
+msgstr "Je ne relève d'aucune catégorie ci-dessus."
+
+msgid "Home Phone #: "
+msgstr "Téléphone personnel : "
+
+msgid "Please choose from the following"
+msgstr "Choisissez parmi ce qui suit"
+
+msgid "Their LAMsight username:"
+msgstr "Leur nom d'utilisateur sur LAMsight :"
+
+msgid "Next survey to work on:~%"
+msgstr "Enquête sur laquelle travailler ensuite :~%"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "Root"
+msgstr "Racine"
+
+msgid "(drag questions here to create a population)"
+msgstr "(faire glisser les questions ici pour créer une population)"
+
+msgid "Author"
+msgstr "Auteur"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "Show Surveys"
+msgstr "Afficher les enquêtes"
+
+msgid "User Preferences"
+msgstr "Préférences de l'utilisateur"
+
+msgid "Submit Request"
+msgstr "Soumettre la demande"
+
+msgid "On page:"
+msgstr "à la page :"
+
+msgid "Last Name"
+msgstr "Nom"
+
+msgid "Oid"
+msgstr "Oid"
+
+msgid "For a potential study"
+msgstr "Pour une étude potentielle"
+
+msgid "Rating"
+msgstr "Notation"
+
+msgid "USA"
+msgstr "USA"
+
+msgid "To confirm my identity"
+msgstr "Pour confirmer mon identité"
+
+msgid "[Create New Survey]"
+msgstr "[Créer une nouvelle enquête]"
+
+msgid "Users in Europe"
+msgstr "Utilisateurs en Europe"
+
+msgid "Question Context"
+msgstr "Contexte de la question"
+
+msgid "Do Survey"
+msgstr "Effectuer l'enquête"
+
+msgid "Page"
+msgstr "Page"
+
+msgid "Recent Forum Activity:~%~%~a"
+msgstr "Activité de forum récente :~%~%~a"
+
+msgid "Users South American"
+msgstr "Utilisateurs en Amérique du Sud"
+
+msgid "Diary Description"
+msgstr "Description du carnet"
+
+msgid "Avg Rating"
+msgstr "Notation moyenne"
+
+msgid "Enable the interactive agent Laura"
+msgstr "Activer l'agent interactif Laura"
+
+msgid "Contact"
+msgstr "Contact"
+
+msgid "Enlarge: &nbsp;"
+msgstr "Agrandir : &nbsp;"
+
+msgid "Diary P"
+msgstr "Carnet"
+
+msgid "Exploring: "
+msgstr "Exploration : "
+
+msgid "All Users"
+msgstr "Tous les utilisateurs"
+
+msgid "Forgot your username or password?"
+msgstr "Nom d'utilisateur et mot de passe oubliés ?"
+
+msgid "New Password"
+msgstr "Nouveau mot de passe"
+
+msgid "The Scratchpad is a place to store groups and questions if you want to move them from one editor to another.  A question can only have one parent, so when you drag it back to a different group, it will disappear from the first."
+msgstr "Le Bloc-notes est en endroit permettant de stocker des groupes et des questions si vous souhaitez les déplacer d'un éditeur à un autre.  Une question ne peut disposer que d'un parent ; lorsque vous la faites glisser vers un autre groupe, elle disparaît donc du premier."
+
+msgid "I work directly on LAM research."
+msgstr "Je travaille directement sur la recherche LAM."
+
+msgid "LAMsight is a centralized database that will enable new forms of information-gathering and collaboration by patients, family members, clinicians, and researchers. Its goal is to overcome the barriers that researchers face in accessing up-to-date data about the global LAM population. LAMsight enables idea-generation by researchers through information exchange between patients and researchers in “real time”."
+msgstr "LAMsight est une base de données centralisée qui rendra possible de nouvelles formes de collecte d'informations et de collaboration de la part des patientes, proches, cliniciens et chercheurs. Son objectif est de surmonter les obstacles auxquels les chercheurs font face en termes d'accès à des données à jour sur la population mondiale atteinte de la LAM. LAMsight permet aux chercheurs de générer de nouvelles idées par le biais d'échanges d'informations entre les patientes et les chercheurs en " temps réel "."
+
+msgid "patients"
+msgstr "malades"
+
+msgid "Street"
+msgstr "Rue"
+
+msgid "After registration, click the 'Login' link at the very top of this page. Upon successful entry more information will be provided."
+msgstr "Après inscription, cliquez sur le lien " Connexion " en haut de cette page. Davantage de renseignements seront alors proposés."
+
+msgid "Collect Data"
+msgstr "Collecter les données"
+
+msgid "Basic Screen"
+msgstr "Écran de base"
+
+msgid "Tags"
+msgstr "Balises"
+
+msgid "By any of these methods"
+msgstr "Par l'une de ces méthodes"
+
+msgid "Ask a Question"
+msgstr "Poser une question"
+
+msgid "Register Now >>"
+msgstr "S'inscrire maintenant >>"
+
+msgid "A username is a short name that will be used by the system to identify you to other users.  If you are concerned about privacy, pick a username that you can remember, but doesn't include anything about you like your name."
+msgstr "Un nom d'utilisateur est un nom de petite taille dont le système se sert pour vous identifier auprès d'autres utilisateurs.  Si vous vous inquiétez du respect de votre confidentialité, choisissez un nom d'utilisateur facile à retenir mais qui ne contient pas de référence à votre nom."
+
+msgid "Please choose from one of the following surveys or create your own!"
+msgstr "Veuillez choisir parmi l'une des enquêtes suivantes ou créez la vôtre !"
+
+msgid "Name"
+msgstr "Nom"
+
+msgid "Translation Alist"
+msgstr "Liste de conversion A"
+
+msgid "Login"
+msgstr "Connexion"
+
+msgid "How frequently do you want forum updates?"
+msgstr "À quel intervalle souhaitez-vous recevoir des mises à jour de forum ?"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Question Help"
+msgstr "Aide aux questions"
+
+msgid "Registration Instructions"
+msgstr "Consignes d'inscription"
+
+msgid "New User?"
+msgstr "Nouvel utilisateur ?"
+
+msgid "Address: "
+msgstr "Adresse : "
+
+msgid "Work Phone #: "
+msgstr "Nº téléphone professionnel : "
+
+msgid "Under question:"
+msgstr "Sous-question :"
+
+msgid "State"
+msgstr "État"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "The survey editor will require some time to become familiar with.  It allows you to create, organize, and edit all elements of a survey.  We will be expanding this help section after some feedback from users and some more improvements in the features and the look."
+msgstr "Il est nécessaire de se familiariser avec l'éditeur d'enquêtes.  Il permet de créer, d'organiser et d'éditer tous les éléments de l'enquête.  Nous avons l'intention de développer cette section d'aide après avoir reçu les commentaires des utilisateurs, ainsi que d'apporter des améliorations aux fonctions et à l'aspect."
+
+msgid "Priority"
+msgstr "Priorité"
+
+msgid "Search Results"
+msgstr "Résultats de la recherche"
+
+msgid "Content"
+msgstr "Contenu"
+
+msgid "Sound Screen"
+msgstr "Écran sonore"
+
+msgid "State/Province: "
+msgstr "Département/Province : "
+
+msgid "Related Content"
+msgstr "Contenu connexe"
+
+msgid "Postal code: "
+msgstr "Code postal : "
+
+msgid "View Diaries"
+msgstr "Consulter les carnets"
+
+msgid "Create a population"
+msgstr "Créer une population"
+
+msgid "[LAMsight Help Request]"
+msgstr "[Demande d'aide LAMsight]"
+
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+msgid "create"
+msgstr "créer"
+
+msgid "Preferred Language: "
+msgstr "Langue préférée : "
+
+msgid "City"
+msgstr "Ville"
+
+msgid "Group advice"
+msgstr "Avis de groupe"
+
+msgid "Show Forums"
+msgstr "Afficher les forums"
+
+msgid "Page (~d)"
+msgstr "Page (~d)"
+
+msgid "Creating Surveys"
+msgstr "Création d'enquêtes"
+
+msgid "Hello. The password for the username: ~a has been reset to ~a After you log in, you can change the password to something you can remember."
+msgstr "Bonjour. Le mot de passe pour le nom d'utilisateur : ~a a été réinitialisé sur ~a Après la connexion, vous pourrez en choisir un autre facile à retenir."
+
+msgid "A password should be at least 6 characters and include a number or other non-alphabetical character."
+msgstr "Un mot de passe doit comprendre au moins 6 caractères ainsi qu'un chiffre ou un caractère non alphabétique."
+
+msgid "Body"
+msgstr "Corps"
+
+msgid "Published"
+msgstr "Publié"
+
+msgid "In survey:"
+msgstr "Dans l'enquête :"
+
+msgid "logout"
+msgstr "Déconnexion"
+
+msgid " of patients responded"
+msgstr " des malades ont répondu"
+
+msgid "First Name"
+msgstr "Prénom"
+
+msgid "Up Ratings"
+msgstr "Notations en hausse"
+
+msgid "Slug"
+msgstr "Ligne-bloc"
+
+msgid "[Close this View]"
+msgstr "[Fermer cette affichage]"
+
+msgid "Old Password"
+msgstr "Ancien mot de passe"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Magic Key"
+msgstr "Solution magique"
+
+msgid "Locale"
+msgstr "Emplacement"
+
+msgid "Post Datetime"
+msgstr "Date/Heure de l'article"
+
+msgid "Topic"
+msgstr "Rubrique"
+
+msgid "Number Of Ratings"
+msgstr "Nombre de notations"
+
+msgid "Order"
+msgstr "Ordre"
+
+msgid "Editor Help"
+msgstr "Aide à l'éditeur"
+
+msgid "Register"
+msgstr "Inscription"
+
+msgid "Allow my city, state and country information to be used on the patient map."
+msgstr "Autoriser l'utilisation de ma ville, mon département et mon pays sur la carte des malades."
+
+msgid "View Surveys"
+msgstr "Consulter les enquêtes"
+
+msgid "Group name"
+msgstr "Nom du groupe"
+
+msgid "I am involved in disease research."
+msgstr "Je m'occupe de recherche sur les maladies."
+
+msgid "Terms of Use"
+msgstr "Conditions d'utilisation"
+
+msgid "I'm having a problem with LAMsight and have provided details on my problem below."
+msgstr "J'ai un problème avec LAMsight dont les détails figurent ci-dessous."
+
+msgid "Content Type"
+msgstr "Type de contenu"
+
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+msgid "Population Filter"
+msgstr "Filtre de la population"
+
+msgid "Site Announcements:~%"
+msgstr "Annonces du site :~%"
+
+msgid "Short"
+msgstr "Court"
+
+msgid "Most Popular Discussions"
+msgstr "Discussions les plus populaires"
+
+msgid "Go"
+msgstr "Go"
+
+msgid "discuss"
+msgstr "discuter"
+
+msgid "Edit sub-groups: "
+msgstr "Éditer les sous-groupes : "
+
+msgid "City: "
+msgstr "Ville : "
+
+msgid "If you joined LAMsight last spring, your user account and any information you entered has been preserved. No re-registration or new registration is needed.  Please contact our support team if you need assistance with lost user accounts or passwords."
+msgstr "Si vous avez rejoint LAMsight au printemps dernier, votre compte d'utilisateur et toutes les informations saisies ont été conservés. Il n'est pas nécessaire de vous inscrire de nouveau.  Veuillez contacter notre équipe d'assistance en cas de comptes d'utilisateur ou mots de passe perdus."
+
+msgid "Related questions"
+msgstr "Questions connexes"
+
+msgid "Surveys"
+msgstr "Enquêtes"
+
+msgid "South America"
+msgstr "Amérique du Sud"
+
+msgid "Event"
+msgstr "Événement"
+
+msgid "About the Site"
+msgstr "À propos du site"
+
+msgid "Question answer type (existing answers will disallow some changes): "
+msgstr "Type question-réponse (certaines réponses existantes ne permettront pas de modification) : "
+
+msgid "Ascending"
+msgstr "Croissant"
+
+msgid "Receive e-mail updates to the discussion forums?"
+msgstr "Recevoir des mises à jour par courriel pour les forums de discussion ?"
+
+msgid "LAMsight is an evolving project and new functionality and improved usability will occur every few weeks. Updates about the site can be received by setting preferences as described on the login page. By registering now, you are agreeing to receive at least one e-mail letting you know when the site is formally launched with the most important set of features as well as a clear privacy policy and terms of use."
+msgstr "LAMsight est un projet en évolution et la fonctionnalité et l'utilisabilité seront régulièrement optimisées. Des mises à jour du site peuvent être reçues en paramétrant les préférences comme indiqué à la page de connexion. En vous inscrivant maintenant, vous convenez de recevoir au moins un courriel vous informant de la date de lancement officielle du site accompagné des fonctions les plus importantes ainsi que de la politique de confidentialité et des modalités d'utilisation claires."
+
+msgid "Advice"
+msgstr "Avis"
+
+msgid "Change password"
+msgstr "Changer de mot de passe"
+
+msgid "Last Name: "
+msgstr "Nom : "
+
+msgid "Getting Started"
+msgstr "Mise en route"
+
+msgid "Widget"
+msgstr "Gadget logiciel"
+
+msgid "The survey editor consists of a set of <b>views</b>.  Each view has its own tab at the top of the screen.  Surveys are made up of <b>groups</b>, each group is made up of <b>questions</b>.  There is a view that allows you to see, review and change each of these components of a survey.  Please post your questions in the forums so we can respond to the most important questions."
+msgstr "L'éditeur d'enquêtes comprend un ensemble d'<b>affichages</b>.  Chaque affichage dispose de ses propres onglets en haut de l'écran.  Les enquêtes sont formées de <b>groupes</b>, chaque groupe étant formé de <b>questions</b>.  Un affichage vous permet de consulter et de modifier chacun de ces éléments d'enquête.  Veuillez publier vos questions dans les forums de façon à ce que nous puissions répondre aux plus importantes."
+
+msgid "collect"
+msgstr "collecter"
+
+msgid "patient"
+msgstr "malade"
+
+msgid "I cannot find that e-mail address."
+msgstr "Je ne trouve pas cette adresse électronique."
+
+msgid "LAMTV"
+msgstr "LAMTV"
+
+msgid "Email"
+msgstr "Courriel"
+
+msgid "Current Post Number"
+msgstr "Numéro d'article actuel"
+
+msgid "Target"
+msgstr "Cible"
+
+msgid "I am a LAM clinican."
+msgstr "Je suis un clinicien pour la LAM."
+
+msgid "Controller"
+msgstr "Contrôleur"
+
+msgid "Your browser has disabled Javascript.  Many, but not all, features of this site depend on Javascript.  You can use the 'Collect' and 'Discuss' sections but for now the 'Explore' section may not function for you.  You can find out about how to enable Javascript from "
+msgstr "Votre navigateur a désactivé Javascript.  Certaines des fonctions de ce site dépendent de Javascript.  Vous êtes en mesure de vous servir des sections " Colecter " et " Discuter " mais pour l'instant la section " Explorer " peut ne pas fonctionner.  Vous pouvez en savoir plus sur l'activation de Javascript auprès de "
+
+msgid "Population Creator"
+msgstr "Créateur de population"
+
+msgid "Fulltext"
+msgstr "Texte intégral"
+

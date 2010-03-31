@@ -1,0 +1,775 @@
+﻿msgid ""
+msgstr ""
+"Project-Id-Version: de-survey-group.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# SURVEY-GROUP NAME
+#: 5843 NAME
+msgid "Daily Home Spirometer Readings"
+msgstr "Täglich zuhause durchzuführende Spirometermessungen"
+
+# SURVEY-GROUP ADVICE
+#: 5843 ADVICE
+msgid "This page captures the basic information available from most home spirometers."
+msgstr "Auf dieser Seite werden die grundlegenden Informationen erfasst, die die meisten für den Heimgebrauch verwendeten Spirometer liefern."
+
+# SURVEY-GROUP NAME
+#: 23563 NAME
+msgid "Home Measurements"
+msgstr "Zuhause durchgeführte Messungen"
+
+# SURVEY-GROUP NAME
+#: 5853 NAME
+msgid "Original Diagnosis"
+msgstr "Erstdiagnose"
+
+# SURVEY-GROUP ADVICE
+#: 5853 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 6137 NAME
+msgid "Surgical Procedures"
+msgstr "Chirurgische Eingriffe"
+
+# SURVEY-GROUP NAME
+#: 6145 NAME
+msgid "LAM Related Conditions"
+msgstr "Mit LAM verbundene Beschwerden"
+
+# SURVEY-GROUP NAME
+#: 6160 NAME
+msgid "Clinical Trial Participation"
+msgstr "Teilnahme an klinischen Studien"
+
+# SURVEY-GROUP ADVICE
+#: 6160 ADVICE
+msgid "Please enter information for you most recent trial participation, if any."
+msgstr "Bitte machen Sie, sofern zutreffend, Angaben zu Ihrer letzten Studienteilnahme."
+
+# SURVEY-GROUP NAME
+#: 5876 NAME
+msgid "Personal Measurements"
+msgstr "Individuelle Messungen"
+
+# SURVEY-GROUP ADVICE
+#: 5876 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 5881 NAME
+msgid "Pain and Discomfort"
+msgstr "Schmerzen und Beschwerden"
+
+# SURVEY-GROUP ADVICE
+#: 5881 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 5898 NAME
+msgid "Family History"
+msgstr "Familiengeschichte"
+
+# SURVEY-GROUP ADVICE
+#: 5898 ADVICE
+msgid "Your family includes any known relatives.  Your immediate family includes from your grandparents through your grand children, nieces and nephews.  Also include your first and second cousins."
+msgstr "Als Familie gelten alle Ihnen bekannten Verwandten.  Als nächste Angehörige gelten Ihre Großeltern, Enkel, Nichten und Neffen,  einschließlich Vettern und Kusinen ersten und zweiten Grades."
+
+# SURVEY-GROUP NAME
+#: 5911 NAME
+msgid "General Dietary Information"
+msgstr "Allgemeine Angaben zur Ernährung"
+
+# SURVEY-GROUP ADVICE
+#: 5911 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 5922 NAME
+msgid "Diet and Supplements"
+msgstr "Ernährung und Nahrungsergänzungsmittel"
+
+# SURVEY-GROUP ADVICE
+#: 5922 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 5936 NAME
+msgid "Exercise"
+msgstr "Sport"
+
+# SURVEY-GROUP ADVICE
+#: 5936 ADVICE
+msgid "If you answer no to the first question, you can go to the next section"
+msgstr "Wenn die Antwort auf Ihre erste Frage "Nein" ist, können Sie mit dem nächsten Abschnitt fortfahren."
+
+# SURVEY-GROUP NAME
+#: 5956 NAME
+msgid "Level of Fitness"
+msgstr "Fitnessgrad"
+
+# SURVEY-GROUP ADVICE
+#: 5956 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 5962 NAME
+msgid "Pulmonary Rehabilitation and Therapy"
+msgstr "Lungenrehabilitationsprogramme und -behandlungen"
+
+# SURVEY-GROUP ADVICE
+#: 5962 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 5969 NAME
+msgid "Complementary and Alternative Medicines"
+msgstr "Ergänzende und alternative Medizin"
+
+# SURVEY-GROUP ADVICE
+#: 5969 ADVICE
+msgid "The answers to these questions will remain private to you.  The information will only be used in a manner that preserves your privacy, unless you give explicit consent otherwise."
+msgstr "Die Antworten auf diese Fragen werden vertraulich behandelt.  Die Verwendung Ihrer Angaben erfolgt ausschließlich unter Einhaltung des Schutzes Ihrer personenbezogenen Daten, es sei denn, Sie haben eine anderslautende explizite Zustimmung gegeben."
+
+# SURVEY-GROUP NAME
+#: 5989 NAME
+msgid "Your Daily Routine"
+msgstr "Ihre Alltagsroutine"
+
+# SURVEY-GROUP ADVICE
+#: 5989 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 6001 NAME
+msgid "Environmental Factors"
+msgstr "Umweltfaktoren"
+
+# SURVEY-GROUP NAME
+#: 13802 NAME
+msgid "Climate"
+msgstr "Klima"
+
+# SURVEY-GROUP NAME
+#: 6020 NAME
+msgid "Flying and Altitude"
+msgstr "Flüge und Höhe"
+
+# SURVEY-GROUP ADVICE
+#: 6020 ADVICE
+msgid "If you answer no to the first question, please skip the rest of the section"
+msgstr "Wenn die Antwort auf Ihre erste Frage "Nein" ist, überspringen Sie bitte den Rest dieses Abschnitts."
+
+# SURVEY-GROUP NAME
+#: 6040 NAME
+msgid "Sleep"
+msgstr "Schlaf"
+
+# SURVEY-GROUP ADVICE
+#: 6040 ADVICE
+msgid "test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 26399 NAME
+msgid "Sexual Activity"
+msgstr "Sexuelle Aktivität"
+
+# SURVEY-GROUP NAME
+#: 6073 NAME
+msgid "Reproductive History"
+msgstr "Reproduktionsgeschichte"
+
+# SURVEY-GROUP ADVICE
+#: 6073 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 6096 NAME
+msgid "Monthly Cycle"
+msgstr "Monatszyklus"
+
+# SURVEY-GROUP ADVICE
+#: 6096 ADVICE
+msgid "If you are no longer menstruating, then please answer these questions referring the last two years you were menstruating. "
+msgstr "Wenn Sie keine Menstruation mehr haben, beantworten Sie die Fragen unter Bezug auf die letzten zwei Jahre, in denen Sie Ihre Menstruation hatten. "
+
+# SURVEY-GROUP NAME
+#: 6114 NAME
+msgid "Post- or Peri-Menopausal"
+msgstr "Post- oder Perimenopausal"
+
+# SURVEY-GROUP ADVICE
+#: 6114 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 6122 NAME
+msgid "Tuberous Sclerosis"
+msgstr "Tuberöse Sklerose"
+
+# SURVEY-GROUP ADVICE
+#: 6122 ADVICE
+msgid "Test"
+msgstr "Versuch"
+
+# SURVEY-GROUP NAME
+#: 26410 NAME
+msgid "Cancer and Malignancy"
+msgstr "Krebs und Malignität"
+
+# SURVEY-GROUP NAME
+#: 26455 NAME
+msgid "Diabetes"
+msgstr "Diabetes"
+
+# SURVEY-GROUP NAME
+#: 6061 NAME
+msgid "Tissue and Blood Samples"
+msgstr "Gewebe- und Blutproben"
+
+# SURVEY-GROUP ADVICE
+#: 6061 ADVICE
+msgid "This section will capture information the availability of tissue and blood.  We hope to update this in time with links to ongoing efforts to capture tissue information."
+msgstr "In diesem Abschnitt werden Informationen über die Verfügbarkeit von Gewebe und Blut erfasst.  Mit der Zeit sollen hier Links zu laufenden Aktivitäten zur Erfassung von Gewebeinformationen eingebunden werden."
+
+# SURVEY-GROUP NAME
+#: 23548 NAME
+msgid "LAM Medications"
+msgstr "LAM-Medikationen"
+
+# SURVEY-GROUP NAME
+#: 24512 NAME
+msgid "Do you experience incontinence?"
+msgstr "Leiden Sie an Inkontinenz?"
+
+# SURVEY-GROUP ADVICE
+#: 24512 ADVICE
+msgid "If you don't have any of these symptoms or related concerns, you don't need to fill out the rest of the survey."
+msgstr "Wenn Sie keines dieser Symptome oder keine damit verbundene Probleme haben , brauchen Sie den Rest des Fragebogens nicht auszufüllen."
+
+# SURVEY-GROUP NAME
+#: 24540 NAME
+msgid "Causes and Treatment"
+msgstr "Ursachen und Behandlung"
+
+# SURVEY-GROUP NAME
+#: 24539 NAME
+msgid "Symptoms"
+msgstr "Symptome"
+
+# SURVEY-GROUP NAME
+#: 24535 NAME
+msgid "Lifestyle challenges"
+msgstr "Beeinträchtigungen der Lebensweise"
+
+# SURVEY-GROUP ADVICE
+#: 24535 ADVICE
+msgid "What lifestyle impacts and challenges have you experienced due to incontinence.  How do you manage these challenges?"
+msgstr "Wie hat Ihre Inkontinenz sich auf Ihre Lebensweise ausgewirkt und beeinträchtigt?  Wie gehen Sie damit um?"
+
+# SURVEY-GROUP NAME
+#: 24816 NAME
+msgid "Osteoporosis Risk Factors"
+msgstr "Osteoporose-Risikofaktoren"
+
+# SURVEY-GROUP NAME
+#: 24833 NAME
+msgid "Osteoporosis Diagnosis"
+msgstr "Osteoporose-Diagnose"
+
+# SURVEY-GROUP NAME
+#: 24850 NAME
+msgid "Osteoporosis related supplements"
+msgstr "Gegen Osteoporose eingenommene Nahrungsergänzungsmittel"
+
+# SURVEY-GROUP NAME
+#: 25617 NAME
+msgid "Estrogen Medication and Supplements"
+msgstr "Östrogen-haltige Medikamente und Nahrungsergänzungsmittel"
+
+# SURVEY-GROUP NAME
+#: 25605 NAME
+msgid "Medication Overview"
+msgstr "Überblick Medikation"
+
+# SURVEY-GROUP NAME
+#: 25618 NAME
+msgid "Stress "
+msgstr "Stress "
+
+# SURVEY-GROUP NAME
+#: 26331 NAME
+msgid "How do you feel today?"
+msgstr "Wie fühlen Sie sich heute?"
+
+# SURVEY-GROUP NAME
+#: 26210 NAME
+msgid "Daily PFT Log Entry"
+msgstr "Tagesprotokolleintrag LFT"
+
+# SURVEY-GROUP NAME
+#: 26219 NAME
+msgid "Daily travel log"
+msgstr "Tagesprotokoll Reisen"
+
+# SURVEY-GROUP NAME
+#: 26229 NAME
+msgid "Daily health log"
+msgstr "Tagesprotokoll Gesundheit"
+
+# SURVEY-GROUP NAME
+#: 26239 NAME
+msgid "Daily diet and medications"
+msgstr "Tagesprotokoll Ernährung und Medikation"
+
+# SURVEY-GROUP NAME
+#: 26387 NAME
+msgid "Daily Diary"
+msgstr "Tagesprotokoll"
+
+# SURVEY-GROUP NAME
+#: 30002 NAME
+msgid "Alpha-1 Antitrypsin Deficiency"
+msgstr "Alpha-1-Antitrypsin-Mangel"
+
+# SURVEY-GROUP NAME
+#: 26462 NAME
+msgid "lam diagnosis other"
+msgstr "LAM-Diagnose-Sonstiges"
+
+# SURVEY-GROUP NAME
+#: 14121 NAME
+msgid "5889-Do you experience pain and/or discomfort related to the reproductive organs?"
+msgstr "5889-Haben Sie Schmerzen und/oder Beschwerden an den Fortpflanzungsorganen?"
+
+# SURVEY-GROUP NAME
+#: 14117 NAME
+msgid "5885-Do you feel aches or pains of any kind of discomfort on a regular basis?"
+msgstr "5885-Haben Sie regelmäßig Schmerzen oder Beschwerden irgendeiner Art?"
+
+# SURVEY-GROUP NAME
+#: 14116 NAME
+msgid "5894-Do you experience pain and/or discomfort related to any surgery related to ovaries?"
+msgstr "5894-Haben Sie Schmerzen und/oder Beschwerden in Zusammenhang mit einem chirurgischen Eingriff an den Eierstöcken?"
+
+# SURVEY-GROUP NAME
+#: 14127 NAME
+msgid "5907-Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews suffered from disabling disorders?"
+msgstr "5907-Gibt es unter Ihren nächsten Angehörigen wie Großeltern, Tanten, Onkel, Nichten und Neffen Personen mit schwer behindernder Erkrankung?"
+
+# SURVEY-GROUP NAME
+#: 14126 NAME
+msgid "5905-Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews died prematurely?"
+msgstr "5905-Gibt es unter Ihren nächsten Angehörigen wie Großeltern, Tanten, Onkel, Nichten und Neffen Personen, die sehr früh verstorben sind?"
+
+# SURVEY-GROUP NAME
+#: 14125 NAME
+msgid "5903-Have any members of your family suffered from genetic conditions or diseases?"
+msgstr "5903-Gibt es in Ihrer Familie genetisch bedingte Erkrankungen oder gesundheitliche Besonderheiten?"
+
+# SURVEY-GROUP NAME
+#: 14124 NAME
+msgid "5899-Do you have a history of any abnormal blood test results?"
+msgstr "5899-Wurden in Ihrer medizinischen Vorgeschichte abnormale Blutwerte festgestellt?"
+
+# SURVEY-GROUP NAME
+#: 13837 NAME
+msgid "5916-Do you have symptoms, related to LAM or unrelated to LAM that you associate with a particular food/ drink or food group?"
+msgstr "5916-Haben Sie mit LAM verbundene oder auch nicht mit LAM verbundene Symptome, die Sie auf eine bestimmte Art von Lebensmitteln/Getränken zurückführen?"
+
+# SURVEY-GROUP NAME
+#: 13838 NAME
+msgid "13836-Do you avoid eating certain foods?"
+msgstr "13836-Meiden Sie bestimmte Lebensmittel?"
+
+# SURVEY-GROUP NAME
+#: 26918 NAME
+msgid "cholesterol details"
+msgstr "Details zum Thema Cholesterin"
+
+# SURVEY-GROUP NAME
+#: 13854 NAME
+msgid "5923-Do you try to follow a fat-free diet?"
+msgstr "5923-Versuchen Sie, sich fettfrei zu ernähren?"
+
+# SURVEY-GROUP NAME
+#: 13855 NAME
+msgid "5928-Do you find it difficult to maintain your weight?"
+msgstr "5928-Haben Sie Schwierigkeiten, Ihr Gewicht zu halten?"
+
+# SURVEY-GROUP NAME
+#: 13856 NAME
+msgid "5931-Do you take vitamin supplements?"
+msgstr "5931-Nehmen Sie Vitaminpräparate?"
+
+# SURVEY-GROUP NAME
+#: 13902 NAME
+msgid "5945-Do you desaturate on exertion?"
+msgstr "5945-Kommt es bei Ihnen bei körperlicher Betätigung zu Sauerstoff-Desaturierung?"
+
+# SURVEY-GROUP NAME
+#: 13903 NAME
+msgid "5948-If you exercise, do you see positive effects of exercise?"
+msgstr "5948-Können Sie, wenn Sie Sport treiben, einen positiven Effekt feststellen?"
+
+# SURVEY-GROUP NAME
+#: 14103 NAME
+msgid "Exercise Subgroup"
+msgstr "Untergruppe Sport"
+
+# SURVEY-GROUP NAME
+#: 14102 NAME
+msgid "5963-Have you been referred to pulmonary rehabilitation?"
+msgstr "5963-Wurde Ihnen schon einmal ein Lungenrehabilitationsprogramm verordnet?"
+
+# SURVEY-GROUP NAME
+#: 13813 NAME
+msgid "5970-Have you ever taken recreational drugs (excluding cigarettes and alcohol)?"
+msgstr "5970-Haben Sie jemals Drogen genommen (außer Zigaretten und Alkohol)?"
+
+# SURVEY-GROUP NAME
+#: 13814 NAME
+msgid "5972-Have you tried Chinese medicine"
+msgstr "5972-Haben Sie chinesische Medizin ausprobiert?"
+
+# SURVEY-GROUP NAME
+#: 13815 NAME
+msgid "5975-Have you tried Herbal treatments?"
+msgstr "5975-Haben Sie Kräuterbehandlungen ausprobiert?"
+
+# SURVEY-GROUP NAME
+#: 13816 NAME
+msgid "5978-Have you tried Hypnosis?"
+msgstr "5978-Haben Sie Hypnose ausprobiert?"
+
+# SURVEY-GROUP NAME
+#: 13817 NAME
+msgid "5980-Have you tried Meditation?"
+msgstr "5980-Haben Sie Meditation ausprobiert?"
+
+# SURVEY-GROUP NAME
+#: 13819 NAME
+msgid "5983-Any other forms of complementary or alternative medicine?"
+msgstr "5983-Irgendeine andere Form von ergänzender oder Alternativmedizin?"
+
+# SURVEY-GROUP NAME
+#: 13820 NAME
+msgid "5985-Have you noticed an effect on your breathing from these interventions?"
+msgstr "5985-Haben Sie eine Wirkung dieser Methoden auf Ihre Atemfähigkeit festgestellt?"
+
+# SURVEY-GROUP NAME
+#: 13822 NAME
+msgid "5986-Have you noticed an effect on your  well-being from any of these interventions?"
+msgstr "5986-Hat sich eine dieser Methoden auf Ihr Wohlbefinden ausgewirkt?"
+
+# SURVEY-GROUP NAME
+#: 13703 NAME
+msgid "daily-routine-work"
+msgstr "Ihr Arbeitsalltag"
+
+# SURVEY-GROUP NAME
+#: 13706 NAME
+msgid "home-maker-detail"
+msgstr "Angaben Hausarbeit"
+
+# SURVEY-GROUP NAME
+#: 12392 NAME
+msgid "6006-Have you ever smoked?"
+msgstr "6006-Haben Sie jemals geraucht?"
+
+# SURVEY-GROUP NAME
+#: 12393 NAME
+msgid "6009-Have you ever used alcohol?"
+msgstr "6009-Haben Sie jemals Alkohol konsumiert?"
+
+# SURVEY-GROUP NAME
+#: 12394 NAME
+msgid "6012-Are there environmental factors or risks (e.g. pesticides, asbestos) that you know that your mother or father were directly exposed to?"
+msgstr "6012-Gibt es Umweltfaktoren oder Risiken (z. B. Pestizide, Asbest), denen Ihre Mutter oder Ihr Vater Ihres Wissens direkt ausgesetzt waren?"
+
+# SURVEY-GROUP NAME
+#: 12395 NAME
+msgid "6016-Do certain types of weather affect your body?"
+msgstr "6016-Wirken sich bestimmte Wetterbedingungen auf Ihr körperliches Befinden aus?"
+
+# SURVEY-GROUP NAME
+#: 12396 NAME
+msgid "6021-Do you fly in airplanes since your diagnosis?"
+msgstr "6021-Haben Sie seit der Diagnose Flugreisen unternommen?"
+
+# SURVEY-GROUP NAME
+#: 13805 NAME
+msgid "6041-Do you have problems falling or staying asleep?"
+msgstr "6041-Haben Sie Einschlafprobleme oder wachen Sie häufig auf?"
+
+# SURVEY-GROUP NAME
+#: 13806 NAME
+msgid "6046-Do you sleep with oxygen?"
+msgstr "6046-Schlafen Sie mit Sauerstoff?"
+
+# SURVEY-GROUP NAME
+#: 13807 NAME
+msgid "6048-Do you feel particularly cold when going to sleep or waking up?"
+msgstr "6048-Ist Ihnen besonders kalt, wenn Sie schlafen gehen oder aufwachen?"
+
+# SURVEY-GROUP NAME
+#: 13808 NAME
+msgid "6051-Do you have cold feet or hands when not in bed?"
+msgstr "6051-Haben Sie kalte Füße oder Hände, wenn Sie nicht im Bett sind?"
+
+# SURVEY-GROUP NAME
+#: 13810 NAME
+msgid "6050-Do you have cold feet or hands in bed?"
+msgstr "6050-Haben Sie im Bett kalte Füße oder Hände?"
+
+# SURVEY-GROUP NAME
+#: 26404 NAME
+msgid "tissue biopsy details"
+msgstr "Angaben zu Gewebeproben"
+
+# SURVEY-GROUP NAME
+#: 26259 NAME
+msgid "have-used-birth-control"
+msgstr "Verhütungsmittel-verwendet"
+
+# SURVEY-GROUP NAME
+#: 14135 NAME
+msgid "6074-Have you ever been pregnant?"
+msgstr "6074-Waren Sie schon einmal schwanger?"
+
+# SURVEY-GROUP NAME
+#: 14134 NAME
+msgid "6084-If you did not know you had LAM prior to getting pregnant did you know before you gave birth?"
+msgstr "6084-Wenn Sie, bevor Sie schwanger wurden, nicht wussten, dass Sie LAM haben: Wussten Sie es vor der Entbindung?"
+
+# SURVEY-GROUP NAME
+#: 14133 NAME
+msgid "6079-Did you know you had LAM during one or more pregnancies?"
+msgstr "6079-Wussten Sie während einer oder mehrerer Schwangerschaften, dass Sie LAM haben?"
+
+# SURVEY-GROUP NAME
+#: 14132 NAME
+msgid "6076-Do you have children?"
+msgstr "6076-Haben Sie Kinder?"
+
+# SURVEY-GROUP NAME
+#: 14137 NAME
+msgid "6105-Is ovulation so painful that you find it difficult to do normal activities at times?"
+msgstr "6105-Ist der Eisprung so schmerzhaft, dass Sie es manchmal schwierig finden, Ihren regulären Aktivitäten nachzugehen?"
+
+# SURVEY-GROUP NAME
+#: 14139 NAME
+msgid "6110-Have you taken birth control pills since your diagnosis with LAM?"
+msgstr "6110-Haben Sie seit Ihrer LAM-Diagnose die "Anti-Baby-Pille" genommen?"
+
+# SURVEY-GROUP NAME
+#: 14143 NAME
+msgid "14141-Are you post- or peri-menopausal"
+msgstr "14141-Befinden Sie sich in der Post- oder Perimenopause?"
+
+# SURVEY-GROUP NAME
+#: 14142 NAME
+msgid "6118-Have you ever been on hormone replacement therapy?"
+msgstr "6118-Haben Sie jemals eine Hormonersatztherapie bekommen?"
+
+# SURVEY-GROUP NAME
+#: 14131 NAME
+msgid "6134-Do you have any other significant illness in addition to LAM?"
+msgstr "6134-Leiden Sie außer an LAM an irgendeiner weiteren schweren Erkrankung?"
+
+# SURVEY-GROUP NAME
+#: 14130 NAME
+msgid "6131-Has any member of your family (including second cousins, grandparents, etc) ever experienced any symptom potentially associated with Tuberous Sclerosis?"
+msgstr "6131-Sind bei anderen Personen in Ihrer Familie (einschließlich Vettern/Kusinen zweiten Grades, Großeltern etc.) schon einmal Symptome aufgetreten, die mit tuberöser Sklerose in Verbindung stehen könnten?"
+
+# SURVEY-GROUP NAME
+#: 14129 NAME
+msgid "6129-Has any member of your family (including second cousins, grandparents, great aunts/uncles, etc) ever been diagnosed with Tuberous Sclerosis?"
+msgstr "6129-Wurde bei einer anderen Person in Ihrer Familie (einschließlich Vettern/Kusinen zweiten Grades, Großeltern, Großtanten/-onkel etc.) schon einmal tuberöse Sklerose diagnostiziert?"
+
+# SURVEY-GROUP NAME
+#: 14128 NAME
+msgid "6123-Have you been diagnosed with Tuberous Sclerosis?"
+msgstr "6123-Wurde bei Ihnen tuberöse Sklerose diagnostiziert?"
+
+# SURVEY-GROUP NAME
+#: 9527 NAME
+msgid "6138-ovarian-surgery"
+msgstr "6138-chirurgischer-Eierstockeingriff"
+
+# SURVEY-GROUP NAME
+#: 26407 NAME
+msgid "hymoptysis"
+msgstr "Hämoptyse"
+
+# SURVEY-GROUP NAME
+#: 14115 NAME
+msgid "6062-Is a sample of your tissue available"
+msgstr "6062-Gibt es bereits eine Gewebeprobe von Ihnen?"
+
+# SURVEY-GROUP NAME
+#: 26250 NAME
+msgid "had-children-other"
+msgstr "Kinder-Sonstiges"
+
+# SURVEY-GROUP NAME
+#: 26249 NAME
+msgid "had-children-surrogacy"
+msgstr "Kinder-Leihmutterschaft"
+
+# SURVEY-GROUP NAME
+#: 26247 NAME
+msgid "pregnant-not-knew-had-lam"
+msgstr "schwanger-LAM-Erkrankung-nicht-bekannt"
+
+# SURVEY-GROUP NAME
+#: 14138 NAME
+msgid "6107-Have you ever been on birth control pills?"
+msgstr "6107-Haben Sie irgendwann die "Anti-Baby-Pille" genommen?"
+
+# SURVEY-GROUP NAME
+#: 24534 NAME
+msgid "incontinence-drink-avoidance"
+msgstr "Inkontinenz-getränke-meiden"
+
+# SURVEY-GROUP NAME
+#: 24524 NAME
+msgid "incontinence of faeces"
+msgstr "Stuhlinkontinenz"
+
+# SURVEY-GROUP NAME
+#: 24521 NAME
+msgid "incontinent of urine"
+msgstr "Harninkontinenz"
+
+# SURVEY-GROUP NAME
+#: 25734 NAME
+msgid "back joint or bone pain"
+msgstr "Rücken-, Gelenk- oder Knochenschmerzen"
+
+# SURVEY-GROUP NAME
+#: 24822 NAME
+msgid "bone loss"
+msgstr "Knochenschwund"
+
+# SURVEY-GROUP NAME
+#: 24819 NAME
+msgid "osteoporosis family members"
+msgstr "Osteoporose Angehörige"
+
+# SURVEY-GROUP NAME
+#: 26469 NAME
+msgid "bone density scan results"
+msgstr "Ergebnisse Knochendichtemessung"
+
+# SURVEY-GROUP NAME
+#: 24835 NAME
+msgid "osteoporosis diagnosis"
+msgstr "Osteoporose-Diagnose"
+
+# SURVEY-GROUP NAME
+#: 24845 NAME
+msgid "osteoporosis medication formerly taken"
+msgstr "in der Vergangenheit eingenommene Osteoporose-Medikation"
+
+# SURVEY-GROUP NAME
+#: 24842 NAME
+msgid "osteoporosis medication no"
+msgstr "keine Osteoporose-Medikation"
+
+# SURVEY-GROUP NAME
+#: 24840 NAME
+msgid "osteoporosis medication"
+msgstr "Osteoporose-Medikation"
+
+# SURVEY-GROUP NAME
+#: 24858 NAME
+msgid "vitamin D and calcium supplements"
+msgstr "Vitamin-D- und Kalzium-Präparate"
+
+# SURVEY-GROUP NAME
+#: 24855 NAME
+msgid "multivitamin D and calcium content"
+msgstr "Multivitamin-, Vitamin-D- und Kalzium-Gehalt"
+
+# SURVEY-GROUP NAME
+#: 25607 NAME
+msgid "current medication summary"
+msgstr "Zusammenfassung aktuelle Medikation"
+
+# SURVEY-GROUP NAME
+#: 25630 NAME
+msgid "over-the-counter estrogens"
+msgstr "nicht verschreibungspflichtige Östrogene"
+
+# SURVEY-GROUP NAME
+#: 25624 NAME
+msgid "have used female hormones"
+msgstr "habe weibliche Hormone verwendet"
+
+# SURVEY-GROUP NAME
+#: 26221 NAME
+msgid "varying-travel-routine"
+msgstr "wechselnde-Reisegewohnheiten"
+
+# SURVEY-GROUP NAME
+#: 26225 NAME
+msgid "flying-log"
+msgstr "Protokoll Flugreisen"
+
+# SURVEY-GROUP NAME
+#: 26232 NAME
+msgid "daily-log-felt-sick"
+msgstr "Tagesprotokoll gesundheitliche Beschwerden"
+
+# SURVEY-GROUP NAME
+#: 26237 NAME
+msgid "health-log-symptoms-other"
+msgstr "Gesundheitsprotokoll-Symptome-Sonstiges"
+
+# SURVEY-GROUP NAME
+#: 26234 NAME
+msgid "sickness-type-other"
+msgstr "Art-Beschwerden-Sonstiges"
+
+# SURVEY-GROUP NAME
+#: 26244 NAME
+msgid "daily-log-missed-medication-other"
+msgstr "Tagesprotokoll-Medikation-versäumt-Sonstiges"
+
+# SURVEY-GROUP NAME
+#: 26241 NAME
+msgid "daily-log-diet-changes"
+msgstr "Tagesprotokoll-Änderungen-Ernährung"
+
+# SURVEY-GROUP NAME
+#: 26401 NAME
+msgid "sexual activity details"
+msgstr "Angaben sexuelle Aktivität"
+
+# SURVEY-GROUP NAME
+#: 26412 NAME
+msgid "malignancy"
+msgstr "Malignität"
+
+# SURVEY-GROUP NAME
+#: 26457 NAME
+msgid "have diabetes"
+msgstr "habe Diabetes"

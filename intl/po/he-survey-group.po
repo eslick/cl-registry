@@ -1,0 +1,775 @@
+﻿msgid ""
+msgstr ""
+"Project-Id-Version: ja-survey-group.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# SURVEY-GROUP NAME
+#: 5843 NAME
+msgid "Daily Home Spirometer Readings"
+msgstr "קריאות יומיות של ספירומטר ביתי"
+
+# SURVEY-GROUP ADVICE
+#: 5843 ADVICE
+msgid "This page captures the basic information available from most home spirometers."
+msgstr "דף זה מכיל את המידע הבסיסי שניתן למצוא על ספירומטרים ביתיים."
+
+# SURVEY-GROUP NAME
+#: 23563 NAME
+msgid "Home Measurements"
+msgstr "מדידות ביתיות"
+
+# SURVEY-GROUP NAME
+#: 5853 NAME
+msgid "Original Diagnosis"
+msgstr "אבחנה מקורית"
+
+# SURVEY-GROUP ADVICE
+#: 5853 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 6137 NAME
+msgid "Surgical Procedures"
+msgstr "הליכים ניתוחיים"
+
+# SURVEY-GROUP NAME
+#: 6145 NAME
+msgid "LAM Related Conditions"
+msgstr "מצבים הקשורים ל-LAM"
+
+# SURVEY-GROUP NAME
+#: 6160 NAME
+msgid "Clinical Trial Participation"
+msgstr "השתתפות בניסוי קליני"
+
+# SURVEY-GROUP ADVICE
+#: 6160 ADVICE
+msgid "Please enter information for you most recent trial participation, if any."
+msgstr "נא לספק מידע על הניסוי שהשתתפת בו לאחרונה, אם בכלל."
+
+# SURVEY-GROUP NAME
+#: 5876 NAME
+msgid "Personal Measurements"
+msgstr "מדידות אישיות"
+
+# SURVEY-GROUP ADVICE
+#: 5876 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 5881 NAME
+msgid "Pain and Discomfort"
+msgstr "כאב ואי נוחות"
+
+# SURVEY-GROUP ADVICE
+#: 5881 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 5898 NAME
+msgid "Family History"
+msgstr "היסטוריה משפחתית"
+
+# SURVEY-GROUP ADVICE
+#: 5898 ADVICE
+msgid "Your family includes any known relatives.  Your immediate family includes from your grandparents through your grand children, nieces and nephews.  Also include your first and second cousins."
+msgstr "המשפחה המורחבת שלך כוללת כל קרוב ידוע.  המשפחה הקרובה כוללת את הסבים וגם את הנכדים, האחיינים והאחייניות.  היא כוללת גם את בני הדודים מהדרגה הראשונה והשנייה."
+
+# SURVEY-GROUP NAME
+#: 5911 NAME
+msgid "General Dietary Information"
+msgstr "מידע כללי על תזונה"
+
+# SURVEY-GROUP ADVICE
+#: 5911 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 5922 NAME
+msgid "Diet and Supplements"
+msgstr "תזונה ותוספים"
+
+# SURVEY-GROUP ADVICE
+#: 5922 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 5936 NAME
+msgid "Exercise"
+msgstr "לבצע פעילות גופנית"
+
+# SURVEY-GROUP ADVICE
+#: 5936 ADVICE
+msgid "If you answer no to the first question, you can go to the next section"
+msgstr "אם ענית בשלילה על השאלה הראשונה את יכולה לעבור לחלק הבא"
+
+# SURVEY-GROUP NAME
+#: 5956 NAME
+msgid "Level of Fitness"
+msgstr "רמת התאמה"
+
+# SURVEY-GROUP ADVICE
+#: 5956 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 5962 NAME
+msgid "Pulmonary Rehabilitation and Therapy"
+msgstr "טיפול ושיקום ריאתי"
+
+# SURVEY-GROUP ADVICE
+#: 5962 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 5969 NAME
+msgid "Complementary and Alternative Medicines"
+msgstr "רפואה משלימה ואלטרנטיבית"
+
+# SURVEY-GROUP ADVICE
+#: 5969 ADVICE
+msgid "The answers to these questions will remain private to you.  The information will only be used in a manner that preserves your privacy, unless you give explicit consent otherwise."
+msgstr "התשובות לשאלות אלו יישמרו אישיות לך בלבד.  השימוש במידע ייעשה כך שהחיסיון שלך יישמר, אלא אם כן תתני הוראה מפורשת אחרת.."
+
+# SURVEY-GROUP NAME
+#: 5989 NAME
+msgid "Your Daily Routine"
+msgstr "השגרה היומית שלך"
+
+# SURVEY-GROUP ADVICE
+#: 5989 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 6001 NAME
+msgid "Environmental Factors"
+msgstr "גורמים סביבתיים"
+
+# SURVEY-GROUP NAME
+#: 13802 NAME
+msgid "Climate"
+msgstr "אקלים"
+
+# SURVEY-GROUP NAME
+#: 6020 NAME
+msgid "Flying and Altitude"
+msgstr "טיסה וגובה"
+
+# SURVEY-GROUP ADVICE
+#: 6020 ADVICE
+msgid "If you answer no to the first question, please skip the rest of the section"
+msgstr "אם ענית בשלילה על השאלה הראשונה, אנא דלגי על יתר השאלות בחלק זה."
+
+# SURVEY-GROUP NAME
+#: 6040 NAME
+msgid "Sleep"
+msgstr "שינה"
+
+# SURVEY-GROUP ADVICE
+#: 6040 ADVICE
+msgid "test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 26399 NAME
+msgid "Sexual Activity"
+msgstr "פעילות מינית"
+
+# SURVEY-GROUP NAME
+#: 6073 NAME
+msgid "Reproductive History"
+msgstr "בדיקה"
+
+# SURVEY-GROUP ADVICE
+#: 6073 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 6096 NAME
+msgid "Monthly Cycle"
+msgstr "מחזור חודשי"
+
+# SURVEY-GROUP ADVICE
+#: 6096 ADVICE
+msgid "If you are no longer menstruating, then please answer these questions referring the last two years you were menstruating. "
+msgstr "אם כבר אין לך ווסת נא לענות על השאלות המתייחסות לשנתיים האחרונות שבהן עוד הייתה לך ווסת. "
+
+# SURVEY-GROUP NAME
+#: 6114 NAME
+msgid "Post- or Peri-Menopausal"
+msgstr "לאחר גיל המעבר או פרימנופאוזה"
+
+# SURVEY-GROUP ADVICE
+#: 6114 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 6122 NAME
+msgid "Tuberous Sclerosis"
+msgstr "טרשת קרשית"
+
+# SURVEY-GROUP ADVICE
+#: 6122 ADVICE
+msgid "Test"
+msgstr "בדיקה"
+
+# SURVEY-GROUP NAME
+#: 26410 NAME
+msgid "Cancer and Malignancy"
+msgstr "סרטן וממאירות"
+
+# SURVEY-GROUP NAME
+#: 26455 NAME
+msgid "Diabetes"
+msgstr "סוכרת"
+
+# SURVEY-GROUP NAME
+#: 6061 NAME
+msgid "Tissue and Blood Samples"
+msgstr "דגימות דם ורקמה"
+
+# SURVEY-GROUP ADVICE
+#: 6061 ADVICE
+msgid "This section will capture information the availability of tissue and blood.  We hope to update this in time with links to ongoing efforts to capture tissue information."
+msgstr "המדור הזה יכלול מידע אודות זמינות רקמות ודם.  עם הזמן אנו מקווים לעדכן את המדור בקישורים למאמצים הנעשים להכללת מידע לגבי רקמות."
+
+# SURVEY-GROUP NAME
+#: 23548 NAME
+msgid "LAM Medications"
+msgstr "תרופות לטיפול ב-LAM"
+
+# SURVEY-GROUP NAME
+#: 24512 NAME
+msgid "Do you experience incontinence?"
+msgstr "האם את חווה אי שליטה בסוגרים?"
+
+# SURVEY-GROUP ADVICE
+#: 24512 ADVICE
+msgid "If you don't have any of these symptoms or related concerns, you don't need to fill out the rest of the survey."
+msgstr "אם אינך סובלת מתסמינים אלה או מבעיות הקשורות אליהם אינך חייבת להמשיך ולמלא את שאר השאלון."
+
+# SURVEY-GROUP NAME
+#: 24540 NAME
+msgid "Causes and Treatment"
+msgstr "גורמים וטיפול"
+
+# SURVEY-GROUP NAME
+#: 24539 NAME
+msgid "Symptoms"
+msgstr "תסמינים"
+
+# SURVEY-GROUP NAME
+#: 24535 NAME
+msgid "Lifestyle challenges"
+msgstr "אתגרים בסגנון החיים"
+
+# SURVEY-GROUP ADVICE
+#: 24535 ADVICE
+msgid "What lifestyle impacts and challenges have you experienced due to incontinence.  How do you manage these challenges?"
+msgstr "באלו השפעות ואתגרים בסגנון החיים שלך נתקלת כתוצאה מאי-השליטה.  איך את מתמודדת עם האתגרים הללו?"
+
+# SURVEY-GROUP NAME
+#: 24816 NAME
+msgid "Osteoporosis Risk Factors"
+msgstr "גורמי סיכון לדלדול עצם (אוסטיאופורוזיס)"
+
+# SURVEY-GROUP NAME
+#: 24833 NAME
+msgid "Osteoporosis Diagnosis"
+msgstr "אבחון דלדול עצם"
+
+# SURVEY-GROUP NAME
+#: 24850 NAME
+msgid "Osteoporosis related supplements"
+msgstr "תוספים הקשורים לדלדול עצם"
+
+# SURVEY-GROUP NAME
+#: 25617 NAME
+msgid "Estrogen Medication and Supplements"
+msgstr "תוספים ואסטרוגן"
+
+# SURVEY-GROUP NAME
+#: 25605 NAME
+msgid "Medication Overview"
+msgstr "סקירה תרופתית"
+
+# SURVEY-GROUP NAME
+#: 25618 NAME
+msgid "Stress "
+msgstr "דחק (סטרס) "
+
+# SURVEY-GROUP NAME
+#: 26331 NAME
+msgid "How do you feel today?"
+msgstr "איך את מרגישה היום?"
+
+# SURVEY-GROUP NAME
+#: 26210 NAME
+msgid "Daily PFT Log Entry"
+msgstr "רישום יומי ביומן של בדיקת תפקודי ריאות"
+
+# SURVEY-GROUP NAME
+#: 26219 NAME
+msgid "Daily travel log"
+msgstr "יומן מסע יומי"
+
+# SURVEY-GROUP NAME
+#: 26229 NAME
+msgid "Daily health log"
+msgstr "יומן בריאות יומי"
+
+# SURVEY-GROUP NAME
+#: 26239 NAME
+msgid "Daily diet and medications"
+msgstr "תזונה וטיפול תרופתי יומיים"
+
+# SURVEY-GROUP NAME
+#: 26387 NAME
+msgid "Daily Diary"
+msgstr "יומן יומי"
+
+# SURVEY-GROUP NAME
+#: 30002 NAME
+msgid "Alpha-1 Antitrypsin Deficiency"
+msgstr "חוסר באנטיטריפסין אלפא‏-‏1"
+
+# SURVEY-GROUP NAME
+#: 26462 NAME
+msgid "lam diagnosis other"
+msgstr "אבחון LAM - אחר"
+
+# SURVEY-GROUP NAME
+#: 14121 NAME
+msgid "5889-Do you experience pain and/or discomfort related to the reproductive organs?"
+msgstr "5889 – האם את סובלת מכאב ו/או אי נוחות הקשורים לאברי הרבייה?"
+
+# SURVEY-GROUP NAME
+#: 14117 NAME
+msgid "5885-Do you feel aches or pains of any kind of discomfort on a regular basis?"
+msgstr "5885 – האם את סובלת דרך קבע מכאבים או מחושים המסבים אי נוחות כלשהי?"
+
+# SURVEY-GROUP NAME
+#: 14116 NAME
+msgid "5894-Do you experience pain and/or discomfort related to any surgery related to ovaries?"
+msgstr "5894 – האם את חשה כאב ו/או אי נוחות הקשורים לניתוח כלשהו הקשור לשחלות?"
+
+# SURVEY-GROUP NAME
+#: 14127 NAME
+msgid "5907-Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews suffered from disabling disorders?"
+msgstr "5907 – האם מישהו ממשפחתך הקרובה, כולל הסבים, הדודים והדודות, האחיינים והאחייניות סובלים ממחלות הגורמות לנכות?"
+
+# SURVEY-GROUP NAME
+#: 14126 NAME
+msgid "5905-Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews died prematurely?"
+msgstr "5905 – האם מישהו ממשפחתך הקרובה, כולל סבים, דודים ודודות, אחיינים ואחייניות נפטר בטרם עת?"
+
+# SURVEY-GROUP NAME
+#: 14125 NAME
+msgid "5903-Have any members of your family suffered from genetic conditions or diseases?"
+msgstr "5903 – האם מישהו מבני משפחתך סבל מבעיות או ממחלות גנטיות?"
+
+# SURVEY-GROUP NAME
+#: 14124 NAME
+msgid "5899-Do you have a history of any abnormal blood test results?"
+msgstr "5899 – האם יש לך עבר של תוצאות בדיקות דם כלשהן שלא היו תקינות?"
+
+# SURVEY-GROUP NAME
+#: 13837 NAME
+msgid "5916-Do you have symptoms, related to LAM or unrelated to LAM that you associate with a particular food/ drink or food group?"
+msgstr "5916 – האם יש לך תסמינים הקשורים ל-LAM או שאינם קשורים אליה ואת משייכת אותם למזון/למשקה מסויימים או לאחת מקבוצות המזון?"
+
+# SURVEY-GROUP NAME
+#: 13838 NAME
+msgid "13836-Do you avoid eating certain foods?"
+msgstr "13836 – האם את נמנעת מאכילת מזונות מסוימים?"
+
+# SURVEY-GROUP NAME
+#: 26918 NAME
+msgid "cholesterol details"
+msgstr "פירוט כולסטרול"
+
+# SURVEY-GROUP NAME
+#: 13854 NAME
+msgid "5923-Do you try to follow a fat-free diet?"
+msgstr "5923 – האם את מנסה לאכל תזונה נטולת שומן?"
+
+# SURVEY-GROUP NAME
+#: 13855 NAME
+msgid "5928-Do you find it difficult to maintain your weight?"
+msgstr "5928 – האם את מתקשה לשמור על המשקל שלך?"
+
+# SURVEY-GROUP NAME
+#: 13856 NAME
+msgid "5931-Do you take vitamin supplements?"
+msgstr "5931 – האם את נוטלת תוספי ויטמינים?"
+
+# SURVEY-GROUP NAME
+#: 13902 NAME
+msgid "5945-Do you desaturate on exertion?"
+msgstr "5945 – האם את מרגישה מיובשת לאחר מאמץ?"
+
+# SURVEY-GROUP NAME
+#: 13903 NAME
+msgid "5948-If you exercise, do you see positive effects of exercise?"
+msgstr "5948 – אם את מתעמלת, האם את רואה השפעה חיובית?"
+
+# SURVEY-GROUP NAME
+#: 14103 NAME
+msgid "Exercise Subgroup"
+msgstr "תת-קבוצה של התעמלות"
+
+# SURVEY-GROUP NAME
+#: 14102 NAME
+msgid "5963-Have you been referred to pulmonary rehabilitation?"
+msgstr "5963 – האם הופנית לשיקום ריאתי?"
+
+# SURVEY-GROUP NAME
+#: 13813 NAME
+msgid "5970-Have you ever taken recreational drugs (excluding cigarettes and alcohol)?"
+msgstr "5970 – האם נטלת אי פעם סמים כלשהם (ואין הכוונה לסיגריות או לאלכוהול)?"
+
+# SURVEY-GROUP NAME
+#: 13814 NAME
+msgid "5972-Have you tried Chinese medicine"
+msgstr "5972 – האם ניסית רפואה סינית"
+
+# SURVEY-GROUP NAME
+#: 13815 NAME
+msgid "5975-Have you tried Herbal treatments?"
+msgstr "5975 – האם ניסית טיפול בצמחי מרפא?"
+
+# SURVEY-GROUP NAME
+#: 13816 NAME
+msgid "5978-Have you tried Hypnosis?"
+msgstr "5978 – האם ניסית היפנוזה?"
+
+# SURVEY-GROUP NAME
+#: 13817 NAME
+msgid "5980-Have you tried Meditation?"
+msgstr "5980 – האם ניסית מדיטציה?"
+
+# SURVEY-GROUP NAME
+#: 13819 NAME
+msgid "5983-Any other forms of complementary or alternative medicine?"
+msgstr "5983 – כל צורה אחרת של רפואה משלימה או אלטרנטיבית?"
+
+# SURVEY-GROUP NAME
+#: 13820 NAME
+msgid "5985-Have you noticed an effect on your breathing from these interventions?"
+msgstr "5985 – האם שמת לב להשפעה שיש לטיפולים האלו על הנשימה שלך?"
+
+# SURVEY-GROUP NAME
+#: 13822 NAME
+msgid "5986-Have you noticed an effect on your  well-being from any of these interventions?"
+msgstr "5986 – האם שמת לב להשפעה שיש לטיפולים האלו על הרווחה שלך?"
+
+# SURVEY-GROUP NAME
+#: 13703 NAME
+msgid "daily-routine-work"
+msgstr "שגרתית יומית"
+
+# SURVEY-GROUP NAME
+#: 13706 NAME
+msgid "home-maker-detail"
+msgstr "פירוט לעקרת הבית"
+
+# SURVEY-GROUP NAME
+#: 12392 NAME
+msgid "6006-Have you ever smoked?"
+msgstr "6006 – האם נהגת לעשן?"
+
+# SURVEY-GROUP NAME
+#: 12393 NAME
+msgid "6009-Have you ever used alcohol?"
+msgstr "6009 – האם נהגת לשתות אלכוהול?"
+
+# SURVEY-GROUP NAME
+#: 12394 NAME
+msgid "6012-Are there environmental factors or risks (e.g. pesticides, asbestos) that you know that your mother or father were directly exposed to?"
+msgstr "6012 – האם יש גורמי סיכון או גורמים סביבתיים (כמו קוטלי חרקים, אסבסט) שידוע לך בוודאות שאמך או אביך נחשפו אליהם ישירות?"
+
+# SURVEY-GROUP NAME
+#: 12395 NAME
+msgid "6016-Do certain types of weather affect your body?"
+msgstr "6016 – האם מזג אוויר מסוים משפיע על גופך?"
+
+# SURVEY-GROUP NAME
+#: 12396 NAME
+msgid "6021-Do you fly in airplanes since your diagnosis?"
+msgstr "6021 – האם כבר טסת במטוסים מאז שאבחנו את מחלתך?"
+
+# SURVEY-GROUP NAME
+#: 13805 NAME
+msgid "6041-Do you have problems falling or staying asleep?"
+msgstr "6041 – האם את מתקשה להירדם או לישון שינה רצופה?"
+
+# SURVEY-GROUP NAME
+#: 13806 NAME
+msgid "6046-Do you sleep with oxygen?"
+msgstr "6046 – האם את ישנה עם חמצן?"
+
+# SURVEY-GROUP NAME
+#: 13807 NAME
+msgid "6048-Do you feel particularly cold when going to sleep or waking up?"
+msgstr "6048 – האם את חשה בקור בעיקר כשאת נרדמת או מתעוררת?"
+
+# SURVEY-GROUP NAME
+#: 13808 NAME
+msgid "6051-Do you have cold feet or hands when not in bed?"
+msgstr "6051 – האם כפות רגליך או ידיך קרות כשאת לא במיטה?"
+
+# SURVEY-GROUP NAME
+#: 13810 NAME
+msgid "6050-Do you have cold feet or hands in bed?"
+msgstr "6050 – האם את סובלת מכפות רגליים או ידיים קרות במיטה?"
+
+# SURVEY-GROUP NAME
+#: 26404 NAME
+msgid "tissue biopsy details"
+msgstr "פרטי ביופסיה של רקמה"
+
+# SURVEY-GROUP NAME
+#: 26259 NAME
+msgid "have-used-birth-control"
+msgstr "השתמשה באמצעי מניעה"
+
+# SURVEY-GROUP NAME
+#: 14135 NAME
+msgid "6074-Have you ever been pregnant?"
+msgstr "6074 – האם אי פעם היית בהריון?"
+
+# SURVEY-GROUP NAME
+#: 14134 NAME
+msgid "6084-If you did not know you had LAM prior to getting pregnant did you know before you gave birth?"
+msgstr "6084 – אם לא ידעת שאת סובלת מ-LAM לפני שנכנסת להריון האם ידעת על כך לפני שילדת?"
+
+# SURVEY-GROUP NAME
+#: 14133 NAME
+msgid "6079-Did you know you had LAM during one or more pregnancies?"
+msgstr "6079 – האם ידעת שאת סובלת מ-LAM בזמן אחד ההריונות שלך או יותר?"
+
+# SURVEY-GROUP NAME
+#: 14132 NAME
+msgid "6076-Do you have children?"
+msgstr "6076 – האם יש לך ילדים?"
+
+# SURVEY-GROUP NAME
+#: 14137 NAME
+msgid "6105-Is ovulation so painful that you find it difficult to do normal activities at times?"
+msgstr "6105 – האם הביוץ כואב לך עד כדי כך שלפעמים את אפילו לא יכולה לבצע פעילויות רגילות?"
+
+# SURVEY-GROUP NAME
+#: 14139 NAME
+msgid "6110-Have you taken birth control pills since your diagnosis with LAM?"
+msgstr "6110 – האם התחלת ליטול כדורים למניעת הריון מאז שאובחנת כסובלת ממחלת LAM?"
+
+# SURVEY-GROUP NAME
+#: 14143 NAME
+msgid "14141-Are you post- or peri-menopausal"
+msgstr "14141 – האם את לאחר גיל המעבר או בפרימנופאוזה"
+
+# SURVEY-GROUP NAME
+#: 14142 NAME
+msgid "6118-Have you ever been on hormone replacement therapy?"
+msgstr "6118 – האם אי פעם נטלת טיפול הורמונלי חלופי?"
+
+# SURVEY-GROUP NAME
+#: 14131 NAME
+msgid "6134-Do you have any other significant illness in addition to LAM?"
+msgstr "6134 – האם יש לך מחלות חמורות אחרות מלבד LAM?"
+
+# SURVEY-GROUP NAME
+#: 14130 NAME
+msgid "6131-Has any member of your family (including second cousins, grandparents, etc) ever experienced any symptom potentially associated with Tuberous Sclerosis?"
+msgstr "6131 – האם מישהו מבני משפחתך (כולל בני דודים מדרגה שנייה, סבים וכד') סבל אי פעם מתסמינים הקשורים לטרשת קרשית?"
+
+# SURVEY-GROUP NAME
+#: 14129 NAME
+msgid "6129-Has any member of your family (including second cousins, grandparents, great aunts/uncles, etc) ever been diagnosed with Tuberous Sclerosis?"
+msgstr "6129 – האם מישהו מבני משפחתך (כולל בני דודים מדרגה שנייה, סבים, דודים מדרגה רחוק וכד') אובחן אי פעם כחולה בטרשת קרשית?"
+
+# SURVEY-GROUP NAME
+#: 14128 NAME
+msgid "6123-Have you been diagnosed with Tuberous Sclerosis?"
+msgstr "6123 – האם אובחנה אצלך אי פעם מחלת טרשת קרשית?"
+
+# SURVEY-GROUP NAME
+#: 9527 NAME
+msgid "6138-ovarian-surgery"
+msgstr "6138 – ניתוח בשחלה"
+
+# SURVEY-GROUP NAME
+#: 26407 NAME
+msgid "hymoptysis"
+msgstr "יריקת דם"
+
+# SURVEY-GROUP NAME
+#: 14115 NAME
+msgid "6062-Is a sample of your tissue available"
+msgstr "6062 – האם קיימת דגימת רקמה זמינה שלך"
+
+# SURVEY-GROUP NAME
+#: 26250 NAME
+msgid "had-children-other"
+msgstr "ילדים  - אחר"
+
+# SURVEY-GROUP NAME
+#: 26249 NAME
+msgid "had-children-surrogacy"
+msgstr "ילדים - פונדקאות"
+
+# SURVEY-GROUP NAME
+#: 26247 NAME
+msgid "pregnant-not-knew-had-lam"
+msgstr "בהריון לא ידעה שיש לה מחלת LAM"
+
+# SURVEY-GROUP NAME
+#: 14138 NAME
+msgid "6107-Have you ever been on birth control pills?"
+msgstr "6107 – האם נטלת אי פעם גלולות למניעת הריון?"
+
+# SURVEY-GROUP NAME
+#: 24534 NAME
+msgid "incontinence-drink-avoidance"
+msgstr "אי שליטה – הימנעות משתייה"
+
+# SURVEY-GROUP NAME
+#: 24524 NAME
+msgid "incontinence of faeces"
+msgstr "אי שליטה ביציאות"
+
+# SURVEY-GROUP NAME
+#: 24521 NAME
+msgid "incontinent of urine"
+msgstr "אי שליטה במתן שתן"
+
+# SURVEY-GROUP NAME
+#: 25734 NAME
+msgid "back joint or bone pain"
+msgstr "כאבים במפרקים בגב או בעצמות"
+
+# SURVEY-GROUP NAME
+#: 24822 NAME
+msgid "bone loss"
+msgstr "דלדול עצם"
+
+# SURVEY-GROUP NAME
+#: 24819 NAME
+msgid "osteoporosis family members"
+msgstr "דלדול עצם אצל בני משפחה"
+
+# SURVEY-GROUP NAME
+#: 26469 NAME
+msgid "bone density scan results"
+msgstr "תוצאות בדיקת צפיפות עצם"
+
+# SURVEY-GROUP NAME
+#: 24835 NAME
+msgid "osteoporosis diagnosis"
+msgstr "אבחון של דלדול עצם"
+
+# SURVEY-GROUP NAME
+#: 24845 NAME
+msgid "osteoporosis medication formerly taken"
+msgstr "נטלה בעבר תרופה לטיפול בדלדול עצם"
+
+# SURVEY-GROUP NAME
+#: 24842 NAME
+msgid "osteoporosis medication no"
+msgstr "לא נוטלת תרופות לטיפול בדלדול עצם"
+
+# SURVEY-GROUP NAME
+#: 24840 NAME
+msgid "osteoporosis medication"
+msgstr "תרופה לטיפול בדלדול עצם"
+
+# SURVEY-GROUP NAME
+#: 24858 NAME
+msgid "vitamin D and calcium supplements"
+msgstr "תוספים של ויטמין די וסידן"
+
+# SURVEY-GROUP NAME
+#: 24855 NAME
+msgid "multivitamin D and calcium content"
+msgstr "ויטמין די וסידן במולטיוויטמין"
+
+# SURVEY-GROUP NAME
+#: 25607 NAME
+msgid "current medication summary"
+msgstr "סיכום תרופות בשימוש שוטף (בהווה)"
+
+# SURVEY-GROUP NAME
+#: 25630 NAME
+msgid "over-the-counter estrogens"
+msgstr "אסטרוגנים ללא מרשם"
+
+# SURVEY-GROUP NAME
+#: 25624 NAME
+msgid "have used female hormones"
+msgstr "השתמשה בהורמונים נשיים"
+
+# SURVEY-GROUP NAME
+#: 26221 NAME
+msgid "varying-travel-routine"
+msgstr "שגרת נסיעה משתנה"
+
+# SURVEY-GROUP NAME
+#: 26225 NAME
+msgid "flying-log"
+msgstr "יומן טיסה"
+
+# SURVEY-GROUP NAME
+#: 26232 NAME
+msgid "daily-log-felt-sick"
+msgstr "יומן מעקב יומי אחר בחילות"
+
+# SURVEY-GROUP NAME
+#: 26237 NAME
+msgid "health-log-symptoms-other"
+msgstr "יומן תסמיני בריאות - אחר"
+
+# SURVEY-GROUP NAME
+#: 26234 NAME
+msgid "sickness-type-other"
+msgstr "סוגי בחילה - אחר"
+
+# SURVEY-GROUP NAME
+#: 26244 NAME
+msgid "daily-log-missed-medication-other"
+msgstr "יומן יומי על טיפול תרופתי שהוחמץ - אחר"
+
+# SURVEY-GROUP NAME
+#: 26241 NAME
+msgid "daily-log-diet-changes"
+msgstr "יומן יומי על שינויים בתזונה"
+
+# SURVEY-GROUP NAME
+#: 26401 NAME
+msgid "sexual activity details"
+msgstr "פרטים על פעילות מינית"
+
+# SURVEY-GROUP NAME
+#: 26412 NAME
+msgid "malignancy"
+msgstr "ממאירות"
+
+# SURVEY-GROUP NAME
+#: 26457 NAME
+msgid "have diabetes"
+msgstr "סובלת מסוכרת"

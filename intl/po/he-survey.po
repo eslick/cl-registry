@@ -1,0 +1,170 @@
+﻿msgid ""
+msgstr ""
+"Project-Id-Version: ja-survey.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# SURVEY NAME
+#: 5842 NAME
+msgid "Home Pulmonary Function Testing"
+msgstr "בדיקה ביתית של תפקודי ריאות"
+
+# SURVEY DESCRIPTION
+#: 5842 DESCRIPTION
+msgid "This form will enable you to keep a history of all  pulmonary function tests you take at home.  You can input all your tests over time.  This data is critically important for us to establish the potential benefit of any given therapy for LAM.  We will provide the ability for you to visualize this history in the explore section over time.\n"
+msgstr "טופס זה יאפשר לך לשמור על כל הבדיקות של תפקודי הריאות שאת עושה בבית.  עם הזמן תוכלי להכניס את כל נתוני הבדיקות.  נתונים אלה חשובים מאד עבורנו כדי לקבוע את היעילות המרבית של כל טיפול שניתן עבור LAM.  בבוא העת אנו נספק לך את האפשרות לבחון את ההיסטוריה הזו באזור החיפוש.\n"
+
+# SURVEY HELP
+#: 5842 HELP
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
+msgstr "חובה להכניס את נתוני בדיקות המעבדה ליומן תיעוד הביקורים הרפואיים.  אנא שלחי מייל לכתובת lamsight-admin@media.mit.edu, אם יש לך שאלות לגבי יומן זה.   "
+
+# SURVEY NAME
+#: 5875 NAME
+msgid "General Personal and Family Information"
+msgstr "מידע אישי ומשפחתי כללי"
+
+# SURVEY DESCRIPTION
+#: 5875 DESCRIPTION
+msgid "General personal physical profile and experiences of any form of pain and\ndiscomfort "
+msgstr "פרופיל גופני אישי כללי וכל צורה של חוויית כאב\nואי נוחות "
+
+# SURVEY NAME
+#: 5910 NAME
+msgid "Dietary Information"
+msgstr "מידע תזונתי"
+
+# SURVEY DESCRIPTION
+#: 5910 DESCRIPTION
+msgid " Information about diet, dietary habits, use of supplements and relationship\nto health (use of vitamins, control of cholesterol, avoided foods, etc.)."
+msgstr " מידע אודות תזונה, הרגלי אכילה, שימוש בתוספי מזון והקשר\n לבריאות (שימוש בויטמינים, איזון כולסטרול, הימנעות ממזונות, וכד')."
+
+# SURVEY NAME
+#: 5935 NAME
+msgid "Exercise and Fitness"
+msgstr "התעמלות וכושר"
+
+# SURVEY DESCRIPTION
+#: 5935 DESCRIPTION
+msgid " Physical exercise profile (sports - frequency, intensity, etc.) and general\nfitness information"
+msgstr " פרופיל התעמלות גופנית (ספורט – תדירות, עוצמה וכד') כמו כן\n מידע על כושר כללי"
+
+# SURVEY NAME
+#: 5968 NAME
+msgid "Complementary and Alternative Medicines"
+msgstr "רפואה משלימה ואלטרנטיבית"
+
+# SURVEY DESCRIPTION
+#: 5968 DESCRIPTION
+msgid " Descriptions of uses and perceived effects of complementary and alternative\nmedicine"
+msgstr " תיאורים של שימוש והשפעות נראות לעין של רפואה משלימה\n ואלטרנטיבית"
+
+# SURVEY NAME
+#: 5988 NAME
+msgid "Behavior and Environment"
+msgstr "התנהגות וסביבה"
+
+# SURVEY DESCRIPTION
+#: 5988 DESCRIPTION
+msgid "This survey covers daily activities (work schedule, level of daily physical\nactivity, sleep, etc.) along with information regarding flying on airplanes\nand living at different altitudes an in different climates. "
+msgstr "הסקר הזה מכסה את הפעילויות היום יומיות (לו"ז עבודה, דרגת הפעילות הגופנית היומית\n שינה וכד') וגם מידע הקשור לטיסה במטוסים\n ומגורים בגבהים שונים בתנאי אקלים שונים. "
+
+# SURVEY NAME
+#: 6072 NAME
+msgid "Reproductive Health"
+msgstr "בריאות מערכת הרבייה"
+
+# SURVEY DESCRIPTION
+#: 6072 DESCRIPTION
+msgid "Information on reproductive health history, monthly cycle, surgical\nprocedures, birth control, pregnancy,  and menopause"
+msgstr "מידע על ההיסטוריה של בריאות מערכת הרבייה, מחזור חודשי, ניתוחים\n, אמצעי מניעה, הריון וגיל המעבר"
+
+# SURVEY NAME
+#: 6121 NAME
+msgid "General Medical History"
+msgstr "היסטוריה רפואית כללית"
+
+# SURVEY DESCRIPTION
+#: 6121 DESCRIPTION
+msgid "Other pertinent medical history (i.e. tuberous sclerosis or other pre-existing conditions. Also family history of any pertinent illness)\n"
+msgstr "היסטוריה רפואית אחרת רלוונטית (טרשת קרשית או מצבים שהיו קיימים בעבר. וגם היסטוריה משפחתית לגבי כל מחלה רלוונטית אחרת \n"
+
+# SURVEY NAME
+#: 6136 NAME
+msgid "LAM Diagnosis"
+msgstr "אבחון LAM"
+
+# SURVEY DESCRIPTION
+#: 6136 DESCRIPTION
+msgid "This section captures essential information about your LAM diagnosis (for patients only)"
+msgstr "החלק הזה אוסף מידע חיוני לגבי אבחנת LAM שלך (למטופלות בלבד)"
+
+# SURVEY NAME
+#: 23547 NAME
+msgid "LAM Medications [on and off label uses]"
+msgstr "תרופות לטיפול ב-LAM [שימוש לפי ההתוויה ושלא לפי ההתוויה]"
+
+# SURVEY DESCRIPTION
+#: 23547 DESCRIPTION
+msgid "Not all medications are officially approved treatments.  Because of the urgency of treatment, some patients and doctors use unapproved medications or use "approved" medications for unapproved purposes.  These are called "off-label".  Information about off-label drugs may be very helpful.  \n\nThis is a history survey meant to identify who in the patient population has taken off-label medications for LAM.  This includes medication intended to slow or stop LAM progression as well as medications that impact LAM symptoms.  Your responses to this question will help us formulate diary forms for you to record your history of off-label use."
+msgstr "לא כל התרופות הן טיפול שאושר באופן רשמי.  בגלל הדחיפות במתן טיפול יש מטופלות ורופאים המשתמשים בתרופות שאינן מאושרות לשימוש או משתמשים בתרופות "מאושרות" למטרות שלא אושרו.  תרופות אלו נקראות "שלא לפי ההתוויה" .  מידע אודות תרופות אלה עשוי להועיל מאד.  \n\nזה סקר של היסטוריה שמטרתו לזהות מי מקרב אוכלוסיית המטופלות נטלה תרופות שלא לפי ההתוויה לטיפול ב—LAM.  זה כולל תרופות האמורות להאט את ההתקדמות שלמחלת LAM או להאט אותה וגם תרופות המשפיעות על התסמינים של LAM.   התשובות שלך לשאלה זו יסייעו לנו להרכיב עבורך סוגי יומנים כדי שתוכלי לתעד את ההיסטוריה של השימוש שלך בתרופות שלא לפי ההתוויה."
+
+# SURVEY NAME
+#: 24511 NAME
+msgid "Incontinence"
+msgstr "אי שליטה"
+
+# SURVEY DESCRIPTION
+#: 24511 DESCRIPTION
+msgid "Many patients report incontinence as a significant side effect of LAM.  This survey seeks to gather more information about the prevalence and patient's experiences managing this problem."
+msgstr "מטופלות רבות מדווחות על אי שליטה כתופעת לוואי משמעותית של LAM.  בסקר זה מנסים לאסוף יותר מידע על הימצאות התופעה ועל הניסיון של המטופלת בהתמודדות עם הבעיה."
+
+# SURVEY NAME
+#: 24815 NAME
+msgid "Bone Dysfunction and LAM"
+msgstr "אי תפקוד העצם ו-LAM"
+
+# SURVEY DESCRIPTION
+#: 24815 DESCRIPTION
+msgid "LAM researchers recently observed that there may be a link between LAM and osteoporosis.  This survey helps us gather information that may yield new ideas about ways to treat LAM."
+msgstr "החוקרים של LAM גילו לאחרונה שיש קשר בין LAM לדלדול עצם.  סקר זה יסייע לנו לאסוף מידע שעשוי להניב רעיונות חדשים לגבי דרכים לטפל ב-LAM."
+
+# SURVEY NAME
+#: 25604 NAME
+msgid "Hormones and Pulmonary Function"
+msgstr "הורמונים ותפקודי ריאות"
+
+# SURVEY DESCRIPTION
+#: 25604 DESCRIPTION
+msgid "This study is an extended background survey for information related to an our patient-driven Estrogen Study.  The pages up to Exercise are the most important, however you can complete this survey at whatever pace is most comfortable for you.<br><br>\nData you enter here will be reused in other surveys.\n\n"
+msgstr "מחקר זה מהווה חומר רקע מורחב למידע הקשור למחקר שלנו על מחקר אסטרוגן מונע-מטופלות.  הדפים עד התרגול הם החשובים ביותר, אבל את יכולה להשלים את הסקר הזה בקצב הנוח לך ביותר.<br><br>\nנתונים שתכניסי כאן ישמשו גם בסקרים אחרים.\n\n"
+
+# SURVEY NAME
+#: 26209 NAME
+msgid "Estrogen Study Diary"
+msgstr "יומן מחקר על אסטרוגן"
+
+# SURVEY DESCRIPTION
+#: 26209 DESCRIPTION
+msgid "This diary allows you to capture important information for each day you are part of the study as well as track information for your own information afterwards.  The first page contains the essential information.  The remaining pages only need to be filled out if something changed or something unusual happened."
+msgstr "יומן זה מאפשר לך לאגור מידע חשוב עבור כל יום שבו את מהווה חלק מהמחקר וגם לעקוב לאחר מכן אחר המידע שלך.  העמוד הראשון מכיל את המידע החיוני.  את יתר העמודים יש למלא רק אם משהו השתנה או שקרה דבר בלתי רגיל."
+
+# SURVEY NAME
+#: 29822 NAME
+msgid "Alpha-1 Antitrypsin Deficiency "
+msgstr "חוסר באנטיטריפסין אלפא‏-‏1 "
+
+# SURVEY DESCRIPTION
+#: 29822 DESCRIPTION
+msgid "Relationship betwen LAM, Pneumothorax and Alpha-1 Antitrypsin Deficiency "
+msgstr "היחס בין LAM, חזה אוויר וחוסר באנטיטריפסין אלפא-‏1. "
+
+# SURVEY HELP
+#: 29822 HELP
+msgid "Alpha-1 is one of the most common genetic disorders in the world. The symptoms include shortness of breath, a chronic cough, and abnormal liver test results. If you have any of these symptoms there is a simple blood test that can detect alpha-1 antitrypsin levels"
+msgstr "אלפא-‏1 היא אחד הליקויים הגנטיים השכיחים ביותר בעולם. התסמינים כוללים קוצר נשימה, שיעול כרוני ותוצאות לא תקינות של תפקודי כבד. אם יש לכן אחד התסמינים האלו קיימת בדיקת דם פשוטה של רמות אנטיטריפסין אלפא-‏1"

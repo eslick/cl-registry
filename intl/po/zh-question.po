@@ -1,0 +1,3925 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: zh-question.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# QUESTION PROMPT
+#: 5940 PROMPT
+msgid "What kind of exercises do you do?"
+msgstr "您做哪种锻炼？"
+
+# QUESTION PROMPT
+#: 5937 PROMPT
+msgid "Do you exercise?"
+msgstr "您参加锻炼吗？"
+
+# QUESTION PROMPT
+#: 5975 PROMPT
+msgid "Have you tried Herbal treatments?"
+msgstr "您尝试过草药治疗吗？"
+
+# QUESTION PROMPT
+#: 24834 PROMPT
+msgid "Have you ever been diagnosed with osteoporosis?"
+msgstr "您诊断患过骨质疏松症吗？"
+
+# QUESTION PROMPT
+#: 24824 PROMPT
+msgid "Has your bone loss been rated for severity?"
+msgstr "您的骨流失是否已被评定为重度？"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "mild"
+msgstr "轻度"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "moderate"
+msgstr "中度"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "severe"
+msgstr "重度"
+
+# QUESTION CHOICES
+#: 24824 CHOICES
+msgid "other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 30003 PROMPT
+msgid "Have you been tested for Alpha-1 Antitrypsin Deficiency?"
+msgstr "您做过α1- 抗胰蛋白酶缺乏的检查吗？"
+
+# QUESTION PROMPT
+#: 5844 PROMPT
+msgid "Date of spirometer test"
+msgstr "肺活量测试的日期"
+
+# QUESTION PROMPT
+#: 5845 PROMPT
+msgid "FEV1"
+msgstr "FEV1"
+
+# QUESTION QUESTION-HELP
+#: 5845 QUESTION-HELP
+msgid "Forced Expiratory Volume for 1 second.  Data should be entered in liters."
+msgstr "第一秒用力呼气量。输入数据的单位为公升。"
+
+# QUESTION PROMPT
+#: 26217 PROMPT
+msgid "Date of PFT Measurement"
+msgstr "肺功能计量的日期"
+
+# QUESTION PROMPT
+#: 26218 PROMPT
+msgid "Your temperature today"
+msgstr "您今天的体温"
+
+# QUESTION QUESTION-HELP
+#: 26218 QUESTION-HELP
+msgid "Take your temperature under your tongue, hold for 30 seconds using the same thermometer each day."
+msgstr "每天用同一体温计放在舌头下30秒钟，以测量自己体温。"
+
+# QUESTION PROMPT
+#: 23561 PROMPT
+msgid "FEV6"
+msgstr "FEV6"
+
+# QUESTION CHOICES
+#: 23561 CHOICES
+msgid "test1"
+msgstr "测试 1"
+
+# QUESTION CHOICES
+#: 23561 CHOICES
+msgid "test2"
+msgstr "测试 2"
+
+# QUESTION QUESTION-HELP
+#: 23561 QUESTION-HELP
+msgid "Forced expiratory volume at 6 seconds of exhalation. (Enter in liters) This is a measure from most home spirometers that acts as a surrogate for FVC.  If you have a device that gives you FVC instead, please write to lamsight-admin@media.mit.edu and we will add a new field to this survey."
+msgstr "6 秒钟用力呼气量。（用公升计算）这是大多数家用肺活量计记录的肺活量度量，可作为用力肺活量 (FVC) 的替代。如果您有其他测定用力肺活量的设备，请致信 lamsight-admin@media.mit.edu，我们将在该问卷中增加相应的记录区。"
+
+# QUESTION PROMPT
+#: 23560 PROMPT
+msgid "What spirometer was used?"
+msgstr "使用了何种肺活量计"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "PiKo-1"
+msgstr "PiKo-1"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "PiKo-6"
+msgstr "PiKo-6"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "KoKo Peak Pro"
+msgstr "KoKo Peak Pro"
+
+# QUESTION CHOICES
+#: 23560 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 5858 PROMPT
+msgid "What was the primary condition that led to the eventual diagnosis of LAM?"
+msgstr "导致 LAM 最终诊断的首要症状是什么？"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Pulmonary symptoms"
+msgstr "肺部症状"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms present but a subnormal breathing test led to testing"
+msgstr "没有肺部症状表现，但由于呼吸检查结果低于正常水平而促使进行检查"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Abnormal chest x-ray or CT scan"
+msgstr "胸部 x-光检查或 CT 扫描结果异常"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Spontaneous pneumothorax"
+msgstr "自发性气胸"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Angiomyolipoma"
+msgstr "血管平滑肌脂肪瘤"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Ascites"
+msgstr "腹水"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Pleural effusion"
+msgstr "胸腔积液"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Assessment for lung transplant without prior suspicion of LAM"
+msgstr "没有疑似 LAM 的肺移植评价"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms but a family member has LAM"
+msgstr "没有肺部症状，但家族成员中有 LAM 患者"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "No pulmonary symptoms but family member with Tuberous Sclerosis Complex (TSC)"
+msgstr "没有肺部症状，但家族成员中有结节性硬化症 (TSC) 患者"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Dermatology or skin specialist"
+msgstr "皮肤病学专家"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION CHOICES
+#: 5858 CHOICES
+msgid "Unknown"
+msgstr "未知"
+
+# QUESTION PROMPT
+#: 5854 PROMPT
+msgid "Date of original diagnosis"
+msgstr "原始确诊日期"
+
+# QUESTION PROMPT
+#: 5855 PROMPT
+msgid "Diagnosing physician name"
+msgstr "确诊医生姓名"
+
+# QUESTION QUESTION-HELP
+#: 5855 QUESTION-HELP
+msgid "This is an optional entry if you have extra concerns about privacy"
+msgstr "若您对隐私问题存有疑虑，可选择不输入该信息"
+
+# QUESTION PROMPT
+#: 5856 PROMPT
+msgid "Speciality of diagnosing physician"
+msgstr "诊断医生所在专科"
+
+# QUESTION PROMPT
+#: 5857 PROMPT
+msgid "Institution of physician"
+msgstr "医生所在单位"
+
+# QUESTION PROMPT
+#: 5878 PROMPT
+msgid "Weight"
+msgstr "体重"
+
+# QUESTION PROMPT
+#: 5879 PROMPT
+msgid "Height"
+msgstr "身高"
+
+# QUESTION PROMPT
+#: 5880 PROMPT
+msgid "Body-Mass Index"
+msgstr "体重指数"
+
+# QUESTION PROMPT
+#: 5885 PROMPT
+msgid "Do you feel aches or pains of any kind of discomfort on a regular basis?"
+msgstr "您是否有规律地感觉到疼痛等任何不适感？"
+
+# QUESTION PROMPT
+#: 5889 PROMPT
+msgid "Do you experience pain and/or discomfort related to the reproductive organs?"
+msgstr "有没有感到生殖器官的疼痛和/或不适？"
+
+# QUESTION PROMPT
+#: 5894 PROMPT
+msgid "Do you experience pain and/or discomfort related to any surgery related to ovaries?"
+msgstr "有没有因做过卵巢相关的外科手术，而感到疼痛和/或不适？"
+
+# QUESTION PROMPT
+#: 5899 PROMPT
+msgid "Do you have a history of any abnormal blood test results?"
+msgstr "您有没有血检结果异常的历史？"
+
+# QUESTION PROMPT
+#: 5903 PROMPT
+msgid "Have any members of your family suffered from genetic conditions or diseases?"
+msgstr "您是否有家族成员患有遗传性症状或疾病？"
+
+# QUESTION PROMPT
+#: 5905 PROMPT
+msgid "Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews died prematurely?"
+msgstr "您的直系亲属中（包括您的祖父母、姑/姨妈、叔/舅、侄子/女、外甥/女），是否有人早逝？"
+
+# QUESTION PROMPT
+#: 5907 PROMPT
+msgid "Have any members of your immediate family including grandparents, aunts, uncles, nieces and nephews suffered from disabling disorders?"
+msgstr "您的直系亲属中（包括您的祖父母、姑/姨妈、叔/舅、侄子/女、外甥/女），是否有人患有致残性疾病？"
+
+# QUESTION PROMPT
+#: 5909 PROMPT
+msgid "Any other comments on family history"
+msgstr "其他的家族史论述"
+
+# QUESTION PROMPT
+#: 5912 PROMPT
+msgid "What are your favorite foods?"
+msgstr "您最喜欢的食物是什么？"
+
+# QUESTION PROMPT
+#: 5913 PROMPT
+msgid "What are your least favorite foods?"
+msgstr "您最不喜欢的食物是什么？"
+
+# QUESTION PROMPT
+#: 13836 PROMPT
+msgid "Do you avoid eating certain foods?"
+msgstr "您是否忌食某些食物？"
+
+# QUESTION PROMPT
+#: 5916 PROMPT
+msgid "Do you have symptoms, related to LAM or unrelated to LAM that you associate with a particular food/ drink or food group?"
+msgstr "您是否有某些与 LAM 相关或无关的症状，且您认为它们与您的某种或某类饮食相关？"
+
+# QUESTION PROMPT
+#: 5920 PROMPT
+msgid "Are you a vegetarian?"
+msgstr "您是素食者吗？"
+
+# QUESTION PROMPT
+#: 5921 PROMPT
+msgid "If yes, pick the following foods that you do eat"
+msgstr "如果是，请从下列食物中挑选您所吃的。"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "fish"
+msgstr "鱼"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "shellfish"
+msgstr "贝类/甲壳类"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "dairy"
+msgstr "乳制品"
+
+# QUESTION CHOICES
+#: 5921 CHOICES
+msgid "eggs"
+msgstr "蛋类"
+
+# QUESTION PROMPT
+#: 26390 PROMPT
+msgid "Do you eat one or more of the following high oestrogen foods?"
+msgstr "您吃下面的一种或多种高雌激素的食物吗?"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Soy"
+msgstr "大豆"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Tofu"
+msgstr "豆腐"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Legumes"
+msgstr "豆荚"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Nuts"
+msgstr "坚果"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Chicken"
+msgstr "鸡肉"
+
+# QUESTION CHOICES
+#: 26390 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 26460 PROMPT
+msgid "How would you characterize your appetite relative to your peers?"
+msgstr "您与同龄人相比食欲如何？"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Normal"
+msgstr "正常"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Poor"
+msgstr "缺乏"
+
+# QUESTION CHOICES
+#: 26460 CHOICES
+msgid "Large"
+msgstr "旺盛"
+
+# QUESTION PROMPT
+#: 5923 PROMPT
+msgid "Do you try to follow a fat-free or low-fat diet?"
+msgstr "您有尝试无脂肪或低脂肪的饮食吗？"
+
+# QUESTION PROMPT
+#: 5927 PROMPT
+msgid "Do you have high-cholesterol?"
+msgstr "您的胆固醇高吗？"
+
+# QUESTION PROMPT
+#: 5928 PROMPT
+msgid "Do you find it difficult to maintain your weight?"
+msgstr "您是否感到维持体重困难？"
+
+# QUESTION PROMPT
+#: 5931 PROMPT
+msgid "Do you take vitamin or mineral supplements?"
+msgstr "您吃维生素或矿物质补充剂吗？"
+
+# QUESTION PROMPT
+#: 5934 PROMPT
+msgid "Any other comments on diet"
+msgstr "饮食方面的其他论述"
+
+# QUESTION PROMPT
+#: 5954 PROMPT
+msgid "Have you given up any type of exercise because of LAM?"
+msgstr "您是否因 LAM 放弃了任何形式的锻炼？"
+
+# QUESTION PROMPT
+#: 5945 PROMPT
+msgid "Do you desaturate on exertion?"
+msgstr "您费力时会感到氧气不足吗？"
+
+# QUESTION PROMPT
+#: 5948 PROMPT
+msgid "If you exercise, do you see positive effects of exercise?"
+msgstr "如果您锻炼，是否觉得锻炼带来了积极效果？"
+
+# QUESTION PROMPT
+#: 5957 PROMPT
+msgid "Can you walk 100 meters on level ground without stopping?"
+msgstr "您能在平地上坚持走 100 米而不停下来吗？"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "Yes"
+msgstr "是"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "Yes with oxygen"
+msgstr "吸氧时可以"
+
+# QUESTION CHOICES
+#: 5957 CHOICES
+msgid "No"
+msgstr "否"
+
+# QUESTION PROMPT
+#: 5958 PROMPT
+msgid "Can you carry small loads (up to 2kg/4.4lbs)?"
+msgstr "您能携带少量重物吗（最多2 公斤/4.4 磅）？"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "Yes"
+msgstr "是"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "Yes with oxygen"
+msgstr "吸氧时可以"
+
+# QUESTION CHOICES
+#: 5958 CHOICES
+msgid "No"
+msgstr "否"
+
+# QUESTION PROMPT
+#: 5959 PROMPT
+msgid "Do you get breathless easily from relatively simple motions (from bending down to pick something up or getting dressed)?"
+msgstr "在比较简单的运动中您是否容易喘不过气（例如弯腰捡东西或穿衣服）？"
+
+# QUESTION PROMPT
+#: 5960 PROMPT
+msgid "What activities can you not do because of LAM?"
+msgstr "您由于 LAM 而不能从事哪些活动？"
+
+# QUESTION PROMPT
+#: 5961 PROMPT
+msgid "What activities can you do but in a modified way because of LAM? What modifications have you made to make these activities possible?"
+msgstr "由于 LAM，您能从事哪些活动但需要转换活动方式？您做了什么转换才能完成这些活动？ "
+
+# QUESTION PROMPT
+#: 5963 PROMPT
+msgid "Have you been referred to pulmonary rehabilitation?"
+msgstr "有人建议过您做肺部康复治疗吗？"
+
+# QUESTION PROMPT
+#: 5970 PROMPT
+msgid "Have you ever taken recreational drugs (excluding cigarettes and alcohol)?"
+msgstr "您是否施用过软性毒品（不包括香烟和酒类）？"
+
+# QUESTION PROMPT
+#: 5972 PROMPT
+msgid "Have you tried Chinese medicine"
+msgstr "您尝试过中药吗？"
+
+# QUESTION PROMPT
+#: 5974 PROMPT
+msgid "Have you tried Acupuncture?"
+msgstr "您尝试过针灸治疗吗？"
+
+# QUESTION PROMPT
+#: 5977 PROMPT
+msgid "Have you tried Shiatsu massage?"
+msgstr "您尝试过指压按摩吗？"
+
+# QUESTION PROMPT
+#: 5978 PROMPT
+msgid "Have you tried Hypnosis?"
+msgstr "您尝试过催眠术吗？"
+
+# QUESTION PROMPT
+#: 5980 PROMPT
+msgid "Have you tried Meditation?"
+msgstr "您尝试过冥想疗法吗？"
+
+# QUESTION PROMPT
+#: 5983 PROMPT
+msgid "Any other forms of complementary or alternative medicine?"
+msgstr "还有其他辅助或替代治疗吗？"
+
+# QUESTION PROMPT
+#: 5985 PROMPT
+msgid "Have you noticed an effect on your breathing from these interventions?"
+msgstr "这些疗法对您的呼吸有没有效果？"
+
+# QUESTION PROMPT
+#: 5986 PROMPT
+msgid "Have you noticed an effect on your  well-being from any of these interventions?"
+msgstr "这些疗法对您的健康状况有没有效果？"
+
+# QUESTION PROMPT
+#: 5987 PROMPT
+msgid "Any other comments on alternative therapies"
+msgstr "其他任何关于替代疗法的论述"
+
+# QUESTION PROMPT
+#: 5991 PROMPT
+msgid "How many people live in your home (including yourself)?"
+msgstr "您家里有几口人（包括您自己）？"
+
+# QUESTION PROMPT
+#: 5999 PROMPT
+msgid "Does your daily routine vary a lot?"
+msgstr "您日常生活中的活动变化大吗？"
+
+# QUESTION PROMPT
+#: 6000 PROMPT
+msgid "Is your daily routine fairly physically active?"
+msgstr "您日常起居中的体力活动是否适中？"
+
+# QUESTION PROMPT
+#: 5994 PROMPT
+msgid "Do you leave the house every day to work/run errands/etc?"
+msgstr "您每天都要离开住所从事工作/出差等事务吗？"
+
+# QUESTION PROMPT
+#: 13702 PROMPT
+msgid "Do you have a job?"
+msgstr "您在职吗？"
+
+# QUESTION PROMPT
+#: 5990 PROMPT
+msgid "Do you care for the home and family as your primary form of work?"
+msgstr "您是否把照顾家人和家庭作为自己工作的主要重心？"
+
+# QUESTION PROMPT
+#: 5998 PROMPT
+msgid "Briefly describe your daily routine (wake up time, meals, activities of the day, bedtime)"
+msgstr "请简单描述您的日常起居（起床时间、吃饭、白天的活动、睡觉时间）"
+
+# QUESTION PROMPT
+#: 6002 PROMPT
+msgid "What type of environment do you live in?"
+msgstr "您生活在什么环境中？"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "city"
+msgstr "城市"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "town"
+msgstr "小镇"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "countryside"
+msgstr "乡下"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "village"
+msgstr "小村落"
+
+# QUESTION CHOICES
+#: 6002 CHOICES
+msgid "farm"
+msgstr "农场"
+
+# QUESTION PROMPT
+#: 6003 PROMPT
+msgid "Please describe the air quality where you live as"
+msgstr "请描述您生活场所的空气质量"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "good"
+msgstr "好"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "average"
+msgstr "中等"
+
+# QUESTION CHOICES
+#: 6003 CHOICES
+msgid "poor"
+msgstr "差"
+
+# QUESTION PROMPT
+#: 6004 PROMPT
+msgid "Are there potential environmental risks where you live now?"
+msgstr "您居住的地方有哪些潜在的环境危害？"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "fumes"
+msgstr "熏烟"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "dust"
+msgstr "尘土"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "asbestos"
+msgstr "石棉"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "pesticides"
+msgstr "杀虫剂"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "cigarette smoke"
+msgstr "吸烟者"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "smog"
+msgstr "烟雾"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in air"
+msgstr "其他空气有害物"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in land"
+msgstr "其他地面有害物"
+
+# QUESTION CHOICES
+#: 6004 CHOICES
+msgid "other in water"
+msgstr "其他水中有害物"
+
+# QUESTION PROMPT
+#: 6005 PROMPT
+msgid "Were there environmental risks where you lived for a significant period in your past?"
+msgstr "在您过去长期居住的地方，是否存在环境危害？"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "fumes"
+msgstr "熏烟"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "dust"
+msgstr "尘土"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "asbestos"
+msgstr "石棉"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "pesticides"
+msgstr "杀虫剂"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "cigarette smoke"
+msgstr "吸烟者"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "smog"
+msgstr "烟雾"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in air"
+msgstr "其他空气有害物"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in land"
+msgstr "其他地面有害物"
+
+# QUESTION CHOICES
+#: 6005 CHOICES
+msgid "other in water"
+msgstr "其他水中有害物"
+
+# QUESTION PROMPT
+#: 6006 PROMPT
+msgid "Have you ever smoked?"
+msgstr "您吸过烟吗？"
+
+# QUESTION PROMPT
+#: 6009 PROMPT
+msgid "Have you ever used alcohol?"
+msgstr "您饮过酒吗？"
+
+# QUESTION PROMPT
+#: 6012 PROMPT
+msgid "Were there environmental risks that your parents were exposed to?"
+msgstr "您的父母是否到过有危害的环境中？"
+
+# QUESTION PROMPT
+#: 6016 PROMPT
+msgid "Do certain types of weather affect your body?"
+msgstr "哪些特定天气能影响您的身体？"
+
+# QUESTION PROMPT
+#: 6021 PROMPT
+msgid "Do you travel by airplane?"
+msgstr "您乘坐飞机旅行吗？"
+
+# QUESTION PROMPT
+#: 6053 PROMPT
+msgid "Has your sleep routine changed since being diagnosed with LAM?"
+msgstr "被诊断出 LAM 后，您的作息习惯改变了吗？"
+
+# QUESTION CHOICES
+#: 6053 CHOICES
+msgid "No"
+msgstr "否"
+
+# QUESTION CHOICES
+#: 6053 CHOICES
+msgid "Yes"
+msgstr "是"
+
+# QUESTION PROMPT
+#: 6041 PROMPT
+msgid "Do you have problems falling or staying asleep?"
+msgstr "您有入睡困难或睡不安稳吗？"
+
+# QUESTION PROMPT
+#: 6042 PROMPT
+msgid "How many hours on average do you sleep each night?"
+msgstr "您每晚平均睡几个小时？"
+
+# QUESTION PROMPT
+#: 6043 PROMPT
+msgid "Do you wake up too early on a regular basis?"
+msgstr "您是否经常早醒？"
+
+# QUESTION PROMPT
+#: 6045 PROMPT
+msgid "Do you take naps or short sleeps during the day?"
+msgstr "您白天是否会打盹或小睡？"
+
+# QUESTION PROMPT
+#: 6046 PROMPT
+msgid "Do you sleep with oxygen?"
+msgstr "您睡觉时吸氧吗？"
+
+# QUESTION PROMPT
+#: 6048 PROMPT
+msgid "Do you feel particularly cold when going to sleep or waking up?"
+msgstr "入睡或醒来时，您会感到格外的寒冷吗？"
+
+# QUESTION PROMPT
+#: 6050 PROMPT
+msgid "Do you have cold feet or hands in bed?"
+msgstr "卧床时您会感到手脚凉吗?"
+
+# QUESTION PROMPT
+#: 6051 PROMPT
+msgid "Do you have cold feet or hands when not in bed?"
+msgstr "不卧床时您会感到手脚凉吗?"
+
+# QUESTION PROMPT
+#: 6054 PROMPT
+msgid "Any other comments about sleep?"
+msgstr "关于睡眠还有没有其他论述？"
+
+# QUESTION PROMPT
+#: 26403 PROMPT
+msgid "Have you ever had a tissue biopsy?"
+msgstr "您做过组织切片检查吗？"
+
+# QUESTION PROMPT
+#: 26406 PROMPT
+msgid "Has your blood [serum] ever been stored for research purposes?"
+msgstr "您的血液（血清）有没有被储藏起来用于研究？"
+
+# QUESTION PROMPT
+#: 26258 PROMPT
+msgid "Have you ever taken birth control pills?"
+msgstr "您吃过避孕药吗？"
+
+# QUESTION PROMPT
+#: 6074 PROMPT
+msgid "Have you ever been pregnant?"
+msgstr "您怀孕过吗？"
+
+# QUESTION PROMPT
+#: 6076 PROMPT
+msgid "Do you have children?"
+msgstr "您有子女吗？"
+
+# QUESTION PROMPT
+#: 6095 PROMPT
+msgid "Do you have any other comments regarding your reproductive history?"
+msgstr "关于您的生育史，您还有什么补充吗？"
+
+# QUESTION PROMPT
+#: 6084 PROMPT
+msgid "Were you diagnosed with LAM during your pregnancy?"
+msgstr "您是否在怀孕期间被诊断出 LAM？"
+
+# QUESTION PROMPT
+#: 6079 PROMPT
+msgid "Did you know you had LAM during one or more pregnancies?"
+msgstr "在您过去一次或几次怀孕期间，您知道自己患有 LAM 吗？"
+
+# QUESTION PROMPT
+#: 6097 PROMPT
+msgid "At what age did you start having a period?"
+msgstr "您是从多少岁开始来月经的？"
+
+# QUESTION PROMPT
+#: 6098 PROMPT
+msgid "Are your periods regular?"
+msgstr "您的月经有规律吗？"
+
+# QUESTION PROMPT
+#: 6099 PROMPT
+msgid "How many days is your menstrual cycle?"
+msgstr "您的月经周期是多少天？"
+
+# QUESTION PROMPT
+#: 6100 PROMPT
+msgid "For how many days do you bleed each month?"
+msgstr "每个月您的经期流血持续几天？"
+
+# QUESTION PROMPT
+#: 6102 PROMPT
+msgid "Would you say that your periods are:"
+msgstr "您感觉自己的月经疼痛程度是："
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Strong"
+msgstr "强烈"
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Normal"
+msgstr "正常"
+
+# QUESTION CHOICES
+#: 6102 CHOICES
+msgid "Light"
+msgstr "轻微"
+
+# QUESTION PROMPT
+#: 6103 PROMPT
+msgid "Has this become more or less over time?"
+msgstr "随着时间推移，这一情况加重还是减轻了？"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "More"
+msgstr "加重"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "Less"
+msgstr "减轻"
+
+# QUESTION CHOICES
+#: 6103 CHOICES
+msgid "Stayed the same"
+msgstr "维持原状"
+
+# QUESTION PROMPT
+#: 6104 PROMPT
+msgid "Would you say that your periods are so painful that you find it difficult to do normal activities during your period?"
+msgstr "您在经期会因为疼痛而无法正常活动吗？"
+
+# QUESTION CHOICES
+#: 6104 CHOICES
+msgid "No"
+msgstr "否"
+
+# QUESTION CHOICES
+#: 6104 CHOICES
+msgid "Yes"
+msgstr "是"
+
+# QUESTION PROMPT
+#: 6105 PROMPT
+msgid "Is ovulation so painful that you find it difficult to do normal activities at times?"
+msgstr "您是否在排卵时会很疼痛而无法从事正常活动？"
+
+# QUESTION PROMPT
+#: 6113 PROMPT
+msgid "Do you experience any difference in your breathing or pain in your body at difference parts of your monthly cycle?"
+msgstr "在月经期的不同阶段，您是否感到呼吸变化或身体某部位疼痛？"
+
+# QUESTION PROMPT
+#: 6110 PROMPT
+msgid "Have you taken birth control pills since your diagnosis with LAM?"
+msgstr "诊断出 LAM 后，您施用过避孕药吗？"
+
+# QUESTION PROMPT
+#: 14141 PROMPT
+msgid "Are you post- or peri-menopausal"
+msgstr "您已绝经或将要绝经吗？"
+
+# QUESTION PROMPT
+#: 6118 PROMPT
+msgid "Have you ever been on hormone replacement therapy?"
+msgstr "您做过激素替代治疗吗？"
+
+# QUESTION PROMPT
+#: 6123 PROMPT
+msgid "Have you been diagnosed with Tuberous Sclerosis?"
+msgstr "您被诊断出患有结节性硬化症吗？"
+
+# QUESTION PROMPT
+#: 6129 PROMPT
+msgid "Has any member of your family (including second cousins, grandparents, great aunts/uncles, etc) ever been diagnosed with Tuberous Sclerosis?"
+msgstr "您的家族中（包括堂兄弟/姐妹、表兄弟/姐妹、祖父母、祖姑/姨妈、祖叔/舅等）有人患有结节性硬化症吗？"
+
+# QUESTION PROMPT
+#: 6131 PROMPT
+msgid "Has any member of your family (including second cousins, grandparents, etc) ever experienced any symptom potentially associated with Tuberous Sclerosis?"
+msgstr "您的家族中（包括堂兄弟/姐妹、表兄弟/姐妹、祖父母、祖姑/姨妈、祖叔/舅等）有人出现过可能与结节性硬化症相关的症状吗？"
+
+# QUESTION PROMPT
+#: 6134 PROMPT
+msgid "Do you have any other significant illness in addition to LAM?"
+msgstr "在 LAM 之外您还有其他重大疾病吗？"
+
+# QUESTION PROMPT
+#: 6138 PROMPT
+msgid "Have you had ovarian surgery?"
+msgstr "您做过卵巢手术吗？"
+
+# QUESTION QUESTION-HELP
+#: 6138 QUESTION-HELP
+msgid "If not, please skip this section of questions."
+msgstr "如果没有，请跳过这部分问题"
+
+# QUESTION PROMPT
+#: 6101 PROMPT
+msgid "Have you ever had an internal ultrasound test of your uterus?"
+msgstr "您曾做过子宫内超声检查吗？"
+
+# QUESTION PROMPT
+#: 25621 PROMPT
+msgid "Have you ever had your uterus removed or other uterine surgery?"
+msgstr "您做过子宫摘除或其他子宫手术吗？"
+
+# QUESTION PROMPT
+#: 6146 PROMPT
+msgid "Have you ever experienced any of the following symptoms of LAM?"
+msgstr "您出现过以下 LAM 症状吗？"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Chylothorax"
+msgstr "乳糜胸"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Pleural Effusion"
+msgstr "胸腔积液"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Ascites"
+msgstr "腹水"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Chylous Ascites"
+msgstr "乳糜状腹水"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Kidney angiomyolipoma"
+msgstr "肾血管平滑肌脂肪瘤"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Pneumothorax"
+msgstr "气胸"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Hemoptysis"
+msgstr "咯血"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Protein-losing Enteropathy [bowel disease]"
+msgstr "蛋白流失性胃肠病  [肠疾病]"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Vaginal discharge of chyle [lymph]"
+msgstr "乳糜样阴道分泌物 [淋巴]"
+
+# QUESTION CHOICES
+#: 6146 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 6156 PROMPT
+msgid "Have you ever had or been suspected of having renal cell carcinoma?"
+msgstr "您患有或疑似患有肾细胞癌吗？"
+
+# QUESTION PROMPT
+#: 6161 PROMPT
+msgid "Have you taken part in one or more of the following?"
+msgstr "您参加过下面哪些试验？"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "A Treatment Trial addressing LAM lung disease"
+msgstr "针对 LAM 肺病的临床试验"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "A Treatment Trial addressing one or more AMLs"
+msgstr "针对一种或几种 AML（血管平滑肌脂肪瘤）的临床试验"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "An off-label experiment using a drug to address LAM lung disease"
+msgstr "针对 LAM 肺病药品在说明书之外的用法的临床试验"
+
+# QUESTION CHOICES
+#: 6161 CHOICES
+msgid "An observational trial"
+msgstr "一个观察性试验"
+
+# QUESTION PROMPT
+#: 6166 PROMPT
+msgid "Are you willing to be contacted for a potential trial?"
+msgstr "您愿意成为临床试验的联系对象吗？"
+
+# QUESTION PROMPT
+#: 6141 PROMPT
+msgid "For what reason?"
+msgstr "是出于什么原因？"
+
+# QUESTION PROMPT
+#: 6139 PROMPT
+msgid "What was the procedure?"
+msgstr "试验的程序是怎样的？"
+
+# QUESTION PROMPT
+#: 6140 PROMPT
+msgid "How old were you?"
+msgstr "您的年龄？"
+
+# QUESTION PROMPT
+#: 6142 PROMPT
+msgid "When was this relative to your diagnosis with LAM?"
+msgstr "您做手术是在被确诊为 LAM 之前或之后多久？"
+
+# QUESTION QUESTION-HELP
+#: 6142 QUESTION-HELP
+msgid "Please enter the number of years before by entering a negative number (e.g. -4) or the number of years after with a positive number."
+msgstr "请输入一个负数（例如 -4）以代表在确诊之前多少年，或一个正数以代表在其后的年份。"
+
+# QUESTION PROMPT
+#: 6143 PROMPT
+msgid "Did you notice any change in the progression of your disease since the surgery?"
+msgstr "手术之后您的病情发展有何变化？"
+
+# QUESTION PROMPT
+#: 6144 PROMPT
+msgid "Are you having hormone replacement therapy as a result of the surgery?"
+msgstr "您是否因为手术而在其后接受激素替代治疗？"
+
+# QUESTION PROMPT
+#: 6007 PROMPT
+msgid "If so, for how many years?"
+msgstr "如果是，您做过几年治疗？"
+
+# QUESTION PROMPT
+#: 6008 PROMPT
+msgid "How many cigarettes per day did you smoke at your heaviest time?"
+msgstr "您以前一天最多吸多少只烟？"
+
+# QUESTION PROMPT
+#: 6010 PROMPT
+msgid "How many glasses of alcohol (glass of wine/beer or a shot of hard liquor) have you consumed per week at your heaviest time?"
+msgstr "您以前一周最多喝多少杯酒（葡萄酒/啤酒或其他烈性酒）？"
+
+# QUESTION PROMPT
+#: 6011 PROMPT
+msgid "How much alcohol do you currently consume per week?"
+msgstr "现在您一周喝多少酒？"
+
+# QUESTION PROMPT
+#: 6013 PROMPT
+msgid "If so, what were they?"
+msgstr "如果是，有哪些？"
+
+# QUESTION PROMPT
+#: 6017 PROMPT
+msgid "If yes, what type of weather?"
+msgstr "如果是，是哪类天气？"
+
+# QUESTION PROMPT
+#: 6018 PROMPT
+msgid "What kind of effects?"
+msgstr "产生何种效果？"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "mental"
+msgstr "精神的"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "breathing"
+msgstr "呼吸的"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "infections"
+msgstr "传染性"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "exercise tolerance"
+msgstr "运动耐力"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "allergic reaction"
+msgstr "过敏反应"
+
+# QUESTION CHOICES
+#: 6018 CHOICES
+msgid "other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 6022 PROMPT
+msgid "How often do you fly?"
+msgstr "您多久坐一次飞机？"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "Once a year"
+msgstr "一年一次"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "A few times a year"
+msgstr "一年数次"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "Once a month"
+msgstr "每月一次"
+
+# QUESTION CHOICES
+#: 6022 CHOICES
+msgid "More than once a month"
+msgstr "每月多于一次"
+
+# QUESTION PROMPT
+#: 6023 PROMPT
+msgid "How long is the average flight in hours?"
+msgstr "每次飞行平均持续多久？"
+
+# QUESTION PROMPT
+#: 6024 PROMPT
+msgid "How many days between flights?"
+msgstr "两次飞行之间相隔几天？"
+
+# QUESTION PROMPT
+#: 6025 PROMPT
+msgid "Do you try to fly only on non-stop flights?"
+msgstr "您是否只乘坐直达飞机？"
+
+# QUESTION PROMPT
+#: 6026 PROMPT
+msgid "Do you fly over the ocean?"
+msgstr "您乘坐越洋航班吗？"
+
+# QUESTION PROMPT
+#: 6027 PROMPT
+msgid "Have you ever experienced any discomfort while on the plane?"
+msgstr "您乘飞机时是否有任何不适？"
+
+# QUESTION PROMPT
+#: 6028 PROMPT
+msgid "If so, did you experience this during one or more of"
+msgstr "如果有，是在下面哪些时段"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Take off"
+msgstr "起飞时"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "At cruising altitude"
+msgstr "处于巡航高度时"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "During landing"
+msgstr "降落时"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Immediately after getting off of the plane"
+msgstr "刚刚下飞机时"
+
+# QUESTION CHOICES
+#: 6028 CHOICES
+msgid "Sometime soon after getting off of the plane"
+msgstr "下飞机后不久"
+
+# QUESTION PROMPT
+#: 6029 PROMPT
+msgid "Please describe the pain/ discomfort that you felt?"
+msgstr "请描述您的疼痛/不适感受?"
+
+# QUESTION PROMPT
+#: 6030 PROMPT
+msgid "Do you regularly use oxygen on the plane?"
+msgstr "您乘飞机时定期吸氧吗？ "
+
+# QUESTION PROMPT
+#: 6031 PROMPT
+msgid "If so, how much (liters per minute)?"
+msgstr "如果是，吸氧量是多少（升/分钟）？"
+
+# QUESTION PROMPT
+#: 6032 PROMPT
+msgid "If you do not use oxygen regularly on the plane, do you ever tell airplane staff that you have a lung condition when you get on the plane?"
+msgstr "如果您不是固定地在飞机上吸氧，您在上飞机时会告诉机组人员您有肺部疾病吗？"
+
+# QUESTION PROMPT
+#: 6033 PROMPT
+msgid "Do you take any precautions when you fly (x-ray before flying, etc)?"
+msgstr "您飞行前会做一些预防措施吗（飞行前拍 X-光片等）？"
+
+# QUESTION PROMPT
+#: 6034 PROMPT
+msgid "What are these?"
+msgstr "做哪些预防措施？"
+
+# QUESTION PROMPT
+#: 6035 PROMPT
+msgid "Have you had a pneumathorax (collapsed lung) or any other medical problem within a week after flying?"
+msgstr "飞行之后一周内，您是否有过气胸（肺不张）或其他症状？"
+
+# QUESTION PROMPT
+#: 6036 PROMPT
+msgid "At what approximate altitude (meters) do you live (1 meter=3.3 feet)?"
+msgstr "您居住地的海拔高度（以米为单位）是多少（1米=3.3英尺）？"
+
+# QUESTION PROMPT
+#: 6037 PROMPT
+msgid "Do you feel that this affects your breathing?"
+msgstr "您觉得这会影响您的呼吸吗？"
+
+# QUESTION PROMPT
+#: 6038 PROMPT
+msgid "When you travel, do you visit locations at high altitude?"
+msgstr "在您旅行时，会到高海拔地区吗？"
+
+# QUESTION PROMPT
+#: 6039 PROMPT
+msgid "If so, how do you feel"
+msgstr "如果会，当时您感觉如何"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "No effect"
+msgstr "无不适感"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "some discomfort"
+msgstr "有些不适"
+
+# QUESTION CHOICES
+#: 6039 CHOICES
+msgid "significant difficulty"
+msgstr "非常不适"
+
+# QUESTION PROMPT
+#: 5997 PROMPT
+msgid "Do you work part-time or full-time?"
+msgstr "您做兼职还是全职工作？"
+
+# QUESTION CHOICES
+#: 5997 CHOICES
+msgid "Part time"
+msgstr "兼职"
+
+# QUESTION CHOICES
+#: 5997 CHOICES
+msgid "Full time"
+msgstr "全职"
+
+# QUESTION PROMPT
+#: 5993 PROMPT
+msgid "Are you the sole income-earner in your family?"
+msgstr "您是家中唯一的收入来源吗？"
+
+# QUESTION PROMPT
+#: 5995 PROMPT
+msgid "Do you have a job outside of the home?"
+msgstr "您在住家以外的场所工作吗？"
+
+# QUESTION PROMPT
+#: 5996 PROMPT
+msgid "Do you work from home?"
+msgstr "您在家里工作吗？"
+
+# QUESTION PROMPT
+#: 5992 PROMPT
+msgid "Are you the sole home-maker in your family?"
+msgstr "您是家中唯一做家务的人吗？"
+
+# QUESTION PROMPT
+#: 6014 PROMPT
+msgid "On average, is the climate where you now live wet, temperate or dry?"
+msgstr "平均而言，您现在居住的地方气候是潮湿、适中还是干燥？"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Rains alot and very humid"
+msgstr "多雨且很潮湿"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Moderate humidity and rain"
+msgstr "湿度和降水适中"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Dry and desert like"
+msgstr "干燥气候，如同沙漠"
+
+# QUESTION CHOICES
+#: 6014 CHOICES
+msgid "Humid summers; cold, dry winters"
+msgstr "夏天潮湿，冬天干冷"
+
+# QUESTION PROMPT
+#: 6015 PROMPT
+msgid "Is the climate on average hot, temperate, or cold?"
+msgstr "平均而言，气候是炎热、适中还是寒冷？"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "hot"
+msgstr "热"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "temperate"
+msgstr "适中"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "cold"
+msgstr "寒冷"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "variable"
+msgstr "多变"
+
+# QUESTION CHOICES
+#: 6015 CHOICES
+msgid "unknown"
+msgstr "未知"
+
+# QUESTION PROMPT
+#: 6019 PROMPT
+msgid "Other comments on climate and its impact on your health?"
+msgstr "关于气候及其对您健康的影响有其他论述吗？"
+
+# QUESTION PROMPT
+#: 6044 PROMPT
+msgid "Is this due to one or more of the following?"
+msgstr "这是由以下哪个或哪些因素引起的？"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Anxiety"
+msgstr "焦虑"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Not being able to breathe well"
+msgstr "不能顺畅呼吸"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Waking up frequently to urinate, etc"
+msgstr "夜尿频多，等等 "
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Other pain or discomfort unrelated to breathing"
+msgstr "其他和呼吸无关的疼痛或不适"
+
+# QUESTION CHOICES
+#: 6044 CHOICES
+msgid "Demands of work or family"
+msgstr "工作或家庭上的需求"
+
+# QUESTION PROMPT
+#: 6047 PROMPT
+msgid "If yes, on how many litres per minute of oxygen?"
+msgstr "如果是，每分钟吸多少升氧气？"
+
+# QUESTION PROMPT
+#: 6049 PROMPT
+msgid "Has this become worse over time?"
+msgstr "随着时间推移这一问题加重了吗？"
+
+# QUESTION PROMPT
+#: 6052 PROMPT
+msgid "Has this sensation become worse over time?"
+msgstr "随着时间推移这一感觉会加重吗？"
+
+# QUESTION PROMPT
+#: 13809 PROMPT
+msgid "Has this sensation become worse over time?"
+msgstr "随着时间推移这一感觉加重了吗？"
+
+# QUESTION PROMPT
+#: 5971 PROMPT
+msgid "Did you use these drugs regularly during more than a year of your life?"
+msgstr "在您一生中，有定期施用这些药物超过一年的经历吗？"
+
+# QUESTION PROMPT
+#: 5973 PROMPT
+msgid "What remedies?"
+msgstr "哪些药物？"
+
+# QUESTION PROMPT
+#: 5976 PROMPT
+msgid "What treatments or herbs have you tried?"
+msgstr "您施用过何种化学药或草药？"
+
+# QUESTION PROMPT
+#: 5979 PROMPT
+msgid "What kind or format?"
+msgstr "药物种类或形式是什么？"
+
+# QUESTION PROMPT
+#: 5982 PROMPT
+msgid "For what symptoms or underlying cause?"
+msgstr "针对何种症状或根本病因？"
+
+# QUESTION PROMPT
+#: 5981 PROMPT
+msgid "What kind or form?"
+msgstr "疾病种类或形式是什么？"
+
+# QUESTION PROMPT
+#: 5984 PROMPT
+msgid "If so, please name them"
+msgstr "如果有，请列举出来"
+
+# QUESTION PROMPT
+#: 5955 PROMPT
+msgid "Which ones?"
+msgstr "哪些？"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Chinese medicine"
+msgstr "中药"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Acupuncture"
+msgstr "针灸"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Herbal treatments"
+msgstr "草药疗法"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Shiatsu massage"
+msgstr "指压按摩"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Hypnosis"
+msgstr "催眠术"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Meditation"
+msgstr "冥想疗法"
+
+# QUESTION CHOICES
+#: 5955 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 13821 PROMPT
+msgid "Please describe"
+msgstr "请描述"
+
+# QUESTION PROMPT
+#: 5917 PROMPT
+msgid "If yes, what are these symptoms?"
+msgstr "如果是，这些症状是什么？"
+
+# QUESTION PROMPT
+#: 5918 PROMPT
+msgid "What food / group do you associate with each symptom?"
+msgstr "您认为哪种/类食物和各种症状相关联？"
+
+# QUESTION PROMPT
+#: 5919 PROMPT
+msgid "Which food or food groups do you avoid to alleviate this symptom?"
+msgstr "您忌食哪种或哪类食物来缓解您的症状？"
+
+# QUESTION PROMPT
+#: 5914 PROMPT
+msgid "Are there any foods or food groups you avoid eating?"
+msgstr "您忌食哪种或哪类食物吗？"
+
+# QUESTION PROMPT
+#: 5915 PROMPT
+msgid "If yes, do you avoid eating these due to"
+msgstr "如果有，那您忌食的原因是"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "General health concerns"
+msgstr "对健康的总体担忧"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Weight and body image"
+msgstr "体重和体型"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Effect on lung function"
+msgstr "对肺功能的影响"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "Effect on lymphatic symptoms"
+msgstr "对淋巴症状的影响"
+
+# QUESTION CHOICES
+#: 5915 CHOICES
+msgid "other symptoms"
+msgstr "其他症状"
+
+# QUESTION PROMPT
+#: 5924 PROMPT
+msgid "For how long have you done this (in years)?"
+msgstr "您这样做有多久（以年为单位）？"
+
+# QUESTION PROMPT
+#: 5925 PROMPT
+msgid "What prompted you to follow this diet?"
+msgstr "是什么直接促使您采取这样的饮食？"
+
+# QUESTION PROMPT
+#: 5926 PROMPT
+msgid "Do you follow this due to a weight concern related to one or more of:"
+msgstr "您这样做是否因为担忧下列与体重相关的一点或几点："
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Body image"
+msgstr "体型"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Heart health"
+msgstr "心脏健康"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "LAM"
+msgstr "LAM"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Breathing issues"
+msgstr "呼吸问题"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Chyle issues in the thoracic cavity"
+msgstr "胸腔乳糜样病变"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "chyle issues in the abdominal cavity"
+msgstr "腹腔乳糜样病变"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "lymphatic discomfort/ disorder generally"
+msgstr "一般淋巴性不适或异常"
+
+# QUESTION CHOICES
+#: 5926 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 5929 PROMPT
+msgid "Do you find it difficult to lose weight?"
+msgstr "您是否感到减轻体重困难？"
+
+# QUESTION PROMPT
+#: 5930 PROMPT
+msgid "Do you find it difficult to gain weight?"
+msgstr "您是否感到增加体重困难？"
+
+# QUESTION PROMPT
+#: 26389 PROMPT
+msgid "Do you regularly take fish oil or any other antioxidants?"
+msgstr "您有定期吃鱼油或其他抗氧化剂吗？"
+
+# QUESTION PROMPT
+#: 5933 PROMPT
+msgid "Please list supplements and symptoms/issues they are meant to address"
+msgstr "请列出您施用的补充剂和它们所针对的症状/疾病"
+
+# QUESTION QUESTION-HELP
+#: 5933 QUESTION-HELP
+msgid "Please put one supplement and symptom or condition per line"
+msgstr "请在每行填写一种补充剂和其相应症状或疾病"
+
+# QUESTION PROMPT
+#: 5946 PROMPT
+msgid "If so, does that stop you from exercising?"
+msgstr "如果是，那么您因此停止锻炼了吗？"
+
+# QUESTION PROMPT
+#: 5947 PROMPT
+msgid "If you desaturate, what are your symptoms?"
+msgstr "如果您氧气不足，会出现哪些症状？"
+
+# QUESTION PROMPT
+#: 5949 PROMPT
+msgid "If so, please describe"
+msgstr "如果是，请列举"
+
+# QUESTION PROMPT
+#: 5964 PROMPT
+msgid "If yes, because of what symptom?"
+msgstr "如果是，因为何种症状？"
+
+# QUESTION PROMPT
+#: 5965 PROMPT
+msgid "Did you do pulmonary rehabilitation?"
+msgstr "您做过肺部康复治疗吗？"
+
+# QUESTION PROMPT
+#: 5966 PROMPT
+msgid "For how long (in months)?"
+msgstr "做了多长时间（按月计算）？"
+
+# QUESTION PROMPT
+#: 5967 PROMPT
+msgid "Did you find it helpful?"
+msgstr "您觉得有作用吗?"
+
+# QUESTION PROMPT
+#: 5938 PROMPT
+msgid "Is your exercise"
+msgstr "您的锻炼是"
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Regular"
+msgstr "有规律"
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Variable"
+msgstr "无规律"
+
+# QUESTION CHOICES
+#: 5938 CHOICES
+msgid "Infrequent"
+msgstr "偶尔"
+
+# QUESTION PROMPT
+#: 5939 PROMPT
+msgid "Is this exercise targeted at endurance?"
+msgstr "这些锻炼是为了增强耐力吗？"
+
+# QUESTION PROMPT
+#: 5941 PROMPT
+msgid "How many times a week on average?"
+msgstr "平均每周锻炼几次？"
+
+# QUESTION PROMPT
+#: 5942 PROMPT
+msgid "and for how many minutes?"
+msgstr "每次多少分钟？"
+
+# QUESTION PROMPT
+#: 5943 PROMPT
+msgid "Do you not use oxygen normally but use oxygen when you exercise?"
+msgstr "您是否平时不吸氧但锻炼时吸氧？"
+
+# QUESTION PROMPT
+#: 5944 PROMPT
+msgid "If you use oxygen normally, do you exercise with oxygen?"
+msgstr "您平时若吸氧，那锻炼时吸吗？"
+
+# QUESTION PROMPT
+#: 5950 PROMPT
+msgid "Do you experience any discomfort or pain while exercising?"
+msgstr "您锻炼时有什么疼痛或不舒适吗？"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Coughing blood"
+msgstr "咳血"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Acute breathlessness"
+msgstr "急性气喘"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Dizziness"
+msgstr "眩晕"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Nausea"
+msgstr "恶心"
+
+# QUESTION CHOICES
+#: 5950 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 5951 PROMPT
+msgid "What is your favorite kind of exercise?"
+msgstr "您最喜欢的锻炼方式是什么？"
+
+# QUESTION PROMPT
+#: 6063 PROMPT
+msgid "Location of the tissue"
+msgstr "组织部位"
+
+# QUESTION PROMPT
+#: 6064 PROMPT
+msgid "Type of sample"
+msgstr "取样类型"
+
+# QUESTION PROMPT
+#: 6065 PROMPT
+msgid "Date of sample"
+msgstr "取样日期"
+
+# QUESTION PROMPT
+#: 5895 PROMPT
+msgid "If yes, please describe"
+msgstr "如果是，请列举"
+
+# QUESTION PROMPT
+#: 5896 PROMPT
+msgid "Do you take any medications for this?"
+msgstr "您是否因此而施用药物？"
+
+# QUESTION PROMPT
+#: 5897 PROMPT
+msgid "Any other comments on pain and discomfort"
+msgstr "其他对于疼痛和不适的论述"
+
+# QUESTION PROMPT
+#: 5886 PROMPT
+msgid "What part of your body hurts?"
+msgstr "您身体的哪个部位疼痛？"
+
+# QUESTION PROMPT
+#: 5888 PROMPT
+msgid "How often do you experience these pains?"
+msgstr "您感觉到这些疼痛的频度如何？"
+
+# QUESTION PROMPT
+#: 5887 PROMPT
+msgid "During which activities does it hurt?"
+msgstr "在哪些活动中会出现疼痛？"
+
+# QUESTION PROMPT
+#: 5884 PROMPT
+msgid "How would you rate this pain overall?"
+msgstr "您如何划分这些疼痛的程度？"
+
+# QUESTION QUESTION-HELP
+#: 5884 QUESTION-HELP
+msgid "Use a scale from 1 to 10, where 1 is the lightest pain you have ever felt and 10 the greatest pain."
+msgstr "用 1-10 表示疼痛的尺度，1 代表您所感受到的疼痛中最轻，10 代表最重。"
+
+# QUESTION PROMPT
+#: 5891 PROMPT
+msgid "Do you take any medications to address this?"
+msgstr "您是否因此而施用药物？"
+
+# QUESTION PROMPT
+#: 5882 PROMPT
+msgid "If yes, please list the medications"
+msgstr "如果是，请列举药物种类"
+
+# QUESTION QUESTION-HELP
+#: 5882 QUESTION-HELP
+msgid "Please enter: medication, dose, duration of time taken. One line per medication"
+msgstr "请输入：药物名称、剂量、服药间隔。每行写一种药。"
+
+# QUESTION PROMPT
+#: 5883 PROMPT
+msgid "Do/did these medications have an impact on your pain / discomfort?"
+msgstr "这些药物能缓解您的疼痛或不适吗？"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Completely resolve"
+msgstr "完全解除"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Partially resolve"
+msgstr "部分缓解"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "Partially resolve"
+msgstr "部分缓解"
+
+# QUESTION CHOICES
+#: 5883 CHOICES
+msgid "No effect"
+msgstr "无效"
+
+# QUESTION PROMPT
+#: 5890 PROMPT
+msgid "Please describe"
+msgstr "请描述"
+
+# QUESTION PROMPT
+#: 5892 PROMPT
+msgid "If yes, please list the medication(s)"
+msgstr "如果是，请列举药物种类"
+
+# QUESTION QUESTION-HELP
+#: 5892 QUESTION-HELP
+msgid "Please enter: medication, dose, duration of time taken. One line per medication"
+msgstr "请输入：药物名称、剂量、服药间隔。每行写一种药。"
+
+# QUESTION PROMPT
+#: 5893 PROMPT
+msgid "Does this medication completely or patially resolve your pain / discomfort?"
+msgstr "这些药物能完全或部分缓解您的疼痛或不适吗？"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "Completely resolve"
+msgstr "完全解除"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "Partially resolve"
+msgstr "部分缓解"
+
+# QUESTION CHOICES
+#: 5893 CHOICES
+msgid "No effect"
+msgstr "无效"
+
+# QUESTION PROMPT
+#: 5900 PROMPT
+msgid "If so, which and when?"
+msgstr "如果是，种类和时间？"
+
+# QUESTION PROMPT
+#: 5901 PROMPT
+msgid "Has the problem persisted?"
+msgstr "症状仍然持续吗？"
+
+# QUESTION PROMPT
+#: 5902 PROMPT
+msgid "For how many years (1 if recent)?"
+msgstr "持续多少年了（若是近期则按 1 计算）？"
+
+# QUESTION PROMPT
+#: 5904 PROMPT
+msgid "If so, which disease or condition and who suffered from it?"
+msgstr "如果是，则是何种疾病或症状？患者是谁？"
+
+# QUESTION PROMPT
+#: 5906 PROMPT
+msgid "If yes, from what cause?"
+msgstr "如果是，为什么？"
+
+# QUESTION PROMPT
+#: 5908 PROMPT
+msgid "If yes, which?"
+msgstr "如果是，是哪个？"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Asthma"
+msgstr "哮喘"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Emphysema"
+msgstr "肺气肿"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Bronchiectasis"
+msgstr "支气管扩张"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Other lunch disease"
+msgstr "其他肺部疾病"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Diabetes"
+msgstr "糖尿病"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Epilepsy"
+msgstr "癫痫"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Malignancy"
+msgstr "恶性肿瘤"
+
+# QUESTION CHOICES
+#: 5908 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 6124 PROMPT
+msgid "If no, by what form of testing was the possibility that you have Tuberous Sclerosis ruled out?"
+msgstr "如果没有，您通过什么形式的检查来排除结节性硬化症的可能性？"
+
+# QUESTION PROMPT
+#: 6125 PROMPT
+msgid "If yes, how old were you?"
+msgstr "若有，您的年龄？"
+
+# QUESTION PROMPT
+#: 6126 PROMPT
+msgid "Do you currently have any symptoms associated with your Tuberous Sclerosis?"
+msgstr "目前您有没有与结节性硬化症有关的症状？"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Skin problems"
+msgstr "皮肤问题"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Epilepsy"
+msgstr "癫痫"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Brain tumors"
+msgstr "脑瘤"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Kidney tumors"
+msgstr "肾肿瘤"
+
+# QUESTION CHOICES
+#: 6126 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 6127 PROMPT
+msgid "Do you currently have any symptoms not definitely related to Tuberous Sclerosis?"
+msgstr "目前您有没有与结节性硬化症无明确关联的症状？"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Skin problems"
+msgstr "皮肤问题"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Epilepsy"
+msgstr "癫痫"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Brain tumors"
+msgstr "脑瘤"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Kidney tumors"
+msgstr "肾肿瘤"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Austism"
+msgstr "自闭症"
+
+# QUESTION CHOICES
+#: 6127 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 6128 PROMPT
+msgid "If other, please describe"
+msgstr "如果是，请列举"
+
+# QUESTION PROMPT
+#: 6130 PROMPT
+msgid "Please provide details (current age and relation to you)"
+msgstr "请提供详情（目前的年龄和与您的关系）"
+
+# QUESTION PROMPT
+#: 6132 PROMPT
+msgid "If yes, please choose from the following"
+msgstr "若有，请从下列疾病中选择"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Skin problems"
+msgstr "皮肤问题"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Epilepsy"
+msgstr "癫痫"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Brain tumors"
+msgstr "脑瘤"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Kidney tumors"
+msgstr "肾肿瘤"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Austism"
+msgstr "自闭症"
+
+# QUESTION CHOICES
+#: 6132 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 6133 PROMPT
+msgid "Please describe your relationship to the affected members of your family"
+msgstr "请说出您家族中的患者与您的关系"
+
+# QUESTION PROMPT
+#: 6135 PROMPT
+msgid "Please describe the condition and date of diagnosis"
+msgstr "请描述病情和确诊时间"
+
+# QUESTION PROMPT
+#: 6077 PROMPT
+msgid "If so, how many children do you have, if any?"
+msgstr "如果有，您有几个子女？"
+
+# QUESTION PROMPT
+#: 6078 PROMPT
+msgid "What are the sexes and birth years of each child?"
+msgstr "每个子女的性别和出生年月是？"
+
+# QUESTION QUESTION-HELP
+#: 6078 QUESTION-HELP
+msgid "Please list: sex followed by birth year, one per line"
+msgstr "请列出：性别之后写出生年份，每行写一个"
+
+# QUESTION PROMPT
+#: 6091 PROMPT
+msgid "Do you have any children through"
+msgstr "您是否有子女是"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Adoption"
+msgstr "收养的"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Inherited through marriage"
+msgstr "通过结婚过继的"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Gestational surrogacy"
+msgstr "代孕的"
+
+# QUESTION CHOICES
+#: 6091 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 26415 PROMPT
+msgid "If you gave birth to any of your children, what was the date of your last delivery?"
+msgstr "如果您的每个孩子都顺利降生，那您最后一次分娩是在哪天？"
+
+# QUESTION PROMPT
+#: 6080 PROMPT
+msgid "Was your pregnancy uneventful?"
+msgstr "您的怀孕期平安无事吗？"
+
+# QUESTION PROMPT
+#: 6081 PROMPT
+msgid "If not, what challenges did you face?"
+msgstr "若不是，您面临了什么样的困难？"
+
+# QUESTION PROMPT
+#: 6082 PROMPT
+msgid "Do you think these challenges may be LAM-related?"
+msgstr "您觉得这些困难和 LAM 有关吗？"
+
+# QUESTION PROMPT
+#: 6083 PROMPT
+msgid "What makes you think this?"
+msgstr "是什么使您这么想呢？"
+
+# QUESTION PROMPT
+#: 6085 PROMPT
+msgid "If yes, based on what clues was the diagnosis made?"
+msgstr "若是，诊断所依据的线索是什么?"
+
+# QUESTION PROMPT
+#: 26257 PROMPT
+msgid "Your age at your first pregnancy?"
+msgstr "您首次怀孕时的年龄？"
+
+# QUESTION PROMPT
+#: 26246 PROMPT
+msgid "Number of pregnancies carried to term"
+msgstr "活产妊娠的次数？"
+
+# QUESTION QUESTION-HELP
+#: 26246 QUESTION-HELP
+msgid "This means live births, whether naturally or surgically"
+msgstr "这意味着婴儿成活，无论是顺产还是剖腹产"
+
+# QUESTION PROMPT
+#: 6075 PROMPT
+msgid "Number of pregnancies not carried to term"
+msgstr "非活产妊娠的次数？"
+
+# QUESTION QUESTION-HELP
+#: 6075 QUESTION-HELP
+msgid "Please enter a number: 0 if none"
+msgstr "请输入一个数字：没有则为 0"
+
+# QUESTION PROMPT
+#: 26256 PROMPT
+msgid "Have you ever had difficulty becoming pregnant?"
+msgstr "您是否遇到过难孕？"
+
+# QUESTION PROMPT
+#: 26255 PROMPT
+msgid "Have you ever had IVF?"
+msgstr "您进行过 IVF 吗？"
+
+# QUESTION QUESTION-HELP
+#: 26255 QUESTION-HELP
+msgid "IVF: In-vitro fertilization"
+msgstr "IVF：试管受精"
+
+# QUESTION PROMPT
+#: 26254 PROMPT
+msgid "Were you ever given DES to prevent miscarriage?"
+msgstr "您曾经用过 DES 来防止流产吗？"
+
+# QUESTION QUESTION-HELP
+#: 26254 QUESTION-HELP
+msgid "DES: Diethylstilbestrol"
+msgstr "DES：乙烯雌酚"
+
+# QUESTION PROMPT
+#: 6106 PROMPT
+msgid "Has this become worse or better over time?"
+msgstr "随着时间推移这一问题加重还是减轻了？"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Stayed the same"
+msgstr "维持原状"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Worse over time"
+msgstr "加重"
+
+# QUESTION CHOICES
+#: 6106 CHOICES
+msgid "Better over time"
+msgstr "减轻"
+
+# QUESTION PROMPT
+#: 6112 PROMPT
+msgid "Are you on the pill now?"
+msgstr "您现在服药吗？"
+
+# QUESTION PROMPT
+#: 6109 PROMPT
+msgid "For how many years have you been on birth control pills?"
+msgstr "您服避孕药几年了？"
+
+# QUESTION PROMPT
+#: 6108 PROMPT
+msgid "For what purpose(s) were you on birth control pills?"
+msgstr "您出于什么目的服用避孕药？"
+
+# QUESTION PROMPT
+#: 6111 PROMPT
+msgid "For what purpose?"
+msgstr "为什么？"
+
+# QUESTION PROMPT
+#: 6119 PROMPT
+msgid "If so, for how long?"
+msgstr "如果是，有多久？"
+
+# QUESTION PROMPT
+#: 6120 PROMPT
+msgid "Also, are you on hormone replacement therapy now?"
+msgstr "并且，您目前接受激素替代疗法吗？"
+
+# QUESTION PROMPT
+#: 6115 PROMPT
+msgid "At what age did you stop getting regular periods?"
+msgstr "您从什么年龄开始停止有规律的月经？"
+
+# QUESTION PROMPT
+#: 6116 PROMPT
+msgid "What changes has your body undergone since you stopped menstruating?"
+msgstr "自从停经后您的身体发生了什么变化？"
+
+# QUESTION PROMPT
+#: 6117 PROMPT
+msgid "Do you think any of these changes are LAM-specific?"
+msgstr "您觉得其中某些变化是与 LAM 直接相关的吗？"
+
+# QUESTION PROMPT
+#: 23551 PROMPT
+msgid "Have you taken medications specifically for LAM?"
+msgstr "您吃过针对 LAM 的药物吗？"
+
+# QUESTION CHOICES
+#: 23551 CHOICES
+msgid "Yes"
+msgstr "是"
+
+# QUESTION CHOICES
+#: 23551 CHOICES
+msgid "No"
+msgstr "否"
+
+# QUESTION PROMPT
+#: 23549 PROMPT
+msgid "Which types of drugs have you tried?"
+msgstr "您尝试过哪些药物？"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Statins"
+msgstr "他汀类"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Rapamycin (Sirolimus)"
+msgstr "雷帕霉素（西罗莫司）"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Certican R (Everolimus)"
+msgstr "卓定康 R（依维莫司）"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Doxycycline"
+msgstr "强力霉素"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Metformin"
+msgstr "甲福明"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Anti-oestrogen"
+msgstr "抗雌激素"
+
+# QUESTION CHOICES
+#: 23549 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION QUESTION-HELP
+#: 23549 QUESTION-HELP
+msgid "Please select one or more categories"
+msgstr "请选择一个或几个分类"
+
+# QUESTION PROMPT
+#: 26416 PROMPT
+msgid "If you have taken LAM medications"
+msgstr "若您施用 LAM 药物"
+
+# QUESTION QUESTION-HELP
+#: 26416 QUESTION-HELP
+msgid "Please list the medications, dates you took them and the reason you stopped, if any."
+msgstr "请列出药物种类、服药天数和停药原因，如果有的话。"
+
+# QUESTION PROMPT
+#: 36601 PROMPT
+msgid "Please share any other observations about your off-label use."
+msgstr "请说说您对药品在说明书之外的用法的其他任何经验。"
+
+# QUESTION QUESTION-HELP
+#: 36601 QUESTION-HELP
+msgid "We will use your answers to this question to formulate a more detailed questionnaire for off-label users."
+msgstr "我们将根据您对这个问题的回答，来制作患者对药品在说明书之外的用法的更详细问卷。"
+
+# QUESTION PROMPT
+#: 23550 PROMPT
+msgid "Please select over the counter drugs you have used"
+msgstr "请选择您所用过的非处方药"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Aspirin"
+msgstr "阿司匹林"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Omega 3 Fatty Acids"
+msgstr "Omega 3 脂肪酸"
+
+# QUESTION CHOICES
+#: 23550 CHOICES
+msgid "Other Vitamins"
+msgstr "其他维生素"
+
+# QUESTION PROMPT
+#: 23565 PROMPT
+msgid "Weight"
+msgstr "体重"
+
+# QUESTION QUESTION-HELP
+#: 23565 QUESTION-HELP
+msgid "Weight on a home scale.  "
+msgstr "在家用体重秤上测得的体重。  "
+
+# QUESTION PROMPT
+#: 23564 PROMPT
+msgid "Body Temperature"
+msgstr "体温"
+
+# QUESTION QUESTION-HELP
+#: 23564 QUESTION-HELP
+msgid "Collecting your daily temperature at the same time as your spirometer readings may help us understand the role of hormones in variations in FEV1.  Please use under the tongue readings. "
+msgstr "您每日在同一时间记录体温和肺活量值，将有助于我们探索激素在 FEV1 变化中发挥的作用。请测量舌下体温。 "
+
+# QUESTION PROMPT
+#: 32622 PROMPT
+msgid "Do you experience incontinence?"
+msgstr "您出现过失禁吗？"
+
+# QUESTION QUESTION-HELP
+#: 32622 QUESTION-HELP
+msgid "Please answer yes if you have, sometimes or always experience incontinence.  The rest of the questions will help fill in the details."
+msgstr "如果您偶尔或经常出现失禁，请回答是。下面的问题将涉及细节。"
+
+# QUESTION PROMPT
+#: 24513 PROMPT
+msgid "Before you go out, do you consciously think about whether you need to visit the toilet?"
+msgstr "外出之前，您是否会有意地想到自己是否需要如厕？"
+
+# QUESTION CHOICES
+#: 24513 CHOICES
+msgid "Yes"
+msgstr "是"
+
+# QUESTION CHOICES
+#: 24513 CHOICES
+msgid "No"
+msgstr "否"
+
+# QUESTION PROMPT
+#: 24514 PROMPT
+msgid "Do you sometimes go to the toilet "just to be safe" even if you don't feel you need to?"
+msgstr "您是否有时如厕“只是保险起见”，即使您并不需要？"
+
+# QUESTION PROMPT
+#: 24516 PROMPT
+msgid "Have you ever worried that you would not get to the toilet in time due to shortness of breath?"
+msgstr "您是否担心过自己由于气短而无法及时如厕？"
+
+# QUESTION PROMPT
+#: 24517 PROMPT
+msgid "Have you ever experienced a slight leak of urine due to coughing, sneezing, or laughing?"
+msgstr "您是否曾因咳嗽、打喷嚏或发笑而轻微遗尿？"
+
+# QUESTION PROMPT
+#: 24533 PROMPT
+msgid "Do you avoid certain drinks?"
+msgstr "您是否忌饮某些饮料？"
+
+# QUESTION QUESTION-HELP
+#: 24533 QUESTION-HELP
+msgid "Such as coffee, tea, or other diuretics?"
+msgstr "例如咖啡、茶或其他利尿剂？"
+
+# QUESTION PROMPT
+#: 24523 PROMPT
+msgid "Have you been incontinent of feces?"
+msgstr "您有过大便失禁吗？"
+
+# QUESTION PROMPT
+#: 24520 PROMPT
+msgid "Have you been incontinent of urine?"
+msgstr "您有过小便失禁吗？"
+
+# QUESTION PROMPT
+#: 24522 PROMPT
+msgid "Roughly how often?"
+msgstr "大概多久一次？"
+
+# QUESTION PROMPT
+#: 24529 PROMPT
+msgid "On a scale of 1 (least significant) to 10 (most significant) who significant is incontinence compared to the other challenges you face as a LAM patient?"
+msgstr "如果以 1（代表最小）-10（代表最大）来表示症状的严重程度，您作为 LAM 患者，失禁与其他症状相比，其重要程度可以排在第几位？"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 24529 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION PROMPT
+#: 24530 PROMPT
+msgid "Does incontinence prevent you from doing certain things such as shopping or going for walks?"
+msgstr "失禁症妨碍您做某些事（例如购物、散步等）吗？"
+
+# QUESTION PROMPT
+#: 24531 PROMPT
+msgid "Does incontinence limit you in any other way?"
+msgstr "失禁是否在其他方面限制了您？"
+
+# QUESTION PROMPT
+#: 24532 PROMPT
+msgid "Do you limit your liquid intake?"
+msgstr "您有限制自己的饮水量吗？"
+
+# QUESTION QUESTION-HELP
+#: 24532 QUESTION-HELP
+msgid "For example, are worried about finding a toilet when you are out, or getting upstairs when you are home?"
+msgstr "例如，当您外出或回家上楼时，您担心自己内急吗？"
+
+# QUESTION PROMPT
+#: 24526 PROMPT
+msgid "Please describe any coping strategies that have helped to reduce or avoid incontinence"
+msgstr "请说说您减少或避免失禁情况的应对策略"
+
+# QUESTION PROMPT
+#: 24515 PROMPT
+msgid "If you have a chest infection, do you find that you have to be more aware of continence issues than you would be normally?"
+msgstr "如果您出现胸部感染，您是否觉得自己需要比平时更留意失禁问题？"
+
+# QUESTION PROMPT
+#: 24518 PROMPT
+msgid "Has you incontinence become worse as your breathlessness increased over the years?"
+msgstr "随着您气喘症状的逐年加重，失禁的症状是否也一同加重了？"
+
+# QUESTION PROMPT
+#: 26454 PROMPT
+msgid "Is your incontinence cyclical?"
+msgstr "您的失禁情况是否周期性出现？"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "None"
+msgstr "无"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Monthly"
+msgstr "每月一次"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "With menstruation"
+msgstr "与月经同时出现"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Seasonal"
+msgstr "每季度一次"
+
+# QUESTION CHOICES
+#: 26454 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 24525 PROMPT
+msgid "What do you believe to be the major cause of your incontinence?"
+msgstr "您认为自己失禁的主要原因是什么？"
+
+# QUESTION PROMPT
+#: 24519 PROMPT
+msgid "Do you think your incontinence occurs because of"
+msgstr "您是否认为您的失禁是因为"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "oxygen desaturation"
+msgstr "氧气不足"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "breathlessness keeps you from getting there in time"
+msgstr "气喘而不能及时如厕"
+
+# QUESTION CHOICES
+#: 24519 CHOICES
+msgid "other"
+msgstr "其他"
+
+# QUESTION QUESTION-HELP
+#: 24519 QUESTION-HELP
+msgid "i.e. desaturation leads you to lose control of the muscles"
+msgstr "即，氧气不足导致您的肌肉失控"
+
+# QUESTION PROMPT
+#: 24528 PROMPT
+msgid "Would you feel comfortable talking to your doctor or pulmonologist about incontinence problems?"
+msgstr "和医生或肺病学家谈论自己的失禁问题时您觉得自在吗？"
+
+# QUESTION PROMPT
+#: 24527 PROMPT
+msgid "Have you ever asked for professional help with incontinence?"
+msgstr "您就失禁问题寻求过专业援助吗？"
+
+# QUESTION PROMPT
+#: 24817 PROMPT
+msgid "Do you have a family history of osteoporosis?"
+msgstr "您有骨质疏松症的家族史吗？"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "yes"
+msgstr "是"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "no"
+msgstr "是"
+
+# QUESTION CHOICES
+#: 24817 CHOICES
+msgid "I don't know"
+msgstr "不知道"
+
+# QUESTION PROMPT
+#: 24818 PROMPT
+msgid "Do you suffer from bone loss?"
+msgstr "您患有骨流失吗？"
+
+# QUESTION PROMPT
+#: 25733 PROMPT
+msgid "Do you suffer from back, joint or bone pain?"
+msgstr "您患有背部、关节或骨骼疼痛吗？"
+
+# QUESTION PROMPT
+#: 24820 PROMPT
+msgid "In which members of your family?"
+msgstr "是您家中的哪些成员？"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Siblings"
+msgstr "兄弟姐妹"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Parents"
+msgstr "父母"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Grandparents"
+msgstr "祖父母"
+
+# QUESTION CHOICES
+#: 24820 CHOICES
+msgid "Cousins"
+msgstr "堂/表兄弟姐妹"
+
+# QUESTION PROMPT
+#: 24821 PROMPT
+msgid "At approximately what age was that diagnosis made for those family members "
+msgstr "这些家庭成员大约是在什么年龄诊断出此症状的？ "
+
+# QUESTION QUESTION-HELP
+#: 24821 QUESTION-HELP
+msgid "Please list one family member and age per line"
+msgstr "请列出患病家属及其年龄，每人占一行。"
+
+# QUESTION PROMPT
+#: 25727 PROMPT
+msgid "Have you ever had a bone density scan?"
+msgstr "您做过骨密度检查吗？"
+
+# QUESTION PROMPT
+#: 24825 PROMPT
+msgid "Has a clinician said that this may be related to LAM?"
+msgstr "有无医生表示这可能和 LAM 相关？"
+
+# QUESTION PROMPT
+#: 24826 PROMPT
+msgid "If so, what connection was described between LAM and bone loss?"
+msgstr "若有，他认为 LAM 和骨流失之间的联系是什么？"
+
+# QUESTION PROMPT
+#: 24823 PROMPT
+msgid "Any other comments on your loss of bone density?"
+msgstr "对于您的骨密度流失还有其他论述吗？"
+
+# QUESTION PROMPT
+#: 24836 PROMPT
+msgid "Date of diagnosis?"
+msgstr "诊断日期？"
+
+# QUESTION PROMPT
+#: 24837 PROMPT
+msgid "What test was used to arrive at your diagnosis?"
+msgstr "通过何种检查而确诊？"
+
+# QUESTION PROMPT
+#: 24838 PROMPT
+msgid "Name and address of diagnosing clinician"
+msgstr "诊断医生的姓名和地址"
+
+# QUESTION PROMPT
+#: 24839 PROMPT
+msgid "Are you now taking any prescription medication for this condition?"
+msgstr "您现在施用哪些治疗该症状的处方药？"
+
+# QUESTION PROMPT
+#: 24844 PROMPT
+msgid "Have you taken medication for osteoporosis in the past that you are no longer taking?"
+msgstr "您是否在过去施用治疗骨质疏松症的药物而现在停药了？"
+
+# QUESTION PROMPT
+#: 25732 PROMPT
+msgid "Have you ever taken bisphosophonates?"
+msgstr "您施用过二磷酸酯吗？"
+
+# QUESTION PROMPT
+#: 25731 PROMPT
+msgid "Are you currently taking bisphosphonates?"
+msgstr "您现在施用二磷酸酯吗？"
+
+# QUESTION PROMPT
+#: 24841 PROMPT
+msgid "Which ones?"
+msgstr "哪些？"
+
+# QUESTION PROMPT
+#: 24843 PROMPT
+msgid "Has this ever been recommended?"
+msgstr "施用该药得到了医生推荐吗？"
+
+# QUESTION PROMPT
+#: 24846 PROMPT
+msgid "Medication?"
+msgstr "什么药物？"
+
+# QUESTION PROMPT
+#: 24847 PROMPT
+msgid "Date when medication started?"
+msgstr "开始服药的日期？"
+
+# QUESTION PROMPT
+#: 24848 PROMPT
+msgid "Date when medication stopped?"
+msgstr "停止服药的日期？"
+
+# QUESTION PROMPT
+#: 24849 PROMPT
+msgid "Reason for stopping medication?"
+msgstr "停药原因？"
+
+# QUESTION PROMPT
+#: 24851 PROMPT
+msgid "Do you currently take multivitamins?"
+msgstr "您现在施用多维生素吗？"
+
+# QUESTION PROMPT
+#: 24852 PROMPT
+msgid "Not counting multi-vitamins, do you take any calcium or vitamin D supplements?"
+msgstr "除多维生素外，您施用钙或 VD 补充剂吗？"
+
+# QUESTION PROMPT
+#: 24853 PROMPT
+msgid "Do you take any other vitamin supplements?"
+msgstr "您还施用其他维生素补充剂吗？"
+
+# QUESTION PROMPT
+#: 24854 PROMPT
+msgid "Do you regularly consume any of the following foods?"
+msgstr "您有规律的食用下面的食物吗？"
+
+# QUESTION CHOICES
+#: 24854 CHOICES
+msgid "Green, leafy vegetables"
+msgstr "绿叶蔬菜"
+
+# QUESTION CHOICES
+#: 24854 CHOICES
+msgid "Other bone-health related foods"
+msgstr "其他有利骨骼的食物"
+
+# QUESTION PROMPT
+#: 24856 PROMPT
+msgid "Vitamin D content?"
+msgstr "维生素 D 含量？"
+
+# QUESTION PROMPT
+#: 24857 PROMPT
+msgid "Calcium content?"
+msgstr "钙含量？"
+
+# QUESTION PROMPT
+#: 24859 PROMPT
+msgid "What are the supplements called?"
+msgstr "这些补充剂的名称？"
+
+# QUESTION PROMPT
+#: 24860 PROMPT
+msgid "What formulation?"
+msgstr "成分配方是什么？"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Vitamin D"
+msgstr "维生素 D"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Calcium"
+msgstr "钙"
+
+# QUESTION CHOICES
+#: 24860 CHOICES
+msgid "Vitamin D & Calcium"
+msgstr "维生素 D 和钙"
+
+# QUESTION PROMPT
+#: 24861 PROMPT
+msgid "Amount of Vitamin D taken each day?"
+msgstr "每日施用的维生素 D 量？"
+
+# QUESTION PROMPT
+#: 24862 PROMPT
+msgid "Amount of Calcium taken each day?"
+msgstr "每日施用的钙量？"
+
+# QUESTION PROMPT
+#: 25606 PROMPT
+msgid "Are you currently taking any prescription medications?"
+msgstr "您现在施用哪些处方药？"
+
+# QUESTION PROMPT
+#: 25609 PROMPT
+msgid "Are you regularly taking vitamins or supplements?"
+msgstr "您定期施用维生素或补充剂吗？"
+
+# QUESTION PROMPT
+#: 25608 PROMPT
+msgid "Please list the prescription medications you are taking"
+msgstr "请列举您施用的处方药"
+
+# QUESTION QUESTION-HELP
+#: 25608 QUESTION-HELP
+msgid "To give us more information on your prescriptions, please go to our medication diary and enter the details of your current and past prescription medication use"
+msgstr "请进入药物日志页面并输入您现在和过去施用处方药的详情，向我们提供关于您施用处方药的更多信息。"
+
+# QUESTION PROMPT
+#: 6107 PROMPT
+msgid "Have you ever been on birth control pills?"
+msgstr "您施用过避孕药吗？"
+
+# QUESTION PROMPT
+#: 25622 PROMPT
+msgid "Have you ever used female hormones other than oral contraceptives?"
+msgstr "您是否施用过过雌激素，而不是口服避孕药？"
+
+# QUESTION PROMPT
+#: 25629 PROMPT
+msgid "Are you currently using over-the-counter hormone replacements or to treat post-menopausal symptoms?"
+msgstr "当前您是否用非处方的激素替代药或其他药物治疗绝经后症状？"
+
+# QUESTION QUESTION-HELP
+#: 25629 QUESTION-HELP
+msgid "For example herbal, natural or soy-based preparations or supplements?"
+msgstr "例如草本、天然或源于大豆的制剂或补充剂？"
+
+# QUESTION PROMPT
+#: 25702 PROMPT
+msgid "Please rate your average level of daily stress"
+msgstr "请划分您平均每天感受到的压力等级"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 25702 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION QUESTION-HELP
+#: 25702 QUESTION-HELP
+msgid "Where 1 is no stress and 10 is the highest you have experienced."
+msgstr "1 代表没有压力，而 10 代表您承受过的最大压力。"
+
+# QUESTION PROMPT
+#: 25703 PROMPT
+msgid "What is the primary cause of your stress?"
+msgstr "您的压力主要来自于？"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Job"
+msgstr "工作"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Home"
+msgstr "住所"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Family"
+msgstr "家庭"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Injury"
+msgstr "伤害"
+
+# QUESTION CHOICES
+#: 25703 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 25704 PROMPT
+msgid "Has your general stress level increased since your LAM diagnosis?"
+msgstr "被确诊为 LAM 后您的总体压力水平是否增长了？"
+
+# QUESTION PROMPT
+#: 25705 PROMPT
+msgid "What is your primary method of coping with stress?"
+msgstr "您减压的主要方法是什么？"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Reading"
+msgstr "阅读"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Exercise"
+msgstr "锻炼"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Television"
+msgstr "看电视"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Spending time with family"
+msgstr "与家人共度"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Spending time with friends"
+msgstr "与朋友共度"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Work"
+msgstr "工作"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "None"
+msgstr "无"
+
+# QUESTION CHOICES
+#: 25705 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 26917 PROMPT
+msgid "What estrogens did you take?"
+msgstr "您施用何种雌激素?"
+
+# QUESTION QUESTION-HELP
+#: 26917 QUESTION-HELP
+msgid "Please enter one medication and the dates taken, one per line"
+msgstr "请输入您施用的药物种类和时间，每种占一行"
+
+# QUESTION PROMPT
+#: 25625 PROMPT
+msgid "What prompted you to take estrogens?"
+msgstr "是什么直接促使您施用激素？"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Menstrual problems"
+msgstr "月经问题"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Bone problems"
+msgstr "骨骼问题"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Hysterectomy"
+msgstr "子宫切除"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Cancer"
+msgstr "癌症"
+
+# QUESTION CHOICES
+#: 25625 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 25626 PROMPT
+msgid "At what age did you first take estrogens?"
+msgstr "您第一次施用雌激素时的年龄？"
+
+# QUESTION PROMPT
+#: 25627 PROMPT
+msgid "How long did you take estrogens?"
+msgstr "您施用雌激素多长时间了？"
+
+# QUESTION PROMPT
+#: 25628 PROMPT
+msgid "How were the estrogens administered?"
+msgstr "雌激素的施用方式是什么？"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Injection"
+msgstr "注射剂"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Cream"
+msgstr "膏剂"
+
+# QUESTION CHOICES
+#: 25628 CHOICES
+msgid "Pill"
+msgstr "药片"
+
+# QUESTION PROMPT
+#: 25631 PROMPT
+msgid "What over the counter estrogens?"
+msgstr "何种非处方雌激素？"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Soy estrogen products"
+msgstr "大豆雌激素产品"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Dong quai"
+msgstr "当归"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Natural progesterone cream"
+msgstr "天然黄体酮膏剂"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Wild yam cream"
+msgstr "山药膏剂"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Black cohash"
+msgstr "黑升麻"
+
+# QUESTION CHOICES
+#: 25631 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 25735 PROMPT
+msgid "Where do you primarily experience your pain?"
+msgstr "您疼痛的主要部位是哪里？"
+
+# QUESTION PROMPT
+#: 25736 PROMPT
+msgid "How often does the pain occur?"
+msgstr "这种疼痛多久出现一次？"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Constant"
+msgstr "持续不断"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Daily"
+msgstr "每天一次"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Monthly"
+msgstr "每月一次"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Occasionally"
+msgstr "偶尔出现"
+
+# QUESTION CHOICES
+#: 25736 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 25739 PROMPT
+msgid "Does your pain vary cyclically?"
+msgstr "您的疼痛是否周期性变化?"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "No"
+msgstr "不"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Monthly"
+msgstr "每月"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Seasonally"
+msgstr "每季"
+
+# QUESTION CHOICES
+#: 25739 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 25737 PROMPT
+msgid "How would you rate the pain on average?"
+msgstr "您如何划分这些疼痛的等级？"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "1"
+msgstr "1"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "2"
+msgstr "2"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "3"
+msgstr "3"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "4"
+msgstr "4"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "5"
+msgstr "5"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "6"
+msgstr "6"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "7"
+msgstr "7"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "8"
+msgstr "8"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "9"
+msgstr "9"
+
+# QUESTION CHOICES
+#: 25737 CHOICES
+msgid "10"
+msgstr "10"
+
+# QUESTION QUESTION-HELP
+#: 25737 QUESTION-HELP
+msgid "Please rate from 1 to 10 where 1 is the most mild and 10 is the worst pain you have ever felt"
+msgstr "请按 1-10 的等级划分，1 代表最轻微，10 代表您感受到的最严重的疼痛。"
+
+# QUESTION PROMPT
+#: 25738 PROMPT
+msgid "How has your pain changed over the past year?"
+msgstr "过去一年中您的疼痛感如何变化？"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Same"
+msgstr "不变"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Better"
+msgstr "减轻"
+
+# QUESTION CHOICES
+#: 25738 CHOICES
+msgid "Worse"
+msgstr "加重"
+
+# QUESTION PROMPT
+#: 26211 PROMPT
+msgid "FEV1 - trial 1"
+msgstr "FEV1 - 试验 1"
+
+# QUESTION PROMPT
+#: 26212 PROMPT
+msgid "FEV6 - trial 1"
+msgstr "FEV6 - 试验 1"
+
+# QUESTION PROMPT
+#: 26213 PROMPT
+msgid "FEV1 - trial 2"
+msgstr "FEV1 - 试验 2"
+
+# QUESTION PROMPT
+#: 26214 PROMPT
+msgid "FEV6 - trial 2"
+msgstr "FEV6 - 试验 2"
+
+# QUESTION PROMPT
+#: 26215 PROMPT
+msgid "FEV1 - trial 3"
+msgstr "FEV1 - 试验 3"
+
+# QUESTION PROMPT
+#: 26216 PROMPT
+msgid "FEV6 - trial 3"
+msgstr "FEV6 - 试验 3"
+
+# QUESTION PROMPT
+#: 26220 PROMPT
+msgid "Did your travel routine vary yesterday?"
+msgstr "您的旅行日程昨天是否发生改变？"
+
+# QUESTION QUESTION-HELP
+#: 26220 QUESTION-HELP
+msgid "You need to describe only major changes, such as flights, long car trips, etc."
+msgstr "您只需说出主要变化，例如飞行、长途汽车等。"
+
+# QUESTION PROMPT
+#: 26222 PROMPT
+msgid "Did your altitude change significantly?"
+msgstr "您所处的海拔高度是否显著变化？"
+
+# QUESTION QUESTION-HELP
+#: 26222 QUESTION-HELP
+msgid "Enter the variation, or 0 if no change.  For example a typical commercial airplane flies up to 12000 meters or 35000 feet."
+msgstr "输入变化范围，无变化则写 0。例如一般商务航班的飞行高度是 12000 米或 35000 英尺。"
+
+# QUESTION PROMPT
+#: 26223 PROMPT
+msgid "Did you fly?"
+msgstr "您坐飞机吗？"
+
+# QUESTION PROMPT
+#: 26224 PROMPT
+msgid "Any other changes in your routine?"
+msgstr "日程还有其他变化吗？"
+
+# QUESTION PROMPT
+#: 26226 PROMPT
+msgid "How long were you in the air?"
+msgstr "您飞行了多久？"
+
+# QUESTION PROMPT
+#: 26227 PROMPT
+msgid "Did your breathing change during the flight?"
+msgstr "飞行中您的呼吸是否改变？"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "normal"
+msgstr "正常"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "less difficult"
+msgstr "更舒畅"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "varied"
+msgstr "变化不定"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "more difficult"
+msgstr "更困难"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "extremely difficult"
+msgstr "非常困难"
+
+# QUESTION CHOICES
+#: 26227 CHOICES
+msgid "pnemothorax"
+msgstr "气胸"
+
+# QUESTION PROMPT
+#: 26228 PROMPT
+msgid "How did you feel after the flight?"
+msgstr "飞行结束后您的感觉如何？"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "no change"
+msgstr "无变化"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "worse"
+msgstr "更糟"
+
+# QUESTION CHOICES
+#: 26228 CHOICES
+msgid "better"
+msgstr "更好"
+
+# QUESTION PROMPT
+#: 26230 PROMPT
+msgid "Were you or did you feel sick yesterday?"
+msgstr "您昨天是否感到不适？"
+
+# QUESTION PROMPT
+#: 26231 PROMPT
+msgid "Was your energy level:"
+msgstr "您的精力水平是否："
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Normal"
+msgstr "正常"
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Higher than usual"
+msgstr "高于正常值"
+
+# QUESTION CHOICES
+#: 26231 CHOICES
+msgid "Lower than usual"
+msgstr "低于正常值"
+
+# QUESTION PROMPT
+#: 26233 PROMPT
+msgid "Type of sickness"
+msgstr "疾病类型"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "not sure"
+msgstr "不确定"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "cold"
+msgstr "感冒"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "flu"
+msgstr "流感"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "physical injury"
+msgstr "身体伤害"
+
+# QUESTION CHOICES
+#: 26233 CHOICES
+msgid "other"
+msgstr "其他"
+
+# QUESTION QUESTION-HELP
+#: 26233 QUESTION-HELP
+msgid "The goal of this section is to capture any ordinary ailments that may effect your FEV or temperature readings or other daily information."
+msgstr "该部分旨在找出任何可能影响您的 FEV 或体温或其他每日信息的常见病。"
+
+# QUESTION PROMPT
+#: 26236 PROMPT
+msgid "Symptoms of sickness"
+msgstr "疾病症状"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Runny nose"
+msgstr "流鼻涕"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Moderate cough"
+msgstr "中度咳嗽"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Severe cough"
+msgstr "重度咳嗽"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Cough with phlegm or fluid"
+msgstr "咳吐粘痰"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Fever (more than 102F/39C)"
+msgstr "发烧（体温超过 102F/39°C）"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Diarrhea"
+msgstr "腹泻"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Cramping"
+msgstr "痉挛"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Vomiting"
+msgstr "呕吐"
+
+# QUESTION CHOICES
+#: 26236 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 26235 PROMPT
+msgid "Please describe sickness or injury"
+msgstr "请描述疾病或伤害"
+
+# QUESTION PROMPT
+#: 26238 PROMPT
+msgid "Please describe your other symptoms"
+msgstr "请描述其他症状"
+
+# QUESTION PROMPT
+#: 26240 PROMPT
+msgid "Any variations in your normal diet?"
+msgstr "您的日常饮食是否有任何改变？"
+
+# QUESTION QUESTION-HELP
+#: 26240 QUESTION-HELP
+msgid "We are leaving this question open for now to see what you report.  We will add more detailed questions here later."
+msgstr "我们先将该问题设为开放性问题，以了解您的说明的情况。今后我们将后面补充更详细的问题。"
+
+# QUESTION PROMPT
+#: 26243 PROMPT
+msgid "Did you miss any medications yesterday?"
+msgstr "昨天您是否忘记施用任何药物？"
+
+# QUESTION PROMPT
+#: 26242 PROMPT
+msgid "Please describe your dietary changes"
+msgstr "请描述您的饮食变化"
+
+# QUESTION QUESTION-HELP
+#: 26242 QUESTION-HELP
+msgid "We are leaving this question open for now to see what you report.  We will add more detailed questions here later."
+msgstr "我们先将该问题设为开放性问题，以了解您的说明的情况。今后我们将后面补充更详细的问题。"
+
+# QUESTION PROMPT
+#: 26245 PROMPT
+msgid "Please describe the medication you missed"
+msgstr "请描述您漏服的药物"
+
+# QUESTION PROMPT
+#: 6090 PROMPT
+msgid "If not, how many years after your child was born were you diagnosed?"
+msgstr "如果没有，那么您是在子女出生几年之后被确诊的？"
+
+# QUESTION PROMPT
+#: 6089 PROMPT
+msgid "Did you use your husband/partner's sperm?"
+msgstr "您是否使用了您丈夫/伴侣的精子？"
+
+# QUESTION PROMPT
+#: 6094 PROMPT
+msgid "Did you use your own eggs?"
+msgstr "您是否使用了自己的卵子？"
+
+# QUESTION PROMPT
+#: 6087 PROMPT
+msgid "If yes, do you think hormonal stimulation to harvest your eggs for transfer progressed your disease?"
+msgstr "如果是，您是否认为因采集卵子而进行的激素刺激加剧了您的疾病？"
+
+# QUESTION PROMPT
+#: 6086 PROMPT
+msgid "If yes, what supports that belief?"
+msgstr "如果是，有哪些支持证据？"
+
+# QUESTION PROMPT
+#: 6093 PROMPT
+msgid "Was your surrogate a relative?"
+msgstr "您的代孕者是您的亲属吗？"
+
+# QUESTION PROMPT
+#: 26251 PROMPT
+msgid "Please describe "
+msgstr "请描述 "
+
+# QUESTION PROMPT
+#: 26260 PROMPT
+msgid "Age you first took birth control pills?"
+msgstr "您首次施用避孕药的年龄？"
+
+# QUESTION PROMPT
+#: 26261 PROMPT
+msgid "How many years did you take them?"
+msgstr "施用了多久？"
+
+# QUESTION QUESTION-HELP
+#: 26261 QUESTION-HELP
+msgid "Total years, even if you didn't for some years"
+msgstr "服药总年数，即使中间有几年停药"
+
+# QUESTION PROMPT
+#: 26262 PROMPT
+msgid "What kind or brand did or do you take?"
+msgstr "所服药物的种类和商标？"
+
+# QUESTION PROMPT
+#: 26263 PROMPT
+msgid "If you stopped taking them, what was the reason?"
+msgstr "如果您已停药，原因是什么？"
+
+# QUESTION PROMPT
+#: 26264 PROMPT
+msgid "If you stopped taking them, did you have irregular or painful periods when you stopped?"
+msgstr "如果停药，停药后是否有月经不规则或痛经？"
+
+# QUESTION PROMPT
+#: 26265 PROMPT
+msgid "Are you still taking birth control pills?"
+msgstr "您仍在服避孕药吗？"
+
+# QUESTION PROMPT
+#: 26332 PROMPT
+msgid "How does your breathing feel today?"
+msgstr "您今天的呼吸如何？"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Less difficult"
+msgstr "更舒畅"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Normal"
+msgstr "正常"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "More difficult"
+msgstr "更困难"
+
+# QUESTION CHOICES
+#: 26332 CHOICES
+msgid "Very difficult"
+msgstr "非常困难"
+
+# QUESTION QUESTION-HELP
+#: 26332 QUESTION-HELP
+msgid "Your answer to this question should be made relative to your normal experience of breathing; if your breathing is always labored, and hasn't changed, then you should use 'normal' as your answer."
+msgstr "回答该问题时请以自己的正常呼吸感觉为参照，如果您的呼吸总是吃力且未曾改变，则应选择‘正常’。"
+
+# QUESTION PROMPT
+#: 26333 PROMPT
+msgid "Menstrual symptoms"
+msgstr "月经症状"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "None"
+msgstr "无"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Spotting"
+msgstr "血点"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Bleeding"
+msgstr "流血"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Heavy bleeding"
+msgstr "大出血"
+
+# QUESTION CHOICES
+#: 26333 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 26451 PROMPT
+msgid "Did you experience incontinence yesterday?"
+msgstr "昨天您是否出现失禁？"
+
+# QUESTION PROMPT
+#: 26388 PROMPT
+msgid "Please record any observations or thoughts you have today"
+msgstr "请报告您今天的所有观察或想法"
+
+# QUESTION QUESTION-HELP
+#: 26388 QUESTION-HELP
+msgid "This can be regarding your monthly cycle, the nature of your symptoms or anything else you feel is relevant."
+msgstr "包括您的月经周期、症状的性质或您认为相关的任何事物。"
+
+# QUESTION PROMPT
+#: 26400 PROMPT
+msgid "Are you currently sexually active?"
+msgstr "您现在有性欲吗？"
+
+# QUESTION PROMPT
+#: 26402 PROMPT
+msgid "Does sexual activity leave you unusually breathless or unwell?"
+msgstr "性生活是否引起您的异常气短或不适？"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "No"
+msgstr "不"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "Immediately after"
+msgstr "紧随其后"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "For hours"
+msgstr "几小时后"
+
+# QUESTION CHOICES
+#: 26402 CHOICES
+msgid "For days"
+msgstr "几天后"
+
+# QUESTION PROMPT
+#: 26405 PROMPT
+msgid "Would you be willing to release this tissue?"
+msgstr "您愿意提供这份组织标本吗？"
+
+# QUESTION PROMPT
+#: 6062 PROMPT
+msgid "Is a sample of your tissue available"
+msgstr "能否采集您的组织切片？"
+
+# QUESTION PROMPT
+#: 26408 PROMPT
+msgid "Do you ever cough up blood after exercise?"
+msgstr "您锻炼后是否咳血？"
+
+# QUESTION PROMPT
+#: 26409 PROMPT
+msgid "Do you regularly cough up blood at the same point in your menstrual cycle?"
+msgstr "您是否在每个月经周期中的同一时间规律性地咳血？"
+
+# QUESTION PROMPT
+#: 26411 PROMPT
+msgid "Have you ever been treated for any form of malignancy?"
+msgstr "您是否因任何形式的恶性肿瘤而接受治疗？"
+
+# QUESTION PROMPT
+#: 26414 PROMPT
+msgid "If you have had chemotherapy, what drugs were used?"
+msgstr "如果您做过化疗，化疗药是什么？"
+
+# QUESTION QUESTION-HELP
+#: 26414 QUESTION-HELP
+msgid "Please enter one drug name per line"
+msgstr "请在每行输入一种化疗药"
+
+# QUESTION PROMPT
+#: 26413 PROMPT
+msgid "Has this involved one or more of"
+msgstr "是否因癌症而接受一次或几次"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Surgery"
+msgstr "手术"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Radiotherapy"
+msgstr "放疗"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Chemotherapy"
+msgstr "化疗"
+
+# QUESTION CHOICES
+#: 26413 CHOICES
+msgid "Other"
+msgstr "其他"
+
+# QUESTION PROMPT
+#: 26456 PROMPT
+msgid "Do you have Diabetes?"
+msgstr "您有糖尿病吗？"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "No"
+msgstr "否"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "Yes, Type I"
+msgstr "是，I 型"
+
+# QUESTION CHOICES
+#: 26456 CHOICES
+msgid "Yes, Type II"
+msgstr "是，II 型"
+
+# QUESTION PROMPT
+#: 26458 PROMPT
+msgid "If so, do you take medication for your diabetes?"
+msgstr "如果有，是否施用糖尿病药物？"
+
+# QUESTION PROMPT
+#: 26459 PROMPT
+msgid "Please list medications and dates taken"
+msgstr "请列出药物种类和服药时间"
+
+# QUESTION QUESTION-HELP
+#: 26459 QUESTION-HELP
+msgid "enter one medication and start or end dates per line.  If current, say current."
+msgstr "每行写出一种药物及其开始/停止日期。如果目前正在施用，就写“目前”"
+
+# QUESTION PROMPT
+#: 26463 PROMPT
+msgid "What condition led to your LAM diagnosis?"
+msgstr "何种症状导致您被确诊为 LAM？"
+
+# QUESTION PROMPT
+#: 26470 PROMPT
+msgid "Date of last scan"
+msgstr "最近一次扫描日期"
+
+# QUESTION PROMPT
+#: 26471 PROMPT
+msgid "Were your bone density scan results"
+msgstr "您的骨密度扫描结果是"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Normal"
+msgstr "正常"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Abnormal"
+msgstr "异常"
+
+# QUESTION CHOICES
+#: 26471 CHOICES
+msgid "Don't know"
+msgstr "不知道"
+
+# QUESTION PROMPT
+#: 26472 PROMPT
+msgid "What was your T score?"
+msgstr "您的 T 分数如何？"
+
+# QUESTION QUESTION-HELP
+#: 26472 QUESTION-HELP
+msgid "Leave blank if you don't know"
+msgstr "如果您不知道则空出此项"
+
+# QUESTION PROMPT
+#: 26473 PROMPT
+msgid "What was your Z score?"
+msgstr "您的 Z 分数如何？"
+
+# QUESTION QUESTION-HELP
+#: 26473 QUESTION-HELP
+msgid "Leave blank if you don't know"
+msgstr "如果您不知道则空出此项"
+
+# QUESTION PROMPT
+#: 26919 PROMPT
+msgid "What was your last cholesterol measurement?"
+msgstr "您上一次的胆固醇检查如何？"
+
+# QUESTION PROMPT
+#: 26920 PROMPT
+msgid "What was the date of your last test?"
+msgstr "上一次检查的日期是？"
+
+# QUESTION QUESTION-HELP
+#: 26920 QUESTION-HELP
+msgid "Leave both of these blank if you don't know."
+msgstr "如果您不知道则空出这两项。"
+
+# QUESTION PROMPT
+#: 30004 PROMPT
+msgid "If you have been tested for Alpha-1 Antitrypsin Deficiency, what were your blood levels and phenotype? "
+msgstr "如果您被查出 α-1 抗胰蛋白酶缺乏，您的血浓度和表型如何？ "
+
+# QUESTION PROMPT
+#: 30005 PROMPT
+msgid "Have you ever had a spontaneous pneumothorax?"
+msgstr "您患过自发性气胸吗？"

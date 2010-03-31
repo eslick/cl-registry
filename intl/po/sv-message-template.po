@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sv-message-template.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 23806 SUBJECT
+msgid "LAMsight Update Message"
+msgstr "Uppdateringsmeddelande från LAMsight"
+
+# MESSAGE-TEMPLATE BODY
+#: 23806 BODY
+msgid "<%author%> writes:\n\n<%title%>\nDate: <%date%>\n\n<%content%>\n"
+msgstr "<%author%> skriver:\n\n<%title%>\nDatum: <%date%>\n\n<%content%>\n"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 23813 SUBJECT
+msgid "[LAMsight] New comment"
+msgstr "[LAMsight] Ny kommentar"
+
+# MESSAGE-TEMPLATE BODY
+#: 23813 BODY
+msgid "You are an editor for a LAMsight survey that has a new comment on a question\n\nComment by <%author%> (<%date%>) for question\n"<%question%>"\n\nComment text:\n\n<%comment%>\n\n\n<%context%>\n\n\n"
+msgstr "Du är redaktör för en LAMsight-undersökning som har nytt innehåll för en fråga\n\nKommentar av <%author%> (<%date%>) på frågan\n"<%question%>"\n\nKommentarstext:\n\n<%comment%>\n\n\n<%context%>\n\n\n"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 23816 SUBJECT
+msgid "[LAMsight] New post for <%topic%>"
+msgstr "[LAMsight] Ny post för <%topic%>"
+
+# MESSAGE-TEMPLATE BODY
+#: 23816 BODY
+msgid "<%author%> writes:\n\n<%content%>\n\n<%original%>\n\nVisit this topic "<%topic%>":\n<%url%>\n\n"
+msgstr "<%author%> skriver:\n\n<%content%>\n\n<%original%>\n\nBesök detta ämne "<%topic%>":\n<%url%>\n\n"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 23818 SUBJECT
+msgid "[LAMsight] Forum digest for <%date%>"
+msgstr "[LAMsight] Forumsammanfattning för <%date%>"
+
+# MESSAGE-TEMPLATE BODY
+#: 23818 BODY
+msgid "<%count%> new messages\n\n<%activity%>"
+msgstr "<%count%> nya meddelanden\n\n<%activity%>"
+
+# MESSAGE-TEMPLATE SUBJECT
+#: 23819 SUBJECT
+msgid "LAMsight news and reminders"
+msgstr "LAMsight-nyheter och påminnelser"
+
+# MESSAGE-TEMPLATE BODY
+#: 23819 BODY
+msgid "<%news%>\n=========================================\n<%next-steps%>\n=========================================\n<%forum-activity%>"
+msgstr "<%news%>\n=========================================\n<%next-steps%>\n=========================================\n<%forum-activity%>"

@@ -1,0 +1,170 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sv-survey.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# SURVEY NAME
+#: 5842 NAME
+msgid "Home Pulmonary Function Testing"
+msgstr "Hemmatest av lungfunktion"
+
+# SURVEY DESCRIPTION
+#: 5842 DESCRIPTION
+msgid "This form will enable you to keep a history of all  pulmonary function tests you take at home.  You can input all your tests over time.  This data is critically important for us to establish the potential benefit of any given therapy for LAM.  We will provide the ability for you to visualize this history in the explore section over time.\n"
+msgstr "Med hjälp av det här formuläret kan du behålla en historik över alla hemmatester du gör av lungfunktionen.  Du kan skriva in alla dina tester över tiden.  Dessa data är mycket viktiga för oss för att etablera om det finns potentiella fördelar från en given terapi för LAM.  Vi kommer att erbjuda dig möjligheten att visualisera denna historik över tiden i avsnittet utforska.\n"
+
+# SURVEY HELP
+#: 5842 HELP
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
+msgstr "Data från laboratorietester ska anges i diariet med poster för kliniska besök.  Skicka e-post till lamsight-admin på media.mit.edu om du har frågor om det här diariet.   "
+
+# SURVEY NAME
+#: 5875 NAME
+msgid "General Personal and Family Information"
+msgstr "Generell information om dig personligen och familjen"
+
+# SURVEY DESCRIPTION
+#: 5875 DESCRIPTION
+msgid "General personal physical profile and experiences of any form of pain and\ndiscomfort "
+msgstr "Generell personlig fysisk profil och erfarenhet av olika typer av smärta och\nobehag "
+
+# SURVEY NAME
+#: 5910 NAME
+msgid "Dietary Information"
+msgstr "Kostinformation"
+
+# SURVEY DESCRIPTION
+#: 5910 DESCRIPTION
+msgid " Information about diet, dietary habits, use of supplements and relationship\nto health (use of vitamins, control of cholesterol, avoided foods, etc.)."
+msgstr " Information om kost, matvanor, användning av tilläggsprodukter och relation\ntill hälsa (användning av vitaminer, kolesterolkontroll, mat som undviks etc)."
+
+# SURVEY NAME
+#: 5935 NAME
+msgid "Exercise and Fitness"
+msgstr "Träning och kondition"
+
+# SURVEY DESCRIPTION
+#: 5935 DESCRIPTION
+msgid " Physical exercise profile (sports - frequency, intensity, etc.) and general\nfitness information"
+msgstr " Profil över fysisk träning (sport - frekvens, intensitet etc) och information om generell\nkondition"
+
+# SURVEY NAME
+#: 5968 NAME
+msgid "Complementary and Alternative Medicines"
+msgstr "Komplementär och alternativ medicin"
+
+# SURVEY DESCRIPTION
+#: 5968 DESCRIPTION
+msgid " Descriptions of uses and perceived effects of complementary and alternative\nmedicine"
+msgstr " Beskrivning över användning och upplevda effekter av komplimentär och alternativ\nmedicin"
+
+# SURVEY NAME
+#: 5988 NAME
+msgid "Behavior and Environment"
+msgstr "Beteende och miljö"
+
+# SURVEY DESCRIPTION
+#: 5988 DESCRIPTION
+msgid "This survey covers daily activities (work schedule, level of daily physical\nactivity, sleep, etc.) along with information regarding flying on airplanes\nand living at different altitudes an in different climates. "
+msgstr "Denna undersökning täcker de dagliga aktiviteterna (arbetsschema, nivå av daglig fysisk\naktivitet, sömn etc) tillsammans med information om flygresor\noch boende på olika höjder i olika klimat. "
+
+# SURVEY NAME
+#: 6072 NAME
+msgid "Reproductive Health"
+msgstr "Reproduktiv hälsa"
+
+# SURVEY DESCRIPTION
+#: 6072 DESCRIPTION
+msgid "Information on reproductive health history, monthly cycle, surgical\nprocedures, birth control, pregnancy,  and menopause"
+msgstr "Information om historik för den reproduktiva hälsan, menstruation, kirurgiska\nprocedurer, födelsekontroll, graviditet och menopaus"
+
+# SURVEY NAME
+#: 6121 NAME
+msgid "General Medical History"
+msgstr "Generell medicinsk historik"
+
+# SURVEY DESCRIPTION
+#: 6121 DESCRIPTION
+msgid "Other pertinent medical history (i.e. tuberous sclerosis or other pre-existing conditions. Also family history of any pertinent illness)\n"
+msgstr "Annan relevant medicinsk historik (dvs tuberös skleros eller andra tidigare tillstånd. Även familjehistorik över andra relevanta sjukdomar)\n"
+
+# SURVEY NAME
+#: 6136 NAME
+msgid "LAM Diagnosis"
+msgstr "LAM-diagnos"
+
+# SURVEY DESCRIPTION
+#: 6136 DESCRIPTION
+msgid "This section captures essential information about your LAM diagnosis (for patients only)"
+msgstr "Detta avsnitt samlar viktig information om din LAM-diagnos (endast för patienter)"
+
+# SURVEY NAME
+#: 23547 NAME
+msgid "LAM Medications [on and off label uses]"
+msgstr "LAM-mediciner [godkända och ej godkända]"
+
+# SURVEY DESCRIPTION
+#: 23547 DESCRIPTION
+msgid "Not all medications are officially approved treatments.  Because of the urgency of treatment, some patients and doctors use unapproved medications or use "approved" medications for unapproved purposes.  These are called "off-label".  Information about off-label drugs may be very helpful.  \n\nThis is a history survey meant to identify who in the patient population has taken off-label medications for LAM.  This includes medication intended to slow or stop LAM progression as well as medications that impact LAM symptoms.  Your responses to this question will help us formulate diary forms for you to record your history of off-label use."
+msgstr "Alla mediciner är inte officiellt godkända behandlingar.  Eftersom behandlingen är brådskande använder en del läkare och patienter ej godkända mediciner eller också använder de "godkända" mediciner för syften som inte är godkända.  Dessa kallas "ej godkända".  Information om ej godkända mediciner kan vara till stor hjälp.  \n\nDetta är en historikundersökning som är avsedd att identifiera vilka i patientpopulationen som har tagit ej godkända mediciner mot LAM.  Detta inkluderar mediciner vars syfte är att sakta in eller stoppa LAM-utvecklingen samt mediciner som påverkar LAM-symptom.  Dina svar på den här frågan kommer att hjälpa oss att formulera diarieformulär så att du kan anteckna din historik över användningen av ej godkända mediciner."
+
+# SURVEY NAME
+#: 24511 NAME
+msgid "Incontinence"
+msgstr "Inkontinens"
+
+# SURVEY DESCRIPTION
+#: 24511 DESCRIPTION
+msgid "Many patients report incontinence as a significant side effect of LAM.  This survey seeks to gather more information about the prevalence and patient's experiences managing this problem."
+msgstr "Många patienter rapporterar inkontinens som en signifikant bieffekt av LAM.  Med denna undersökning vill vi samla in mera information om förekomsten och patientens erfarenhet av att hantera detta problem."
+
+# SURVEY NAME
+#: 24815 NAME
+msgid "Bone Dysfunction and LAM"
+msgstr "Ben-dysfunktion och LAM"
+
+# SURVEY DESCRIPTION
+#: 24815 DESCRIPTION
+msgid "LAM researchers recently observed that there may be a link between LAM and osteoporosis.  This survey helps us gather information that may yield new ideas about ways to treat LAM."
+msgstr "LAM-forskare har nyligen observerat att det kan finnas en länk mellan LAM och benskörhet.  Denna undersökning hjälper oss att samla in information som kan producera nya idéer om behandlingssätt mot LAM."
+
+# SURVEY NAME
+#: 25604 NAME
+msgid "Hormones and Pulmonary Function"
+msgstr "Hormoner och lungfunktion"
+
+# SURVEY DESCRIPTION
+#: 25604 DESCRIPTION
+msgid "This study is an extended background survey for information related to an our patient-driven Estrogen Study.  The pages up to Exercise are the most important, however you can complete this survey at whatever pace is most comfortable for you.<br><br>\nData you enter here will be reused in other surveys.\n\n"
+msgstr "Denna studie är en utökad bakgrundsundersökning för information relaterad till en patientmotiverad östrogenstudie.  Sidorna fram till Övningar är de viktigaste. Du kan emellertid slutföra den här undersökningen i den takt som passar dig bäst.<br><br>\nDe data du anger kommer att återanvändas i andra undersökningar.\n\n"
+
+# SURVEY NAME
+#: 26209 NAME
+msgid "Estrogen Study Diary"
+msgstr "Diarium över östrogenundersökning"
+
+# SURVEY DESCRIPTION
+#: 26209 DESCRIPTION
+msgid "This diary allows you to capture important information for each day you are part of the study as well as track information for your own information afterwards.  The first page contains the essential information.  The remaining pages only need to be filled out if something changed or something unusual happened."
+msgstr "Med det här diariet kan du samla ihop viktig information för varje dag du är en del i undersökningen samt spåra information för din egen information senare.  Den första sidan innehåller den viktiga informationen.  Övriga sidor behöver bara fyllas i om något har förändrats eller om något oförutsett sker."
+
+# SURVEY NAME
+#: 29822 NAME
+msgid "Alpha-1 Antitrypsin Deficiency "
+msgstr "Alpha-1 Antitrypsin-brist "
+
+# SURVEY DESCRIPTION
+#: 29822 DESCRIPTION
+msgid "Relationship betwen LAM, Pneumothorax and Alpha-1 Antitrypsin Deficiency "
+msgstr "Relationer mellan LAM, lungkollaps och Alpha-1 Antitrypsin-brist "
+
+# SURVEY HELP
+#: 29822 HELP
+msgid "Alpha-1 is one of the most common genetic disorders in the world. The symptoms include shortness of breath, a chronic cough, and abnormal liver test results. If you have any of these symptoms there is a simple blood test that can detect alpha-1 antitrypsin levels"
+msgstr "Alpha-1 är en av de vanligaste genetiska störningarna i världen. Symptomen inkluderar andnöd, kronisk hosta och onormala resultat från levertest. Om du har något av dessa symptom finns det ett enkelt blodtest som kan upptäcka nivåer av alpha-1 antitrypsin-nivåer"

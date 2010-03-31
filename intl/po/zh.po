@@ -1,0 +1,675 @@
+msgid "World"
+msgstr "世界"
+
+msgid "Help"
+msgstr "援助"
+
+msgid "The ultimate aim of LAMsight is to support more efficient and effective design and implementation of clinical trials for LAM patients. Another goal is to lower the cost and time associated with research efforts to learn about larger samples of LAM patients. LAMsight will open up the world of LAM research to a broader research and clinical community. It can also help patients share new aspects of the disease that may be relevant to treatment. This effort was led by the <a href=\"http://admissions.media.mit.edu/research/group/new-media-medicine\">New Media Medicine</a> group of the <a href=\"http://www.media.mit.edu/\">MIT Media Laboratory</a> in cooperation with the <a href=\"http://www.curelam.org/\">LAM Treatment Alliance</a> and the <a href=\"http://www.dana-farber.com/\">Dana Farber Cancer Institute</a>."
+msgstr "LAMsight 的根本目标是为 LAM（淋巴管平滑肌瘤病）患者的临床试验更高效、更有成果地设计和进行提供支持。它的另一目标是减少为了研究更大的 LAM 患者样本所付出的成本和时间。LAMsight 将把 LAM 研究带入更广泛的实验和临床研究团体之中。它还能帮助患者了解与疾病治疗有关的最新观点。上述工作是由名为 <a href=\"http://admissions.media.mit.edu/research/group/new-media-medicine\">新媒体医疗</a> 的 <a href=\"http://www.media.mit.edu/\">麻省理工学院媒体实验室</a>下属的课题组与 <a href=\"http://www.curelam.org/\">LAM 治疗联盟</a> 和 <a href=\"http://www.dana-farber.com/\">Dana Farber 癌症研究所联合开展的</a>。"
+
+msgid "Receive site update and reminder emails?"
+msgstr "是否接收网站更新和提示邮件？"
+
+msgid "Owner"
+msgstr "所有者"
+
+msgid "To follow up and verify any data I have entered"
+msgstr "继续并确认我所输入的任何数据"
+
+msgid "Acl"
+msgstr "Acl"
+
+msgid "(You are not on this map, "
+msgstr "（您不在该地图上， "
+
+msgid "First Name: "
+msgstr "名字： "
+
+msgid "home"
+msgstr "家庭"
+
+msgid "I work in another area of research."
+msgstr "我从事另一研究领域的工作。"
+
+msgid "No relevant posts since your last update"
+msgstr "自上次更新之后尚无相关帖子"
+
+msgid "Date Created"
+msgstr "创建日期"
+
+msgid "Days Ago"
+msgstr " 天前"
+
+msgid "Date Joined"
+msgstr "参加日期"
+
+msgid "on page"
+msgstr "页面上"
+
+msgid "Diary Question"
+msgstr "每日提问"
+
+msgid "Number"
+msgstr "号码"
+
+msgid "Explore this map"
+msgstr "探索该地图"
+
+msgid "Groups"
+msgstr "群组"
+
+msgid "Subject"
+msgstr "主题"
+
+msgid "Where are our users?"
+msgstr "我们的用户在哪里？"
+
+msgid "explore"
+msgstr "探索"
+
+msgid ""Your e-mail will be maintained by the system and will never be disclosed to anyone without your express consent.  We take privacy very seriously."
+msgstr "“您的电子邮件将由系统保存，未经您明确许可决不会被透露给任何人。我们非常重视用户隐私权的保护。"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Ranking Record"
+msgstr "排名记录"
+
+msgid "Users in the USA"
+msgstr "美国用户"
+
+msgid "Address 2: "
+msgstr "地址 2： "
+
+msgid "Grant Edit Permission"
+msgstr "同意编辑许可"
+
+msgid "Welcome to LAMsight"
+msgstr "欢迎来到 LAMsight"
+
+msgid "Original"
+msgstr "起始页"
+
+msgid "Are you new to LAMsight? If so, please click the register link above to create a new user account. All that is needed is a valid e-mail address."
+msgstr "您是首次访问 LAMsight 吗？如果是，请点击上面的“注册”按钮创建新的用户账户。您只需一个有效的电子邮箱地址即可创建。"
+
+msgid "Permissions"
+msgstr "许可"
+
+msgid "I am a LAM patient."
+msgstr "我是一名 LAM 患者。"
+
+msgid "G0"
+msgstr "继续"
+
+msgid "I am a family member of a patient."
+msgstr "我是一名患者家属。"
+
+msgid "Submit"
+msgstr "提交"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Survey List"
+msgstr "问卷列表"
+
+msgid "User"
+msgstr "用户"
+
+msgid "Title"
+msgstr "主题"
+
+msgid "Required"
+msgstr "要求"
+
+msgid "Enter some search terms"
+msgstr "输入搜索字段"
+
+msgid "Date Updated"
+msgstr "更新日期"
+
+msgid "Users around the World"
+msgstr "世界范围内的用户"
+
+msgid "Enter some search terms:&nbsp;"
+msgstr "输入搜索字段：&nbsp;"
+
+msgid "Prompt"
+msgstr "提示"
+
+msgid "Question preview: "
+msgstr "问题预览： "
+
+msgid "Explorer Version: "
+msgstr "浏览器版本： "
+
+msgid "Next >"
+msgstr "下一步 >"
+
+msgid "I am a TSC patient without LAM."
+msgstr "我是一名未患 LAM （淋巴管平滑肌瘤病）的 TSC（结节性硬化症）患者。"
+
+msgid "Europe"
+msgstr "欧洲"
+
+msgid "Address"
+msgstr "地址"
+
+msgid "Archived Questions"
+msgstr "存档问题"
+
+msgid "admin"
+msgstr "管理员"
+
+msgid "New Features:~%"
+msgstr "新功能：~%"
+
+msgid "Question answer type: "
+msgstr "问题答案类型： "
+
+msgid "Your session has timed out, if you were using the site please log back in to continue working"
+msgstr "您操作超时，若正在使用网站，请重新登录以继续操作"
+
+msgid "Welcome"
+msgstr "欢迎"
+
+msgid "LAMsight password reset"
+msgstr "LAMsight 密码重置"
+
+msgid "How frequently do you want updates and reminders?"
+msgstr "您希望多久接收一次更新和提示？"
+
+msgid "Down Ratings"
+msgstr "向下列表"
+
+msgid "User Options"
+msgstr "用户选项"
+
+msgid "Post Permissions"
+msgstr "发帖许可"
+
+msgid "Editedp"
+msgstr "编辑平台"
+
+msgid "Question (~d)"
+msgstr "提问 (~d)"
+
+msgid "Preferences Btree"
+msgstr "首选项树形图"
+
+msgid "Log In"
+msgstr "登录"
+
+msgid "You are not on this map, please read below!"
+msgstr "您不在该地图上，请阅读以下内容！"
+
+msgid "Confirm Password"
+msgstr "确认密码"
+
+msgid "Get help here"
+msgstr "点此获得帮助"
+
+msgid "Compare Population"
+msgstr "对照人群"
+
+msgid "Ratings"
+msgstr "列表"
+
+msgid "under question"
+msgstr "提问中"
+
+msgid "Trustedp"
+msgstr "可信平台"
+
+msgid "Done"
+msgstr "完成"
+
+msgid "Country: "
+msgstr "国家： "
+
+msgid "I am none of the above."
+msgstr "我不在上述任何一国。"
+
+msgid "Home Phone #: "
+msgstr "家庭电话 #： "
+
+msgid "Please choose from the following"
+msgstr "请从下列选项中选择"
+
+msgid "Their LAMsight username:"
+msgstr "他们的 LAMsight 用户名："
+
+msgid "Next survey to work on:~%"
+msgstr "进入下一个问卷：~%"
+
+msgid "Category"
+msgstr "分类"
+
+msgid "Root"
+msgstr "根目录"
+
+msgid "(drag questions here to create a population)"
+msgstr "（拖动该问题列表至此以创建新患者族群）"
+
+msgid "Author"
+msgstr "作者"
+
+msgid "Date"
+msgstr "日期"
+
+msgid "Show Surveys"
+msgstr "显示调查问卷"
+
+msgid "User Preferences"
+msgstr "用户首选项"
+
+msgid "Submit Request"
+msgstr "提交申请"
+
+msgid "On page:"
+msgstr "页面上："
+
+msgid "Last Name"
+msgstr "姓"
+
+msgid "Oid"
+msgstr "Oid"
+
+msgid "For a potential study"
+msgstr "用于潜在的研究"
+
+msgid "Rating"
+msgstr "列表"
+
+msgid "USA"
+msgstr "美国"
+
+msgid "To confirm my identity"
+msgstr "确认我的身份"
+
+msgid "[Create New Survey]"
+msgstr "[创建新问卷]"
+
+msgid "Users in Europe"
+msgstr "欧洲用户"
+
+msgid "Question Context"
+msgstr "提问情境"
+
+msgid "Do Survey"
+msgstr "进行问卷"
+
+msgid "Page"
+msgstr "页"
+
+msgid "Recent Forum Activity:~%~%~a"
+msgstr "当前论坛活跃度：~%~%~a"
+
+msgid "Users South American"
+msgstr "南美洲用户"
+
+msgid "Diary Description"
+msgstr "日志描述"
+
+msgid "Avg Rating"
+msgstr "平均列表"
+
+msgid "Enable the interactive agent Laura"
+msgstr "允许使用 Laura 交互代理"
+
+msgid "Contact"
+msgstr "联系"
+
+msgid "Enlarge: &nbsp;"
+msgstr "扩大：&nbsp;"
+
+msgid "Diary P"
+msgstr "日志 P"
+
+msgid "Exploring: "
+msgstr "探索： "
+
+msgid "All Users"
+msgstr "所有用户"
+
+msgid "Forgot your username or password?"
+msgstr "忘记用户名或密码？"
+
+msgid "New Password"
+msgstr "新密码"
+
+msgid "The Scratchpad is a place to store groups and questions if you want to move them from one editor to another.  A question can only have one parent, so when you drag it back to a different group, it will disappear from the first."
+msgstr "暂存器用于在将群组和问题从一个编辑器移动到另一个编辑器时对其进行暂时存储。一个问题只能归属于一个群组，所以一旦将其拖至另一个群组，它将从前一个群组中消失。"
+
+msgid "I work directly on LAM research."
+msgstr "我直接从事 LAM 研究。"
+
+msgid "LAMsight is a centralized database that will enable new forms of information-gathering and collaboration by patients, family members, clinicians, and researchers. Its goal is to overcome the barriers that researchers face in accessing up-to-date data about the global LAM population. LAMsight enables idea-generation by researchers through information exchange between patients and researchers in “real time”."
+msgstr "LAMsight 是一个集中的数据库，它能让患者、患者家属、医生和研究者通过崭新的形式进行信息收集和相互协作。它的目标是帮助研究者克服获取全球 LAM 患者族群最新数据过程中的障碍。LAMsight 通过患者和研究者的“实时”信息交流，激发研究者的新思路。"
+
+msgid "patients"
+msgstr "患者"
+
+msgid "Street"
+msgstr "街道"
+
+msgid "After registration, click the 'Login' link at the very top of this page. Upon successful entry more information will be provided."
+msgstr "注册后，请点击本页顶端的‘登录’链接。成功登入后您将获得更多信息。"
+
+msgid "Collect Data"
+msgstr "收集数据"
+
+msgid "Basic Screen"
+msgstr "基本屏幕"
+
+msgid "Tags"
+msgstr "标签"
+
+msgid "By any of these methods"
+msgstr "通过以上任何方法"
+
+msgid "Ask a Question"
+msgstr "提出一个问题"
+
+msgid "Register Now >>"
+msgstr "现在就注册 >>"
+
+msgid "A username is a short name that will be used by the system to identify you to other users.  If you are concerned about privacy, pick a username that you can remember, but doesn't include anything about you like your name."
+msgstr "用户名是系统用来区分您和其他用户的简短名称。如果您担心隐私问题，请使用一个您容易记住、但不包含任何您的个人信息（例如姓名）的用户名。"
+
+msgid "Please choose from one of the following surveys or create your own!"
+msgstr "请选择下列问卷之一或创建自己的问卷！"
+
+msgid "Name"
+msgstr "姓名"
+
+msgid "Translation Alist"
+msgstr "翻译列表"
+
+msgid "Login"
+msgstr "登录"
+
+msgid "How frequently do you want forum updates?"
+msgstr "您希望多久接收一次论坛更新？"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Question Help"
+msgstr "提问帮助"
+
+msgid "Registration Instructions"
+msgstr "注册指导"
+
+msgid "New User?"
+msgstr "新用户？"
+
+msgid "Address: "
+msgstr "地址： "
+
+msgid "Work Phone #: "
+msgstr "工作电话 #： "
+
+msgid "Under question:"
+msgstr "提问中："
+
+msgid "State"
+msgstr "州"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "The survey editor will require some time to become familiar with.  It allows you to create, organize, and edit all elements of a survey.  We will be expanding this help section after some feedback from users and some more improvements in the features and the look."
+msgstr "您需要一定时间来熟悉问卷编辑器它允许用户创建、组织和编辑一份问卷中的所有内容。在得到一些用户反馈后，我们将进一步扩展这个帮助界面，并且改进新功能、美化外观。"
+
+msgid "Priority"
+msgstr "优先性"
+
+msgid "Search Results"
+msgstr "搜索结果"
+
+msgid "Content"
+msgstr "内容"
+
+msgid "Sound Screen"
+msgstr "有声屏幕"
+
+msgid "State/Province: "
+msgstr "州/省： "
+
+msgid "Related Content"
+msgstr "相关内容"
+
+msgid "Postal code: "
+msgstr "邮编： "
+
+msgid "View Diaries"
+msgstr "浏览日志"
+
+msgid "Create a population"
+msgstr "创建患者族群"
+
+msgid "[LAMsight Help Request]"
+msgstr "[LAMsight 帮助申请]"
+
+msgid "Privacy Policy"
+msgstr "隐私政策"
+
+msgid "create"
+msgstr "创建"
+
+msgid "Preferred Language: "
+msgstr "首选语言： "
+
+msgid "City"
+msgstr "城市"
+
+msgid "Group advice"
+msgstr "群组建议"
+
+msgid "Show Forums"
+msgstr "显示论坛"
+
+msgid "Page (~d)"
+msgstr "页面 (~d)"
+
+msgid "Creating Surveys"
+msgstr "创建问卷"
+
+msgid "Hello. The password for the username: ~a has been reset to ~a After you log in, you can change the password to something you can remember."
+msgstr "您好。该用户名的密码：~a 已被重置为 ~a 登入后，您可以将密码改为其它更易于您记忆的密码。"
+
+msgid "A password should be at least 6 characters and include a number or other non-alphabetical character."
+msgstr "密码至少为 6 位字符，可包括数字或其它非字母的字符。"
+
+msgid "Body"
+msgstr "个体"
+
+msgid "Published"
+msgstr "公布"
+
+msgid "In survey:"
+msgstr "问卷调查中："
+
+msgid "logout"
+msgstr "注销"
+
+msgid " of patients responded"
+msgstr " 患者反馈"
+
+msgid "First Name"
+msgstr "名字"
+
+msgid "Up Ratings"
+msgstr "向上列表"
+
+msgid "Slug"
+msgstr "插入"
+
+msgid "[Close this View]"
+msgstr "[关闭该页面]"
+
+msgid "Old Password"
+msgstr "旧密码"
+
+msgid "Password"
+msgstr "密码"
+
+msgid "Magic Key"
+msgstr "魔术键盘"
+
+msgid "Locale"
+msgstr "场所"
+
+msgid "Post Datetime"
+msgstr "发帖日期和时间"
+
+msgid "Topic"
+msgstr "话题"
+
+msgid "Number Of Ratings"
+msgstr "列表数"
+
+msgid "Order"
+msgstr "顺序"
+
+msgid "Editor Help"
+msgstr "编辑器帮助"
+
+msgid "Register"
+msgstr "注册"
+
+msgid "Allow my city, state and country information to be used on the patient map."
+msgstr "允许我的城市、州和国家信息被用于患者地图。"
+
+msgid "View Surveys"
+msgstr "查看问卷"
+
+msgid "Group name"
+msgstr "群组名称"
+
+msgid "I am involved in disease research."
+msgstr "我参与了疾病研究。"
+
+msgid "Terms of Use"
+msgstr "使用术语"
+
+msgid "I'm having a problem with LAMsight and have provided details on my problem below."
+msgstr "我有一个关于 LAMsight 的问题并且在下面列出了问题细节。"
+
+msgid "Content Type"
+msgstr "内容类型"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Population Filter"
+msgstr "患者族群筛选"
+
+msgid "Site Announcements:~%"
+msgstr "网站公告：~%"
+
+msgid "Short"
+msgstr "短"
+
+msgid "Most Popular Discussions"
+msgstr "热议话题"
+
+msgid "Go"
+msgstr "继续"
+
+msgid "discuss"
+msgstr "讨论"
+
+msgid "Edit sub-groups: "
+msgstr "编辑亚组： "
+
+msgid "City: "
+msgstr "城市： "
+
+msgid "If you joined LAMsight last spring, your user account and any information you entered has been preserved. No re-registration or new registration is needed.  Please contact our support team if you need assistance with lost user accounts or passwords."
+msgstr "如果您在去年春天加入了 LAMsight，那么您的账户和您所输入的所有信息仍被保留。无需再注册或重新注册。如果您忘记用户账户或密码请联系我们的支持团队。"
+
+msgid "Related questions"
+msgstr "相关提问"
+
+msgid "Surveys"
+msgstr "问卷"
+
+msgid "South America"
+msgstr "南美洲"
+
+msgid "Event"
+msgstr "事件"
+
+msgid "About the Site"
+msgstr "关于本网站"
+
+msgid "Question answer type (existing answers will disallow some changes): "
+msgstr "提问答案类型（已存在的问题将拒绝更改）： "
+
+msgid "Ascending"
+msgstr "向上"
+
+msgid "Receive e-mail updates to the discussion forums?"
+msgstr "是否接收讨论论坛更新的提示邮件？"
+
+msgid "LAMsight is an evolving project and new functionality and improved usability will occur every few weeks. Updates about the site can be received by setting preferences as described on the login page. By registering now, you are agreeing to receive at least one e-mail letting you know when the site is formally launched with the most important set of features as well as a clear privacy policy and terms of use."
+msgstr "LAMsight 是一个不断发展的项目，它每隔数周就会增加新功能并改善使用性。用户可通过登录界面的首选项设置来接收网站更新。通过现在的注册，您同意了至少接收一封电子邮件以让您了解该网站正式开放的时间、它的最主要功能以及清楚的隐私政策和使用条款。"
+
+msgid "Advice"
+msgstr "建议"
+
+msgid "Change password"
+msgstr "修改密码"
+
+msgid "Last Name: "
+msgstr "姓： "
+
+msgid "Getting Started"
+msgstr "开始"
+
+msgid "Widget"
+msgstr "窗口控件"
+
+msgid "The survey editor consists of a set of <b>views</b>.  Each view has its own tab at the top of the screen.  Surveys are made up of <b>groups</b>, each group is made up of <b>questions</b>.  There is a view that allows you to see, review and change each of these components of a survey.  Please post your questions in the forums so we can respond to the most important questions."
+msgstr "问卷编辑器包含一组 <b>视图</b>。每个视图都在屏幕顶端拥有相应的标签。问卷是由多个 <b>群组</b> 构成的，而每个群组是由多个 <b>问题</b> 构成的。有一个视图允许用户查看、复审和更改问卷的每一组成部分。请在论坛中发布您的问题，以便我们能及时回复首要问题。"
+
+msgid "collect"
+msgstr "收集"
+
+msgid "patient"
+msgstr "患者"
+
+msgid "I cannot find that e-mail address."
+msgstr "我找不到那个电子邮箱地址。"
+
+msgid "LAMTV"
+msgstr "LAMTV"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Current Post Number"
+msgstr "当前邮编"
+
+msgid "Target"
+msgstr "目标"
+
+msgid "I am a LAM clinican."
+msgstr "我是一名 LAM 临床医生。"
+
+msgid "Controller"
+msgstr "控制器"
+
+msgid "Your browser has disabled Javascript.  Many, but not all, features of this site depend on Javascript.  You can use the 'Collect' and 'Discuss' sections but for now the 'Explore' section may not function for you.  You can find out about how to enable Javascript from "
+msgstr "您的浏览器禁止使用 Javascript。该网站的许多，但不是所有功能需要依赖  Javascript。您可以使用‘收集’和‘讨论’部分，但是目前您可能还无法使用‘探索’部分。您可以从此查询如何激活 Javascript： "
+
+msgid "Population Creator"
+msgstr "患者族群创建器"
+
+msgid "Fulltext"
+msgstr "全文"
+

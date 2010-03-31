@@ -1,0 +1,170 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: pt-survey.po 1.0\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=Windows-1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+# SURVEY NAME
+#: 5842 NAME
+msgid "Home Pulmonary Function Testing"
+msgstr "Teste Doméstico de Função Pulmonar"
+
+# SURVEY DESCRIPTION
+#: 5842 DESCRIPTION
+msgid "This form will enable you to keep a history of all  pulmonary function tests you take at home.  You can input all your tests over time.  This data is critically important for us to establish the potential benefit of any given therapy for LAM.  We will provide the ability for you to visualize this history in the explore section over time.\n"
+msgstr "Este formulário irá capacitá-la a manter um histórico de todos os testes de função pulmonar que você faz em casa. Você pode informar todos os testes ao longo do tempo. Esses dados são criticamente importantes para nós estabelecermos o possível benefício de um dado tratamento para LAM. Ofereceremos a habilidade de você visualizar este histórico na seção Explorar ao longo do tempo.\n"
+
+# SURVEY HELP
+#: 5842 HELP
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
+msgstr "Os dados de teste de laboratório devem ser inseridos no diário de Registro de Consulta Clínica. Envie e-mail para lamsight-admin @ media.mit.edu se tiver perguntas sobre este diário.  "
+
+# SURVEY NAME
+#: 5875 NAME
+msgid "General Personal and Family Information"
+msgstr "Informações Pessoais e Familiares Gerais"
+
+# SURVEY DESCRIPTION
+#: 5875 DESCRIPTION
+msgid "General personal physical profile and experiences of any form of pain and\ndiscomfort "
+msgstr "Perfil físico pessoal geral e sensações de alguma forma de dor e\ndesconforto "
+
+# SURVEY NAME
+#: 5910 NAME
+msgid "Dietary Information"
+msgstr "Informações Alimentares"
+
+# SURVEY DESCRIPTION
+#: 5910 DESCRIPTION
+msgid " Information about diet, dietary habits, use of supplements and relationship\nto health (use of vitamins, control of cholesterol, avoided foods, etc.)."
+msgstr " Informações sobre dieta, hábitos alimentares, uso de suplementos e relacionamento\ncom a saúde (uso de vitaminas, controle de colesterol, alimentos evitados, etc.)."
+
+# SURVEY NAME
+#: 5935 NAME
+msgid "Exercise and Fitness"
+msgstr "Exercícios e Condicionamento Físico"
+
+# SURVEY DESCRIPTION
+#: 5935 DESCRIPTION
+msgid " Physical exercise profile (sports - frequency, intensity, etc.) and general\nfitness information"
+msgstr " Perfil de exercícios físicos (esportes - frequência, intensidade, etc.) e informações de condicionamento físico\ngeral"
+
+# SURVEY NAME
+#: 5968 NAME
+msgid "Complementary and Alternative Medicines"
+msgstr "Medicamentos Complementares e Alternativos"
+
+# SURVEY DESCRIPTION
+#: 5968 DESCRIPTION
+msgid " Descriptions of uses and perceived effects of complementary and alternative\nmedicine"
+msgstr " Descrições de usos e efeitos percebidos de medicamento complementar e\nalternativo"
+
+# SURVEY NAME
+#: 5988 NAME
+msgid "Behavior and Environment"
+msgstr "Comportamento e Ambiente"
+
+# SURVEY DESCRIPTION
+#: 5988 DESCRIPTION
+msgid "This survey covers daily activities (work schedule, level of daily physical\nactivity, sleep, etc.) along with information regarding flying on airplanes\nand living at different altitudes an in different climates. "
+msgstr "Esta pesquisa cobre atividades diárias (programação de trabalho, nível de atividade física\ndiária, sono, etc.) juntamente com informações sobre viajar de avião\ne viver em altitudes e climas diferentes. "
+
+# SURVEY NAME
+#: 6072 NAME
+msgid "Reproductive Health"
+msgstr "Saúde Reprodutiva"
+
+# SURVEY DESCRIPTION
+#: 6072 DESCRIPTION
+msgid "Information on reproductive health history, monthly cycle, surgical\nprocedures, birth control, pregnancy,  and menopause"
+msgstr "Informações sobre o histórico da saúde reprodutiva, ciclo mensal, procedimentos\ncirúrgicos, controle da natalidade, gravidez e menopausa"
+
+# SURVEY NAME
+#: 6121 NAME
+msgid "General Medical History"
+msgstr "Histórico médico geral"
+
+# SURVEY DESCRIPTION
+#: 6121 DESCRIPTION
+msgid "Other pertinent medical history (i.e. tuberous sclerosis or other pre-existing conditions. Also family history of any pertinent illness)\n"
+msgstr "Outro histórico médico pertinente (por exemplo, esclerose tuberosa ou outras condições pré-existentes. Além disso, histórico familiar de qualquer doença pertinente)\n"
+
+# SURVEY NAME
+#: 6136 NAME
+msgid "LAM Diagnosis"
+msgstr "Diagnóstico de LAM"
+
+# SURVEY DESCRIPTION
+#: 6136 DESCRIPTION
+msgid "This section captures essential information about your LAM diagnosis (for patients only)"
+msgstr "Esta seção capta as informações essenciais sobre seu diagnóstico de LAM (somente para pacientes)"
+
+# SURVEY NAME
+#: 23547 NAME
+msgid "LAM Medications [on and off label uses]"
+msgstr "Medicamentos LAM (indicações contidas ou não na bula)"
+
+# SURVEY DESCRIPTION
+#: 23547 DESCRIPTION
+msgid "Not all medications are officially approved treatments.  Because of the urgency of treatment, some patients and doctors use unapproved medications or use "approved" medications for unapproved purposes.  These are called "off-label".  Information about off-label drugs may be very helpful.  \n\nThis is a history survey meant to identify who in the patient population has taken off-label medications for LAM.  This includes medication intended to slow or stop LAM progression as well as medications that impact LAM symptoms.  Your responses to this question will help us formulate diary forms for you to record your history of off-label use."
+msgstr "Nem todos os medicamentos são tratamentos aprovados oficialmente. Por causa da urgência do tratamento, alguns pacientes e médicos utilizam medicamentos não aprovados ou utilizam medicamentos "aprovados" para propósitos não aprovados. Esses são chamados "off-label" (indicações não constantes da bula). As informações sobre medicamentos "off-label" podem ser muito úteis. \n\nEsta é uma pesquisa de histórico destinada a identificar quem na população de pacientes tomou medicamentos off-label para LAM. Isso inclui medicamento destinado a retardar ou interromper a progressão de LAM, assim como medicamentos que impactam os sintomas de LAM. Suas respostas a esta pergunta irão nos ajudar a elaborar formulários diários para você registrar seu histórico do uso off-label."
+
+# SURVEY NAME
+#: 24511 NAME
+msgid "Incontinence"
+msgstr "Incontinência"
+
+# SURVEY DESCRIPTION
+#: 24511 DESCRIPTION
+msgid "Many patients report incontinence as a significant side effect of LAM.  This survey seeks to gather more information about the prevalence and patient's experiences managing this problem."
+msgstr "Muitos pacientes relatam incontinência como um efeito colateral significativo de LAM. Esta pesquisa busca coletar mais informações sobre a prevalência e as experiências de pacientes que administram este problema."
+
+# SURVEY NAME
+#: 24815 NAME
+msgid "Bone Dysfunction and LAM"
+msgstr "Disfunção Óssea e LAM"
+
+# SURVEY DESCRIPTION
+#: 24815 DESCRIPTION
+msgid "LAM researchers recently observed that there may be a link between LAM and osteoporosis.  This survey helps us gather information that may yield new ideas about ways to treat LAM."
+msgstr "Os pesquisadores de LAM observaram recentemente que pode haver uma ligação entre LAM e osteoporose. Esta pesquisa nos ajuda a coletar informações que possam produzir novas ideias sobre modos de tratar a LAM."
+
+# SURVEY NAME
+#: 25604 NAME
+msgid "Hormones and Pulmonary Function"
+msgstr "Hormônios e Função Pulmonar"
+
+# SURVEY DESCRIPTION
+#: 25604 DESCRIPTION
+msgid "This study is an extended background survey for information related to an our patient-driven Estrogen Study.  The pages up to Exercise are the most important, however you can complete this survey at whatever pace is most comfortable for you.<br><br>\nData you enter here will be reused in other surveys.\n\n"
+msgstr "Este estudo é uma pesquisa de antecedentesampliada para informações relacionadas ao nosso Estudo de Estrogênio dirigida a pacientes. As páginas até Exercícios são as mais importantes, entretanto você pode completar esta pesquisa no ritmo que for mais confortável para você.<br><br>\nOs dados que você inserir aqui serão reutilizados em outras pesquisas.\n\n"
+
+# SURVEY NAME
+#: 26209 NAME
+msgid "Estrogen Study Diary"
+msgstr "Diário do Estudo de Estrogênio"
+
+# SURVEY DESCRIPTION
+#: 26209 DESCRIPTION
+msgid "This diary allows you to capture important information for each day you are part of the study as well as track information for your own information afterwards.  The first page contains the essential information.  The remaining pages only need to be filled out if something changed or something unusual happened."
+msgstr "Este diário permite a você captar informações importantes para cada dia que fizer parte do estudo, assim como acompanhar informações para sua própria referência futura. A primeira página contém as informações essenciais. As páginas restantes precisam ser preenchidas somente se alguma coisa tiver mudado ou algo incomum aconteceu."
+
+# SURVEY NAME
+#: 29822 NAME
+msgid "Alpha-1 Antitrypsin Deficiency "
+msgstr "Deficiência de Alfa-1 Antitripsina "
+
+# SURVEY DESCRIPTION
+#: 29822 DESCRIPTION
+msgid "Relationship betwen LAM, Pneumothorax and Alpha-1 Antitrypsin Deficiency "
+msgstr "Relação entre LAM, Pneumotórax e Deficiência de Alfa-1 Antitripsina "
+
+# SURVEY HELP
+#: 29822 HELP
+msgid "Alpha-1 is one of the most common genetic disorders in the world. The symptoms include shortness of breath, a chronic cough, and abnormal liver test results. If you have any of these symptoms there is a simple blood test that can detect alpha-1 antitrypsin levels"
+msgstr "Alfa-1 é um dos transtornos genéticos mais comuns no mundo. Os sintomas incluem falta de ar, tosse crônica e resultados de teste hepático anormais. Se você apresenta um desses sintomas, há um teste de sangue simples que pode detectar os níveis de alfa-1 antitripsina."
