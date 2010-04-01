@@ -256,7 +256,8 @@
 		    :sort '(sort-key . :asc)))))
     ;; could use a better config param
     (if (equal (get-site-config-param :site-name) "International LAM Registry")
-      (setq widgets (cons (make-choose-patient-widget :hr-p nil) widgets)))))
+      (setq widgets (cons (make-choose-patient-widget :hr-p nil) widgets)))
+    (make-instance 'composite :widgets widgets)))
 
 (defun include-survey-p (survey diary-p)
   (and (current-patient)
