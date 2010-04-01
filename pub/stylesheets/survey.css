@@ -500,7 +500,7 @@ div.study-list-item {
     margin: 1em;
     padding: 2px;
     margin-left: 2em;
-    padding-left: 20px;
+    padding-left: 16px;
 }
 
 .study-list-study-name {
@@ -517,18 +517,22 @@ div.study-list-item {
     margin-right: 1.52em;
 }
 
+.study-list-survey-item {
+    margin-top: 1.2em;
+}
+
 .study-list-survey-name {
     color: darkgrey;
     font-size: 80%;
 }
 
 .study-list-survey-name A:link {
-    color: darkgreen;
+    color: brown;
     font-size: 110%;
 }
 
 .study-list-survey-name-alink {
-    color: darkgreen;
+    color: brown;
     font-size: 110%;
 }
 
@@ -543,18 +547,21 @@ A .study-list-survey-description-alink {
 A:hover .study-list-survey-description-alink {
     display: block;
     position: absolute;
-    top: 45px;
+    top: 1em;
     left: 30px;
+    width: 60em;
     padding: 8px;
     text-indent: 0;
+    margin-top: 0.2em;
     background-color: white;
-    border: 1px solid orange;
+    border: 1px solid grey;
     font-weight: normal;
+    font-size: 85%;
     color: black;
 }
 
 .study-list-survey-name A:hover {
-    font-size: 150%;
+    font-size: 130%;
 }
 
 .study-list-message {

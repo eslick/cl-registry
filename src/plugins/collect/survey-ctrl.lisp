@@ -172,7 +172,7 @@
 				    (setq this-study-complete-p (and this-study-complete-p this-survey-complete-p))
 				    ;; Display study list item for survey 
 				    (htm
-				     (:LI
+				     (:LI :CLASS "study-list-survey-item"
 				      (:IMG :SRC
 					    (format nil "/pub/images/surveys/~A.gif"
 						    (if this-survey-complete-p "check" "checkbox")))
