@@ -240,20 +240,23 @@
   (list (make-local-dependency :stylesheet "survey")))
 
 (defun make-survey-grid (&optional diary-p)
-  (make-instance 'composite :widgets
-    (list 
-     (make-choose-patient-widget :hr-p nil)
-     (make-widget (f* (render-survey-list-header diary-p)))
-     (make-instance 'survey-grid
-		    :data-class 'survey
-		    :view 'survey-viewer-view
-		    :show-total-items-count-p nil
-		    :allow-drilldown-p t
-		    :on-drilldown (cons :do-survey 'goto-survey-viewer)
-		    :autoset-drilled-down-item-p nil
-		    :on-query `(:filter-fn ,(lambda (survey) 
-						    (not (include-survey-p survey diary-p))))
+  (let ((widgets
+	 (list 
+	  (make-widget (f* (render-survey-list-header diary-p)))
+	  (make-instance 'survey-grid
+			 :data-class 'survey
+			 :view 'survey-viewer-view
+			 :show-total-items-count-p nil
+			 :allow-drilldown-p t
+			 :on-drilldown (cons :do-survey 'goto-survey-viewer)
+			 :autoset-drilled-down-item-p nil
+			 :on-query
+			 `(:filter-fn ,(lambda (survey) 
+					       (not (include-survey-p survey diary-p))))
 		    :sort '(sort-key . :asc)))))
+    ;; could use a better config param
+    (if (equal (get-site-config-param :site-name) "International LAM Registry")
+      (setq widgets (cons (make-choose-patient-widget :hr-p nil) widgets)))))
 
 (defun include-survey-p (survey diary-p)
   (and (current-patient)
