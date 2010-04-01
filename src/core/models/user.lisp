@@ -69,7 +69,7 @@
   (password :hidep t)
   (date-joined :hidep t)
   (permissions :hidep t)
-  (address :hidep t)
+;;  (address :hidep t)
   (ratings :hidep t))
 
 ;; Data view
@@ -78,8 +78,7 @@
   (password :present-as password)
   (date-joined :hidep t)
   (permissions :hidep t)
-  (address :type mixin
-	   :view '(data address))
+;;  (address :type mixin :view '(data address))
   (ratings :hidep t))
 
 ;; Form view
@@ -93,8 +92,7 @@
 ;;		    :slot-name password)
   (date-joined :hidep t)
   (permissions :hidep t)
-  (address :type mixin
-	   :view 'address-form-view)
+;;  (address :type mixin :view 'address-form-view)
   (ratings :hidep t))
    
 	     
