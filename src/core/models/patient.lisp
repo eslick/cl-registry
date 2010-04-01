@@ -239,7 +239,7 @@
   ((id :accessor id
        :initarg :id
        :index t
-       :initform (generate-patient-id)
+       :initform (unless *importing-model-objects* (generate-patient-id))
        :documentation "A unique patient ID")
    (center :accessor center
            :initarg :center

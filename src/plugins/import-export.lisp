@@ -169,6 +169,7 @@
 
 (defvar *model-map* nil)
 (defvar *object-map* nil)
+(defvar *importing-model-objects* nil "bound to t during import")
 
 (defun get-local-model (classname mid)
   (unless *model-map*
@@ -189,7 +190,8 @@
 
 (defun import-registry-model-file (filename)
   (let ((hunchentoot::*session* *last-session*)
-	(weblocks::*current-webapp* (first weblocks::*active-webapps*)))
+	(weblocks::*current-webapp* (first weblocks::*active-webapps*))
+	(*importing-model-objects* t))
     (import-model-file filename)))
 
 (defun import-model-file (filename)
