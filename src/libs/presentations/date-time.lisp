@@ -37,6 +37,48 @@
   ()
   (:default-initargs :show-time-p nil))
 
+;;;; * a range of dates
+
+(defclass date-range-presentation (date-presentation)
+  ()
+  (:default-initargs :css-style "width: 24em"))
+
+
+(define-lisp-value-getter date-range-presentation (date-presentation client-value)
+  (mvbind (string dates)
+      (cl-ppcre:scan-to-strings "(.+)[\\s]+to[\\s]+(.+)" client-value)
+    (declare (ignorable string))
+    (unless dates
+      (multiple-value-setq (string dates)
+        (cl-ppcre:scan-to-strings "(.+)" client-value)))
+   (case (length dates)
+     (0 :none)
+     (1 (call-next-method))
+     (2 (cons (cl-l10n:parse-time (aref dates 0))
+	      (cl-l10n:parse-time (aref dates 1))))
+     (t (error "Unrecognized range specification in ~A" client-value)))))
+
+(define-lisp-value-setter date-range-presentation (date-pair)
+  (if (consp date-pair)
+      (with-string-stream (stream)
+	(cl-l10n:print-time (car date-pair) :show-date t 
+			    :show-time nil :stream stream)
+	(princ " to " stream)
+	(cl-l10n:print-time (cdr date-pair) :show-date t 
+			    :show-time nil :stream stream))
+      (progn (call-next-method)
+             (return-from lisp-value date-pair))))
+
+(defclass date-range-validator (non-nil-validator)
+  ()
+  (:default-initargs :error-message "Unable to determine date."))
+
+(defmethod client-validate ((validator date-range-validator) (client-value string))
+  t)
+
+(defmethod lisp-validate ((validator date-range-validator) (lisp-value cons))
+  t)
+
 (defgeneric date-presentation-hint-for-locale (presentation locale)
   (:documentation "Compute a date presentation hint for PRESENTATION and LOCALE"))
 
@@ -133,45 +175,4 @@
       (fail-validation (format nil "~S is not a valid date/time" client-value)))))
 
 (defmethod lisp-validate ((validator datetime-validator) (lisp-value cons))
-  t)
-;;;; * a range of dates
-
-(defclass date-range-presentation (date-presentation)
-  ()
-  (:default-initargs :css-style "width: 24em"))
-
-
-(define-lisp-value-getter date-range-presentation (date-presentation client-value)
-  (mvbind (string dates)
-      (cl-ppcre:scan-to-strings "(.+)[\\s]+to[\\s]+(.+)" client-value)
-    (declare (ignorable string))
-    (unless dates
-      (multiple-value-setq (string dates)
-        (cl-ppcre:scan-to-strings "(.+)" client-value)))
-   (case (length dates)
-     (0 :none)
-     (1 (call-next-method))
-     (2 (cons (cl-l10n:parse-time (aref dates 0))
-	      (cl-l10n:parse-time (aref dates 1))))
-     (t (error "Unrecognized range specification in ~A" client-value)))))
-
-(define-lisp-value-setter date-range-presentation (date-pair)
-  (if (consp date-pair)
-      (with-string-stream (stream)
-	(cl-l10n:print-time (car date-pair) :show-date t 
-			    :show-time nil :stream stream)
-	(princ " to " stream)
-	(cl-l10n:print-time (cdr date-pair) :show-date t 
-			    :show-time nil :stream stream))
-      (progn (call-next-method)
-             (return-from lisp-value date-pair))))
-
-(defclass date-range-validator (non-nil-validator)
-  ()
-  (:default-initargs :error-message "Unable to determine date."))
-
-(defmethod client-validate ((validator date-range-validator) (client-value string))
-  t)
-
-(defmethod lisp-validate ((validator date-range-validator) (lisp-value cons))
   t)
