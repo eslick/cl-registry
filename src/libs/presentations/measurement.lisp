@@ -18,7 +18,7 @@
   (with-html
     (:span
      (call-next-method)
-     (:div :class "question-help" (str (display-unit presentation))))))
+     (:span :class "question-help" (str (display-unit presentation))))))
 
 (define-lisp-value-getter measurement-presentation (client-value canonical-unit display-unit)
   (dbind (&optional client-number unit) 

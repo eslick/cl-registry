@@ -148,7 +148,7 @@ div.survey-group div.question-error
   margin-left: 30px;
 }
 
-div.survey-group div.question-help
+div.survey-group div.question-help, span.question-help
 {
     font-style: italic;
     font-weight: lighter;

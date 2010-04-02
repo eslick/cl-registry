@@ -37,24 +37,68 @@
   ()
   (:default-initargs :show-time-p nil))
 
+(defgeneric date-presentation-hint-for-locale (presentation locale)
+  (:documentation "Compute a date presentation hint for PRESENTATION and LOCALE"))
+
+(defmethod date-presentation-hint-for-locale (presentation (locale null))
+  "Compute a date presentation hint for PRESENTATION and current user's LOCALE"
+  (let ((current-locale (cl-l10n:locale-name (user-locale (current-user)))))
+    (check-type current-locale string)
+    (date-presentation-hint-for-locale presentation current-locale)))
+
+(defvar *date-presentation-hint-for-locale-alist*
+  '(
+    ;; Cache this
+    ("en_US" "mm/dd/yyyy")
+    ;; Handle some cases with special date separator chars
+    ;; Japanese
+    ("ja_JP" "yyyy-mm-dd"))
+  "Association list of (LOCALE FMT) where LOCALE is a locale string and FMT is the output format spec string")
+
+(defun date-presentation-hint-for-locale-guess (&optional (locale (cl-l10n:locale-name (cl-l10n:current-locale))))
+  "Guess input date presentation hint from output format for LOCALE"
+  (cond
+    ;; First check the association list for common / screwy cases
+    ((second (assoc locale *date-presentation-hint-for-locale-alist* :test #'string-equal)))
+    ;; Guess by permuting date print string specification
+    ((let* ((fmt (cl-l10n:locale-d-fmt locale)))
+       (cond
+	 ;; This catches typical: %m/%d/%Y, %d/%m/%Y, etc.
+	 ((let ((work fmt))
+	    (and (setq work (cl-ppcre:regex-replace "%d" work "dd"))
+		 (setq work (cl-ppcre:regex-replace "%m" work "mm"))
+		 (setq work (cl-ppcre:regex-replace "%[Yy]" work "yyyy"))
+		 ;; Consider replacing "-" with "/"
+		 ;;(setq work (cl-ppcre:regex-replace-all "-" work "/"))
+		 ;; Did we replace all variable fields?
+		 (not (cl-ppcre:scan "%" work))
+		 ;; Returns
+		 work)))
+	 ;; If the CL-L10N doc is correct, %D always prints as mm/dd/yy
+	 ((string= fmt "%D") "mm/dd/yyyy")
+	 ;; Our parser probably won't work with yyyy-mm-dd but this gives us a hint as to order
+	 ((string= fmt "%F") "yyyy/mm/dd"))))))
+	 
+(defmethod date-presentation-hint-for-locale ((fmt string) (locale string))
+  (format nil fmt (date-presentation-hint-for-locale-guess locale)))
+
+(defmethod date-presentation-hint-for-locale ((presentation date-presentation) locale)
+  (date-presentation-hint-for-locale "(~A)" locale))
+
+(defmethod date-presentation-hint-for-locale ((presentation date-range-presentation) locale)
+  (date-presentation-hint-for-locale "(~A to ~:*~A)" locale))
+
+(defun emit-html-locale-date-format (presentation)
+  (with-html
+    (:span :class "date-presentation-format-label"
+	   (:span :class "question-help"
+		 (str (date-presentation-hint-for-locale presentation nil))))))
+
 (defmethod render-presentation-editable :after ((presentation date-presentation))
   (let ((parse-output-span-id (genweb-field-name)))
     (with-html
       " "
-      (:span :class "date-presentation-format-label"
-	  (:div :class "question-help"
-             (cond
-               ((string-starts-with "en_US" (cl-l10n:locale-name (user-locale (current-user))))
-                (str
-                 (if (typep presentation 'date-range-presentation)
-                     #!"(mm/dd/yyyy[ to mm/dd/yyyy])"
-                     #!"(mm/dd/yyyy)")))
-               #| ((string-starts-with "ja" (cl-l10n:locale-name (user-locale (current-user)))) (str #!"(yyyy/mm/dd)")) |#
-               (t
-                (str
-                 (if (typep presentation 'date-range-presentation)
-                     #!"(dd/mm/yyyy[ to dd/mm/yyyy)"
-                     #!"(dd/mm/yyyy)"))))))
+      (str (emit-html-locale-date-format presentation))
       (:span :id parse-output-span-id  ""))))
 
       ;; should use parenscript here, not adding a dependency this
