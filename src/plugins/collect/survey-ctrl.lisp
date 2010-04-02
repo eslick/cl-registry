@@ -574,7 +574,8 @@
 	    (render-presentation
 	     (make-presentation series (answer-id answer)))
 	    (with-html
-	      (str (format nil "&nbsp;" label))))
+	      (str "&nbsp;")
+	      (str label)))
 	  :class (if (eq (current-id ctrl) (answer-id answer))
 		     "diary-selected-answer-entry"
 		     "diary-answer-entry")))))
