@@ -177,7 +177,8 @@
 			      ((:file "ilr-surveys")
 			       (:file "sgrq")
 			       (:file "sf36")
-			       (:file "lam-history"))
+			       (:file "lam-history")
+			       (:file "suebyrnes"))
 			      :depends-on (analytics)
 			      :serial t)
 		     (:module admin
