@@ -73,7 +73,8 @@
     (let ((start-registry (find-symbol "START-REGISTRY" :registry)))
       (when (fboundp start-registry)
         (funcall (fdefinition start-registry)
-                 :address "localhost"
+                 :address (or (ccl:getenv "REGADDR")
+			      "localhost")
                  :port port
                  :config config)))))
 
