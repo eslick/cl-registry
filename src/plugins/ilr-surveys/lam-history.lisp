@@ -18,7 +18,7 @@
 
 (defconstant +study-name-patient+ "Quality of life and pulmonary function study")
 
-(defconstant +survey-name-introduction+ "Introduction & background")
+(defconstant +survey-name-introduction+ "Background and history")
 
 (defconstant +survey-name-clinician+ (survey-name-append +study-name-clinician+ +survey-name-introduction+))
 
@@ -74,45 +74,48 @@
                           :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (diary-args `(:owner ,owner :origin "researcher" :published t :priority 2 :diary-p t
                          :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+           (survey-intro
+            (apply #'make-instance 'survey
+                   :name (survey-name-append study-name "Introduction")
+                   :description #!"Cover sheet and confirm PFT results are in hand for patient"
+                   survey-args))
            (survey-clinician
             (apply #'make-instance 'survey
                    :name +survey-name-clinician+
-                   :description "Enter LAM patient's demographics, symptoms, method of diagnosis, and medical treatment history"
+                   :description #!"Enter LAM patient's demographics, symptoms, method of diagnosis, and medical treatment history"
                    survey-args))
            (survey-treatment
             (apply #'make-instance 'survey
-                   :name (survey-name-append study-name "Pneumothorax and Pulmonary Effusion Treatment Diary")
-                   :description "Enter LAM patient's pneumothorax and pulmonary effusion treatment history"
-                   :diary-description "One result per date"
+                   :name (survey-name-append study-name "Pneumothorax and Pleural Effusion Treatment Diary")
+                   :description #!"Enter LAM patient's pneumothorax and pleural effusion treatment history"
+                   :diary-description "Treatment results for date"
                    diary-args))
            (survey-pft
             (apply #'make-instance 'survey
                    :name (survey-name-append study-name "Pulmonary Function Test (PFT) Diary")
-                   :description "Enter LAM patient's PFT results"
-                   :diary-description "One result per date"
+                   :description #!"Enter LAM patient's PFT results"
+                   :diary-description "PFT results for date"
                    diary-args))
            (survey-sgrq
             (apply #'make-instance 'survey
                    :name (survey-name-append study-name "Saint George's Respiratory Questionnaire (SGRQ) Diary")
-                   :description "Enter LAM patient's PFT results"
-                   :diary-description "One result per date"
+                   :description #!"Enter LAM patient's SGRQ results"
+                   :diary-description #!"SGRQ results for date"
                    diary-args))
            (survey-6mwd
             (apply #'make-instance 'survey
                    :name (survey-name-append study-name "Six Minute Walking Distance (6MWD) Diary")
                    :description "Enter LAM patient's 6MWD results"
-                   :diary-description "One result per date"
+                   :diary-description #!"6MWD results for date"
                    diary-args)))
 
       ;;
-      ;; Main survey - ILR QOL/PFT Clinician Questionnaire
+      ;; Introduction survey
       ;;
-
-      ;;
-      ;; Group 1 - clinician header page
-      ;;
-      (make-survey-group-named survey-clinician #!"Introduction"
-                               :advice "Thank you for your involvement in this research study and your collaboration with the International LAM Registry.
+      (let* ((group1
+              ;; Group 1 - clinician header page
+              (make-survey-group-named survey-intro #!"Introduction"
+                                       :advice "Thank you for your involvement in this research study and your collaboration with the International LAM Registry.
 <P>We will use this information to examine whether women diagnosed with LAM under age 25 have a more rapid pulmonary function decline relative to those over the age of 55.
 <P>This study utilizes a retrospective medical record review to examine the rate of pulmonary function decline for LAM patients diagnosed at age 25 and younger relative to those diagnosed over age 55.
 In completing the following form, we ask that you comply with your local laws and regulations regarding access and use of patient records, and obtain consent whenever indicated.
@@ -126,10 +129,22 @@ For further information about data use please see our
 </UL>
 <P>The time it takes to complete the following data entry form will vary, depending on the type of medical records you are using and the number of pulmonary function tests to enter.  
 You may save your work at any point to complete at a later time.
-<P> Additionally, please encourage all of your LAM patients to register on LAMsight.org!")
+<P> Additionally, please encourage all of your LAM patients to register on LAMsight.org!"))
+             (q/pft
+              (apply #'make-question "Do you have at least two (2) pulmonary function test (PFT) reports for the patient from different dates?" 
+                     (choices-options-yes-no)))
+             (group2
+              (make-survey-group-named survey-intro #!"PFT results for patient"
+                                       :advice "This study requires at least two (2) pulmonary function test (PFT) reports for each patient from different dates."
+                                       :order (list q/pft))))
+        (declare (ignore group1 group2)))
 
       ;;
-      ;; Group 2 - Patient info
+      ;; Main survey - ILR QOL/PFT Clinician Questionnaire
+      ;;
+
+      ;;
+      ;; Patient info
       ;;
       (let* ((q1
               (make-question "Country where patient receives medical care" :number 1.
@@ -184,7 +199,7 @@ You may save your work at any point to complete at a later time.
         (add-rule subgroup1 q6 "Other" subgroup3 ':successor))
 
       ;;
-      ;; Group 3 - How was LAM diagnosed?
+      ;; How was LAM diagnosed?
       ;;
       (let* ((*group*
               (make-survey-group-named survey-clinician #!"Diagnosis"))
@@ -242,7 +257,7 @@ You may save your work at any point to complete at a later time.
         (setf (group-questions *group*) (list q7)))
 
       ;;
-      ;; Group 4
+      ;; Histopathology results4
       ;;
       (let* ((*group*
               (make-survey-group-named survey-clinician #!"Histopathology results"
@@ -280,7 +295,7 @@ You may save your work at any point to complete at a later time.
         (setf (group-questions *group*) *questions*))
 
       ;;
-      ;; Group 5
+      ;; Symptoms and complications
       ;;
       (let* ((q9
               (apply #'make-question "How did the patient originally present" :number 9.
@@ -370,7 +385,7 @@ You may save your work at any point to complete at a later time.
         (add-rule *group* q12 "Yes" subgroup12 ':inline))
 
       ;;
-      ;; Group 6
+      ;; Extrapulmonary lesions
       ;;
       (let* ((q14
               (apply #'make-question "What extrapulmonary lesions does the patient have" :number 14.
@@ -410,7 +425,7 @@ You may save your work at any point to complete at a later time.
         (add-rule *group* q14 "Other" subgroup14o ':inline))
 
       ;;
-      ;; Group 7
+      ;; Estrogen exposure history
       ;;
       (let* ((q15
               (make-question "What was the patient's age of menarche" :number 15.
@@ -469,7 +484,7 @@ You may save your work at any point to complete at a later time.
         (add-rule *group* q18 "Yes" subgroup18 ':inline))
 
       ;;
-      ;; Group 8
+      ;; Treatment history
       ;;
       (let* ((*group*
               (make-survey-group-named survey-clinician #!"Treatment history"
@@ -581,7 +596,7 @@ You may save your work at any point to complete at a later time.
                     transplant/question)))
 
       ;;
-      ;; Group 9
+      ;; Home oxygen use
       ;;
       (let* ((*group*
               (make-survey-group-named survey-clinician #!"Home oxygen use"))
@@ -624,7 +639,7 @@ You may save your work at any point to complete at a later time.
         (setf (group-questions *group*) (list q20)))
 
       ;;
-      ;; Group 10
+      ;; Vital status
       ;;
       (let* ((q21
               (apply #'make-question "What is the patient's vital status" :number 21.
@@ -661,23 +676,21 @@ You may save your work at any point to complete at a later time.
         (add-rule subgroup21-dead q21c "Other" subgroup21-other :inline))
 
       ;;
-      ;; Group 11 - results from other surveys
+      ;; Results from other surveys
       ;;
       (let* ((q22
-              (apply #'make-question "Do you have at least two (2) pulmonary function test (PFT) reports for the patient from different dates" :number 22.
+              (apply #'make-question "Does the patient have <B>six minute walk distance</B> (6MWD) results"
+                     :number 22.
                      :prompt-format prompt-format-numbered-question
                      (choices-options-yes-no)))
              (q23
-              (apply #'make-question "Does the patient have <B>six minute walk distance</B> (6MWD) results" :number 23.
-                     :prompt-format prompt-format-numbered-question
-                     (choices-options-yes-no)))
-             (q24
-              (apply #'make-question "Has the patient taken the <B>St. George's Respiratory Questionnaire (SGRQ)</B>" :number 24.
+              (apply #'make-question "Has the patient taken the <B>St. George's Respiratory Questionnaire (SGRQ)</B>"
+                     :number 23.
                      :prompt-format prompt-format-numbered-question
                      (choices-options-yes-no)))
              (*group*
               (make-survey-group-named survey-clinician #!"SGRQ & Six Minute Walk Distance"
-                                       :order (list q22 q23 q24))))
+                                       :order (list q22 q23))))
         (declare (ignore *group*)))
 
       ;;
@@ -745,7 +758,7 @@ You may save your work at any point to complete at a later time.
                (*group*
                 (make-survey-group-named survey-treatment (name survey-treatment)))
                (q2 (make-treatment-questions "Pneumothorax treatment" *group*))
-               (q3 (make-treatment-questions "Pleurodesis treatment" *group*)))
+               (q3 (make-treatment-questions "Pleural effusion treatment" *group*)))
           ;; Questions
           (setf (group-questions *group*) (list q1 q2 q3))
           ;; Survey properties
@@ -822,7 +835,8 @@ You may save your work at any point to complete at a later time.
         (setf (diary-question survey-sgrq) q1))
 
       ;; Returns
-      `( (,survey-clinician :DOFIRST)
+      `( (,survey-intro :DOFIRST)
+         (,survey-clinician :DOFIRST)
          (,survey-pft :REQUIRED)
          (,survey-treatment :OPTIONAL)
          (,survey-6mwd :OPTIONAL)
@@ -840,7 +854,7 @@ You may save your work at any point to complete at a later time.
            (survey-patient
             (apply #'make-instance 'survey
                    :name +survey-name-patient+
-                   :description ""
+                   :description #!"Enter demographics, symptoms, method of diagnosis, and medical treatment history" ;??
                    survey-args)))
 
       ;;
@@ -1473,7 +1487,7 @@ which can cause a collapsed lung.")
   (let ((survey-rule-alist (create-ilr-arr/pft-surveys :owner owner))
         (study
          (make-instance 'study :name study-name
-                               :description "Retrospective medical record review to examine the rate of pulmonary function decline for LAM patients diagnosed at age 25 and younger relative to those diagnosed over age 55"
+                               :description #!"Retrospective medical record review to examine the rate of pulmonary function decline for LAM patients diagnosed at age 25 and younger relative to those diagnosed over age 55"
                                :published t :owner owner :priority 1 :origin "researcher")))
     (loop for spec in survey-rule-alist
          with surveys 
@@ -1491,7 +1505,7 @@ which can cause a collapsed lung.")
   (let ((survey-rule-alist (create-lamsight-qol/pft-surveys :owner owner :study-name study-name))
         (study
          (make-instance 'study :name study-name
-                               :description "This study examines the relationship between pulmonary function and quality of life in patients with LAM"
+                               :description #!"This study examines the relationship between pulmonary function and quality of life in patients with LAM"
                                :published t :owner owner :priority 1 :origin "researcher")))
     (loop for spec in survey-rule-alist
          with surveys 
@@ -1545,7 +1559,7 @@ which can cause a collapsed lung.")
       (when (stringp center)
         (setq center
               (or (get-center center t)
-                  (make-center center (format nil "test center for survey ~A" survey)))))
+                  (make-center center "ILR ARR/PFT test center"))))
       (check-type center center)
       ;; Delete any existing patients
       (mapcar 'drop-instance (get-patients-for-center center)))
