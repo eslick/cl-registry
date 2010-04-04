@@ -227,7 +227,9 @@
 			 ;; Check completed status
 			 ;; TBD: check study completed status at beginning and display at top
 			 (when this-study-complete-p
-			   (htm (:P :CLASS "study-list-message" (str #!"Study is completed"))))))))))))))))
+			   (htm
+			    (:P :CLASS "study-list-message"
+				(str #!"Surveys for this study are completed"))))))))))))))))
 
       
 ;; =============================================================
