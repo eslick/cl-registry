@@ -83,6 +83,7 @@
             (apply #'make-instance 'survey
                    :name +survey-name-clinician+
                    :description #!"Enter LAM patient's demographics, symptoms, method of diagnosis, and medical treatment history"
+                   :formats '(:group-number-style :roman :question-number-style :decimal)
                    survey-args))
            (survey-treatment
             (apply #'make-instance 'survey

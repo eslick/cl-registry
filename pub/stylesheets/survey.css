@@ -307,6 +307,7 @@ div.survey-group table span.date-presentation-format-label {
 }
 
 .survey-list-nav li {
+    list-style: none;
     color: black;
     font-size: 10pt;
 }

@@ -382,6 +382,25 @@
 (defmethod dependencies append ((obj survey-ctrl))
   (list (make-local-dependency :stylesheet "forms")))
 
+(defun ensure-current-group (ctrl)
+  "Call this to compute current-group for survey-ctrl in case it may have changed
+ie if survey editor may have intervened to remove group or if survey changed (not likely)"
+  (let* ((survey (survey ctrl))
+	 (groups (and survey (survey-groups survey)))
+	 (group (current-group ctrl)))
+    ;; Returns
+    (if (member group groups)
+	group
+	(setf (current-group ctrl) nil))))
+
+(defmethod get-format ((ctrl survey-ctrl) key)
+  (aif (survey ctrl) (get-format it key)))
+
+(defmacro get-group-number-style-format-str (inst)
+  `(case (get-format ,inst :group-number-style)
+     (:roman "~@R.")
+     (otherwise "~d.")))
+
 ;; Question view
 
 (defmethod survey-object-view-url ((question question))
@@ -432,22 +451,24 @@
 (defmethod render-widget-body ((ctrl survey-ctrl) &rest args)
   (declare (ignore args))
   (setf *last-survey-ctrl* ctrl)
-  (let ((group (current-group ctrl)))
+  (let ((group (ensure-current-group ctrl)))
     (unless group
       (with-html
 	(:div :class "survey-left-column"
 	      (render-survey-header ctrl)
-	      (:h1 "This survey is empty")
+	      (:h1 (str #!"This survey is empty"))
 	      (:p (:a :href "/dashboard/collect/"
-		  "Return to the survey list"))))
+		      (str #!"Return to Collect")))))
       (return-from render-widget-body))
     (let* ((presentations (active-presentations ctrl group)))
       (with-html 
 	(:div :class "survey-left-column"
 	      (render-survey-header ctrl)
 	      (htm (:h1
-		    (str (format nil "~d.&nbsp;" (1+ (position group
-							       (survey-groups (survey ctrl))))))
+		    (str (format nil
+				 (get-group-number-style-format-str ctrl)
+				 (1+ (position group (survey-groups (survey ctrl))))))
+		    (str "&nbsp;")
 		    (str (slot-value-translation group 'name)))
 		   (with-html-form (:post (question-response-action ctrl presentations)
 					  :class "survey-form" :id "survey-form")
@@ -612,15 +633,21 @@
 	  (with-html 
 	    (:h2 (str #!"Pages in Survey"))
 	    (:ol 
-	     (dolist (group (survey-groups (survey ctrl)))
-               (let ((one-group group))
-                 (htm (:li (render-link
-                            (lambda (&rest args)
-                              (declare (ignore args))
-                              (goto-group ctrl one-group))
-                            (slot-value-translation one-group 'name)
-                            :class (when (eq one-group (current-group ctrl))
-                                     "survey-list-nav-active-group")))))))))))
+	     (let ((counter 0.)
+		   (fmt (get-group-number-style-format-str ctrl)))
+	       (dolist (group (survey-groups (survey ctrl)))
+		 (incf counter)
+		 (let ((one-group group))
+		   (htm (:li
+			 (str (format nil fmt counter))
+			 (str "&nbsp;")
+			 (render-link
+			  (lambda (&rest args)
+			    (declare (ignore args))
+			    (goto-group ctrl one-group))
+			  (slot-value-translation one-group 'name)
+			  :class (when (eq one-group (current-group ctrl))
+				   "survey-list-nav-active-group"))))))))))))
 
 (defun render-survey-help (ctrl)
   (declare (ignorable ctrl))
@@ -976,8 +1003,11 @@
   (declare (ignore args))
   (with-html 
     (:span :class "survey-bar-group-title" 
-	   (str (format nil "~d.&nbsp;" (position (current-group widget) 
-						  (survey-groups (survey widget)))))
+	   (str
+	    (format nil
+		    (get-group-number-style-format-str widget)
+		    (1+ (position (current-group widget) (survey-groups (survey widget))))))
+	   (str "&nbsp;")
 	   (str (group-name (current-group widget))))
 	   ;; slot-value-translation (current-group widget) 'name)))
     (render-group (current-group widget) widget)

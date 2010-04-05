@@ -35,6 +35,8 @@
    (edit-lock :initarg :edit-lock :initform nil
 	      :transient t
 	      :documentation "Session of user editing the survey.")
+   (formats :accessor formats :initarg :formats :initform nil
+            :documentation "Plist of key/value pairs for survey formatting properties")
    ;; Ranking
    (rating :accessor survey-rating :initarg :rating :initform nil)
    (ranking-record :accessor ranking-record :initarg :ranking-record
@@ -69,6 +71,16 @@
 (defmethod attributize-name ((inst survey))
   (attributize-name (name inst)))
 
+(defmethod get-format ((inst survey) key)
+  (setq key (as-keyword key))
+  (getf (formats inst) key))
+
+(defmethod set-format ((inst survey) key val)
+  (setq key (as-keyword key))
+  (setf (getf (formats inst) key) val))
+
+(defmethod (setf get-format) (val (inst survey) key)
+  (set-format inst key val))
 
 ;; Manipulating surveys and child groups
 
