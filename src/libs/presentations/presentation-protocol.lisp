@@ -98,7 +98,7 @@
   (:method ((presentation web-field-presentation))
     (with-html
       (:label :for (query-name presentation) 
-	      (str (prompt presentation))))))
+	      (str (find-translation (prompt presentation)))))))
 
 (defgeneric render-presentation-editable (presentation))
 
