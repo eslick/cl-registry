@@ -119,7 +119,10 @@
 	      (unless (has-permission-p user :admin)
 		(record-event :user-login user))
 	      (values user nil))
-	    (values nil "Invalid password"))
+	    (progn
+	      (log-message :navigation :info "User ~a login attempt failed"
+			   user)
+	      (values nil "Invalid password")))
 	(if (and username (not (equal username "")))
 	    (values nil (format nil "Username '~A' is not recognized" username))
 	    (values nil (format nil "No username provided"))))))
