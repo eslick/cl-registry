@@ -121,8 +121,8 @@
 <P>This study utilizes a retrospective medical record review to examine the rate of pulmonary function decline for LAM patients diagnosed at age 25 and younger relative to those diagnosed over age 55.
 In completing the following form, we ask that you comply with your local laws and regulations regarding access and use of patient records, and obtain consent whenever indicated.
 Data identifiers such as name and date of birth will not be used, and each record will be given a unique identifier for the purpose of data storage.
-For further information about data use please see our
-<A HREF=\"/forms/ilr-data-use\">International LAM Registry data use form</A>.
+For further information about data use please see 
+<A HREF=\"/dashboard/docs/ILR/lrb.2009.0028.lowlink.pdf_v03.pdf\">Nurok et al, International LAM Registry, in press, Lymphatic Research and Cell Biology</A>
 <P>For this study, please complete the following data entry form for <B>current</B> and <B>former</B> LAM patients in your care who were:
 <UL>
 <LI>diagnosed with LAM at age 25 or under
