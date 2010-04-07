@@ -1,4 +1,4 @@
-﻿msgid ""
+msgid ""
 msgstr ""
 "Project-Id-Version: ja-survey-group.po 1.0\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
