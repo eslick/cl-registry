@@ -292,3 +292,55 @@
                       ,@make-instance-args
                       :order (list ,@(mapcar #'first question-bindings))
                       :rows ,table))))
+
+;; ===========================================================
+;; Fix broken survey group advice 
+;; Issue #201 Render group advice and remove bogus advice text
+;; ===========================================================
+
+(defun fix-broken-survey-group-advice (&key (test t) (verbose t))
+  (if verbose
+      (format t "~%~:[Fix~;Test~] broken survey group advice" test))
+  (with-transaction ()
+    (let ((null-counter 0.)
+	  (not-stringp-counter 0.)
+	  (empty-counter 0.)
+	  (test-counter 0.)
+	  (ok-counter 0.)
+	  (fix-counter 0.)
+	  (total-counter 0.))
+      ;; For each group
+      (dolist (group (get-instances-by-class 'survey-group))
+	(incf total-counter)
+	(let ((advice (group-advice group))
+	      fix-p)
+	  (cond
+	    ((null advice)
+	     (incf null-counter))
+	    ((not (stringp advice))
+	     (if verbose
+		 (format t "~&!!  ~@[Survey: ~A ~]Advice: ~S" (first (find-group-surveys group)) advice))
+	     (incf not-stringp-counter))
+	    ((zerop (length (remove #\space advice)))
+	     (incf empty-counter))
+	    ((member advice '("test" "testing") :test #'string-equal)
+	     (incf test-counter)
+	     (setq fix-p t))
+	    (t
+	     (incf ok-counter)
+	     (if verbose
+		 (format t "~&Ok: ~S ..." (subseq advice 0. (min 20. (length advice)))))))
+	  ;; Fix broken advice?
+	  (when fix-p
+	    (incf fix-counter)
+	     (if verbose
+		 (format t "~&~:[Fix~;Test~]: ~@[Survey: ~A ~]Advice: ~S" test (first (find-group-surveys group)) advice))
+	     (if (not test)
+		 (setf (group-advice group) nil)))))
+      ;; Done
+      (if verbose
+	  (format t
+		  "~%Total: ~D~& Null: ~D Not string: ~D Empty: ~D Test: ~D~& Ok: ~D~& Fix: ~D"
+		  total-counter null-counter not-stringp-counter empty-counter test-counter ok-counter fix-counter))
+      ;; Returns
+      (values fix-counter ok-counter total-counter))))
