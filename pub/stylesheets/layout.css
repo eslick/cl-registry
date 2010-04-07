@@ -124,6 +124,12 @@ h2{
     border: 0;
 }
 
+.header-logo-text {
+    font-size: 20pt;
+    font-weight: bold;
+    color: #EFD8C2;
+}
+
 /***************************************/
 /*         HEADER NAV SMALL            */
 /***************************************/

@@ -62,7 +62,14 @@
     (:div :class "header"
 	  (:div :class "header-logo"
 		(:a :href (if (authenticatedp) "/dashboard/home" "/")
-		    (:img :src (get-site-config-param :header-logo-url))))
+		    (let ((logo-url (get-site-config-param :header-logo-url))
+			  (logo-text (get-site-config-param :header-logo-text)))
+		      (if logo-url
+			  (htm (:img :src logo-url)))
+		      (when logo-text
+			(if (eq logo-text ':site-name)
+			    (setq logo-text (get-site-config-param :site-name)))
+			(htm (:span :class "header-logo-text" (str logo-text)))))))
 	  (:div :class "header-nav"
  			(:ul
 			 (:li 
