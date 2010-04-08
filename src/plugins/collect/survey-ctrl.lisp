@@ -104,10 +104,13 @@
   ((compact-format-p :accessor compact-format-p :initarg :compact-format :initform nil)))
 
 (defun make-study-list (&key compact-format)
-  (make-instance 'composite :widgets
-		 (list
-		  (make-choose-patient-widget :hr-p nil :mark-siblings-dirty-p t)
-		  (make-instance 'study-list :compact-format compact-format))))
+  (let ((widgets
+	 (list
+	  (make-instance 'study-list :compact-format compact-format))))
+    (if (get-site-config-param :survey-viewer-show-choose-patient-widget)
+      (setq widgets (cons (make-choose-patient-widget :hr-p nil :mark-siblings-dirty-p t) widgets)))
+    ;; Returns
+    (make-instance 'composite :widgets widgets)))
 
 (defun include-study-p (study)
   (and (current-patient)
@@ -256,8 +259,7 @@
 			 `(:filter-fn ,(lambda (survey) 
 					       (not (include-survey-p survey diary-p))))
 		    :sort '(sort-key . :asc)))))
-    ;; could use a better config param
-    (if (equal (get-site-config-param :site-name) "International LAM Registry")
+    (if (get-site-config-param :survey-viewer-show-choose-patient-widget)
       (setq widgets (cons (make-choose-patient-widget :hr-p nil) widgets)))
     (make-instance 'composite :widgets widgets)))
 
