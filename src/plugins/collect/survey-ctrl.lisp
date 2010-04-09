@@ -600,7 +600,10 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 	     (make-presentation series (answer-id answer)))
 	    (with-html
 	      (str "&nbsp;")
-	      (str label)))
+	      (str (princ-to-string
+		    (typecase label
+		      (question (question-prompt label))
+		      (otherwise label))))))
 	  :class (if (eq (current-id ctrl) (answer-id answer))
 		     "diary-selected-answer-entry"
 		     "diary-answer-entry")))))
