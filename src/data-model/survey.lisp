@@ -73,7 +73,9 @@
 
 (defmethod get-format ((inst survey) key)
   (setq key (as-keyword key))
-  (getf (formats inst) key))
+  ;; Avoid bug #268 prior to synchronize of SURVEY class with FORMATS slot
+  (if (slot-boundp inst 'formats)
+      (getf (formats inst) key)))
 
 (defmethod set-format ((inst survey) key val)
   (setq key (as-keyword key))
