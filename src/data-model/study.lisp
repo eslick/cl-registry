@@ -17,6 +17,15 @@
 	   :documentation "An ordered list of surveys")
    (survey-rules :accessor survey-rules :initarg :rules :initform '()
 		 :documentation "A list of survey rules")
+   ;; Patient consent process
+   (requires-consent-p :accessor requires-consent-p
+		       :initarg :requires-consent-p
+		       :initform nil)
+   (patient-consent-forms :accessor patient-consent-forms
+			  :initarg :patient-consent-forms
+			  :initform nil)
+   (patients-consented :accessor patients-consented :initform '()
+		       :documentation "A list of patient MIDs")
    ;; Access control
    (published :accessor published-p :initarg :published :initform nil)
    (priority :accessor priority-value :initarg :priority :initform nil)
@@ -65,7 +74,11 @@
     (dolist (survey (surveys study))
       (drop-survey survey))))
 
+;; ========================================================================
 ;; Actions
+;; ========================================================================
+
+;; Publishing
 
 (defmethod publish-object ((obj study))
   (setf (published-p obj) t))
@@ -76,5 +89,22 @@
 (defun published-studies ()
   (select-if #'published-p (get-instances-by-class 'study)))
 
+;; Study completion
+
 (defun study-complete-p (patient study)
   (every (curry 'survey-complete-p patient) (surveys study)))
+
+;; Patient consent process
+
+(defmethod study-patient-consented-p ((study study) (patient patient))
+  (find (mid patient) (patients-consented study)))
+
+(defmethod set-study-patient-consented-p ((study study) (patient patient) value)
+  (setf (patients-consented study)
+	;; TODO: patient consent history!!
+	(if value
+	    (pushnew (mid patient) (patients-consented study))
+	    (remove (mid patient) (patients-consented study)))))
+
+(defmethod (setf study-patient-consented-p) (value study patient)
+  (set-study-patient-consented-p study patient value))

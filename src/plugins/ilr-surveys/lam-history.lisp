@@ -1507,6 +1507,10 @@ which can cause a collapsed lung.")
         (study
          (make-instance 'study :name study-name
                                :description #!"This study examines the relationship between pulmonary function and quality of life in patients with LAM"
+                               :requires-consent-p t
+                               :patient-consent-forms
+                               '(("lam-qol-study-consent-form" :signature :date :time)
+                                 ("lam-qol-study-ilr-data-use-form" :yes-no :initials))
                                :published t :owner owner :priority 1 :origin "researcher")))
     (loop for spec in survey-rule-alist
          with surveys 

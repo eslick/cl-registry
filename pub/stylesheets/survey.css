@@ -518,6 +518,17 @@ div.study-list-item {
     margin-right: 1.52em;
 }
 
+.study-list-consent-form-scroll-area {
+    color: black;
+    height: 15em;
+    width: 50em;
+    overflow: auto;
+    padding: 4px;
+    border: 1px solid #000;
+    font-weight: normal;
+    font-size: 100%;
+}
+
 .study-list-survey-item {
     margin-top: 1.2em;
 }

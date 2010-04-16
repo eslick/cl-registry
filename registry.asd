@@ -197,6 +197,7 @@
 		     (:module collect
 			      :components
 			      ((:file "survey-state")
+			       (:file "study-ctrl")
 			       (:file "survey-ctrl"))
 			      :depends-on (comments)
 			      :serial t)
