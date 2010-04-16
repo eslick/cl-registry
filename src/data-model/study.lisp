@@ -96,15 +96,25 @@
 
 ;; Patient consent process
 
+(defmodel consent-history ()
+  ((consent-time :accessor consent-time :initarg :time :initform (get-universal-time))
+   (study :accessor study :initarg :study :initform nil :documentation "Study object")
+   (patient :accessor patient :initarg :patient :initform nil :documentation "Patient object")
+   (consent-p :accessor consent-p :initarg :consent-p :initform nil :documentation "Boolean")
+   (signature :accessor signature :initarg :signature :initform nil :documentation "Study specific form")))
+ 
 (defmethod study-patient-consented-p ((study study) (patient patient))
   (find (mid patient) (patients-consented study)))
 
-(defmethod set-study-patient-consented-p ((study study) (patient patient) value)
+(defmethod set-study-patient-consented-p ((study study) (patient patient)
+					  &rest args &key consent-p &allow-other-keys)
+  ;; Record consent for study
   (setf (patients-consented study)
-	;; TODO: patient consent history!!
-	(if value
+	(if consent-p
 	    (pushnew (mid patient) (patients-consented study))
-	    (remove (mid patient) (patients-consented study)))))
+	    (remove (mid patient) (patients-consented study))))
+  ;; Record consent history
+  (apply #'make-instance 'consent-history :study study :patient patient args))
 
-(defmethod (setf study-patient-consented-p) (value study patient)
-  (set-study-patient-consented-p study patient value))
+(defmethod (setf study-patient-consented-p) (args study patient)
+  (apply #'set-study-patient-consented-p study patient args))

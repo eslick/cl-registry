@@ -100,11 +100,10 @@
     (with-slots (study patient-consent-form-article-widget) widget
       (setf (patient-consent-form-needed-p widget)
 	    (and (requires-consent-p study)
-		 (not (study-patient-consented-p study patient)))
-	    ;; Only show patient consent form on redisplay for same patient
-	    (patient-consent-form-visible-p widget)
-	    (and (patient-consent-form-visible-p widget)
-		 (eq (patient-consent-form-visible-p widget) patient)))
+		 (not (study-patient-consented-p study patient))))
+      ;; Only show patient consent form on redisplay for same patient
+      (setf (patient-consent-form-visible-p widget)
+	    (and (eq (patient-consent-form-visible-p widget) patient) patient))
       (with-html
 	(:DIV
 	 :CLASS "study-list-item"
@@ -135,18 +134,31 @@
 		      ;; Display submit/cancel form
 		      (flet ((process-forms (&key signature agree disagree initials submit cancel)
 			       (cond
-				 ((or cancel (and submit disagree))
-				  (setf (patient-consent-form-visible-p widget) nil))
-				 ((not submit)) ;ignore this?
-				 ((and agree (not disagree))
-				  (if (and (stringp initials)
-					   (>= (length (remove-if-not #'alpha-char-p initials)) 2))
-				      (setf (study-patient-consented-p study patient)
-					    (list signature initials (get-universal-time))
-					    (patient-consent-form-visible-p widget) nil
-					    (patient-consent-form-needed-p widget) nil)
-				      (alert "Fill in your initials if you consent"))))
-			   (mark-dirty (widget-parent widget))))
+				 ((or cancel (not submit))
+				  ;; Hide consent forms
+				  (setf (patient-consent-form-visible-p widget) nil)
+				  (mark-dirty (widget-parent widget)))
+				 ((and agree disagree)
+				  (alert "Select Yes or No only"))
+				 ((and (or agree disagree) (not (stringp initials)))
+				  (alert "Internal error - initials not valid"))
+				 ((and (or agree disagree) (< (length (remove-if-not #'alpha-char-p initials)) 2.))
+				  (alert "Fill in your initials"))
+				 ;; Validate signature
+				 ((not (stringp signature)) (alert "Internal error - signature not valid"))
+				 ((<= (length (remove-if-not #'alpha-char-p signature)) 3.)
+				  (alert "Fill in your signature if you consent"))
+				 ;; Valid online consent
+				 (t
+				  (setf (study-patient-consented-p study patient)
+					`(:consent-p t
+					  :signature
+					  (,signature
+					   ,@(and (stringp initials) (>= (length initials) 2)
+						  `(,(if agree :ilr-data-use-agree :ilr-data-use-disagree) ,initials))))
+					(patient-consent-form-visible-p widget) nil
+					(patient-consent-form-needed-p widget) nil)))
+			       (mark-dirty (widget-parent widget))))
 			(with-html-form (:post #'process-forms)
 			  ;; Display consent form content
 			  (render-widget patient-consent-form-article-widget :inlinep t)
@@ -243,17 +255,15 @@
   (declare (ignore args))
   nil)
 
-(defvar _w)
 (defun make-study-list (&key compact-format)
   (let ((widgets
 	 (list
 	  (make-instance 'study-list :compact-format compact-format
-			 :widgets (make-study-list-items :compact-format compact-format)))))
+				     :widgets (make-study-list-items :compact-format compact-format)))))
     (if (get-site-config-param :survey-viewer-show-choose-patient-widget)
-      (setq widgets (cons (make-choose-patient-widget :hr-p nil :mark-siblings-dirty-p t) widgets)))
+	(setq widgets (cons (make-choose-patient-widget :hr-p nil :mark-siblings-dirty-p t) widgets)))
     ;; Returns
-    (setq _w
-    (make-instance 'composite :widgets widgets))))
+    (make-instance 'composite :widgets widgets)))
 
 (defmethod render-widget-body ((widget study-list) &rest args)
   (declare (ignore args))
