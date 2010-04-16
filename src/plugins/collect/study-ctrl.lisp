@@ -9,17 +9,15 @@
 ;; Include study list item in study list view
 
 (defun include-study-p (study)
-  (and (current-patient)
-       (or (published-p study)
-	   (is-admin-p)
-	   (eq (current-user) (owner study)))))
+  (or (published-p study)
+      (is-admin-p)
+      (eq (current-user) (owner study))))
 
 ;; Include survey list item in study list view
 
 (defun include-study-survey-p (study survey)
   (declare (ignore study))
-  (and (current-patient)
-       (or (published-p survey)
+  (and (or (published-p survey)
 	   (is-admin-p)
 	   (eq (current-user) (owner survey))
 	   (member (current-user) (survey-acl survey)))
