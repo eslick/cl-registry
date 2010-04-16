@@ -494,8 +494,10 @@ You may save your work at any point to complete at a later time.
               (apply #'make-question "Hormone therapy" (choices-options-yes-no)))
              (hormone-therapy/table
               (make-survey-group-table
-               (:name "hormone therapy table" :default-question-args (:data-type :date))
-               (nil "Treatment" nil "Start Date" "End Date")
+               (:name "hormone therapy table"
+                :default-question-args (:data-type :date)
+                :advice (format nil "Date format: ~A" (date-presentation-hint-for-locale-guess)))
+               (nil "Treatment" nil "Start date" "End date")
                ((:question :name "hormone therapy: Gn-RH agonist" :data-type :boolean :view-type :checkbox )
                 "Gn-RH agonist" nil
                 (:question :name "hormone therapy: Gn-RH agonist: from") (:question :name "hormone therapy: Gn-RH agonist: to"))
@@ -515,7 +517,9 @@ You may save your work at any point to complete at a later time.
               (apply #'make-question "Bronchodilator/Pulmonary medications" (choices-options-yes-no)))
              (bronch/meds/table
               (make-survey-group-table
-               (:name "bronchodilator/pulmonary medications table" :default-question-args (:data-type :date))
+               (:name "bronchodilator/pulmonary medications table"
+                :default-question-args (:data-type :date)
+                :advice (format nil "Date format: ~A" (date-presentation-hint-for-locale-guess)))
                (nil "Treatment" nil "Start Date" "End Date")
                ((:question :name "bronch/pulm meds therapy: long acting B agonist" :data-type :boolean :view-type :checkbox )
                 "Long acting B agonist" nil (:question) (:question))
@@ -541,7 +545,9 @@ You may save your work at any point to complete at a later time.
               (apply #'make-question "Other medical treatment" (choices-options-yes-no)))
              (other/med/table
               (make-survey-group-table
-               (:name "other medical treatment table" :default-question-args (:data-type :date))
+               (:name "other medical treatment table"
+                :default-question-args (:data-type :date)
+                :advice (format nil "Date format: ~A" (date-presentation-hint-for-locale-guess)))
                (nil "Treatment" nil "Start Date" "End Date")
                ((:question :name "other medical treatment: Sirolimus/Rapamune" :data-type :boolean :view-type :checkbox )
                 "Sirolimus/Rapamune" nil
@@ -555,7 +561,9 @@ You may save your work at any point to complete at a later time.
               (apply #'make-question "Other surgery" (choices-options-yes-no)))
              (other/surgery/table
               (make-survey-group-table
-               (:name "other surgery table" :default-question-args (:data-type :date))
+               (:name "other surgery table"
+                :default-question-args (:data-type :date)
+                :advice (format nil "Date format: ~A" (date-presentation-hint-for-locale-guess)))
                (nil "Surgery" nil "Date")
                ((:question :name "other surgery: thoracic duct ligation" :data-type :boolean :view-type :checkbox )
                 "Thoracic duct ligation" nil (:question :name "other surgery: thoracic duct ligation: date"))
@@ -1302,7 +1310,9 @@ which can cause a collapsed lung.")
       (flet ((make-table-current-past-use (prefix)
                (let ((table
                       (make-survey-group-table
-                       (:name "current or past use table" :default-question-args (:data-type :date))
+                       (:name "current or past use table"
+                        :default-question-args (:data-type :date)
+                        :advice (format nil "Date format: ~A" (date-presentation-hint-for-locale-guess)))
                        (nil nil nil nil nil)
                        ((:question :name "current use answer" :data-type :boolean :view-type :checkbox)
                         "Current use."
