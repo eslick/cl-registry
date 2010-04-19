@@ -64,7 +64,8 @@
 	      (dolist (spec specs)
 		(case spec
 		  (:signature
-		   (htm (:P "Signature:&nbsp;" (render-text-input "signature" "" :maxlength 64.))))
+		   ;; TODO: customizable HTML header (widget??) before / around signature block
+		   (htm (:P "Subject Name:&nbsp;" (render-text-input "signature" "" :maxlength 64.))))
 		  #|
 		  (:date
 		   (htm (:P "Date:&nbsp;mm/dd/yyyy")))
@@ -76,11 +77,18 @@
 			    (str "&nbsp;")
 			    (render-checkbox "disagree" nil) (str #!"No"))))
 		  (:initials
-		   (htm (:P "Initials:&nbsp;" (render-text-input "initials" "" :maxlength 8.))))))))
+		   (htm (:P "Initial:&nbsp;" (render-text-input "initials" "" :maxlength 8.))))
+		  (:yes-no-initials
+		   (htm (:P "Please check one box and initial:&nbsp;"
+			    (str #!"Yes") (render-checkbox "agree" nil)
+			    (str "&nbsp;")
+			    (str #!"No") (render-checkbox "disagree" nil)
+			    (str "&nbsp;&nbsp;&nbsp;Initial:&nbsp;") (render-text-input "initials" "" :maxlength 8.))))))))
 	#'(lambda (&rest args)
 	    (declare (ignore args))
 	    (with-html
-	      (:P (str (format nil "Error: article not found: ~A" article-name))))))))
+	      (:P :CLASS "study-list-message"
+		  (str (format nil "Error: article not found: ~A" article-name))))))))
 
 (defun make-study-list-items (&key compact-format)
   (let ((patient (current-patient)))
@@ -169,11 +177,12 @@
 		     (t
 		      ;; No article?
 		      (with-html
-			(:P "Error! no article for consent form")))))
+			(:P :CLASS "study-list-message" "Error: no article for consent form")))))
 		  ;; Generate list of survey items
 		  (t
 		   (htm
 		    (:UL
+		     :CLASS "study-list-survey-list"
 		     ;; Check survey rules and completion status, then display surveys
 		     (let (next-survey
 			   suppress-links-p)
@@ -275,6 +284,6 @@
        (if (null study-list-item-widgets)
 	   (htm (:P :CLASS "study-list-message" (str #!"No studies are defined")))
 	   (htm
-	    (:UL
+	    (:UL :CLASS "study-ulist"
 	     (loop for child in study-list-item-widgets
 		do (render-widget-body child)))))))))
