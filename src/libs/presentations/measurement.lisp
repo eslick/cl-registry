@@ -214,7 +214,10 @@
               (cl-l10n:parse-number client-number)
             (cl-l10n::parse-error (c)
               (return-from client-validate
-                (fail-validation (cl-l10n::reason c)))))
+                (fail-validation (cl-l10n::reason c))))
+            (error (c)
+              (declare (ignore c))
+              (fail-validation "Not a number.")))
           (when unit
             (let ((canonical-unit (canonical-unit-for-measurement
                                    (measurement validator))))
