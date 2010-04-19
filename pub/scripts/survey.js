@@ -17,6 +17,10 @@ Event.addBehavior({
 	    updateAnswersOnChange (element.identify());
 	}
     },
+    'div.inline-trigger input[type=checkbox]:click' : function (e) {
+        Event.element(e).value = Event.element(e).checked ? 't' : 'nil';
+        Event.element(e).checked = true;
+    },
     'label.radio input:click' : function (e) {
 	updateAnswersOnChange (Event.element(e).identify());
     },
