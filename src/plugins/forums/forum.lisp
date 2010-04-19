@@ -185,8 +185,6 @@
   (date-created :hidep t)
   (date-updated :hidep t)
   (number :parse-as (integer))
-  (rating :parse-as (integer))
-  (number-of-ratings :parse-as (integer))
   (current-post-number :parse-as (integer))
   (related-content :hidep t))
 
