@@ -488,9 +488,11 @@ div.study-list ul.study-ulist {
     list-style: disc url(/pub/images/surveys/arrow-down.gif) inside;
 }
 
+/*
 div.study-list ul.study-ulist ul {
     list-style: disc;
 }
+*/
 
 div.study-list-item ul.study-list-survey-list {
    # list-style: disc url(/pub/images/surveys/arrow-right.gif) inside;
