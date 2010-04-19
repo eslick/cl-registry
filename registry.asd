@@ -216,6 +216,7 @@
 			       (:file "query-views")
 			       (:file "search-bar")
 			       (:file "explorer-pop-widget")
+			       (:file "data-dict")
 			       (:file "explorer"))
 			      :depends-on (collect analytics)
 			      :serial t)

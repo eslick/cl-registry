@@ -56,6 +56,12 @@
 			 (make-instance 'quick-help :page "explore-help" 
 					 :link-title #!"Get help here"
 					 :dialog-p t)
+			 'data-dictionary
+			 (make-instance 'data-dictionary-button
+					:link-title #!"Data Dictionary"
+					:data-dictionary
+					(make-instance 'data-dictionary
+						       :published-only-p t))
 			 'main-population
 			 (make-instance 'population-sidebar-selector)
 			 'comp-population

@@ -20,7 +20,7 @@
     -webkit-border-radius: 6px;
 }
 
-#explorer-workspace .workspace-sidebar .quick-help {
+#explorer-workspace .workspace-sidebar .quick-help, .data-dictionary-button {
     margin-right: 10px;
     padding: 10px 5px 5px 10px;
     font-size: 20px;
@@ -333,3 +333,6 @@ span.third-ctx-stats
 }
 
 
+div.data-dictionary {
+    overflow: auto;
+}
