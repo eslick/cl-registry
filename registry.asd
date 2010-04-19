@@ -146,6 +146,7 @@
 		    ((:file "twitter")
 		     (:file "featured-survey")
 		     (:file "import-export")
+		     (:file "hlog")
 		     (:file "user-map-widget")
 		     (:module comments
 			      :components
