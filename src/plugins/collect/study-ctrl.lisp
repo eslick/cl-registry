@@ -36,6 +36,7 @@
    (patient-consent-form-article-widget :accessor patient-consent-form-article-widget
 					:initarg :patient-consent-form-article-widget
 					:initform nil)
+   (article-widget :accessor article-widget :initarg :article-widget :initform nil)
    (compact-format-p :accessor compact-format-p :initarg :compact-format :initform nil)))
 
 (defmethod make-consent-form-widget ((study study) &rest args)
@@ -100,7 +101,10 @@
 		      :compact-format compact-format
 		      :patient-consent-form-article-widget
 		      ;; Create consent form article widget for study
-		      (make-consent-form-widget study)))))
+		      (make-consent-form-widget study)
+		      :article-widget
+		      (aif (articles-page-name study)
+			   (make-instance 'quick-help :page it :link-title "More information"))))))
 
 (defmethod render-widget-body ((widget study-list-item) &rest args)
   (declare (ignore args))
@@ -117,6 +121,8 @@
 	 :CLASS "study-list-item"
 	 (:LI :CLASS "study-list-study-name" (str (name study))
 	      (:P :CLASS "study-list-study-description" (str (description study)))
+	      (aif (article-widget widget)
+		(htm (:P (render-widget it))))
 	      (let ((this-study-complete-p ':maybe)
 		    (surveys
 		     (loop for survey in (surveys study)
