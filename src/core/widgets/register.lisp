@@ -190,15 +190,21 @@ message.
 				  :date (get-universal-time)
 				  :magic-key (weblocks::generate-action-code))))
       (persist-object *default-store* request)
-      (send-email email #!"LAMsight Registration Confirmation"
+      (send-email email
+		  (if (string-equal (get-site-config-param :site-name) "LAMsight")
+		      #!"LAMsight Registration Confirmation"
+		      #!"Registration Confirmation")
 		  (make-registration-message-body request)))))
 
 
 (defun confirm-registration (magic)
+  ;; self-registration disabled
   ;; took too long -> re-register
   ;; already registered
   ;; successful -> login page
-  (let* ((reg (find-registration magic)))
+  (if (get-site-config-param :login-self-register-disable)
+      (format nil "User self-registration is disabled. Please contact the site administrators")
+   (let* ((reg (find-registration magic)))
     (cond ((or (not reg) (registration-timeout-p reg))
 	   #!"Your registration request was not found.  Please try registering again.")
 	  ((already-registered-p reg)
@@ -210,7 +216,10 @@ message.
 	     (list
 	      (format nil "Hi '~A', welcome to LAMsight!" username)
 	      t)))
-	  (t #!"Invalid registration.  Please contact the LAMsight administrators"))))
+	  (t
+	   (if (string-equal (get-site-config-param :site-name) "LAMsight")
+	       #!"Invalid registration.  Please contact the LAMsight administrators"
+	       #!"Invalid registration.  Please contact the site administrators"))))))
 
 
 ;;

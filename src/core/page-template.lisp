@@ -105,7 +105,7 @@
 	 (str "&nbsp;|&nbsp;"))))
 
 (defun render-registration-header ()
-  (unless (current-user)
+  (unless (or (current-user) (get-site-config-param :login-self-register-disable))
     (with-html
       (render-link "register" (format nil "~A" (find-translation "Register")))
       (str "&nbsp;|&nbsp;"))))

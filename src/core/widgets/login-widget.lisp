@@ -35,8 +35,10 @@
     (render-translated-button "Log In")
     (awhen (message login)
       (htm (:br) (:span :id "login-error" (str it))))
-    (:p :id "login-new-user" (str #!"New User?") "&nbsp;"
-	(render-link "register" #!"Register Now >>"))
+    (unless (get-site-config-param :login-self-register-disable)
+      (htm
+       (:p :id "login-new-user" (str #!"New User?") "&nbsp;"
+	   (render-link "register" #!"Register Now >>"))))
     (:p :id "login-forgot" 
 	(render-link (f* (setf (message login) nil)
 			 (do-forgot-password-dialog)
