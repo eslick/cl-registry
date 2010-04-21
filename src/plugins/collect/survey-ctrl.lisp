@@ -646,8 +646,9 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 		      (htm (let ((presentation (find cell (presentations-for-group ctrl group) :key #'metadata)))
 			     (validate-answers cell (current-patient))
 			     (htm
-			      (:div :class "question-input"
-				    (render-presentation-editable presentation)))
+                              (:div :class "inline-trigger"
+                                    (:div :class "question-input"
+                                          (render-presentation-editable presentation))))
 			     #| ;; should probably refactor this code from the other render-group method
 			     (let ((comment-count (comment-count cell)))
 			     (htm (render-image-link (f* (do-question-comment-dialog ctrl cell))
