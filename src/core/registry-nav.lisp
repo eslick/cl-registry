@@ -48,7 +48,7 @@
 	   ((and tokens (= (length tokens) 1)
 		 (assoc (first tokens) (content-pages dispatcher) :test #'equal))
 	    (pop-tokens uri-tokens (length tokens))
-	    (make-article-widget (cdr it) :render-title-p nil :dom-id "tour"))
+	    (make-article-widget (cdr it) :render-title-p nil :dom-id "tour" :standalone-p t))
 	   ;; Unsubscribe user URL
 	   ((get-unsubscribe-widget-from-uri-tokens uri-tokens))
 	   (t (home-page dispatcher)))))

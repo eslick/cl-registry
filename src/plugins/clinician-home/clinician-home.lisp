@@ -32,29 +32,41 @@
 	  (render-widget (first (composite-widgets widget))))
     (:div :class "home-sidebar"
 	  (:div :class "top"
-		(mapcar #'render-widget (rest (composite-widgets widget))))
+		;; Home page content on the right followed by plugin widgets
+		(render-widget (second (composite-widgets widget)))
+		(mapcar #'render-widget (rest (rest (composite-widgets widget)))))
 	  (:div :class "bottom"
 		(str "&nbsp;")))))
 
 (defun make-clinician-home-page (&key plugins &allow-other-keys)
   (initialize-current-patient)
-  (let ((home (make-instance 'clinician-home 
-                :widgets
-	        `(,(make-instance 'composite
-                                  :widgets
-                                  (list (make-widget 'no-javascript)
-                                        (make-choose-center-widget)
-                                        (make-choose-patient-widget)
-                                        (make-article-widget "clinician-home"
-                                                             :sidebar-p t)
-                                        (make-patient-editor-widget)
-                                        (make-clinician-editor-widget)
-                                        (make-center-editor-widget)))
-                   ,@(instantiate-plugins plugins)))))
-    (mapcar (lambda (widget)
-	      (setf (widget-parent widget) home))
-	    (composite-widgets home))
-    home))
+  (labels ((render-rule-for-widget (&rest args)
+	     (declare (ignore args))
+	     (with-html (:hr)))
+	   (set-widget-rule-between (widget &key before after)
+	     (if before
+		 (setf (widget-prefix-fn widget) #'render-rule-for-widget))
+	     (if after
+		 (setf (widget-suffix-fn widget) #'render-rule-for-widget))
+	     ;; Returns
+	     widget))
+    (let ((home
+	   (make-instance 'clinician-home 
+			  :widgets
+			  `(,(make-instance 'composite
+					    :widgets
+					    (list (make-widget 'no-javascript)
+						  (make-choose-center-widget)
+						  (make-choose-patient-widget)
+						  (set-widget-rule-between (make-patient-editor-widget) :after t)
+						  (set-widget-rule-between (make-clinician-editor-widget) :after t)
+						  (make-center-editor-widget)))
+			     ,(make-article-widget "clinician-home" :sidebar-p t)
+			     ,@(instantiate-plugins plugins)))))
+      (mapcar (lambda (widget)
+		(setf (widget-parent widget) home))
+	      (composite-widgets home))
+      home)))
 			 
 ;; Defined in patient-home...
 

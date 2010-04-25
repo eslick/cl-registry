@@ -209,6 +209,15 @@ html>/**/body .header-nav li form{
     background: transparent url(/pub/images/page/panel_bg.png) repeat-y 50% 0;
 }
 
+.articles-page-standalone {
+    margin: 0px 15px 10px 0px;
+    padding: 10px 20px 10px 20px;
+    background-color: #ffffff;
+    color: #434343;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
+
 #public-page-end, #dashboard-end, .float-end{
     clear: both;
 }

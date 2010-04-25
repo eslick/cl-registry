@@ -6,17 +6,19 @@
   ((name :accessor articles-page-name :initarg :name)
    (title-p :accessor title-p :initarg :title-p :initform t)
    (sidebar-p :accessor sidebar-p :initarg :sidebar-p :initform nil)
+   (standalone-p :accessor standalone-p :initarg :standalone-p :initform nil)
    (answer-p :accessor answer-p :initarg :answer-p :initform nil))
   (:documentation "Provides a widget that allows users navigation among a set of
      pages that are stored in database objects in the markdown format.  There is
      a companion article-editor which allows users to add markdown content and
      create new pages"))
 
-(defun make-article-widget (pagename &key render-title-p sidebar-p render-answer-p dom-id)
+(defun make-article-widget (pagename &key render-title-p sidebar-p standalone-p render-answer-p dom-id)
   (make-instance 'composite :widgets
 		 (list (make-instance 'articles
 				      :name pagename
 				      :sidebar-p sidebar-p
+				      :standalone-p standalone-p
 				      :title-p render-title-p
 				      :answer-p render-answer-p
 				      :data-class 'article
@@ -47,12 +49,15 @@
 	       (with-html
 		 (:br) 
 		 (:p (render-link (f* (answer widget)) "Return"))
-		 (:br)))))
-    (if (sidebar-p widget)
-	(with-html
-	  (:div :class "article-page-sidebar"
-		(render-articles)))
-	(render-articles))))
+		 (:br))))
+	   (div-style-for-articles ()
+	     (cond
+	       ((sidebar-p widget) "articles-page-sidebar")
+	       ((standalone-p widget) "articles-page-standalone"))))
+    (aif (div-style-for-articles)
+	 (with-html
+	   (:div :class it (render-articles)))
+	 (render-articles))))
 
 (defun render-article (article &optional title-p)
   (with-html 
