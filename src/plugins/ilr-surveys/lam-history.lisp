@@ -131,14 +131,25 @@ For further information about data use please see
 <P>The time it takes to complete the following data entry form will vary, depending on the type of medical records you are using and the number of pulmonary function tests to enter.  
 You may save your work at any point to complete at a later time.
 <P> Additionally, please encourage all of your LAM patients to register on LAMsight.org!"))
-             (q/pft
-              (apply #'make-question "Do you have at least two (2) pulmonary function test (PFT) reports for the patient from different dates?" 
-                     (choices-options-yes-no)))
              (group2
               (make-survey-group-named survey-intro #!"PFT results for patient"
-                                       :advice "This study requires at least two (2) pulmonary function test (PFT) reports for each patient from different dates."
-                                       :order (list q/pft))))
-        (declare (ignore group1 group2)))
+                                       :advice "This study requires at least two (2) pulmonary function test (PFT) reports for each patient from different dates."))
+             (q/pft
+              ;; If not 2 or more PFTs for patient, then display advice and link to home page
+              (let* ((question
+                      (apply #'make-question "Do you have at least two (2) pulmonary function test (PFT) reports for the patient from different dates?" 
+                             (radio-options
+                              (choices-mirror-alist '("Yes" "No")))))
+                     (subgroup (make-survey-sub-group-named
+                                group2 ""
+                                :advice "Thank you for interest in this study, however at least two PFT results per patient are required.
+Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exit the survey.")))
+                (add-rule group2 question "No" subgroup ':inline)
+                ;; Returns
+                question)))
+        (declare (ignore group1))
+        ;; Group questions
+        (setf (group-questions group2) (list q/pft)))
 
       ;;
       ;; Main survey - ILR QOL/PFT Clinician Questionnaire
@@ -687,20 +698,37 @@ You may save your work at any point to complete at a later time.
       ;;
       ;; Results from other surveys
       ;;
-      (let* ((q22
-              (apply #'make-question "Does the patient have <B>six minute walk distance</B> (6MWD) results"
-                     :number 22.
-                     :prompt-format prompt-format-numbered-question
-                     (choices-options-yes-no)))
+      (let* ((group
+              (make-survey-group-named survey-clinician #!"SGRQ & Six Minute Walk Distance"))
+             (q22
+              (let ((question
+                     (apply #'make-question "Does the patient have <B>six minute walk distance</B> (6MWD) results"
+                            :number 22.
+                            :prompt-format prompt-format-numbered-question
+                            (choices-options-yes-no)))
+                    (subgroup
+                     (make-survey-sub-group-named group "q22 if yes"
+                                                  :advice "Please fill out the 6MWD diary under the Collect tab")))
+                ;; Group rules
+                (add-rule group question t subgroup ':inline)
+                ;; Returns
+                question))
+                                                  
              (q23
-              (apply #'make-question "Has the patient taken the <B>St. George's Respiratory Questionnaire (SGRQ)</B>"
-                     :number 23.
-                     :prompt-format prompt-format-numbered-question
-                     (choices-options-yes-no)))
-             (*group*
-              (make-survey-group-named survey-clinician #!"SGRQ & Six Minute Walk Distance"
-                                       :order (list q22 q23))))
-        (declare (ignore *group*)))
+              (let ((question
+                     (apply #'make-question "Has the patient taken the <B>St. George's Respiratory Questionnaire (SGRQ)</B>"
+                            :number 23.
+                            :prompt-format prompt-format-numbered-question
+                            (choices-options-yes-no)))
+                    (subgroup
+                     (make-survey-sub-group-named group "q23 if yes"
+                                                  :advice "Please fill out the SGRQ diary under the Collect tab")))
+                ;; Group rules
+                (add-rule group question t subgroup ':inline)
+                ;; Returns
+                question)))
+        ;; Group questions
+        (setf (group-questions group) (list q22 q23)))
 
       ;;
       ;; Survey - treatment/surgery
