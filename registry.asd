@@ -179,7 +179,7 @@
 			       (:file "sgrq")
 			       (:file "sf36")
 			       (:file "lam-history")
-			       (:file "suebyrnes"))
+			       (:file "ilr-beta"))
 			      :depends-on (analytics)
 			      :serial t)
 		     (:module admin
