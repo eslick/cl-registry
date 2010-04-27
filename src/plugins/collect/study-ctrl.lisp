@@ -287,9 +287,14 @@
       (:DIV
        :CLASS "study-list"
        (:H2 (str #!"Studies"))
-       (if (null study-list-item-widgets)
-	   (htm (:P :CLASS "study-list-message" (str #!"No studies are defined")))
-	   (htm
-	    (:UL :CLASS "study-ulist"
-	     (loop for child in study-list-item-widgets
-		do (render-widget-body child)))))))))
+       (cond
+	 ((null (current-patient))
+	  (htm (:P :CLASS "study-list-message"
+		   (str #!"You do not have access to any studies"))))
+	 ((null study-list-item-widgets)
+	  (htm (:P :CLASS "study-list-message" (str #!"No studies are defined"))))
+	 (t
+	  (htm
+	   (:UL :CLASS "study-ulist"
+		(loop for child in study-list-item-widgets
+		   do (render-widget-body child))))))))))
