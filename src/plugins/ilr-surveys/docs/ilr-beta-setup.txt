@@ -1,0 +1,73 @@
+Setting up ILR and LAMsight for the first studies
+
+ILR:
+
+ * Create study, surveys, and test data
+
+   (create-ilr-arr/pft-study :owner (get-user "kmcorbett"))
+   (create-ilr-arr/pft-data)
+
+ * Create forum categories and topics
+
+   (make-instance 'forum-category :name "Feature Requests")
+   (make-instance 'forum-category :name "General")
+   (make-instance 'forum-category :name "Using ILR")
+   (make-instance 'forum-topic :category * :subject "Welcome to ILR!"
+      :owner (get-user "kmcorbett")
+      :content-type ':markdown
+      :content "Help for first-time users")
+
+ * Use content editor to create articles:
+
+   1) Title "Privacy Policy" page "privacy-policy"
+   2) Title "Terms of Use" page "terms-of-use"
+   3) Title "The International LAM Registry" page "clinician-home"
+   4) Title "Collect Help and FAQ" page "collect-help"
+
+   Stubs for missing content should look something like this:
+
+   ------------------------------------------------------------
+   # Privacy Policy
+
+   **TBD**
+   ------------------------------------------------------------
+
+   See ticket #??? has content for "clinician-home" page.
+
+ * Create centers and users
+
+   (create-ilr-beta)
+
+LAMsight:
+
+ * Create study and surveys
+
+   (create-lamsight-qol/pft-study :owner (get-user "kmcorbett"))
+
+ * Content for patient study consent form
+
+   1) Title "Quality of Life and Pulmonary Function"
+      Page "lam-qol-study-consent-form"
+      Order 3 
+   2) Title "Quality of Life and Pulmonary Function 2"
+      Page "lam-qol-study-ilr-data-use-form"
+      Order 3
+
+   Extract content from docs/LAMsight-QOL-PFT-short-consent2.html
+
+ * Content for study articles
+ 
+   1) Title "Study Introduction"
+      Page "lam-qol-study-articles"
+   2) Title "Study Proposal"
+      Page "lam-qol-study-articles"
+
+   This content needs to be converted to HTML from Word original.
+
+ * Upload Lymphatics article to Docs tab
+
+   Directory: "ILR"
+   Filename: "lrb.2009.0028.lowlink.pdf_v03.pdf"
+
+ * Update "Latest news" with Pulmonary Quality of Life study
+   recruitment banner (TBD) 
