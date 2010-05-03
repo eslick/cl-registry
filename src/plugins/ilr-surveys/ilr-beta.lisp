@@ -4,7 +4,7 @@
 
 ;; Create users and centers
 
-(defun create-ilr-beta ()
+(defun create-ilr-beta-users ()
   (let ((center nil)
         (count-centers 0.)
         (user nil)
@@ -81,3 +81,16 @@
       ;; Returns
       (values count-users count-centers))))
 
+(defun create-ilr-beta-discuss (&aux cat)
+  (setq cat (make-instance 'forum-category :name "Feature Requests"))
+  (setq cat (make-instance 'forum-category :name "General"))
+  (setq cat (make-instance 'forum-category :name "Using ILR"))
+  (make-instance 'forum-topic
+                 :category cat :subject "Welcome to ILR!"
+                 :owner (get-user "kmcorbett")
+                 :content-type ':markdown
+                 :content "Help for first-time users"))
+
+(defun create-ilr-beta ()
+  (create-ilr-beta-users)
+  (create-ilr-beta-discuss))
