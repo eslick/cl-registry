@@ -86,7 +86,8 @@
   (setq cat (make-instance 'forum-category :name "General"))
   (setq cat (make-instance 'forum-category :name "Using ILR"))
   (make-instance 'forum-topic
-                 :category cat :subject "Welcome to ILR!"
+                 :number 1 :category cat :subject "Welcome to ILR!"
+                 :topic-tags '()
                  :owner (get-user "kmcorbett")
                  :content-type ':markdown
                  :content "Help for first-time users"))
