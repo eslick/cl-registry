@@ -21,30 +21,22 @@ Setting up ILR and LAMsight for the "first studies" (ILR launch)
       * Study Introduction (lam-qol-study-articles)
       * Study Proposal (lam-qol-study-articles)
 
-1.2 Upload Lymphatics article to Docs tab
+1.2 Create centers, users, and forum articles
+
+    (create-ilr-beta)
+
+    Give admin permission to one account and verify you can connect to
+    the new server instance.
+
+1.3 Upload Lymphatics article to Docs tab
 
     Directory: "ILR"
     Filename: "lrb.2009.0028.lowlink.pdf_v03.pdf"
 
-1.3 Create study, surveys, and test data
+1.4 Create study, surveys, and test data
 
     (create-ilr-arr/pft-study :owner (get-user "kmcorbett"))
     (create-ilr-arr/pft-data)
-
-1.4 Create centers and users
-
-    (create-ilr-beta)
-
-1.5 Create forum categories and topics
-
-    (make-instance 'forum-category :name "Feature Requests")
-    (make-instance 'forum-category :name "General")
-    (make-instance 'forum-category :name "Using ILR")
-    (make-instance 'forum-topic
-        :category * :subject "Welcome to ILR!"
-        :owner (get-user "kmcorbett")
-        :content-type ':markdown
-        :content "Help for first-time users")
 
 2. LAMsight
 
