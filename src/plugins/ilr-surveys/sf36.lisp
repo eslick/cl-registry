@@ -67,9 +67,7 @@ Does <B>your health now limit you</B> in these activities?  If so, how much?"
                  "c. Were limited in the kind of work or other activities"
                  "d. Had difficulty performing the work or other activities (for example, it took extra effort)")
                collect
-               (apply #'make-question name :prompt name
-                      (radio-options
-                       (choices-options-yes-no)))))
+               (apply #'make-question name :prompt name (choices-options-yes-no))))
          (*group3
           (make-instance 'survey-group
                          :name "SF36 Part 3"
@@ -82,9 +80,7 @@ Does <B>your health now limit you</B> in these activities?  If so, how much?"
                  "b. Accomplished less than you would like"
                  "c. Didn’t do work or other activities as carefully as usual")
                collect
-               (apply #'make-question name :prompt name
-                      (radio-options
-                       (choices-options-yes-no)))))
+               (apply #'make-question name :prompt name (choices-options-yes-no))))
          (*group4
           (make-instance 'survey-group
                          :name "SF36 Part 4"
