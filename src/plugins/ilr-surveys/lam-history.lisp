@@ -567,7 +567,15 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                 "Other" (:question :name "other medical treatment: other: specify" :data-type :string)
                 (:question :name "other medical treatment: other: from") (:question :name "other medical treatment: other: to"))))
              (pneumothorax/pleural-effusion/question
-              (apply #'make-question "Pneumothorax or pleural effusion treatment" (choices-options-yes-no)))
+              (let* ((question
+                      (apply #'make-question "Pneumothorax or pleural effusion treatment" (choices-options-yes-no)))
+                     (subgroup
+                      (make-survey-sub-group-named
+                       *group* "pneumothorax or pleural effusion treatment advice subgroup"
+                       :advice "Please fill out the Pneumothorax and Pleural Effusion Treatment Diary under the Collect tab")))
+                (add-rule *group* question t subgroup ':inline)
+                ;; Returns
+                question))
              (other/surgery/question
               (apply #'make-question "Other surgery" (choices-options-yes-no)))
              (other/surgery/table
@@ -915,8 +923,11 @@ Finally, we will ask you to submit to us all of your previous pulmonary function
       ;;
       (let* ((*group* (make-survey-group-named survey-patient #!"Demographics"))
              (q1 (make-question "Name" :number 1. :prompt "Name (First, Last)" :prompt-format prompt-format-numbered-colon))
-             (q2 (make-question "Date of birth" :number 2. :prompt-format prompt-format-numbered-colon))
-             (q3 (make-question "What country do you live in" :number 3. :prompt-format prompt-format-numbered-colon))
+             (q2 (make-question "Date of birth"
+                                :number 2.
+                                :data-type :date
+                                :prompt-format prompt-format-numbered-colon))
+             (q3 (make-question "What country do you live in" :number 3. :prompt-format prompt-format-numbered-question))
              (q4 (make-question "How many total years of schooling or education have you completed"
                                 :number 4. 
                                 :prompt-format prompt-format-numbered-question :data-type :number))
@@ -974,7 +985,7 @@ Finally, we will ask you to submit to us all of your previous pulmonary function
               (let* ((question
                       (apply #'make-question "What is your marital status"
                              :number 10.
-                             :prompt-format prompt-format-colon
+                             :prompt-format prompt-format-numbered-question
                              (radio-options
                               (choices-breaks-alist
                                '("Single" "Married" "Separated" "Divorced" "Widowed" "Other")))))
@@ -1021,7 +1032,7 @@ Finally, we will ask you to submit to us all of your previous pulmonary function
              (q14
               (make-question "When did you first have LAM related symptoms"
                              :number 14.
-                             :prompt-format prompt-format-numbered-colon
+                             :prompt-format prompt-format-numbered-question
                              :data-type :date))
              (q15
               (let* ((question
@@ -1084,7 +1095,8 @@ Finally, we will ask you to submit to us all of your previous pulmonary function
                        (nil nil nil)
                        ("On average I used to smoke" (:question :name "cigarettes per day before quit") "cigarettes per day")
                        ("I smoked for?" (:question :name "smoked years before quit" ) "years before I quit")
-                       ("I quit" (:question :name "quit months past") "months/years ago"))))
+                       ("I quit" (:question :name "quit months ago") "months ago")
+                       ("" (:question :name "quit years ago") "years ago"))))
                 (add-rule *group* question "Yes I smoke" table/yes ':inline)
                 (add-rule *group* question "I quit" table/quit ':inline)
                 ;; Returns
@@ -1171,7 +1183,7 @@ which can cause a collapsed lung.")
                      (q/treatments
                       (apply #'make-question "Other treatments"
                              :prompt-format ""
-                             (radio-options
+                             (multi-choices-options
                               (choices-breaks-alist
                                '("I had a chest tube placed" "I had a thoracoscopic or minimally invasive procedure"
                                  "I had open chest surgery" "Other")))))
@@ -1248,8 +1260,8 @@ which can cause a collapsed lung.")
                      (radio-options
                       (choices-mirror-alist '("Yes" "No" "I don't know")))))
              (q26
-              (apply #'make-question "What best describes your level of breathlessness during activity"
-                     :prompt  "What <B>best</B> describes your level of breathlessness during activity?"
+              (apply #'make-question "What <B>best</B> describes your level of breathlessness during activity"
+                     :prompt-format prompt-format-numbered-question
                      :number 26.
                      (radio-options
                       (choices-breaks-alist
@@ -1491,7 +1503,6 @@ which can cause a collapsed lung.")
                                       :advice "<P>Thank you for completing this form!
 <P>Please submit a copy of <B>all</B> of your pulmonary function test reports including your most recent PFT report (the same report that you used to enter information on this site for this study).
 <P>You may do this in any of the following ways:
-<P>Web drop box:Click here to upload file 
 <P>Email: <A HREF=\"mailto:LAMResearchStudy@partners.org\">LAMResearchStudy@partners.org</A>
 <P>Fax: (001) 617-380-0046 Please use a cover sheet for your fax!
 <P>Mail:
@@ -1663,50 +1674,46 @@ which can cause a collapsed lung.")
                           ((< rnd 2.) "Unknown")
                           ;; Diagnosis TSC-LAM
                           ((< rnd 12.)
-                           ;; Symptoms
-                           (add-answer q5 patient
-                                       (let (answer)
-                                         (block gather-symptoms
-                                           (dolist (symptom (mapcar #'cdr (question-choices q5)))
-                                             (when (= (random 3 q5-symptoms-rs) 1)
-                                               (when (member symptom '("None" "Unknown") :test #'string-equal)
-                                                 (setq answer (list symptom))
-                                                 (return-from gather-symptoms))
-                                               (push symptom answer))))
-                                         answer))
-                           ;; Organs affected
-                           (add-answer q6 patient
-                                       (let (answer)
-                                         (block gather-symptoms
-                                           (dolist (symptom (mapcar #'cdr (question-choices q6)))
-                                             (when (= (random 3 q6-symptoms-rs) 1)
-                                               (when (member symptom '("None" "Unknown/not screened") :test #'string-equal)
-                                                 (setq answer (list symptom))
-                                                 (return-from gather-symptoms))
-                                               (push symptom answer))))
-                                         answer))
-                           "TSC-LAM")
+                           (prog1 "TSC-LAM"
+                             ;; Symptoms
+                             (let (answer)
+                               (block gather-symptoms
+                                 (dolist (symptom (mapcar #'cdr (question-choices q5)))
+                                   (when (= (random 3 q5-symptoms-rs) 1)
+                                     (when (member symptom '("None" "Unknown") :test #'string-equal)
+                                       (setq answer (list symptom))
+                                       (return-from gather-symptoms))
+                                     (push symptom answer))))
+                               (and answer (add-answer q5 patient answer)))
+                             ;; Organs affected
+                             (let (answer)
+                               (block gather-symptoms
+                                 (dolist (symptom (mapcar #'cdr (question-choices q6)))
+                                   (when (= (random 3 q6-symptoms-rs) 1)
+                                     (when (member symptom '("None" "Unknown/not screened") :test #'string-equal)
+                                       (setq answer (list symptom))
+                                       (return-from gather-symptoms))
+                                     (push symptom answer))))
+                               (and answer (add-answer q6 patient answer)))))
                           (t "LAM"))))
-          (add-answer q7 patient
-                      (let (answer)
-                        (block gather-symptoms
-                          (dolist (symptom (mapcar #'cdr (question-choices q7)))
-                            (when (= (random 6. q7-diagnosis-method-rs) 1)
-                              (when (member symptom '("Unknown") :test #'string-equal)
-                                (setq answer (list symptom))
-                                (return-from gather-symptoms))
-                              (push symptom answer))))
-                        answer))
-          (add-answer q9 patient
-                      (let (answer)
-                        (block gather-symptoms
-                          (dolist (symptom (mapcar #'cdr (question-choices q9)))
-                            (when (= (random 6. q9-origin-rs) 1)
-                              (when (member symptom '("Unknown") :test #'string-equal)
-                                (setq answer (list symptom))
-                                (return-from gather-symptoms))
-                              (push symptom answer))))
-                        answer))
+          (let (answer)
+            (block gather-symptoms
+              (dolist (symptom (mapcar #'cdr (question-choices q7)))
+                (when (= (random 5. q7-diagnosis-method-rs) 1)
+                  (when (member symptom '("Unknown") :test #'string-equal)
+                    (setq answer (list symptom))
+                    (return-from gather-symptoms))
+                  (push symptom answer))))
+            (and answer (add-answer q7 patient answer)))
+          (let (answer)
+            (block gather-symptoms
+              (dolist (symptom (mapcar #'cdr (question-choices q9)))
+                (when (= (random 5. q9-origin-rs) 1)
+                  (when (member symptom '("Unknown") :test #'string-equal)
+                    (setq answer (list symptom))
+                    (return-from gather-symptoms))
+                  (push symptom answer))))
+            (and answer (add-answer q9 patient answer)))
           (add-answer q20 patient (= (random 7. q20-rs) 1.))
                       
           ))))
