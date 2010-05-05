@@ -213,7 +213,8 @@
   *total-patients*)
 
 (defun all-patients ()
-  (get-instances-by-value 'patient 'center (current-center)))
+  (select-if (f (p) (get-preference :lam-patient-p (user p)))
+	     (get-instances-by-value 'patient 'center (current-center))))
 
 (defun all-patient-oids ()
   (mapcar #'object-id (all-patients)))
