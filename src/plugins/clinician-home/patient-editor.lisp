@@ -72,18 +72,34 @@
      item-count (1- item-count) survey-count survey-count)))
 
 (defun delete-patients-and-answers (widget items)
-  (loop
-     with current-patient = (current-patient)
-     for id in (cdr items)
-     for patient = (get-object id)
-     do
-       (with-transaction ()
-         (dolist (answer (get-instances-by-value 'answer 'user patient))
-           (drop-instance answer))
-         (when (eq patient current-patient)
-           (setf (current-patient) nil))
-         (drop-instance patient)))
-  (mark-dirty-sibling-widgets-of-types widget '(choose-patient)))
+  (with-open-file (out (make-pathname :defaults (registry-relative-path (list "logs"))
+                                      :name "delete-patients" :type "log")
+                       :direction :output
+                       :if-exists :append
+                       :if-does-not-exist :create)
+
+    (with-standard-io-syntax
+      (format out "~&;; delete-patients-and-answers ~@[current user: ~A~]~%" 
+              (aif (current-user t) (username it)))
+      (loop
+         with current-patient = (current-patient)
+         for id in (cdr items)
+         for patient = (get-object id)
+         do
+         (with-transaction ()
+           (with-slots (id center external-id user) patient
+             (format out "(patient :id ~S~@[ :center ~S~]~@[ :external-id ~S~]~@[ :user ~S~])~%"
+                     id (and center (short-name center)) external-id user))
+           (dolist (answer (get-instances-by-value 'answer 'user patient))
+             (with-slots (question value entry-time) answer
+               (format out "(answer :question ~S :value ~S :entry-time ~S)~%"
+                       (and (typep question 'question) (question-prompt question))
+                       value entry-time))
+             (drop-instance answer))
+           (when (eq patient current-patient)
+             (setf (current-patient) nil))
+           (drop-instance patient)))
+      (mark-dirty-sibling-widgets-of-types widget '(choose-patient)))))
 
 (defun make-patient-editor-widget ()
   (let ((edw (make-instance 'patient-editor)))
