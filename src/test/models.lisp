@@ -1,8 +1,8 @@
-(in-package :lamsight2-test)
+(in-package :registry-test)
 
 (def-suite models
-    :description "Test the LAMsight data models"
-    :in lamsight2)
+    :description "Test the Registry data models"
+    :in registry-test)
 
 (in-suite models)
 
@@ -18,19 +18,19 @@
 (defun model-info-instance (model-info &optional
                             (class-name (model-info-class-name model-info)))
   (awhen (model-info-mid model-info)
-    (lamsight2::get-model class-name it)))
+    (registry::get-model class-name it)))
 
 (defun drop-model-info-instances (model-infos)
   (elephant:drop-instances (delete nil (mapcar 'model-info-instance model-infos))))
 
-(defun lampack (x)
-  (or (find-symbol (string x) :lamsight2)
-      (error "No symbol named ~x in package lamsight2"
+(defun sympack (x)
+  (or (find-symbol (string x) :registry)
+      (error "No symbol named ~x in package REGISTRY"
              (string x))))
 
 (defun new-model-info (class-name slot-names tests values other-values)
-  (setf class-name (lampack class-name)
-        slot-names (mapcar 'lampack slot-names))
+  (setf class-name (sympack class-name)
+        slot-names (mapcar 'sympack slot-names))
   (let* ((class (find-class class-name))
          (slotds (c2mop:class-slots class))
          (values-tail values)
@@ -48,7 +48,7 @@
        :tests tests
        :values values
        :other-values other-values
-       :mid (lamsight2::mid instance)))))
+       :mid (registry::mid instance)))))
 
 (defun make-model-infos (&rest descriptions)
   (let ((infos nil)
@@ -63,6 +63,8 @@
         (drop-model-info-instances infos)))))
 
 (defvar *model-dont-compare-value* (list :dont-compare))
+
+(defvar *break-testing-article-class* nil) ;for debugging ticket #282
 
 (defun test-model-infos (model-infos)
   (flet ((check-values (class-name instance info values)
@@ -85,61 +87,65 @@
            for slot-name in (model-info-slot-names info)
            for value in (model-info-other-values info)
            do
-             (setf (slot-value instance slot-name) value))))
+             (setf (slot-value instance slot-name) value))
+	(if (and (eq class-name 'registry::article) *break-testing-article-class*)
+	    (break "after set values"))))
     (metatilities:collect-garbage)
     (dolist (info model-infos)
       (let* ((class-name (model-info-class-name info))
              (instance (model-info-instance info class-name)))
+	(if (and *break-testing-article-class* (eq class-name 'registry::article))
+	    (break "before check values"))
         (check-values class-name
                       instance
                       info
                       (model-info-other-values info))))))
 
 (defun run-model-test ()
-  (let* ((user (or (lamsight2::get-user "test user")
-                   (make-instance 'lamsight2::user
+  (let* ((user (or (registry::get-user "test user")
+                   (make-instance 'registry::user
                                   :username "test user")))
-         (user2 (or (lamsight2::get-user "test user 2")
-                    (make-instance 'lamsight2::user
+         (user2 (or (registry::get-user "test user 2")
+                    (make-instance 'registry::user
                                   :username "test user 2")))
          (question1 (make-instance
-                     'lamsight2::question
+                     'registry::question
                      :name "Question name"
                      :prompt "What is the wing velocity of a fully-laden sparrow?"))
          (question2 (make-instance
-                     'lamsight2::question
+                     'registry::question
                      :name "Question name 2"
                      :prompt "What is your favorite color?"))
          (group1 (make-instance
-                  'lamsight2::survey-group
+                  'registry::survey-group
                   :name "Test group 1"))
          (group2 (make-instance
-                  'lamsight2::survey-group
+                  'registry::survey-group
                   :name "Test group 2"))
          (cat1 (make-instance
-                  'lamsight2::forum-category
+                  'registry::forum-category
                   :name "Test category"
                   :short "Test"))
          (cat2 (make-instance
-                  'lamsight2::forum-category
+                  'registry::forum-category
                   :name "Test category 2"
                   :short "Test 2"))
          (topic1 (make-instance
-                  'lamsight2::forum-topic
+                  'registry::forum-topic
                   :number 1
                   :category cat1
                   :owner user
                   :content "Test topic 1"
                   :content-type :html))
          (topic2 (make-instance
-                  'lamsight2::forum-topic
+                  'registry::forum-topic
                   :number 2
                   :category cat2
                   :owner user
                   :content "Test topic 2"
                   :content-type :markdown))
-         (constraint1 (make-instance 'lamsight2::constraint))
-         (constraint2 (make-instance 'lamsight2::constraint)))
+         (constraint1 (make-instance 'registry::constraint))
+         (constraint2 (make-instance 'registry::constraint)))
     (unwind-protect
          (let ((infos (make-model-infos
                        `(announcement

@@ -1,6 +1,6 @@
-(in-package :lamsight2-test)
+(in-package :registry-test)
 
-(def-suite lamsight2 :description "All the LAMsight tests")
+(def-suite registry-test :description "All the Registry tests")
 
-(in-suite lamsight2)
+(in-suite registry-test)
 
