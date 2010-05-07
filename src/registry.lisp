@@ -17,6 +17,7 @@
   (apply #'start-weblocks (remove-keyword-parameters args :config))
   (apply #'start-webapp 'registry (remove-keyword-parameters args :port :config))
   ;; Customize session parameters
+  (setf hunchentoot::*rewrite-for-session-urls* nil) ;; cookies only
   (setf hunchentoot::*session-max-time* #.(* 3 60 60)) ;; 12 hour timeout
   (setf hunchentoot::*session-gc-frequency* 100) ;; 12 hour timeout
   ;; Debugging settings
