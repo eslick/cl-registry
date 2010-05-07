@@ -189,10 +189,10 @@ html>/**/body .header-nav li form{
 
 #public-about{
     padding: 13px 0 0 0;
-    margin: 0 0 0 -10px;
+    margin: -14px 0 0 -10px;
 }
 
-#content-top, #dashboard-header, html body div#public-about{
+#content-top, #dashboard-header {
     background: transparent url(/pub/images/page/panel_top.png) no-repeat center top;
     display: block;
     height: 14px;
