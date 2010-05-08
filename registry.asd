@@ -256,6 +256,7 @@
 			   (:module lamsight-1.5
 				    :components
 				    ((:file "2010-05-08-266-lamsight-study-recruitment"))))
+			  :serial t
 			  :depends-on ("package")))
     :depends-on (:weblocks :stdutils :langutils 
 			   :ironclad :cl-l10n 
