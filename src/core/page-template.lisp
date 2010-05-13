@@ -141,6 +141,32 @@
       "home"
       (second (remaining-tokens *uri-tokens*))))
 
+
+;; ============================================================
+;; Main content area is between page headers and footer
+;; WITH-MAIN-CONTENT-AREA-HTML generates DIV tags w/ style IDs
+;; ============================================================
+
+(defmacro with-main-content-area-html (&body body)
+  ;; Check for syntax errors
+  (dolist (spec body)
+    (unless (and (listp spec)
+		 (typep (first spec) '(or string symbol))
+		 (member (first spec) '(:top :middle-top :middle-indent :middle-bottom :bottom) :test #'string-equal))
+      (error "Invalid specification for WITH-MAIN-CONTENT-AREA-HTML: ~S" spec)))
+  (let ((top (rest (assoc :top body :test #'string-equal)))
+	(middle-top (rest (assoc :middle-top body :test #'string-equal)))
+	(middle-indent (rest (assoc :middle-indent body :test #'string-equal)))
+	(middle-bottom (rest (assoc :middle-bottom body :test #'string-equal)))
+	(bottom (rest (assoc :bottom body :test #'string-equal))))
+    `(with-html
+       (:DIV :ID "main-content-area"
+	     (:DIV :ID "main-content-top" ,@top)
+	     (:DIV :ID "main-content-middle" ,@middle-top
+		   (:DIV :ID "main-content-middle-indent" ,@middle-indent)
+		   ,@middle-bottom)
+	     (:DIV :ID "main-content-bottom" ,@bottom)))))
+		       
 ;; ============================================================
 ;; And the footer is rendered after the site
 ;; ============================================================

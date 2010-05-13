@@ -173,6 +173,10 @@
 			       (:file "nlp")
 			       (:file "queries"))
 			      :serial t)
+		     (:module qualitymetric
+			      :components
+			      ((:file "sf36")
+			       (:file "qualitymetric")))
 		     (:module ilr-surveys
 			      :components
 			      ((:file "ilr-surveys")
@@ -180,7 +184,7 @@
 			       (:file "sf36")
 			       (:file "lam-history")
 			       (:file "ilr-beta"))
-			      :depends-on (analytics)
+			      :depends-on (analytics qualitymetric)
 			      :serial t)
 		     (:module admin
 			      :components
