@@ -81,16 +81,45 @@
       ;; Returns
       (values count-users count-centers))))
 
-(defun create-ilr-beta-discuss (&aux cat)
-  (setq cat (make-instance 'forum-category :name "Feature Requests"))
-  (setq cat (make-instance 'forum-category :name "General"))
-  (setq cat (make-instance 'forum-category :name "Using ILR"))
-  (make-instance 'forum-topic
-                 :number 1 :category cat :subject "Welcome to ILR!"
-                 :topic-tags '()
-                 :owner (get-user "kmcorbett")
-                 :content-type ':markdown
-                 :content "Help for first-time users"))
+(defun create-ilr-beta-discuss (&key (owner (current-user t)) force &aux cat)
+  (with-transaction ()
+    ;; Delete old topics and categories
+    (when force
+      (mapcar #'drop-instance (get-instances-by-class 'forum-topic))
+      (mapcar #'drop-instance (get-instances-by-class 'forum-category)))
+    ;; Create new categories and topics
+    (setq cat (make-instance 'forum-category :name "Feature Requests"))
+    (setq cat (make-instance 'forum-category :name "General"))
+    (setq cat (make-instance 'forum-category :name "Using ILR"))
+    (let ((topic-content
+           "<h2>Help for new users of the International LAM Registry </h2>
+<p>Click on the <strong>Home tab</strong> to manage patient record information. 
+Go down to Add / Edit Patient. Click on \"Add\" and add a patient record.
+ILR will create a *unique internal ID* for each patient.</p>
+<p>Optionally: Record an <em>external ID</em> for the patient, for example your own electronic record ID. </p>
+<p>Click on the <strong>Collect tab</strong> to see one or more clinical studies running on the ILR. 
+From this page you can fill in survey information for the selected patient.</p>
+<p>When you have created multiple patient records, you can select a patient ID 
+from the drop-down menu on the Home tab or on the Collect tab. 
+You can select a patient and return to the Collect tab to modify or add survey information for the patient. </p>
+<p>The journal article about the ILR is available under the <strong>Docs tab</strong>. 
+Click on ILR then click on the article to open.</p>
+<p>Need more <strong>help</strong>? 
+Send email to  <a href=\"mailto:admin@internationallamregistry.org\">admin@internationallamregistry.org</a></p>"))
+      ;; Create forum topic
+      (make-instance 'forum-topic
+                     :number (next-topic-number) :category cat :subject "Welcome to ILR!"
+                     :topic-tags '()
+                     :owner owner
+                     :content-type ':html
+                     :content topic-content)
+      ;; Alternatively, create an article to use as a template, later create forum topic by hand
+      ;; Inspired by bug #286 and other problems observed creating forum topic programmatically
+      #+NIL
+      (make-instance 'article :title "Welcome to ILR!"
+                     :owner owner :page "welcome-to-ilr" :order 1
+                     :content-type ':html
+                     :content topic-content))))
 
 (defun create-ilr-beta ()
   (create-ilr-beta-users)
