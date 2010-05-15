@@ -23,7 +23,7 @@
 			     (list (make-front-flash) ;; ISE: this doesn't work
 				   (make-widget ;; this is for styling
 				    (f* (with-html 
-					  (:div :id "content-top"))))
+					  (:div :id "main-content-top"))))
 				   (make-instance 'front-page-dispatcher))
 			     :dom-id "main-content-area")))
     page))

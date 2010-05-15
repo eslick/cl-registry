@@ -57,7 +57,7 @@ a.button img{
 
 .page-wrapper
 {
-  width: 980px;
+  width: 968px;
   text-align: left;
   max-width: 75em;
   min-width: 60em;
@@ -89,6 +89,16 @@ div#root
   color: #222;
 }
 
+#registry-dispatcher {
+  float: left;
+}
+
+div#main-content-area {
+  float: left;
+  width: 968px;
+}
+
+
 .dialog-body
 {
     max-height: 400px;
@@ -110,14 +120,8 @@ h2{
 /***************************************/
 
 .header-logo{
-    position: absolute;
+    float: left;
     top: 5px;
-    left: 50%;
-    margin-left: -480px;
-    width: 200px;
-    height: 45px;
-/*    width: 265px;
-    height: 70px;*/
 }
 
 .header-logo a img{
@@ -135,11 +139,8 @@ h2{
 /***************************************/
 
 .header-nav{
-    position: absolute;
+    float: right;
     top: 15px;
-    left: 50%;
-    margin-left: -140px;
-    width: 600px;
     padding: 10px;
 }
 
@@ -177,12 +178,6 @@ html>/**/body .header-nav li form{
 /*           CONTENT LAYOUT            */
 /***************************************/
 
-.page-wrapper {
-    margin: 80px auto 0;
-    text-align: left;
-    width: 968px;
-}
-
 #dashboard {
     min-height: 35em;
 }
@@ -192,7 +187,7 @@ html>/**/body .header-nav li form{
     margin: -14px 0 0 -10px;
 }
 
-#content-top, #dashboard-header {
+#main-content-top, #dashboard-header {
     background: transparent url(/pub/images/page/panel_top.png) no-repeat center top;
     display: block;
     height: 14px;
@@ -200,17 +195,30 @@ html>/**/body .header-nav li form{
     margin-top: -4px;
 }
 
+#main-content-middle {
+    margin-top: -15px;
+    padding-left: 0px;
+    margin-left: 0px;
+    width: 968px;
+    min-height: 30em;
+}
+
+#main-content-middle-indent {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
 #public-about div.article{
     margin: 0 0 0 -10px;
     width: 928px;
 }
 
-#public-about div.article, div.registry-navigation, div.front-page, #public-about div.article{ 
+#main-content-middle, #public-about div.article, div.registry-navigation, div.front-page, .articles-page-standalone { 
     background: transparent url(/pub/images/page/panel_bg.png) repeat-y 50% 0;
 }
 
 .articles-page-standalone {
-    margin: 0px 15px 10px 0px;
+    margin: 0px 0px 0px 15px;
     padding: 10px 20px 10px 20px;
     background-color: #ffffff;
     color: #434343;
@@ -300,6 +308,7 @@ div.home-map-dialog {
 
 div#header-tabs{
     display: block;
+    float: left;
     width: 968px;
     text-align: center;
     margin: 0 auto;
