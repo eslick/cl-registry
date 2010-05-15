@@ -18,10 +18,17 @@
   (setf hunchentoot:*log-error-p-function* 'log-error-p-function
         *log-level* level)
   (set-log-level level)
-  (setf hunchentoot:*message-log-pathname*
-        (make-pathname :defaults (registry-relative-path (list "logs"))
-                       :name "registry"
-                       :type "log")))
+  ;; Returns
+  (values
+   (setf hunchentoot:*message-log-pathname*
+	 (make-pathname :defaults (registry-relative-path (list "logs"))
+			:name "registry"
+			:type "log"))
+   (setf hunchentoot:*access-log-pathname*
+	 (if (get-site-config-param :enable-access-logging)
+	     (make-pathname :defaults (registry-relative-path (list "logs"))
+			    :name "access"
+			    :type "log")))))
 
 (defun set-log-level (level)
   (setf *log-level* level)
