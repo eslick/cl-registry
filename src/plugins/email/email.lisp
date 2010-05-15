@@ -11,30 +11,42 @@
 ;;  Event-based on-demand e-mail notifications
 ;; =============================================================
 
+;; Utilities
+
+(defmacro when-email-notification-enabled-p ((&optional (user-class ':users)) &body body)
+  `(let ((*enable-email-to-users-default-class* ',user-class))
+     (declare (special *enable-email-to-users-default-class*))
+     (when (get-site-config-param :email-notification-enabled-p)
+       ,@body)))
+
 (defun send-unsubscribable-email (user subject body type)
   (send-email-to-users
    user subject
    (add-unsubscribe-link body (username user) type)))
 
+;; Event handlers
+
 (defun handle-new-blog-entry (event)
   "Send blog entries to anyone who requests updates"
-  (dolist (user (users-for-preference-value :update-subscriber t))
-    (multiple-value-bind (subject body)
-	(generate-blog-update-email user (event-data event))
-      (send-unsubscribable-email user subject body :updates))))
+  (when-email-notification-enabled-p ()
+    (dolist (user (users-for-preference-value :update-subscriber t))
+      (multiple-value-bind (subject body)
+	  (generate-blog-update-email user (event-data event))
+	(send-unsubscribable-email user subject body :updates)))))
 
 (defun handle-new-forum-post (event)
   "Notify all participants in a topic of new posts therein."
-  (let ((post (event-data event))
-        (editors (content-editors)))
-    (dolist (user (union (select-if 'send-immediate-forum-update-p
-				    (topic-participants (post-topic post)))
-			 editors))
-      (multiple-value-bind (subject body)
-	  (generate-forum-post-email user post)
-        (if (member user editors)
-            (send-email-to-users user subject body)
-            (send-unsubscribable-email user subject body :forums))))))
+  (when-email-notification-enabled-p ()
+    (let ((post (event-data event))
+	  (editors (content-editors)))
+      (dolist (user (union (select-if 'send-immediate-forum-update-p
+				      (topic-participants (post-topic post)))
+			   editors))
+	(multiple-value-bind (subject body)
+	    (generate-forum-post-email user post)
+	  (if (member user editors)
+	      (send-email-to-users user subject body)
+	      (send-unsubscribable-email user subject body :forums)))))))
 
 (defun send-immediate-forum-update-p (user)
   (and 
@@ -42,16 +54,17 @@
    (has-preference-value-p user :forum-email-frequency "daily")))
 
 (defun handle-new-comment (event)
-  "Always send comment posts to editors"
-  (let* ((comment (event-data event))
-	 (question (comment-target comment))
-	 (surveys (find-group-surveys (parent question)))
-	 (owners (mappend #'survey-editors surveys)))
-    (assert (eq (type-of question) 'question))
-    (dolist (user owners)
-      (multiple-value-bind (subject body)
-	  (generate-survey-comment-email user comment)
-	(send-email-to-users user subject body)))))
+  "Send comment posts to owners"
+  (when-email-notification-enabled-p (:owners)
+    (let* ((comment (event-data event))
+	   (question (comment-target comment))
+	   (surveys (find-group-surveys (parent question)))
+	   (owners (mappend #'survey-editors surveys)))
+      (assert (eq (type-of question) 'question))
+      (dolist (user owners)
+	(multiple-value-bind (subject body)
+	    (generate-survey-comment-email user comment)
+	  (send-email-to-users user subject body))))))
 
 (eval-when (:compile-toplevel :load-toplevel)
   (add-event-handler :new-forum-post 'handle-new-forum-post)

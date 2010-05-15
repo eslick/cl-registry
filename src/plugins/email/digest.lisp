@@ -13,7 +13,7 @@
 (defun generate-blog-update-email (user blog-entry)
   (let* ((lang (or (get-preference :default-language user) "en"))
 	 (template (message-template-for-event :new-blog-entry)))
-    (when (typep blog-entry 'blog-entry)
+    (when (and (typep blog-entry 'blog-entry) template)
       (fill-template template
 		     `(:author ,(username (blog-entry-author blog-entry))
 		       :title ,(slot-value-translation blog-entry 'title lang)
@@ -34,7 +34,7 @@
 	 (translation (unless (equal (original-language forum-post) lang)
 			(get-translation forum-post lang nil)))
 	 (template (message-template-for-event :new-forum-post)))
-    (when (typep forum-post 'forum-post)
+    (when (and (typep forum-post 'forum-post) template)
       (fill-template template
 		     `(:author ,(username (post-owner forum-post))
 		       :url ,(url-for-topic (post-topic forum-post))
@@ -89,35 +89,36 @@
 	 (new-message-count 0)
 	 (update (make-array 1000 :element-type 'character :adjustable t
 			     :fill-pointer 0)))
-    (with-output-to-string (s update)
-      (dolist (topic topics)
-	(format s "~a (~a)~%" (topic-subject topic) (url-for-topic topic))
-	(let* ((posts (recent-posts-in-topic topic since))
-	       (n (length posts))
-	       (more nil))
-	  (incf new-message-count n)
-	  (when (> n max-posts)
-	    (setq posts (subseq posts 0 max-posts))
-	    (setq more (- n max-posts)))
-	  (dolist (post posts)
-	    (format s "(~a)~%"
-                    ;;(post-title post)
-                    (username (post-owner post))))
-	  (when more
-	    (format s "  and ~d more~%" more))
-	  (format s "~%"))))
-    (when (plusp new-message-count)
-      (fill-template template
-		     `(:activity ,update
-		       :date ,(with-string-stream (stream)
-				 (cl-l10n:format-time stream
-						     (get-universal-time) t nil
-						     (cl-l10n::locale lang)))
-		       :since ,(with-string-stream (stream)
-			         (cl-l10n:format-time stream since t t
-						      (cl-l10n::locale lang)))
-		       :count ,(format nil "~d" new-message-count))
-		     lang))))
+    (when template
+      (with-output-to-string (s update)
+	(dolist (topic topics)
+	  (format s "~a (~a)~%" (topic-subject topic) (url-for-topic topic))
+	  (let* ((posts (recent-posts-in-topic topic since))
+		 (n (length posts))
+		 (more nil))
+	    (incf new-message-count n)
+	    (when (> n max-posts)
+	      (setq posts (subseq posts 0 max-posts))
+	      (setq more (- n max-posts)))
+	    (dolist (post posts)
+	      (format s "(~a)~%"
+		      ;;(post-title post)
+		      (username (post-owner post))))
+	    (when more
+	      (format s "  and ~d more~%" more))
+	    (format s "~%"))))
+      (when (plusp new-message-count)
+	(fill-template template
+		       `(:activity ,update
+			 :date ,(with-string-stream (stream)
+				   (cl-l10n:format-time stream
+						       (get-universal-time) t nil
+						       (cl-l10n::locale lang)))
+			 :since ,(with-string-stream (stream)
+				   (cl-l10n:format-time stream since t t
+							(cl-l10n::locale lang)))
+			 :count ,(format nil "~d" new-message-count))
+		       lang)))))
 
 (defun announcements-since (since)
   (remove-if #'(lambda (a)
@@ -207,12 +208,13 @@ See http://lamsight.media.mit.edu/trac/ticket/46"
 (defun generate-site-update-email (user since)
   (let* ((lang (or (get-preference :default-language user) "en"))
 	 (template (message-template-for-event :site-update)))
-    (fill-template template
-                   `(:news ,(generate-news user since)
-                           :featured ,(generate-featured user since)
-                           :next-steps ,(generate-next-steps user t)
-                           :forum-activity ,(generate-forum-activity user since))
-                   lang)))
+    (when template
+      (fill-template template
+		     `(:news ,(generate-news user since)
+			     :featured ,(generate-featured user since)
+			     :next-steps ,(generate-next-steps user t)
+			     :forum-activity ,(generate-forum-activity user since))
+		     lang))))
 
 ;; ============================================================
 ;;  Unsubscribe links
