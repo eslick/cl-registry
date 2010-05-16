@@ -259,7 +259,10 @@
 			  ((:file "patches")
 			   (:module lamsight-1.5
 				    :components
-				    ((:file "2010-05-08-266-lamsight-study-recruitment"))))
+				    ((:file "2010-05-08-266-lamsight-study-recruitment")))
+			   (:module ilr-1.5
+				    :components
+				    ((:file "2010-05-16-288-ilr-message-templates"))))
 			  :serial t
 			  :depends-on ("package")))
     :depends-on (:weblocks :stdutils :langutils 
