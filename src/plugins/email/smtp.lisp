@@ -27,7 +27,7 @@
      ;;(log-message :email :debug "Inhibited mail with subject ~s to ~s" subject
      ;;             addresses)
      nil)
-    (t
+    ((and (stringp addresses) (plusp (length addresses)))
      (cl-smtp:send-email *smtp-host* 
 			 (site-email-admin-address)
 			 addresses subject body))))
