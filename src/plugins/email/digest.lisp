@@ -26,7 +26,8 @@
 		     lang))))
 
 (defun url-for-topic (topic)
-  (format nil "http://www.lamsight.org/dashboard/discuss/topic/~d"
+  (format nil "~@[http://~A~]/dashboard/discuss/topic/~d"
+	  (get-site-config-param :site-base-url)
 	  (topic-number topic)))
 
 (defun generate-forum-post-email (user forum-post)
