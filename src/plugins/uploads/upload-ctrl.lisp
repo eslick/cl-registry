@@ -169,9 +169,9 @@
                          :on-query 'upload-directories-query)))
     (make-instance 'composite
       :widgets
-      `(,(lambda () (render-directory-grid-header directory-grid))
+      `(,(make-widget (lambda () (render-directory-grid-header directory-grid)))
          ,directory-grid
-         render-upload-file-grid-header
+         ,(make-widget 'render-upload-file-grid-header)
         ,file-grid))))
 
 (defun goto-upload-directory (grid directory)
