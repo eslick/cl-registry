@@ -54,25 +54,26 @@
 
 (defmethod make-consent-form-widget ((article-name string) &rest specs)
   (let ((article (first (articles-for-pagename article-name))))
-    (if article
-	#'(lambda (&rest args)
-	    (declare (ignore args))
-	    (with-html
-	      (:DIV :CLASS "study-list-consent-form-scroll-area"
-		    (str (maybe-markdown
-			  (slot-value-translation article 'content)
-			  (article-content-type article))))
-	      (dolist (spec specs)
-		(case spec
-		  (:signature
-		   ;; TODO: customizable HTML header (widget??) before / around signature block
-		   (htm (:P "Subject Name:&nbsp;" (render-text-input "signature" "" :maxlength 64.))))
-		  #|
-		  (:date
+    (make-widget
+     (if article
+	 #'(lambda (&rest args)
+	     (declare (ignore args))
+	     (with-html
+	       (:DIV :CLASS "study-list-consent-form-scroll-area"
+		     (str (maybe-markdown
+			   (slot-value-translation article 'content)
+			   (article-content-type article))))
+	       (dolist (spec specs)
+		 (case spec
+		   (:signature
+		    ;; TODO: customizable HTML header (widget??) before / around signature block
+		    (htm (:P "Subject Name:&nbsp;" (render-text-input "signature" "" :maxlength 64.))))
+		   #|
+		   (:date
 		   (htm (:P "Date:&nbsp;mm/dd/yyyy")))
-		  (:time
+		   (:time
 		   (htm (:P "Time:&nbsp;HH:MM:SS")))
-		  |#
+		   |#
 		  (:yes-no
 		   (htm (:P (render-checkbox "agree" nil) (str #!"Yes")
 			    (str "&nbsp;")
@@ -89,7 +90,7 @@
 	    (declare (ignore args))
 	    (with-html
 	      (:P :CLASS "study-list-message"
-		  (str (format nil "Error: article not found: ~A" article-name))))))))
+		  (str (format nil "Error: article not found: ~A" article-name)))))))))
 
 (defun make-study-list-items (&key compact-format)
   (let ((patient (current-patient)))
@@ -196,7 +197,8 @@
 			 (let ((this-survey-complete-p (survey-complete-p (current-patient) survey))
 			       (enable-this-link-p (not suppress-links-p))
 			       message
-			       (survey-rule (find survey (survey-rules study) :key #'survey-rule-survey)))
+			       (survey-rule (find survey (survey-rules study) :key #'survey-rule-survey))
+			       survey-url)
 			   ;; If survey not completed, then study not completed
 			   (setq this-study-complete-p (and this-study-complete-p this-survey-complete-p))
 			   ;; Display study list item for survey 
@@ -207,6 +209,9 @@
 					       (if this-survey-complete-p "check" "checkbox")))
 				 (str "&nbsp;")
 				 (when survey-rule
+				   ;; Get survey URL - may be link to external survey
+				   (setq survey-url (survey-rule-url survey-rule))
+				   ;; State changes depending on survey rule type
 				   (case (survey-rule-type survey-rule)
 				     (:DOFIRST
 				      (cond
@@ -228,7 +233,9 @@
 				 (if enable-this-link-p
 				     (htm
 				      (:SPAN :CLASS "study-list-survey-name"
-					     (:A :HREF (format nil "/dashboard/collect/~A/~A/" "survey" (mid survey))
+					     (:A :HREF
+						 (str (or survey-url
+							  (format nil "/dashboard/collect/~A/~A/" "survey" (mid survey))))
 						 (:SPAN :CLASS "study-list-survey-name-alink"
 							(str (name survey)))
 						 (:SPAN :CLASS "study-list-survey-description-alink"
