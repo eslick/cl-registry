@@ -10,29 +10,29 @@
 (defun create-qualitymetric-sf36-survey (&key (owner (current-user t)))
   (with-transaction ()
     (let* ((survey
-	    (make-instance 'survey :name "SF-36"
-			   :description "QualityMetric Dynamic SF-36(tm) Health Survey - Scores"
-			   :owner owner :origin "researcher" :published t :priority 1 :diary-p nil
-			   :ranking-record (make-ranking-record :ranking nil :distribution nil)))
-	   (group
-	    (make-survey-group-named survey "SF-36 Scores" :advice "Enter the score for each scale"))
-	   questions)
+            (make-instance 'survey :name "SF-36 Scores"
+                                   :description "QualityMetric Dynamic SF-36(tm) Health Survey - Scores"
+                                   :owner owner :origin "researcher" :published nil :priority 1 :diary-p nil
+                                   :ranking-record (make-ranking-record :ranking nil :distribution nil)))
+           (group
+            (make-survey-group-named survey "SF-36 Scores" :advice "Enter the score for each scale"))
+           questions)
       (flet ((make-q (name &optional (description name))
-	       (let ((question
-		      (make-instance 'question :name name :prompt description :data-type :float)))
-		 (push question questions))))
-	(make-q "GH" "General Health Score")
-	(make-q "PF" "Physical Functioning Score")
-	(make-q "RP" "Role Physical Score")
-	(make-q "BP" "Bodily Pain Score")
-	(make-q "VT" "Vitality Score")
-	(make-q "SF" "Social Functioning Score")
-	(make-q "MH" "Mental Health Score")
-	(make-q "RE" "Role Emotional Score")
-	(make-q "MCS" "Mental Component Score")
-	(make-q "PCS" "Physical Component Score")
-	(make-q "RR" "Risk Ratio Score") ;Note: we have not seen "RR" in survey results
-	)
+               (let ((question
+                      (make-instance 'question :name name :prompt description :data-type :float)))
+                 (push question questions))))
+        (make-q "GH" "General Health Score")
+        (make-q "PF" "Physical Functioning Score")
+        (make-q "RP" "Role Physical Score")
+        (make-q "BP" "Bodily Pain Score")
+        (make-q "VT" "Vitality Score")
+        (make-q "SF" "Social Functioning Score")
+        (make-q "MH" "Mental Health Score")
+        (make-q "RE" "Role Emotional Score")
+        (make-q "MCS" "Mental Component Score")
+        (make-q "PCS" "Physical Component Score")
+        (make-q "RR" "Risk Ratio Score") ;Note: we have not seen "RR" in survey results
+        )
       (setf (group-questions group) (reverse questions))
       ;; Returns
       survey)))

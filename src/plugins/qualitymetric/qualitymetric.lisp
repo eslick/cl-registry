@@ -14,15 +14,22 @@
 
 ;; Process flow is as follows:
 ;; 
-;;  1) User browses to /qualitymetric/survey?name=SF-36 and presses Submit
+;;  1) User browses to /qualitymetric/start and presses Submit (TBD: parameterize survey name)
 ;;  2) Client form connects to QualityMetric site to login and run survey
-;;  3) QualityMetric calls back via POST to /qualitymetric/results...
-;;  4) Or in case of error call back via GET to /qualitymetric/error...
+;;  3) QualityMetric calls back via GET to /qualitymetric/done and launches survey
+;;  4) After survey complete QualityMetric calls back via POST to /qualitymetric/results
 ;;
 ;; Components:
 ;;  1) qualitymetric class to encapsulate query and results
 ;;  2) widget for form
 ;;  3) selector and hander methods for URLs to render form, process results, and handle errors
+
+(defvar *qualitymetric-show-results-in-iframe* nil)
+
+(defvar *qualitymetric-root-pathname* (make-pathname :directory '(:absolute "qualitymetric")))
+
+(defun qualitymetric-pathname (pathname)
+  (merge-pathnames pathname *qualitymetric-root-pathname*))
 
 ;;; Request URIs
 
@@ -38,24 +45,35 @@
                  (t "http"))))
     (format nil "~A://~A~@[:~D~]~A"
             httpx address port
-            (puri:uri
-             (merge-pathnames pathname (make-pathname :directory '(:absolute "qualitymetric")))))))
+            (puri:uri (qualitymetric-pathname pathname)))))
 
 (defun qualitymetric-request-uri ()
   "URL of page for current request"
   (qualitymetric-page-url (weblocks:request-uri-path)))
 
+(defun qualitymetric-start-page-pathname ()
+  (qualitymetric-pathname (make-pathname :directory '(:relative "start"))))
+
 (defun qualitymetric-start-page-url ()
   ;; E.g. "http://192.168.0.12:8080/qualitymetric/start/"
   (qualitymetric-page-url (make-pathname :directory '(:relative "start"))))
 
-(defun qualitymetric-error-page-url ()
-  ;; E.g. "http://192.168.0.12:8080/qualitymetric/error/"
-  (qualitymetric-page-url (make-pathname :directory '(:relative "error"))))
+(defun qualitymetric-results-page-pathname ()
+  (qualitymetric-pathname (make-pathname :directory '(:relative "results"))))
+
+(defun qualitymetric-results-page-url ()
+  ;; E.g. "http://192.168.0.12:8080/qualitymetric/results/"
+  (qualitymetric-page-url (make-pathname :directory '(:relative "results"))))
+
+(defun qualitymetric-done-page-pathname ()
+  (qualitymetric-pathname (make-pathname :directory '(:relative "done"))))
 
 (defun qualitymetric-done-page-url ()
   ;; E.g. "http://192.168.0.12:8080/qualitymetric/done/"
   (qualitymetric-page-url (make-pathname :directory '(:relative "done"))))
+
+(defun qualitymetric-test-page-pathname ()
+  (qualitymetric-pathname (make-pathname :directory '(:relative "test"))))
 
 (defun qualitymetric-test-page-url ()
   ;; E.g. "http://192.168.0.12:8080/qualitymetric/test/"
@@ -117,9 +135,9 @@
                                  ("GroupID" . ,group)
                                  ("Action" . "1") ;login and run survey
                                  ("SurveyID" . ,(princ-to-string survey))
-                                 ("NW" . "true") ;don't create new window
+                                 ,@(if *qualitymetric-show-results-in-iframe* '(("NW" . "1")))
                                  ("OUT" . "3") ;show Member Report at end of survey and return data
-                                 ("ErrorURL" . ,(qualitymetric-error-page-url))
+                                 ("ErrorURL" . ,(qualitymetric-results-page-url))
                                  ("NB" . ,(qualitymetric-done-page-url)) ;URL to land on after survey
                                  )))
     ;; Returns
@@ -167,52 +185,57 @@
      (if (> (incf counter) 1)
          (htm (:P (str (format nil "Rendering x~D" counter)))))
      (with-slots (login group survey) connect
-       (if (null login)
-           (with-html (:P "Internal error: No current user"))
-           (with-html
-             (:DIV :CLASS "qualitymetric-input"
-                   (:FORM :CLASS "qualitymetric-form" :METHOD :POST
-                          :ACTION
-                          (flet ((act () (qualitymetric-connect-url (qmform-connect widget))))
-                            #-IFWEWANTTOUSEMAKEACTIONHERE
-                            (act)
-                            #+IFWEWANTTOUSEMAKEACTIONHERE
-                            ;; Why doesn't this work? Weblocks is confusing
-                            (make-action (lambda (&rest args)
-                                           (declare (ignore args))
-                                           (act)
-                                           (mark-dirty widget))))
-                          :TARGET "result"
-                          (:P (str (format nil "Patient: ~A" login)))
-                          (:INPUT :NAME "LoginName" :TYPE "hidden" :VALUE login)
-                          ;;(:INPUT :NAME "AuxiliaryID" :TYPE "hidden" :VALUE "")
-                          (:INPUT :NAME "GroupID" :TYPE "hidden" :VALUE group)
-                          (:INPUT :NAME "Action" :TYPE "hidden" :VALUE "1")
-                          (:INPUT :NAME "SurveyID" :TYPE "hidden" :VALUE (princ-to-string survey))
-                          (:INPUT :NAME "OUT" :TYPE "hidden" :VALUE "3") ;show Member Report at end of survey and return data
-                          ;;(:INPUT :NAME "SessionID" :TYPE "hidden" :VALUE "") 
-                          ;;(:INPUT :NAME "ReportID" :TYPE "hidden" :VALUE "") 
-                          (:INPUT :NAME "NW" :TYPE "hidden" :VALUE "1") ; don't create new window
-                          (:INPUT :NAME "NB" :TYPE "hidden" :VALUE (qualitymetric-done-page-url))
-                          (:INPUT :NAME "ErrorURL" :TYPE "hidden" :VALUE (qualitymetric-error-page-url))
-                          (:INPUT :NAME "ConfirmExit" :TYPE "hidden" :VALUE "1")
-                          (render-button "Start Survey")))
-             (:DIV :CLASS "qualitymetric-survey" :ALIGN "center"
-                   ;; Frame to hold survey window
-                   (:IFRAME :SRC "about:blank" :NAME "result" :WIDTH "98%" :ALIGN "center" :HEIGHT "900px"))))))))
+       (cond
+         ((null login)
+          (with-html (:P "Internal error: No current user")))
+         (t
+          (with-html
+            (:DIV :CLASS "qualitymetric-input"
+                  (:FORM :CLASS "qualitymetric-form" :METHOD :POST
+                         :ACTION
+                         (flet ((act () (qualitymetric-connect-url (qmform-connect widget))))
+                           #-IFWEWANTTOUSEMAKEACTIONHERE
+                           (act)
+                           #+IFWEWANTTOUSEMAKEACTIONHERE
+                           ;; Why doesn't this work? Weblocks is confusing
+                           (make-action (lambda (&rest args)
+                                          (declare (ignore args))
+                                          (act)
+                                          (mark-dirty widget))))
+                         :TARGET "_self" ;; (if *qualitymetric-show-results-in-iframe* "_self" "result")
+                         (:P (str (format nil "Patient: ~A" login)))
+                         (:INPUT :NAME "LoginName" :TYPE "hidden" :VALUE login)
+                         ;;(:INPUT :NAME "AuxiliaryID" :TYPE "hidden" :VALUE "")
+                         (:INPUT :NAME "GroupID" :TYPE "hidden" :VALUE group)
+                         (:INPUT :NAME "Action" :TYPE "hidden" :VALUE "1")
+                         (:INPUT :NAME "SurveyID" :TYPE "hidden" :VALUE (princ-to-string survey))
+                         (:INPUT :NAME "OUT" :TYPE "hidden" :VALUE "3") ;show Member Report at end of survey and return data
+                         ;;(:INPUT :NAME "SessionID" :TYPE "hidden" :VALUE "") 
+                         ;;(:INPUT :NAME "ReportID" :TYPE "hidden" :VALUE "") 
+                         (if *qualitymetric-show-results-in-iframe*
+                             (htm (:INPUT :NAME "NW" :TYPE "hidden" :VALUE "1")))
+                         (:INPUT :NAME "NB" :TYPE "hidden" :VALUE (qualitymetric-done-page-url))
+                         (:INPUT :NAME "ErrorURL" :TYPE "hidden" :VALUE (qualitymetric-results-page-url))
+                         (:INPUT :NAME "ConfirmExit" :TYPE "hidden" :VALUE "1")
+                         (render-button "Start Survey"))))
+          (if *qualitymetric-show-results-in-iframe*
+              (with-html
+                (:DIV :CLASS "qualitymetric-survey" :ALIGN "center"
+                      ;; Frame to hold survey window
+                      (:IFRAME :SRC "about:blank" :NAME "result" :WIDTH "98%" :ALIGN "center" :HEIGHT "900px"))))))))))
 
-;;; Error page
+;;; Results page
 
-(defwidget qualitymetric-error-page ()
+(defwidget qualitymetric-results-page ()
   ()
   )
 
-(defmethod render-widget-body ((widget qualitymetric-error-page) &rest args)
+(defmethod render-widget-body ((widget qualitymetric-results-page) &rest args)
   (declare (ignore args))
   (let ((patient (current-patient)))
     (with-main-content-area-html
       (:MIDDLE-INDENT
-       (:P "Error page - under construction")
+       (:P "Results page - under construction")
        (with-html
          (:P (str (qualitymetric-request-uri))))
        (let ((debug (get-site-config-param :enable-debugging))
@@ -281,8 +304,8 @@
                          (htm (:P (str name-value)))
                          (add-answer question patient score-value)))))))))))))
 
-(defun make-qualitymetric-error-page ()
-  (make-instance 'composite :widgets (list (make-instance 'qualitymetric-error-page))))
+(defun make-qualitymetric-results-page ()
+  (make-instance 'composite :widgets (list (make-instance 'qualitymetric-results-page))))
 
 ;;; Done page
 
@@ -294,9 +317,7 @@
   (declare (ignore args))
   (with-main-content-area-html
     (:MIDDLE-INDENT
-     (:P "Done page - under construction")
-     (with-html
-       (:P (str (qualitymetric-request-uri))))
+     (:P "Running survey... Click on a navigation button when done.")
      #+IFWEWANTTOPARSERAWPOSTDATA
      (let ((post-data (hunchentoot:raw-post-data :force-text t)))
        (if (get-site-config-param :enable-debugging)
@@ -322,12 +343,12 @@
      (with-html
        (:P (str (qualitymetric-request-uri))))
      (:P "Test page - under construction")
-     (:P "Test error page:"
+     (:P "Test results page:"
          (:FORM :METHOD :POST
-                        :ACTION "/qualitymetric/error"
-                        (:INPUT :NAME "ERROR1" :TYPE "hidden" :VALUE "1")
-                        (:INPUT :NAME "ERROR2" :TYPE "hidden" :VALUE "2")
-                        (:INPUT :NAME "ERROR3" :TYPE "hidden" :VALUE "3")
+                        :ACTION "/qualitymetric/results"
+                        (:INPUT :NAME "RESULTS1" :TYPE "hidden" :VALUE "1")
+                        (:INPUT :NAME "RESULTS2" :TYPE "hidden" :VALUE "2")
+                        (:INPUT :NAME "RESULTS3" :TYPE "hidden" :VALUE "3")
                         (render-button "Submit")))
      (:P "Test done page:"
          (:FORM :METHOD :POST
@@ -348,13 +369,13 @@
     
 (defun make-qualitymetric-selector ()
   (let* ((qm-start (make-qualitymetric-start-page))
-         (qm-error (make-qualitymetric-error-page))
+         (qm-results (make-qualitymetric-results-page))
          (qm-done (make-qualitymetric-done-page))
          (qm-test (make-qualitymetric-test-page))
          (qm-sel (make-instance 'qualitymetric-selector
                                 :name "qualitymetric"
                                 :panes `(("start" ,qm-start)
-                                         ("error" ,qm-error)
+                                         ("results" ,qm-results)
                                          ("done" ,qm-done)
                                          ("test" ,qm-test)))))
     (make-instance 'composite :widgets (list qm-sel))))

@@ -26,6 +26,33 @@
 
 ;;; Utilities
 
+(defun drop-ilr-surveys (surveys &key force)
+  (with-transaction ()
+    (cond
+      ((and (eq surveys ':all) force)
+       (format t "~%Force dropping all surveys, answers, questions...")
+       (mapcar 'drop-instance (get-instances-by-class 'answer))
+       (mapcar 'drop-instance (get-instances-by-class 'question))
+       (mapcar 'drop-instance (get-instances-by-class 'survey-group))
+       (mapcar 'drop-instance (get-instances-by-class 'survey))
+       (mapcar 'drop-instance (get-instances-by-class 'study)))
+      (t
+       (format t "~%Dropping ~D surveys starting with groups..." (length surveys))
+       (dolist (survey surveys)
+         (dolist (group (survey-groups survey))
+           (and group (drop-group group)))
+         (drop-instance survey))))))
+
+(defun drop-ilr-studies ()
+  (flet ((drop-ilr-study (name)
+           (awhen (get-instance-by-value 'study 'name name)
+             (format t "~%Dropping study ~A starting with surveys..." name)
+             (with-transaction ()
+               (drop-ilr-surveys (surveys it))
+               (drop-instance it)))))
+    (drop-ilr-study +study-name-clinician+)
+    (drop-ilr-study +study-name-patient+)))
+
 (defun make-pft-question-table (&key before advice (owner (current-user)))
   (let ((table
          (make-survey-group-table
@@ -1529,25 +1556,17 @@ which can cause a collapsed lung.")
     `((,survey-patient :DOFIRST)
       ,@(loop for survey in surveys-sgrq
            collect `(,survey :OPTIONAL))
-      (,survey-sf36 :OPTIONAL))))
+      (,survey-sf36 :OPTIONAL ,(namestring (qualitymetric-start-page-pathname))))))
 
 ;;; Create studies
 
 (defun create-ilr-arr/pft-study (&key (owner (current-user)) (study-name +study-name-clinician+))
-  (let ((survey-rule-alist (create-ilr-arr/pft-surveys :owner owner))
+  (let ((survey-specs (create-ilr-arr/pft-surveys :owner owner))
         (study
          (make-instance 'study :name study-name
                                :description #!"Retrospective medical record review to examine the rate of pulmonary function decline for LAM patients diagnosed at age 25 and younger relative to those diagnosed over age 55"
                                :published t :owner owner :priority 1 :origin "researcher")))
-    (loop for spec in survey-rule-alist
-         with surveys 
-         with rules
-         do (let ((survey (first spec))
-                  (rule-type (second spec)))
-              (push survey surveys)
-              (push (make-survey-rule :survey survey :type rule-type) rules))
-         finally
-         (setf (surveys study) (reverse surveys) (survey-rules study) rules))
+    (collect-study-surveys-and-rules study survey-specs)
     ;; Returns
     study))
 
@@ -1566,9 +1585,11 @@ which can cause a collapsed lung.")
          with surveys 
          with rules
          do (let ((survey (first spec))
-                  (rule-type (second spec)))
+                  (rule-type (second spec))
+                  (url (third spec)))
               (push survey surveys)
-              (push (make-survey-rule :survey survey :type rule-type) rules))
+              ;; Here we could use ADD-SURVEY-RULE but this is faster
+              (push (make-survey-rule :survey survey :type rule-type :url url) rules))
          finally
          (setf (surveys study) (reverse surveys) (survey-rules study) rules))
     ;; Returns
