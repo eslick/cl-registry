@@ -212,12 +212,14 @@
 	  (length (all-patients))))
   *total-patients*)
 
-(defun all-patients ()
-  (select-if (f (p) (get-preference :lam-patient-p (user p)))
-	     (get-instances-by-value 'patient 'center (current-center))))
+;;; To do: move ALL-PATIENTS and friends into some place like core/models/model-utils.lisp
 
-(defun all-patient-oids ()
-  (mapcar #'object-id (all-patients)))
+(defun all-patients (&optional (center (current-center)))
+  (select-if #'patient-p
+	     (get-patients-for-center center)))
+
+(defun all-patient-oids (&optional (center (current-center)))
+  (mapcar #'object-id (all-patients center)))
 
 ;;   (unless *patient-question* 
 ;;     (setf *patient-question* (get-question 5818)))

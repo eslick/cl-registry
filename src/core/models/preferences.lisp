@@ -293,3 +293,14 @@
   (some (lambda (pref) (has-preference-value-p user pref t))
 	'(:lam-researcher-p :clinician-p :other-researcher-p :researcher-p)))
  
+(defgeneric patient-p (obj)
+  (:documentation "Returns non-NIL if OBJ is a patient, self-identified by preference")
+  (:method ((obj t)) nil))
+
+(defmethod patient-p ((patient patient))
+  (awhen (user patient)
+    (patient-p it)))
+
+(defmethod patient-p ((user user))
+  (some (lambda (pref) (has-preference-value-p user pref t))
+	'(:lam-patient-p :tsc-patient-p)))
