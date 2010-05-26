@@ -40,7 +40,7 @@
        (format t "~%Dropping ~D surveys starting with groups..." (length surveys))
        (dolist (survey surveys)
          (dolist (group (survey-groups survey))
-           (and group (drop-group group)))
+           (and group (drop-group group :interactive nil)))
          (drop-instance survey))))))
 
 (defun drop-ilr-studies ()
@@ -49,7 +49,7 @@
              (format t "~%Dropping study ~A starting with surveys..." name)
              (with-transaction ()
                (drop-ilr-surveys (surveys it))
-               (drop-instance it)))))
+               (drop-study it :interactive nil)))))
     (drop-ilr-study +study-name-clinician+)
     (drop-ilr-study +study-name-patient+)))
 
@@ -1548,9 +1548,9 @@ which can cause a collapsed lung.")
       ;; Returns
       survey-patient)))
 
-(defun create-lamsight-qol/pft-surveys (&key (owner (current-user)) study-name)
+(defun create-lamsight-qol/pft-surveys (&key (owner (current-user t)) study-name)
   (let ((survey-patient (create-lamsight-qol/pft-survey :owner owner))
-        (survey-sf36 (create-sf36 :owner owner))
+        (survey-sf36 (create-qualitymetric-sf36-survey :owner owner))
         (surveys-sgrq (create-sgrq-surveys :owner owner :study-name study-name)))
     ;; Returns
     `((,survey-patient :DOFIRST)
