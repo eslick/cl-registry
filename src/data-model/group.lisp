@@ -41,9 +41,9 @@
       (survey-group name)	 ;; identity
       (t (get-instance-by-value 'survey-group 'name name)))))
 
-(defun drop-group (group)
+(defun drop-group (group &key (interactive t))
   (dolist (question (group-questions group))
-    (drop-question question))
+    (drop-question question :interactive interactive))
   (drop-instance group))
 
 (defun make-group (name &key advice questions)

@@ -64,7 +64,7 @@
   (when (drop-question inst)
     (call-next-method)))
 
-(defun drop-question (question &optional (interactive t))
+(defun drop-question (question &key (interactive t))
   (when (or (not interactive)
 	    (let ((answers (length (get-instances-by-value 'answer 'question question))))
 	      (if (eq answers 0) t

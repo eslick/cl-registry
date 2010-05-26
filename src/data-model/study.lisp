@@ -72,9 +72,10 @@
   (drop-study obj)
   (call-next-method))
 
-(defun drop-study (study)
+(defun drop-study (study &key (interactive t))
   "Drop study and all dependent data"
-  (when (yes-or-no-p "Are you really sure you want to delete ~A and all descendant surveys?" study)
+  (when (or (not interactive)
+	    (yes-or-no-p "Are you really sure you want to delete ~A and all descendant surveys?" study))
     (dolist (survey (surveys study))
       (drop-survey survey))))
 
