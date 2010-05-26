@@ -8,27 +8,38 @@
   (let ((center nil)
         (count-centers 0.)
         (user nil)
-        (count-users 0.))
+        (count-users 0.)
+        (clinician nil)
+        (count-clinicians 0.))
     (flet ((mk-center (num short-name name location)
              (declare (ignore num location))
-             (setq center (or (awhen (get-center short-name t)
-                                (format t "~&Warning: Center ~A already exists" short-name)
-                                it)
-                              (make-center short-name name)))
-             (incf count-centers)
-             ;; Returns
-             center)
+             (setq center
+                   (acond
+                     ((get-center short-name t)
+                      (format t "~&Warning: Center ~A already exists" short-name)
+                      it)
+                     ((make-center short-name name)
+                      (incf count-centers)
+                      it))))
            (mk-user (center-num name first middle last &optional titles email)
              (declare (ignore center-num middle titles))
-             (setq user (or (awhen (get-user name)
-                              (format t "~&Warning: User ~A already exists" name)
-                              it)
-                            (user-add name name :first first :last last :email email)))
-             (or (awhen (get-clinician user center)
-                   (format t "~&Warning: Clinician for user ~A center ~A already exists"
-                           name (short-name center)))
-                 (make-clinician user center))
-             (incf count-users)
+             (setq user
+                   (acond
+                     ((get-user name)
+                      (format t "~&Warning: User ~A already exists" name)
+                      it)
+                     ((user-add name name :first first :last last :email email)
+                      (incf count-users)
+                      it)))
+             (setq clinician
+                   (acond
+                     ((get-clinician user center)
+                      (format t "~&Warning: Clinician for user ~A center ~A already exists"
+                              name (short-name center))
+                      it)
+                     ((make-clinician user center)
+                      (incf count-clinicians)
+                      it)))
              ;; Returns
              user))
       (with-transaction ()
@@ -77,6 +88,12 @@
         (mk-center 20 "LTA" "LAM Treatment Alliance" "Cambridge, Massachusetts")
         (mk-user 20 "afarber" "Amy" "" "Farber" "Ph.D" "amy_farber@hms.harvard.edu")
         (mk-user 20 "rabrusci" "Richard" "" "Abrusci" "" "rabrusci@lamtreatmentalliance.org")
+        (mk-user 20 "aschiermeier" "Andrew" "" "Schiermier" "" "aschiermeier@lamtreatmentalliance.org")
+        (mk-user 20 "bgerety" "Bob" "" "Gerety" "" "bgerety@lamtreatmentalliance.org")
+        (mk-user 20 "dhao" "Daphne" "" "Hao" "" "dhao@lamtreatmentalliance.org")
+        (mk-user 20 "ahickey" "Anthony" "" "Hicky" "" "ahickey@lamtreatmentalliance.org")
+        (mk-user 20 "mkabadi" "Mohan" "" "Kabadi" "" "mkabadi@lamtreatmentalliance.org")
+        (mk-user 20 "bpulliam" "Brian" "" "Pulliam" "" "bpulliam@lamtreatmentalliance.org")
         )
       ;; Returns
       (values count-users count-centers))))
