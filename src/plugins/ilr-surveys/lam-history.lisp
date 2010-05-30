@@ -196,7 +196,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
              (q2
               (make-question "Date of diagnosis of LAM or TSC-LAM" :number 2.
                              :prompt-format prompt-format-numbered-colon
-                             :data-type :date))
+                             :data-type :date :data-subtype :date-month-year))
              (q3
               (make-question "Age at time of diagnosis" :number 3.
                              :prompt-format prompt-format-numbered-colon
@@ -485,7 +485,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
              (q16a
               (make-question "Please specify type of contraceptive" :data-type :string))
              (q16b
-              (make-question "Dates of use" :data-type :date-range))
+              (make-question "Dates of use" :data-type :date-range :data-subtype :date-month-year))
              (q17
               (apply #'make-question "Has the patient ever been pregnant" :number 17.
                      :prompt-format prompt-format-numbered-question
@@ -537,8 +537,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
              (hormone-therapy/table
               (make-survey-group-table
                (:name "hormone therapy table"
-                :default-question-args (:data-type :date)
-                :advice (format nil "Date format: ~A" (date-presentation-hint-for-locale-guess)))
+                :default-question-args (:data-type :date :data-subtype :date-month-year))
                (nil "Treatment" nil "Start date" "End date")
                ((:question :name "hormone therapy: Gn-RH agonist" :data-type :boolean :view-type :checkbox )
                 "Gn-RH agonist" nil
@@ -560,8 +559,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
              (bronch/meds/table
               (make-survey-group-table
                (:name "bronchodilator/pulmonary medications table"
-                :default-question-args (:data-type :date)
-                :advice (format nil "Date format: ~A" (date-presentation-hint-for-locale-guess)))
+                :default-question-args (:data-type :date :data-subtype :date-month-year))
                (nil "Treatment" nil "Start Date" "End Date")
                ((:question :name "bronch/pulm meds therapy: long acting B agonist" :data-type :boolean :view-type :checkbox )
                 "Long acting B agonist" nil (:question) (:question))
@@ -588,8 +586,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
              (other/med/table
               (make-survey-group-table
                (:name "other medical treatment table"
-                :default-question-args (:data-type :date)
-                :advice (format nil "Date format: ~A" (date-presentation-hint-for-locale-guess)))
+                :default-question-args (:data-type :date :data-subtype :date-month-year))
                (nil "Treatment" nil "Start Date" "End Date")
                ((:question :name "other medical treatment: Sirolimus/Rapamune" :data-type :boolean :view-type :checkbox )
                 "Sirolimus/Rapamune" nil
@@ -612,8 +609,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
              (other/surgery/table
               (make-survey-group-table
                (:name "other surgery table"
-                :default-question-args (:data-type :date)
-                :advice (format nil "Date format: ~A" (date-presentation-hint-for-locale-guess)))
+                :default-question-args (:data-type :date :data-subtype :date-month-year))
                (nil "Surgery" nil "Date")
                ((:question :name "other surgery: thoracic duct ligation" :data-type :boolean :view-type :checkbox )
                 "Thoracic duct ligation" nil (:question :name "other surgery: thoracic duct ligation: date"))
@@ -635,7 +631,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                      (question2
                       (apply #'make-question "transplant lungs" :prompt ""
                              (radio-options '(("One lung" . 1) ("Both lungs" . 2)))))
-                     (question3 (make-question "Transplant date" :data-type :date))
+                     (question3 (make-question "Transplant date" :data-type :date :data-subtype :date-month-year))
                      (subgroup
                       (make-survey-sub-group-named *group* "transplant/transplant evaluation question subgroup"
                                                    :order (list question2 question3))))
@@ -687,7 +683,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                      (q/how-long
                       (make-question "When did the patient initiate home oxygen"
                                      :prompt-format prompt-format-question
-                                     :data-type :date)))
+                                     :data-type :date :data-subtype :date-month-year)))
                 ;; Questions
                 (setf (group-questions subgroup) (list q/how q/how-much q/how-long))
                 ;; Group rules
@@ -711,9 +707,9 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                                        :order (list q21)))
              (q21a (make-question "Date of last confirmation"
                                   :prompt-format prompt-format-colon
-                                  :data-type :date))
+                                  :data-type :date :data-subtype :date-month-day))
              (subgroup21-living (make-survey-sub-group-named *group* nil :order (list q21a)))
-             (q21b (make-question "Date of death" :data-type :date))
+             (q21b (make-question "Date of death" :data-type :date :data-subtype :date-full))
              (q21c
               (apply #'make-question "What was the cause of death"
                      :prompt-format prompt-format-question
@@ -830,7 +826,8 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                  (declare (ignore subg1 subg2 subg3 subg4))
                  ;; Returns
                  question)))
-        (let* ((q1 (make-question "Date of treatment/surgery" :prompt-format prompt-format-colon :data-type :date))
+        (let* ((q1 (make-question "Date of treatment/surgery" :prompt-format prompt-format-colon
+                                                              :data-type :date :data-subtype :date-month-year))
                (*group*
                 (make-survey-group-named survey-treatment (name survey-treatment)))
                (q2 (make-treatment-questions "Pneumothorax treatment" *group*))
@@ -845,7 +842,8 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
       ;;
       (let* ((q1
               (make-question "Date of Pulmonary Function Test"
-                             :prompt-format prompt-format-colon :data-type :date))
+                             :prompt-format prompt-format-colon
+                             :data-type :date :data-subtype :date-full))
              (q2
               (apply #'make-question "Please check if the patient had any of the following at the time of this PFT result"
                      :prompt-format prompt-format-colon
@@ -881,7 +879,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
       ;;
       ;; Survey - 6MWD diary
       ;;
-      (let* ((q1 (make-question "Date" :prompt-format prompt-format-colon :data-type :date))
+      (let* ((q1 (make-question "Date" :prompt-format prompt-format-colon :data-type :date :data-subtype :date-full))
              (q2 (make-question "Result" :prompt-format prompt-format-colon
                                 ;; Using the measurement data type facility here may be confusing for users
                                 ;; because the default units are feet and cm
@@ -899,7 +897,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
       ;;
       ;; Survey - SGRQ diary
       ;;
-      (let* ((q1 (make-question "Date" :prompt-format prompt-format-colon :data-type :date))
+      (let* ((q1 (make-question "Date" :prompt-format prompt-format-colon :data-type :date :data-subtype :date-full))
              (q2 (make-question "Total Score" :prompt-format prompt-format-colon :data-type :number))
              (q3 (make-question "Symptoms Score" :prompt-format prompt-format-colon :data-type :number))
              (q4 (make-question "Activity Score" :prompt-format prompt-format-colon :data-type :number))
@@ -956,7 +954,7 @@ Finally, we will ask you to submit to us all of your previous pulmonary function
              (q1 (make-question "Name" :number 1. :prompt "Name (First, Last)" :prompt-format prompt-format-numbered-colon))
              (q2 (make-question "Date of birth"
                                 :number 2.
-                                :data-type :date
+                                :data-type :date :data-subtype :date-full
                                 :prompt-format prompt-format-numbered-colon))
              (q3 (make-question "What country do you live in" :number 3. :prompt-format prompt-format-numbered-question))
              (q4 (make-question "How many total years of schooling or education have you completed"
@@ -1059,12 +1057,12 @@ Finally, we will ask you to submit to us all of your previous pulmonary function
               (make-question "Date of diagnosis of LAM or TSC-LAM"
                              :number 13.
                              :prompt-format prompt-format-numbered-colon
-                             :data-type :date))
+                             :data-type :date :data-subtype :date-month-year))
              (q14
               (make-question "When did you first have LAM related symptoms"
                              :number 14.
                              :prompt-format prompt-format-numbered-question
-                             :data-type :date))
+                             :data-type :date :data-subtype :date-month-year))
              (q15
               (let* ((question
                       (apply #'make-question "What were your main symptoms that led to your diagnosis of LAM"
@@ -1233,7 +1231,7 @@ which can cause a collapsed lung.")
                      (q/which-lungs
                       (apply #'make-question "transplant which lungs" :prompt-format ""
                              (radio-options '(("One lung" . 1) ("Both lungs" . 2)))))
-                     (q/date (make-question "Transplant date" :data-type :date))
+                     (q/date (make-question "Transplant date" :data-type :date :data-subtype :date-month-year))
                      (subgroup
                       (make-survey-sub-group-named *group* "transplant question subgroup"
                                                    :order (list q/which-lungs q/date))))
@@ -1277,7 +1275,7 @@ which can cause a collapsed lung.")
                      (q/how-long
                       (make-question "When did you begin using oxygen at home"
                                      :prompt-format prompt-format-question
-                                     :data-type :date)))
+                                     :data-type :date :data-subtype :date-month-year)))
                 ;; Questions
                 (setf (group-questions subgroup) (list q/how q/how-much q/how-long))
                 ;; Group rules
@@ -1324,7 +1322,7 @@ which can cause a collapsed lung.")
                      (q/date
                       (make-question "Dates of use"
                                      :prompt-format prompt-format-colon
-                                     :data-type :date-range))
+                                     :data-type :date-range :data-subtype :date-month-year))
                      (subgroup
                       (make-survey-sub-group-named *group* "q16" :order (list q/type q/date))))
                 ;; Group rules
@@ -1382,17 +1380,16 @@ which can cause a collapsed lung.")
                (let ((table
                       (make-survey-group-table
                        (:name "current or past use table"
-                        :default-question-args (:data-type :date)
-                        :advice (format nil "Date format: ~A" (date-presentation-hint-for-locale-guess)))
+                        :default-question-args (:data-type :date :data-subtype :date-month-year))
                        (nil nil nil nil nil)
                        ((:question :name "current use answer" :data-type :boolean :view-type :checkbox)
                         "Current use."
-                        "When did you start?" (:question :name "Start date" :data-type :date) 
+                        "When did you start?" (:question :name "Start date" :data-type :date :data-subtype :date-month-year) 
                         nil nil)
                        ((:question :name "past use answer" :data-type :boolean :view-type :checkbox)
                         "Past use."
-                        "Start date:" (:question :name "Start date" :data-type :date)
-                        "End date:" (:question :name "End date" :data-type :date)))))
+                        "Start date:" (:question :name "Start date" :data-type :date :data-subtype :date-month-year)
+                        "End date:" (:question :name "End date" :data-type :date :data-subtype :date-month-year)))))
                  ;; Modify all question names based on before/after flag
                  (dolist (question (group-questions table))
                    (setf (question-name question)
@@ -1448,7 +1445,7 @@ which can cause a collapsed lung.")
                                (choices-options-yes-no)))
                        (q/date (make-question "Date ovaries removed"
                                               :prompt "Date:"
-                                              :data-type :date))
+                                              :data-type :date :data-subtype :date-month-year))
                        (q/therapy
                         (apply #'make-question "If yes do/did you use hormone replacement therapy"
                                :prompt-format prompt-format-question
@@ -1486,7 +1483,7 @@ which can cause a collapsed lung.")
              (q1
               (make-question "Date of your most recent Pulmonary Function Test"
                              :prompt "Date of your <B>most recent</B> Pulmonary Function Test:"
-                             :data-type :date))
+                             :data-type :date :data-subtype :date-month-year))
              (q2
               (make-question "Check here if you have not had pulmonary function tests performed in the last 5 years."
                              :data-type :boolean :view-type :checkbox))

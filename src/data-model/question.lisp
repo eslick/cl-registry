@@ -229,7 +229,12 @@
 		    :display-unit (get-locale-unit canonical-unit)
 		    :validators (list (make-instance 'measurement-validator
 						     :measurement measurement)))
-		   args))))
+		   args)))
+	  ((subtypep type 'datetime-presentation)
+	   (push (list :parse-time-patterns-key
+		       (find (question-data-subtype question)
+			     '(:date :date-full :date-month-year :date-month-day)))
+		 args)))
     (let ((presentation 
 	   (apply #'make-instance type 
 		  :metadata question 
@@ -338,7 +343,7 @@
 (defparameter *default-errors*
   '((:boolean . "Answer must be yes or no or true and false")
     (:date . "You must provide a valid date (MM/DD/YY or DD/MM/YY)")
-    (:date-range . "You must provide a valid date range ('MM/DD/YY to DD/MM/YY')")
+    (:date-range . "You must provide a valid date range ('MM/DD/YY to MM/DD/YY')")
     (:string . "You must provide an answer")
     (:number . "You must provide a valid number such as 10, 1.4, etc")
     (:measurement . "Please enter a number in the units specified")
