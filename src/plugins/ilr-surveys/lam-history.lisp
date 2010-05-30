@@ -26,32 +26,36 @@
 
 ;;; Utilities
 
-(defun drop-ilr-surveys (surveys &key force)
-  (with-transaction ()
-    (cond
-      ((and (eq surveys ':all) force)
+(defun drop-ilr-surveys (surveys)
+  (format t "~%Dropping ~D surveys starting with groups..." (length surveys))
+  (dolist (survey surveys)
+    (dolist (group (survey-groups survey))
+      (and group (drop-group group :interactive nil)))
+    (drop-instance survey)))
+
+(defun drop-ilr-studies (&key force (interactive (not force)))
+  (cond
+    ((and force
+          (or (not interactive)
+              (yes-or-no-p
+               "Are you sure you want to force delete all studies, surveys, groups, questions, and answers?")))
+     (with-transaction ()
        (format t "~%Force dropping all surveys, answers, questions...")
        (mapcar 'drop-instance (get-instances-by-class 'answer))
        (mapcar 'drop-instance (get-instances-by-class 'question))
        (mapcar 'drop-instance (get-instances-by-class 'survey-group))
        (mapcar 'drop-instance (get-instances-by-class 'survey))
-       (mapcar 'drop-instance (get-instances-by-class 'study)))
-      (t
-       (format t "~%Dropping ~D surveys starting with groups..." (length surveys))
-       (dolist (survey surveys)
-         (dolist (group (survey-groups survey))
-           (and group (drop-group group :interactive nil)))
-         (drop-instance survey))))))
-
-(defun drop-ilr-studies ()
-  (flet ((drop-ilr-study (name)
-           (awhen (get-instance-by-value 'study 'name name)
-             (format t "~%Dropping study ~A starting with surveys..." name)
-             (with-transaction ()
-               (drop-ilr-surveys (surveys it))
-               (drop-study it :interactive nil)))))
-    (drop-ilr-study +study-name-clinician+)
-    (drop-ilr-study +study-name-patient+)))
+       (mapcar 'drop-instance (get-instances-by-class 'study))))
+    (t
+     (flet ((drop-ilr-study (name)
+              (awhen (get-instance-by-value 'study 'name name)
+                (format t "~%Dropping study ~A starting with surveys..." name)
+                (with-transaction ()
+                  (drop-ilr-surveys (surveys it))
+                  (drop-study it :interactive nil)
+                  (drop-instance it)))))
+       (drop-ilr-study +study-name-clinician+)
+       (drop-ilr-study +study-name-patient+)))))
 
 (defun make-pft-question-table (&key before advice (owner (current-user)))
   (let ((table
