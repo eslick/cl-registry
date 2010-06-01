@@ -266,7 +266,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                                     (radio-options
                                      (choices-breaks-alist
                                       '(("Open lung biopsy" . "open")
-                                        ("Video-assisted thorascopic surgery (VATS) biopsy" . "VATS")
+                                        ("Video-assisted thoracoscopic surgery (VATS) biopsy" . "VATS")
                                         ("Transbronchial lung biopsy" . "Transbronchial")
                                         "Other" ;see group rule below
                                         "Unknown")))))
@@ -307,33 +307,15 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                                        :advice "<SUP>8</SUP> If a biopsy was performed, what were the histopathological findings?"))
              (*questions*
               (loop for spec in
-                   '(("HMB-45 immunostaining" (("Completed" "Positive" "Negative") ("Not completed")))
-                     ("Estrogen receptors" (("Completed" "Positive" "Negative") ("Not completed")))
-                     ("Progesterone receptors" (("Completed" "Positive" "Negative") ("Not completed")))
-                     ("Gene mutation analysis" (("Completed" "TSC 1 mutation" "TSC 2 mutation" "Other") ("Not completed"))))
+                   '(("HMB-45 immunostaining" "Positive" "Negative" "Not performed" "Unknown")
+                     ("Estrogen receptors" "Positive" "Negative" "Not performed" "Unknown")
+                     ("Progesterone receptors" "Positive" "Negative" "Not performed" "Unknown")
+                     ("Gene mutation analysis" "TSC 1 mutation" "TSC 2 mutation" "Other" "Not performed" "Unknown"))
                    as name = (first spec)
-                   as options = (second spec)
+                   as options = (rest spec)
                    collect
-                 ;; !! TODO: Generalize this as recursive function !!
-                   (let ((question
-                          (apply #'make-question name
-                                 (radio-options (choices-breaks-alist (mapcar #'first options))))))
-                     (loop for option in options
-                        as value = (first option)
-                        as choices = (rest option)
-                        when choices
-                        do
-                        (let* ((question8a
-                                (apply #'make-question (format nil "~A ~A" name (gensym))
-                                       :prompt nil
-                                       (radio-options (choices-breaks-alist choices))))
-                               (subgroup1 (make-survey-sub-group-named *group* nil :order (list question8a)))
-                               (question8o (make-question "Other"))
-                               (subgroup2 (make-survey-sub-group-named *group* nil :order (list question8o))))
-                          (add-rule *group* question value subgroup1 ':inline)
-                          (add-rule subgroup1 question8a "Other" subgroup2 ':inline)))
-                     ;; Return 
-                     question))))
+                   (apply #'make-question name
+                          (radio-options (choices-breaks-alist options))))))
         ;; Questions
         (setf (group-questions *group*) *questions*))
 
@@ -561,14 +543,14 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                (:name "bronchodilator/pulmonary medications table"
                 :default-question-args (:data-type :date :data-subtype :date-month-year))
                (nil "Treatment" nil "Start Date" "End Date")
-               ((:question :name "bronch/pulm meds therapy: long acting B agonist" :data-type :boolean :view-type :checkbox )
-                "Long acting B agonist" nil (:question) (:question))
-               ((:question :name "bronch/pulm meds therapy: oral B agonist" :data-type :boolean :view-type :checkbox )
-                "Oral B agonist" nil
-                (:question :name "bronch/pulm meds therapy: oral B agonist: from") (:question :name "bronch/pulm meds therapy: oral B agonist: to"))
-               ((:question :name "bronch/pulm meds therapy: transdermal B agonist" :data-type :boolean :view-type :checkbox )
-                "Transdermal B agonist" nil
-                (:question :name "bronch/pulm meds therapy: transdermal B agonist: from") (:question :name "bronch/pulm meds therapy: transdermal B agonist: to"))
+               ((:question :name "bronch/pulm meds therapy: long acting Beta agonist" :data-type :boolean :view-type :checkbox )
+                "Long acting Beta agonist" nil (:question) (:question))
+               ((:question :name "bronch/pulm meds therapy: oral Beta agonist" :data-type :boolean :view-type :checkbox )
+                "Oral Beta agonist" nil
+                (:question :name "bronch/pulm meds therapy: oral Beta agonist: from") (:question :name "bronch/pulm meds therapy: oral Beta agonist: to"))
+               ((:question :name "bronch/pulm meds therapy: transdermal Beta agonist" :data-type :boolean :view-type :checkbox )
+                "Transdermal Beta agonist" nil
+                (:question :name "bronch/pulm meds therapy: transdermal Beta agonist: from") (:question :name "bronch/pulm meds therapy: transdermal Beta agonist: to"))
                ((:question :name "bronch/pulm meds therapy: anti-cholinergic" :data-type :boolean :view-type :checkbox )
                 "Anti-cholinergic" nil
                 (:question :name "bronch/pulm meds therapy: anti-cholinergic: from") (:question :name "bronch/pulm meds therapy: anti-cholinergic: to"))
@@ -776,7 +758,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                                (choices-breaks-alist
                                 '("Chest tube placement/pleural drainage"
                                   "Open chest surgery"
-                                  "Thorascopic/minimally invasive chest surgery"
+                                  "Thoracoscopic/minimally invasive chest surgery"
                                   "Pleurodesis"
                                   "Other"
                                   "None")))))
@@ -787,12 +769,12 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                               (make-survey-sub-group-named group "open chest surgery subgroup" :order (list subq1))))
                          (add-rule group question "Open chest surgery" subgroup ':inline)
                          subgroup))
-                      (subq2 (make-question "Type of thorascopic/minimally invasive chest surgery"
+                      (subq2 (make-question "Type of thoracoscopic/minimally invasive chest surgery"
                                             :prompt-format prompt-format-colon))
                       (subg2
                        (let ((subgroup
-                              (make-survey-sub-group-named group "thorascopic/minimally invasive chest surgery subgroup" :order (list subq2))))
-                         (add-rule group question "Thorascopic/minimally invasive chest surgery" subgroup ':inline)
+                              (make-survey-sub-group-named group "thoracoscopic/minimally invasive chest surgery subgroup" :order (list subq2))))
+                         (add-rule group question "Thoracoscopic/minimally invasive chest surgery" subgroup ':inline)
                          subgroup))
                       (subg3
                        (let* ((q1 (apply #'make-question "Pleurodesis side"
@@ -827,7 +809,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                  ;; Returns
                  question)))
         (let* ((q1 (make-question "Date of treatment/surgery" :prompt-format prompt-format-colon
-                                                              :data-type :date :data-subtype :date-month-year))
+                                                              :data-type :date :data-subtype :date-full))
                (*group*
                 (make-survey-group-named survey-treatment (name survey-treatment)))
                (q2 (make-treatment-questions "Pneumothorax treatment" *group*))
