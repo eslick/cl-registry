@@ -10,8 +10,8 @@
 (defun create-qualitymetric-sf36-survey (&key (owner (current-user t)))
   (with-transaction ()
     (let* ((survey
-            (make-instance 'survey :name "SF-36 Scores"
-                                   :description "QualityMetric Dynamic SF-36(tm) Health Survey - Scores"
+            (make-instance 'survey :name "SF-36 Quality of Life Survey"
+                                   :description "SF-36: a generalized health related quality of life survey"
                                    :owner owner :origin "researcher" :published nil :priority 1 :diary-p nil
                                    :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (group
