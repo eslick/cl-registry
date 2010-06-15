@@ -7,12 +7,12 @@
 
 (in-package :registry)
 
-(defun create-qualitymetric-sf36-survey (&key (owner (current-user t)))
+(defun create-qualitymetric-sf36-survey (&key (owner (current-user)))
   (with-transaction ()
     (let* ((survey
-            (make-instance 'survey :name "SF-36 Quality of Life Survey"
+            (make-instance 'survey :name "SF-36 Quality of Life Survey Scores"
                                    :description "SF-36: a generalized health related quality of life survey"
-                                   :owner owner :origin "researcher" :published nil :priority 1 :diary-p nil
+                                   :owner owner :origin "researcher" :published t :priority 1 :diary-p nil
                                    :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (group
             (make-survey-group-named survey "SF-36 Scores" :advice "Enter the score for each scale"))
