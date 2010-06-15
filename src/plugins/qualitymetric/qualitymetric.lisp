@@ -10,7 +10,7 @@
 (define-plugin qualitymetric ()
   )
 
-;;; QualityMetric SAAS 
+;;; QualityMetric client 
 
 ;; Process flow is as follows:
 ;; 
@@ -24,7 +24,7 @@
 ;;  2) widget for form
 ;;  3) selector and hander methods for URLs to render form, process results, and handle errors
 
-(defvar *qualitymetric-show-results-in-iframe* nil)
+(defvar *qualitymetric-show-results-in-iframe* t)
 
 (defvar *qualitymetric-root-pathname* (make-pathname :directory '(:absolute "qualitymetric")))
 
@@ -180,8 +180,6 @@
   (declare (ignore args))
   (with-main-content-area-html
     (:MIDDLE-INDENT
-     (with-html
-       (:P (str (qualitymetric-request-uri))))
      (if (> (incf counter) 1)
          (htm (:P (str (format nil "Rendering x~D" counter)))))
      (with-slots (login group survey) connect
@@ -202,7 +200,7 @@
                                           (declare (ignore args))
                                           (act)
                                           (mark-dirty widget))))
-                         :TARGET "_self" ;; (if *qualitymetric-show-results-in-iframe* "_self" "result")
+                         :TARGET (if *qualitymetric-show-results-in-iframe* "result" "_self")
                          (:P (str (format nil "Patient: ~A" login)))
                          (:INPUT :NAME "LoginName" :TYPE "hidden" :VALUE login)
                          ;;(:INPUT :NAME "AuxiliaryID" :TYPE "hidden" :VALUE "")
@@ -235,9 +233,7 @@
   (let ((patient (current-patient)))
     (with-main-content-area-html
       (:MIDDLE-INDENT
-       (:P "Results page - under construction")
-       (with-html
-         (:P (str (qualitymetric-request-uri))))
+       (:P "Survey results")
        (let ((debug (get-site-config-param :enable-debugging))
              (get-params (hunchentoot::get-parameters*))
              (post-params (hunchentoot::maybe-read-post-parameters :force t)))
@@ -301,7 +297,7 @@
                          (qm-error "Unrecognized question name: ~A" name-value))
                         ;; Finally
                         (t
-                         (htm (:P (str name-value)))
+                         (htm (:P (str (format nil "~A = ~A" name-value score-value))))
                          (add-answer question patient score-value)))))))))))))
 
 (defun make-qualitymetric-results-page ()
