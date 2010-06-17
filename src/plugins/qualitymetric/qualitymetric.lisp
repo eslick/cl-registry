@@ -65,6 +65,14 @@
   ;; E.g. "http://192.168.0.12:8080/qualitymetric/results/"
   (qualitymetric-page-url (make-pathname :directory '(:relative "results"))))
 
+(defun qualitymetric-results-helper-page-pathname ()
+  (make-pathname :directory '(:absolute "qualitymetric-results-helper")))
+
+(defun qualitymetric-results-helper-page-url ()
+  ;; E.g. "/qualitymetric/results-helper/"
+  ;; TODO: Fill in http://<address>:<port>
+  (namestring (qualitymetric-results-helper-page-pathname)))
+
 (defun qualitymetric-done-page-pathname ()
   (qualitymetric-pathname (make-pathname :directory '(:relative "done"))))
 
@@ -175,6 +183,13 @@
                  (list
                   (make-qualitymetric-start-form))))
 
+(defmethod qualitymetric-start-action ((widget qualitymetric-start-form))
+  (let* ((comp (widget-parent widget))
+         (sel (widget-parent comp)))
+    (declare (ignore sel))
+    (mark-dirty comp)                   ;pointless?
+    (qualitymetric-connect-url (qmform-connect widget))))
+
 (defmethod render-widget-body ((widget qualitymetric-start-form) &rest args
                                &aux (counter 0.) (connect (qmform-connect widget)))
   (declare (ignore args))
@@ -190,16 +205,7 @@
           (with-html
             (:DIV :CLASS "qualitymetric-input"
                   (:FORM :CLASS "qualitymetric-form" :METHOD :POST
-                         :ACTION
-                         (flet ((act () (qualitymetric-connect-url (qmform-connect widget))))
-                           #-IFWEWANTTOUSEMAKEACTIONHERE
-                           (act)
-                           #+IFWEWANTTOUSEMAKEACTIONHERE
-                           ;; Why doesn't this work? Weblocks is confusing
-                           (make-action (lambda (&rest args)
-                                          (declare (ignore args))
-                                          (act)
-                                          (mark-dirty widget))))
+                         :ACTION (qualitymetric-start-action widget)
                          :TARGET (if *qualitymetric-show-results-in-iframe* "result" "_self")
                          (:P (str (format nil "Patient: ~A" login)))
                          (:INPUT :NAME "LoginName" :TYPE "hidden" :VALUE login)
@@ -298,7 +304,9 @@
                         ;; Finally
                         (t
                          (htm (:P (str (format nil "~A = ~A" name-value score-value))))
-                         (add-answer question patient score-value)))))))))))))
+                         (add-answer question patient score-value))))))
+             (redirect (qualitymetric-results-helper-page-url) :defer ':post-render)
+             (sleep 5))))))))
 
 (defun make-qualitymetric-results-page ()
   (make-instance 'composite :widgets (list (make-instance 'qualitymetric-results-page))))
@@ -375,3 +383,16 @@
                                          ("done" ,qm-done)
                                          ("test" ,qm-test)))))
     (make-instance 'composite :widgets (list qm-sel))))
+
+;;; Handler for helper page
+
+(defvar *request*)
+(defun qualitymetric-results-page-helper-handler (request)
+  (setq *request* request)
+  (if (string= (hunchentoot:script-name* request) (namestring (qualitymetric-results-helper-page-pathname)))
+      #'(lambda ()
+          (with-html
+            (:P "Survey results stored")))))
+
+(pushnew 'qualitymetric-results-page-helper-handler hunchentoot::*dispatch-table*)
+
