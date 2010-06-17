@@ -19,7 +19,7 @@
            questions)
       (flet ((make-q (name &optional (description name))
                (let ((question
-                      (make-instance 'question :name name :prompt description :data-type :float)))
+                      (make-question name :prompt description :data-type :number)))
                  (push question questions))))
         (make-q "GH" "General Health Score")
         (make-q "PF" "Physical Functioning Score")
