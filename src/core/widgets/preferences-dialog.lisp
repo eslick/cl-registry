@@ -104,9 +104,13 @@
            :researcher-p
 	   :other-researcher-p
            :unknown-role-p))
-    (:div :class "preference-caretaker clear"
-	  (:p (str #!"I am a family member or caretaker for another LAMsight user:"))
-	  (present-preferences :family-member-patient))))
+    ;; LAMsight legacy compatibility
+    (let ((sname (get-site-config-param :site-name)))
+      (when (or (null sname) (string-equal sname "LAMsight"))
+	(htm
+	 (:div :class "preference-caretaker clear"
+	       (:p (str #!"I am a family member or caretaker for another LAMsight user:"))
+	       (present-preferences :family-member-patient)))))))
 
 (defun simple-user-identity-prefs-form ()
   (with-html
@@ -138,8 +142,11 @@
 			       :postal-code
                                :home-phone
                                :work-phone))
-    (:div :class "preferences-map-me"
-	  (present-preferences :map-me-p))))
+    (let ((sname (get-site-config-param :site-name)))
+      (when (or (null sname) (string-equal sname "LAMsight"))
+	(htm
+	 (:div :class "preferences-map-me"
+	       (present-preferences :map-me-p)))))))
 
 (defun contact-prefs-form ()
   (with-html
@@ -187,7 +194,12 @@
     (declare (special *current-widget*))
     (setf (prior-rendered-preferences widget) nil)
     (with-html
-      (:h1 (str #!"Complete your LAMsight registration"))
+      (:h1 (str
+	    ;; LAMsight legacy compatibility 
+	    (let ((sname (get-site-config-param :site-name)))
+	      (if (or (null sname) (string-equal sname "LAMsight"))
+		  #!"Complete your LAMsight registration"
+		  #!"Complete your user registration"))))
       (when (reg-role-errorp widget)
 	(htm (:p :style "color: red;"
                  (str #!"You must select a role to complete registration"))))

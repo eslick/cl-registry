@@ -32,9 +32,7 @@
 	  (render-widget (first (composite-widgets widget))))
     (:div :class "home-sidebar"
 	  (:div :class "top"
-		;; Home page content on the right followed by plugin widgets
-		(render-widget (second (composite-widgets widget)))
-		(mapcar #'render-widget (rest (rest (composite-widgets widget)))))
+		(mapcar #'render-widget (rest (composite-widgets widget))))
 	  (:div :class "bottom"
 		(str "&nbsp;")))))
 
@@ -50,24 +48,38 @@
 		 (setf (widget-suffix-fn widget) #'render-rule-for-widget))
 	     ;; Returns
 	     widget))
-    (let ((home
-	   (make-instance 'clinician-home 
-			  :widgets
-			  `(,(make-instance 'composite
-					    :widgets
-					    (list (make-widget 'no-javascript)
-						  (make-choose-center-widget)
-						  (make-choose-patient-widget)
-						  (set-widget-rule-between (make-patient-editor-widget) :after t)
-						  (set-widget-rule-between (make-clinician-editor-widget) :after t)
-						  (make-center-editor-widget)))
-			     ,(make-article-widget "clinician-home" :sidebar-p t)
-			     ,@(instantiate-plugins plugins)))))
+    (let* ((map (make-instance 'composite))
+	   (home
+	    (make-instance 'clinician-home 
+			   :widgets
+			   `(,(make-instance 'composite
+					     :widgets
+					     (list (make-widget 'no-javascript)
+						   (make-choose-center-widget)
+						   (make-choose-patient-widget)
+						   (set-widget-rule-between (make-patient-editor-widget) :after t)
+						   (set-widget-rule-between (make-clinician-editor-widget) :after t)
+						   (make-center-editor-widget)))
+			      ,map
+			      ,@(instantiate-plugins plugins)
+			      ,(make-article-widget "clinician-home" :sidebar-p t)))))
+      (setf (home-page-map home) map)
       (mapcar (lambda (widget)
 		(setf (widget-parent widget) home))
 	      (composite-widgets home))
       home)))
-			 
+
+;; Should generalize this in user-controls.lisp for patient-home and clinician-home
+
+(defun make-change-password-dialog-widget ()
+  (make-widget
+   (lambda (&rest args)
+     (declare (ignore args))
+     (render-link (lambda (&rest args)
+		    (declare (ignore args))
+		    (do-change-password-dialog))
+		  #!"Change Password"))))
+
 ;; Defined in patient-home...
 
 ;;(defun make-user-map-widget ()
