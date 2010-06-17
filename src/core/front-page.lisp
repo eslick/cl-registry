@@ -63,6 +63,12 @@
             it)
 	   ((dashboard-url-p)
 	    nil)
+	   ;; QualityMetric
+	   ((and tokens (equal (first tokens) "qualitymetric"))
+	    (pop-tokens uri-tokens 1)
+	    (or (weblocks::webapp-session-value :registry-qualitymetric-selector)
+		;; Cache QualityMetric widget selector 
+		(setf (weblocks::webapp-session-value :registry-qualitymetric-selector) (make-qualitymetric-selector))))
 	   (t
 	    (pop-tokens uri-tokens (length (remaining-tokens uri-tokens)))
 	    (main-page public)))))

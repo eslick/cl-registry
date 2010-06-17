@@ -12,8 +12,6 @@
 
 (defwidget registry-dispatcher (dispatcher)
   ((home-page :accessor home-page :initform (make-registry-navigation))
-   (qm--page :accessor qm-page :initform nil
-	     :documentation "Widget selector for /qualitymetric URIs. Created on-demand.")
    (content-pages :accessor content-pages :initform nil)))
 
 (defmethod initialize-instance :after ((pd registry-dispatcher) &rest args)
@@ -46,9 +44,9 @@
 	   ;; QualityMetric
 	   ((and tokens (equal (first tokens) "qualitymetric"))
 	    (pop-tokens uri-tokens 1)
-	    (or (qm-page dispatcher)
-		;; Cache QualityMetric widget selector on Registry dispatcher
-		(setf (qm-page dispatcher) (make-qualitymetric-selector))))
+	    (or (weblocks::webapp-session-value :registry-qualitymetric-selector)
+		;; Cache QualityMetric widget selector 
+		(setf (weblocks::webapp-session-value :registry-qualitymetric-selector) (make-qualitymetric-selector))))
 	   ;; API Handler
 	   ((and tokens (equal (first tokens) *api-root-url*))
 	    (dispatch-api-handler (subseq (remaining-tokens uri-tokens) 1)))

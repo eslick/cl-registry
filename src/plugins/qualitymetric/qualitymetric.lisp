@@ -305,8 +305,9 @@
                         (t
                          (htm (:P (str (format nil "~A = ~A" name-value score-value))))
                          (add-answer question patient score-value))))))
-             (redirect (qualitymetric-results-helper-page-url) :defer ':post-render)
-             (sleep 5))))))))
+             ;; Redirect to results helper page
+             ;; TODO: pass results (scores) and render them on helper page
+             (redirect (qualitymetric-results-helper-page-url) :defer ':post-render))))))))
 
 (defun make-qualitymetric-results-page ()
   (make-instance 'composite :widgets (list (make-instance 'qualitymetric-results-page))))
