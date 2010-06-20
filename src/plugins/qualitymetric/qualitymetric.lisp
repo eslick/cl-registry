@@ -387,9 +387,7 @@
 
 ;;; Handler for helper page
 
-(defvar *request*)
 (defun qualitymetric-results-page-helper-handler (request)
-  (setq *request* request)
   (if (string= (hunchentoot:script-name* request) (namestring (qualitymetric-results-helper-page-pathname)))
       #'(lambda ()
           (with-html
