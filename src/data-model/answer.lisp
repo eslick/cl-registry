@@ -4,7 +4,7 @@
 ;;  Answer model
 ;; ===========================================================
 
-(defmodel answer (fulltext-mixin)
+(defmodel answer (fulltext-mixin published-data-mixin)
   ((question :accessor question :initarg :question :index t)
    (user :accessor user :initarg :user :index t)
    (entry-time :accessor entry-time :initarg :entry-time :index t)
@@ -27,6 +27,9 @@
   (when (and (slot-boundp inst 'question)
 	     (eq (question-data-type (question inst)) :string))
     (call-next-method)))
+
+(defmethod published-data-p ((instance answer))
+  (aif (question instance) (published-data-p it)))
 
 (defpclass answer-history (answer)
   ((question :accessor question :initarg :question :index t :inherit nil)

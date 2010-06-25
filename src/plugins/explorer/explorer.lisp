@@ -200,10 +200,11 @@
 
 (defun published-object-p (object)
   "Make sure one of our parent surveys is published"
-  (cond ((eq (type-of object) 'question)
-	 (published-group-p (parent object)))
-	((null object) nil)
-	(t t)))
+  ;; But this can only check one parent of question
+  (typecase object
+    (published-data-mixin (published-data-p object))
+    (null nil)
+    (otherwise t)))
 
 (defun get-explorer-constraints (widget)
   (let ((constraints nil)
@@ -509,7 +510,7 @@
 				   (question-prompt obj)
 				   :id "explorer-expanded-interior")
 		      (with-html (:br)))
-		  (let ((questions (related-questions-in-context (question view))))
+		  (let ((questions (related-questions-in-context (question view) :published-only-p t)))
 		    (safe-subseq questions 0 9))))))
 ;;    (send-script "explorerQuestionViewInitialize()")))
 	  

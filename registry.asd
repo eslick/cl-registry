@@ -72,6 +72,9 @@
 				       (:file "types"))
 				      :depends-on ("utils" presentations)
 				      :serial t)
+			     (:module published-data
+				      :components
+				      ((:file "published-data-mixin")))
 			     ;; Visualization
 			     (:module visualization
 				      :components

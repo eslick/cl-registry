@@ -7,7 +7,7 @@
 ;; ===========================================================
 
 
-(defmodel study (fulltext-mixin user-translation-mixin)
+(defmodel study (fulltext-mixin user-translation-mixin published-data-mixin)
   (;; Basic description
    (name :accessor name :initarg :name :initform "" :index t)
    (description :accessor description :initarg :description :initform "")
@@ -84,6 +84,9 @@
 ;; ========================================================================
 
 ;; Publishing
+
+(defmethod published-data-p ((obj study))
+  (published-p obj))
 
 (defmethod publish-object ((obj study))
   (setf (published-p obj) t))

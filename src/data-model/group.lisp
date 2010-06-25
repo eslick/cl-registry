@@ -6,7 +6,7 @@
 ;;  Branching Survey Support
 ;; ===========================================================
 
-(defmodel survey-group (user-translation-mixin)
+(defmodel survey-group (user-translation-mixin published-data-mixin)
   ((name :accessor group-name :initarg :name :initform "" :index t)
    (advice :accessor group-advice :initarg :advice :initform "")
    (questions :accessor group-questions :initarg :order :initform nil)
@@ -133,20 +133,25 @@
 	       question)
 	:no-question)))
 
-;;
-;; Traversing groups and surveys
-;;
+;;; Publishing
 
-(defun published-group-p (group)
-  (when (member group (published-groups)) t))
+(defparameter *published-groups* nil)	;Not used??
 
-(defparameter *published-groups* nil)
+(defun find-published-groups ()
+  (mapcan #'find-subgroups (top-level-groups t)))
 
 (defun published-groups ()
   (find-published-groups))
 
-(defun find-published-groups ()
-  (mapcan #'find-subgroups (top-level-groups t)))
+(defun published-group-p (group)
+  (when (member group (published-groups)) t))
+
+(defmethod published-data-p ((instance survey-group))
+  (published-group-p instance))
+
+;;
+;; Traversing groups and surveys
+;;
 
 (defun top-level-groups (&optional published-only)
   (remove-duplicates 

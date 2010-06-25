@@ -184,6 +184,8 @@
 ;;  Query support (quick hack to filter answers)
 ;; ====================================================
 
+;; Blacklist
+
 (defparameter *patient-blacklist* nil)
 (defparameter *patient-blacklist-oids* nil)
 
@@ -203,23 +205,63 @@
   (blacklisted-patient-p nil)
   *patient-blacklist-oids*)
 
+;; To do: move ALL-PATIENTS and friends into some place like core/models/model-utils.lisp
+
+(defun all-patients (&key center test)
+  "Returns all PATIENT objects, optionally filtered by CENTER and TEST"
+  ;; The semantics of "all patients" depends somewhat on the portal / application.
+  ;;
+  ;; In the Medical Registry, all user input to surveys is taken from a patient object.
+  ;; But not all users are patients.
+  ;;
+  ;; In LAMsight, a patient is a user if they set a preference. (attached to user object)
+  ;; In ILR, a patient is a patient, but ALL-PATIENTS is generally limited to the current center.
+  ;; In the object model,  patients and users are related, but they are not synonymous.
+  ;; A PATIENT object may contain a USER object.  (LAMsight legacy)
+  ;; A logged-in USER may operate on multiple PATIENT objects. (ILR modern behavior)
+  ;; Hence the concept of an "identification mode" for ALL-PATIENTS-BY-IDENTIFICATION-MODE.
+  (check-type center (or null center))
+  (check-type test (or null symbol function))
+  (select-if (or test #'identity)
+	     (if center
+		 (get-patients-for-center center)
+		 (get-instances-by-class 'patient))))
+
+(defvar *all-patients-identification-mode* ':config
+  "One of (:ALL :CONFIG :ILR :LAMSIGHT)
+ :ALL Accept all patient objects
+ :CONFIG Check site config parameter ALL-PATIENTS-IDENTIFICATION-MODE
+ :ILR All patient objects for current center
+ :LAMSIGHT Check user preferences
+")
+
+(defun check-all-patients-identification-mode ()
+  (if (or (null *all-patients-identification-mode*)
+	  (eq  *all-patients-identification-mode* ':config))
+      (setq *all-patients-identification-mode*
+	    (get-site-config-param ':all-patients-identification-mode)))
+  (check-type *all-patients-identification-mode* (member :all :ilr :lamsight))
+  ;; Returns
+  *all-patients-identification-mode*)
+
+(defun all-patients-by-identification-mode ()
+  "Returns all patient objects determined by mode: :LAMSIGHT, :ILR, or :ALL"
+  (check-all-patients-identification-mode)
+  (ecase *all-patients-identification-mode*
+    (:lamsight
+     (all-patients :center (get-patient-home-center) :test #'patient-p))
+    (:ilr
+     (all-patients :center (current-center) :test #'patient-p))
+    (:all
+     (all-patients :center nil :test #'identity))))
 
 (defparameter *total-patients* nil)
 
 (defun total-patients ()
   (unless *total-patients*
     (setf *total-patients*
-	  (length (all-patients))))
+	  (length (all-patients-by-identification-mode))))
   *total-patients*)
-
-;;; To do: move ALL-PATIENTS and friends into some place like core/models/model-utils.lisp
-
-(defun all-patients (&optional (center (current-center)))
-  (select-if #'patient-p
-	     (get-patients-for-center center)))
-
-(defun all-patient-oids (&optional (center (current-center)))
-  (mapcar #'object-id (all-patients center)))
 
 ;;   (unless *patient-question* 
 ;;     (setf *patient-question* (get-question 5818)))

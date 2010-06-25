@@ -65,7 +65,7 @@
 (defun compute-patient-oids (constraints &optional force)
   (remove-if (lambda (x) (member x (blacklisted-patient-oids)))
 	     (apply 'intersections 
-		    (all-patient-oids)
+		    (mapcar #'object-id (all-patients-by-identification-mode))
 		    (mapcar (lambda (c) 
 			      (sort (constraint-patient-oids c :force force) #'>))
 			    (remove-nulls 
@@ -161,7 +161,7 @@
   
 (defmethod constraint-patient-oids ((constraint preference-constraint) &key force &allow-other-keys)
   (declare (ignore force))
-  (loop for patient in (all-patients)
+  (loop for patient in (all-patients-by-identification-mode)
        for user = (user patient)
        for value = (and user
                         (get-preference (constraint-preference constraint) user))

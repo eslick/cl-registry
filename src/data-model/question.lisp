@@ -9,10 +9,10 @@
 ;; Prompt, type, view, relation
 ;; => validation, extraction
 
-(defmodel question (fulltext-mixin user-translation-mixin)
+(defmodel question (fulltext-mixin user-translation-mixin published-data-mixin)
   (;; Prompt
    (name :accessor question-name :initarg :name :index t)
-   (number :accessor question-number :initarg :number)
+   (number :accessor question-number :initarg :number :initform nil)
    (prompt :accessor question-prompt :initarg :prompt :index t) ;; statisfy via fulltext!
    (prompt-format :accessor question-prompt-format :initarg :prompt-format :initform nil)
    (question-help :accessor question-help :initarg :help :initform "")
@@ -26,8 +26,16 @@
 	    :documentation "An alist of human-value . lisp-value")
    (parent :accessor parent :initarg :parent :initform nil)
    ;; Properties
-   (required :accessor question-required-p :initarg :required :initform nil))
+   (required :accessor question-required-p :initarg :required :initform nil)
+   (hipaa-id-p :accessor question-hipaa-id-p :initarg :hipaa-id-p :initform nil
+               :documentation "Non-nil if question stores HIPAA identifier"))
   (:documentation "The base class for survey and diary questions."))
+
+(defmethod shared-initialize :after ((instance question) slot-names &rest args &key
+				     (data-type ':string data-type-supp-p) (hipaa-id-p nil hipaa-id-supp-p))
+  (declare (ignore args slot-names hipaa-id-p))
+  (when (and (not hipaa-id-supp-p) data-type-supp-p (eq data-type ':date))
+    (setf (slot-value instance 'hipaa-id-p) t)))
 
 (defmethod fulltext-fields ((instance question))
   '(name prompt question-help))
@@ -98,6 +106,12 @@
   PROMPT defaults to NAME but can be overridden."
   (apply #'make-instance 'question :name name :prompt prompt args))
 
+;; Publishing
+
+(defmethod published-data-p ((instance question))
+  (and (not (question-hipaa-id-p instance))
+       (published-data-p (parent instance))))
+
 ;;
 ;; Question views 
 ;;
@@ -162,15 +176,19 @@
 		  (question-context it)
 		  (list group (first (find-group-surveys group)))))))))
 
-(defun related-questions-in-context (question)
+(defun related-questions-in-context (question &key published-only-p)
   (let ((related nil))
     (awhen (parent question)
-      (setf related (set-difference (group-questions it) (list question))))
+      (setf related (set-difference
+		     (select-if (if published-only-p #'published-data-p #'identity) (group-questions it))
+		     (list question))))
     (when (< (length related) 10)
       (setf related 
 	    (append related 
 		    (filter-if (lambda (obj)
-				 (not (eq (type-of obj) 'question)))
+				 (cond
+				   ((not (eq (type-of obj) 'question)))
+				   ((and published-only-p (not (published-data-p obj))))))
 			       (fulltext-search 
 				(clean-query 
 				 (question-prompt question)))))))
