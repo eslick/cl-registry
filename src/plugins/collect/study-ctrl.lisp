@@ -234,8 +234,8 @@
 				     (htm
 				      (:SPAN :CLASS "study-list-survey-name"
 					     (:A :HREF
-						 (str (or survey-url
-							  (format nil "/dashboard/collect/~A/~A/" "survey" (mid survey))))
+						 (or survey-url
+						     (format nil "/dashboard/collect/~A/~A/" "survey" (mid survey)))
 						 (:SPAN :CLASS "study-list-survey-name-alink"
 							(str (name survey)))
 						 (:SPAN :CLASS "study-list-survey-description-alink"
