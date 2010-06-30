@@ -1673,6 +1673,7 @@ which can cause a collapsed lung.")
                                '(("lam-qol-study-consent-form" :signature :date :time)
                                  ("lam-qol-study-ilr-data-use-form" :yes-no-initials))
                                :articles-page-name "lam-qol-study-articles"
+                               :study-complete-message #!"Thank you for completing this study! Please remember to submit your pulmonary function test results."
                                :published t :owner owner :priority 1 :origin "researcher")))
     (loop for spec in survey-rule-alist
          with surveys 

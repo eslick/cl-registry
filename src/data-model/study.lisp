@@ -26,10 +26,13 @@
 			  :initform nil)
    (patients-consented :accessor patients-consented :initform '()
 		       :documentation "A list of patient MIDs")
-   ;; Articles
+   ;; Articles and messages
    (articles-page-name :accessor articles-page-name
 		       :initarg :articles-page-name
                        :initform nil)
+   (study-complete-message :accessor study-complete-message
+			   :initarg study-complete-message
+			   :initform nil)
    ;; Access control
    (published :accessor published-p :initarg :published :initform nil)
    (priority :accessor priority-value :initarg :priority :initform nil)

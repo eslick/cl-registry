@@ -266,7 +266,11 @@
 			   (neq this-study-complete-p ':maybe))
 		  (htm
 		   (:P :CLASS "study-list-message"
-		       (str #!"Surveys for this study are completed")))))))))))
+		       (str #!"Surveys for this study are completed")))
+		  (aif (study-complete-message study)
+		       (htm
+			(:P :CLASS "study-list-message"
+			    (str it))))))))))))
 
 ;; Study-list widget contains one study-list-item for each study
 
