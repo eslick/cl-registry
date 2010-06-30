@@ -31,7 +31,7 @@
 		       :initarg :articles-page-name
                        :initform nil)
    (study-complete-message :accessor study-complete-message
-			   :initarg study-complete-message
+			   :initarg :study-complete-message
 			   :initform nil)
    ;; Access control
    (published :accessor published-p :initarg :published :initform nil)
