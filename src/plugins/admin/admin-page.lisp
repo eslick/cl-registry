@@ -277,7 +277,7 @@
                        (to (user-formatted-email user)))
                    (handler-case
                        (cl-smtp:send-email
-                        *smtp-host* from to subject
+                        (email-smtp-host) from to subject
                         message
                         :cc (and cctome from))
                      (error (c)

@@ -2,10 +2,15 @@
 
 (defvar *inhibit-smtp* nil)
 
-(defvar *smtp-host* "smtp.media.mit.edu")
+(defvar *smtp-host* nil)
 
 (defparameter *lamsight-reply-to* "lamsight-admin@media.mit.edu")
 (defparameter *ilr-reply-to* "admin@internationallamregistry.org")
+
+(defun email-smtp-host ()
+  (or *smtp-host*
+      (setq *smtp-host* (get-site-config-param :email-smtp-host))
+      (error "No site configuration parameter value for :EMAIL-SMTP-HOST")))
 
 (defun site-email-admin-address ()
   "Email admin address to use in From header of email sent from Registry software to users"
@@ -28,7 +33,7 @@
      ;;             addresses)
      nil)
     ((and (stringp addresses) (plusp (length addresses)))
-     (cl-smtp:send-email *smtp-host* 
+     (cl-smtp:send-email (email-smtp-host)
 			 (site-email-admin-address)
 			 addresses subject body))))
 
