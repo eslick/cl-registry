@@ -193,6 +193,7 @@
 			      :components
 			      ((:file "admin")
 			       (:file "admin-page"))
+			      :depends-on (email)
 			      :serial t)
 		     (:module forums
 			      :components

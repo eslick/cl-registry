@@ -277,9 +277,10 @@
                        (to (user-formatted-email user)))
                    (handler-case
                        (cl-smtp:send-email
-                        (email-smtp-host) from to subject
+                        (site-email-smtp-host) from to subject
                         message
-                        :cc (and cctome from))
+                        :cc (and cctome from)
+			:authentication (site-email-smtp-authentication))
                      (error (c)
                        (do-alert
                            (format nil "~a" c))))

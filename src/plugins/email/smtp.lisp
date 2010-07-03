@@ -4,10 +4,12 @@
 
 (defvar *smtp-host* nil)
 
+(defvar *smtp-authentication* '(:unknown))
+
 (defparameter *lamsight-reply-to* "lamsight-admin@media.mit.edu")
 (defparameter *ilr-reply-to* "admin@internationallamregistry.org")
 
-(defun email-smtp-host ()
+(defun site-email-smtp-host ()
   (or *smtp-host*
       (setq *smtp-host* (get-site-config-param :email-smtp-host))
       (error "No site configuration parameter value for :EMAIL-SMTP-HOST")))
@@ -25,6 +27,16 @@
 	   (string-equal it "International LAM Registry"))
      *ilr-reply-to*)))
 
+(defun site-email-smtp-authentication ()
+  (check-type *smtp-authentication* cons)
+  (case (first *smtp-authentication*)
+    (:unknown
+     (setq *smtp-authentication*
+	   (or (get-site-config-param :email-smtp-authentication)
+	       '(:none))))
+    (:none nil)
+    (otherwise *smtp-authentication*)))
+      
 (defun send-email (addresses subject body)
   (cond
     (*inhibit-smtp*
@@ -33,9 +45,10 @@
      ;;             addresses)
      nil)
     ((and (stringp addresses) (plusp (length addresses)))
-     (cl-smtp:send-email (email-smtp-host)
+     (cl-smtp:send-email (site-email-smtp-host)
 			 (site-email-admin-address)
-			 addresses subject body))))
+			 addresses subject body
+			 :authentication (site-email-smtp-authentication)))))
 
 (defparameter *enable-email-whitelist* nil)
 (defparameter *user-whitelist* '("eslick" "kmcorbett" "wws" "rme" "clozure" "jaj"))
