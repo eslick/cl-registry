@@ -252,17 +252,23 @@
                 (:UL
                  (dolist (param post-params)
                    (htm (:LI (str (format nil "~A = ~A" (car param) (cdr param)))))))))
-         ;; Check error return status
+         ;; Get parameters 
          (let ((stat (cdr (assoc "Stat" get-params :test #'string-equal)))
                (desc (cdr (assoc "Desc" get-params :test #'string-equal)))
                (sessions (cdr (assoc "numSessions" post-params :test #'string-equal)))
                (scores (cdr (assoc "NumScores1" post-params :test #'string-equal)))
+               (loginName (cdr (assoc "LoginName" post-params :test #'string-equal)))
                (nscores nil))
            (flet ((qm-error (fmt &rest args)
                     (htm (:P :CLASS "qualitymetric-message"
                              (str (concatenate 'string
                                                "QualityMetric error: "
                                                (apply #'format nil fmt args)))))))
+             ;; Workaround for bug #327 - losing current-patient when QualityMetric results returned
+             (when (null patient)
+               (aif (get-patient loginName nil t)
+                    (setq patient it)))
+             ;; Check return status now
              (cond
                ;; We should be checking status but QM is returning 21 on success not 0 !!
                ((null desc)
@@ -278,6 +284,12 @@
                ((not (typep (setq nscores (ignore-errors (read-from-string scores nil 0.)))
                             '(integer 1)))
                 (qm-error "Invalid NumScores: ~A" scores))
+               ;; Now check that we have a valid patient
+               ((null patient)
+                ;; What, still??
+                (if loginName
+                    (qm-error "invalid LoginName: ~A" loginName)
+                    (qm-error "null LoginName")))
                ;; Success!!
                (t
                 ;; Loop over questions and get answers
