@@ -33,7 +33,8 @@
     (:unknown
      (setq *smtp-authentication*
 	   (or (get-site-config-param :email-smtp-authentication)
-	       '(:none))))
+	       '(:none)))
+     nil)
     (:none nil)
     (otherwise *smtp-authentication*)))
       
