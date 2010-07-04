@@ -63,7 +63,9 @@
             it)
 	   ((dashboard-url-p)
 	    nil)
-	   ;; QualityMetric
+	   ;; QualityMetric survey URLs
+	   ;; Not using front page selector for now. This was a hack attempt to workaround a display glitch.
+	   #+NIL
 	   ((and tokens (equal (first tokens) "qualitymetric"))
 	    (pop-tokens uri-tokens 1)
 	    (or (weblocks::webapp-session-value :registry-qualitymetric-selector)

@@ -172,16 +172,14 @@
           ;; TBD: unique-ify across centers, registry installations
           (and (typep patient 'patient) (id patient)))
          (widget
-          (and login
-               (make-instance 'qualitymetric-start-form :state (make-qualitymetric-connect :login login)))))
+          (if login
+              (make-instance 'qualitymetric-start-form :state (make-qualitymetric-connect :login login))
+              (make-widget (f* (with-html (:P :CLASS "qualitymetric-message" "Unable to start survey - no current patient")))))))
     ;; Returns
     widget))
 
 (defun make-qualitymetric-start-page ()
-  (make-instance 'composite
-                 :widgets
-                 (list
-                  (make-qualitymetric-start-form))))
+  (make-instance 'composite :widgets (list (make-qualitymetric-start-form))))
 
 (defmethod qualitymetric-start-action ((widget qualitymetric-start-form))
   (let* ((comp (widget-parent widget))
