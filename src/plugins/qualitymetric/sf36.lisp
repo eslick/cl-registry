@@ -19,7 +19,8 @@
            questions)
       (flet ((make-q (name &optional (description name))
                (let ((question
-                      (make-question name :prompt description :data-type :number)))
+                      (make-question name :prompt description :data-type :number
+                                     :parent group)))
                  (push question questions))))
         (make-q "GH" "General Health Score")
         (make-q "PF" "Physical Functioning Score")
