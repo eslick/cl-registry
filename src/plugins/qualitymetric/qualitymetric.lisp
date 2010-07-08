@@ -65,13 +65,13 @@
   ;; E.g. "http://192.168.0.12:8080/qualitymetric/results/"
   (qualitymetric-page-url (make-pathname :directory '(:relative "results"))))
 
-(defun qualitymetric-results-helper-page-pathname ()
+(defun qualitymetric-results-page-helper-pathname ()
   (make-pathname :directory '(:absolute "qualitymetric-results-helper")))
 
-(defun qualitymetric-results-helper-page-url ()
+(defun qualitymetric-results-page-helper-url ()
   ;; E.g. "/qualitymetric/results-helper/"
   ;; TODO: Fill in http://<address>:<port>
-  (namestring (qualitymetric-results-helper-page-pathname)))
+  (qualitymetric-page-url (qualitymetric-results-page-helper-pathname)))
 
 (defun qualitymetric-done-page-pathname ()
   (qualitymetric-pathname (make-pathname :directory '(:relative "done"))))
@@ -193,8 +193,10 @@
   (declare (ignore args))
   (with-main-content-area-html
     (:MIDDLE-INDENT
-     (if (> (incf counter) 1)
-         (htm (:P (str (format nil "Rendering x~D" counter)))))
+     (let ((debug (get-site-config-param :enable-debugging)))
+       (when debug
+         (if (> (incf counter) 1)
+             (htm (:P (str (format nil "Rendering x~D" counter)))))))
      (with-slots (login group survey) connect
        (cond
          ((null login)
@@ -217,7 +219,9 @@
                          (if *qualitymetric-show-results-in-iframe*
                              (htm (:INPUT :NAME "NW" :TYPE "hidden" :VALUE "1")))
                          (:INPUT :NAME "NB" :TYPE "hidden" :VALUE (qualitymetric-done-page-url))
-                         (:INPUT :NAME "ErrorURL" :TYPE "hidden" :VALUE (qualitymetric-results-page-url))
+                         (:INPUT :NAME "ErrorURL"
+                                 :TYPE "hidden"
+                                 :VALUE (qualitymetric-results-page-url))
                          (:INPUT :NAME "ConfirmExit" :TYPE "hidden" :VALUE "1")
                          (render-button "Start Survey"))))
           (if *qualitymetric-show-results-in-iframe*
@@ -232,92 +236,105 @@
   ()
   )
 
+(defun qualitymetric-handle-results (&optional patient)
+  (with-main-content-area-html
+    (:MIDDLE-INDENT
+     (:P "Survey results")
+     (let ((debug (get-site-config-param :enable-debugging))
+           (get-params (hunchentoot::get-parameters*))
+           (post-params (hunchentoot::maybe-read-post-parameters :force t)))
+       (when debug
+         (htm (:P (str (format nil "GET parameters (~D)" (length get-params))))
+              (:UL
+               (dolist (param get-params)
+                 (htm (:LI (str (format nil "~A = ~A" (car param) (cdr param))))))))
+         (htm (:P (str (format nil "POST parameters (~D)" (length post-params))))
+              (:UL
+               (dolist (param post-params)
+                 (htm (:LI (str (format nil "~A = ~A" (car param) (cdr param)))))))))
+       ;; Get parameters 
+       (let ((stat (cdr (assoc "Stat" get-params :test #'string-equal)))
+             (desc (cdr (assoc "Desc" get-params :test #'string-equal)))
+             (sessions (cdr (assoc "numSessions" post-params :test #'string-equal)))
+             (scores (cdr (assoc "NumScores1" post-params :test #'string-equal)))
+             (loginName (cdr (assoc "LoginName" post-params :test #'string-equal)))
+             (nscores nil))
+         (flet ((qm-error (fmt &rest args)
+                  (let ((message
+                         (concatenate 'string
+                                      "Error: In QualityMetric survey processing: "
+                                      (apply #'format nil fmt args))))
+                    (htm (:P :CLASS "qualitymetric-message"
+                             (str message)))
+                    (return-from qualitymetric-handle-results (values nil message)))))
+           ;; Workaround for bug #327 - losing current-patient when QualityMetric results returned
+           (when (null patient)
+             (aif (get-patient loginName nil t)
+                  (setq patient it)))
+           ;; Check return status now
+           (cond
+             ;; We should be checking status but QM is returning 21 on success not 0 !!
+             ((null desc)
+              (qm-error "no status returned"))
+             ((not (and desc (string-equal desc "Data successfully returned")))
+              (qm-error "~A~@[ (~D)~]" stat desc))
+             ;; Assertions about sessions: assume only one session
+             ((not (string-equal sessions "1"))
+              (qm-error "Invalid numSessions = ~S" sessions))
+             ;; Assertions about scores
+             ((or (not (stringp scores)) (zerop (length scores)))
+              (qm-error "Missing NumScores"))
+             ((not (typep (setq nscores (ignore-errors (read-from-string scores nil 0.)))
+                          '(integer 1)))
+              (qm-error "Invalid NumScores: ~A" scores))
+             ;; Now check that we have a valid patient
+             ((null patient)
+              ;; What, still??
+              (if loginName
+                  (qm-error "invalid LoginName: ~A" loginName)
+                  (qm-error "null LoginName")))
+             ;; Success!!
+             (t
+              ;; Loop over questions and get answers
+              (loop for num from 1 to nscores
+                 as name-param = (format nil "1Name~D" num)
+                 as name-value = (cdr (assoc name-param post-params :test #'string-equal))
+                 as score-param = (format nil "1Score~D" num)
+                 as score-valuestr = (cdr (assoc score-param post-params :test #'string-equal))
+                 with score-value
+                 with question
+                 do (cond
+                      ((null name-value)
+                       (qm-error "Missing score name: ~A" name-param))
+                      ((not (and (stringp name-value) (> (length name-value) 1)))
+                       (qm-error "Invalid name value pair: ~A = ~S" name-param name-value))
+                      ((null score-valuestr)
+                       (qm-error "Missing score value: ~A" score-param))
+                      ((not (and (floatp (setq score-value (ignore-errors (read-from-string score-valuestr nil nil))))
+                                 (> score-value 0.0)))
+                       (qm-error "Invalid score value pair ~A = ~S" score-param score-valuestr))
+                      ;; Find matching survey question
+                      ((null (setq question (first (get-instances-by-value 'question 'name name-value))))
+                       (qm-error "Unrecognized question name: ~A" name-value))
+                      ;; Finally
+                      (t
+                       (htm (:P (str (format nil "~A = ~A" name-value score-value))))
+                       (add-answer question patient score-value))))
+              ;; Returns
+              (return-from qualitymetric-handle-results nscores))))))))
+  ;; Returns
+  nil)
+
 (defmethod render-widget-body ((widget qualitymetric-results-page) &rest args)
   (declare (ignore args))
-  (let ((patient (current-patient)))
-    (with-main-content-area-html
-      (:MIDDLE-INDENT
-       (:P "Survey results")
-       (let ((debug (get-site-config-param :enable-debugging))
-             (get-params (hunchentoot::get-parameters*))
-             (post-params (hunchentoot::maybe-read-post-parameters :force t)))
-         (when debug
-           (htm (:P (str (format nil "GET parameters (~D)" (length get-params))))
-                (:UL
-                 (dolist (param get-params)
-                   (htm (:LI (str (format nil "~A = ~A" (car param) (cdr param))))))))
-           (htm (:P (str (format nil "POST parameters (~D)" (length post-params))))
-                (:UL
-                 (dolist (param post-params)
-                   (htm (:LI (str (format nil "~A = ~A" (car param) (cdr param)))))))))
-         ;; Get parameters 
-         (let ((stat (cdr (assoc "Stat" get-params :test #'string-equal)))
-               (desc (cdr (assoc "Desc" get-params :test #'string-equal)))
-               (sessions (cdr (assoc "numSessions" post-params :test #'string-equal)))
-               (scores (cdr (assoc "NumScores1" post-params :test #'string-equal)))
-               (loginName (cdr (assoc "LoginName" post-params :test #'string-equal)))
-               (nscores nil))
-           (flet ((qm-error (fmt &rest args)
-                    (htm (:P :CLASS "qualitymetric-message"
-                             (str (concatenate 'string
-                                               "QualityMetric error: "
-                                               (apply #'format nil fmt args)))))))
-             ;; Workaround for bug #327 - losing current-patient when QualityMetric results returned
-             (when (null patient)
-               (aif (get-patient loginName nil t)
-                    (setq patient it)))
-             ;; Check return status now
-             (cond
-               ;; We should be checking status but QM is returning 21 on success not 0 !!
-               ((null desc)
-                (qm-error "no status returned"))
-               ((not (and desc (string-equal desc "Data successfully returned")))
-                (qm-error "~A~@[ (~D)~]" stat desc))
-               ;; Assertions about sessions: assume only one session
-               ((not (string-equal sessions "1"))
-                (qm-error "Invalid numSessions = ~S" sessions))
-               ;; Assertions about scores
-               ((or (not (stringp scores)) (zerop (length scores)))
-                (qm-error "Missing NumScores"))
-               ((not (typep (setq nscores (ignore-errors (read-from-string scores nil 0.)))
-                            '(integer 1)))
-                (qm-error "Invalid NumScores: ~A" scores))
-               ;; Now check that we have a valid patient
-               ((null patient)
-                ;; What, still??
-                (if loginName
-                    (qm-error "invalid LoginName: ~A" loginName)
-                    (qm-error "null LoginName")))
-               ;; Success!!
-               (t
-                ;; Loop over questions and get answers
-                (loop for num from 1 to nscores
-                   as name-param = (format nil "1Name~D" num)
-                   as name-value = (cdr (assoc name-param post-params :test #'string-equal))
-                   as score-param = (format nil "1Score~D" num)
-                   as score-valuestr = (cdr (assoc score-param post-params :test #'string-equal))
-                   with score-value
-                   with question
-                   do (cond
-                        ((null name-value)
-                         (qm-error "Missing score name: ~A" name-param))
-                        ((not (and (stringp name-value) (> (length name-value) 1)))
-                         (qm-error "Invalid name value pair: ~A = ~S" name-param name-value))
-                        ((null score-valuestr)
-                         (qm-error "Missing score value: ~A" score-param))
-                        ((not (and (floatp (setq score-value (ignore-errors (read-from-string score-valuestr nil nil))))
-                                   (> score-value 0.0)))
-                         (qm-error "Invalid score value pair ~A = ~S" score-param score-valuestr))
-                        ;; Find matching survey question
-                        ((null (setq question (first (get-instances-by-value 'question 'name name-value))))
-                         (qm-error "Unrecognized question name: ~A" name-value))
-                        ;; Finally
-                        (t
-                         (htm (:P (str (format nil "~A = ~A" name-value score-value))))
-                         (add-answer question patient score-value))))))
-             ;; Redirect to results helper page
-             ;; TODO: pass results (scores) and render them on helper page
-             (redirect (qualitymetric-results-helper-page-url) :defer ':post-render))))))))
+  (multiple-value-bind (results message) (qualitymetric-handle-results (current-patient))
+    ;; Redirect to results helper page
+    (redirect
+     (format nil "~A?results=~:[failure~;success~]~@[&message=~A~]"
+             (qualitymetric-results-page-helper-url)
+             results
+             (and message (hunchentoot:url-encode message)))
+     :defer ':post-render)))
 
 (defun make-qualitymetric-results-page ()
   (make-instance 'composite :widgets (list (make-instance 'qualitymetric-results-page))))
@@ -398,10 +415,25 @@
 ;;; Handler for helper page
 
 (defun qualitymetric-results-page-helper-handler (request)
-  (if (string= (hunchentoot:script-name* request) (namestring (qualitymetric-results-helper-page-pathname)))
+  (if (string= (hunchentoot:script-name* request) (namestring (qualitymetric-results-page-helper-pathname)))
       #'(lambda ()
-          (with-html
-            (:P "Survey results stored")))))
+          (let* ((get-params (hunchentoot::get-parameters*))
+                 (results (cdr (assoc "results" get-params :test #'string-equal)))
+                 (message (cdr (assoc "message" get-params :test #'string-equal))))
+            (with-html-to-string
+              (:H2 "QualityMetric survey results")
+              (:P :CLASS "qualitymetric-message"
+                  (:BR)
+                  (str
+                   (format nil
+                           (cond
+                             ((string-equal results "failure")
+                              "Error: Cannot get survey results~@[: ~A~]")
+                             ((string-equal results "success")
+                              "Success: Survey results stored~@[: ~A~]")
+                             (t
+                              "Internal error: Unable to check survey results"))
+                           message))))))))
 
 (pushnew 'qualitymetric-results-page-helper-handler hunchentoot::*dispatch-table*)
 

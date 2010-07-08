@@ -64,8 +64,8 @@
 	   ((dashboard-url-p)
 	    nil)
 	   ;; QualityMetric survey URLs
-	   ;; Not using front page selector for now. This was a hack attempt to workaround a display glitch.
-	   #+NIL
+	   ;; When QualityMetric redirects to this Web app (with results in GET/POST parameters)
+	   ;; for some reason the server session context is lost or, I don't know, anyway this fixes the problem.
 	   ((and tokens (equal (first tokens) "qualitymetric"))
 	    (pop-tokens uri-tokens 1)
 	    (or (weblocks::webapp-session-value :registry-qualitymetric-selector)
