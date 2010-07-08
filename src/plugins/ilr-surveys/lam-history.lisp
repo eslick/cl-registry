@@ -1900,13 +1900,17 @@ which can cause a collapsed lung.")
         
       (dotimes (n count)
         (let* ((patient (make-patient (generate-patient-id :center center) center))
+               (user (user-add (id patient) (id patient)))
                (q3 (aref questions 3.)) ;country of origin
                (q8 (aref questions 8.)) ;ethnicity
                (q9 (aref questions 9.)) ;race
                (q11 (aref questions 11.)) ;diagnosis
                (q17 (aref questions 17.)) ;smoker?
                )
+          ;; Fix up user and patient
           (setf (external-id patient) (symbol-name (gensym)))
+          (setf (user patient) user)
+          (setf (get-preference :lam-patient-p user) t)
 
           ;; Create test survey answers
 
