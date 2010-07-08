@@ -62,7 +62,7 @@
 
 (defun lamsight-weekly-tweet-text ()
   (let* ((users (length (all-users)))
-	 (lam-patients (length (all-patients)))
+	 (lam-patients (length (all-patients-by-identification-mode)))
 	 (researchers (length (select-if #'researcher-p (all-users))))
 	 (questions (length (get-instances-by-class 'question)))
 	 (answers (length (get-instances-by-class 'answer)))
