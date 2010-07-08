@@ -147,7 +147,10 @@
 		       #!"Show consent form"))
 		     (patient-consent-form-article-widget
 		      ;; Display submit/cancel form
-		      (flet ((process-forms (&key signature agree disagree initials submit cancel)
+		      (flet ((process-forms (&rest args
+						   &key signature agree disagree initials submit cancel
+						   &allow-other-keys)
+			       (declare (ignore args))
 			       (cond
 				 ((or cancel (not submit))
 				  ;; Hide consent forms
