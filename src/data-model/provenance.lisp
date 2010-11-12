@@ -58,7 +58,7 @@
                provenance)
               (t (let ((history (unless (eq t history-length)
                                   (get-provenance-history model))))
-                   (cond ((and history (>= (length history) history-length))
+                   (cond ((and history (>= (length history) (or history-length 0)))
                           (setf history
                                 (nthcdr (max 0 (1- (or history-length 0))) history))
                           (let ((prov (car history)))

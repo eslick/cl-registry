@@ -104,4 +104,4 @@
   (format nil "~A - ~A" survey-name string2))
 
 (defmethod survey-name-append ((inst survey) str)
-  (survey-name-append (name survey) str))
+  (survey-name-append (name inst) str))

@@ -51,7 +51,7 @@
 
 (defun get-patient-home-patient (&optional (user (current-user)))
   (or (get-patient-for-user user)
-      (make-patient (username user) (get-patient-home-center) user)))
+      (make-patient (username user) (get-patient-home-center) :user user)))
       
 (defun make-patient-home-page (&key plugins &allow-other-keys)
   (setf (current-center) (get-patient-home-center)

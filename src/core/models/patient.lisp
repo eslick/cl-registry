@@ -11,7 +11,8 @@
          :initarg :name
          :initform nil)
    (patient-counter :accessor patient-counter
-                    :initform 0)))
+                    :initform 0)
+   (patient-count :accessor patient-count :initform 0)))
 
 (defmethod print-object ((center center) stream)
   (format stream "#<CENTER (~A) '~A'>"
@@ -46,6 +47,7 @@
 
 (defview center-table-view (:type table
                            :inherit-from '(:scaffold center))
+  (patient-counter :hidep t)
   )
 
 (defclass center-short-name-parser (parser)
@@ -63,6 +65,7 @@
 (defview center-form-view (:type form :inherit-from '(:scaffold center))
   (short-name :parse-as center-short-name)
   (patient-counter :hidep t)
+  (patient-count :hidep t)
   )
 
 (defmodel clinician ()
@@ -263,7 +266,7 @@
             (id o)
             (short-name (center o)))))
 
-(defun make-patient (id center &optional user)
+(defun make-patient (id center &key external-id user)
   (when (stringp user) (setf user (get-user user)))
   (check-type id string)
   (check-type center (or string center))
@@ -280,7 +283,8 @@
   (with-transaction ()
     (let ((patient (make-instance
                     'patient
-                    :id id :center center :user user)))
+                    :id id :external-id external-id :center center :user user)))
+      (incf (patient-count center))
       (make-provenance patient :user (current-user t) :center center)
       patient)))
 
@@ -345,7 +349,9 @@
                (return-from parse-view-field-value nil))
           (t (values t t value)))))
 
-(defview patient-form-view (:type form :inherit-from '(:scaffold patient))
+;; IAN: Do not persist objects, require use of make-patient which uses data from 
+;; the form view to initialize the actual patient object.
+(defview patient-form-view (:type form :persistp nil :inherit-from '(:scaffold patient))
   (id :parse-as patient-id)
   (center :hidep t)                  ;use (current-center)
   (user :hidep t)                    ;get this from the logged-in user

@@ -77,7 +77,6 @@
                        :direction :output
                        :if-exists :append
                        :if-does-not-exist :create)
-
     (with-standard-io-syntax
       (format out "~&;; delete-patients-and-answers ~@[current user: ~A~]~%" 
               (aif (current-user t) (username it)))
@@ -98,17 +97,28 @@
              (drop-instance answer))
            (when (eq patient current-patient)
              (setf (current-patient) nil))
+           (decf (patient-count (center patient)))
+           ;; IAN: We should delete provenance information, or record the deletion as
+           ;; a provenance activity
            (drop-instance patient)))
-      (mark-dirty-sibling-widgets-of-types widget '(choose-patient)))))
+      (mark-dirty-sibling-widgets-of-types widget '(choose-patient center-editor)))))
 
 (defun make-patient-editor-widget ()
   (let ((edw (make-instance 'patient-editor)))
-    (flet ((delete-patients-and-answers (obj items)
-             (declare (ignore obj))
+    (flet ((delete-patients (widget items)
+             (declare (ignore widget))
              (delete-patients-and-answers edw items)))
-      (let* ((mark-dirty-patient
-              (lambda (&rest ignore)
-                (declare (ignore ignore))
+      (let* ((edit-patient
+              (lambda (widget obj)
+                (declare (ignore widget obj))
+;;                (make-provenance obj :center (center obj))
+                (mark-dirty-sibling-widgets-of-types
+                 edw '(choose-patient center-editor))))
+             (add-new-patient 
+              (lambda (widget proxy)
+                (declare (ignore widget))
+                (make-patient (slot-value proxy 'id) (slot-value proxy 'center)
+                              :external-id (slot-value proxy 'external-id))
                 (mark-dirty-sibling-widgets-of-types
                  edw '(choose-patient center-editor))))
              (gred (make-instance 'gridedit
@@ -117,13 +127,13 @@
                                  :view 'patient-table-view
                                  :item-form-view 'patient-form-view
                                  :on-query 'patient-editor-query
-                                 :on-add-item-completed mark-dirty-patient
-                                 :on-edit-item-completed mark-dirty-patient
+                                 :on-add-item-completed add-new-patient
+                                 :on-edit-item-completed edit-patient
                                  :no-items-to-delete-format-string
                                  #!"Please select patients to delete"
                                  :delete-confirmation-string-function
                                  'delete-patients-confirmation-string
-                                 :on-delete-items 'delete-patients-and-answers)))
+                                 :on-delete-items #'delete-patients)))
         (setf (composite-widgets edw) (list gred))))
     ;; Returns
     edw))
