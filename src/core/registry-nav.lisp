@@ -108,7 +108,7 @@
 		      (has-permission-p (current-user) p t))
 		    it)
 	(return-from instantiate-site-app nil)))
-    (list (tab-name app)
+    (list (or (getf args :name) (tab-name app))
 	  (create-plugin-object app (remove-keyword-parameters args :permissions)))))
 
 ;; 	   `(home ,home ;; (make-article-page "home")

@@ -228,6 +228,12 @@
 			       (:file "explorer"))
 			      :depends-on (collect analytics)
 			      :serial t)
+		     (:module reporting
+			      :components
+			      ((:file "report")
+			       (:file "summary"))
+			      :depends-on (analytics)
+			      :serial t)
                      (:module uploads
                               :components
                               ((:file "uploads")

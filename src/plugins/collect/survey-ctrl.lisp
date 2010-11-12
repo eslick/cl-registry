@@ -129,7 +129,7 @@
 	   (is-admin-p)
 	   (eq (current-user) (owner survey))
 	   (member (current-user) (survey-acl survey)))
-       (not (edit-lock survey))
+       (not (and (slot-boundp survey 'edit-lock) (edit-lock survey)))
        (or (not (get-site-config-param :survey-viewer-show-diaries-separate))
 	   (and (not diary-p) (not (diary-p survey)))
 	   (and diary-p (diary-p survey)))))
