@@ -13,7 +13,7 @@
   :create 'make-clinician-home-page)
 
 ;;
-;; Patient home page
+;; Clinician home page
 ;;
 
 (defwidget clinician-home (composite)
@@ -56,7 +56,9 @@
 					     :widgets
 					     (list (make-widget 'no-javascript)
 						   (make-choose-center-widget)
-						   (make-choose-patient-widget)
+						   ;; Uncomment next to allow to choose patient from home page
+						   ;; This affects context on the Collect / Input Data tab
+						   ;;   (make-choose-patient-widget)
 						   (set-widget-rule-between (make-patient-editor-widget) :after t)
 						   (set-widget-rule-between (make-clinician-editor-widget) :after t)
 						   (make-center-editor-widget)))
