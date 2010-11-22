@@ -88,10 +88,23 @@
 	  (:div :class "header-nav-bottom"))))
 
 (defun help-mailto-string ()
-  (format nil "mailto:~A?subject=~A&body=~A"
+  (let* ((sname (get-site-config-param :site-name))
+	 (ilr-p (and sname (string-equal sname "International LAM Registry")))
+	 (lamsight-p (or (null sname) (string-equal sname "LAMsight"))))
+    (format nil "mailto:~A?subject=~A&body=~A"
 	  (get-site-config-param :email-admin-address)
-	  #!"[LAMsight Help Request]"
-	  #!"I'm having a problem with LAMsight and have provided details on my problem below."))
+	  (cond
+	    (lamsight-p #!"[LAMsight Help Request]")
+	    (ilr-p "[ILR Help Request]")
+	    (t "[Registry Help Request]"))
+	  (cond
+	    (lamsight-p
+	     #!"I'm having a problem with LAMsight and have provided details on my problem below.")
+	    (ilr-p
+	     "I'm having a problem with ILR and have provided details on my problem below.")
+	    (t
+	     "I'm having a problem with the Registry ~@[~A~]and have provided details on my problem below."
+	     (get-site-config-param :site-name))))))
 
 (defun render-login-header ()
   (aif (current-user)
