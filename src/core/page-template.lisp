@@ -72,11 +72,13 @@
 			(htm (:span :class "header-logo-text" (str logo-text)))))))
 	  (:div :class "header-nav"
  			(:ul
-			 (:li 
-			  (render-autodropdown "language" (valid-languages)
-					       #'change-language-handler
-					       :use-ajax-p nil
-					       :selected-value (session-language)))
+			 (unless (get-site-config-param :header-languages-menu-hide)
+			   (htm
+			    (:li 
+			     (render-autodropdown "language" (valid-languages)
+						  #'change-language-handler
+						  :use-ajax-p nil
+						  :selected-value (session-language)))))
 			 (:li  (:a :href (help-mailto-string) 
 				   :onclick "_gaq.push(['_trackEvent','help','header']);"
 				   (str #!"Help"))
