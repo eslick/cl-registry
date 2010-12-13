@@ -126,6 +126,7 @@
 			      :serial t)
 		     (:file "authentication")
 		     (:file "handlers")
+		     (:file "portal")
 		     (:file "page-template")
 		     (:file "front-page")
 		     (:file "registry-nav")
