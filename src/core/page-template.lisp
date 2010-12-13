@@ -81,7 +81,9 @@
 						  :selected-value (session-language)))))
 			 (:li  (:a :href (help-mailto-string) 
 				   :onclick "_gaq.push(['_trackEvent','help','header']);"
-				   (str #!"Help"))
+				   (if (eq (get-portal-name) ':lamsight)
+				       (str #!"Help")
+				       (str #!"Support")))
 			       (str "&nbsp;|&nbsp;"))
 			 (:li (render-registration-header))
 			 (:li (render-login-header))))
@@ -90,9 +92,9 @@
 	  (:div :class "header-nav-bottom"))))
 
 (defun help-mailto-string ()
-  (let* ((sname (get-site-config-param :site-name))
-	 (ilr-p (and sname (string-equal sname "International LAM Registry")))
-	 (lamsight-p (or (null sname) (string-equal sname "LAMsight"))))
+  (let* ((portal (get-portal-name))
+	 (ilr-p (eq portal ':ilr))
+	 (lamsight-p (eq portal ':lamsight)))
     (format nil "mailto:~A?subject=~A&body=~A"
 	  (get-site-config-param :email-admin-address)
 	  (cond

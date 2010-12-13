@@ -64,7 +64,8 @@
 						   (make-center-editor-widget)))
 			      ,map
 			      ,@(instantiate-plugins plugins)
-			      ,(make-article-widget "clinician-home" :sidebar-p t)))))
+			      ,(make-article-widget "clinician-home" :sidebar-p t)
+			      ,(make-article-widget "welcome-to-ilr" :sidebar-p t)))))
       (setf (home-page-map home) map)
       (mapcar (lambda (widget)
 		(setf (widget-parent widget) home))

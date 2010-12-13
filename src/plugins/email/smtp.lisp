@@ -16,16 +16,14 @@
 
 (defun site-email-admin-address ()
   "Email admin address to use in From header of email sent from Registry software to users"
-  (cond
-    ;; We should rely only on the email admin address set in site config
-    ((get-site-config-param :email-admin-address))
-    ;; We can fall back on known addresses for Registry applications
-    ((aand (get-site-config-param :site-name)
-	   (string-equal it "LAMsight"))
-     *lamsight-reply-to*)
-    ((aand (get-site-config-param :site-name)
-	   (string-equal it "International LAM Registry"))
-     *ilr-reply-to*)))
+  (let ((portal (get-portal-name :default nil)))
+    (cond
+      ;; We should rely only on the email admin address set in site config
+      ((get-site-config-param :email-admin-address))
+      ;; We can fall back on known addresses for Registry applications
+      ((eq portal ':lamsight) *lamsight-reply-to*)
+      ((eq portal ':ilr) *ilr-reply-to*)
+      (t (error "No site configuration parameter value for :EMAIL-ADMIN-ADDRESS")))))
 
 (defun site-email-smtp-authentication ()
   (check-type *smtp-authentication* cons)

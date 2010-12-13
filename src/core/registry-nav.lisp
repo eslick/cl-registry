@@ -20,7 +20,12 @@
     (setf (content-pages pd) (assoc-get :content-pages config))))
 
 (defmethod dependencies append ((dispatcher registry-dispatcher))
-  (list (make-local-dependency :stylesheet "tour")))
+  ;; TODO: find out where this tour.css went?? -kmcorbett
+  (let ((depends (make-local-dependency :stylesheet "tour")))
+    (if (eq (get-portal-name :default nil) ':ilr)
+	(push (make-local-dependency :stylesheet "ilr-styles") depends))
+    ;; Returns
+    depends))
 
 ;;(defmethod page-title ((widget registry-dispatcher))
 ;;  "LAMSIGHT2")
