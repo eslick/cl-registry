@@ -141,3 +141,21 @@ Send email to  <a href=\"mailto:admin@internationallamregistry.org\">admin@inter
 (defun create-ilr-beta ()
   (create-ilr-beta-users)
   (create-ilr-beta-discuss))
+
+(defun print-ilr-beta-clinicians (&optional (out *standard-output*))
+  (loop for center in (get-instances-by-class 'center) do
+       (progn
+         (format out "~%Center: ~A" (center-name center))
+         (loop for clinician in (get-clinicians-for-center center) do
+              (let ((user (user clinician)))
+                (format out "~%         ~A~@[  (center admin)~]"
+                        (if (null user)
+                            "anonymous"
+                            (format nil "~A - ~@[~A, ~]~@[~A ~]~@[~A ~]"
+                                    (username user)
+                                    (last-name user)
+                                    (first-name user)
+                                    (user-email user)))
+                        (center-admin-p clinician)))))))
+
+                          
