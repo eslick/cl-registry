@@ -42,7 +42,7 @@
     (:p :id "login-forgot" 
 	(render-link (f* (setf (message login) nil)
 			 (do-forgot-password-dialog)
-			 (redirect "/"))
+			 (redirect "/" :defer :post-render))
 		     #!"Forgot your username or password?"))))
     
 (defun handle-front-login (login &key username pw forgot &allow-other-keys)

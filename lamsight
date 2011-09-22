@@ -2,7 +2,8 @@
 # Usage is: "lamsight [slimeport]"
 
 REGPORT=8080
-REGCONFIG="lamsight-production+devel"
+#REGCONFIG="lamsight-production+devel"
+REGCONFIG="lamsight-production"
 export REGPORT REGCONFIG
 
 ccl -e '(load "registry-loader.lisp")' \
