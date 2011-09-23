@@ -47,10 +47,15 @@
                ,countsym)
             (incf ,countsym))))))
 
-(defvar *choices-alist-yes-no '(("Yes" . t) ("No" . nil)))
+(defvar *choices-alist-yes-no '(("Yes" . "Yes") ("No" . "No")))
 
 (defmacro choices-options-yes-no (&key (help t))
   `(radio-options *choices-alist-yes-no ,@(if help '(:help "Answer yes or no"))))
+
+(defvar *choices-alist-yes-no-unknown '(("Yes" . "Yes") ("No" . "No") ("Unknown" . "Unknown")))
+
+(defmacro choices-options-yes-no-unknown (&key (help t))
+  `(radio-options *choices-alist-yes-no-unknown ,@(if help '(:help "Answer yes or no or unknown"))))
 
 (defmacro choices-mirror-alist (choices)
   `(loop for str in ,choices

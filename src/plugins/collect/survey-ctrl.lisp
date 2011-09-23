@@ -253,7 +253,7 @@ ie if survey editor may have intervened to remove group or if survey changed (no
     ;; Returns
     (if (member group groups)
 	group
-	(setf (current-group ctrl) nil))))
+	(setf (current-group ctrl) (first groups)))))
 
 (defmethod get-format ((ctrl survey-ctrl) key)
   (aif (survey ctrl) (get-format it key)))
@@ -413,6 +413,8 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 		    (htm (:a :href "/dashboard/collect/survey/" (str #!"Surveys:")))))
 		 (:span :class "survey-bar-group-title" 
 			(str (slot-value-translation (survey ctrl) 'name))))
+	  (when (diary-p ctrl)
+	    (render-diary-header ctrl))
 	  (:div :class "newline survey-bar-description"
 		(str (slot-value-translation (survey ctrl) 'description)))
 	  (:div :class "newline survey-bar-nav"
@@ -425,8 +427,6 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 		    (htm (str #!"Next Page")))
 		" | "
 		(:a :href "/dashboard/collect/" (str #!"Return to Collect")))
-	  (when (diary-p ctrl)
-	    (render-diary-header ctrl))
 	  (:div :style "height: 15px;")
 	  (:hr))))
 
@@ -440,7 +440,9 @@ ie if survey editor may have intervened to remove group or if survey changed (no
     (with-html
       (:div :class "newline survey-bar-diary-nav"
 	    "List of entries  &nbsp; ("
-	    (render-link (f* (setf (current-id ctrl) (next-id series (current-patient)))
+	    (render-link (f* (setf (current-id ctrl) 
+				   (next-id series (current-patient)))
+			     (goto-first-group ctrl) 
 			     (create-current-presentations ctrl))
 			 #!"Add new entry")
 	    ")"
@@ -509,7 +511,9 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 			 (render-link
 			  (lambda (&rest args)
 			    (declare (ignore args))
+;;			    (handler-bind ((error (lambda (e) (break))))
 			    (goto-group ctrl one-group))
+;;                          )
 			  (slot-value-translation one-group 'name)
 			  :class (when (eq one-group (current-group ctrl))
 				   "survey-list-nav-active-group"))))))))))))
@@ -523,7 +527,8 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 	    (:h2 (str #!"Using the Surveys"))
 	    (:ul
 	     (:li 
-	      (str #!"Every time you enter an answer, it is automatically saved."))
+	      (str #!"Your survey answers are only saved when you click 'Save and go to Next Page' or 'Save and Finish Later', but not when you click on the list of pages or Previous Page or Next Page."))
+;;	      (str #!"You must click 'save and continue' or 'finish survey' to save your entries for each page."))
 	     ;;		 (:noscript (:b (str #!"Your survey answers are only saved when you click 'Continue Survey', but not when you click on the list of pages or Previous Page or Next Page.")))
 	     ;;		 (:p :class "no-noscript" (str #!"Your survey answers are automatically saved as you click on or finish entering text.  This can cause the display to jump a bit when questions are removed.")))
 	     ;;		 (:script :type "text/javascript"
@@ -534,8 +539,8 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 		   (str #!"If a question is confusing, or needs improving, you can provide feedback by clicking on the comment icon " ))))
 	     (:li
 	      (str #!"For the best experience, we recommend downloading and using ")
-	      (:a :href "http://www.firefox.org/" (str #!"the Firefox web browser"))
-	      " or " (:a :href "http://wwww.apple.com/safari" (str #!"the Safari web browser")))
+	      (:a :href "http://www.mozilla.com/en-US/firefox/" (str #!"the Firefox web browser"))
+	      " or " (:a :href "http://www.apple.com/safari/download" (str #!"the Safari web browser")))
 	     ;;		 (:img :style "height: 15px; vertical-align: middle;" :src "/pub/images/comment-icon.jpg" :alt "COMMENT")
 	     ;;		 (str #!".  If people have left comments, you can see these and decide if you want to add to them or not.") (:p))
 	     ;;		(:li (:p (str #!"If you want to add a question, simply go the <a href=\"/dashboard/discuss/\">Discussion forum</a> and post a suggestion there."))))
@@ -558,7 +563,8 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 	    (render-button "finish" :value #!"Save and Finish Later" 
 			   :class "survey-form-button"))
 	  (when (diary-p ctrl)
-	    (render-button "save" :value #!"Save This Entry"))
+	    (render-button "save" :value #!"Save This Entry"
+			   :class "survey-form-button"))
 	  (render-button "delete" :value #!"Clear This Page" 
 			 :class "survey-form-button"))))
 
@@ -576,12 +582,21 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 			  (update-survey-presentations ctrl presentations args t)
 			  (mark-dirty ctrl))
 			 (continue
-			  (update-survey-presentations ctrl presentations args t)
-			  (goto-next-group ctrl)
-			  (ajax-scroll-to-top))
+			  (if (update-survey-presentations ctrl presentations args t)
+			      (progn
+				(goto-next-group ctrl)
+				(ajax-scroll-to-top))
+			      (progn
+				(mark-dirty ctrl)
+				(ajax-scroll-to-top))))
 			 (finish
-			  (update-survey-presentations ctrl presentations args t)
-			  (post-action-redirect "/dashboard/collect/"))
+			  (if (update-survey-presentations ctrl presentations args t)
+			      (progn
+				(goto-first-group ctrl)
+				(post-action-redirect "/dashboard/collect/"))
+			      (progn
+				(mark-dirty ctrl)
+				(ajax-scroll-to-top))))
 			 (delete ;; wipe answers and create new presentations
 			  (delete-answers (mapcar #'metadata presentations))
 			  (create-current-presentations ctrl)
@@ -789,11 +804,16 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 		     (mapcar #'group-rule-target (group-rules group)))))))
 
 (defun update-survey-presentations (ctrl presentations args update-answers)
-  (dolist (presentation presentations)
-    (update-presentation presentation args)
-    (when (and update-answers (not (warning-message presentation)))
-      (update-answer (metadata presentation) (lisp-value presentation)
-		     (current-id ctrl)))))
+  (let ((result t))
+    (dolist (presentation presentations)
+      (update-presentation presentation args)
+      (when (and update-answers (not (warning-message presentation)))
+	(update-answer (metadata presentation) (lisp-value presentation)
+		       (current-id ctrl)))
+      (when (warning-message presentation)
+	(setf result nil)))
+    result))
+	
 
 (defun active-presentations (ctrl group)
   "Determines the active / viewed presentations based on the current state"
@@ -840,6 +860,8 @@ ie if survey editor may have intervened to remove group or if survey changed (no
   (goto-group ctrl (first (survey-groups (survey ctrl)))))
 
 (defun goto-group (ctrl group)
+  (unless group
+    (warn "Error going from group ~A to NULL" (current-group ctrl)))
   (prog1
       (setf (current-group ctrl) group)
     ;; Remember this group in survey state

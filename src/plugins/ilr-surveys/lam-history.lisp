@@ -107,7 +107,7 @@
                          :ranking-record (make-ranking-record :ranking nil :distribution nil)))
            (survey-intro
             (apply #'make-instance 'survey
-                   :name (survey-name-append study-name "Introduction")
+                   :name "Introduction" ;; (survey-name-append study-name "Introduction")
                    :description #!"Cover sheet and confirm PFT results are in hand for patient"
                    survey-args))
            (survey-clinician
@@ -118,26 +118,29 @@
                    survey-args))
            (survey-treatment
             (apply #'make-instance 'survey
-                   :name (survey-name-append study-name "Pneumothorax and Pleural Effusion Treatment Diary")
-                   :description #!"Enter LAM patient's pneumothorax and pleural effusion treatment history"
-                   :diary-description "Treatment results for date"
+                   :name "Pneumothorax and Pleural Effusion Treatment Diary" ;; (survey-name-append study-name "Pneumothorax and Pleural Effusion Treatment Diary")
+                   :description #!"If the patient had multiple
+                   treatments, please create a separate diary entry
+                   for each treatment. (Click 'Add Entry' to add a new
+                   entry)"
+                   :diary-description "Treatment diary entry"
                    diary-args))
            (survey-pft
             (apply #'make-instance 'survey
-                   :name (survey-name-append study-name "Pulmonary Function Test (PFT) Diary")
-                   :description #!"Enter LAM patient's PFT results"
+                   :name "Pulmonary Function Test (PFT) Diary" ;; (survey-name-append study-name "Pulmonary Function Test (PFT) Diary")
+                   :description #!"Please enter all the results that you have for the patient, with one diary entry per PFT result. Use 'Add Entry' to enter multiple PFT results."
                    :diary-description "PFT results for date"
                    diary-args))
            (survey-sgrq
             (apply #'make-instance 'survey
-                   :name (survey-name-append study-name "Saint George's Respiratory Questionnaire (SGRQ) Diary")
-                   :description #!"Enter LAM patient's SGRQ results"
+                   :name "Saint George's Respiratory Questionnaire (SGRQ) Diary" ;; (survey-name-append study-name "Saint George's Respiratory Questionnaire (SGRQ) Diary")
+                   :description #!"If more than one SGRQ test, please complete one diary entry per SGRQ result. Use 'Add Entry' to enter multiple results."
                    :diary-description #!"SGRQ results for date"
                    diary-args))
            (survey-6mwd
             (apply #'make-instance 'survey
-                   :name (survey-name-append study-name "Six Minute Walking Distance (6MWD) Diary")
-                   :description "Enter LAM patient's 6MWD results"
+                   :name "Six Minute Walking Distance (6MWD) Diary"  ;; (survey-name-append study-name "Six Minute Walking Distance (6MWD) Diary")
+                   :description "If more than one 6MWD test, please complete one diary entry per 6MWD result. Use 'Add Entry' to enter multiple results."
                    :diary-description #!"6MWD results for date"
                    diary-args)))
 
@@ -147,36 +150,30 @@
       (let* ((group1
               ;; Group 1 - clinician header page
               (make-survey-group-named survey-intro #!"Introduction"
-                                       :advice "Thank you for your involvement in this research study and your collaboration with the International LAM Registry.
-<P>We will use this information to examine whether women diagnosed with LAM under age 25 have a more rapid pulmonary function decline relative to those over the age of 55.
-<P>This study utilizes a retrospective medical record review to examine the rate of pulmonary function decline for LAM patients diagnosed at age 25 and younger relative to those diagnosed over age 55.
-In completing the following form, we ask that you comply with your local laws and regulations regarding access and use of patient records, and obtain consent whenever indicated.
-Data identifiers such as name and date of birth will not be used, and each record will be given a unique identifier for the purpose of data storage.
-For further information about data use please see 
-<A HREF=\"/dashboard/docs/ILR/lrb.2009.0028.lowlink.pdf_v03.pdf\">Nurok et al, International LAM Registry, in press, Lymphatic Research and Cell Biology</A>
-<P>For this study, please complete the following data entry form for <B>current</B> and <B>former</B> LAM patients in your care who were:
+                                       :advice "Thank you for your involvement in the LAM International Registry.
+<P>Our first research study using the registry data will be to examine whether women diagnosed with LAM under age 25 have a more rapid pulmonary function decline relative to those over the age of 55.
+<P>This study will analyze data from LAM patients who have had at least two pulmonary function test (PFT) reports from different dates and who are
 <UL>
 <LI>diagnosed with LAM at age 25 or under
 <LI>diagnosed with LAM at age 55 or older
 </UL>
+<P>This study involves a retrospective medical record review with a particular focus on pulmonary function test.  In completing the following form, we ask that you comply with your local laws and regulations regarding access and use of patient records, and obtain consent whenever indicated.
+Data identifiers such as name and date of birth will not be used, and each record will be given a unique identifier for the purpose of data storage.
+For further information about data use please see 
+<A HREF=\"/docs/ILR/lrb.2009.0028.lowlink.pdf_v03.pdf\">Nurok et al, International LAM Registry, in press, Lymphatic Research and Cell Biology Volume 8, Number 1, 2010</A>
+<P>For this study, please complete the following data entry form for <B>current</B> and <B>former</B> LAM patients in your care.
 <P>The time it takes to complete the following data entry form will vary, depending on the type of medical records you are using and the number of pulmonary function tests to enter.  
 You may save your work at any point to complete at a later time.
 <P> Additionally, please encourage all of your LAM patients to register on LAMsight.org!"))
              (group2
-              (make-survey-group-named survey-intro #!"PFT results for patient"
-                                       :advice "This study requires at least two (2) pulmonary function test (PFT) reports for each patient from different dates."))
+              (make-survey-group-named survey-intro #!"PFT results for patient"))
              (q/pft
               ;; If not 2 or more PFTs for patient, then display advice and link to home page
               (let* ((question
                       (apply #'make-question "Do you have at least two (2) pulmonary function test (PFT) reports for the patient from different dates?" 
                              :parent group2
                              (radio-options
-                              (choices-mirror-alist '("Yes" "No")))))
-                     (subgroup (make-survey-sub-group-named
-                                group2 ""
-                                :advice "Thank you for interest in this study, however at least two PFT results per patient are required.
-Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exit the survey.")))
-                (add-rule group2 question "No" subgroup ':inline)
+                              (choices-mirror-alist '("Yes" "No"))))))
                 ;; Returns
                 question)))
         (declare (ignore group1))
@@ -239,7 +236,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                        '("Brain" "Kidneys" "Heart" "Eyes" "Skin" "Lungs" "Other" "Unknown/Not screened")))))
              ;; Rule: if previous answer included Other...
              (q6o
-              (make-question "Other TSC-LAM symptoms" :data-type :string :view-type :text-field))
+              (make-question "Other TSC-LAM organs effect by tumors" :data-type :string :view-type :text-field))
              ;; Subgroups
              (subgroup1 (make-survey-sub-group-named *group* nil :order (list q5 q6)))
              (subgroup2 (make-survey-sub-group-named *group* nil :order (list q5o)))
@@ -267,7 +264,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                                  "CT thorax and AML" "CT thorax and chylous collection"
                                  "CT thorax and TSC" "CT thorax and VEGF-D >800"
                                  "Other" ;see group rule below
-                                 "Unknown")))))
+                                 "Unknown/not screened")))))
                      (subgroup-lung-biopsy
                       (make-survey-sub-group-named *group* "diagnosis lung biopsy subgroup"))
                      (question-biopsy-type
@@ -296,7 +293,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                      (subgroup-other
                       (make-survey-sub-group-named *group* "diagnosis other subgroup"))
                      (question-other
-                      (make-question "Other - Please specity")))
+                      (make-question "Other - Please specify")))
                 ;; Group
                 (setf (group-questions subgroup-lung-biopsy) (list question-biopsy-type))
                 (add-rule *group* question-diagnosis "Lung biopsy" subgroup-lung-biopsy ':inline)
@@ -326,9 +323,15 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                    collect
                    (apply #'make-question name
                           :parent *group*
-                          (radio-options (choices-breaks-alist options))))))
+                          (radio-options (choices-breaks-alist options)))))
+             (subgroup-other
+              (make-survey-sub-group-named *group* "gene mutation other subgroup"))
+             (question-other
+              (make-question "Other Gene Mutation")))
         ;; Questions
-        (setf (group-questions *group*) *questions*))
+        (setf (group-questions subgroup-other) (list question-other))
+        (setf (group-questions *group*) *questions*)
+        (add-rule *group* (last1 *questions*) "Other" subgroup-other ':inline))
 
       ;;
       ;; Symptoms and complications
@@ -400,7 +403,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
               (make-question "If yes how many total"
                              :prompt-format prompt-format-question :data-type :number))
              (q12b
-              (make-question "If yes how many in the past year"
+              (make-question "If yes, how many in the last year"
                              :prompt-format prompt-format-question :data-type :number))
              (q13
               (apply #'make-question "Has the patient ever had a pleural effusion" :number 13.
@@ -472,14 +475,20 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
       (let* ((*group*
               (make-survey-group-named survey-clinician #!"Estrogen exposure history"))
              (q15
-              (make-question "What was the patient's age of menarche" :number 15.
+              (make-question "What was the patient's age of menarche?"
                              :prompt-format prompt-format-numbered-question
-                             :help "(years)"
-                             ;; ?? TODO "Unknown" checkbox for Q15 ??
                              :parent *group*
+                             :number 15.
+                             :help "Leave blank and click below if unknown"
                              :data-type :number))
+             (q15a 
+              (make-question "Unknown"
+                             :parent *group*
+                             :number 15.1
+                             :data-type :boolean
+                             :view-type :checkbox))
              (q16
-              (apply #'make-question "Did the patient take oral contraceptive pills before diagnosed with LAM" :number 16.
+              (apply #'make-question "Did the patient take hormonal contraception prior to the diagnosis of LAM" :number 16.
                      :prompt-format prompt-format-numbered-question
                      :parent *group*
                      (radio-options
@@ -488,7 +497,8 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
              (q16a
               (make-question "Please specify type of contraceptive" :data-type :string))
              (q16b
-              (make-question "Dates of use" :data-type :date-range :data-subtype :date-month-year))
+              (make-question "Dates of use" :data-type :date-range :data-subtype :date-month-year
+                             :help "Use 'present' for end date when appropriate"))
              (q17
               (apply #'make-question "Has the patient ever been pregnant" :number 17.
                      :prompt-format prompt-format-numbered-question
@@ -499,13 +509,20 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
              (q17-table
               (make-survey-group-table (:name "question 17 if yes" :advice "If yes: please complete:" :default-question-args (:data-type :number))
                                        ( nil "Number <B>before</B> diagnosis of LAM"
+                                             "Unknown"
                                              "Number <B>during</B> or <B>after</B> diagnosis of LAM"
                                              "Unknown")
-                                       ( "Number of pregnancies" (:question) (:question)
-                                                                 (:question :name "number of pregnancies unknown"
+                                       ( "Number of pregnancies" (:question) 
+                                                                 (:question :name "number of pregnancies before unknown"
+                                                                            :data-type :boolean :view-type :checkbox)
+                                                                 (:question)
+                                                                 (:question :name "number of pregnancies during/after unknown"
                                                                             :data-type :boolean :view-type :checkbox))
-                                       ( "Number of births" (:question) (:question)
-                                                            (:question :name "number of births unknown"
+                                       ( "Number of births" (:question) 
+                                                            (:question :name "number of births before unknown"
+                                                                       :data-type :boolean :view-type :checkbox)
+                                                            (:question)
+                                                            (:question :name "number of births during/after unknown"
                                                                        :data-type :boolean :view-type :checkbox))))
 
              (q18
@@ -524,7 +541,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
               (make-survey-sub-group-named *group* "Dates of contraceptive use." :order (list q16a q16b)))
              (subgroup18 (make-survey-sub-group-named *group* nil :order (list q18a))))
         ;; Group rules
-        (setf (group-questions *group*) (list q15 q16 q17 q18))
+        (setf (group-questions *group*) (list q15 q15a q16 q17 q18))
         (add-rule *group* q16 "Yes" subgroup16 ':inline)
         (add-rule *group* q17 "Yes" q17-table ':inline)
         (add-rule *group* q18 "Yes" subgroup18 ':inline))
@@ -534,7 +551,13 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
       ;;
       (let* ((*group*
               (make-survey-group-named survey-clinician #!"Treatment history"
-                                       :advice "<SUP>19</SUP> What is the patient's LAM related <B>treatment</B> history? <SMALL>Please check all that apply</SMALL>"))
+                                       :advice "<SUP>19</SUP> What is the patient's LAM related <B>treatment</B> history? <BR><SMALL>Please check all that apply.<BR>You may use 'present' for end date where appropriate</SMALL>"))
+             (no-treatment 
+              (make-question "No Treatment"
+                             :parent *group*
+                             :data-type :boolean 
+                             :view-type :checkbox
+                             :help "Check if no treatments taken, leave the rest of the page blank"))
              (hormone-therapy/question
               (apply #'make-question "Hormone therapy"
                      :parent *group*
@@ -543,22 +566,22 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
               (make-survey-group-table
                (:name "hormone therapy table"
                 :default-question-args (:data-type :date :data-subtype :date-month-year))
-               (nil "Treatment" nil "Start date" "End date")
+               (nil "Treatment" nil "Start date" "End date" nil)
                ((:question :name "hormone therapy: Gn-RH agonist" :data-type :boolean :view-type :checkbox )
                 "Gn-RH agonist" nil
-                (:question :name "hormone therapy: Gn-RH agonist: from") (:question :name "hormone therapy: Gn-RH agonist: to"))
+                (:question :name "hormone therapy: Gn-RH agonist: from") (:question :name "hormone therapy: Gn-RH agonist: to") "<small><i>mm/yy</i></small>")
                ((:question :name "hormone therapy: Progesterone" :data-type :boolean :view-type :checkbox )
                 "Progesterone" nil
-                (:question :name "hormone therapy: Progesterone: from") (:question :name "hormone therapy: Progesterone: to"))
+                (:question :name "hormone therapy: Progesterone: from") (:question :name "hormone therapy: Progesterone: to") "<small><i>mm/yy</i></small>")
                ((:question :name "hormone therapy: Tamoxifen" :data-type :boolean :view-type :checkbox )
                 "Tamoxifen" nil
-                (:question :name "hormone therapy: Tamoxifen: from") (:question :name "hormone therapy: Tamoxifen: to"))
+                (:question :name "hormone therapy: Tamoxifen: from") (:question :name "hormone therapy: Tamoxifen: to") "<small><i>mm/yy</i></small>")
                ((:question :name "hormone therapy: surgical oophorectomy" :data-type :boolean :view-type :checkbox )
                 "Surgical oophorectomy" nil
-                (:question :name "hormone therapy: surgical oophorectomy: date") nil)
+                (:question :name "hormone therapy: surgical oophorectomy: date") "<small><i>mm/dd/yy</i></small>" nil)
                ((:question :name "hormone therapy: other" :data-type :boolean :view-type :checkbox )
                 "Other" (:question :data-type :string)
-                (:question :name "hormone therapy: other: from") (:question :name "hormone therapy: other: to"))))
+                (:question :name "hormone therapy: other: from") (:question :name "hormone therapy: other: to") "<small><i>mm/yy</i></small>")))
              (bronch/meds/question
               (apply #'make-question "Bronchodilator/Pulmonary medications"
                      :parent *group*
@@ -567,27 +590,27 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
               (make-survey-group-table
                (:name "bronchodilator/pulmonary medications table"
                 :default-question-args (:data-type :date :data-subtype :date-month-year))
-               (nil "Treatment" nil "Start Date" "End Date")
+               (nil "Treatment" nil "Start Date" "End Date" nil)
                ((:question :name "bronch/pulm meds therapy: long acting Beta agonist" :data-type :boolean :view-type :checkbox )
-                "Long acting Beta agonist" nil (:question) (:question))
+                "Long acting Beta agonist" nil (:question) (:question) "<small><i>mm/yy</i></small>")
                ((:question :name "bronch/pulm meds therapy: oral Beta agonist" :data-type :boolean :view-type :checkbox )
                 "Oral Beta agonist" nil
-                (:question :name "bronch/pulm meds therapy: oral Beta agonist: from") (:question :name "bronch/pulm meds therapy: oral Beta agonist: to"))
+                (:question :name "bronch/pulm meds therapy: oral Beta agonist: from") (:question :name "bronch/pulm meds therapy: oral Beta agonist: to") "<small><i>mm/yy</i></small>")
                ((:question :name "bronch/pulm meds therapy: transdermal Beta agonist" :data-type :boolean :view-type :checkbox )
                 "Transdermal Beta agonist" nil
-                (:question :name "bronch/pulm meds therapy: transdermal Beta agonist: from") (:question :name "bronch/pulm meds therapy: transdermal Beta agonist: to"))
+                (:question :name "bronch/pulm meds therapy: transdermal Beta agonist: from") (:question :name "bronch/pulm meds therapy: transdermal Beta agonist: to") "<small><i>mm/yy</i></small>")
                ((:question :name "bronch/pulm meds therapy: anti-cholinergic" :data-type :boolean :view-type :checkbox )
                 "Anti-cholinergic" nil
-                (:question :name "bronch/pulm meds therapy: anti-cholinergic: from") (:question :name "bronch/pulm meds therapy: anti-cholinergic: to"))
+                (:question :name "bronch/pulm meds therapy: anti-cholinergic: from") (:question :name "bronch/pulm meds therapy: anti-cholinergic: to") "<small><i>mm/yy</i></small>")
                ((:question :name "bronch/pulm meds therapy: Aminophylline" :data-type :boolean :view-type :checkbox )
                 "Aminophylline" nil
-                (:question :name "bronch/pulm meds therapy: Aminophylline: from") (:question :name "bronch/pulm meds therapy: Aminophylline: to"))
+                (:question :name "bronch/pulm meds therapy: Aminophylline: from") (:question :name "bronch/pulm meds therapy: Aminophylline: to") "<small><i>mm/yy</i></small>")
                ((:question :name "bronch/pulm meds therapy: inhaled steroids" :data-type :boolean :view-type :checkbox )
                 "Inhaled steroids" nil
-                (:question :name "bronch/pulm meds therapy: inhaled steroids: from") (:question :name "bronch/pulm meds therapy: inhaled steroids: to"))
+                (:question :name "bronch/pulm meds therapy: inhaled steroids: from") (:question :name "bronch/pulm meds therapy: inhaled steroids: to") "<small><i>mm/yy</i></small>")
                ((:question :name "bronch/pulm meds therapy: other" :data-type :boolean :view-type :checkbox )
                 "Other" (:question :data-type :string)
-                (:question :name "bronch/pulm meds therapy: other: from") (:question :name "bronch/pulm meds therapy: other: to"))))
+                (:question :name "bronch/pulm meds therapy: other: from") (:question :name "bronch/pulm meds therapy: other: to") "<small><i>mm/yy</i></small>")))
              (other/meds/question
               (apply #'make-question "Other medical treatment"
                      :parent *group*
@@ -596,13 +619,13 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
               (make-survey-group-table
                (:name "other medical treatment table"
                 :default-question-args (:data-type :date :data-subtype :date-month-year))
-               (nil "Treatment" nil "Start Date" "End Date")
+               (nil "Treatment" nil "Start Date" "End Date" nil)
                ((:question :name "other medical treatment: Sirolimus/Rapamune" :data-type :boolean :view-type :checkbox )
                 "Sirolimus/Rapamune" nil
-                (:question :name "other medical treatment: Sirolimus/Rapamune: from") (:question :name "other medical treatment: Sirolimus/Rapamune: to"))
+                (:question :name "other medical treatment: Sirolimus/Rapamune: from") (:question :name "other medical treatment: Sirolimus/Rapamune: to") "<small><i>mm/yy</i></small>")
                ((:question :name "other medical treatment: other" :data-type :boolean :view-type :checkbox )
                 "Other" (:question :name "other medical treatment: other: specify" :data-type :string)
-                (:question :name "other medical treatment: other: from") (:question :name "other medical treatment: other: to"))))
+                (:question :name "other medical treatment: other: from") (:question :name "other medical treatment: other: to") "<small><i>mm/yy</i></small>")))
              (pneumothorax/pleural-effusion/question
               (let* ((question
                       (apply #'make-question "Pneumothorax or pleural effusion treatment"
@@ -612,7 +635,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                       (make-survey-sub-group-named
                        *group* "pneumothorax or pleural effusion treatment advice subgroup"
                        :advice "Please fill out the Pneumothorax and Pleural Effusion Treatment Diary under the Collect tab")))
-                (add-rule *group* question t subgroup ':inline)
+                (add-rule *group* question "Yes" subgroup ':inline)
                 ;; Returns
                 question))
              (other/surgery/question
@@ -623,46 +646,58 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
               (make-survey-group-table
                (:name "other surgery table"
                 :default-question-args (:data-type :date :data-subtype :date-month-year))
-               (nil "Surgery" nil "Date")
+               (nil "Surgery" nil "Date" nil)
                ((:question :name "other surgery: thoracic duct ligation" :data-type :boolean :view-type :checkbox )
-                "Thoracic duct ligation" nil (:question :name "other surgery: thoracic duct ligation: date"))
+                "Thoracic duct ligation" nil (:question :name "other surgery: thoracic duct ligation: date") "<small><i>mm/dd/yy</i></small>")
                ((:question :name "other surgery: nephrectomy" :data-type :boolean :view-type :checkbox )
-                "Nephrectomy" nil (:question :name "other surgery: nephrectomy: date"))
+                "Nephrectomy" nil (:question :name "other surgery: nephrectomy: date") "<small><i>mm/dd/yy</i></small>")
                ((:question :name "other surgery: hysterectomy" :data-type :boolean :view-type :checkbox )
-                "Hysterectomy" nil (:question :name "other surgery: hysterectomy: date"))
+                "Hysterectomy" nil (:question :name "other surgery: hysterectomy: date") "<small><i>mm/dd/yy</i></small>")
                ((:question :name "other surgery: other" :data-type :boolean :view-type :checkbox )
                 "Other" (:question :name "other surgery: other: specify" :data-type :string)
-                (:question :name "other surgery: other: date"))))
-             (transplant/question
-              (let* ((question
-                      (apply #'make-question "Transplant/Transplant Evaluation"
-                             :parent *group*
+                (:question :name "other surgery: other: date") "<small><i>mm/dd/yy</i></small>")))
+             (other/transplant/question
+              (apply #'make-question "Transplant/Transplant Evaluation"
+                     :parent *group*
+                     (choices-options-yes-no)))
+             (other/transplant/subgroup
+              (let* ((subgroup 
+                      (make-instance 'survey-group 
+                                     :name "transplant eval subgroup"
+                                     :questions other/transplant/question))
+                     (subquestion
+                      (apply #'make-question "Please specify:"
+                             :parent other/transplant/question
                              (radio-options
                               (choices-breaks-alist
-                               '(("The patient has not required transplant evaluation" . "none")
+                               '(("The patient has not required transplant evaluation" . "not required")
                                  ("The patient was evaluated, but has not had a transplant" . "evaluated")
                                  ("The patient had a transplant" . "transplant"))))))
                      (question2
                       (apply #'make-question "transplant lungs" :prompt ""
                              (radio-options '(("One lung" . 1) ("Both lungs" . 2)))))
                      (question3 (make-question "Transplant date" :data-type :date :data-subtype :date-month-year))
-                     (subgroup
+                     (subgroup2
                       (make-survey-sub-group-named *group* "transplant/transplant evaluation question subgroup"
                                                    :order (list question2 question3))))
                 ;; Group rules
-                (add-rule *group* question "transplant" subgroup ':inline)
+                (setf (group-questions subgroup) (list subquestion))
+                (add-rule subgroup subquestion "transplant" subgroup2 ':inline)
                 ;; Returns
-                question)))
+                subgroup)))
+
+              
         ;; Group rules
-        (add-rule *group* hormone-therapy/question t hormone-therapy/table ':inline)
-        (add-rule *group* bronch/meds/question t bronch/meds/table ':inline)
-        (add-rule *group* other/meds/question t other/med/table ':inline)
-        (add-rule *group* other/surgery/question t other/surgery/table ':inline)
+        (add-rule *group* hormone-therapy/question "Yes" hormone-therapy/table ':inline)
+        (add-rule *group* bronch/meds/question "Yes" bronch/meds/table ':inline)
+        (add-rule *group* other/meds/question "Yes" other/med/table ':inline)
+        (add-rule *group* other/surgery/question "Yes" other/surgery/table ':inline)
+        (add-rule *group* other/transplant/question "Yes" other/transplant/subgroup ':inline)
         ;; Questions
         (setf (group-questions *group*)
-              (list hormone-therapy/question bronch/meds/question other/meds/question
+              (list no-treatment hormone-therapy/question bronch/meds/question other/meds/question
                     pneumothorax/pleural-effusion/question other/surgery/question
-                    transplant/question)))
+                    other/transplant/question)))
 
       ;;
       ;; Home oxygen use
@@ -677,7 +712,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                              :number 20.
                              :prompt-format prompt-format-numbered-question
                              :parent *group*
-                             (choices-options-yes-no)))
+                             (choices-options-yes-no-unknown)))
                      (q/how
                       (let* ((question
                               (apply #'make-question "If yes the patient uses oxygen at home"
@@ -702,7 +737,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                 ;; Questions
                 (setf (group-questions subgroup) (list q/how q/how-much q/how-long))
                 ;; Group rules
-                (add-rule *group* question t subgroup ':inline)
+                (add-rule *group* question "Yes" subgroup ':inline)
                 ;; Returns
                 question)))
         ;; Questions
@@ -722,7 +757,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                        '("Living" "Deceased")))))
              (q21a (make-question "Date of last confirmation"
                                   :prompt-format prompt-format-colon
-                                  :data-type :date :data-subtype :date-month-day))
+                                  :data-type :date :data-subtype :date-month-year))
              (subgroup21-living (make-survey-sub-group-named *group* nil :order (list q21a)))
              (q21b (make-question "Date of death" :data-type :date :data-subtype :date-full))
              (q21c
@@ -730,7 +765,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                      :prompt-format prompt-format-question
                      (radio-options
                       (choices-breaks-alist
-                       '("Respiratory failure" "Infection" "Pulmonary thromboembolism" "Cancer" "Other")))))
+                       '("Respiratory failure" "Infection" "Pulmonary thromboembolism" "Cancer" "Other" "Unknown")))))
              (subgroup21-dead (make-survey-sub-group-named *group* nil :order (list q21b q21c)))
              (q21d (make-question "Please indicate type of infection if known" :data-type :string))
              (subgroup21-infection (make-survey-sub-group-named *group* nil :order (list q21d)))
@@ -762,7 +797,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                      (make-survey-sub-group-named *group* "q22 if yes"
                                                   :advice "Please fill out the 6MWD diary under the Collect tab")))
                 ;; Group rules
-                (add-rule *group* question t subgroup ':inline)
+                (add-rule *group* question "Yes" subgroup ':inline)
                 ;; Returns
                 question))
              (q23
@@ -776,7 +811,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                      (make-survey-sub-group-named *group* "q23 if yes"
                                                   :advice "Please fill out the SGRQ diary under the Collect tab")))
                 ;; Group rules
-                (add-rule *group* question t subgroup ':inline)
+                (add-rule *group* question "Yes" subgroup ':inline)
                 ;; Returns
                 question)))
         ;; Group questions
@@ -790,8 +825,8 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                        (apply #'make-question name
                               :prompt-format prompt-format-colon
                               :parent group
-                              (radio-options
-                               (choices-breaks-alist
+                              (multi-choices-options
+                               (choices-mirror-alist
                                 '("Chest tube placement/pleural drainage"
                                   "Open chest surgery"
                                   "Thoracoscopic/minimally invasive chest surgery"
@@ -844,12 +879,19 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                  (declare (ignore subg1 subg2 subg3 subg4))
                  ;; Returns
                  question)))
-        (let* ((q1 (make-question "Date of treatment/surgery" :prompt-format prompt-format-colon
-                                                              :data-type :date :data-subtype :date-full))
-               (*group*
+        (let* ((*group*
                 (make-survey-group-named survey-treatment (name survey-treatment)))
-               (q2 (make-treatment-questions "Pneumothorax treatment" *group*))
-               (q3 (make-treatment-questions "Pleural effusion treatment" *group*)))
+               (q1 (make-question "Date of treatment/surgery" :prompt-format prompt-format-colon
+                                  :data-type :date :data-subtype :date-full :parent *group*))
+               (q2 (apply #'make-question "Treatment of"
+                          :parent *group*
+                          :prompt-format prompt-format-colon
+                          (radio-options
+                           (choices-breaks-alist
+                            '("Pneumothorax"
+                              "Pleural effusion"
+                              "Pneumothorax and pleural effusion")))))
+               (q3 (make-treatment-questions "Treatment" *group*)))
           ;; Questions
           (setf (group-questions *group*) (list q1 q2 q3))
           ;; Survey properties
@@ -870,7 +912,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
                      :prompt-format prompt-format-colon
                      :parent group1
                      (multi-choices-options
-                      (choices-breaks-alist
+                      (choices-mirror-alist
                        '("Pneumothorax" "Pleural effusion" "Pneumonia" "Chest surgery within the previous 6 months" "Unknown")))))
              ;; Group 2 is a table of questions
              (group2
@@ -895,7 +937,7 @@ Please follow <A HREF=\"/dashboard/home/\">this link to the home page</A> to exi
         ;; Group rules
         (setf (group-questions group1) (list q1 q2))
         (setf (group-questions group3) (append (list q4)))
-        (add-rule group3 q4 t q4subgroup ':successor)
+        (add-rule group3 q4 "Yes" q4subgroup ':successor)
         ;; Survey properties
         (setf (diary-question survey-pft) q1))
 
@@ -1310,7 +1352,7 @@ which can cause a collapsed lung.")
                       (make-survey-sub-group-named *group* "transplant question subgroup"
                                                    :order (list q/which-lungs q/date))))
                 ;; Group rules
-                (add-rule *group* question t subgroup ':inline)
+                (add-rule *group* question "Yes" subgroup ':inline)
                 ;; Returns
                 question)))
         ;; Questions
@@ -1354,7 +1396,7 @@ which can cause a collapsed lung.")
                 ;; Questions
                 (setf (group-questions subgroup) (list q/how q/how-much q/how-long))
                 ;; Group rules
-                (add-rule *group* question t subgroup ':inline)
+                (add-rule *group* question "Yes" subgroup ':inline)
                 ;; Returns
                 question))
              (q25
@@ -1400,7 +1442,8 @@ which can cause a collapsed lung.")
                      (q/date
                       (make-question "Dates of use"
                                      :prompt-format prompt-format-colon
-                                     :data-type :date-range :data-subtype :date-month-year))
+                                     :data-type :date-range :data-subtype :date-month-year
+                                     :help "Use 'present' for end date when appropriate"))
                      (subgroup
                       (make-survey-sub-group-named *group* "q16" :order (list q/type q/date))))
                 ;; Group rules
@@ -1416,18 +1459,29 @@ which can cause a collapsed lung.")
                              (radio-options
                               (choices-mirror-alist '("Yes" "No" "I don't know")))))
                      (table28
-                      (make-survey-group-table (:name "question27 if yes" :advice "If yes: please complete:" :default-question-args (:data-type :number))
+                      (make-survey-group-table (:name "question27 if yes" :advice "If yes: please complete, if unknown please leave blank:" :default-question-args (:data-type :number))
                                        ( nil "Number <B>before</B> your diagnosis of LAM"
+                                             "Unknown"
                                              "Number <B>during</B> or <B>after</b> your diagnosis of LAM"
                                              "Unknown")
-                                       ( "Number of pregnancies" (:question) (:question)
-                                                                 (:question :name "number of pregnancies unknown"
-                                                                            :data-type :boolean
-                                                                            :view-type :checkbox))
-                                       ( "Number of births" (:question) (:question)
-                                                            (:question :name "number of pregnancies unknown"
-                                                             :data-type :boolean
-                                                             :view-type :checkbox)))))
+                                       ( "Number of pregnancies" 
+                                         (:question) 
+                                         (:question :name "number of pregnancies before unknown"
+                                                    :data-type :boolean
+                                                    :view-type :checkbox)
+                                         (:question)
+                                         (:question :name "number of pregnancies during/after unknown"
+                                                    :data-type :boolean
+                                                    :view-type :checkbox))
+                                       ( "Number of births" 
+                                         (:question) 
+                                         (:question :name "number of births before unknown"
+                                                    :data-type :boolean
+                                                    :view-type :checkbox)
+                                         (:question)
+                                         (:question :name "number of births during/after unknown"
+                                                    :data-type :boolean
+                                                    :view-type :checkbox)))))
                 ;; Group rules
                 (add-rule *group* question "Yes" table28 ':successor)
                 ;; Returns
@@ -1487,7 +1541,7 @@ which can cause a collapsed lung.")
                                (choices-options-yes-no)))
                        (table (make-table-current-past-use "Bronchodilator")))
                   ;; Group rules
-                  (add-rule *group* question t table ':inline)
+                  (add-rule *group* question "Yes" table ':inline)
                   ;; Returns
                   question))
                (steroids/meds/question
@@ -1498,7 +1552,7 @@ which can cause a collapsed lung.")
                                (choices-options-yes-no)))
                        (table (make-table-current-past-use "Inhaled steroids")))
                   ;; Group rules
-                  (add-rule *group* question t table ':inline)
+                  (add-rule *group* question "Yes" table ':inline)
                   ;; Returns
                   question))
                (hormone-therapy/question
@@ -1509,7 +1563,7 @@ which can cause a collapsed lung.")
                                (choices-options-yes-no)))
                        (table (make-table-current-past-use "Hormones")))
                   ;; Group rules
-                  (add-rule *group* question t table ':inline)
+                  (add-rule *group* question "Yes" table ':inline)
                   ;; Returns
                   question))
                (sirolimus/rapamune/question
@@ -1520,7 +1574,7 @@ which can cause a collapsed lung.")
                                (choices-options-yes-no)))
                        (table (make-table-current-past-use "Sirolimus/Rapamune")))
                   ;; Group rules
-                  (add-rule *group* question t table ':inline)
+                  (add-rule *group* question "Yes" table ':inline)
                   ;; Returns
                   question))
                (ovaries/question
@@ -1538,7 +1592,7 @@ which can cause a collapsed lung.")
                                 (choices-mirror-alist '("Yes" "No" "I don't know")))))
                        (subgroup (make-survey-sub-group-named *group* "ovaries removed subgroup" :order (list q/date q/therapy))))
                   ;; Group rules
-                  (add-rule *group* question t subgroup ':inline)
+                  (add-rule *group* question "Yes" subgroup ':inline)
                   ;; Returns
                   question))
                (other/question
@@ -1551,7 +1605,7 @@ which can cause a collapsed lung.")
                                                :prompt-format prompt-format-colon))
                        (subgroup (make-survey-sub-group-named *group* "other therapy subgroup" :order (list q/other))))
                   ;; Group rules
-                  (add-rule *group* question t subgroup ':inline)
+                  (add-rule *group* question "Yes" subgroup ':inline)
                   ;; Returns
                   question))
                (none/question
@@ -1653,8 +1707,8 @@ which can cause a collapsed lung.")
 
 ;;; Create studies
 
-(defun create-ilr-arr/pft-study (&key (owner (current-user)) (study-name +study-name-clinician+))
-  (let ((survey-specs (create-ilr-arr/pft-surveys :owner owner))
+(defun create-ilr-arr/pft-study (&key (owner (current-user)) (study-name +study-name-clinician+) surveys)
+  (let ((survey-specs (or surveys (create-ilr-arr/pft-surveys :owner owner)))
         (study
          (make-instance 'study :name study-name
                                :description #!"Retrospective medical record review to examine the rate of pulmonary function decline for LAM patients diagnosed at age 25 and younger relative to those diagnosed over age 55"

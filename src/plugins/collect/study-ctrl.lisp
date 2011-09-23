@@ -111,12 +111,15 @@
   (declare (ignore args))
   (let ((patient (current-patient)))
     (with-slots (study patient-consent-form-article-widget) widget
-      (setf (patient-consent-form-needed-p widget)
-	    (and (requires-consent-p study)
-		 (not (study-patient-consented-p study patient))))
+      ;; ISE: Disable consent blocking
+;;      (setf (patient-consent-form-needed-p widget)
+;;	    (and (requires-consent-p study)
+;;		 (not (study-patient-consented-p study patient))))
       ;; Only show patient consent form on redisplay for same patient
-      (setf (patient-consent-form-visible-p widget)
-	    (and (eq (patient-consent-form-visible-p widget) patient) patient))
+;;      (setf (patient-consent-form-visible-p widget)
+;;	    (and (eq (patient-consent-form-visible-p widget) patient) patient))
+      (setf (patient-consent-form-needed-p widget) nil)
+      (setf (patient-consent-form-visible-p widget) nil)
       (with-html
 	(:DIV
 	 :CLASS "study-list-item"
@@ -221,7 +224,7 @@
 					(this-survey-complete-p)
 					((null next-survey)
 					 (setq next-survey survey
-					       suppress-links-p t
+					       suppress-links-p nil ;; ISE: Disable link suppression
 					       message #!"Complete this survey first"))))
 				     (:REQUIRED
 				      (cond

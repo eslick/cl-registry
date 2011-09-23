@@ -9,10 +9,11 @@
       :none))
 
 (define-lisp-value-setter number-presentation (number precision)
-  (when number
-    (if precision 
-	(format nil "~,vF" precision number)
-	(format nil "~D" number))))
+  (if (equal number :none)
+      ""
+      (if precision 
+	  (format nil "~,vF" precision number)
+	  (format nil "~D" number))))
 
 ;;;; * integer type
 
@@ -51,7 +52,7 @@
   (:documentation "Super class for all validotars which compare a lisp-value to a number."))
 
 (defmethod lisp-validate :around ((validator number-validator) (lisp-value t))
-  (if (not (numberp lisp-value))
+  (if (and (not (numberp lisp-value)) (not (equal lisp-value :none)))
       (fail-validation "~S is not a number." lisp-value)
       (call-next-method)))
 

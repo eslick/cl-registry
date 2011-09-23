@@ -259,7 +259,7 @@
 
 (defmodel survey-group-table (survey-group)
   ((rows :accessor group-table-rows :initform nil :initarg :rows))
-  (:documentation "A survey-group-table is a compact representation for groups whose answers are all of teh same 'type'"))
+  (:documentation "A survey-group-table is a compact representation for groups whose answers are all of the same 'type'"))
 
 (defmethod print-object ((inst survey-group-table) stream)
   (format stream "#<GROUP-TABLE-~A '~A'>"

@@ -112,7 +112,7 @@
 
 (defun sorted-answers (question user)
   "Return answers sorted on value"
-  (sort (get-user-answers question user) #'> :key 'value))
+  (sort (get-user-answers question user) #'sort-any->= :key 'value))
 
 (defun latest-history-answer (question user)
   "Lookup any history objects and given the last one recorded"
@@ -128,9 +128,48 @@
 ;;  Mutators
 ;; ==================================
 
+;; Answer mutation log 
+
+(defvar *answer-log-stream* nil)
+
+(define-system-event-hook answer-log-setup (start-app)
+  (let ((stream (open (make-pathname :defaults (registry-relative-path (list "logs"))
+				     :name "answer-history" :type "log")
+		      :direction :output
+		      :if-exists :append
+		      :if-does-not-exist :create
+		      :sharing :lock)))
+    (format stream "~%;; Starting answer log ")
+    (cl-l10n:format-time stream (get-universal-time) t t)
+    (format stream "~%~%")
+    (force-output stream)
+    (setf *answer-log-stream* stream)))
+
+(define-system-event-hook answer-log-shutdown (stop-app)
+  (close *answer-log-stream*)
+  (setf *answer-log-stream* nil))
+
+(defun log-answer (question patient value id)
+  (handler-case 
+      (if *answer-log-stream*
+	  (progn
+	    (format *answer-log-stream*
+		    ";; ~A entered answer for patient ~A~%;; for q: ~A~%"
+		    (if (boundp 'hunchentoot::*session*) (current-user) nil)
+		    patient question)
+	    (format *answer-log-stream*
+		    "(answer :question ~A :user ~A :time ~A :value ~A :id ~A)~%"
+		    (mid question)
+		    (mid patient)
+		    (get-universal-time) 
+		    value id))
+	  (warn "Answer log not open"))
+    (error (e) (warn "Error in answer-log: ~A" e))))
+
 (defun add-answer (question user value &key id history)
   "Create a new answer"
   (let ((our-history (or history (latest-history-answer question user))))
+    (log-answer question user value (or id 1))
     (make-instance 'answer 
 		   :question question
 		   :user user

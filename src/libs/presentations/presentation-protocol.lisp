@@ -181,6 +181,7 @@ message (via format)."
     (when (and (or (null provided-value)
 		   (equal provided-value ""))
 	       (not (required presentation)))
+      (setf (client-value presentation) nil)
       (return-from update-presentation (values t "")))
     (block test-validity
       (dolist (validator (validators presentation))

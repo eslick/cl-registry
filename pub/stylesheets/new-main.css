@@ -46,11 +46,11 @@ fieldset { margin-bottom: 3px; border: 0px none; }
 */
 /* progress bar */
 
-#ajax-progress
+div#ajax-progress
 {
-  position: fixed;
-  left: 500px;
-  top: 300px;
+  position: absolute;
+  left: 200px;
+  top: 100px;
   z-index: 1000;
 }
 

@@ -15,7 +15,9 @@
    (list (apply #'make-navigation 
 	  "Admin Page"
 	  `(,@(when (is-admin-p)
-		    (list #!"Stats" (make-admin-dashboard)))
+		    (list #!"Stats" (make-stats-dashboard)))
+	    ,@(when (is-admin-p)
+		    (list #!"Tools" (make-admin-dashboard)))
             ,@(when (or (is-admin-p) (is-editor-p))
 		    (list #!"Contact Users" (make-contact-widget)
                           #!"Content Editor" (make-content-widget)))
@@ -23,16 +25,17 @@
 		    (list #!"Model Editor" (make-admin-widget))))))))
 
 
-(defun make-admin-dashboard ()
-  (make-instance 'admin-dashboard ))
+(defun make-stats-dashboard ()
+  (make-instance 'stats-dashboard))
 
-(defwidget admin-dashboard ()
+(defwidget stats-dashboard ()
   ())
 
-(defmethod render-widget-body ((admin admin-dashboard) &rest initargs)
+(defmethod render-widget-body ((admin stats-dashboard) &rest initargs)
   (declare (ignore initargs))
   (render-stats)
   (with-html
+    (:br)
     "Email to users: "
     (str (if (get-site-config-param :email-to-users-p) "Enabled" "Disabled"))
     (render-link
@@ -77,48 +80,120 @@
                            ("Info" . :info)
                            ("Debug" . :debug))
                          :selected-value (or *log-level* :error)
-                         :autosubmitp t))))
-  (render-link
-   (f* (do-dialog "Select a user" (make-user-login)))
-   "Log-in as another user")
-  (let ((user (session-edit-permissions-user)))
-    (with-html
-      (:div
-       (:b "Change Permissions") (:br))
-      (with-html-form (:get (lambda (&rest rest
-                                     &key name change update &allow-other-keys)
-                              (cond (change
-                                     (setf (session-edit-permissions-user)
-                                           (get-user name)))
-                                    (update
-                                     (let ((user (session-edit-permissions-user)))
-                                       (when user
-                                         (if (getf rest :admin)
-                                             (add-permission user :admin)
-                                             (dolist (perm.desc *permissions*)
-                                               (let ((perm (car perm.desc)))
-                                                 (if (getf rest (keyword perm))
-                                                     (add-permission user perm)
-                                                     (remove-permission user perm)))))))
-                                     (setf (session-edit-permissions-user) nil))
-                                    (t (setf (session-edit-permissions-user) nil)))
-                              (mark-dirty admin))
-                            :use-ajax-p t)
-        (cond (user
-               (htm "User: " (str (username user)) (:br))
-               (dolist (perm (sort (mapcar 'car *permissions*)
-                                   (lambda (x y)
-                                     (if (eq x 'admin) t
-                                         (string-lessp x y)))))
-                 (render-checkbox (string perm) (has-permission-p user perm t))
-                 (htm " " (str perm) (:br)))
-               (render-translated-button "update")
-               (render-translated-button "cancel"))                                  
-              (t (htm "User: "
-                      (:input :type "text" :name "name" :size 20)
-                      (:br)
-                      (render-translated-button "change"))))))))
-    
+                         :autosubmitp t)))))
+
+
+(defun make-admin-dashboard ()
+  (make-instance 'admin-dashboard))
+
+(defwidget admin-dashboard ()
+  ())
+
+(defparameter *archive-models* 
+  '(center clinician patient
+    study survey survey-group
+    question answer    
+    consent-history))
+
+(defun dump-filename (dir)
+  (format nil "~A/data-archive-~A.sexp"
+	  dir
+	  (format-time-string nil "%Y%m%d%H%M%S")))
+
+(defun dump-data-models (directory)
+  "Not for Archival Purposes.  
+   Dumps all data models to a file in directory."
+  (export-models-to-file (dump-filename directory)
+			 :model-list *archive-models*))
+
+(defmethod render-widget-body ((admin admin-dashboard) &rest initargs)
+  (declare (ignore initargs))
+  (with-html
+    (render-link (f* (dump-data-models "/home/lta/backup"))
+		 "Dump the database")
+    "to /home/lta/backup"
+    ;; Login as another user
+    (:br)
+    (render-link
+     (f* (do-dialog "Select a user" (make-user-login)))
+     "Log-in as another user")
+    ;; Add a new user
+    (:div
+     (:b "Add a new user account")
+     (with-html-form (:get (lambda (&rest rest)
+			     (apply 'add-new-user-handler rest)))
+       "First" (render-text-input :first nil :id "first")
+       "Last" (render-text-input :last nil :id "last") (:br)
+       "E-mail" (render-text-input :email nil :id "email") (:br)
+       "Username" (render-text-input :username nil :id "username")
+       "Password" (render-text-input :password nil :id "password")
+       (render-translated-button "create")))
+    ;; Set a user's password
+    (:div 
+     (:b "Set a user's password as plaintext")
+     (with-html-form (:get (lambda (&rest rest)
+			     (apply 'reset-user-password rest)))
+       "Username" (render-text-input :username nil :id "username")
+       "Password" (render-password :newpass nil :id "newpass")
+       (render-translated-button "update")))
+    ;; Edit user permissions
+    (let ((user (session-edit-permissions-user)))
+      (with-html
+	(:div
+	 (:b "Change Permissions") (:br))
+	(with-html-form (:get (lambda (&rest rest
+				       &key name change update &allow-other-keys)
+				(cond (change
+				       (setf (session-edit-permissions-user)
+					     (get-user name)))
+				      (update
+				       (let ((user (session-edit-permissions-user)))
+					 (when user
+					   (if (getf rest :admin)
+					       (add-permission user :admin)
+					       (dolist (perm.desc *permissions*)
+						 (let ((perm (car perm.desc)))
+						   (if (getf rest (keyword perm))
+						       (add-permission user perm)
+						       (remove-permission user perm)))))))
+				       (setf (session-edit-permissions-user) nil))
+				      (t (setf (session-edit-permissions-user) nil)))
+				(mark-dirty admin))
+			      :use-ajax-p t)
+	  (cond (user
+		 (htm "User: " (str (username user)) (:br))
+		 (dolist (perm (sort (mapcar 'car *permissions*)
+				     (lambda (x y)
+				       (if (eq x 'admin) t
+					   (string-lessp x y)))))
+		   (render-checkbox (string perm) (has-permission-p user perm t))
+		   (htm " " (str perm) (:br)))
+		 (render-translated-button "update")
+		 (render-translated-button "cancel"))                                  
+		(t (htm "User: "
+			(:input :type "text" :name "name" :size 20)
+			(:br)
+			(render-translated-button "change")))))))))
+
+(defun reset-user-password (&rest rest &key username newpass &allow-other-keys)
+  (declare (ignorable rest))
+  (aif (get-user username)
+       (if (> (length newpass) 2)
+	   (progn (setf (user-password it) 
+			(create-sha1-password newpass))
+		  (alert "Password successfully set"))
+	   (alert "Password too short"))
+       (alert (format nil "Username '~A' not found" username))))
+
+(defun add-new-user-handler (&rest rest &key username password first last email &allow-other-keys)
+  (declare (ignorable rest))
+  (if (every (lambda (string)
+	       (and string (> (length string) 1)))
+	     (list username password first last email))
+      (progn (user-add username password :first first :last last :email email)
+	     (alert (format nil "Added ~A ~A with username '~A' to the ILR"
+			    first last username)))
+      (alert "All fields are required and must be >= 2 characters")))
 
 (defparameter *edit-permissions-user-key* 'edit-permissions-user)
 
@@ -141,7 +216,7 @@
 	      (htm "&nbsp;"))
 	    (all-users)))))
 
-  
+
 
 (defun render-stats ()
   (with-html
@@ -417,3 +492,4 @@
                       (:td (render-translated-button "send")
                            (render-translated-button "cancel")))))))))))))
     
+

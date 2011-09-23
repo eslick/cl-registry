@@ -58,14 +58,14 @@
 						   (make-choose-center-widget)
 						   ;; Uncomment next to allow to choose patient from home page
 						   ;; This affects context on the Collect / Input Data tab
-						   ;;   (make-choose-patient-widget)
+						   ;;(make-choose-patient-widget)
 						   (set-widget-rule-between (make-patient-editor-widget) :after t)
 						   (set-widget-rule-between (make-clinician-editor-widget) :after t)
 						   (make-center-editor-widget)))
 			      ,map
 			      ,@(instantiate-plugins plugins)
-			      ,(make-article-widget "clinician-home" :sidebar-p t)
-			      ,(make-article-widget "welcome-to-ilr" :sidebar-p t)))))
+			      ,(make-article-widget "welcome-to-ilr" :sidebar-p t)
+			      ,(make-article-widget "clinician-home" :sidebar-p t)))))
       (setf (home-page-map home) map)
       (mapcar (lambda (widget)
 		(setf (widget-parent widget) home))

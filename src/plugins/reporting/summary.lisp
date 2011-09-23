@@ -38,7 +38,11 @@
      '(("string" "Center") ("number" "# Patients"))
      (mapcar (lambda (center)
 	       (list (short-name center) (patient-count center)))
-	     (get-instances-by-class 'center))))))
+	     (loop for center in (get-instances-by-class 'center)
+		  unless (member (short-name center) 
+				 '("LTA" "lamhtest" "MIT-Media-Lab" "Clozure")
+				 :test 'equal)
+		  collect center))))))
 
 (defun test-dataset ()		  
   "[[['string', 'Center'], 'MIT', 'Mayo', 'Fred'],
@@ -73,7 +77,7 @@
   (let ((width 900)
 	(height 500))
     (with-html
-      (:h1 "Patients in the Study")
+      (:h1 "Registry Patients by Center")
       (:div :class "visualization"
 	    :id "viz1"
 	    :style (viz-style width height)))

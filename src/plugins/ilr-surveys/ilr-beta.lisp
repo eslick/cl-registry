@@ -94,11 +94,12 @@
         (mk-user 20 "ahickey" "Anthony" "" "Hicky" "" "ahickey@lamtreatmentalliance.org")
         (mk-user 20 "mkabadi" "Mohan" "" "Kabadi" "" "mkabadi@lamtreatmentalliance.org")
         (mk-user 20 "bpulliam" "Brian" "" "Pulliam" "" "bpulliam@lamtreatmentalliance.org")
+        (mk-user 20 "bpeters" "Betsy" "M" "Peters" "" "bpeters@lamtreatmentalliance.org")
         )
       ;; Returns
       (values count-users count-centers))))
 
-(defun create-ilr-beta-discuss (&key (owner (current-user t)) force &aux cat)
+(defun create-ilr-beta-discuss (&key (owner (current-user)) force &aux cat)
   (with-transaction ()
     ;; Delete old topics and categories
     (when force
@@ -140,6 +141,7 @@ Send email to  <a href=\"mailto:admin@internationallamregistry.org\">admin@inter
 
 (defun create-ilr-beta ()
   (create-ilr-beta-users)
+  #+NIL ;; No longer supporting forums (forii?) in ILR
   (create-ilr-beta-discuss))
 
 (defun print-ilr-beta-clinicians (&optional (out *standard-output*))

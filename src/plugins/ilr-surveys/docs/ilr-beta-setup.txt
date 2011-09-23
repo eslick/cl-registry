@@ -1,12 +1,12 @@
 -*- Mode:Text; tab-width:4; indent-tabs-mode:nil; -*-
 
-Setting up ILR and LAMsight for the "first studies" (ILR launch)
+Setting up ILR for beta 2 (LAMsight info may be outdated)
 
 1. ILR
 
 1.1 Import articles
 
-    (import-model-file "articles-2010-05-02.sexp")
+    (import-model-file "articles-2011-01-11.sexp")
 
     Use Admin > Content Editor to verify the following articles exist:
 
@@ -21,18 +21,14 @@ Setting up ILR and LAMsight for the "first studies" (ILR launch)
       * Study Introduction (lam-qol-study-articles)
       * Study Proposal (lam-qol-study-articles)
 
-    Also: create article "public-about" as a stub. (not in import file)
-
-    #About the ILR
-
-    **TBD**
-
 1.2 Create centers, users, and forum articles
 
     (create-ilr-beta)
 
     Give admin permission to one account and verify you can connect to
     the new server instance.
+
+      (add-permission (get-user "someuser") :admin)
 
 1.3 Upload Lymphatics article to Docs tab
 

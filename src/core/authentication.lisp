@@ -40,6 +40,7 @@
   (let ((url (or target "/dashboard/home/")))
     (post-action-redirect 
      (format nil "~A?action=login-complete" url))))
+
 ;;
 ;; Simple login flow
 ;;
@@ -176,10 +177,13 @@
 (defparameter *forgot-password-sent-message*
   "Your password has been sent; after logging in don't forget to change your password")
 
+(defparameter *problem-with-password-sent-message*
+  "Your e-mail address was not recognized, or a server problem prevented us sending your password.  Please send a message to ILRHelp@lamtreatmentalliance.org if this problem persists.")
+
 (defun/cc do-forgot-password-dialog ()
   (when (do-dialog "" (forgot-password-form))
     (do-information *forgot-password-sent-message*)
-    t))
+    (do-information *problem-with-password-sent-message*)))
 
 (defun forgot-password-form ()
     (make-quickform 'forgot-password-view
@@ -187,8 +191,7 @@
      :satisfies (lambda (w data)
 		  (valid-email-p w data))
      :on-success (lambda (w data)
-		   (mail-new-password data)
-		   (answer w t))
+		   (answer w (mail-new-password data)))
      :on-cancel (lambda (w)
 		  (answer w nil))))
 
@@ -217,11 +220,11 @@
 
 (defun mail-new-password (data)
   (let* ((email (slot-value data 'email))
-	 (user (first (get-instances-by-value 'user 'email email))))
+	 (user (get-instance-by-value 'user 'email email)))
     (when (and user (user-email user))	;paranoia
       (let ((new-password (generate-password 6)))
 	(setf (user-password user) (create-sha1-password new-password))
-	(send-email (list (user-email user))
+	(send-email (user-email user)
 		    #!"LAMsight password reset"
 		    (funcall #'format nil #!"Hello.
 
@@ -229,7 +232,8 @@ The password for the username: ~a has been reset to ~a
 
 After you log in, you can change the password to something you can remember.
 "
-				    (username user) new-password))))))
+				    (username user) new-password))
+	t))))
 
 (defun valid-email-p (w data)
   (let* ((email (string-trim-whitespace (slot-value data 'email)))

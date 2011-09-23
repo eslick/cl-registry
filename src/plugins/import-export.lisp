@@ -309,7 +309,54 @@
 
 
 
+;; =====================================
+;; Dump a patient's answers
+;; =====================================
 
+(defun dump-patient-answers (patient stream)
+  (mapc (lambda (answer)
+	  (let* ((question (question answer))
+		 (ptype (presentation-type-for-question question)))
+	    (format stream "~D | ~A | ~A~%" 
+		    (aif (question-number question) it "-")
+		    (cond ((eq ptype 'date-presentation)
+			   (if (keywordp (value answer))
+			       (string-downcase (symbol-name (value answer)))
+			       (with-output-to-string (strm)
+				 (cl-l10n:print-time (value answer) 
+						     :show-time nil
+						     :show-date t
+						     :stream strm))))
+			  ((eq ptype 'date-range-presentation)
+			   (format nil "[~A to ~A]"
+				   (if (keywordp (car (value answer)))
+				       (string-downcase (symbol-name (car (value answer))))
+				       (with-output-to-string (strm)
+					 (cl-l10n:print-time (car (value answer))
+							     :show-time nil
+							     :show-date t
+							     :stream strm)))
+				   (if (keywordp (cdr (value answer)))
+				       (string-downcase (symbol-name (cdr (value answer))))
+				       (with-output-to-string (strm)
+					 (cl-l10n:print-time (cdr (value answer))
+							     :show-time nil
+							     :show-date t
+							     :stream strm)))))
+			  ((null (value answer))
+			   "false")
+			  ((eq (value answer) t)
+			   "true")
+			  (t (value answer)))
+		    (question-name (question answer)))))
+	(sort (get-instances-by-value 'answer 'user patient)
+	      #'< :key (compose #'object-id #'question)))
+  nil)
+
+(defun save-patient-answers (patient filename)
+  (let ((patient (get-patient patient)))
+    (with-open-file (stream filename :direction :output :if-exists :supersede)
+      (dump-patient-answers patient stream))))
 
 		    
 

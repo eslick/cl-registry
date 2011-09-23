@@ -47,7 +47,9 @@
      (cl-smtp:send-email (site-email-smtp-host)
 			 (site-email-admin-address)
 			 addresses subject body
-			 :authentication (site-email-smtp-authentication)))))
+			 :authentication (site-email-smtp-authentication))
+     t)
+    (t nil)))
 
 (defparameter *enable-email-whitelist* nil)
 (defparameter *user-whitelist* '("eslick" "kmcorbett" "wws" "rme" "clozure" "jaj"))

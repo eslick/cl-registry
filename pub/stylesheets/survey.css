@@ -70,9 +70,14 @@ div.survey-group div.question-input input
 
 div.survey-group div.question-input input[type="text"]
 {
-    margin-left: 20px;
+/*    margin-left: 20px; */
     width: 260px;
     text-indent: 2px;
+}
+
+div.survey-group div.question-input input.question-data-type-NUMBER
+{
+    width: 50px;
 }
 
 div.survey-group label.radio
