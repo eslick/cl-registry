@@ -1,15 +1,34 @@
+# cl-registry
+
+## A patient and clinical registry platform 
+
+Copyright (c) 2008-2011 MIT Media Laboratory 
+Portions Copyright (c) 2009-2011 the LAM Treatment Alliance
+
+## Configuration Instructions
+
+This code base supports multiple personalities, user interfaces,
+module configurations and other features from configuration files
+stored in sites/.  The current configurations support the live sites
+[LAMsight](http://www.lamsight.org) and the
+[International LAM Registry](http://www.lamregistry.org").
+
+More TBD
+
+## Installation Instructions
+
 In order to use the "registry" script in this directory to load the
 International LAM Registry system for developement, you need to get
 its code and libraries:
 
-  cd ~/lamsight     # wherever you want the code on your machine
-  darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/systems/
-  darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/registry/
+    cd ~/registry     # wherever you want the code on your machine
+    darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/systems/
+    darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/registry/
 
 To load the LAMSIGHT2 system:
 
-  cd ~/lamsight/registry
-  ./registry [port]
+    cd ~/lamsight/registry
+    ./registry [port]
 
 If "port" is included, loads Swank (from ../systems/slime/)
 and starts a server listening on "port" (4005 is the default port for
@@ -18,12 +37,12 @@ m-x slime-connect in Emacs).
 If NOLOAD is set to "true" in the environment, does not load the
 registry or library code, only registry-loader.lisp:
 
-  NOLOAD=true ./registry [port]
+    NOLOAD=true ./registry [port]
 
 In this case, the Slime package will be REGISTRY-LOADER, and you can
 load the registry code with:
 
-  (loadsys :registry)
+    (loadsys :registry)
 
 Otherwise, the Slime package will be REGISTRY.
 
@@ -31,15 +50,15 @@ If REGPORT is an integer, will start up a debugging server on that
 port. For example, the following will load the registry code, start a
 server on port 8080, and start a Slime server on port 4005:
 
-  REGPORT=8080 ./registry 4005
+    REGPORT=8080 ./registry 4005
 
 Alternatively, you can start the server from the REPL with:
 
-  (registry-loader:start-registry 8080)
+    (registry-loader:start-registry 8080)
 
 or:
 
-  (start-registry :debug <debug>
+    (start-registry :debug <debug>
                   :log-level <log-level>
                   :address "localhost"
                   :port 8080
@@ -93,8 +112,8 @@ page.
 Before you can start a registry server, you need to configure Elephant
 for your version of the Berkeley Database (BDB). To do this:
 
-  cd ~/lamsight/systems/elephant-1.0
-  cp config.sexp my-config.sexp
+    cd ~/lamsight/systems/elephant-1.0
+    cp config.sexp my-config.sexp
 
 Then, unless you're using BDB version 4.5, edit my-config.sexp, and
 change 4.5 for your platform to the version you're using (4.6 or 4.7).
@@ -103,19 +122,31 @@ The first time you start the server, you'll have an empty database,
 which will cause many of the pages to be blank. To load an initial
 database, you can do the following on newmed-dev:
 
-  (import-model-file "/usr/local/lamsight/anon-db-export-05-27-09.sexp")
+    (import-model-file "/usr/local/lamsight/anon-db-export-05-27-09.sexp")
 
 If BDB isn't installed on your machine, you can download source from:
 
-  http://www.oracle.com/technology/software/products/berkeley-db/
+    http://www.oracle.com/technology/software/products/berkeley-db/
 
 Make sure you compile and link for 64 bits, if you're using a 64-bit
 CCL:
 
-  cd /path/to/db-4.x.y/build_unix
-  CFLAGS="-m64" LDFLAGS="-arch x86_64" ../dist/configure
-  make
-  sudo make install
+    cd /path/to/db-4.x.y/build_unix
+    CFLAGS="-m64" LDFLAGS="-arch x86_64" ../dist/configure
+    make
+    sudo make install
 
 I'm using version 4.5 on OS X. For a new installation, use the latest,
 4.7.
+
+
+## Guide to the Code Base
+
+### Configuration parameters
+
+### Core Data Models
+
+### Application Plugins
+
+### Site Events
+
