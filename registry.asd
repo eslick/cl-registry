@@ -34,7 +34,8 @@
 		  ((:file "registry")
 		   (:module libs
 			    :components 
-			    ((:file "utils")
+			    ((:file "datetime")
+			     (:file "utils" :depends-on ("datetime"))
 			     (:file "model" :depends-on ("utils"))
 			     ;; Text content management
 			     (:module fulltext
@@ -276,8 +277,8 @@
 				    ((:file "2010-05-16-288-ilr-message-templates"))))
 			  :serial t
 			  :depends-on ("package")))
-    :depends-on (:weblocks :stdutils :langutils 
-			   :ironclad :cl-l10n 
+    :depends-on (:weblocks :stdutils :langutils :ironclad 
+			   :cl-l10n :local-time :parse-number
 			   :cl-smtp :cl-twitter :cl-markdown
 			   :weblocks-elephant 
 			   :drakma :montezuma))

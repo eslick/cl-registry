@@ -25,7 +25,7 @@
       (cl-ppcre:split '(:char-class #\Space) client-value)
     (when (and client-number (> (length client-number) 0))
       (handler-case 
-	  (let ((lisp-number (cl-l10n:parse-number client-number)))
+	  (let ((lisp-number (parse-number:parse-number client-number)))
 	    (values (convert-to-canonical lisp-number
 					  (or unit
 					      display-unit
@@ -211,10 +211,10 @@
     (if client-number
         (progn
           (handler-case
-              (cl-l10n:parse-number client-number)
-            (cl-l10n::parse-error (c)
+              (parse-number:parse-number client-number)
+            (parse-number:invalid-number (c)
               (return-from client-validate
-                (fail-validation (cl-l10n::reason c))))
+                (fail-validation (parse-number:invalid-number-reason c))))
             (error (c)
               (declare (ignore c))
               (fail-validation "Not a number.")))

@@ -140,7 +140,7 @@
 		      :if-does-not-exist :create
 		      :sharing :lock)))
     (format stream "~%;; Starting answer log ")
-    (cl-l10n:format-time stream (get-universal-time) t t)
+    (render-timestamp stream (get-universal-time))
     (format stream "~%~%")
     (force-output stream)
     (setf *answer-log-stream* stream)))

@@ -5,7 +5,7 @@
 
 (define-lisp-value-getter number-presentation (client-value)
   (or (when (> (length client-value) 0)
-	(cl-l10n:parse-number client-value))
+	(parse-number:parse-number client-value))
       :none))
 
 (define-lisp-value-setter number-presentation (number precision)
@@ -59,8 +59,10 @@
 (defmethod client-validate ((validator number-validator) (client-value string))
   (if (plusp (length client-value))
     (handler-case
-	(cl-l10n:parse-number client-value)
-      (parse-error (c)
+	(parse-number:parse-number client-value)
+      (parse-number:invalid-number (c)
+	(fail-validation (parse-number:invalid-number-reason c)))
+      (error (c)
 	(declare (ignore c))
 	(fail-validation "~S is not a number" client-value)))
     (fail-validation "No number provided.")))

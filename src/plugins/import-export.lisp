@@ -322,27 +322,15 @@
 		    (cond ((eq ptype 'date-presentation)
 			   (if (keywordp (value answer))
 			       (string-downcase (symbol-name (value answer)))
-			       (with-output-to-string (strm)
-				 (cl-l10n:print-time (value answer) 
-						     :show-time nil
-						     :show-date t
-						     :stream strm))))
+			       (print-date (value answer))))
 			  ((eq ptype 'date-range-presentation)
 			   (format nil "[~A to ~A]"
 				   (if (keywordp (car (value answer)))
 				       (string-downcase (symbol-name (car (value answer))))
-				       (with-output-to-string (strm)
-					 (cl-l10n:print-time (car (value answer))
-							     :show-time nil
-							     :show-date t
-							     :stream strm)))
+				       (print-date (car (value answer))))
 				   (if (keywordp (cdr (value answer)))
 				       (string-downcase (symbol-name (cdr (value answer))))
-				       (with-output-to-string (strm)
-					 (cl-l10n:print-time (cdr (value answer))
-							     :show-time nil
-							     :show-date t
-							     :stream strm)))))
+				       (print-date (cdr (value answer))))))
 			  ((null (value answer))
 			   "false")
 			  ((eq (value answer) t)

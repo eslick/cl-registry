@@ -36,21 +36,18 @@ when parsing date/time strings for PRESENTATION"))
 
 (define-lisp-value-getter datetime-presentation (client-value)
   (with-datetime-presentation-parse-time-args (datetime-presentation)
-    (or (apply #'cl-l10n:parse-time client-value *parse-time-args*) 
-	(when (equal client-value "unknown") :unknown)
+    (or (when (equal client-value "unknown") :unknown)
 	(when (equal client-value "present") :present)
+	(parse-datetime client-value)
 	:none)))
 
 (define-lisp-value-setter datetime-presentation (lisp-value show-time-p show-date-p)
   (cond ((eq lisp-value :none) nil)
 	((eq lisp-value :unknown) "unknown")
 	((eq lisp-value :present) "present")
-        (lisp-value (with-string-stream (stream)
-                      (cl-l10n:print-time lisp-value
-                                          :show-date show-date-p
-                                          :show-time show-time-p
-                                          :locale (user-locale (current-user))
-                                          :stream stream)))
+        (lisp-value (print-datetime lisp-value 
+				    :show-time-p show-time-p
+				    :show-date-p show-date-p))
         (t "")))
 
 (defmethod render-presentation-editable ((presentation datetime-presentation))
@@ -102,26 +99,27 @@ when parsing date/time strings for PRESENTATION"))
      (1 (call-next-method))
      (2
       (with-datetime-presentation-parse-time-args (date-range-presentation)
-	(cons (or (apply #'cl-l10n:parse-time (aref dates 0) *parse-time-args*)
+	(cons (or (parse-date (aref dates 0) *parse-time-args*)
+		  ;;(apply #'cl-l10n:parse-time (aref dates 0) *parse-time-args*)
 		  (when (equal (aref dates 0) "unknown") :unknown)
 		  (when (equal (aref dates 0) "present") :present))
-	      (or (apply #'cl-l10n:parse-time (aref dates 1) *parse-time-args*)
+	      (or (parse-date (aref dates 1) *parse-time-args*)
+		  ;;(apply #'cl-l10n:parse-time (aref dates 1) *parse-time-args*)
 		  (when (equal (aref dates 1) "unknown") :unknown)
 		  (when (equal (aref dates 1) "present") :present)))))
      (t (error "Unrecognized range specification in ~A" client-value)))))
 
 (define-lisp-value-setter date-range-presentation (date-pair)
   (if (consp date-pair)
-      (with-string-stream (stream)
-	(if (keywordp (car date-pair))
-	    (princ (string-downcase (symbol-name (car date-pair))) stream)
-	    (cl-l10n:print-time (car date-pair) :show-date t 
-				:show-time nil :stream stream))
-	(princ " to " stream)
-	(if (keywordp (cdr date-pair))
-	    (princ (string-downcase (symbol-name (cdr date-pair))) stream)
-	    (cl-l10n:print-time (cdr date-pair) :show-date t 
-				:show-time nil :stream stream)))
+      (let ((date1 . date2) date-pair)
+	(with-string-stream (stream)
+	  (if (keywordp date1)
+	      (princ (string-downcase (symbol-name date1)) stream)
+	      (render-date stream date1))
+	  (princ " to " stream)
+	  (if (keywordp date2)
+	      (princ (string-downcase (symbol-name date2)) stream)
+	      (render-date stream date2))))
       (progn (call-next-method)
              (return-from lisp-value date-pair))))
 
@@ -175,7 +173,8 @@ when parsing date/time strings for PRESENTATION"))
       ;; First check the association list for screw cases
       ((second (assoc locale-name *date-presentation-hint-for-locale-alist* :test #'string-equal)))
       ;; Guess by permuting date print string specification
-      ((let* ((fmt (cl-l10n:locale-d-fmt locale-obj)))
+      ;; TODO: Fix this! (ISE 2011)
+      ((let* ((fmt "%F"));;(cl-l10n:locale-d-fmt locale-obj)))
 	 (cond
 	   ;; See the CL-L10N manual for definitions of % directives
 	   ((string= fmt "%D") (if (eq pattern ':date-month-day) "mm/yyyy or mm/dd/yyyy or 'present'" "mm/dd/yyyy or 'unknown'"))
@@ -247,9 +246,10 @@ when parsing date/time strings for PRESENTATION"))
   (handler-case
       (or (equal client-value "unknown") 
 	  (equal client-value "present")
-	  (apply #'cl-l10n:parse-time client-value :error-on-mismatch t *parse-time-args*))
-    (cl-l10n:parser-error (c)
-      (fail-validation (cl-l10n::reason c)))
+	  ;; (apply #'cl-l10n:parse-time client-value :error-on-mismatch t *parse-time-args*))
+	  (parse-datetime client-value :fail-on-error t))
+    (local-time::invalid-timestring (c)
+      (fail-validation (local-time::failure-of c)))
     (error (c)
       (declare (ignore c))
       (fail-validation (format nil "~S is not a valid date/time" client-value)))))

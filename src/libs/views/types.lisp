@@ -8,9 +8,7 @@
 ;;; usurped the -presentation suffix, so we have to do something.
 
 (defun format-datetime-display (datetime &key (show-time-p t) (show-date-p t))
-  (with-string-stream (stream)
-    (cl-l10n:print-time datetime :show-date show-date-p
-			:show-time show-time-p :stream stream)))
+  (print-datetime datetime :show-date-p show-date-p :show-time-p show-time-p))
 
 (defclass wl-datetime-presentation (text-presentation input-presentation)
   ())
@@ -71,12 +69,12 @@
 				   (view form-view) (field form-view-field) 
 				   &rest args)
   (declare (ignore args obj) (optimize safety))
-  (parse-datetime value))
+  (parse-wl-datetime value))
 
-(defun parse-datetime (value)
+(defun parse-wl-datetime (value)
   (handler-case
       (let* ((presentp (text-input-present-p value))
-	     (dt-value (when presentp (cl-l10n:parse-time value))))
+	     (dt-value (when presentp (parse-timestring value))))
 	(values t presentp dt-value))
     (error (err) (print err) nil)))
 
