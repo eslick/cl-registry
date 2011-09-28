@@ -5,33 +5,13 @@
 Copyright (c) 2008-2011 MIT Media Laboratory 
 Portions Copyright (c) 2009-2011 the LAM Treatment Alliance
 
-## Configuration Instructions
+## Upgrade Problems as of Sept 27th
 
-This code base supports multiple personalities, user interfaces,
-module configurations and other features from configuration files
-stored in sites/.  The current configurations support the live sites
-[LAMsight](http://www.lamsight.org) and the
-[International LAM Registry](http://www.lamregistry.org").
+### Major Problems:
+  - cl-l10n / verify parsing & formatting works properly
+  - cl-l10n / fix format to provide hint to UI?
 
-More TBD
-
-## Installation Instructions
-
-In order to use the "registry" script in this directory to load the
-International LAM Registry system for developement, you need to get
-the appropriate code and libraries from quicklisp:
-
-    (ql:quickload '(:weblocks :montezuma :drakma 
-                    :cl-markdown :langutils :cl-twitter
-                    :cl-smtp :cl-l10n :local-time 
-		    :parse-number))
-
-Major Problems:
-- Elephant works on SBCL & CCL
-- cl-l10n / verify parsing & formatting works properly
-- cl-l10n / fix format to provide hint to UI?
-
-Minor problems:
+### Minor problems:
 - Upgrade to latest cl-twitter
   - Ensure we can use twitter oauth interface? 
   - Just don't use twitter for now
@@ -39,14 +19,70 @@ Minor problems:
 - Latest elephant builds CCL/SBCL?
 
 
-SBCL Problems:
-- cl-l10n build on SBCL?
-- elephant SBCL PCL code
+### SBCL-specific problems:
+  - Ensure that Elephant works on SBCL 
+  - cl-l10n doesn't build on SBCL?
 
 
-To load the LAMSIGHT2 system:
 
-    cd ~/lamsight/registry
+## Installation Instructions
+
+  1. Grab the registry from GitHub and ensure that it's accessible via asdf.
+
+  2. Get the necessary libraries from quicklisp:
+
+    (ql:quickload '(:weblocks :montezuma :drakma 
+                    :cl-markdown :langutils :cl-twitter
+                    :cl-smtp :cl-l10n :local-time 
+		    :parse-number))
+
+  3. Get the Elephant DB
+
+Download Elephant from it's darcs repository on common-lisp.net    
+  
+Before you can start a registry server, you need to configure Elephant
+for your version of the Berkeley Database (BDB). To do this:
+
+    cd .../elephant-1.0
+    cp config.sexp my-config.sexp
+
+Then, unless you're using BDB version 4.5, edit my-config.sexp, and
+change 4.5 for your platform to the version you're using (4.6 or 4.7).
+
+If BDB isn't installed on your machine, you can download source from:
+
+    http://www.oracle.com/technology/software/products/berkeley-db/
+
+Make sure you compile and link for 64 bits, if you're using a 64-bit
+CCL:
+
+    cd /path/to/db-4.x.y/build_unix
+    CFLAGS="-m64" LDFLAGS="-arch x86_64" ../dist/configure
+    make
+    sudo make install
+
+I'm using version 4.5 on OS X. For a new installation, use the latest,
+4.7.
+
+  4. Start from the REPL
+  
+    (asdf:operate 'asdf:load-op :registry)    
+    (in-package :registry)
+    (start-registry :debug t :config "ilr-production")
+    
+The start-registry procedure has an optional debug command line and
+requires a site configuration reference (stored in ./registry/sites).
+Like stylesheets, site configurations can be cascaded so you can
+include a list of configurations with the later files overriding
+fields in the former.  For example, to ensure no production e-mails or
+twitter messages are sent, you can override those config items using
+devel.config.
+
+    (start-registry :debug t :config '("ilr-production" "devel"))
+  
+  5. To load a Registry site from the command line (INCOMPLETE INSTRUCTIONS)
+
+    cd <registry directory>
     ./registry [port]
 
 If "port" is included, loads Swank (from ../systems/slime/)
@@ -71,7 +107,7 @@ server on port 8080, and start a Slime server on port 4005:
 
     REGPORT=8080 ./registry 4005
 
-Alternatively, you can start the server from the REPL with:
+  5. Alternatively, you can start the server from the REPL with:
 
     (registry-loader:start-registry 8080)
 
@@ -128,14 +164,19 @@ enables periodic emails to users who have requested it.
 Both Twitter updates and periodic emails can be toggled on the "Admin"
 page.
 
-Before you can start a registry server, you need to configure Elephant
-for your version of the Berkeley Database (BDB). To do this:
 
-    cd ~/lamsight/systems/elephant-1.0
-    cp config.sexp my-config.sexp
 
-Then, unless you're using BDB version 4.5, edit my-config.sexp, and
-change 4.5 for your platform to the version you're using (4.6 or 4.7).
+## Configuration Instructions
+
+This code base supports multiple personalities, user interfaces,
+module configurations and other features from configuration files
+stored in sites/.  The current configurations support the live sites
+[LAMsight](http://www.lamsight.org) and the
+[International LAM Registry](http://www.lamregistry.org").
+
+More TBD
+
+## Loading Data
 
 The first time you start the server, you'll have an empty database,
 which will cause many of the pages to be blank. To load an initial
@@ -143,25 +184,8 @@ database, you can do the following on newmed-dev:
 
     (import-model-file "/usr/local/lamsight/anon-db-export-05-27-09.sexp")
 
-If BDB isn't installed on your machine, you can download source from:
-
-    http://www.oracle.com/technology/software/products/berkeley-db/
-
-Make sure you compile and link for 64 bits, if you're using a 64-bit
-CCL:
-
-    cd /path/to/db-4.x.y/build_unix
-    CFLAGS="-m64" LDFLAGS="-arch x86_64" ../dist/configure
-    make
-    sudo make install
-
-I'm using version 4.5 on OS X. For a new installation, use the latest,
-4.7.
-
 
 ## Guide to the Code Base
-
-### Configuration parameters
 
 ### Core Data Models
 
