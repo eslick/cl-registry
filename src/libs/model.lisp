@@ -8,7 +8,10 @@
   "Keeps track of all the models that have been created using defmodel and
    ensures that an editing widget has been created for it")
 
-(defconstant $MID-ROOT-KEY "*LAMSIGHT-MID*")
+(defconstant $MID-ROOT-KEY 
+  (if (boundp '$MID-ROOT-KEY)
+      (symbol-value '$MID-ROOT-KEY)
+      "*LAMSIGHT-MID*"))
 
 (defvar *mid-lock* (elephant-utils:ele-make-lock))
 (defvar *mid* nil)

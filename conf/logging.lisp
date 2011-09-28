@@ -15,8 +15,8 @@
 
 (defun start-logging (&optional (level *default-log-level*))
   "Start logging Hunchentoot web access. LEVEL should be :error, :warning, :debug, or :info"
-  (setf hunchentoot:*log-error-p-function* 'log-error-p-function
-        *log-level* level)
+;;  (setf hunchentoot:*log-error-p-function* 'log-error-p-function
+;;        *log-level* level)
   (set-log-level level)
   ;; Returns
   (values

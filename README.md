@@ -19,11 +19,30 @@ More TBD
 
 In order to use the "registry" script in this directory to load the
 International LAM Registry system for developement, you need to get
-its code and libraries:
+the appropriate code and libraries from quicklisp:
 
-    cd ~/registry     # wherever you want the code on your machine
-    darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/systems/
-    darcs get <login>@newmed-dev.media.mit.edu:/usr/local/lamsight/repos/registry/
+    (ql:quickload '(:weblocks :montezuma :drakma 
+                    :cl-markdown :langutils :cl-twitter
+                    :cl-smtp :cl-l10n :local-time 
+		    :parse-number))
+
+Major Problems:
+- Elephant works on SBCL & CCL
+- cl-l10n / verify parsing & formatting works properly
+- cl-l10n / fix format to provide hint to UI?
+
+Minor problems:
+- Upgrade to latest cl-twitter
+  - Ensure we can use twitter oauth interface? 
+  - Just don't use twitter for now
+
+- Latest elephant builds CCL/SBCL?
+
+
+SBCL Problems:
+- cl-l10n build on SBCL?
+- elephant SBCL PCL code
+
 
 To load the LAMSIGHT2 system:
 

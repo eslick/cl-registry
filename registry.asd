@@ -11,14 +11,14 @@
 (in-package :registry-asd)
 
 ;; Required by cl-l10n
-(setq ccl:*default-file-character-encoding* :utf-8)
+#+ccl (setq ccl:*default-file-character-encoding* :utf-8)
 
 (defsystem registry
     :name "Medical Registry"
     :version "0.9"
     :maintainer "Clozure Associates"
     :author "MIT Media Lab / Clozure Associates"
-    :licence "Soon to be BSD?"
+    :licence "BSD"
     :description "A general medical registry platform for patients and clinicians"
     :components ((:file "package")
 		 (:module conf
