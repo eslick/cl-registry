@@ -23,7 +23,7 @@
     (when (get-site-config-param :twitter-enabled-p)
       (prog1 
 	  (setf *registry-twitter-user*
-		(twit::get-user (get-site-config-param :twitter-username)))
+		(twitter::get-user (get-site-config-param :twitter-username)))
 	(setf (twit:twitter-user-password *registry-twitter-user*)
 	      (get-site-config-param :twitter-password))))))
 
@@ -35,11 +35,11 @@
   (when (send-twitter-daily-update-p)
     (multiple-value-bind (text stats)
 	(lamsight-tweet-text)
-      (twitter:send-tweet text :user (get-twitter-user))
+      (twitter:tweet text)
       (record-event :twitter-update stats :user nil)))
 
   (when (send-twitter-weekly-update-p)
-    (twitter:send-tweet (lamsight-weekly-tweet-text) :user (get-twitter-user))
+    (twitter:tweet (lamsight-weekly-tweet-text))
     (record-event :twitter-weekly-update nil :user nil)))
 
 ;;
