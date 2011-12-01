@@ -24,14 +24,14 @@
   (setf *catch-errors-p* t)
   (if debug
       (progn 
-	(start-logging (or log-level :debug))
+	(start-logging (or log-level :debug) weblocks:*weblocks-server*)
 	(enable-global-debugging)
         (setf *error-action*
               (case debug
                 (:html :html)
                 (t :debug))))
       (progn
-	(start-logging (or log-level :error))
+	(start-logging (or log-level :error) weblocks:*weblocks-server*)
 	(disable-global-debugging)
 	(setf *error-action* nil)))
   ;; Run hooks

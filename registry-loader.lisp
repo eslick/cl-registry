@@ -39,9 +39,9 @@
 (progn
   (add-systems-to-registry)
   ;; Oh, joy! Darcs doesn't support symbolic links.
-  (add-to-registry "../systems/weblocks/src/store/elephant")
-  (add-to-registry "../systems/weblocks/src/store/memory")
-  (add-to-registry "../systems/weblocks/src/store/prevalence")
+;;  (add-to-registry "../systems/weblocks/src/store/elephant")
+;;  (add-to-registry "../systems/weblocks/src/store/memory")
+;;  (add-to-registry "../systems/weblocks/src/store/prevalence")
   (add-to-registry "."))
 
 (defun load-swank (&optional port)
