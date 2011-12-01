@@ -181,9 +181,10 @@
   "Your e-mail address was not recognized, or a server problem prevented us sending your password.  Please send a message to ILRHelp@lamtreatmentalliance.org if this problem persists.")
 
 (defun/cc do-forgot-password-dialog ()
-  (when (do-dialog "" (forgot-password-form))
-    (do-information *forgot-password-sent-message*)
-    (do-information *problem-with-password-sent-message*)))
+  (let ((result (do-dialog "" (forgot-password-form))))
+    (cond ((eq result :cancel) nil)
+	  (result (do-information *forgot-password-sent-message*))
+	  (t (do-information *problem-with-password-sent-message*)))))
 
 (defun forgot-password-form ()
     (make-quickform 'forgot-password-view
@@ -193,7 +194,7 @@
      :on-success (lambda (w data)
 		   (answer w (mail-new-password data)))
      :on-cancel (lambda (w)
-		  (answer w nil))))
+		  (answer w :cancel))))
 
 (defparameter *forgot-password-message*
   "If you can't remember your username or password, enter your email address here.  You will be sent a message that contains your username and a new password.")
@@ -225,7 +226,7 @@
       (let ((new-password (generate-password 6)))
 	(setf (user-password user) (create-sha1-password new-password))
 	(send-email (user-email user)
-		    #!"Password reset"
+		    (strcat #!"Password reset for " (get-site-config-param :site-name))
 		    (funcall #'format nil #!"Hello.
 
 The password for the username: ~a has been reset to ~a
