@@ -225,7 +225,7 @@
       (let ((new-password (generate-password 6)))
 	(setf (user-password user) (create-sha1-password new-password))
 	(send-email (user-email user)
-		    #!"LAMsight password reset"
+		    #!"Password reset"
 		    (funcall #'format nil #!"Hello.
 
 The password for the username: ~a has been reset to ~a
