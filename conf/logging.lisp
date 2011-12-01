@@ -13,18 +13,16 @@
 (defmethod log-error-p-function ((condition ccl:input-timeout))
   nil)
 
-(defun start-logging (&optional (level *default-log-level*))
+(defun start-logging (&optional (level *default-log-level*) (acceptor weblocks::*weblocks-server*))
   "Start logging Hunchentoot web access. LEVEL should be :error, :warning, :debug, or :info"
-;;  (setf hunchentoot:*log-error-p-function* 'log-error-p-function
-;;        *log-level* level)
   (set-log-level level)
   ;; Returns
   (values
-   (setf hunchentoot:*message-log-pathname*
+   (setf (acceptor-message-log-destination acceptor)
 	 (make-pathname :defaults (registry-relative-path (list "logs"))
 			:name "registry"
 			:type "log"))
-   (setf hunchentoot:*access-log-pathname*
+   (setf (acceptor-access-log-destination acceptor)
 	 (if (get-site-config-param :enable-access-logging)
 	     (make-pathname :defaults (registry-relative-path (list "logs"))
 			    :name "access"
@@ -42,12 +40,12 @@
          (setf hunchentoot:*log-lisp-errors-p* nil
                hunchentoot:*log-lisp-warnings-p* nil))))
 
-(defun stop-logging ()
+(defun stop-logging (&optional (accessor weblocks::*weblocks-server*))
   (set-log-level nil)
-  (setf hunchentoot:*message-log-pathname* nil))
+  (setf (acceptor-message-log-destination accessor) nil))
 
 (defun log-message (category level format &rest args)
   (when (member *log-level* (member level '(:error :warning :info :debug)))
-    (apply #'hunchentoot:log-message level 
+    (apply #'hunchentoot::log-message* level 
            (format nil "(~A) ~A" category format)
            args)))
