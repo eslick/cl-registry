@@ -1,7 +1,7 @@
 ; -*- mode: lisp -*-
 
 (cl:defpackage #:registry-loader
-    (:use #:cl :ccl)
+    (:use #:cl)
   (:export #:add-to-registry
            #:add-systems-to-registry
            #:loadsys
@@ -19,6 +19,12 @@
 
 (require "asdf")
 
+(asdf:operate 'asdf:load-op :cl-fad)
+
+(defun getenv (var)
+  #+ccl (ccl:getenv var)
+  #+sbcl (sb-ext:posix-getenv var))
+
 (defun add-to-registry (&rest paths)
   (dolist (path paths)
     (pushnew (truename (merge-pathnames path *source-directory*))
@@ -28,10 +34,12 @@
 (defun add-systems-to-registry ()
   (let ((systems-wildcard
          (merge-pathnames
-          (make-pathname :directory "../systems" :name :wild :type :wild)
+          (make-pathname :directory "../systems")
           *source-directory*)))
     (apply 'add-to-registry
-           (directory systems-wildcard :directories t :files nil))))
+	   (loop for path in (cl-fad:list-directory systems-wildcard)
+	      when (cl-fad:directory-pathname-p path)
+	      collect path))))
 
 (defun loadsys (system)
   (asdf:oos 'asdf:load-op system))
@@ -63,7 +71,8 @@
   (when (stringp port)
     (setq port (ignore-errors (parse-integer port))))
   (if (null config)
-      (setf config (or (ccl:getenv "REGCONFIG") *default-config*)))
+      (setf config (or (getenv "REGCONFIG")
+		       *default-config*)))
   (if (stringp config)
       (setf config (funcall (find-symbol "SPLIT-SEQUENCE" :split-sequence)
 			    #\+
@@ -73,14 +82,15 @@
     (let ((start-registry (find-symbol "START-REGISTRY" :registry)))
       (when (fboundp start-registry)
         (funcall (fdefinition start-registry)
-                 :address (or (ccl:getenv "REGADDR")
+                 :address (or (getenv "REGADDR")
 			      "localhost")
                  :port port
                  :config config)))))
 
 (defun is-environment-p (var)
-  (member (ccl:getenv var) '("YES" "yes" "true" "TRUE")
-              :test #'equal))
+  (member (getenv var)
+	  '("YES" "yes" "true" "TRUE")
+	  :test #'equal))
 
 (when (is-environment-p "REGDEV")
   ;; Enables debugging optimizations, and a few other things, if set at compile time
@@ -92,7 +102,7 @@
 (unless (is-environment-p "NOLOAD")
   (loadsys :trivial-backtrace)
   (loadsys :registry)
-  (start-registry (ccl:getenv "REGPORT") (ccl:getenv "REGCONFIG")))
+  (start-registry (getenv "REGPORT") (getenv "REGCONFIG")))
 
 
 
