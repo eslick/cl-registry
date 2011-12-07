@@ -18,11 +18,11 @@
   (set-log-level level)
   ;; Returns
   (values
-   (setf (acceptor-message-log-destination acceptor)
+   (setf (hunchentoot::acceptor-message-log-destination acceptor)
 	 (make-pathname :defaults (registry-relative-path (list "logs"))
 			:name "registry"
 			:type "log"))
-   (setf (acceptor-access-log-destination acceptor)
+   (setf (hunchentoot::acceptor-access-log-destination acceptor)
 	 (if (get-site-config-param :enable-access-logging)
 	     (make-pathname :defaults (registry-relative-path (list "logs"))
 			    :name "access"
