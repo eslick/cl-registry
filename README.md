@@ -5,7 +5,9 @@
 Copyright (c) 2008-2011 MIT Media Laboratory 
 Portions Copyright (c) 2009-2011 the LAM Treatment Alliance
 
-## Upgrade Problems as of Sept 27th
+## Upgrade Status as of December 7th, 2011
+
+Known to work with Quicklisp distribution from 2011-11-03
 
 ### Major Problems:
   - cl-l10n / verify parsing & formatting works properly
@@ -16,12 +18,9 @@ Portions Copyright (c) 2009-2011 the LAM Treatment Alliance
   - Ensure we can use twitter oauth interface? 
   - Just don't use twitter for now
 
-- Latest elephant builds CCL/SBCL?
-
-
 ### SBCL-specific problems:
   - Ensure that Elephant works on SBCL 
-  - cl-l10n doesn't build on SBCL?
+  - Latest cl-l10n doesn't build on SBCL?
 
 
 
@@ -29,25 +28,7 @@ Portions Copyright (c) 2009-2011 the LAM Treatment Alliance
 
   1. Grab the registry from GitHub and ensure that it's accessible via asdf.
 
-  2. Get the necessary libraries from quicklisp:
-
-    (ql:quickload '(:weblocks :montezuma :drakma 
-                    :cl-markdown :langutils :cl-twitter
-                    :cl-smtp :cl-l10n :local-time 
-		    :parse-number))
-
-  3. Get the Elephant DB
-
-Download Elephant from it's darcs repository on common-lisp.net    
-  
-Before you can start a registry server, you need to configure Elephant
-for your version of the Berkeley Database (BDB). To do this:
-
-    cd .../elephant-1.0
-    cp config.sexp my-config.sexp
-
-Then, unless you're using BDB version 4.5, edit my-config.sexp, and
-change 4.5 for your platform to the version you're using (4.6 or 4.7).
+  2. Install Berkeley DB v4.7 in /usr/local
 
 If BDB isn't installed on your machine, you can download source from:
 
@@ -61,21 +42,40 @@ CCL:
     make
     sudo make install
 
-I'm using version 4.5 on OS X. For a new installation, use the latest,
-4.7.
+  3. Get the necessary libraries from quicklisp:
 
-  4. Start from the REPL
-  
+   (ql:quickload '(:weblocks :elephant :montezuma :drakma 
+                    :cl-markdown :langutils :cl-twitter
+                    :cl-smtp :cl-l10n :local-time 
+		    :parse-number))
+
+  4. Configure quicklisp elephant installation
+
+     a. Add link for ele-bdb.asd
+
+    cat 'dists/quicklisp/software/elephant-20111001-darcs/ele-bdb.asd'  > quicklisp/dists/quicklisp/installed/systems/ele-bdb.txt
+
+     b. Add system reference for quicklisp asdf loading
+
+    cat 'elephant ele-bdb ele-bdb uffi bordeaux-threads elephant' >> quicklisp/dists/quicklisp/systems.txt
+
+     c. Modify my-config.sexp to change all occurances of 4.5 to 4.7
+
+    quicklisp/dists/quicklisp/software/elephant-20111001-darcs/my-config.sexp
+
+  5. To start from the REPL
+ 
+    Start Lisp (ccl or sbcl)
     (asdf:operate 'asdf:load-op :registry)    
     (in-package :registry)
-    (start-registry :debug t :config "ilr-production")
+    (start-registry :debug t :config "lamsight-production")
     
 The start-registry procedure has an optional debug command line and
 requires a site configuration reference (stored in ./registry/sites).
-Like stylesheets, site configurations can be cascaded so you can
-include a list of configurations with the later files overriding
-fields in the former.  For example, to ensure no production e-mails or
-twitter messages are sent, you can override those config items using
+Like CSS, site configurations can be cascaded so you can include a
+list of configurations with the later files overriding fields in the
+former.  For example, to ensure no production e-mails or twitter
+messages are sent, you can override those config items using
 devel.config.
 
     (start-registry :debug t :config '("ilr-production" "devel"))
