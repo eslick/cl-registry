@@ -6,6 +6,15 @@
 
 (defvar *parse-time-args* nil)
 
+(defparameter *patterns* 
+  '((:date-month-day . "MM/dd")
+    (:date-full . "yyyy/MM/dd")
+    (:date-month-year . "yyyy/MM")))
+
+(defun get-pattern (key)
+  (or (assoc-get key *patterns*)
+      (assoc-get :date-full *patterns*)))
+
 (defun add-parse-time-args (key &rest args)
   (setq key (as-keyword key))
   (check-type key symbol)
@@ -41,13 +50,14 @@ when parsing date/time strings for PRESENTATION"))
 	(parse-datetime client-value)
 	:none)))
 
-(define-lisp-value-setter datetime-presentation (lisp-value show-time-p show-date-p)
+(define-lisp-value-setter datetime-presentation (lisp-value show-time-p show-date-p parse-time-patterns-key)
   (cond ((eq lisp-value :none) nil)
 	((eq lisp-value :unknown) "unknown")
 	((eq lisp-value :present) "present")
         (lisp-value (print-datetime lisp-value 
 				    :show-time-p show-time-p
-				    :show-date-p show-date-p))
+				    :show-date-p show-date-p
+				    :pattern (get-pattern parse-time-patterns-key)))
         (t "")))
 
 (defmethod render-presentation-editable ((presentation datetime-presentation))
@@ -109,18 +119,18 @@ when parsing date/time strings for PRESENTATION"))
 		  (when (equal (aref dates 1) "present") :present)))))
      (t (error "Unrecognized range specification in ~A" client-value)))))
 
-(define-lisp-value-setter date-range-presentation (date-pair)
+(define-lisp-value-setter date-range-presentation (date-pair parse-time-patterns-key)
   (if (consp date-pair)
       (let ((date1 (car date-pair))
 	    (date2 (cdr date-pair)))
 	(with-string-stream (stream)
 	  (if (keywordp date1)
 	      (princ (string-downcase (symbol-name date1)) stream)
-	      (render-date stream date1))
+	      (render-date stream date1 (get-pattern parse-time-patterns-key)))
 	  (princ " to " stream)
 	  (if (keywordp date2)
 	      (princ (string-downcase (symbol-name date2)) stream)
-	      (render-date stream date2))))
+	      (render-date stream date2 (get-pattern parse-time-patterns-key)))))
       (progn (call-next-method)
              (return-from lisp-value date-pair))))
 
@@ -179,7 +189,7 @@ when parsing date/time strings for PRESENTATION"))
 	 (cond
 	   ;; See the CL-L10N manual for definitions of % directives
 	   ((string= fmt "%D") (if (eq pattern ':date-month-day) "mm/yyyy or mm/dd/yyyy or 'present'" "mm/dd/yyyy or 'unknown'"))
-	   ((string= fmt "%F") (if (eq pattern ':date-month-year) "yyyy/mm or yyyy/mm/dd or 'presemt'" "yyyy/mm/dd or 'unknown'"))
+	   ((string= fmt "%F") (if (eq pattern ':date-month-year) "yyyy/mm or yyyy/mm/dd or 'present'" "yyyy/mm/dd or 'unknown'"))
 	   ;; Most common date separators are slash, dot, and dash
 	   ;; This process catches typical cases: %m/%d/%Y, %d/%m/%Y, etc.
 	   ((let ((work fmt))
@@ -241,7 +251,7 @@ when parsing date/time strings for PRESENTATION"))
 
 (defclass datetime-validator (non-nil-validator)
   ()
-  (:default-initargs :error-message "Unable to determine date."))
+  (:default-initargs :error-message "Unable to recognize date."))
 
 (defmethod client-validate ((validator datetime-validator) (client-value string))
   (handler-case
@@ -250,7 +260,7 @@ when parsing date/time strings for PRESENTATION"))
 	  ;; (apply #'cl-l10n:parse-time client-value :error-on-mismatch t *parse-time-args*))
 	  (parse-datetime client-value :fail-on-error t))
     (local-time::invalid-timestring (c)
-      (fail-validation (local-time::failure-of c)))
+      (fail-validation "Invalid date and/or time"))
     (error (c)
       (declare (ignore c))
       (fail-validation (format nil "~S is not a valid date/time" client-value)))))
@@ -292,3 +302,4 @@ when parsing date/time strings for PRESENTATION"))
 	      (year (date-divider) month (date-divider) day )
 	      (year (date-divider) month )
 	      ))
+

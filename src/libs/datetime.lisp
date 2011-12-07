@@ -7,31 +7,33 @@
 
 ;; RENDERERS
 
-(defun render-date (stream utime)
+(defun render-date (stream utime &optional pattern)
   "Render the date as a string from universal time in the current locale"
   (assert (numberp utime))
   (cl-l10n:with-locale (user-locale (current-user))
     (cl-l10n::format-date/gregorian-calendar 
      stream 
-     (local-time:universal-to-timestamp utime))))
+     (local-time:universal-to-timestamp utime)
+     :pattern pattern)))
 
-(defun render-time (stream utime)
+(defun render-time (stream utime &optional pattern)
   "Render the time as a string from universal time in the current locale"
   (assert (numberp utime))
   (cl-l10n:with-locale (user-locale (current-user))
     (cl-l10n::format-time/gregorian-calendar 
      stream
-     (local-time:universal-to-timestamp utime))))
+     (local-time:universal-to-timestamp utime)
+     :pattern pattern)))
 
-(defun render-datetime (stream utime &key (show-time-p t) (show-date-p t))
+(defun render-datetime (stream utime &key pattern (show-time-p t) (show-date-p t))
   "Render the date followed by the time to the stream"
   (when show-date-p
-    (render-date stream utime))
+    (render-date stream utime pattern))
   (write-char #\Space stream)
   (when show-time-p 
-    (render-time stream utime)))
+    (render-time stream utime pattern)))
 
-(defun render-timestamp (stream utime)
+(defun render-timestamp (stream utime &optional pattern)
   "Good for logfiles, etc.  Render universal time to stream as a timestamp"
   (cl-l10n:with-locale (cl-l10n:locale "en" :use-cache t)
     (cl-l10n:format-timestamp stream (local-time:universal-to-timestamp utime))))
@@ -74,12 +76,11 @@
        (local-time:timestamp-to-universal result))))
 
 ;; TODO: INSURE FAIL ON ERROR
-(defun parse-datetime (input &rest args)
-  (declare (ignorable args))
+(defun parse-datetime (input &key fail-on-error &allow-other-keys)
   (let ((result 
 	 (apply #'local-time:parse-timestring input 
 		:date-separator #\/ :date-time-separator #\Space
-		:fail-on-error nil
+		:fail-on-error fail-on-error
 		nil)))
      (when result 
        (local-time:timestamp-to-universal result))))
