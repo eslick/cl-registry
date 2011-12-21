@@ -40,7 +40,7 @@
    ;; Ranking
    (rating :accessor survey-rating :initarg :rating :initform nil)
    (ranking-record :accessor ranking-record :initarg :ranking-record
-		   :initform (make-ranking-record :ranking nil :distribution #(0 0 0 0 0))))
+		   :initform (make-ranking-record :ranking nil :distribution nil)))
   (:documentation "The survey object represents a coherent branching survey.
      It has a set of root questions or groups which may contain branching
      information.  It also provides some basic ACL support for editing."))

@@ -42,7 +42,7 @@
 ;; New registration widget
 ;;
 
-(defparameter *registration-valid-days* 1)
+(defparameter *registration-valid-days* 3)
 
 (defwidget registration (composite)
   ((quickform :accessor registration-quickform :initarg :quickform :initform nil)
@@ -181,7 +181,8 @@ message.
 
 " (make-registration-url request)))
 
-(defun submit-registration (data)
+(defun/cc submit-registration (data)
+  (format t "Submitting registration")
   (with-slots (username email password) data
     (let ((request (make-instance 'registration-request
 				  :username username

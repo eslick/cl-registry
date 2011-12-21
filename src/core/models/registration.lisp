@@ -1,7 +1,7 @@
 (in-package :registry)
 
 (defmodel registration-request ()
-  ((username :accessor reg-username :initarg :username)
+  ((username :accessor reg-username :initarg :username :index t)
    (password :accessor reg-pw :initarg :password)
    (email :accessor reg-email :initarg :email)
    (magic-key :accessor reg-magic-key :initarg :magic-key)
