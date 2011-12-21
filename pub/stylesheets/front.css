@@ -1,6 +1,6 @@
 /* New Home Page Layout */
 
-div.public-page, #public-about {
+div.public-page {
     padding-left: 20px;
     padding-bottom: 20px;
 	font-family: arial, sans-serif;
@@ -74,24 +74,10 @@ div.bottom-sub-pane p{
     color: #434343;
 }
 
-/* Article pages */
-
-#public-about .article{
-    margin: 10px 15px 10px 0px;
-    padding: 10px 20px 10px 20px;
-    background-color: #e0e0e0;
-    color: #434343;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-}
-
-#public-about a{
-    color: #88abdd;
-}
 
 /* Big login widget */
 
-.front-login{
+.front-login {
     float: right;
     width: 270px;
     border-left: 2px solid #FFF;

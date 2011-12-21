@@ -107,7 +107,7 @@ div#main-content-area {
 
 }
 
-p b, p strong, h1, h2, h3{
+p b, p strong, h1, h2, h3 {
     color: #DC8027;
 }
 
@@ -120,7 +120,7 @@ h2{
 /*          HEADER AND LOGO            */
 /***************************************/
 
-.header-logo{
+.header-logo {
     float: left;
     top: 5px;
 }
@@ -183,11 +183,6 @@ html>/**/body .header-nav li form{
     min-height: 35em;
 }
 
-#public-about{
-    padding: 13px 0 0 0;
-    margin: -14px 0 0 -10px;
-}
-
 #main-content-top, #dashboard-header {
     background: transparent url(/pub/images/page/panel_top.png) no-repeat center top;
     display: block;
@@ -209,12 +204,17 @@ html>/**/body .header-nav li form{
     margin-right: 8px;
 }
 
-#public-about div.article{
-    margin: 0 0 0 -10px;
-    width: 928px;
+div.articles-page-standalone div.articles {
+    width: 968px;
+    display: block;
 }
 
-#main-content-middle, #public-about div.article, div.registry-navigation, div.front-page, .articles-page-standalone { 
+div.articles-page-standalone div.article {
+    padding: 5px 10px 10px 30px;
+    width: 908px;
+}
+
+#main-content-middle, div.registry-navigation, div.front-page, .articles-page-standalone div.articles { 
     background: transparent url(/pub/images/page/panel_bg.png) repeat-y 50% 0;
 }
 
