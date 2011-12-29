@@ -94,7 +94,7 @@ div#root
   float: left;
 }
 
-div#main-content-area {
+div#main-content-area, .modal {
   float: left;
   width: 968px;
 }
@@ -191,12 +191,16 @@ html>/**/body .header-nav li form{
     margin-top: -4px;
 }
 
-#main-content-middle {
+#main-content-middle, .modal {
     margin-top: -15px;
     padding-left: 0px;
     margin-left: 0px;
     width: 968px;
     min-height: 30em;
+}
+
+.modal {
+    padding-top: 20px;
 }
 
 #main-content-middle-indent {
@@ -231,12 +235,15 @@ div.articles-page-standalone div.article {
     clear: both;
 }
 
+.page-extra-bottom-1 {
+}
+
 .footer{
+  background: url(/pub/images/page/panel_bottom.png) no-repeat 50% 0;  
   font-size: 8pt;
   margin-left: 26px;
   padding: 14px 0 40px;
   clear: both;
-  background: url(/pub/images/page/panel_bottom.png) no-repeat 50% 0;  
 }
 
 

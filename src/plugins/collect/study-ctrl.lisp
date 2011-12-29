@@ -105,28 +105,26 @@
 		      (make-consent-form-widget study)
 		      :article-widget
 		      (aif (articles-page-name study)
-			   (make-instance 'quick-help :page it :link-title "More information"))))))
+			   (if (listp it)
+			       nil
+			       (make-instance 'quick-help :page it :link-title "More information")))))))
 
 (defmethod render-widget-body ((widget study-list-item) &rest args)
   (declare (ignore args))
   (let ((patient (current-patient)))
     (with-slots (study patient-consent-form-article-widget) widget
       ;; ISE: Disable consent blocking
-;;      (setf (patient-consent-form-needed-p widget)
-;;	    (and (requires-consent-p study)
-;;		 (not (study-patient-consented-p study patient))))
+      (setf (patient-consent-form-needed-p widget)
+	    (and (requires-consent-p study)
+		 (not (study-patient-consented-p study patient))))
       ;; Only show patient consent form on redisplay for same patient
-;;      (setf (patient-consent-form-visible-p widget)
-;;	    (and (eq (patient-consent-form-visible-p widget) patient) patient))
-      (setf (patient-consent-form-needed-p widget) nil)
-      (setf (patient-consent-form-visible-p widget) nil)
+      (setf (patient-consent-form-visible-p widget)
+	    (and (eq (patient-consent-form-visible-p widget) patient) patient))
       (with-html
 	(:DIV
 	 :CLASS "study-list-item"
 	 (:LI :CLASS "study-list-study-name" (str (name study))
 	      (:P :CLASS "study-list-study-description" (str (description study)))
-	      (aif (article-widget widget)
-		(htm (:P (render-widget it))))
 	      (let ((this-study-complete-p ':maybe)
 		    (surveys
 		     (loop for survey in (surveys study)
@@ -138,6 +136,10 @@
 		   (htm
 		    (:P :CLASS "study-list-message" "No surveys for study")))
 		  ;; If study requires patient consent form *and* patient hasn't signed
+		  ((eq (patient-consent-form-needed-p widget) :link)
+		   (unless (study-patient-consented-p study patient)
+		     (htm 
+		      (render-link "estrogen-study-signup" "Register for Study"))))
 		  ((patient-consent-form-needed-p widget)
 		   ;; Display link to consent form or the form itself
 		   (cond
@@ -194,6 +196,7 @@
 		  ;; Generate list of survey items
 		  (t
 		   (htm
+		    (:b "Study Surveys and Diaries")
 		    (:UL
 		     :CLASS "study-list-survey-list"
 		     ;; Check survey rules and completion status, then display surveys
@@ -268,6 +271,8 @@
 				      (str message))))))))))))))
 		;; Check completed status
 		;; TBD: check study completed status at beginning and display at top
+		(aif (article-widget widget)
+		     (htm (:P (render-widget it))))
 		(when (and this-study-complete-p
 			   (neq this-study-complete-p ':maybe))
 		  (htm
@@ -290,6 +295,7 @@
 (defun make-study-list (&key compact-format)
   (let ((widgets
 	 (list
+	  (make-widget (f* (render-survey-list-header :study)))
 	  (make-instance 'study-list :compact-format compact-format
 				     :widgets (make-study-list-items :compact-format compact-format)))))
     (if (get-site-config-param :survey-viewer-show-choose-patient-widget)
@@ -303,7 +309,6 @@
     (with-html
       (:DIV
        :CLASS "study-list"
-       (:H2 (str #!"Studies"))
        (cond
 	 ((null (current-patient))
 	  (htm (:P :CLASS "study-list-message"
@@ -312,6 +317,6 @@
 	  (htm (:P :CLASS "study-list-message" (str #!"No studies are defined"))))
 	 (t
 	  (htm
-	   (:UL :CLASS "study-ulist"
+	   (:OL :CLASS "study-ulist"
 		(loop for child in study-list-item-widgets
 		   do (render-widget-body child))))))))))

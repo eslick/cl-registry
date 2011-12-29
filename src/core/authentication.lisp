@@ -132,7 +132,10 @@
   (authenticatedp))
 
 (defun set-session-user (user)
-  (setf (weblocks::webapp-session-value *authentication-key*) user))
+  (setf (weblocks::webapp-session-value *authentication-key*) user)
+  (setf (current-patient) (get-patient-home-patient))
+  (setf (current-center) (center (current-patient)))
+  user)
 
 ;; ==============================================================
 ;;  SHA1 authentication (Compatable with default Django auth)

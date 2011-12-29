@@ -62,18 +62,12 @@
   (let* ((tokens (remaining-tokens uri-tokens))
 	 (tok (first tokens)))
     (prog1
-	(cond ((equal tok "survey")
+	(cond ((or (equal tok "survey") (equal tok "diary"))
 	       ;; TODO: set session variable before we get here to remember where to send user back
 	       ;; (setf (default-view disp) "survey")
 	       (if (rest tokens)
 		   (populate-survey-ctrl disp (first (rest tokens)) uri-tokens)
 		   (survey-list-widget disp)))
-	      ((equal tok "diary")
-	       ;; TODO: set session variable before we get here to remember where to send user back
-	       ;; (setf (default-view disp) "diary")
-	       (if (rest tokens)
-		   (populate-survey-ctrl disp (first (rest tokens)) uri-tokens)
-		   (diary-list-widget disp)))
 	      ((equal tok "study")
 	       ;; TODO: set session variable before we get here to remember where to send user back
 	       ;; (setf (default-view disp) "study")
@@ -107,7 +101,7 @@
 (defun make-survey-grid (&optional diary-p)
   (let ((widgets
 	 (list 
-	  (make-widget (f* (render-survey-list-header diary-p)))
+	  (make-widget (f* (render-survey-list-header (if diary-p :diary :survey))))
 	  (make-instance 'survey-grid
 			 :data-class 'survey
 			 :view 'survey-viewer-view
@@ -134,10 +128,13 @@
 	   (and (not diary-p) (not (diary-p survey)))
 	   (and diary-p (diary-p survey)))))
 
-(defun render-survey-list-header (diary-view-p)
+(defun render-survey-list-header (active-button)
   (with-html 
     (:h2 (str (format nil (strcat #!"Collect Data" ": ~A")
-                      (if diary-view-p #!"Diaries" #!"Surveys"))))
+                      (case active-button
+			(:diary #!"Diaries")
+			(:survey #!"Surveys")
+			(:study #!"Studies")))))
     ;;     (call-in-liquid-context
     ;;      (lambda ()
     ;;        (htm (:p :style "font-size: 100%;" 
@@ -148,9 +145,10 @@
 	(let ((diary-button-class "button")
 	      (survey-button-class "button")
 	      (study-button-class "button"))
-	  (if diary-view-p
-	      (setq diary-button-class "button-active")
-	      (setq survey-button-class "button-active"))
+	  (case active-button
+	    (:diary (setq diary-button-class "button-active"))
+	    (:survey  (setq survey-button-class "button-active"))
+	    (:study (setq study-button-class "button-active")))
 	  (with-html
 	    (:div :class "button-select"
 		  (:a :href "/dashboard/collect/survey/" :class survey-button-class
@@ -163,7 +161,10 @@
 			   (str #!"View Studies"))))))))
     (if (current-patient)
         (htm (:p (str (format nil "~A ~A." #!"Please choose from the following"
-                              (if diary-view-p #!"diaries" #!"surveys")))))
+			      (case active-button
+				(:diary #!"diaries") 
+				(:survey #!"surveys")
+				(:study #!"studies"))))))
         (htm (:p (str #!"Please select a patient on the Home page."))))))
 
 (defun get-view-from-grid (grid)

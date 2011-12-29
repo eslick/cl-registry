@@ -489,34 +489,48 @@ div.study-list table tr {
 
 /* Study list */
 
+/*
 div.study-list ul.study-ulist {
     list-style: disc url(/pub/images/surveys/arrow-down.gif) inside;
 }
+*/
 
 /*
 div.study-list ul.study-ulist ul {
     list-style: disc;
 }
 */
-
-div.study-list-item ul.study-list-survey-list {
-   # list-style: disc url(/pub/images/surveys/arrow-right.gif) inside;
-   list-style: none;
-    margin-left: 2em;
-    padding-left: 1em;
-    text-indent: -1em;
+div.study-list b {
+   margin-left: 2em;
 }
 
+div.study-list-item ul.study-list-survey-list {
+/* # list-style: disc url(/pub/images/surveys/arrow-right.gif) inside;*/
+   margin-left: 2em; 
+   list-style: none; 
+   padding-left: 1em;
+   text-indent: -1em; 
+}
+
+
 div.study-list-item {
-    border: 1px solid #000;
+/*    border: 1px solid #000;
     margin: 1em;
-    padding: 2px;
-    margin-left: 2em;
+    padding: 2px; 
+    margin-left: 2em; */
     padding-left: 16px;
 }
 
+a.register-link {
+    margin-left: 1em;
+}
+
+div.study-list-item .quick-help {
+    margin-left: 1.5em;
+}
+
 .study-list-study-name {
-    color: orange;
+    color: darkorange; 
     font-weight: bold;
     font-size: 120%;
 }
@@ -524,7 +538,7 @@ div.study-list-item {
 .study-list-study-description {
     color: black;
     font-weight: normal;
-    font-size: 100;
+    font-size: 90%;
     margin-left: 1.5em;
     margin-right: 1.52em;
 }
@@ -541,7 +555,8 @@ div.study-list-item {
 }
 
 .study-list-survey-item {
-    margin-top: 1.2em;
+    margin-top: 1.0em;
+  
 }
 
 .study-list-survey-name {
@@ -550,12 +565,12 @@ div.study-list-item {
 }
 
 .study-list-survey-name A:link {
-    color: brown;
+    color: #79AABB;
     font-size: 110%;
 }
 
 .study-list-survey-name-alink {
-    color: brown;
+    color: #79AABB;
     font-size: 110%;
 }
 
