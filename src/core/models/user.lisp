@@ -54,8 +54,9 @@
 
 (defun drop-user (user)
   "How to handle user 'unregistration'"
-  ;; FIXME(kcarnold): drop the ratings too, and update all the rated objects.
   (drop-instances (get-instances-by-value 'answer 'user user))
+  (drop-instances (get-instances-by-value 'survey-state 'user user))
+  (drop-instance (get-patient-for-user user))
   (drop-instance user))
 
 

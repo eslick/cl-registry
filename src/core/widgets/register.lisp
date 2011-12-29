@@ -19,8 +19,8 @@
 	      (reg (find-registration magic)))
 	  (when valid-p 
 	    (make-registered-user reg)
-	    (set-session-user (get-user (reg-username reg)))
-	    (do-dialog "" (make-role-dialog))
+;;	    (set-session-user (get-user (reg-username reg)))
+;;	    (do-dialog "" (make-role-dialog))
 	    (set-session-user nil)
 	    (finalize-registration reg))
 	  (do-information message)
