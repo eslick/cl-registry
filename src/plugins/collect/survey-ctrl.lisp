@@ -67,7 +67,9 @@
 	       ;; (setf (default-view disp) "survey")
 	       (if (rest tokens)
 		   (populate-survey-ctrl disp (first (rest tokens)) uri-tokens)
-		   (survey-list-widget disp)))
+		   (if (equal tok "survey")
+		       (survey-list-widget disp)
+		       (diary-list-widget disp))))
 	      ((equal tok "study")
 	       ;; TODO: set session variable before we get here to remember where to send user back
 	       ;; (setf (default-view disp) "study")
