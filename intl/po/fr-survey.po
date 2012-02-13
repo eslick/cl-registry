@@ -21,8 +21,8 @@ msgstr "Ce formulaire va vous permettre de conserver un historique de tous les t
 
 # SURVEY HELP
 #: 5842 HELP
-msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
-msgstr "Les données des épreuves de laboratoire doivent être saisies dans le carnet Dossier des visites cliniques.  Veuillez envoyer un courriel à lamsight-admin à l'adresse media.mit.edu en cas de questions à propos de ce carnet.   "
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to LAMsightHelp at lamtreatmentalliance.org if you have questions about this diary.   "
+msgstr "Les données des épreuves de laboratoire doivent être saisies dans le carnet Dossier des visites cliniques.  Veuillez envoyer un courriel à LAMsightHelp à l'adresse lamtreatmentalliance.org en cas de questions à propos de ce carnet.   "
 
 # SURVEY NAME
 #: 5875 NAME

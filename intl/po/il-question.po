@@ -106,8 +106,8 @@ msgstr "בדיקה 2"
 
 # QUESTION QUESTION-HELP
 #: 23561 QUESTION-HELP
-msgid "Forced expiratory volume at 6 seconds of exhalation. (Enter in liters) This is a measure from most home spirometers that acts as a surrogate for FVC.  If you have a device that gives you FVC instead, please write to lamsight-admin@media.mit.edu and we will add a new field to this survey."
-msgstr "נפח נשימתי מאומץ אחרי 6 שניות של נשיפה. זוהי מדידה שמקורה ברוב הספירומטרים הביתיים המשמשת כתחליף ל-FVC (קיבולת חיונית מאומצת).  אם יש לך מתקן הנותן לך את הערך של FVC במקום FEV6, אנא כתבי לכתובת lamsight-admin@media.mit.edu ואנחנו נוסיף שדה חדש לסקר זה."
+msgid "Forced expiratory volume at 6 seconds of exhalation. (Enter in liters) This is a measure from most home spirometers that acts as a surrogate for FVC.  If you have a device that gives you FVC instead, please write to LAMsightHelp@lamtreatmentalliance.org and we will add a new field to this survey."
+msgstr "נפח נשימתי מאומץ אחרי 6 שניות של נשיפה. זוהי מדידה שמקורה ברוב הספירומטרים הביתיים המשמשת כתחליף ל-FVC (קיבולת חיונית מאומצת).  אם יש לך מתקן הנותן לך את הערך של FVC במקום FEV6, אנא כתבי לכתובת LAMsightHelp@lamtreatmentalliance.org ואנחנו נוסיף שדה חדש לסקר זה."
 
 # QUESTION PROMPT
 #: 23560 PROMPT

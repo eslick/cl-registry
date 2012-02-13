@@ -21,8 +21,8 @@ msgstr "טופס זה יאפשר לך לשמור על כל הבדיקות של �
 
 # SURVEY HELP
 #: 5842 HELP
-msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
-msgstr "חובה להכניס את נתוני בדיקות המעבדה ליומן תיעוד הביקורים הרפואיים.  אנא שלחי מייל לכתובת lamsight-admin@media.mit.edu, אם יש לך שאלות לגבי יומן זה.   "
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to LAMsightHelp at lamtreatmentalliance.org if you have questions about this diary.   "
+msgstr "חובה להכניס את נתוני בדיקות המעבדה ליומן תיעוד הביקורים הרפואיים.  אנא שלחי מייל לכתובת LAMsightHelp@lamtreatmentalliance.org, אם יש לך שאלות לגבי יומן זה.   "
 
 # SURVEY NAME
 #: 5875 NAME

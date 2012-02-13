@@ -46,8 +46,8 @@ msgstr "לאלה המבינים בעניינים טכניים"
 
 # BLOG-ENTRY CONTENT
 #: 12902 CONTENT
-msgid "We have a publicly visible issue tracking repository.  Here we keep track of both internal and user-provided comments about problems or potential features.  You are welcome to browse or volunteer to submit and review problem reports.\n<p>\nThe system is called <a href="http://lamsight.media.mit.edu/trac">Trac</a>.\n<p>\nIf you have any questions simply write to lamsight-admin@media.mit.edu.\n\nThank you,\nThe Administrators"
-msgstr "יש לנו עניין פומבי ברור במעקב אחר המאגר.  כאן אנו עוקבים גם אחרי הערות פנימיות וגם אחרי הערות שנשלחו מהמשתמשים לגבי בעיות שמתעוררות או תכונות אפשריות.  אתם מוזמנים לגלוש, או להתנדב לשלוח דיווחים על בעיות או לעבור עליהם.\n<p>\nהמערכת נקראת<a href="http://lamsight.media.mit.edu/trac">טראק (Trac)</a>.\n<p>\nאם יש לכם שאלות תוכלו לכתוב ל- lamsight-admin@media.mit.edu.\n\nתודה,\nהמנהלים"
+msgid "We have a publicly visible issue tracking repository.  Here we keep track of both internal and user-provided comments about problems or potential features.  You are welcome to browse or volunteer to submit and review problem reports.\n<p>\nThe system is called <a href="http://lamsight.lamtreatmentalliance.org/trac">Trac</a>.\n<p>\nIf you have any questions simply write to LAMsightHelp@lamtreatmentalliance.org.\n\nThank you,\nThe Administrators"
+msgstr "יש לנו עניין פומבי ברור במעקב אחר המאגר.  כאן אנו עוקבים גם אחרי הערות פנימיות וגם אחרי הערות שנשלחו מהמשתמשים לגבי בעיות שמתעוררות או תכונות אפשריות.  אתם מוזמנים לגלוש, או להתנדב לשלוח דיווחים על בעיות או לעבור עליהם.\n<p>\nהמערכת נקראת<a href="http://lamsight.lamtreatmentalliance.org/trac">טראק (Trac)</a>.\n<p>\nאם יש לכם שאלות תוכלו לכתוב ל- LAMsightHelp@lamtreatmentalliance.org.\n\nתודה,\nהמנהלים"
 
 # BLOG-ENTRY TITLE
 #: 14145 TITLE
@@ -116,8 +116,8 @@ msgstr "סקרים ותוכן"
 
 # BLOG-ENTRY CONTENT
 #: 25613 CONTENT
-msgid "We are currently working hard on improving the content.  This includes the introductory content and the key surveys.  <br><br>\nThis has taken longer than expected and we don't want to announce the site until we get it right.  At this point the functionality should be in good shape, so please report problems to lamsight-admin@media.mit.edu if you find any.\n\nThank you,\nThe Administrators"
-msgstr "בימים אלה אנו עובדים קשה על שיפור התוכן.  מאמץ זה כולל תוכן מקדים וסקרים עיקריים.  <br><br>\nהעניין נמשך זמן רב מהצפוי ואנו לא רוצים לפתוח את האתר לפני שהוא יהיה במיטבו.  בשלב זה התפקודיות אמורה  להיות תקינה, אנא דווחו ל-lamsight-admin@media.mit.edu על כל תקלה שתגלו.\n\nתודה,\nהמנהלים"
+msgid "We are currently working hard on improving the content.  This includes the introductory content and the key surveys.  <br><br>\nThis has taken longer than expected and we don't want to announce the site until we get it right.  At this point the functionality should be in good shape, so please report problems to LAMsightHelp@lamtreatmentalliance.org if you find any.\n\nThank you,\nThe Administrators"
+msgstr "בימים אלה אנו עובדים קשה על שיפור התוכן.  מאמץ זה כולל תוכן מקדים וסקרים עיקריים.  <br><br>\nהעניין נמשך זמן רב מהצפוי ואנו לא רוצים לפתוח את האתר לפני שהוא יהיה במיטבו.  בשלב זה התפקודיות אמורה  להיות תקינה, אנא דווחו ל-LAMsightHelp@lamtreatmentalliance.org על כל תקלה שתגלו.\n\nתודה,\nהמנהלים"
 
 # BLOG-ENTRY TITLE
 #: 26938 TITLE
@@ -126,5 +126,5 @@ msgstr "השקת LAMsight"
 
 # BLOG-ENTRY CONTENT
 #: 26938 CONTENT
-msgid "We are launching LAMsight today.  We thank you for your patience and hope that you find the new site to be stable and useful.  Please direct basic questions about using the site to the forums and technical problems with the site to lamsight-admin@media.mit.edu.  <br><br>\n\nWe have a number of people who will be available to help you, but as this site is run mostly by volunteers, it may take a little time for us to respond.  We appreciate your patience and look forward to your feedback and input.<br><br>\n\nTranslation of the major site content will commence as soon as we are confident in the quality of the content.  Your feedback is important to this!<br><br>\n\nThe LAMsight Administrators"
-msgstr "היום אנחנו משיקים את LAMsight.  אנו מודים לכם על סבלנותכם ומקווים שהאתר החדש יהיה יציב ומועיל בעיניכם.  אנא הפנו שאלות ישירות בסיסיות לגבי שימוש באתר לפורומים ובעיות טכניות עם האתר לדוא"ל lamsight-admin@media.mit.edu.  <br><br>\n\nברשותנו מספר אנשים שישמחו לעזור לכם, אך מכיוון שהאתר מנוהל בעיקר על ידי מתנדבים ייתכן שיעבור זמן מה עד שתקבלו מאיתנו תשובה.  אנו מעריכים את סבלנותכם ומצפים למשוב ולתגובה שלכם.<br><br>\n\nתרגומו של התוכן העיקרי באתר יחל ברגע שנהיה בטוחים באיכות התוכן.  המשוב שלכם חיוני למאמץ זה!<br><br>\n\nמנהלי LAMsight"
+msgid "We are launching LAMsight today.  We thank you for your patience and hope that you find the new site to be stable and useful.  Please direct basic questions about using the site to the forums and technical problems with the site to LAMsightHelp@lamtreatmentalliance.org.  <br><br>\n\nWe have a number of people who will be available to help you, but as this site is run mostly by volunteers, it may take a little time for us to respond.  We appreciate your patience and look forward to your feedback and input.<br><br>\n\nTranslation of the major site content will commence as soon as we are confident in the quality of the content.  Your feedback is important to this!<br><br>\n\nThe LAMsight Administrators"
+msgstr "היום אנחנו משיקים את LAMsight.  אנו מודים לכם על סבלנותכם ומקווים שהאתר החדש יהיה יציב ומועיל בעיניכם.  אנא הפנו שאלות ישירות בסיסיות לגבי שימוש באתר לפורומים ובעיות טכניות עם האתר לדוא"ל LAMsightHelp@lamtreatmentalliance.org.  <br><br>\n\nברשותנו מספר אנשים שישמחו לעזור לכם, אך מכיוון שהאתר מנוהל בעיקר על ידי מתנדבים ייתכן שיעבור זמן מה עד שתקבלו מאיתנו תשובה.  אנו מעריכים את סבלנותכם ומצפים למשוב ולתגובה שלכם.<br><br>\n\nתרגומו של התוכן העיקרי באתר יחל ברגע שנהיה בטוחים באיכות התוכן.  המשוב שלכם חיוני למאמץ זה!<br><br>\n\nמנהלי LAMsight"

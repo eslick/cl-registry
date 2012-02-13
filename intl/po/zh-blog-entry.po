@@ -46,8 +46,8 @@ msgstr "对于专业技术人士"
 
 # BLOG-ENTRY CONTENT
 #: 12902 CONTENT
-msgid "We have a publicly visible issue tracking repository.  Here we keep track of both internal and user-provided comments about problems or potential features.  You are welcome to browse or volunteer to submit and review problem reports.\n<p>\nThe system is called <a href="http://lamsight.media.mit.edu/trac">Trac</a>.\n<p>\nIf you have any questions simply write to lamsight-admin@media.mit.edu.\n\nThank you,\nThe Administrators"
-msgstr "我们有一个公开可见的问题跟踪库。在这里，我们正在同时跟踪团队内部和网站用户对网站问题和潜在功能的评论。欢迎浏览或主动提交和评论本网站的问题报告。\n<p>\n该系统称为<a href="http://lamsight.media.mit.edu/trac">Trac</a>。\n<p>\n您如有问题请随时致信 lamsight-admin@media.mit.edu.\n\n谢谢！\n管理员"
+msgid "We have a publicly visible issue tracking repository.  Here we keep track of both internal and user-provided comments about problems or potential features.  You are welcome to browse or volunteer to submit and review problem reports.\n<p>\nThe system is called <a href="http://lamsight.lamtreatmentalliance.org/trac">Trac</a>.\n<p>\nIf you have any questions simply write to LAMsightHelp@lamtreatmentalliance.org.\n\nThank you,\nThe Administrators"
+msgstr "我们有一个公开可见的问题跟踪库。在这里，我们正在同时跟踪团队内部和网站用户对网站问题和潜在功能的评论。欢迎浏览或主动提交和评论本网站的问题报告。\n<p>\n该系统称为<a href="http://lamsight.lamtreatmentalliance.org/trac">Trac</a>。\n<p>\n您如有问题请随时致信 LAMsightHelp@lamtreatmentalliance.org.\n\n谢谢！\n管理员"
 
 # BLOG-ENTRY TITLE
 #: 14145 TITLE
@@ -116,8 +116,8 @@ msgstr "问卷和内容"
 
 # BLOG-ENTRY CONTENT
 #: 25613 CONTENT
-msgid "We are currently working hard on improving the content.  This includes the introductory content and the key surveys.  <br><br>\nThis has taken longer than expected and we don't want to announce the site until we get it right.  At this point the functionality should be in good shape, so please report problems to lamsight-admin@media.mit.edu if you find any.\n\nThank you,\nThe Administrators"
-msgstr "我们正在努力改进网站内容。这包括介绍性内容和关键问卷。<br><br>\n改进的时间超出了预期时限，但我们在做到最好之前不会轻易开放网站。此刻本网站的功能已趋完善，所以如果您仍发现任何问题，请致信 lamsight-admin@media.mit.edu。\n\n谢谢！\n管理员"
+msgid "We are currently working hard on improving the content.  This includes the introductory content and the key surveys.  <br><br>\nThis has taken longer than expected and we don't want to announce the site until we get it right.  At this point the functionality should be in good shape, so please report problems to LAMsightHelp@lamtreatmentalliance.org if you find any.\n\nThank you,\nThe Administrators"
+msgstr "我们正在努力改进网站内容。这包括介绍性内容和关键问卷。<br><br>\n改进的时间超出了预期时限，但我们在做到最好之前不会轻易开放网站。此刻本网站的功能已趋完善，所以如果您仍发现任何问题，请致信 LAMsightHelp@lamtreatmentalliance.org。\n\n谢谢！\n管理员"
 
 # BLOG-ENTRY TITLE
 #: 26938 TITLE
@@ -126,5 +126,5 @@ msgstr "LAMsight 开放"
 
 # BLOG-ENTRY CONTENT
 #: 26938 CONTENT
-msgid "We are launching LAMsight today.  We thank you for your patience and hope that you find the new site to be stable and useful.  Please direct basic questions about using the site to the forums and technical problems with the site to lamsight-admin@media.mit.edu.  <br><br>\n\nWe have a number of people who will be available to help you, but as this site is run mostly by volunteers, it may take a little time for us to respond.  We appreciate your patience and look forward to your feedback and input.<br><br>\n\nTranslation of the major site content will commence as soon as we are confident in the quality of the content.  Your feedback is important to this!<br><br>\n\nThe LAMsight Administrators"
-msgstr "今天我们正式开放 LAMsight 网站。感谢您的耐心等待，希望您会觉得本网站是稳定而实用的。网站使用中的常见疑问请在论坛中提出，如有网站技术性问题请致信 lamsight-admin@media.mit.edu。<br><br>\n\n我们有专人为您提供帮助，但是由于本网站几乎全部是由志愿者来进行运作，因此我们的回复可能需要等待一定时间。感谢您的耐心等待，并期待您的反馈意见和数据。<br><br>\n\n在我们确信网站内容的质量合格后，即将开始对网站主要内容的翻译。您的反馈非常重要！<br><br>\n\nLAMsight 管理员"
+msgid "We are launching LAMsight today.  We thank you for your patience and hope that you find the new site to be stable and useful.  Please direct basic questions about using the site to the forums and technical problems with the site to LAMsightHelp@lamtreatmentalliance.org.  <br><br>\n\nWe have a number of people who will be available to help you, but as this site is run mostly by volunteers, it may take a little time for us to respond.  We appreciate your patience and look forward to your feedback and input.<br><br>\n\nTranslation of the major site content will commence as soon as we are confident in the quality of the content.  Your feedback is important to this!<br><br>\n\nThe LAMsight Administrators"
+msgstr "今天我们正式开放 LAMsight 网站。感谢您的耐心等待，希望您会觉得本网站是稳定而实用的。网站使用中的常见疑问请在论坛中提出，如有网站技术性问题请致信 LAMsightHelp@lamtreatmentalliance.org。<br><br>\n\n我们有专人为您提供帮助，但是由于本网站几乎全部是由志愿者来进行运作，因此我们的回复可能需要等待一定时间。感谢您的耐心等待，并期待您的反馈意见和数据。<br><br>\n\n在我们确信网站内容的质量合格后，即将开始对网站主要内容的翻译。您的反馈非常重要！<br><br>\n\nLAMsight 管理员"

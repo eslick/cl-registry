@@ -21,8 +21,8 @@ msgstr "このフォームをご利用になれば、ご自宅で行った肺機
 
 # SURVEY HELP
 #: 5842 HELP
-msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
-msgstr "臨床検査データは、臨床訪問記録ダイアリーに入力してください。このダイアリーについてご不明な点があれば、media.mit.edu の管理者（lamsight-admin）まで電子メールでお問い合わせください。   "
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to LAMsightHelp at lamtreatmentalliance.org if you have questions about this diary.   "
+msgstr "臨床検査データは、臨床訪問記録ダイアリーに入力してください。このダイアリーについてご不明な点があれば、lamtreatmentalliance.org の管理者（LAMsightHelp）まで電子メールでお問い合わせください。   "
 
 # SURVEY NAME
 #: 5875 NAME

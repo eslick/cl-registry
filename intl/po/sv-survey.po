@@ -21,8 +21,8 @@ msgstr "Med hjälp av det här formuläret kan du behålla en historik över all
 
 # SURVEY HELP
 #: 5842 HELP
-msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
-msgstr "Data från laboratorietester ska anges i diariet med poster för kliniska besök.  Skicka e-post till lamsight-admin på media.mit.edu om du har frågor om det här diariet.   "
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to LAMsightHelp at lamtreatmentalliance.org if you have questions about this diary.   "
+msgstr "Data från laboratorietester ska anges i diariet med poster för kliniska besök.  Skicka e-post till LAMsightHelp på lamtreatmentalliance.org om du har frågor om det här diariet.   "
 
 # SURVEY NAME
 #: 5875 NAME

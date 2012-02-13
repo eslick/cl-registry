@@ -21,8 +21,8 @@ msgstr "这份表格会帮助您记录您在家中所作的所有肺功能检查
 
 # SURVEY HELP
 #: 5842 HELP
-msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
-msgstr "实验室检查的数据应输入到临床检查记录日志中。如您对该日志有疑问请致信 lamsight-admin@media.mit.edu。   "
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to LAMsightHelp at lamtreatmentalliance.org if you have questions about this diary.   "
+msgstr "实验室检查的数据应输入到临床检查记录日志中。如您对该日志有疑问请致信 LAMsightHelp@lamtreatmentalliance.org。   "
 
 # SURVEY NAME
 #: 5875 NAME

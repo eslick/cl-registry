@@ -21,8 +21,8 @@ msgstr "In diesem Formular können Sie die Daten aller zuhause durchgeführten L
 
 # SURVEY HELP
 #: 5842 HELP
-msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
-msgstr "Ergebnisse von Labortests sollten in das Tagesprotokoll für Klinikbesuche eingegeben werden.  Wenn Sie Fragen zu diesen Tagesprotokollen haben, wenden Sie sich bitte per E-Mail an lamsight-admin at media.mit.edu.   "
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to LAMsightHelp at lamtreatmentalliance.org if you have questions about this diary.   "
+msgstr "Ergebnisse von Labortests sollten in das Tagesprotokoll für Klinikbesuche eingegeben werden.  Wenn Sie Fragen zu diesen Tagesprotokollen haben, wenden Sie sich bitte per E-Mail an LAMsightHelp at lamtreatmentalliance.org.   "
 
 # SURVEY NAME
 #: 5875 NAME

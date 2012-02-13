@@ -106,8 +106,8 @@ msgstr "teste2"
 
 # QUESTION QUESTION-HELP
 #: 23561 QUESTION-HELP
-msgid "Forced expiratory volume at 6 seconds of exhalation. (Enter in liters) This is a measure from most home spirometers that acts as a surrogate for FVC.  If you have a device that gives you FVC instead, please write to lamsight-admin@media.mit.edu and we will add a new field to this survey."
-msgstr "Volume expiratório forçado em 6 segundos de exalação (Informe em litros) Esta é uma medida proveniente da maioria de espirômetros caseiros que agem como substitutos para a CVF (capacidade vital forçada). Caso tenha um aparelho que, em vez disso, lhe forneça CVF, queira escrever para lamsight-admin@media.mit.edu e adicionaremos um novo campo para esta pesquisa."
+msgid "Forced expiratory volume at 6 seconds of exhalation. (Enter in liters) This is a measure from most home spirometers that acts as a surrogate for FVC.  If you have a device that gives you FVC instead, please write to LAMsightHelp@lamtreatmentalliance.org and we will add a new field to this survey."
+msgstr "Volume expiratório forçado em 6 segundos de exalação (Informe em litros) Esta é uma medida proveniente da maioria de espirômetros caseiros que agem como substitutos para a CVF (capacidade vital forçada). Caso tenha um aparelho que, em vez disso, lhe forneça CVF, queira escrever para LAMsightHelp@lamtreatmentalliance.org e adicionaremos um novo campo para esta pesquisa."
 
 # QUESTION PROMPT
 #: 23560 PROMPT

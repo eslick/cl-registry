@@ -21,8 +21,8 @@ msgstr "Este formulario le permitirá mantener un registro de todas las pruebas 
 
 # SURVEY HELP
 #: 5842 HELP
-msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to lamsight-admin at media.mit.edu if you have questions about this diary.   "
-msgstr "Se deben introducir los datos de las pruebas analíticas en el Registro de visitas clínicas.  Escriba a lamsight-admin arroba media.mit.edu si tiene alguna pregunta sobre este registro.   "
+msgid "Laboratory testing data should be entered into the Clinical Visit Record diary.  Please send email to LAMsightHelp at lamtreatmentalliance.org if you have questions about this diary.   "
+msgstr "Se deben introducir los datos de las pruebas analíticas en el Registro de visitas clínicas.  Escriba a LAMsightHelp arroba lamtreatmentalliance.org si tiene alguna pregunta sobre este registro.   "
 
 # SURVEY NAME
 #: 5875 NAME
