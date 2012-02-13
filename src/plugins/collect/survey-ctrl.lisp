@@ -526,29 +526,37 @@ ie if survey editor may have intervened to remove group or if survey changed (no
   (declare (ignorable ctrl))
   (with-html
     (:div :class "survey-help widget"
-;;	  :style "float: left; font-size: small;"
+	  ;;	  :style "float: left; font-size: small;"
 	  (with-html
-	    (:h2 (str #!"Using the Surveys"))
+	    (:h2 (str (if (diary-p ctrl)
+			  #!"Using the Diaries"
+			  #!"Using the Surveys")))
 	    (:ul
-	     (:li 
-	      ((str #!"Your survey answers are only saved when you click 'Save and go to Next Page' or 'Save and Finish Later', but not when you click on the list of pages or Previous Page or Next Page."))
-;;	      (str #!"You must click 'save and continue' or 'finish survey' to save your entries for each page."))
-	     ;;		 (:noscript (:b (str #!"Your survey answers are only saved when you click 'Continue Survey', but not when you click on the list of pages or Previous Page or Next Page.")))
-	     ;;		 (:p :class "no-noscript" (str #!"Your survey answers are automatically saved as you click on or finish entering text.  This can cause the display to jump a bit when questions are removed.")))
-	     ;;		 (:script :type "text/javascript"
-					;			 "$$('.no-noscript').each(function (e) { e.hide() });"))
-	     (if (comment-view-enabled-p (survey ctrl))
+	     (if (diary-p ctrl)
 		 (htm
-		  (:li
-		   (str #!"If a question is confusing, or needs improving, you can provide feedback by clicking on the comment icon " ))))
-	     (:li
-	      (str #!"For the best experience, we recommend downloading and using ")
-	      (:a :href "http://www.mozilla.com/en-US/firefox/" (str #!"the Firefox web browser"))
-	      " or " (:a :href "http://www.apple.com/safari/download" (str #!"the Safari web browser")))
-	     ;;		 (:img :style "height: 15px; vertical-align: middle;" :src "/pub/images/comment-icon.jpg" :alt "COMMENT")
-	     ;;		 (str #!".  If people have left comments, you can see these and decide if you want to add to them or not.") (:p))
-	     ;;		(:li (:p (str #!"If you want to add a question, simply go the <a href=\"/dashboard/discuss/\">Discussion forum</a> and post a suggestion there."))))
-	     )))))
+		  (:li 
+		   (str #!"A diary is just like a survey that you can fill out many times.  At the top of the page, the 'List of Entries' allows you to select a specific diary by date.  When you create a new diary, it chooses today's date, but you can change that date to the past to enter a diary for a prior day.")))
+		 (htm
+		  (:li 
+		   (str #!"Your survey answers are only saved when you click 'Save and go to Next Page' or 'Save and Finish Later', but not when you click on the list of pages or Previous Page or Next Page."))))
+	      ;;	      (str #!"You must click 'save and continue' or 'finish survey' to save your entries for each page."))
+	      ;;		 (:noscript (:b (str #!"Your survey answers are only saved when you click 'Continue Survey', but not when you click on the list of pages or Previous Page or Next Page.")))
+	      ;;		 (:p :class "no-noscript" (str #!"Your survey answers are automatically saved as you click on or finish entering text.  This can cause the display to jump a bit when questions are removed.")))
+	      ;;		 (:script :type "text/javascript"
+					;			 "$$('.no-noscript').each(function (e) { e.hide() });"))
+	      (if (comment-view-enabled-p (survey ctrl))
+		  (htm
+		   (:li
+		    (str #!"If a question is confusing, or needs improving, you can provide feedback by clicking on the comment icon " ))))
+	      (:li
+	       (str #!"For the best experience, we recommend downloading and using ")
+	       (:a :href "http://www.mozilla.com/en-US/firefox/" (str #!"the Firefox web browser"))
+	       " or " (:a :href "http://www.apple.com/safari/download" (str #!"the Safari web browser")))
+	      ;;		 (:img :style "height: 15px; vertical-align: middle;" :src "/pub/images/comment-icon.jpg" :alt "COMMENT")
+	      ;;		 (str #!".  If people have left comments, you can see these and decide if you want to add to them or not.") (:p))
+	      ;;		(:li (:p (str #!"If you want to add a question, simply go the <a href=\"/dashboard/discuss/\">Discussion forum</a> and post a suggestion there."))))
+	      )))))
+
 
 		
 ;; ===============================================================
