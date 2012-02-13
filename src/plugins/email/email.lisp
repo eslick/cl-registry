@@ -46,7 +46,11 @@
 	    (generate-forum-post-email user post)
 	  (if (member user editors)
 	      (send-email-to-users user subject body)
-	      (send-unsubscribable-email user subject body :forums)))))))
+	      (send-unsubscribable-email user subject body :forums))))
+      (multiple-value-bind (subject body)
+	  (generate-forum-post-email nil post)
+	(send-email '("LAMsightHelp@lamtreatmentalliance.org") subject body)))))
+
 
 (defun send-immediate-forum-update-p (user)
   (and 
@@ -64,7 +68,10 @@
       (dolist (user owners)
 	(multiple-value-bind (subject body)
 	    (generate-survey-comment-email user comment)
-	  (send-email-to-users user subject body))))))
+	  (send-email-to-users user subject body)))
+      (multiple-value-bind (subject body)
+	  (generate-survey-comment-email nil comment)
+	(send-email '("LAMsightHelp@lamtreatmentalliance.org") subject body)))))
 
 (eval-when (:compile-toplevel :load-toplevel)
   (add-event-handler :new-forum-post 'handle-new-forum-post)

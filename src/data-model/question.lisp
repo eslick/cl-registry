@@ -198,8 +198,6 @@
 (defun clean-query (query)
   (unsplit-words (filter-if #'stopword-p (split "[^\\w]+" query))))
 
-
-
 ;; ============================================
 ;;  Question presentation support
 ;; ============================================
@@ -229,6 +227,8 @@
 (defmethod make-presentation ((question question) id &rest initargs)
   (let ((type (presentation-type-for-question question))
 	(args (list (list :prompt (format-prompt question)))))
+    (when (eq type 'multiple-members-select-presentation)
+      (push (list :multiple-hint-p t) args))
     (cond ((subtypep type 'member-choice-presentation)
 	   (if (eq type 'number-radio-presentation)
 	     (let ((pair (question-data-constraint question)))
@@ -360,8 +360,8 @@
 
 (defparameter *default-errors*
   '((:boolean . "Answer must be yes or no or true and false")
-    (:date . "You must provide a valid date (MM/DD/YY or DD/MM/YY)")
-    (:date-range . "You must provide a valid date range ('MM/DD/YY to MM/DD/YY')")
+    (:date . "You must provide a valid date (YYYY/MM/DD)")
+    (:date-range . "You must provide a valid date range ('YYYY/MM/DD to YYYY/MM/DD')")
     (:string . "You must provide an answer")
     (:number . "You must provide a valid number such as 10, 1.4, etc")
     (:measurement . "Please enter a number in the units specified")

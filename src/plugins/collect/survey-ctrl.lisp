@@ -462,13 +462,13 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 	  :render-fn
 	  (lambda (label)
 	    (render-presentation
-	     (make-presentation series (answer-id answer)))
-	    (with-html
-	      (str "&nbsp;")
-	      (str (princ-to-string
-		    (typecase label
-		      (question (question-prompt label))
-		      (otherwise label))))))
+	     (make-presentation series (answer-id answer))))
+;;	    (with-html
+;;	      (str "&nbsp;")
+;;	      (str (princ-to-string
+;;		    (typecase label
+;;		      (question (question-prompt label))
+;;		      (otherwise label))))))
 	  :class (if (eq (current-id ctrl) (answer-id answer))
 		     "diary-selected-answer-entry"
 		     "diary-answer-entry")))))
@@ -487,10 +487,11 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 
 (defparameter *comment-view-enabled-p* ':unknown)
 
-(defun comment-view-enabled-p ()
-  (if (eq *comment-view-enabled-p* ':unknown)
-      (setq *comment-view-enabled-p* (get-site-config-param :survey-viewer-show-comments))
-      *comment-view-enabled-p*))
+(defun comment-view-enabled-p (survey)
+  (when (eq *comment-view-enabled-p* ':unknown)
+    (setq *comment-view-enabled-p* (get-site-config-param :survey-viewer-show-comments)))
+  (and *comment-view-enabled-p*
+       (not (survey-commenting-disabled-p survey))))
 
 ;; ===============================================================
 ;;  Progress and navigation
@@ -530,13 +531,13 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 	    (:h2 (str #!"Using the Surveys"))
 	    (:ul
 	     (:li 
-	      (str #!"Your survey answers are only saved when you click 'Save and go to Next Page' or 'Save and Finish Later', but not when you click on the list of pages or Previous Page or Next Page."))
+	      ((str #!"Your survey answers are only saved when you click 'Save and go to Next Page' or 'Save and Finish Later', but not when you click on the list of pages or Previous Page or Next Page."))
 ;;	      (str #!"You must click 'save and continue' or 'finish survey' to save your entries for each page."))
 	     ;;		 (:noscript (:b (str #!"Your survey answers are only saved when you click 'Continue Survey', but not when you click on the list of pages or Previous Page or Next Page.")))
 	     ;;		 (:p :class "no-noscript" (str #!"Your survey answers are automatically saved as you click on or finish entering text.  This can cause the display to jump a bit when questions are removed.")))
 	     ;;		 (:script :type "text/javascript"
 					;			 "$$('.no-noscript').each(function (e) { e.hide() });"))
-	     (if (comment-view-enabled-p)
+	     (if (comment-view-enabled-p (survey ctrl))
 		 (htm
 		  (:li
 		   (str #!"If a question is confusing, or needs improving, you can provide feedback by clicking on the comment icon " ))))
@@ -709,7 +710,7 @@ ie if survey editor may have intervened to remove group or if survey changed (no
  	    (:div :class "question-prompt"
 		  (render-prompt p)
 
-		  (when (comment-view-enabled-p)
+		  (when (comment-view-enabled-p (survey ctrl))
 		    ;; Comments
 		    (let ((comment-count (comment-count q)))
 		      (htm (render-image-link (f* (do-question-comment-dialog ctrl q))

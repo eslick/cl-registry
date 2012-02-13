@@ -10,7 +10,7 @@
 (defun render-date (stream utime &optional pattern)
   "Render the date as a string from universal time in the current locale"
   (assert (numberp utime))
-  (cl-l10n:with-locale (user-locale (current-user))
+  (cl-l10n:with-locale (user-locale (current-user t))
     (cl-l10n::format-date/gregorian-calendar 
      stream 
      (local-time:universal-to-timestamp utime)
@@ -19,7 +19,7 @@
 (defun render-time (stream utime &optional pattern)
   "Render the time as a string from universal time in the current locale"
   (assert (numberp utime))
-  (cl-l10n:with-locale (user-locale (current-user))
+  (cl-l10n:with-locale (user-locale (current-user t))
     (cl-l10n::format-time/gregorian-calendar 
      stream
      (local-time:universal-to-timestamp utime)
@@ -53,47 +53,55 @@
 
 (defun parse-date (input &rest args)
   (declare (ignorable args))
-  (let ((result 
-	 (apply #'local-time:parse-timestring input
-		:date-separator #\/ :date-time-separator #\Space
-		:fail-on-error nil
-		:allow-missing-date-part nil
-		:allow-missing-time-part t
-		nil)))
-     (when result 
-       (local-time:timestamp-to-universal result))))
+  (let ((local-time::*DEFAULT-TIMEZONE local-time:+UTC-ZONE+))
+    (let ((result 
+	   (apply #'local-time:parse-timestring input
+		  :date-separator #\/ :date-time-separator #\Space
+		  :fail-on-error nil
+		  :allow-missing-date-part nil
+		  :allow-missing-time-part t
+		  :offset -18000
+		  nil)))
+      (when result 
+	(local-time:timestamp-to-universal result)))))
 
 (defun parse-time (input &rest args)
   (declare (ignorable args))
-  (let ((result 
-	 (apply #'local-time:parse-timestring input
-		:date-separator #\/ :date-time-separator #\Space
-		:fail-on-error nil
-		:allow-missing-date-part t
-		:allow-missing-time-part nil 
-		nil)))
-     (when result 
-       (local-time:timestamp-to-universal result))))
+  (let ((local-time::*DEFAULT-TIMEZONE local-time::+NONE-ZONE+))
+    (let ((result 
+	   (apply #'local-time:parse-timestring input
+		  :date-separator #\/ :date-time-separator #\Space
+		  :fail-on-error nil
+		  :allow-missing-date-part t
+		  :allow-missing-time-part nil 
+		  :offset -18000
+		  nil)))
+      (when result 
+	(local-time:timestamp-to-universal result)))))
 
 ;; TODO: INSURE FAIL ON ERROR
 (defun parse-datetime (input &key fail-on-error &allow-other-keys)
-  (let ((result 
-	 (apply #'local-time:parse-timestring input 
-		:date-separator #\/ :date-time-separator #\Space
-		:fail-on-error fail-on-error
-		nil)))
-     (when result 
-       (local-time:timestamp-to-universal result))))
+  (let ((local-time::*DEFAULT-TIMEZONE local-time::+none-zone+))
+    (let ((result 
+	   (apply #'local-time:parse-timestring input 
+		  :date-separator #\/ :date-time-separator #\Space
+		  :fail-on-error fail-on-error
+		  :offset -18000
+		  nil)))
+      (when result 
+	(local-time:timestamp-to-universal result)))))
        
 
 (defun parse-timestamp (input &rest args)
   (declare (ignorable args))
-  (let ((result 
-	 (apply #'local-time:parse-timestring input
-		:date-separator #\/ :date-time-separator #\Space
-		:fail-on-error nil
-		:allow-missing-date-part nil
-		:allow-missing-time-part nil
-		nil)))
+  (let ((local-time::*DEFAULT-TIMEZONE local-time::+NONE-ZONE+))
+    (let ((result 
+	   (apply #'local-time:parse-timestring input
+		  :date-separator #\/ :date-time-separator #\Space
+		  :fail-on-error nil
+		  :allow-missing-date-part nil
+		  :allow-missing-time-part nil
+		  :offset -18000
+		  nil)))
     (when result 
-      (local-time:timestamp-to-universal result))))
+      (local-time:timestamp-to-universal result)))))

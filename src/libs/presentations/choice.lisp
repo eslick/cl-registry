@@ -51,7 +51,8 @@
 ;;;; * choice type
 
 (defclass member-select-presentation (member-choice-presentation)
-  ((multiple-p :initarg :multiple-p :reader multiple-p :initform nil)))
+  ((multiple-p :initarg :multiple-p :reader multiple-p :initform nil)
+   (multiple-hint-p :initarg :multiple-hint-p :reader multiple-hint-p :initform nil)))
 
 (defmethod render-presentation-editable ((presentation member-select-presentation))
   (with-html
@@ -72,7 +73,10 @@
 						 :test #'string=)
 					   (string= client-value (car choice)))
 				       "selected")
-			(str (find-translation (car choice))))))))))
+			(str (find-translation (car choice))))))))
+    (when (and (multiple-p presentation) (multiple-hint-p presentation))
+      (htm (:p :style "font-size: x-small; margin-top: -5px; margin-left: 10px;"
+	       "To select or unselect multiple options, hold the ctrl or command key while clicking")))))
 
 (defmethod update-presentation ((presentation member-select-presentation) args)
   (let ((provided-value (getf-all args (as-argument-keyword (query-name presentation)))))

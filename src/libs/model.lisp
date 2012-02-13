@@ -50,6 +50,9 @@
 (defmethod mid ((instance persistent))
   (object-id instance))
 
+(defmethod mid ((instance null))
+  nil)
+
 (defmethod initialize-instance :after ((instance weblocks-model) &rest initargs)
   (declare (ignore initargs))
   (let ((mid (slot-value instance 'mid)))

@@ -37,6 +37,7 @@
 	      :documentation "Session of user editing the survey.")
    (formats :accessor formats :initarg :formats :initform nil
             :documentation "Plist of key/value pairs for survey formatting properties")
+   (commenting-disabled :accessor survey-commenting-disabled-p :initform nil :initarg :disable-commenting-p)
    ;; Ranking
    (rating :accessor survey-rating :initarg :rating :initform nil)
    (ranking-record :accessor ranking-record :initarg :ranking-record
@@ -56,7 +57,7 @@
 
 (defmethod print-object ((inst survey) stream)
   (format stream "#<SURVEY-~A '~A'>"
-	  (object-id inst)
+	  (mid inst)
 	  (name inst)))
 
 (defmethod fulltext-fields ((instance survey))
@@ -269,8 +270,21 @@
     (loop for rule in (group-rules it)
 	 when (eq (group-rule-question rule) question)
 	 collect rule)))
-       
 
+      
+(defun all-survey-questions (survey)
+  (mapcan #'all-group-questions (survey-groups survey)))
+
+(defun all-group-questions (group)
+  (concatenate 
+   'list
+   (group-questions group)
+   (mapcan #'group-rule-questions (group-rules group))))
+
+(defun group-rule-questions (rule)
+  (awhen (group-rule-target rule)
+    (all-group-questions it)))
+	       
 
 ;; ==============================================================
 ;;  Ranking information
@@ -304,7 +318,9 @@
       (let ((origin (or (origin survey) "inherit")))
         (cond ((string-equal origin "inherit")
                (let* ((owner (owner survey)))
-                 (cond ((has-permission-p owner 'authenticated-professional t)
+                 (cond ((null owner)
+			4)
+		       ((has-permission-p owner 'authenticated-professional t)
                         1)
                        ((researcher-p owner) 2)
                        ((or (has-preference-value-p owner :lam-patient-p t)

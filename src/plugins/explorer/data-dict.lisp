@@ -36,7 +36,7 @@
         (:DIV
          :CLASS "data-dictionary"
          (:TABLE
-          (:TR (:TH :ALIGN "left" "Survey") (:TH :ALIGN "left" "Group") (:TH :ALIGN "left" "Question"))
+          (:TR (:TH :ALIGN "left" "Survey") (:TH :ALIGN "left" "Page") (:TH :ALIGN "left" "Question"))
           (dolist (survey surveys)
             (htm
              (:TR (:TD :COLSPAN 3
@@ -47,7 +47,7 @@
                (dolist (question (group-questions group))
                  (htm
                   (:TR (:TD) (:TD)
-                       (:TD (str (question-name question)))))))))))
+                       (:TD (str (question-prompt question)))))))))))
         (render-close-link)))))
 
 (defwidget data-dictionary-button ()
@@ -59,7 +59,7 @@
   (with-slots (data-dictionary link-title) widget
     (labels ((dialog-action (&rest args)
                (declare (ignore args))
-               (do-dialog "Data Dictionary" data-dictionary)))
+               (do-dialog "Question List" data-dictionary)))
       (with-html
         (render-link #'dialog-action link-title :class "button")))))
 
@@ -73,7 +73,7 @@
             (:DIV
              :CLASS "data-dictionary"
              (:TABLE
-              (:TR (:TH :ALIGN "left" "Survey") (:TH :ALIGN "left" "Group") (:TH :ALIGN "left" "Question"))
+              (:TR (:TH :ALIGN "left" "Survey") (:TH :ALIGN "left" "Page") (:TH :ALIGN "left" "Question"))
               (dolist (survey surveys)
                 (htm
                  (:TR (:TD :COLSPAN 3
@@ -84,7 +84,7 @@
                    (dolist (question (group-questions group))
                      (htm
                       (:TR (:TD) (:TD)
-                           (:TD (str (question-name question))))))))))))))
+                           (:TD (str (question-prompt question))))))))))))))
     (princ output stream)))
 
 (defun write-data-dictionary-file (outfile &rest args)

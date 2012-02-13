@@ -291,12 +291,13 @@
 		  (:div :class "top"
 			(render-widget (help-widget widget))
 			(:h2 "Forum Actions")
-			(:div :class "translation-button"
-			      (if (translate-all-p widget)
-				  (render-link (f* (setf (translate-all-p widget) nil))
-					       #!"Hide Translations")
-				  (render-link (f* (setf (translate-all-p widget) t))
-					       #!"Show Translations"))))
+;;			(:div :class "translation-button"
+;;			      (if (translate-all-p widget)
+;;				  (render-link (f* (setf (translate-all-p widget) nil))
+;;					       #!"Hide Translations")
+;;				  (render-link (f* (setf (translate-all-p widget) t))
+;;					       #!"Show Translations")))
+			)
 		  (:div :class "bottom"))
 	    (:div :class "float-end"))
 

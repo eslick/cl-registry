@@ -50,13 +50,16 @@
 	 username)
 	((numberp username)
 	 (get-model 'user username))
+	((find #\@ username)
+	 (get-instance-by-value 'user 'email username))
 	(t (get-instance-by-value 'user 'username username))))
 
 (defun drop-user (user)
   "How to handle user 'unregistration'"
   (drop-instances (get-instances-by-value 'answer 'user user))
   (drop-instances (get-instances-by-value 'survey-state 'user user))
-  (drop-instance (get-patient-for-user user))
+  (awhen (get-patient-for-user user)
+    (drop-instance it))
   (drop-instance user))
 
 
@@ -122,6 +125,9 @@
 		 :first-name (or first "")
 		 :last-name (or last "")
 		 :email (or email "")))
+
+(defmethod user-locale ((user null))
+  (cl-l10n:locale "en_US"))
 
 (defmethod user-locale :around ((user user))
   "Infer the users locale from either the locale slot or their

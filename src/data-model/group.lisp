@@ -19,7 +19,7 @@
 
 (defmethod print-object ((inst survey-group) stream)
   (format stream "#<GROUP-~A '~A'>"
-	  (object-id inst)
+	  (mid inst)
 	  (group-name inst)))
 
 (defmethod translate-fields ((obj survey-group))
@@ -263,7 +263,7 @@
 
 (defmethod print-object ((inst survey-group-table) stream)
   (format stream "#<GROUP-TABLE-~A '~A'>"
-	  (object-id inst)
+	  (mid inst)
 	  (group-name inst)))
 
 (defmacro make-survey-group-table ((&rest make-instance-args &key name default-question-args &allow-other-keys) &rest rows)

@@ -124,7 +124,15 @@
 	(:DIV
 	 :CLASS "study-list-item"
 	 (:LI :CLASS "study-list-study-name" (str (name study))
-	      (:P :CLASS "study-list-study-description" (str (description study)))
+	      (:P :CLASS "study-list-study-description" 
+		  (str (description study))
+		  (awhen (articles-page-name study)
+		    (htm 
+		     (render-link (f* (do-dialog "" 
+					(make-article-widget 
+					 it 
+					 :render-answer-p t)))
+				  "&nbsp; [Read study protocol...]"))))
 	      (let ((this-study-complete-p ':maybe)
 		    (surveys
 		     (loop for survey in (surveys study)
@@ -136,11 +144,17 @@
 		   (htm
 		    (:P :CLASS "study-list-message" "No surveys for study")))
 		  ;; If study requires patient consent form *and* patient hasn't signed
-		  ((eq (patient-consent-form-needed-p widget) :link)
-		   (unless (study-patient-consented-p study patient)
-		     (htm 
-		      (render-link "estrogen-study-signup" "Register for Study"))))
-		  ((patient-consent-form-needed-p widget)
+		  ((and (eq (requires-consent-p study) :estrogen)
+			(not (study-patient-consented-p study patient)))
+		   (htm 
+		    (render-link "estrogen-study-signup" "Register for Study" :class "register-link")))
+		  ((and (eq (requires-consent-p study) :estrogen)
+			(study-patient-consented-p study patient)
+			(not (estrogen-study-activated-p)))
+		   (htm 
+		    "Thank you for your interest in the LAM Dyspnea and Hormone Study.  Your registration request is being processed and a staff member will be contacting you by email with further instructions.  The recruiting period for this study ends on February 29, 2012.  If you have not heard from us within 1 week of this date or have any questions please contact us at: <a href=\"mailto:EstrogenStudy@LAMTreatmentAlliance.org\">EstrogenStudy@LAMTreatmentAlliance.org</a>"))
+		  ((and (patient-consent-form-needed-p widget)
+			(neq (requires-consent-p study) :estrogen))
 		   ;; Display link to consent form or the form itself
 		   (cond
 		     ;; Consent form not visible?
@@ -271,8 +285,8 @@
 				      (str message))))))))))))))
 		;; Check completed status
 		;; TBD: check study completed status at beginning and display at top
-		(aif (article-widget widget)
-		     (htm (:P (render-widget it))))
+;;		(aif (article-widget widget)
+;;		     (htm (:P (render-widget it))))
 		(when (and this-study-complete-p
 			   (neq this-study-complete-p ':maybe))
 		  (htm
@@ -281,7 +295,22 @@
 		  (aif (study-complete-message study)
 		       (htm
 			(:P :CLASS "study-list-message"
-			    (str it))))))))))))
+			    (str it))))))
+	      (when (and (eq (requires-consent-p study) :estrogen)
+			 (study-patient-consented-p study patient))
+		(htm 
+		 (:P :style "margin-left: 1.5em; font-size: small;"
+		     (unless (and (> (length (get-preference :residence-addr-1 (current-user))) 0)
+				  (> (length (get-preference :residence-city (current-user))) 0)
+				  (> (length (get-preference :postal-code (current-user))) 0))
+		       (render-link (f* (do-dialog #!"User Preferences" (make-preferences-page #!"personal")))
+				    "Please Complete Your Contact Information")))
+		 (:P :style "margin-left: 1.5em; font-size: small;"
+		     (render-link (f* (withdraw-from-estrogen-study (current-user)))
+				  "Withdraw from Study"))
+		 ))))))))
+				      
+
 
 ;; Study-list widget contains one study-list-item for each study
 

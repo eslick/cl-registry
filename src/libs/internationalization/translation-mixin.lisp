@@ -89,9 +89,11 @@
 
 (defun slot-value-translation (object slot &optional language)
   "Like slot-value but provides a translation or the original value"
-  (aif (get-translation object (or language (default-language)))
+  (let* ((lang (or language (default-language)))
+	 (translation (get-translation object lang)))
+    (aif translation
        (translation-field it slot)
-       (slot-value object slot)))
+       (slot-value object slot))))
 
 (defun translated-slot-reader (slot)
   (lambda (object)

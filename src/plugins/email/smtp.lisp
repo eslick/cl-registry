@@ -6,8 +6,8 @@
 
 (defvar *smtp-authentication* '(:unknown))
 
-(defparameter *lamsight-reply-to* "lamsight-admin@media.mit.edu")
-(defparameter *ilr-reply-to* "admin@internationallamregistry.org")
+(defparameter *lamsight-reply-to* "LAMsightHelp@lamtreatmentalliance.org")
+(defparameter *ilr-reply-to* "ILRHelp@lamtreatmentalliance.org")
 
 (defun site-email-smtp-host ()
   (or *smtp-host*

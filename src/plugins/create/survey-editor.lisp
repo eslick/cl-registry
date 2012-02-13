@@ -148,9 +148,14 @@
      (:h1 (str #!"Creating Surveys"))
 ;;	(:p :style "font-size: 80%;" 
 ;;		(str #!"The goal of this site is not to be static.  We want to enable questions to change over time, to ask clarifying questions, and collect new information.  The survey editor is a key part of the 'living database' concept behind LAMsight.  The editor will evolve over time in response to your comments.  Creating new questionnaires is not for everyone, but comments you leave in the forums or in question comments can inform those who are editing and creating surveys."))
-     (:p :style "font-size: 80%;" 
-	 (str #!"The survey editor consists of a set of <b>views</b>.  Each view has its own tab at the top of the screen.  Surveys are made up of <b>groups</b>, each group is made up of <b>questions</b>.  There is a view that allows you to see, review and change each of these components of a survey.  Please post your questions in the forums so we can respond to the most important questions.")))
-    (:p (str #!"Please choose from one of the following surveys or create your own!"))))
+     (if (is-editor-p)
+	 (htm 
+	  (:p :style "font-size: 80%;" 
+	      (str #!"The survey editor consists of a set of <b>views</b>.  Each view has its own label.  Surveys are made up of <b>groups</b>, each group is made up of <b>questions</b>.  There is a view that allows you to see, review and change each of these components of a survey.  Please post any problems in the Discuss tab so we can respond to your concerns."))
+	  (:p (str #!"Please choose from one of the following surveys or create your own!")))
+	 (htm
+	  (:p (str #!"If you would like to edit or create surveys, please send an email to LAMsightHelp@lamtreatmentalliance.org with your ideas and we can create a survey for you or make you an approved editor of site surveys.")))
+	 ))))
 
 
 (defun make-survey-editor-list ()
@@ -175,20 +180,21 @@
 
 (defmethod render-widget-body :after ((grid survey-edit-grid) &rest args)
   (declare (ignore args))
-  (with-html
-    (:p
-     (if (current-center)
-         (render-link (f* (do-dialog "" (make-quickform 'new-survey-form-view
-                                                        :data-class-name 'survey
-                                                        :on-success
-                                                        (lambda (qform temp)
-                                                          (declare (ignore qform))
-                                                          (setq temp (persist-object *default-store* temp))
-                                                          (setf (published-p temp) nil)
-                                                          (setf (owner temp) (current-user))
-                                                          (mark-dirty grid)))))
-                      #!"[Create New Survey]")
-         (str #!"To create a new survey, you must choose a center on the Home tab.")))))
+  (when (is-editor-p)
+    (with-html
+      (:p
+       (if (current-center)
+	   (render-link (f* (do-dialog "" (make-quickform 'new-survey-form-view
+							  :data-class-name 'survey
+							  :on-success
+							  (lambda (qform temp)
+							    (declare (ignore qform))
+							    (setq temp (persist-object *default-store* temp))
+							    (setf (published-p temp) nil)
+							    (setf (owner temp) (current-user))
+							    (mark-dirty grid)))))
+			#!"[Create New Survey]")
+	   (str #!"To create a new survey, you must choose a center on the Home tab."))))))
 						  
 
 (defun edit-survey-object (grid survey)
@@ -548,7 +554,11 @@
 	(setf (origin survey) (origin session-survey))
 	(setf (description survey) (description session-survey))
 	(setf (help survey) (help session-survey))
-	(setf (survey-groups survey) groups)))))
+	(setf (survey-groups survey) groups)
+	(when (diary-p survey)
+	  (setf (diary-question survey) (diary-question session-survey))
+	  (setf (diary-description survey) (diary-description session-survey)))))))
+
 
 (defun update-group-summary-widgets (survey-editor)
   (let* ((session-survey (session-object (survey-editor-survey survey-editor)))
@@ -677,11 +687,11 @@
 				     :persistp nil)
   (diary-question :present-as (dropdown :choices 'get-diary-questions
 					:label-key #'question-name)
-		  :parse-as (mid)
+		  :parse-as (mid :class-name 'question)
 		  :reader (compose #'mid #'diary-question))
   (diary-description :present-as (dropdown :choices 'get-diary-questions
 					   :label-key #'question-name)
-		     :parse-as (mid)
+		     :parse-as (mid :class-name 'question)
 		     :reader (compose #'mid #'diary-description)))
 
 (defwidget survey-properties-dataform (dataform)

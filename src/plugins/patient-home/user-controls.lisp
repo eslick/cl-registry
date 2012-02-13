@@ -26,7 +26,7 @@
 			     #!"User Preferences"))
            (:li (with-html
                   (:a :href "/about"
-                      (str #!"Help"))))
+                      (str #!"About"))))
 	   (:li (render-link (lambda (&rest args)
 			       (declare (ignore args))
 			       (do-change-password-dialog))

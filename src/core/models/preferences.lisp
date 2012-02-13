@@ -162,7 +162,7 @@
 ;; =============================================================================
 
 (def-preference forum-subscriber (checkbox-boolean-presentation)
-  :prompt #!"Receive e-mail updates to the discussion forums?")
+  :prompt #!"Receive e-mail from discussion forums?")
 
 (def-preference forum-email-frequency (member-select-presentation)
   :prompt #!"How frequently do you want forum updates?"
@@ -173,7 +173,7 @@
   :lisp-value "weekly")
 
 (def-preference update-subscriber (checkbox-boolean-presentation)
-  :prompt #!"Receive site update and reminder emails?"
+  :prompt #!"Receive site updates or reminders?"
   :lisp-value t)
 
 (def-preference update-email-frequency (member-select-presentation)

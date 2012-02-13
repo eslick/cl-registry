@@ -191,6 +191,14 @@ html>/**/body .header-nav li form{
     margin-top: -4px;
 }
 
+.front-page-dispatcher div.articles {
+    margin-top: 0px;
+}
+
+{
+    
+}
+
 #main-content-middle, .modal {
     margin-top: -15px;
     padding-left: 0px;
@@ -218,8 +226,12 @@ div.articles-page-standalone div.article {
     width: 908px;
 }
 
-#main-content-middle, div.registry-navigation, div.front-page, .articles-page-standalone div.articles { 
+#main-content-middle, div.registry-navigation, div.front-page, .articles-page-standalone div.articles, div.front-page-dispatcher div.articles, div.modal div.login, div.modal div.registration{
     background: transparent url(/pub/images/page/panel_bg.png) repeat-y 50% 0;
+}
+
+div.modal div.login, div.modal div.registration {
+    padding: 10px 10px 10px 10px;
 }
 
 .articles-page-standalone {

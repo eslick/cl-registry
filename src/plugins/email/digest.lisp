@@ -17,10 +17,7 @@
       (fill-template template
 		     `(:author ,(username (blog-entry-author blog-entry))
 		       :title ,(slot-value-translation blog-entry 'title lang)
-		       :date ,(with-string-stream (stream)
-			        (cl-l10n:format-time
-				 stream (blog-entry-date blog-entry) t t
-				 (cl-l10n::locale lang)))
+		       :date ,(print-date (blog-entry-date blog-entry))
 		       :content ,(slot-value-translation blog-entry 'content lang)
 		       :original ,(blog-entry-content blog-entry))
 		     lang))))
@@ -52,16 +49,13 @@
 		     lang))))
 
 (defun generate-survey-comment-email (user comment)
-  (let* ((lang (or (get-preference :default-language user) "en"))
+  (let* ((lang (or (and user (get-preference :default-language user)) "en"))
 	 (question (comment-target comment))
 	 (template (message-template-for-event :new-comment)))
     (when (and (typep question 'question) template)
       (fill-template template
 		     `(:author ,(username (comment-author comment))
-		       :date ,(with-string-stream (stream)
-			        (cl-l10n:format-time stream
-						     (comment-date comment) t t
-						     (cl-l10n::locale lang)))
+		       :date ,(print-timestamp (comment-date comment))
 		       :comment ,(comment-content comment)
 		       :context ,(question-context-string question lang)
 		       :question ,(question-prompt question))
@@ -111,13 +105,8 @@
       (when (plusp new-message-count)
 	(fill-template template
 		       `(:activity ,update
-			 :date ,(with-string-stream (stream)
-				   (cl-l10n:format-time stream
-						       (get-universal-time) t nil
-						       (cl-l10n::locale lang)))
-			 :since ,(with-string-stream (stream)
-				   (cl-l10n:format-time stream since t t
-							(cl-l10n::locale lang)))
+			 :date ,(print-date (get-universal-time))
+			 :since ,(print-date since)
 			 :count ,(format nil "~d" new-message-count))
 		       lang)))))
 

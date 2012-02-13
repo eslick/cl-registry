@@ -283,7 +283,9 @@
   "NOTE: We can clean this up by implementing an oid join on 
    indexed slots containing objects"
   (let ((users (compute-patients constraints)))
-    (values (select-if (lambda (x) (member (user x) users))
+    (values (select-if (lambda (x) 
+			 (and (member (user x) users)
+			      (not (eq (value x) :unknown))))
 		       (get-answers question))
 	    (length users))))
 

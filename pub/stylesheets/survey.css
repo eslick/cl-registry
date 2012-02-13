@@ -456,6 +456,7 @@ div.survey-form-actions input.survey-form-button{
     margin: 0 -1px;
     padding: 2px 5px;
     font-size: 90%;
+    cursor: pointer;
 }
 
 /* List Styling */

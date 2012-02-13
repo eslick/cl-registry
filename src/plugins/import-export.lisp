@@ -347,4 +347,38 @@
       (dump-patient-answers patient stream))))
 
 		    
+;; ================================
+;; Dump a Survey
+;; ================================
 
+(defun dumo-survey-to-file (survey filename)
+  (with-open-file (stream filename :direction :output :if-exists :supersede)
+    (dump-survey survey stream)))
+
+(defun dump-survey (survey stream)
+  (format stream "Survey: ~A~%" (name survey))
+  (format stream "Description: ~A~%~%" (description survey))
+  (loop for group in (survey-groups survey) do
+       (dump-survey-group stream group)))
+
+(defun rules-for-question (question rules)
+  (select-if (f (r) (eq (group-rule-question r) question)) rules))
+
+(defun dump-survey-group (stream group &optional subgroup-p)
+  (unless subgroup-p
+    (format stream "Page: ~A~%" (group-name group))
+    (format stream "---------------------------------~%"))
+  (let ((indent (make-string (if subgroup-p 5 0) :initial-element #\Space)))
+    (loop for question in (group-questions group) do
+	 (format stream "~AQuestion: ~A~%" indent (question-prompt question))
+	 (if (member (question-data-type question) '(:choice :multichoice))
+	     (format stream "~A  options: ~{~A, ~}~%~%" indent (cars (question-choices question)))
+	     (format stream "~%"))
+	 (awhen (and (not subgroup-p) (rules-for-question question (group-rules group)))
+	   (loop for rule in it
+	      when (group-rule-target rule)
+	      do (progn 
+		   (format stream "if answer is ~A show questions{~%" (group-rule-value rule))
+		   (dump-survey-group stream (group-rule-target rule) t)
+		   (format stream "}~%~%")))))))
+	      

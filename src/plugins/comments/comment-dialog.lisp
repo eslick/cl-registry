@@ -46,8 +46,15 @@
     (render-widget form)
     (render-existing-comments widget)))
 
+(defun render-comment-header ()
+  (with-html
+    (:hr)
+    (:p (:b "Comments are intended for you to ask the author of the survey clarifying questions or to add information relevant to your answer that isn't captured elsewhere in the survey.  These comments are visible to other users."))
+    (:hr)))
+
 (defun render-question-comment-view (question)
   (with-html
+    (render-comment-header)
     (:div :class "question"
 	  (:div :class "question-prompt"
                 (str (slot-value-translation question 'prompt)))
@@ -66,6 +73,7 @@
 
 (defun render-group-comment-view (group)
   (with-html
+    (render-comment-header)
     (:div :class "group"
 	  (:div :class "group-name"
 		(str (group-name group))))))

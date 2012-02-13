@@ -205,6 +205,9 @@
 			       (:file "recent-activity")
 			       (:file "forums"))
 			      :serial t)
+		     (:module studies
+			      :components
+			      ((:file "lamsight-estrogen")))
 		     (:module collect
 			      :components
 			      ((:file "survey-state")

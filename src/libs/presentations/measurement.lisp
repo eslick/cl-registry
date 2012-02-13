@@ -92,8 +92,8 @@
     (:minutes . "minutes")
     (:seconds . "seconds")
     (:temperature . "C")
-    (:volume . "liters")
-    (:fev1 . "liters")))
+    (:fev1 . "liters")
+    (:volume . "liters")))
 
 (defun canonical-unit-for-measurement (measurement)
   (cdr (assoc measurement *canonical-units*)))
@@ -193,7 +193,9 @@
 	 (measurement (car (rassoc canonical-unit *canonical-units*
 				   :test #'equal))))
     (cond
-      ((string= locale-name "en_US")
+      ((or (string= locale-name "en_US") 
+	   (string= locale-name "en")
+	   (null locale-name))
        (cdr (assoc measurement *us-units*)))
       (t
        (cdr (assoc measurement *canonical-units*))))))

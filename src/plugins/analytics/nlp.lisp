@@ -60,7 +60,8 @@
 	(mapcar #'remove-stopwords
 		(strip-punctuation 
 		 (filter-if (lambda (str)
-			      (> (length str) *max-wordcloud-string-length*))
+			      (or (not (stringp str))
+				  (> (length str) *max-wordcloud-string-length*)))
 			    strings)))))))
 
 (defun select-top-n-trings (strings n)

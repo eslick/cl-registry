@@ -75,12 +75,12 @@
 
 (defun/cc registration-form-accept (data)
   (if (and (eq (do-dialog "" (development-status-notice)) :accept)
-	   (eq (do-dialog "" (accept-privacy-policy)) :accept)
-	   (eq (do-dialog "" (accept-terms-of-use)) :accept))
+	   (eq (do-dialog "Privacy Policy" (accept-privacy-policy)) :accept)
+	   (eq (do-dialog "Terms of Use" (accept-terms-of-use)) :accept))
       (progn (submit-registration data)
 	     (record-event :registration-sent (slot-value data 'username) :user nil)
 	     (do-information #!"Thank you for registering.  A message containing a confirmation link and instructions has been sent to your email addresss."))
-      (do-information #!"We're sorry to hear that you are not ready to register.  Questions about our privacy policy or terms of use can be sent to lamsight-admin@media.mit.edu.  We are evolving these documents and hope to address any concerns you might have in time; your input is valuable.  Thank you.")))
+      (do-information (format nil #!"We're sorry to hear that you are not ready to register.  Questions about our privacy policy or terms of use can be sent to ~A.  We are evolving these documents and hope to address any concerns you might have in time; your input is valuable.  Thank you." (get-site-config-param :email-admin-address)))))
 
 (defun development-status-notice ()
   (make-articles-dialog "development-status-notice"))
@@ -94,7 +94,7 @@
 (defun make-articles-dialog (page &optional (choices '(:accept :decline)))
   (let ((composite (make-instance 'composite)))
     (setf (composite-widgets composite)
-	  (list (make-article-widget page)
+	  (list (make-article-widget page :standalone-p (not (ajax-request-p)))
 		(lambda ()
 		  (with-html
 		    (weblocks::render-choices-post "" choices 
@@ -114,16 +114,17 @@ confirmation link has been sent to your email address.")))
 	(with-html
 	  (:div 
 	   (:h1 (str #!"Registration Instructions"))
-	   (:p (str #!"A username is a short name that will be used by the system
-               to identify you to other users.  If you are concerned about
-               privacy, pick a username that you can remember, but doesn't
-               include anything about you like your name."))
+	   (:p (str #!"A username is a short name that will be used by
+               the system to identify you to other users.  If you are
+               concerned about privacy, please pick a username that
+               you can remember, but that doesn't include anything
+               specific to you such as your name."))
 	   (:p (str #!"A password should be at least 6 characters and include a number
                or other non-alphabetical character."))
 	   (:p (str #!"Your e-mail will be maintained by the system and will never
                be disclosed to anyone without your express consent.  We take
                privacy very seriously."))
-	   (:p (str #!"To complete your registration, fill in the form below and click the \"Submit\" button, then read and scroll to the bottom of each of the three subsequent screens, and, if you agree to the conditions, click \"Accept\" on each page.")))))))
+	   (:p (str #!"To register, fill in the form below and click the \"Submit\" button, then read and scroll to the bottom of each of the three subsequent screens, and, if you agree to the conditions, click \"Accept\" on each page.  You will then receive an e-mail with instructions for completing your registration.")))))))
 
 (defun valid-registration-p (data)
   (flet ((find-field-for-slot-name (slot-name fields)
@@ -215,7 +216,7 @@ message.
 	   (record-event :registration-success (reg-username reg) :user nil)
 	   (let ((username (reg-username reg)))
 	     (list
-	      (format nil "Hi '~A', welcome to LAMsight!" username)
+	      (format nil "Hi '~A', welcome to LAMsight!  Press OK to continue." username)
 	      t)))
 	  (t
 	   (if (string-equal (get-site-config-param :site-name) "LAMsight")

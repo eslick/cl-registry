@@ -166,7 +166,7 @@
 	   :contact-for-data-verification)
 	  (:p (present-preferences :contact-methods))
 	  (:p :style "font-size: x-small; clear:both; margin-left: 30px;"
-	      (str #!"Hold down the Ctrl or Alt key to select more than one answer")))))
+	      (str #!"Hold down the Ctrl or Cmd key to select more than one answer")))))
 
 
 

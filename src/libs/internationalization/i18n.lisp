@@ -566,7 +566,7 @@
       (when (equal value (slot-value object slot))
         (return object)))))
 
-(defun update-db-from-class-po-files (lang &key (records-per-transaction 100))
+(defun update-db-from-class-po-files (lang &key (records-per-transaction 100) (src-match? t))
   (let ((total-cnt 0)
         (unfound-cnt 0)
         (untranslated-cnt 0)
@@ -576,6 +576,7 @@
       (multiple-value-bind (totcnt unfcnt untcnt quecnt unf que)
           (update-db-from-class-po-file
            class-name lang
+	   :src-match? src-match?
            :records-per-transaction records-per-transaction)
         (incf total-cnt totcnt)
         (incf unfound-cnt unfcnt)
@@ -585,15 +586,16 @@
           (push (list class-name unf que) bad))))
     (values total-cnt unfound-cnt untranslated-cnt questionable-cnt (nreverse bad))))
 
-(defun update-db-from-class-po-file (class-name lang &key
+(defun update-db-from-class-po-file (class-name lang &key (src-match? t)
                                      (records-per-transaction 100))
   "Update the database from a class po file."
   (update-db-from-class-po-entries
    lang
    (read-class-po-file class-name lang)
+   :src-match? src-match?
    :records-per-transaction records-per-transaction))
 
-(defun update-db-from-class-po-entries (lang entries &key
+(defun update-db-from-class-po-entries (lang entries &key (src-match? t)
                                         (records-per-transaction 100))
   (let ((total-cnt 0)
         (unfound-cnt 0)
@@ -605,14 +607,14 @@
     (loop
        while entries
        do
-         (with-transaction ()
+         (with-transaction () ;; transaction should be insight dotimes? ISE 0112
            (dotimes (i records-per-transaction)
              (unless entries (return))
              (incf total-cnt)
              (let ((entry (pop entries)))
                (multiple-value-bind
                      (object translation questionable-p untranslated-p)
-                   (update-db-from-class-po-file-entry last-object entry lang)
+                   (update-db-from-class-po-file-entry last-object entry lang src-match?)
                  (setf last-object object)
                  (cond ((null translation)
                         (cond (untranslated-p
@@ -631,7 +633,7 @@
     (values total-cnt unfound-cnt untranslated-cnt questionable-cnt
             unfound questionable)))
 
-(defun update-db-from-class-po-file-entry (last-object entry lang)
+(defun update-db-from-class-po-file-entry (last-object entry lang &optional (src-match? t))
   "Update the database from a single class-po-file-entry instance.
    Returns TRANSLATION instance if successful.
    Returns a second value of true if the record wasn't found at its
@@ -652,7 +654,7 @@
                      (ignore-errors (slot-value object slot))))
          (questionable-p nil))
     (cond ((and translation (not (equal "" translation)))
-           (unless (and value (or (consp value) (equal value msgid)))
+           (unless (and value (or (consp value) (not src-match?) (equal value msgid)))
              ;; This makes it work in dumped and loaded databases
              ;; where the object IDs have changed.
              (setf object (find-object-of-class-with-slot class-name slot msgid)
@@ -661,7 +663,7 @@
            (etypecase value
              ((or string null))
              (cons
-              (let* ((alist (slot-value-translation object slot lang))
+               (let* ((alist (slot-value-translation object slot lang))
                      (untran-cell (assoc msgid value :test #'equal)))
                 (when untran-cell
                   (let ((tran-cell (and untran-cell

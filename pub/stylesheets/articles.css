@@ -33,11 +33,15 @@
     background-color: #2040FF;
 }
 
-div.articles p {
-    padding-left: 10px;
-    margin: 0px;
+.modal div.articles, .front-page-dispatcher div.articles {
+    padding: 10px 10px 10px 10px;
 }
 
+div.articles p {
+    margin: 0px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
 
 div.article h1 {
     margin-bottom: 20px;
@@ -60,3 +64,4 @@ div.articles-dialog-widget fieldset {
 div.articles-dialog-widget fieldset input {
     margin-right: 10px;
 }
+

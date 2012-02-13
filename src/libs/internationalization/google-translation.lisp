@@ -34,7 +34,7 @@
 
 (defmethod supports-translation-p ((svc google-translation-service) src target)
   (declare (ignore src target))
-  t)
+  nil)
 ;;  (member (list src target) *google-translation-pairs* :test #'equal))
 
 (defparameter *max-content-length* 400)
@@ -69,6 +69,7 @@
       (parse-google-translation-response
        (drakma:http-request 
 	(make-translation-uri content original-lang target-lang)
+	:additional-headers
 	:external-format-out :utf8
 	:external-format-in :utf8))
     (error () nil)))

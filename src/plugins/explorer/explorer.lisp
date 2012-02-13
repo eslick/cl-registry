@@ -58,7 +58,7 @@
 					 :dialog-p t)
 			 'data-dictionary
 			 (make-instance 'data-dictionary-button
-					:link-title #!"Data Dictionary"
+					:link-title #!"List All Questions"
 					:data-dictionary
 					(make-instance 'data-dictionary
 						       :published-only-p t))

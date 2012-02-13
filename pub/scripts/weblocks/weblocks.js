@@ -94,7 +94,7 @@ function execJsonCalls (calls) {
 }
 
 function onActionFailure() {
-    alert('Oops, we could not complete your request because of an internal error.');
+    alert('We could not complete your request because of an internal error.  Please e-mail LAMsightHelp@lamtreatmentalliance.org with the page you were on and what you were doing when you received this error and we will look into it for you.');
 }
 
 function getActionUrl(actionCode, sessionString, isPure) {

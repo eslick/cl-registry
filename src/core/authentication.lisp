@@ -59,8 +59,8 @@
 ;; ====================================================
 
 (defview login-view (:type form :persistp nil
-		     :buttons '((:submit . "Login") :cancel)
-		     :caption "Login"
+		     :buttons `((:submit . ,#!"Login") :cancel)
+		     :caption #!"Login"
 		     :focusp t
 		     :use-ajax-p t)
   (username :requiredp t)
@@ -133,8 +133,9 @@
 
 (defun set-session-user (user)
   (setf (weblocks::webapp-session-value *authentication-key*) user)
-  (setf (current-patient) (get-patient-home-patient))
-  (setf (current-center) (center (current-patient)))
+  (when user
+    (setf (current-patient) (get-patient-home-patient))
+    (setf (current-center) (center (current-patient))))
   user)
 
 ;; ==============================================================
@@ -180,13 +181,17 @@
 (defparameter *forgot-password-sent-message*
   "Your password has been sent; after logging in don't forget to change your password")
 
-(defparameter *problem-with-password-sent-message*
-  "Your e-mail address was not recognized, or a server problem prevented us sending your password.  Please send a message to ILRHelp@lamtreatmentalliance.org if this problem persists.")
+(defun problem-with-password-sent-message ()
+  (format nil "Your e-mail address was not recognized, or a server problem prevented us sending your password.  Please send a message to ~A if this problem persists."
+	  (get-site-config-param :email-admin-address)))
 
 (defun/cc do-forgot-password-dialog ()
-  (when (do-dialog "" (forgot-password-form))
-    (do-information *forgot-password-sent-message*)
-    (do-information *problem-with-password-sent-message*)))
+  (let ((result (do-dialog "" (forgot-password-form))))
+    (cond ((eq result :cancel) nil)
+	  ((eq result :success) 
+	   (do-information *forgot-password-sent-message*))
+	  (t
+	   (do-information (problem-with-password-sent-message))))))
 
 (defun forgot-password-form ()
     (make-quickform 'forgot-password-view
@@ -196,7 +201,7 @@
      :on-success (lambda (w data)
 		   (answer w (mail-new-password data)))
      :on-cancel (lambda (w)
-		  (answer w nil))))
+		  (answer w :cancel))))
 
 (defparameter *forgot-password-message*
   "If you can't remember your username or password, enter your email address here.  You will be sent a message that contains your username and a new password.")
@@ -236,7 +241,7 @@ The password for the username: ~a has been reset to ~a
 After you log in, you can change the password to something you can remember.
 "
 				    (username user) new-password))
-	t))))
+	:success))))
 
 (defun valid-email-p (w data)
   (let* ((email (string-trim-whitespace (slot-value data 'email)))

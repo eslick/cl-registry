@@ -111,4 +111,3 @@
     (:html (call-next-method))
     (t (throw 'registry-error-tag c))))
 
-

@@ -172,8 +172,22 @@
 		 (render-translated-button "cancel"))                                  
 		(t (htm "User: "
 			(:input :type "text" :name "name" :size 20)
-			(:br)
-			(render-translated-button "change")))))))))
+			(render-translated-button "change")))))))
+    ;; Activate user for estrogen study
+    (with-html
+      (:div
+       (:b "Activate user for estrogen study")
+       (with-html-form (:get (lambda (&rest rest
+				      &key uname-or-email &allow-other-keys)
+			       (aif (get-user uname-or-email)
+				    (progn
+				      (activate-estrogen-study it)
+				      (do-information "Successful activation"))
+				    (do-information "User not found"))
+			       (redirect "/dashboard/admin/tools")))
+	 (htm "Username or E-mail:"
+	      (:input :type "text" :name "uname-or-email" :size 20)
+	      (render-translated-button "activate")))))))
 
 (defun reset-user-password (&rest rest &key username newpass &allow-other-keys)
   (declare (ignorable rest))
