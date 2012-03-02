@@ -139,10 +139,10 @@
 			when (include-study-survey-p study survey)
 			collect survey)))
 		(cond
-		  ((null surveys)
-		   (setq this-study-complete-p nil)
-		   (htm
-		    (:P :CLASS "study-list-message" "No surveys for study")))
+;;		  ((null surveys)
+;;		   (setq this-study-complete-p nil)
+;;		   (htm
+;;		    (:P :CLASS "study-list-message" "No surveys for study")))
 		  ;; If study requires patient consent form *and* patient hasn't signed
 		  ((and (eq (requires-consent-p study) :estrogen)
 			(not (study-patient-consented-p study patient)))
