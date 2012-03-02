@@ -336,7 +336,7 @@
         (:br)
         (render-translated-button "OK" nil)))))
 
-(defun handle-email-form (widget &key name contact cctome subject message send
+(defun/cc handle-email-form (widget &key name contact contact-all-users contact-lam-patients cctome from subject message send
                           &allow-other-keys)
   (block nil
     (cond (contact
@@ -345,10 +345,15 @@
                     (lambda (user)
                       (setf (session-email-user) user)
                       (mark-dirty widget)))))
-
+	  (contact-all-users
+	   (setf (session-email-user) :all)
+	   (mark-dirty widget))
+	  (contact-lam-patients
+	   (setf (session-email-user) :patients)
+	   (mark-dirty widget))
           (send
            (setf (session-email-state)
-                 (list cctome subject message))
+                 (list cctome from subject message))
            (let ((user (session-email-user)))
              (when user
                (flet ((do-alert (message)
@@ -358,24 +363,20 @@
                                  (mark-dirty widget)))
                         (return)))
                  (cond ((blankp subject)
-                        (do-alert "Subject missing!"))
+                        (do-alert "The subject is missing!"))
                        ((blankp message)
-                        (do-alert "Message missing!")))
-                 (let ((from (user-formatted-email
-                              (current-user)))
-                       (to (user-formatted-email user)))
-                   (handler-case
-                       (cl-smtp:send-email
-                        (site-email-smtp-host) from to subject
-                        message
-                        :cc (and cctome from)
-			:authentication (site-email-smtp-authentication))
-                     (error (c)
-                       (do-alert
-                           (format nil "~a" c))))
-                   ))))
-           (setf (session-email-user) nil
-                 (session-email-state) nil))
+                        (do-alert "No message body provided!"))
+		       (t
+			(handler-case
+			    (if (keywordp user)
+				(when (eq (do-choice "Are you sure you want to email all LAMsight users or patients?" '(:yes :no)) :yes)
+				  (send-email-to-group user from subject message))
+				(send-email-to-users user subject message :from from))
+			  (error (c)
+			    (do-alert
+				(format nil "~a" c)))))))
+	       (setf (session-email-user) nil
+		     (session-email-state) nil))))
           (t (setf (session-email-user) nil
                    (session-email-state) nil)))
     (mark-dirty widget)))
@@ -387,123 +388,150 @@
     (with-html
       (unless user
         (htm
-         (:div "Enter a substring of the user id, first name, or last name")))
+         (:div "Contact a single user: " (:br) (:tiny "Enter a substring of the user id, first name, or last name"))))
       (with-html-form (:get (curry #'handle-email-form widget)
                             :use-ajax-p t)
-        (cond ((not (typep user 'user))
+        (cond ((not (or (typep user 'user) (member user '(:all :patients))))
                (htm "User: "
                     (:input :type "text" :name "name" :size 20 :autocomplete "off")
-                    (:br)
-                    (render-translated-button "contact")))
+		    "&nbsp;"
+                    (render-translated-button "contact")
+		    (:br)
+		    (:br)
+		    (render-translated-button "contact all users")
+		    (render-translated-button "contact lam patients")))
               (t
-               (let* ((addr1 (get-preference :residence-addr-1 user))
-                      (addr2 (get-preference :residence-addr-2 user))
-                      (city (get-preference :residence-city user))
-                      (prov (get-preference :residence-prov user))
-                      (country (get-preference :residence-country user))
-                      (zip (get-preference :postal-code user))
-                      (home-phone (get-preference :home-phone user))
-                      (work-phone (get-preference :work-phone user))
-                      (to-authenticate (get-preference :contact-to-authenticate user))
-                      (for-study (get-preference :contact-for-study user))
-                      (for-verify (get-preference :contact-for-data-verification user))
-                      (methods (get-preference :contact-methods user))
-                      (email-p (member "email" methods :test #'equal))
-                      (phone-p (member "phone" methods :test #'equal))
-                      (mail-p (member "mail" methods :test #'equal))
-                      (other-patient-p (member "another patient" methods :test #'equal))
-                      (from-email (user-formatted-email (current-user))))
-                 (multiple-value-bind (to-email name) (user-formatted-email user)
-                   (htm "User: " (str (username user)) (:br))
-                   (htm
-                    (:p
-                     (cond ((or to-authenticate for-study for-verify)
-                            (htm "Approves communication ")
-                            (when to-authenticate
-                              (htm "to confirm identity")
-                              (when (or for-study for-verify)
-                                (htm (str (if (and for-study for-verify) ", " " or ")))))
-                            (when for-study
-                              (htm "for a potential study")
-                              (when for-verify
-                                (htm (str (if to-authenticate ", or " " or ")))))
-                            (when for-verify
-                              (htm "to follow up and verify data"))
-                            (htm (:br)))
-                           (t (htm "Does not allow any communication.")))
-                     (unless mail-p
-                       (htm "Does " (:b "not ") "want to be contacted by mail."
-                            (:br)))
-                     (unless phone-p
-                       (htm "Does " (:b "not ") "want to be contacted by phone."
-                            (:br)))
-                     (unless other-patient-p
-                       (htm "Does " (:b "not ") "want to be contacted through another patient."
-                            (:br)))
-                     (unless email-p
-                       (htm "Does " (:b "not ") "want to be contacted by email."
-                            (:br)))))
-                   (htm
-                    (:table
-                     (unless (blankp name)
-                       (htm
-                        (:tr
-                         (:td "Name:")
-                         (:td (esc name)))))
-                     (unless (every #'blankp
-                                    (list addr1 addr2 city prov zip country))
-                       (htm
-                        (:tr
-                         (:td :valign "top" "Address:")
-                         (:td
-                          (unless (blankp addr1)
-                            (htm (esc addr1) (:br)))
-                          (unless (blankp addr2)
-                            (htm (esc addr2) (:br)))
-                          (unless (and (blankp city) (blankp prov) (blankp zip))
-                            (unless (and (blankp city) (blankp prov))
-                              (htm (esc city)
-                                   (unless (blankp prov)
-                                     (htm ", ")))
-                              (unless (blankp prov)
-                                (htm (esc prov)
-                                     (unless (blankp zip)
-                                       (htm " ")))))
-                            (htm (esc zip) (:br)))
-                          (unless (blankp country)
-                            (htm (esc country)))))))
-                     (unless (blankp home-phone)
-                       (htm
-                        (:tr
-                         (:td "Home Phone:")
-                         (:td (esc home-phone)))))
-                     (unless (blankp work-phone)
-                       (htm
-                        (:tr
-                         (:td "Work Phone:")
-                         (:td (esc work-phone)))))
-                     (:tr
-                      (:td "&nbsp;")
-                      (:td (:b "Send Email")))
-                     (:tr
-                      (:td "From:")
-                      (:td (esc from-email)))
-                     (:tr
-                      (:td "To:")
-                      (:td (esc to-email)))
-                     (:tr
-                      (:td "CC to you:")
-                      (:td (render-checkbox "cctome" (if state (car state) t))))
-                     (:tr
-                      (:td "Subject:")
-                      (:td (:input :type "text" :name "subject" :size 40
-                                   :value (second state))))
-                     (:tr
-                      (:td "Message:")
-                      (:td (render-textarea "message" (or (third state) "") 20 60)))
-                     (:tr
-                      (:td "&nbsp;")
-                      (:td (render-translated-button "send")
-                           (render-translated-button "cancel")))))))))))))
+	       (cond 
+		 ((typep user 'user)
+		  (render-user-contact-form user state))
+		 ((member user '(:all :patients))
+		  (htm
+		   (:table
+		    (render-email-form user nil state)))))))))))
+
+
+(defun render-user-contact-form (user state)
+  (let* ((addr1 (get-preference :residence-addr-1 user))
+	 (addr2 (get-preference :residence-addr-2 user))
+	 (city (get-preference :residence-city user))
+	 (prov (get-preference :residence-prov user))
+	 (country (get-preference :residence-country user))
+	 (zip (get-preference :postal-code user))
+	 (home-phone (get-preference :home-phone user))
+	 (work-phone (get-preference :work-phone user))
+	 (to-authenticate (get-preference :contact-to-authenticate user))
+	 (for-study (get-preference :contact-for-study user))
+	 (for-verify (get-preference :contact-for-data-verification user))
+	 (methods (get-preference :contact-methods user))
+	 (email-p (member "email" methods :test #'equal))
+	 (phone-p (member "phone" methods :test #'equal))
+	 (mail-p (member "mail" methods :test #'equal))
+	 (other-patient-p (member "another patient" methods :test #'equal))
+	 (from-email (user-formatted-email (current-user))))
+    (multiple-value-bind (to-email name) (user-formatted-email user)
+      (with-html 
+	(htm "User: " (str (username user)) (:br))
+	(htm
+	 (:p
+	  (cond ((or to-authenticate for-study for-verify)
+		 (htm "Approves communication ")
+		 (when to-authenticate
+		   (htm "to confirm identity")
+		   (when (or for-study for-verify)
+		     (htm (str (if (and for-study for-verify) ", " " or ")))))
+		 (when for-study
+		   (htm "for a potential study")
+		   (when for-verify
+		     (htm (str (if to-authenticate ", or " " or ")))))
+		 (when for-verify
+		   (htm "to follow up and verify data"))
+		 (htm (:br)))
+		(t (htm "Does not allow any communication.")))
+	  (unless mail-p
+	    (htm "Does " (:b "not ") "want to be contacted by mail."
+		 (:br)))
+	  (unless phone-p
+	    (htm "Does " (:b "not ") "want to be contacted by phone."
+		 (:br)))
+	  (unless other-patient-p
+	    (htm "Does " (:b "not ") "want to be contacted through another patient."
+		 (:br)))
+	  (unless email-p
+	    (htm "Does " (:b "not ") "want to be contacted by email."
+		 (:br)))))
+	(htm
+	 (:table
+	  (unless (blankp name)
+	    (htm
+	     (:tr
+	      (:td "Name:")
+	      (:td (esc name)))))
+	  (unless (every #'blankp
+			 (list addr1 addr2 city prov zip country))
+	    (htm
+	     (:tr
+	      (:td :valign "top" "Address:")
+	      (:td
+	       (unless (blankp addr1)
+		 (htm (esc addr1) (:br)))
+	       (unless (blankp addr2)
+		 (htm (esc addr2) (:br)))
+	       (unless (and (blankp city) (blankp prov) (blankp zip))
+		 (unless (and (blankp city) (blankp prov))
+		   (htm (esc city)
+			(unless (blankp prov)
+			  (htm ", ")))
+		   (unless (blankp prov)
+		     (htm (esc prov)
+			  (unless (blankp zip)
+			    (htm " ")))))
+		 (htm (esc zip) (:br)))
+	       (unless (blankp country)
+		 (htm (esc country)))))))
+	  (unless (blankp home-phone)
+	    (htm
+	     (:tr
+	      (:td "Home Phone:")
+	      (:td (esc home-phone)))))
+	  (unless (blankp work-phone)
+	    (htm
+	     (:tr
+	      (:td "Work Phone:")
+	      (:td (esc work-phone)))))
+	  (render-email-form user from-email state)))))))
+
+(defun render-email-form (user from-email state)
+  (with-html
+    (:tr
+     (:td (:b "Send Email")))
+    (:tr
+     (:td "From:")
+     (:td (:select :name "from"
+		   (:option :value "LAMsightHelp@lamtreatmentalliance.org"
+			    "LAMsight Admin (Help)")
+		   (:option :value "EstrogenStudy@lamtreatmentalliance.org"
+			    "Estrogen Study Admin")
+		   (:option :value from-email "Your account"))))
+    (typecase user
+      (keyword (if (eq user :all) 
+		   (htm (:tr (:td "To") (:td "All Users")))
+		   (htm (:tr (:td "To") (:td "All Patients")))))
+      (user (htm (:tr
+		  (:td (str "To User:"))
+		  (:td (esc (username user)))))))
+    (:tr
+     (:td "CC to you:")
+     (:td (render-checkbox "cctome" (if state (first state) t))))
+    (:tr
+     (:td "Subject:")
+     (:td (:input :type "text" :name "subject" :size 40
+		  :value (third state))))
+    (:tr
+     (:td "Message:")
+     (:td (render-textarea "message" (or (fourth state) "") 20 60)))
+    (:tr
+     (:td "&nbsp;")
+     (:td (render-translated-button "send")
+	  (render-translated-button "cancel")))))
     
 

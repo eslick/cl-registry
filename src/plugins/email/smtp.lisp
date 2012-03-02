@@ -36,7 +36,7 @@
     (:none nil)
     (otherwise *smtp-authentication*)))
       
-(defun send-email (addresses subject body)
+(defun send-email (addresses subject body &optional from)
   (cond
     (*inhibit-smtp*
      ;; Using Hunchentoot logging doesn't work outside of a request handler thread
@@ -45,7 +45,7 @@
      nil)
     ((and (stringp addresses) (plusp (length addresses)))
      (cl-smtp:send-email (site-email-smtp-host)
-			 (site-email-admin-address)
+			 (or from (site-email-admin-address))
 			 addresses subject body
 			 :authentication (site-email-smtp-authentication))
      t)
@@ -87,7 +87,7 @@
 
 (defvar *enable-email-to-users-default-class* ':users)
 
-(defun send-email-to-users (users subject body &key (user-class *enable-email-to-users-default-class*))
+(defun send-email-to-users (users subject body &key (user-class *enable-email-to-users-default-class*) from)
   (let ((addresses (mapcar #'user-email 
 			   (if *enable-email-whitelist*
 			       (select-if #'whitelist-user-p (mklist users))
@@ -96,6 +96,24 @@
       (loop for address in addresses
 	   do (send-email address
 			  subject
-			  body)))))
+			  body
+			  from)))))
 
-  
+
+;; Different group mailing mechanism than the user-class thing above
+
+(defun lookup-email-group-addresses (groupname)
+  (case groupname
+    (:all (all-users))
+    (:patients
+     (select-if (f (p) (has-preference-value-p p :lam-patient-p t))
+		(all-users)))))
+
+(defun send-email-to-group (groupname from subject body)
+  (let ((users (lookup-email-group-addresses groupname)))
+    (cl-smtp:send-email (site-email-smtp-host)
+			(or from (site-email-admin-address))
+			(or from (site-email-admin-address))
+			subject body
+			:bcc (mapcar #'user-email users)
+			:authentication (site-email-smtp-authentication))))

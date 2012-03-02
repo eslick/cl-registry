@@ -11,7 +11,7 @@
     "look up name in the current user's preferences.  if a value is found,
    t is returned as the second value.  if nothing is found for key, nil
    is returned as the second value."
-  (get-value name (user-preferences-btree user)))
+    (get-value name (user-preferences-btree user)))
 
 (defun current-user-preference (name)
   (get-preference name (current-user)))
