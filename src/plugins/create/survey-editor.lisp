@@ -677,8 +677,8 @@
 				     'survey-properties-data-view
 				     :type data
 				     :caption "")
-  diary-question
-  diary-description)
+  diary-question)
+;;  diary-description)
 
 (defview diary-properties-form-view (:inherit-from
 				     'survey-properties-form-view
@@ -686,13 +686,14 @@
 				     :caption ""
 				     :persistp nil)
   (diary-question :present-as (dropdown :choices 'get-diary-questions
-					:label-key #'question-name)
-		  :parse-as (mid :class-name 'question)
-		  :reader (compose #'mid #'diary-question))
-  (diary-description :present-as (dropdown :choices 'get-diary-questions
-					   :label-key #'question-name)
-		     :parse-as (mid :class-name 'question)
-		     :reader (compose #'mid #'diary-description)))
+					:label-key #'question-name
+					:value-key #'mid)
+		  :parse-as (mid :class-name 'question )
+		  :reader (compose #'mid #'diary-question)))
+;;  (diary-description :present-as (dropdown :choices 'get-diary-questions
+;;					   :label-key #'question-name)
+;;		     :parse-as (mid :class-name 'question)
+;;		     :reader (compose #'mid #'diary-description)))
 
 (defwidget survey-properties-dataform (dataform)
   ((survey-widget :initarg :survey-widget :accessor survey-widget)

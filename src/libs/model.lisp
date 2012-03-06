@@ -108,7 +108,7 @@
 (defmethod parse-view-field-value ((parser mid-parser) value obj
 				   (view form-view) (field form-view-field) &rest args)
   (declare (ignore args obj))
-  (when (not (text-input-present-p value))
+  (unless (text-input-present-p value)
     (return-from parse-view-field-value (values t nil)))
   (let ((object
 	 (get-model (mid-parser-class-name parser)
