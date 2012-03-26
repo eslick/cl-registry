@@ -307,6 +307,9 @@
 		       (render-link (f* (do-dialog #!"User Preferences" (make-preferences-page #!"personal")))
 				    "Please Complete Your Contact Information")))
 		 (:P :style "margin-left: 1.5em; font-size: small;"
+		     (render-link (f* (do-dialog #!"Estrogen Study Contact Preferences" (make-estrogen-preferences-dialog)))
+				  "Manage reminder preferences"))
+		 (:P :style "margin-left: 1.5em; font-size: small;"
 		     (render-link (f* (withdraw-from-estrogen-study (current-user)))
 				  "Withdraw from Study"))
 		 ))))))))
