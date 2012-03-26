@@ -247,6 +247,14 @@ when parsing date/time strings for PRESENTATION"))
   ()
   (:default-initargs :show-date-p nil))
 
+(define-lisp-value-getter time-presentation (client-value)
+  (cond ((= (length client-value) 0) :none)
+	(t client-value)))
+
+(define-lisp-value-setter time-presentation (lisp-value show-time-p show-date-p parse-time-patterns-key)
+  (cond ((eq lisp-value :none) nil)
+        (t lisp-value)))
+
 ;;;; * validator
 
 (defclass datetime-validator (non-nil-validator)

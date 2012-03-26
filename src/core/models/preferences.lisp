@@ -295,6 +295,26 @@
   :lisp-value t)
 
 ;;
+;; Specialized preferences
+;;
+
+(def-preference estrogen-study-reminders-enabled-p (checkbox-boolean-presentation)
+  :prompt #!"Enable daily reminders"
+  :lisp-value nil)
+
+(def-preference estrogen-study-reminder-time (time-presentation)
+  :prompt #!"Time of day")
+
+(def-preference estrogen-study-reminder-zone (member-select-presentation)
+  :prompt #!"Your home time zone"
+  :choices `((,#!"Unknown" . 0)
+             (,#!"PST" . -8)
+	     (,#!"MST" . -7)
+	     (,#!"CST" . -6)
+	     (,#!"EST" . -5))
+  :lisp-value 0)
+
+;;
 ;; Some preference-specific predicates
 ;;
 

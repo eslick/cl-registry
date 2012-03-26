@@ -33,12 +33,48 @@
       (redirect (weblocks::request-uri*)))))
     
 
+(defwidget estrogen-preferences-widget (widget)
+  ((presentations :accessor preference-presentations
+		  :initform (build-preference-presentations))
+   (prior-prefs :initform nil :accessor prior-rendered-preferences
+		:affects-dirty-status-p nil)
+   (refresh-on-close-p :initform nil :accessor refresh-on-close-p)))
+
+(defmethod dependencies append ((prefs estrogen-preferences-widget))
+  (list (make-local-dependency :stylesheet "preferences")
+	(make-local-dependency :script "preferences")))
+
+(defun make-estrogen-preferences-dialog ()
+  (make-instance 'estrogen-preferences-widget))
+
+(defmethod render-widget-body ((widget estrogen-preferences-widget) &rest args)
+  (declare (ignore args))
+  (let ((*current-widget* widget))
+    (declare (special *current-widget*))
+    (setf (prior-rendered-preferences widget) nil)
+    (with-html
+      (:div :id "preferences"
+	    (with-html-form (:post (preference-form-handler widget)
+				   :id "preferences-form")
+	      (:div :id "preferences-body"
+		    (:div :class "preferences-personal-info"
+			  (:p "This dialog allows you to select a time of day, and home time zone, to receive e-mail reminders.  You will also need to make sure you have not checked 'never contact' in your user preferences.")
+			  (present-preferences 
+			   :estrogen-study-reminders-enabled-p
+			   :estrogen-study-reminder-time
+			   :estrogen-study-reminder-zone)))
+	      (:div :id "preferences-controls"
+		    (render-button "Foo" :class "hidden" :value #!"Foo")
+		    (render-translated-button "Done")))))))
+
 (defun/cc consent-user ()
   (if (eq (do-dialog "" (consent-to-estrogen-study)) :accept)
       (progn 
 	(register-for-estrogen-study (current-user))
 	(do-choice "Next, provide your mailing address so we can send you the Spirometer and Ovulation kits needed for the study." '(:Continue))
 	(do-dialog #!"User Preferences" (make-preferences-page #!"personal"))
+	(do-information #!"We now will ask if you want to receive regular reminders to fill out the daily diaries.  This is optional.")
+	(do-dialog #!"Estrogen Study Contact Preferences" (make-estrogen-preferences-dialog))
 	(do-information #!"You have been registered for the Estrogen Study.  A staff member from the LAM Treatment Alliance will contact you within the next 1-2 weeks by e-mail to discuss the logistics of the study.")
 	(redirect "/dashboard/collect/study"))
       (do-information #!"We will not register you for the study at this time.  If you have any concerns please contact EstrogenStudy@lamtreatmentalliance.com or eslick@media.mit.edu with your concerns.")))

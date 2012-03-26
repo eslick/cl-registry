@@ -152,7 +152,7 @@
 			(study-patient-consented-p study patient)
 			(not (estrogen-study-activated-p)))
 		   (htm 
-		    "Thank you for your interest in the LAM Dyspnea and Hormone Study.  Your registration request is being processed and a staff member will be contacting you by email with further instructions.  The recruiting period for this study ends on February 29, 2012.  If you have not heard from us within 1 week of this date or have any questions please contact us at: <a href=\"mailto:EstrogenStudy@LAMTreatmentAlliance.org\">EstrogenStudy@LAMTreatmentAlliance.org</a>"))
+		    "Thank you for your interest in the LAM Dyspnea and Hormone Study.  Your registration request is being processed and a staff member will be contacting you by email with further instructions.  The recruiting period for this study ends on April 30th, 2012.  If you have not heard from us within 1 week of this date or have any questions please contact us at: <a href=\"mailto:EstrogenStudy@LAMTreatmentAlliance.org\">EstrogenStudy@LAMTreatmentAlliance.org</a>"))
 		  ((and (patient-consent-form-needed-p widget)
 			(neq (requires-consent-p study) :estrogen))
 		   ;; Display link to consent form or the form itself
@@ -226,11 +226,12 @@
 			   (setq this-study-complete-p (and this-study-complete-p this-survey-complete-p))
 			   ;; Display study list item for survey 
 			   (htm
-			    (:LI :CLASS "study-list-survey-item"
-				 (:IMG :SRC
-				       (format nil "/pub/images/surveys/~A.gif"
-					       (if this-survey-complete-p "check" "checkbox")))
-				 (str "&nbsp;")
+			    (:LI :CLASS "study-list-survey-item-ls"
+;; NOTE: This hack screws up ILR checkboxes on completion
+;;				 (:IMG :SRC
+;;				       (format nil "/pub/images/surveys/~A.gif"
+;;					       (if this-survey-complete-p "check" "checkbox")))
+;;				 (str "&nbsp;")
 				 (when survey-rule
 				   ;; Get survey URL - may be link to external survey
 				   (setq survey-url (survey-rule-url survey-rule))
