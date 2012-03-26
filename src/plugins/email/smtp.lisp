@@ -87,11 +87,26 @@
 
 (defvar *enable-email-to-users-default-class* ':users)
 
-(defun send-email-to-users (users subject body &key (user-class *enable-email-to-users-default-class*) from)
+(defun allowed-to-email-p (mode user)
+  "Check whether we have permission to email this user for a given 
+   type of outreach :forums, :updates, :recruit, nil for general"
+  (and (or (not *enable-email-whitelist*)
+	   (whitelist-user-p user))
+       (not (get-preference :never-contact user))
+       (let ((methods (get-preference :contact-methods user)))
+	 (and (listp methods)
+	      (member "email" methods :test #'equal)))
+       (or (not (eq mode :forums))
+	   (get-preference :forum-subscriber user))
+       (or (not (eq mode :updates))
+	   (get-preference :update-subscriber user))
+       (or (not (eq mode :recruit))
+	   (get-preference :contact-for-study user))))
+
+(defun send-email-to-users (users subject body &key (user-class *enable-email-to-users-default-class*) from type)
   (let ((addresses (mapcar #'user-email 
-			   (if *enable-email-whitelist*
-			       (select-if #'whitelist-user-p (mklist users))
-			       (mklist users)))))
+			   (select-if (curry #'allowed-to-email-p type)
+				      (mklist users)))))
     (when (and addresses (email-to-users-p user-class))
       (loop for address in addresses
 	   do (send-email address
@@ -99,21 +114,42 @@
 			  body
 			  from)))))
 
-
 ;; Different group mailing mechanism than the user-class thing above
 
-(defun lookup-email-group-addresses (groupname)
+(defun lookup-email-group (groupname)
   (case groupname
     (:all (all-users))
+    (:test (list (get-user "ianeslick") (get-user "eslick")
+		 (get-user "Amanda")))
+    (:estrogen (select-if #'(lambda (u)
+			      (has-preference-value-p u :estrogen-study t))
+			  (all-users)))
+
     (:patients
      (select-if (f (p) (has-preference-value-p p :lam-patient-p t))
 		(all-users)))))
 
+(defun valid-email-groups ()
+  '(:all :test :estrogen :patients))
+
 (defun send-email-to-group (groupname from subject body)
-  (let ((users (lookup-email-group-addresses groupname)))
-    (cl-smtp:send-email (site-email-smtp-host)
-			(or from (site-email-admin-address))
-			(or from (site-email-admin-address))
-			subject body
-			:bcc (mapcar #'user-email users)
-			:authentication (site-email-smtp-authentication))))
+  (bordeaux-threads:make-thread 
+   (f () (send-email-to-group* groupname from subject body))
+   :name "Send Group Email"))
+
+(defun send-email-to-group* (groupname from subject body)
+  (let* ((users (select-if (curry #'allowed-to-email-p nil)
+			   (lookup-email-group groupname)))
+	 (groups (group users 100)))
+    (dolist (group groups)
+      (handler-bind ((cl-smtp:rcpt-failed 
+		      #'(lambda (c)
+			  (format t "Could not send e-mail to: '~A'~%" 
+				  (cl-smtp::recipient c))
+			  (invoke-restart 'cl-smtp::ignore-recipient))))
+	(cl-smtp:send-email (site-email-smtp-host)
+			    (or from (site-email-admin-address))
+			    (or from (site-email-admin-address))
+			    subject body
+			    :bcc (mapcar #'user-email group)
+			    :authentication (site-email-smtp-authentication))))))

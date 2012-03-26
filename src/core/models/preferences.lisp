@@ -163,7 +163,8 @@
 ;; =============================================================================
 
 (def-preference forum-subscriber (checkbox-boolean-presentation)
-  :prompt #!"Receive e-mail from discussion forums?")
+  :prompt #!"Receive e-mail from discussion forums?"
+  :lisp-value t)
 
 (def-preference forum-email-frequency (member-select-presentation)
   :prompt #!"How frequently do you want forum updates?"
@@ -185,13 +186,16 @@
   :lisp-value "monthly")
 
 (def-preference contact-to-authenticate (checkbox-boolean-presentation)
-  :prompt #!"To confirm my identity")
+  :prompt #!"To confirm my identity"
+  :lisp-value t)
 
 (def-preference contact-for-study (checkbox-boolean-presentation)
-  :prompt #!"For a potential study")
+  :prompt #!"For a potential study"
+  :lisp-value t)
 
 (def-preference contact-for-data-verification (checkbox-boolean-presentation)
-  :prompt #!"To follow up and verify any data I have entered")
+  :prompt #!"To follow up and verify any data I have entered"
+  :lisp-value t)
 
 (def-preference contact-methods (multiple-members-select-presentation)
   :prompt #!"By any of these methods"
@@ -201,7 +205,11 @@
 	    (cons #!"Phone call" "phone")
  	    (cons #!"Through another patient" "another patient"))
   :test-function #'string-equal
-  :lisp-value "email")
+  :lisp-value '("email"))
+
+(def-preference never-contact (checkbox-boolean-presentation)
+  :prompt #!"Never contact me by any means"
+  :lisp-value nil)
 
 (def-preference lam-patient-p (checkbox-boolean-presentation)
   :prompt #!"I am a LAM patient."

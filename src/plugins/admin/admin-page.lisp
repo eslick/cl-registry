@@ -336,7 +336,7 @@
         (:br)
         (render-translated-button "OK" nil)))))
 
-(defun/cc handle-email-form (widget &key name contact contact-all-users contact-lam-patients cctome from subject message send
+(defun/cc handle-email-form (widget &rest args &key name contact contact-all-users contact-lam-patients contact-estrogen-study contact-test-users cctome from subject message send
                           &allow-other-keys)
   (block nil
     (cond (contact
@@ -350,6 +350,12 @@
 	   (mark-dirty widget))
 	  (contact-lam-patients
 	   (setf (session-email-user) :patients)
+	   (mark-dirty widget))
+	  (contact-estrogen-study
+	   (setf (session-email-user) :estrogen)
+	   (mark-dirty widget))
+	  (contact-test-users
+	   (setf (session-email-user) :test)
 	   (mark-dirty widget))
           (send
            (setf (session-email-state)
@@ -369,7 +375,7 @@
 		       (t
 			(handler-case
 			    (if (keywordp user)
-				(when (eq (do-choice "Are you sure you want to email all LAMsight users or patients?" '(:yes :no)) :yes)
+				(when (eq (do-choice "Are you sure you want to email the entire group?" '(:yes :no)) :yes)
 				  (send-email-to-group user from subject message))
 				(send-email-to-users user subject message :from from))
 			  (error (c)
@@ -391,7 +397,7 @@
          (:div "Contact a single user: " (:br) (:tiny "Enter a substring of the user id, first name, or last name"))))
       (with-html-form (:get (curry #'handle-email-form widget)
                             :use-ajax-p t)
-        (cond ((not (or (typep user 'user) (member user '(:all :patients))))
+        (cond ((not (or (typep user 'user) (member user (valid-email-groups))))
                (htm "User: "
                     (:input :type "text" :name "name" :size 20 :autocomplete "off")
 		    "&nbsp;"
@@ -399,12 +405,14 @@
 		    (:br)
 		    (:br)
 		    (render-translated-button "contact all users")
-		    (render-translated-button "contact lam patients")))
+		    (render-translated-button "contact lam patients")
+		    (render-translated-button "contact estrogen study")
+		    (render-translated-button "contact test users")))
               (t
 	       (cond 
 		 ((typep user 'user)
 		  (render-user-contact-form user state))
-		 ((member user '(:all :patients))
+		 ((member user (valid-email-groups))
 		  (htm
 		   (:table
 		    (render-email-form user nil state)))))))))))
@@ -513,9 +521,13 @@
 			    "Estrogen Study Admin")
 		   (:option :value from-email "Your account"))))
     (typecase user
-      (keyword (if (eq user :all) 
-		   (htm (:tr (:td "To") (:td "All Users")))
-		   (htm (:tr (:td "To") (:td "All Patients")))))
+      (keyword (htm (:tr 
+		     (:td "To") 
+		     (:td (str (case user
+				 (:all "All Users")
+				 (:patients "All Patients")
+				 (:estrogen "Estrogen Study Members")
+				 (:test "Test Group")))))))
       (user (htm (:tr
 		  (:td (str "To User:"))
 		  (:td (esc (username user)))))))

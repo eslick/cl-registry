@@ -157,7 +157,10 @@
     (:div :class "preferences-email clear"
 	  (:h3 (str #!"Site Updates"))
 	  (present-preferences :update-subscriber
-			       :update-email-frequency))
+			       :update-email-frequency)
+	  (:p :style "clear:both;")
+	  (:p :style "margin-left:5px;margin-right:5px;line-height:13px;font-size:75%;" 
+	      "Site updates are regular communications we may send about unfinished surveys, new surveys, investigator questions, etc.  A few times a year we may also send administrative updates, such as recruiting for a study or changes in policies."))
     (:div :class "preferences-contact clear"
 	  (:h3 (str #!"The site administrators may contact me: "))
 	  (present-preferences 
@@ -166,9 +169,8 @@
 	   :contact-for-data-verification)
 	  (:p (present-preferences :contact-methods))
 	  (:p :style "font-size: x-small; clear:both; margin-left: 30px;"
-	      (str #!"Hold down the Ctrl or Cmd key to select more than one answer")))))
-
-
+	      (str #!"Hold down the Ctrl or Cmd key to select more than one answer"))
+	  (present-preferences :never-contact))))
 
 (defun website-prefs-form ()
   (with-html

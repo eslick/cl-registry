@@ -22,7 +22,8 @@
 (defun send-unsubscribable-email (user subject body type)
   (send-email-to-users
    user subject
-   (add-unsubscribe-link body (username user) type)))
+   (add-unsubscribe-link body (username user) type)
+   :type type))
 
 ;; Event handlers
 
@@ -45,7 +46,7 @@
 	(multiple-value-bind (subject body)
 	    (generate-forum-post-email user post)
 	  (if (member user editors)
-	      (send-email-to-users user subject body)
+	      (send-email-to-users user subject body :type :forums)
 	      (send-unsubscribable-email user subject body :forums))))
       (multiple-value-bind (subject body)
 	  (generate-forum-post-email nil post)
