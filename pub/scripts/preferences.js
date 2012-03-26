@@ -7,7 +7,7 @@ Event.addBehavior({
 	updateAnswersOnChange (Event.element(e).identify());
     },
     'div#preferences-body select:change' : function (e) {
-        window.console.log("select change");
+//        window.console.log("select change");
 	updateAnswersOnChange (Event.element(e).identify());
     },
     'div#preferences-body textarea:change' : function (e) {

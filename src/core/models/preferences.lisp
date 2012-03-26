@@ -110,7 +110,8 @@
 	      (let ((presentation (gethash name (preference-presentations
 						 user-preferences-widget))))
 		(when (or (getf args name)
-			  (eq (type-of presentation) 'checkbox-boolean-presentation))
+			  (eq (type-of presentation) 'checkbox-boolean-presentation)
+			  (eq (type-of presentation) 'multiple-members-select-presentation))
 		  (setf (client-value presentation) (getf-all args name))
 		  (let ((val (lisp-value presentation)))
 		    (unless (eq val :none)
