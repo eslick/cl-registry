@@ -114,7 +114,7 @@
 
 (defun send-email-to-users (users subject body &key (user-class *enable-email-to-users-default-class*) from type)
   (let ((addresses (mapcar #'user-email 
-			   (select-if (curry #'allowed-to-email-p type)
+			   (select-if (curry 'allowed-to-email-p type)
 				      (mklist users)))))
     (when (and addresses (email-to-users-p user-class))
       (loop for address in addresses

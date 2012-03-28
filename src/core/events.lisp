@@ -188,10 +188,10 @@
     (bordeaux-threads:destroy-thread *timer-thread*)
     (setf *timer-thread* nil)))
 
-(defparameter *system-timer-interval* 3600)
+(defparameter *system-timer-interval* 60)
 
 (defun registry-timer-thread ()
-  "Runs do-timer-updates of checks every hour"
+  "Runs do-timer-updates of checks every minute"
   (loop 
      (fire-system-timer)
      (sleep *system-timer-interval*)))
