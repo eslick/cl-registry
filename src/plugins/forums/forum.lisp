@@ -148,9 +148,9 @@
   '(subject content))
 
 (defun next-post-number (topic)
-  (with-slots (current-post-number) topic
-    ;; thread safe?
-    (ensure-transaction ()
+  (ensure-transaction ()
+    (with-slots (current-post-number) topic
+      ;; thread safe?
       (incf current-post-number))))
 
 (defun topic-participants (topic)
@@ -200,7 +200,7 @@
 ;; ====================================
 
 (defmodel forum-post (user-translation-mixin)
-  ((owner :accessor post-owner :initarg :owner) ;; :type user)
+  ((owner :accessor post-owner :initarg :owner :initform nil) ;; :type user)
    (number :accessor post-number :initarg :number)
    (post-datetime :accessor post-datetime :initarg :datetime 
 		  :initform (get-universal-time))
@@ -208,8 +208,8 @@
 ;;		  :initform (the datetime (get-universal-time)))
    (topic :accessor post-topic :initarg :topic :index t) ;; :type forum-topic)
    (rating :accessor post-rating :initarg :rating :initform nil)
-   (title :accessor post-title :initarg :title)
-   (content :accessor post-content :initarg :content)
+   (title :accessor post-title :initarg :title :initform "")
+   (content :accessor post-content :initarg :content :initform "")
    (content-type :accessor post-content-type :initarg :content-type :initform nil))
   (:documentation "Forum posts, for now, are linear comments with titles
    that users can post in response to prior posts and the primary topic."))
