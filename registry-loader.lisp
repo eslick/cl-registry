@@ -62,7 +62,7 @@
                        (symbol-value sym)))))
     (funcall (find-symbol "CREATE-SERVER" :swank)
              :port port
-             ;;:coding-system "utf-8-unix"
+             :coding-system "utf-8-unix"
              :dont-close t)))
 
 (defparameter *default-config* '("ilr-production" "devel"))
