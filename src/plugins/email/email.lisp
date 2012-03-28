@@ -40,17 +40,20 @@
   (when-email-notification-enabled-p ()
     (let ((post (event-data event))
 	  (editors (content-editors)))
-      (dolist (user (union (select-if 'send-immediate-forum-update-p
-				      (topic-participants (post-topic post)))
-			   editors))
-	(multiple-value-bind (subject body)
-	    (generate-forum-post-email user post)
-	  (if (member user editors)
-	      (send-email-to-users user subject body :type :forums)
-	      (send-unsubscribable-email user subject body :forums))))
+      (dolist (user (remove-duplicates
+		     (remove-nulls
+		      (union (select-if 'send-immediate-forum-update-p
+					(topic-participants (post-topic post)))
+			     editors))))
+	(when user
+	  (multiple-value-bind (subject body)
+	      (generate-forum-post-email user post)
+	    (if (member user editors)
+		(send-email-to-users user subject body :type :forums)
+		(send-unsubscribable-email user subject body :forums)))))
       (multiple-value-bind (subject body)
 	  (generate-forum-post-email nil post)
-	(send-email '("LAMsightHelp@lamtreatmentalliance.org") subject body)))))
+	(send-email (list (get-site-config-param :email-admin-address)) subject body)))))
 
 
 (defun send-immediate-forum-update-p (user)
@@ -72,7 +75,7 @@
 	  (send-email-to-users user subject body)))
       (multiple-value-bind (subject body)
 	  (generate-survey-comment-email nil comment)
-	(send-email '("LAMsightHelp@lamtreatmentalliance.org") subject body)))))
+	(send-email (list (get-site-config-param :email-admin-address)) subject body)))))
 
 (eval-when (:compile-toplevel :load-toplevel)
   (add-event-handler :new-forum-post 'handle-new-forum-post)
@@ -215,3 +218,25 @@
   (let ((last (find-last-event :monthly-digest)))
     (or (null last)
 	(< (event-time last) (- (get-universal-time) *seconds-in-month*)))))
+
+
+;;
+;; Site Event Updates
+;;
+
+(defun handle-registration-sent (event)
+  (send-email (list (get-site-config-param :email-admin-address)) 
+	      "Site Registration request started"
+	      (format nil "For user account '~A'" (event-data event))))
+  
+(defun handle-registration-success (event)
+  (send-email (list (get-site-config-param :email-admin-address))
+	      "Site Registration request completed"
+	      (format nil "For user account '~A'" 
+		      (if (event-user event)
+			  (username (event-user event))
+			  (event-data event)))))
+
+(eval-when (:compile-toplevel :load-toplevel)
+  (add-event-handler :registration-sent 'handle-registration-sent)
+  (add-event-handler :registration-success    'handle-registration-success))

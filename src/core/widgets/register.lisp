@@ -19,6 +19,8 @@
 	      (reg (find-registration magic)))
 	  (when valid-p 
 	    (make-registered-user reg)
+	    (record-event :registration-success (reg-username reg) 
+			  :user (get-user (reg-username reg)))
 ;;	    (set-session-user (get-user (reg-username reg)))
 ;;	    (do-dialog "" (make-role-dialog))
 	    (set-session-user nil)
@@ -213,7 +215,6 @@ message.
 	   (format nil "User ~a is already registered" 
 		   (reg-username reg)))
 	  ((valid-registration-key-p reg magic)
-	   (record-event :registration-success (reg-username reg) :user nil)
 	   (let ((username (reg-username reg)))
 	     (list
 	      (format nil "Hi '~A', welcome to LAMsight!  Press OK to continue." username)

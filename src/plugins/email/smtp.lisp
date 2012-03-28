@@ -36,6 +36,14 @@
     (:none nil)
     (otherwise *smtp-authentication*)))
       
+(defun safe-smtp-send (host from to subject message &rest args)
+  (handler-bind ((cl-smtp:rcpt-failed 
+		  #'(lambda (c)
+		      (warn "Could not send e-mail to: '~A'~%" 
+			    (cl-smtp::recipient c))
+		      (invoke-restart 'cl-smtp::ignore-recipient))))
+    (apply #'cl-smtp:send-email host from to subject message args)))
+
 (defun send-email (addresses subject body &optional from)
   (cond
     (*inhibit-smtp*
@@ -43,11 +51,12 @@
      ;;(log-message :email :debug "Inhibited mail with subject ~s to ~s" subject
      ;;             addresses)
      nil)
-    ((and (stringp addresses) (plusp (length addresses)))
-     (cl-smtp:send-email (site-email-smtp-host)
-			 (or from (site-email-admin-address))
-			 addresses subject body
-			 :authentication (site-email-smtp-authentication))
+    ((and (listp addresses) (plusp (length addresses)))
+     (format t "Sending email to: ~A~%" addresses)
+     (safe-smtp-send (site-email-smtp-host)
+		     (or from (site-email-admin-address))
+		     addresses subject body
+		     :authentication (site-email-smtp-authentication))
      t)
     (t nil)))
 
@@ -109,7 +118,7 @@
 				      (mklist users)))))
     (when (and addresses (email-to-users-p user-class))
       (loop for address in addresses
-	   do (send-email address
+	   do (send-email (mklist address)
 			  subject
 			  body
 			  from)))))
@@ -142,14 +151,9 @@
 			   (lookup-email-group groupname)))
 	 (groups (group users 100)))
     (dolist (group groups)
-      (handler-bind ((cl-smtp:rcpt-failed 
-		      #'(lambda (c)
-			  (format t "Could not send e-mail to: '~A'~%" 
-				  (cl-smtp::recipient c))
-			  (invoke-restart 'cl-smtp::ignore-recipient))))
-	(cl-smtp:send-email (site-email-smtp-host)
-			    (or from (site-email-admin-address))
-			    (or from (site-email-admin-address))
-			    subject body
-			    :bcc (mapcar #'user-email group)
-			    :authentication (site-email-smtp-authentication))))))
+      (safe-smtp-send (site-email-smtp-host)
+		      (list (or from (site-email-admin-address)))
+		      (list (or from (site-email-admin-address)))
+		      subject body
+		      :bcc (mapcar #'user-email group)
+		      :authentication (site-email-smtp-authentication)))))

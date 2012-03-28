@@ -28,7 +28,7 @@
 	  (topic-number topic)))
 
 (defun generate-forum-post-email (user forum-post)
-  (let* ((lang (or (get-preference :default-language user) "en"))
+  (let* ((lang (or (and user (get-preference :default-language user)) "en"))
 	 (translation (unless (equal (original-language forum-post) lang)
 			(get-translation forum-post lang nil)))
 	 (template (message-template-for-event :new-forum-post)))
@@ -78,7 +78,7 @@
 
 (defun generate-forum-activity-email (user since &key (max-posts 5))
   "Produce a summary of forum activity since time SINCE."
-  (let* ((lang (or (get-preference :default-language user) "en"))
+  (let* ((lang (or (and user (get-preference :default-language user)) "en"))
 	 (topics (recently-active-topics since))
 	 (template (message-template-for-event :forum-activity-summary))
 	 (new-message-count 0)
@@ -116,7 +116,7 @@
 	     (get-instances-by-class 'announcement)))
 
 (defun generate-news (user since)
-  (let* ((lang (or (get-preference :default-language user) "en"))
+  (let* ((lang (or (and user (get-preference :default-language user)) "en"))
 	 (announcements (announcements-since since)))
     (with-output-to-string (s)
       (when announcements
@@ -126,7 +126,7 @@
 
 (defun generate-featured (user since)
   (declare (ignore since))
-  (let* ((lang (or (get-preference :default-language user) "en"))
+  (let* ((lang (or (and user (get-preference :default-language user)) "en"))
 	 (features nil))
     (declare (ignore lang))
     (with-output-to-string (s)
@@ -196,7 +196,7 @@ See http://lamsight.media.mit.edu/trac/ticket/46"
             #!"No relevant posts since your last update")))
 
 (defun generate-site-update-email (user since)
-  (let* ((lang (or (get-preference :default-language user) "en"))
+  (let* ((lang (or (and user (get-preference :default-language user)) "en"))
 	 (template (message-template-for-event :site-update)))
     (when template
       (fill-template template
