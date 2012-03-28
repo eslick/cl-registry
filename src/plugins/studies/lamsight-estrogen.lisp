@@ -61,7 +61,10 @@
 			  (:p "This dialog allows you to select a time of day, and home time zone, to receive e-mail reminders.  You will also need to make sure you have not checked 'never contact' in your user preferences.")
 			  (present-preferences 
 			   :estrogen-study-reminders-enabled-p
-			   :estrogen-study-reminder-time
+			   :estrogen-study-reminder-time)
+			  (:div :style "margin-left:170px;font-size:75%;clear:both;"
+				"Please enter time as 'hour:minute am/pm'")
+			  (present-preferences 
 			   :estrogen-study-reminder-zone)))
 	      (:div :id "preferences-controls"
 		    (render-button "Foo" :class "hidden" :value #!"Foo")
@@ -77,7 +80,7 @@
 	(do-dialog #!"Estrogen Study Contact Preferences" (make-estrogen-preferences-dialog))
 	(do-information #!"You have been registered for the Estrogen Study.  A staff member from the LAM Treatment Alliance will contact you within the next 1-2 weeks by e-mail to discuss the logistics of the study.")
 	(redirect "/dashboard/collect/study"))
-      (do-information #!"We will not register you for the study at this time.  If you have any concerns please contact EstrogenStudy@lamtreatmentalliance.com or eslick@media.mit.edu with your concerns.")))
+      (do-information #!"We will not register you for the study at this time.  If you have any concerns please contact EstrogenStudy@lamtreatmentalliance.org or eslick@media.mit.edu with your concerns.")))
 
 
 (defun/cc invalid-login ()
@@ -95,7 +98,7 @@
 	(if (or (current-user t) (do-login-dialog))
 	    (if (study-patient-consented-p (get-study "LAM Estrogen Study") 
 					   (get-patient-for-user (current-user)))
-		(do-information "You have already registered for this study.  Contact EstrogenStudy@lamtreatmentalliance.com if you need more information")
+		(do-information "You have already registered for this study.  Contact EstrogenStudy@lamtreatmentalliance.org if you need more information")
 		(consent-user))
 	    (invalid-login))
 	(progn (need-to-register)

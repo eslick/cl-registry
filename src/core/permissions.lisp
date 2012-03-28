@@ -133,8 +133,6 @@
     "Users that have been allowed to edit content in order to add article translations")
 
 (defun content-editors ()
-  (select-if (lambda (user)
-	       (has-permission-p user :editor t))
-	     (get-instances-by-class 'user)))
+  (users-with-permission :editor t))
        
 

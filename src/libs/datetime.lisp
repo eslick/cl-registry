@@ -31,7 +31,7 @@
     (render-date stream utime pattern))
   (write-char #\Space stream)
   (when show-time-p 
-    (render-time stream utime pattern)))
+    (render-time stream utime)))
 
 (defun render-timestamp (stream utime &optional pattern)
   "Good for logfiles, etc.  Render universal time to stream as a timestamp"
