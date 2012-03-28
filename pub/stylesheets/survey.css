@@ -579,24 +579,25 @@ div.study-list-item .quick-help {
     position: relative;
 }
 
-A .study-list-survey-description-alink {
+.study-list-survey-name .study-list-survey-description-alink {
     display: none;
+    position: absolute;
+    z-index: 20;
+    top: 1em;
+    left: 80px;
+    width: 40em;
+    margin-top: 0.2em;
+    padding: 8px;
+    border: 1px solid grey;
+    background: #FFF;
+    color: black;
+    font-weight: normal;
+    font-size: 85%;
+    text-indent: 0;
 }
 
 A:hover .study-list-survey-description-alink {
     display: block;
-    position: absolute;
-    top: 1em;
-    left: 30px;
-    width: 60em;
-    padding: 8px;
-    text-indent: 0;
-    margin-top: 0.2em;
-    background-color: white;
-    border: 1px solid grey;
-    font-weight: normal;
-    font-size: 85%;
-    color: black;
 }
 
 .study-list-survey-name A:hover {
