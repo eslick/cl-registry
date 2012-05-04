@@ -14,17 +14,17 @@
 (define-permanent-action/cc register registry (&key magic &allow-other-keys)
   (if magic
       (destructuring-bind (message &optional valid) 
-	  (mklist (confirm-registration magic))
-	(let ((valid-p valid)
-	      (reg (find-registration magic)))
-	  (when valid-p 
-	    (make-registered-user reg)
-	    (record-event :registration-success (reg-username reg) 
-			  :user (get-user (reg-username reg)))
-;;	    (set-session-user (get-user (reg-username reg)))
-;;	    (do-dialog "" (make-role-dialog))
-	    (set-session-user nil)
-	    (finalize-registration reg))
+		  (mklist (confirm-registration magic))
+		(let ((valid-p valid)
+			  (reg (find-registration magic)))
+		  (when valid-p 
+			(make-registered-user reg)
+			(record-event :registration-success (reg-username reg) 
+						  :user (get-user (reg-username reg)))
+			;;	    (set-session-user (get-user (reg-username reg)))
+			;;	    (do-dialog "" (make-role-dialog))
+			(set-session-user nil)
+			(finalize-registration reg))
 	  (do-information message)
 	  (if valid
 	      (redirect "/dashboard")
@@ -44,7 +44,7 @@
 ;; New registration widget
 ;;
 
-(defparameter *registration-valid-days* 3)
+(defparameter *registration-valid-days* 120)
 
 (defwidget registration (composite)
   ((quickform :accessor registration-quickform :initarg :quickform :initform nil)
@@ -109,24 +109,20 @@
   (render-widget (registration-flash r))
   (if (pending-p r)
       (with-html
-	(:h1 (str #!"Thanks for registering"))
-	(:p (str #!"Thanks for registering.  A message containing a
+		(:h1 (str #!"Thanks for registering"))
+		(:p (str #!"Thanks for registering.  A message containing a
 confirmation link has been sent to your email address.")))
       (progn
-	(with-html
-	  (:div 
-	   (:h1 (str #!"Registration Instructions"))
-	   (:p (str #!"A username is a short name that will be used by
+		(with-html
+		  (:div 
+		   (:h1 (str #!"Registration Instructions"))
+		   (:p (str #!"A username is a short name that will be used by
                the system to identify you to other users.  If you are
-               concerned about privacy, please pick a username that
-               you can remember, but that doesn't include anything
-               specific to you such as your name."))
-	   (:p (str #!"A password should be at least 6 characters and include a number
-               or other non-alphabetical character."))
-	   (:p (str #!"Your e-mail will be maintained by the system and will never
-               be disclosed to anyone without your express consent.  We take
-               privacy very seriously."))
-	   (:p (str #!"To register, fill in the form below and click the \"Submit\" button, then read and scroll to the bottom of each of the three subsequent screens, and, if you agree to the conditions, click \"Accept\" on each page.  You will then receive an e-mail with instructions for completing your registration.")))))))
+               concerned about privacy, please pick a username that 
+               doesn't include anything that identifies you.  A 
+               password should be at least 6 characters and include 
+               a number or other non-alphabetical character."))
+		   (:p (str #!"To register, fill in the form below and click the \"Submit\" button, then read and scroll to the bottom of each of the three subsequent screens, and, if you agree to the conditions, click \"Accept\" on each page.  You will then receive an e-mail with instructions for completing your registration.")))))))
 
 (defun valid-registration-p (data)
   (flet ((find-field-for-slot-name (slot-name fields)
@@ -143,27 +139,27 @@ confirmation link has been sent to your email address.")))
 			 (let ((field (field-info-field f)))
 			   (view-field-slot-name field)))))))
     (let* ((fields (get-object-view-fields data 'registration-view))
-	   (username-field (find-field-for-slot-name 'username fields))
-	   (password-field (find-field-for-slot-name 'password fields))
-	   (confirm-password-field
-	    (find-field-for-slot-name 'confirm-password fields))
-	   (email-field (find-field-for-slot-name 'email fields))
-	   (alist nil))
+		   (username-field (find-field-for-slot-name 'username fields))
+		   (password-field (find-field-for-slot-name 'password fields))
+		   (confirm-password-field
+			(find-field-for-slot-name 'confirm-password fields))
+		   (email-field (find-field-for-slot-name 'email fields))
+		   (alist nil))
       (with-slots (username email password confirm-password) data
-	(when (get-instances-by-value 'user 'username username)
-	  (push (cons username-field
-		      (format nil "username ~a already taken" username))
-		alist))
-	(when (get-instances-by-value 'user 'email email)
-	  (push (cons email-field
-		      (format nil "email ~a already taken: <a href=\"/login\">forgot username or password?</a>" email))
-		alist))
-      (when (not (equal password confirm-password))
-	(push (cons password-field #!"passwords must match") alist)
-	(push (cons confirm-password-field #!"passwords must match") alist))
-      (if alist
-	(values nil alist)
-	t)))))
+		(when (get-instances-by-value 'user 'username username)
+		  (push (cons username-field
+					  (format nil "username ~a already taken" username))
+				alist))
+		(when (get-instances-by-value 'user 'email email)
+		  (push (cons email-field
+					  (format nil "email ~a already taken: <a href=\"/login\">forgot username or password?</a>" email))
+				alist))
+		(when (not (equal password confirm-password))
+		  (push (cons password-field #!"passwords must match") alist)
+		  (push (cons confirm-password-field #!"passwords must match") alist))
+		(if alist
+			(values nil alist)
+			t)))))
 
 (defun make-registration-url (request &key (host "www.lamsight.org"))
   (format nil "http://~A/?action=register&magic=~A"
@@ -194,12 +190,14 @@ message.
 				  :date (get-universal-time)
 				  :magic-key (weblocks::generate-action-code))))
       (persist-object *default-store* request)
-      (send-email email
-		  (if (string-equal (get-site-config-param :site-name) "LAMsight")
-		      #!"LAMsight Registration Confirmation"
-		      #!"Registration Confirmation")
-		  (make-registration-message-body request)))))
+      (send-registration-request request))))
 
+(defun send-registration-request (req)
+  (send-email (mklist (reg-email req))
+			  (if (string-equal (get-site-config-param :site-name) "LAMsight")
+				  #!"LAMsight Registration Confirmation"
+				  #!"Registration Confirmation")
+			  (make-registration-message-body req)))
 
 (defun confirm-registration (magic)
   ;; self-registration disabled
