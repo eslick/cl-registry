@@ -232,7 +232,9 @@
     (when (and user (user-email user))	;paranoia
       (let ((new-password (generate-password 6)))
 	(setf (user-password user) (create-sha1-password new-password))
-	(send-email (user-email user)
+	;; All users can be sent e-mail for reset (don't use send-email-to-users
+    ;; which inhibits send if user selects 'don't contact' in prefs.
+	(send-email (list (user-email user))
 		    #!"LAMsight password reset"
 		    (funcall #'format nil #!"Hello.
 

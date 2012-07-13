@@ -14,7 +14,7 @@
 				   (get-patient-for-user user))
 	'(:consent-p t))
   (record-event :estrogen-study-registration user)
-  (send-email "EstrogenStudy@lamtreatmentalliance.org"
+  (send-email (list "EstrogenStudy@lamtreatmentalliance.org")
 	      "Estrogen Study Update"
 	      (format nil "User '~A' just registered for the study" (username user))))
 
@@ -27,7 +27,7 @@
 				       (get-patient-for-user user))
 	    '(:consent-p nil))
       (remove-permission user :estrogen-study-activated)
-      (send-email "EstrogenStudy@lamtreatmentalliance.org"
+      (send-email (list "EstrogenStudy@lamtreatmentalliance.org")
 		  "Estrogen Study Update"
 		  (format nil "User '~A' just withdrew from the Estrogen study" (username user)))
       (redirect (weblocks::request-uri*)))))

@@ -58,7 +58,8 @@
 		     addresses subject body
 		     :authentication (site-email-smtp-authentication))
      t)
-    (t nil)))
+    (t (format t "Unable to send e-mail to ~A, not a list?~%" addresses)
+	   nil)))
 
 (defparameter *enable-email-whitelist* nil)
 (defparameter *user-whitelist* '("eslick" "kmcorbett" "wws" "rme" "clozure" "jaj"))
