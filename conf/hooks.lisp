@@ -45,7 +45,7 @@
   "Primary interface for defining hooks into system events"
   (when (stringp (first thunk))
     (setf thunk (rest thunk)))
-  `(eval-when (:load-toplevel)
+  `(eval-when (:load-toplevel :execute)
      (add-hook ,(as-keyword type)
 	       ,(as-keyword name)
 	       ,(cond ((and (= (length thunk) 1)

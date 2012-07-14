@@ -331,14 +331,23 @@
 	'(:lam-patient-p :tsc-patient-p)))
 
 
+(defun time-zone-select2 ()
+  (sort 
+   (mapcar (lambda (entry)
+			 (destructuring-bind (location . tz) entry
+			   (cons (format nil "~A" location (local-time::timezone-name tz))
+					 location)))
+		   (hash-items local-time::*location-name->timezone*))
+   #'string>
+   :key #'car))
+
 (defun time-zone-offset (tz)
-  (find tz *time-zones* :key #'second))
+  (third (find tz *time-zones* :key #'first :test #'equal)))
 
 (defun time-zone-select ()
-  (mapcar (f (entry)
-	    (cons (format nil "~A (~A)" (first entry) (second entry))
-		  (second entry)))
-	  *time-zones*))
+  (mapcar (lambda (entry)
+			(cons (first entry) (first entry)))
+		  *time-zones*))
 
 (defparameter *time-zones*
   '(("Australian Central Standard Time" "ACST" "+09:30")

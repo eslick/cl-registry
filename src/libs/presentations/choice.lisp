@@ -43,10 +43,12 @@
   (if (null lisp-value)
       nil
       (let ((choice (find lisp-value choices :key #'cdr :test test-function)))
-	(unless choice
-	  (error "Value ~S not a member of the set ~S."
-		 lisp-value (mapcar #'cdr choices)))
-	(car choice))))
+		(unless choice
+		  (cerror 
+		   "Continue to accept default:"
+		   "Value ~S not a member of the set ~S."
+		   lisp-value (mapcar #'cdr choices)))
+		(car choice))))
 
 ;;;; * choice type
 
