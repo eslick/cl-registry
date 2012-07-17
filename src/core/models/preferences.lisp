@@ -308,7 +308,7 @@
 (def-preference estrogen-study-reminder-zone (member-select-presentation)
   :prompt #!"Your home time zone"
   :choices (time-zone-select)
-  :lisp-value "EST")
+  :lisp-value nil)
 
 ;;
 ;; Some preference-specific predicates

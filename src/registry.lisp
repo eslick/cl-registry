@@ -41,7 +41,7 @@
   "Stops the application by calling 'stop-weblocks'."
   ;; Run hooks
   (funcall-hook :stop-app)
-  (stop-logging)
+;;  (stop-logging)
   (stop-webapp 'registry))
 
 (defun reload-registry (&key debug &allow-other-keys)

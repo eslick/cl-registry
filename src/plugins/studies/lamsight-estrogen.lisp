@@ -45,12 +45,12 @@
 		(make-local-dependency :script "preferences")))
 
 (defun make-estrogen-preferences-dialog ()
-  (handler-bind ((simple-error #'continue))
+  (handler-bind ((error #'continue))
 	(make-instance 'estrogen-preferences-widget)))
 
 (defmethod render-widget-body ((widget estrogen-preferences-widget) &rest args)
   (declare (ignore args))
-  (handler-bind ((simple-error #'continue))
+  (handler-bind ((error #'continue))
 	(let ((*current-widget* widget))
 	  (declare (special *current-widget*))
 	  (setf (prior-rendered-preferences widget) nil)
