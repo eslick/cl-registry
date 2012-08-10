@@ -153,7 +153,7 @@
 	 (groups (group users 100)))
     (dolist (group groups)
       (safe-smtp-send (site-email-smtp-host)
-		      (list (or from (site-email-admin-address)))
+		      (or from (site-email-admin-address))
 		      (list (or from (site-email-admin-address)))
 		      subject body
 		      :bcc (mapcar #'user-email group)

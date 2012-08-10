@@ -431,6 +431,7 @@
 	 (for-study (get-preference :contact-for-study user))
 	 (for-verify (get-preference :contact-for-data-verification user))
 	 (methods (get-preference :contact-methods user))
+	 (email (user-email user))
 	 (email-p (member "email" methods :test #'equal))
 	 (phone-p (member "phone" methods :test #'equal))
 	 (mail-p (member "mail" methods :test #'equal))
@@ -501,6 +502,9 @@
 	     (:tr
 	      (:td "Home Phone:")
 	      (:td (esc home-phone)))))
+	  (htm (:tr
+			(:td "Email:")
+			(:td (esc email))))
 	  (unless (blankp work-phone)
 	    (htm
 	     (:tr

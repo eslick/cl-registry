@@ -25,7 +25,7 @@
       (setf (get-preference :estrogen-study user) nil)
       (setf (study-patient-consented-p (get-study "LAM Estrogen Study")
 				       (get-patient-for-user user))
-	    '(:consent-p nil))
+			'(:consent-p nil))
       (remove-permission user :estrogen-study-activated)
       (send-email (list (get-site-config-param :estrogen-study-email))
 		  "Estrogen Study Update"
@@ -112,8 +112,8 @@
 
 (defun clear-estrogen-background-survey (user)
   (let* ((survey (get-survey "Estrogen Study Background"))
-	 (questions (all-survey-questions survey))
-	 (patient (get-patient-for-user user)))
+		 (questions (all-survey-questions survey))
+		 (patient (get-patient-for-user user)))
     (with-transaction ()
       (loop for question in questions
 		 do (drop-instances 
@@ -127,7 +127,7 @@
 (defun estrogen-study-patients ()
   (let ((study (get-study "LAM Estrogen Study")))
 	(select-if (lambda (user)
-				 (awhen (get-patient-for-user user)N
+				 (awhen (get-patient-for-user user)
 				   (study-patient-consented-p study it)))
 			   (all-users))))
 
@@ -136,35 +136,39 @@
 (defun zone-offset (zone)
   (awhen (time-zone-offset zone)
     (let ((num (parse-integer it :start 1 :end 3)))
-	  (if (eq (char it 0) #\-)
-		  (- num) num))))
+	  (if num
+		  (if (eq (char it 0) #\-)
+			  (- num) num)
+		  -5))))
 
 (defun try-field-extractions (time)
   (ppcre:register-groups-bind (h m ap) (*parse-time* time)
-    (acond ((and h m)
-			(list h m ap))
-		   ((parse-integer time :start 0 :junk-allowed t)
-            (list it 0 (when (ppcre:scan "pm" time) t)))
-           (t nil))))
+    (if (and h m)
+		(list h m ap)
+		(let (hour (parse-integer time :start 0 :junk-allowed t))
+		  (if hour (list it 0 (when (ppcre:scan "pm" time) "p"))
+			  nil)))))
 
 
 (defun extract-target-offset (time)
   (awhen (try-field-extractions time)
    (destructuring-bind (h m pm) it
  	 (let* ((hour (parse-integer h))
- 		    (hour (mod (if (and pm (< hour 12))
+ 		    (hour (mod (if (and (equal pm "p") (< hour 12))
 						   (+ hour 12) hour) 24))
 		    (min (if m (parse-integer m) 0)))
 	   (+ (* hour 3600)
 		  (* min 60))))))
 
 (defun user-offset-seconds (zone)
-  (let ((zoff (zone-offset zone)))
+  (let* ((zoff (zone-offset zone))
+		 (serv -5)
+		 (diff (- zoff serv)))
     (when zoff
 	  (mvbind (s1 m1 h1 d1 m1 y1 dow1 dst-p tz1) (get-decoded-time)
-  	   (mvbind (s m h) (decode-universal-time (get-universal-time) 0)
+  	   (mvbind (s m h _ _ _ _ dstp-p) (decode-universal-time (get-universal-time))
          (let ((dst (if dstp-p 1 0)))
-		   (+ (* (mod (+ h zoff dst) 24) 3600)
+		   (+ (* (mod (+ h diff) 24) 3600)
 			  (* m 60)
 			  s)))))))
 
@@ -172,20 +176,33 @@
   (handler-case 
 	  (when (get-preference :estrogen-study-reminders-enabled-p user)
 		(let* ((time (get-preference :estrogen-study-reminder-time user))
-			   (zone (get-preference :estrogen-study-reminder-zone user))
-			   (target (extract-target-offset time))
-			   (now (user-offset-seconds zone)))
-;;		  (format t "targ: ~A now: ~A~%" target now)
-		  (when (and target now (<= (abs (- target now)) 60))
-			user)))
+			   (zone (get-preference :estrogen-study-reminder-zone user)))
+		  (when (and time zone)
+			(let ((target (extract-target-offset time))
+				  (now (user-offset-seconds zone)))
+			  (when (and target now)
+;;				(format t "user: ~A targ: ~A now: ~A~%" (username user) target now)
+				(when (and target now (<= (abs (- target now)) 60))
+				  user))))))
 	(error (c) (format t "~A~%" c))))
 
 (defun send-estrogen-reminder (users)
   (when (> (length users) 0)
 	(send-email-to-users users
-					   #!"Subject"
-					   #!"Body"
-					   :from (get-site-config-param :estrogen-study-enabled-p))))
+					   #!"Estrogen Study Reminder"
+					   (format nil "Dear Participant, 
+
+Thank you for contributing to the LAM Estrogen Study. As requested, this is a reminder to complete your daily measurements and enter the results into the appropriate survey on LAMsight.  If you have any questions please contact us at: EstrogenStudy@LAMTreatmentAlliance.org. 
+
+If at any time you wish to stop receiving this reminder email please update your settings by clicking on 'manage reminder preferences' from the 'View Studies' page and deselecting the 'enable reminders' box.
+
+You can manage your reminder preferences on LAMsight at: https://www.lamsight.org/dashboard/collect/study
+
+Thank you,
+Estrogen Study Staff
+~A
+" (get-site-config-param :estrogen-study-email))
+					   :from (get-site-config-param :estrogen-study-email))))
 
 (define-system-event-hook estrogen-study-reminders (system-timer)
   (when (get-site-config-param :estrogen-study-enabled-p)
