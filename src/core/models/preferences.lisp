@@ -101,6 +101,13 @@
                                              :query-name ,(string-downcase (symbol-name name))))))
        ',name)))
 
+;; UNTESTED
+(defun set-preference-defaults (user)
+  (dohash (preference *preferences*)
+	(let ((presentation (apply (presentation-maker preference) nil)))
+	  (awhen (lisp-value presentation)
+		(setf (get-preference (name preference) user) it)))))
+
 ;; =============================================================================
 ;;  Form handling
 ;; =============================================================================

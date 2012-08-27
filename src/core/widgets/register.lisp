@@ -17,22 +17,25 @@
 		  (mklist (confirm-registration magic))
 		(let ((valid-p valid)
 			  (reg (find-registration magic)))
-		  (when valid-p 
-			(make-registered-user reg)
-			(record-event :registration-success (reg-username reg) 
-						  :user (get-user (reg-username reg)))
-			;;	    (set-session-user (get-user (reg-username reg)))
-			;;	    (do-dialog "" (make-role-dialog))
-			(set-session-user nil)
-			(finalize-registration reg))
-	  (do-information message)
-	  (if valid
-	      (redirect "/dashboard")
-	      (redirect "/"))))
+		  (do-information message)
+		  (if valid-p 
+			  (progn
+				(make-registered-user reg)
+				(record-event :registration-success (reg-username reg) 
+							  :user (get-user (reg-username reg)))
+				;;	    (set-session-user (get-user (reg-username reg)))
+				;;	    (do-dialog "" (make-role-dialog))
+				(set-preference-defaults (get-user (reg-username reg)))
+				(finalize-registration reg)
+				(hunchentoot::remove-session hunchentoot:*session*)
+				(set-session-user nil)
+				(redirect "/dashboard"))
+			  (progn
+				(redirect "/")))))
       (progn
-	(awhen (do-dialog "" (make-instance 'registration))
-	  (registration-form-accept it))
-	(redirect "/"))))
+		(awhen (do-dialog "" (make-instance 'registration))
+		  (registration-form-accept it))
+		(redirect "/"))))
 
 ;;
 ;; We can hack the update problem for now by registering a post-render action

@@ -116,8 +116,8 @@
 		 (patient (get-patient-for-user user)))
     (with-transaction ()
       (loop for question in questions
-		 do (drop-instances 
-	     (get-user-answers question patient))))))
+		 do (mapc #'drop-instances
+				  (get-user-answers question patient))))))
 
 (defun activate-estrogen-study (user)
   (clear-estrogen-background-survey user)
@@ -145,7 +145,7 @@
   (ppcre:register-groups-bind (h m ap) (*parse-time* time)
     (if (and h m)
 		(list h m ap)
-		(let (hour (parse-integer time :start 0 :junk-allowed t))
+		(let ((hour (parse-integer time :start 0 :junk-allowed t)))
 		  (if hour (list it 0 (when (ppcre:scan "pm" time) "p"))
 			  nil)))))
 
