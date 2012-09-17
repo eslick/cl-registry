@@ -82,10 +82,10 @@
   "Get the answer to question for user; optionally use ID"
   (awhen (get-user-answers question user)
     (if id 
-	(find id it :key #'answer-id)
-    (if (diary-question-p question)
-	(most #'answer-id it)
-	(first it)))))
+		(find id it :key #'answer-id)
+		(if (diary-question-p question)
+			(most #'answer-id it)
+			(first it)))))
 
 (defun get-answers (question)
   "Answers associated with question"

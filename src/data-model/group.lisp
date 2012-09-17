@@ -191,7 +191,7 @@
 (defun group-answered-p (user group)
   (let ((questions (group-questions group)))
     (or (null questions)
-	(some (curry2 'get-user-answers user) questions))))
+		(some (curry2 'get-user-answers user) questions))))
 
 ;;
 ;; Group linking

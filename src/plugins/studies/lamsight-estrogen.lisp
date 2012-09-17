@@ -127,9 +127,166 @@
 (defun estrogen-study-patients ()
   (let ((study (get-study "LAM Estrogen Study")))
 	(select-if (lambda (user)
-				 (awhen (get-patient-for-user user)
+				 (awhen (and (has-preference-value-p user :lam-patient-p t) (get-patient-for-user user))
 				   (study-patient-consented-p study it)))
 			   (all-users))))
+
+(defun user-has-answer? (user question val)
+  (let ((ans (latest-answer question (get-patient-for-user user))))
+	(and ans (eq (value ans) val))))
+
+(defun non-menopausal? (user)
+  (user-has-answer? user (get-question "Are you post- or peri-menopausal") nil))
+
+(defun has-regular-period? (user)
+  (user-has-answer? user (get-question "Are your periods regular?") t))
+
+(defun answer-distribution (question users)
+  (compute-distribution
+   (mapcar (lambda (u)
+			 (value (latest-answer question (get-patient-for-user u))))
+		   users)))
+
+;; Generate data
+
+(defparameter *report-questions* 
+  '(("At what age did you start having a period?" "Age Started Period")
+	("Are your periods regular?" "Regular?")
+	("How many days is your menstrual cycle?" "Cycle Length")
+	("For how many days do you bleed each month?" "Days Bleeding")
+	("Do you experience any difference in your breathing or pain in your body at different parts of your monthly cycle?" "Cyclical Symptoms?")
+	("Are you post- or peri-menopausal" "Menopause?")
+	("At what age did you stop getting regular periods?" "Age of Menopause")
+	("Have you ever been on hormone replacement therapy?" "HRT?")
+	("Are you still taking birth control pills?" "On Birth Control")
+	("Have you ever been pregnant?" "Ever pregnant?")
+    ("Do you have children?" "Children?")
+	("Have you had ovarian surgery?" "Ovarian Surgery?")
+	("Have you ever had your uterus removed or other uterine surgery?" "Uterine Surgery?")
+	("Have you ever used female hormones other than oral contraceptives?" "Hormones?")
+	("Are you currently using over-the-counter hormone replacements or to treat post-menopausal symptoms?" "OTC HRT?")
+	("Are you currently taking any prescription medications?" "Medications?")
+	("Please rate your average level of daily stress" "Stress level")
+	("Do you exercise?" "Exercise?")
+	("How many glasses of alcohol do you currently consume per week?" "Alcohol/week")
+	("Have you noticed an effect on your breathing from these interventions?" "CAM Success?")))
+
+(defun question-rec (entry)
+  (destructuring-bind (text label) entry
+	(cons (get-question text) label)))
+
+(defun patient-entry (question patient)
+  (let ((ans (latest-answer question patient)))
+	(if ans
+		(let ((result (value ans)))
+		  (cond ((eq result t) "yes")
+				((eq result nil)"no")
+				(t result)))
+		nil)))
+
+(defun patient-csv (stream users)
+  (let ((patients (mapcar #'get-patient-for-user users))
+		(qrecs (mapcar #'question-rec *report-questions*)))
+	(princ "Username," stream)
+	(loop for (question . label) in qrecs do
+		   (format stream "~A~A" label ","))
+	(loop for patient in patients do
+		 (print (patient-username patient) stream)
+		 (princ "," stream)
+		 (progn 
+		   (loop for (question . label) in qrecs do
+				(let ((value (patient-entry question patient)))
+				  (if value
+					  (format stream "\"~A\"~A" (patient-entry question patient) ",")
+					  (format stream "~A" ","))))))))
+
+(defun print-patient-csv (users)
+  (with-string-stream (stream)
+    (patient-csv stream users)))
+
+(defun dump-patient-csv (filename users)
+  (let ((path (merge-pathnames 
+			   (make-pathname :name filename :type "csv")
+			   (registry-relative-path '(".")))))
+	(with-open-file (stream path :direction :output :if-exists :supersede :external-format :utf-8)
+	  (patient-csv stream users))))
+
+;; (answer-distribution (get-question "Are your periods regular?")
+;;    (select-if non-menopausal? (estrogen-study-patients)))
+;; REGISTRY> (estrogen-study-patients)
+;; (#<USER (80) 'saramelloni'> #<USER (334) 'lucky'> #<USER (354) 'M.Luz'> #<USER (502) 'mcfoshay'> #<USER (736) 'AHL01'> #<USER (818) 'zsutherland'> #<USER (853) 'slgisme'> #<USER (2391) 'MiriS'> #<USER (2629) 'jennpeck77'> #<USER (2873) 'szaboteresa'> #<USER (2881) 'Kia'> #<USER (2893) 'tikishla'> #<USER (21912) 'jbdoty'> #<USER (22761) 'anniesek'> #<USER (24343) 'Jen'> #<USER (25906) 'Jennifer'> #<USER (26404) 'cat_walk'> #<USER (26964) 'Sumyue'> #<USER (28184) 'Charlotte smith'> #<USER (30943) 'Mountain Girl'> #<USER (36607) 'Cal'sGal'> #<USER (37708) 'rgray1007'> #<USER (38051) 'ezampino'> #<USER (38069) 'lucia.laugwitz'> #<USER (38425) 'sharonmunoz2003'> #<USER (39199) 'Marion'> #<USER (39272) 'Pepper81'> #<USER (39444) 'louwarts@hetnet.nl'> #<USER (39518) 'porkchop'> #<USER (41166) 'Anke'> #<USER (45705) 'clburke'> #<USER (46757) 'sitg'> #<USER (46800) 'ellsbells'> #<USER (47326) 'Pajarito'> #<USER (49019) 'shirlybenhur'> #<USER (49719) 'maureenkmccarthy'>)
+;; REGISTRY>  (answer-distribution (get-question "Are your periods regular?")
+;;                (select-if #'non-menopausal? (estrogen-study-patients)))
+;; ((T . 14) (NIL . 13))
+;; REGISTRY>  (answer-distribution (get-question "Are your periods regular?")
+;;                (select-if (compose #'has-regular-period? #'non-menopausal? (estrogen-study-patients))))
+			   
+
+;; ; No value
+;; REGISTRY>  (answer-distribution (get-question "Are your periods regular?")
+;;                (select-if (compose #'has-regular-period? #'non-menopausal?) (estrogen-study-patients)))
+			   
+
+;; ; No value
+;; REGISTRY>  (answer-distribution (get-question "Are your periods regular?")
+;;                (select-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients))))
+			   
+;; ((T . 14))
+;; REGISTRY>  (answer-distribution (get-question "How many days is your menstrual cycle?")
+;;                (select-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients))))
+			   
+;; ((30 . 4) (28 . 4) (29 . 2) (4 . 1) (25 . 1) (27 . 1) (289 . 1))
+;; REGISTRY>  (answer-distribution (get-question "How many days is your menstrual cycle?")
+;;                (filter-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients))))
+			   
+;; ((0 . 2) (28 . 2) (35 . 1) (1/2 . 1) (21 . 1) (8 . 1) (30 . 1) (27 . 1) (32 . 1) (40 . 1) (26 . 1))
+;; REGISTRY>  (answer-distribution (get-question "How many days do you bleed each month?")
+;;                (select-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients))))
+			   
+;;  (answer-distribution (get-question "For how many days do you bleed each month?")
+;;                (select-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients))))
+			   
+;; ((5 . 5) (4 . 4) (6 . 2) (7 . 2) (8 . 1))
+;; REGISTRY> (sort (answer-distribution (get-question "For how many days do you bleed each month?")
+;;                (filter-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients)))) #'< :key first)
+			   
+
+;; ; No value
+;; REGISTRY> (sort (answer-distribution (get-question "For how many days do you bleed each month?")
+;;                (filter-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients)))) #'< :key #'first)
+			   
+;; ((0 . 2) (5/7 . 1) (3 . 1) (4 . 2) (5 . 4) (6 . 1) (7 . 1) (8 . 1))
+;; REGISTRY> (sort (answer-distribution (get-question "For how many days do you bleed each month?")
+;;                (select-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients)))) #'< :key #'first)
+			   
+;; ((4 . 4) (5 . 5) (6 . 2) (7 . 2) (8 . 1))
+;; REGISTRY> (sort (answer-distribution (get-question "How many days is your menstrual cycle?")
+;;                (select-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients)))) #'< :key #'first)
+			   
+;; ((4 . 1) (25 . 1) (27 . 1) (28 . 4) (29 . 2) (30 . 4) (289 . 1))
+;; REGISTRY> (sort (answer-distribution (get-question "For how many days do you bleed each month?")
+;;                (filter-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients)))) #'< :key #'first)
+			   
+;; ((0 . 2) (5/7 . 1) (3 . 1) (4 . 2) (5 . 4) (6 . 1) (7 . 1) (8 . 1))
+;; REGISTRY> (sort (answer-distribution (get-question "How many days is your menstrual cycle?")
+;;                (filter-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients)))) #'< :key #'first)
+			   
+;; ((0 . 2) (1/2 . 1) (8 . 1) (21 . 1) (26 . 1) (27 . 1) (28 . 2) (30 . 1) (32 . 1) (35 . 1) (40 . 1))
+;; REGISTRY> (sort (answer-distribution (get-question "Have you had ovarian surgery?")
+;;                (filter-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients)))) #'< :key #'first)
+			   
+
+;; ; No value
+;; REGISTRY> (answer-distribution (get-question "Have you had ovarian surgery?")
+;;                (filter-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients))))
+			   
+;; ((NIL . 10) (T . 3))
+;; REGISTRY> (answer-distribution (get-question "Have you had ovarian surgery?")
+;;                (select-if #'has-regular-period? (select-if #'non-menopausal? (estrogen-study-patients))))
+			   
+;; ((NIL . 14))
+;; REGISTRY> 
+;; 
 
 (defparameter *parse-time* "(\\d.*):(\\d.*) ([a|p])m")
 

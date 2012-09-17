@@ -92,7 +92,7 @@
 (defparameter *archive-models* 
   '(center clinician patient
     study survey survey-group
-    question answer    
+    question answer answer-history
     consent-history))
 
 (defun dump-filename (dir)
@@ -109,9 +109,9 @@
 (defmethod render-widget-body ((admin admin-dashboard) &rest initargs)
   (declare (ignore initargs))
   (with-html
-    (render-link (f* (dump-data-models "/home/lta/backup"))
+    (render-link (f* (dump-data-models "/var/backup"))
 		 "Dump the database")
-    "to /home/lta/backup"
+    "to /var/backup"
     ;; Login as another user
     (:br)
     (render-link
