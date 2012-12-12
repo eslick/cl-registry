@@ -10,6 +10,9 @@ Event.onReady(function() {
 Event.addBehavior.reassignAfterAjax = true;
 
 Event.addBehavior({
+	'div.inline-trigger input[type=radio]:click' : function (e) {
+//        console.log('clicked');
+	},
     'div.inline-trigger input[type=checkbox]:click' : function (e) {
 	var element = Event.element(e);
         element.value = element.checked ? 't' : 'nil';
@@ -24,24 +27,24 @@ Event.addBehavior({
 //    },
 // NEW
     'div.inline-trigger input[type=radio]:change' : function (e) {
-	var element = Event.element(e);
-	if (!element.match('input[type=radio]') && 
-            !element.match('input[type=checkbox]')) {
+	  var element = Event.element(e);
+	  if (!element.match('input[type=radio]') && 
+          !element.match('input[type=checkbox]')) {
 	    updateAnswersOnChange (element.identify());
-	}
+	  }
     },
     'div.inline-trigger input[type=radio]:click' : function (e) {
-	updateAnswersOnChange (Event.element(e).identify());
+      updateAnswersOnChange (Event.element(e).identify());
     },
-    'label.radio input:click' : function (e) {
-	updateAnswersOnChange (Event.element(e).identify());
+    'div.inline-trigger label.radio input:click' : function (e) {
+	  updateAnswersOnChange (Event.element(e).identify());
     },
     'div.inline-trigger select:change' : function (e) {
-	updateAnswersOnChange (Event.element(e).identify());
-    },
-    'div.inline-trigger textarea:change' : function (e) {
-	updateAnswersOnChange (Event.element(e).identify()); 
+	  updateAnswersOnChange (Event.element(e).identify());
     }
+//    'div.inline-trigger textarea:change' : function (e) {
+//	updateAnswersOnChange (Event.element(e).identify()); 
+//    }
 });
 
 
@@ -52,6 +55,7 @@ function updateAnswersOnChange (id) {
     var action_string = action[0].getAttribute('value');
 
     inFlightID = inFlightID + 1;
+    console.log(inFlightID);
     customInitiateFormAction(action_string, $('survey-form'), "p", id);
 //    customInitiateFormAction(action_string, $('survey-form'), "p", document.activeElement.identify());
 }

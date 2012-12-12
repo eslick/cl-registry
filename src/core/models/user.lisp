@@ -56,11 +56,12 @@
 
 (defun drop-user (user)
   "How to handle user 'unregistration'"
-  (drop-instances (get-instances-by-value 'answer 'user user))
-  (drop-instances (get-instances-by-value 'survey-state 'user user))
-  (awhen (get-patient-for-user user)
-    (drop-instance it))
-  (drop-instance user))
+  (let ((patient (get-patient-for-user user)))
+    (assert patient)
+	(drop-instances (get-instances-by-value 'answer 'user patient))
+	(drop-instance patient)
+	(drop-instances (get-instances-by-value 'survey-state 'user user))
+	(drop-instance user)))
 
 
 ;;
@@ -151,9 +152,9 @@ language and country preferences."
             (cond
               ((and language country)
                (set-locale (format nil "~A_~A"
-                                   (string-downcase language)
-                                   (string-upcase country))))
-              (language
+								   (string-downcase language)
+								   (string-upcase country))))
+              ((and language (not (eq language "en")))
                (set-locale (string-downcase language)))
               (country
                ;; FIXME: this is so wrong
@@ -165,6 +166,7 @@ language and country preferences."
                  (locale-country-case
                   ("US" "en_US")
                   ("DE" "de_DE")
+                  ("CH" "de_DE")
                   ("IT" "it_IT")
                   ("FR" "fr_FR"))))
               (t (set-locale "en_US"))))))))

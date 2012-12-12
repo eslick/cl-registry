@@ -147,12 +147,15 @@
 		  ((and (eq (requires-consent-p study) :estrogen)
 			(not (study-patient-consented-p study patient)))
 		   (htm 
-		    (render-link "estrogen-study-signup" "Register for Study" :class "register-link")))
+			"Thank you for your interest in the LAM Estrogen Study.  We have reached full enrollment and are no longer accepting new registrations.  Once the Study has concluded we will post a summary of the results on LAMsight.  We are very grateful for your willingness to participate and hope that you will continue to volunteer for future studies."))
+;;		    (render-link "estrogen-study-signup" "Register for Study" :class "register-link")))
 		  ((and (eq (requires-consent-p study) :estrogen)
 			(study-patient-consented-p study patient)
 			(not (estrogen-study-activated-p)))
 		   (htm 
-		    "Thank you for your interest in the LAM Dyspnea and Hormone Study.  Your registration request is being processed and a staff member will be contacting you by email with further instructions.  The recruiting period for this study ends on September 3rd, 2012.  If you have not heard from us within 2 weeks of this date or have any questions please contact us at: <a href=\"mailto:EstrogenStudy@LAMTreatmentAlliance.org\">EstrogenStudy@LAMTreatmentAlliance.org</a>"))
+		    "Thank you for your interest in the LAM Estrogen Study.  We have reached full enrollment and are no longer accepting new registrations.  Once the Study has concluded we will post a summary of the results on LAMsight.  We are very grateful for your willingness to participate and hope that you will continue to volunteer for future studies."
+			;; "Thank you for your interest in the LAM Dyspnea and Hormone Study.  Your registration request is being processed and a staff member will be contacting you by email with further instructions.  The recruiting period for this study ends on September 3rd, 2012.  If you have not heard from us within 2 weeks of this date or have any questions please contact us at: <a href=\"mailto:EstrogenStudy@LAMTreatmentAlliance.org\">EstrogenStudy@LAMTreatmentAlliance.org</a>"
+			))
 		  ((and (patient-consent-form-needed-p widget)
 			(neq (requires-consent-p study) :estrogen))
 		   ;; Display link to consent form or the form itself
@@ -210,6 +213,8 @@
 		  ;; Generate list of survey items
 		  (t
 		   (htm
+			(:p :style "margin-left: 1.5em; color: #303030; font-size: small; line-height: 120%;"
+				"Thank you for your participation in the LAM Estrogen Study.  It is now time for you to begin collecting measurements and filling out the two daily diaries, the Estrogen Study Diary and the Dyspnea Diary, which can be found below.  Please contact us if you have any questions at: " (:a :href "mailto:EstrogenStudy@LAMTreatmentAlliance.com" "EstrogenStudy@LAMTreatmentAlliance.com") " Thank you!")
 		    (:b "Study Surveys and Diaries")
 		    (:UL
 		     :CLASS "study-list-survey-list"

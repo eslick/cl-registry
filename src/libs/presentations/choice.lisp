@@ -83,12 +83,12 @@
 (defmethod update-presentation ((presentation member-select-presentation) args)
   (let ((provided-value (getf-all args (as-argument-keyword (query-name presentation)))))
     (if (and (or (null provided-value)
-		 (equal provided-value '(""))
-		 (equal provided-value ""))
-	     (not (required presentation)))
-	(progn (setf (client-value presentation) nil)
-	       (values t nil))
-	(call-next-method))))
+				 (equal provided-value '(""))
+				 (equal provided-value ""))
+			 (not (required presentation)))
+		(progn (setf (client-value presentation) nil)
+			   (values t nil t))
+		(call-next-method))))
 
 
 ;;;; * multi choice

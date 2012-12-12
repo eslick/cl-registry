@@ -261,9 +261,8 @@
 
 (defmethod print-object ((o patient) stream)
   (print-unreadable-object (o stream :type t)
-    (format stream "oid:~a ~a ~a"
-            (object-id o)
-            (id o)
+    (format stream "mid:~a ~a"
+            (mid o)
             (short-name (center o)))))
 
 (defun make-patient (id center &key external-id user)

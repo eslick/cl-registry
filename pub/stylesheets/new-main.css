@@ -46,7 +46,7 @@ fieldset { margin-bottom: 3px; border: 0px none; }
 */
 /* progress bar */
 
-div#ajax-progress
+#ajax-progress
 {
   position: absolute;
   left: 200px;

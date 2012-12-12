@@ -94,6 +94,9 @@
 
 
 (define-permanent-action/cc estrogen-study-signup registry (&key &allow-other-keys)
+;;  (do-choice
+;;	"Thank you for your interest in the LAM Estrogen Study.  We have reached full enrollment and are no longer accepting new registrations.  Once the Study has concluded we will post a summary of the results on LAMsight.  We are very grateful for your willingness to participate and hope that you will continue to volunteer for future studies." '(:Continue)))
+
   (when (eq (do-dialog "" (estrogen-study-intro)) :Continue)
     (if (or (current-user t)
 	    (eq (do-choice "Are you a registered LAMsight user?" '(:Yes :No)) :Yes))
@@ -105,7 +108,6 @@
 	    (invalid-login))
 	(progn (need-to-register)
 	       (redirect "/?action=register")))))
-
 
 (defun estrogen-study-activated-p ()
   (has-permission-p (current-user) :estrogen-study-activated t))
@@ -126,10 +128,10 @@
 
 (defun estrogen-study-patients ()
   (let ((study (get-study "LAM Estrogen Study")))
-	(select-if (lambda (user)
-				 (awhen (and (has-preference-value-p user :lam-patient-p t) (get-patient-for-user user))
-				   (study-patient-consented-p study it)))
-			   (all-users))))
+	(ensure-transaction ()
+	  (select-if (lambda (user)
+				   (has-permission-p user :estrogen-study-activated t))
+			     (all-users)))))
 
 (defun user-has-answer? (user question val)
   (let ((ans (latest-answer question (get-patient-for-user user))))
@@ -165,7 +167,8 @@
 	("Have you ever had your uterus removed or other uterine surgery?" "Uterine Surgery?")
 	("Have you ever used female hormones other than oral contraceptives?" "Hormones?")
 	("Are you currently using over-the-counter hormone replacements or to treat post-menopausal symptoms?" "OTC HRT?")
-	("Are you currently taking any prescription medications?" "Medications?")
+	("Are you currently taking any prescription medications?" "On medications?")
+	("Please list the prescription medications you are taking" "Med List")
 	("Please rate your average level of daily stress" "Stress level")
 	("Do you exercise?" "Exercise?")
 	("How many glasses of alcohol do you currently consume per week?" "Alcohol/week")
@@ -186,11 +189,12 @@
 
 (defun patient-csv (stream users)
   (let ((patients (mapcar #'get-patient-for-user users))
-		(qrecs (mapcar #'question-rec *report-questions*)))
+        (qrecs (mapcar #'question-rec *report-questions*)))
 	(princ "Username," stream)
 	(loop for (question . label) in qrecs do
-		   (format stream "~A~A" label ","))
-	(loop for patient in patients do
+	     (format stream "~A~A" label ","))
+	  (loop for patient in patients do
+         (ensure-transaction (:read-uncommitted t :degree2 t)
 		 (print (patient-username patient) stream)
 		 (princ "," stream)
 		 (progn 
@@ -198,7 +202,7 @@
 				(let ((value (patient-entry question patient)))
 				  (if value
 					  (format stream "\"~A\"~A" (patient-entry question patient) ",")
-					  (format stream "~A" ","))))))))
+					  (format stream "~A" ",")))))))))
 
 (defun print-patient-csv (users)
   (with-string-stream (stream)
@@ -339,7 +343,7 @@
 				  (now (user-offset-seconds zone)))
 			  (when (and target now)
 ;;				(format t "user: ~A targ: ~A now: ~A~%" (username user) target now)
-				(when (and target now (<= (abs (- target now)) 60))
+				(when (and target now (<= (abs (- target now)) 30))
 				  user))))))
 	(error (c) (format t "~A~%" c))))
 
@@ -347,13 +351,18 @@
   (when (> (length users) 0)
 	(send-email-to-users users
 					   #!"Estrogen Study Reminder"
-					   (format nil "Dear Participant, 
+					   (format nil "Hello,
 
-Thank you for contributing to the LAM Estrogen Study. As requested, this is a reminder to complete your daily measurements and enter the results into the appropriate survey on LAMsight.  If you have any questions please contact us at: EstrogenStudy@LAMTreatmentAlliance.org. 
+Thank you for contributing to the LAM Estrogen Study. As requested, this is a reminder to complete your daily measurements on LAMsight:
 
-If at any time you wish to stop receiving this reminder email please update your settings by clicking on 'manage reminder preferences' from the 'View Studies' page and deselecting the 'enable reminders' box.
+Dyspnea Diary (https://www.lamsight.org/dashboard/collect/survey/19254/)
+Daily Diary   (https://www.lamsight.org/dashboard/collect/survey/26209/)
 
-You can manage your reminder preferences on LAMsight at: https://www.lamsight.org/dashboard/collect/study
+You will be prompted to enter your username and password before you are taken to the diary.  Please don't forget to click on 'add new entry' to enter fresh data for the current day.
+
+If at any time you wish to stop receiving this reminder email please update your settings by clicking on 'manage reminder preferences' from the 'View Studies' page (https://www.lamsight.org/dashboard/collect/study) and deselecting the 'enable reminders' box.
+
+If you have any other questions please contact us at: EstrogenStudy@LAMTreatmentAlliance.org. 
 
 Thank you,
 Estrogen Study Staff
@@ -361,8 +370,77 @@ Estrogen Study Staff
 " (get-site-config-param :estrogen-study-email))
 					   :from (get-site-config-param :estrogen-study-email))))
 
+(defparameter *reminder-count* 0)
+
 (define-system-event-hook estrogen-study-reminders (system-timer)
+  (when (zerop (mod (incf *reminder-count*) (* 60 4)))
+	(format t "Estrogen Study Reminder Calls: ~A~%" *reminder-count*))
   (when (get-site-config-param :estrogen-study-enabled-p)
 	(send-estrogen-reminder 
 	 (select-if #'estrogen-reminder-ready-p
 				(estrogen-study-patients)))))
+
+
+(defun recent-answer-p (question user seconds-ago)
+  (let ((answers (get-user-answers question (get-patient-for-user user)))
+		(now (get-universal-time)))
+	(> (length (select-if (f (a) (< (- now (entry-time a)) seconds-ago)) answers))
+	   0)))
+                                
+(defun non-adhering-patients (seconds)
+  (with-transaction (:read-uncommitted t :txn-nosync t)
+    (let* ((question (get-question "FEV1 - trial 1")))
+  	  (filter-if (f (user)
+                   (recent-answer-p question user seconds))
+                 (estrogen-study-patients)))))
+
+(defun estrogen-study-adherence-report ()
+  (with-transaction (:read-uncommitted t :txn-nosync t)
+  (let ((question (get-question "FEV1 - trial 1"))
+        (users (estrogen-study-patients))
+		(seconds (* 3600 48)))
+	(with-html
+	 (:div
+	  (:p (str (length (select-if (f (u) (recent-answer-p question u seconds)) users)))
+		  " of " (str (length users)) " entered FEV data in the last 48 hours"))))))
+
+(defun estrogen-study-fev-count-report ()
+  (let ((question (get-question "FEV1 - trial 1")))
+	(mapc (f (rec) 
+            (format t "~A: ~A~%" (car rec) (cdr rec))) 
+		  (sort (mapcar (f (u) 
+                          (cons (username u) 
+                                (length (get-user-answers question (get-patient-for-user u)))))
+					    (estrogen-study-patients))
+				#'> :key #'cdr))))
+	
+;;
+;; Load estrogen study history
+;;
+
+(defun user-table (users)
+  (let ((table (make-hash-table)))
+	(mapc (f (u) 
+            (let ((patient (get-patient-for-user (get-user u))))
+			  (setf (gethash (mid patient) table) patient)))
+		  users)
+	table))
+
+(defun question-table (surveys)
+  (let ((table (make-hash-table)))
+	(mapc (f (s)
+            (let ((questions (all-survey-questions s)))
+			  (loop for question in questions
+				 do (setf (gethash (mid question) table) question))))
+	      surveys)
+	table))
+
+(defun load-estrogen-answers (logfile)
+  (let ((utable (user-table (estrogen-study-patients))) ;;(list (get-user "eslick"))))
+		(qtable (question-table (mapcar #'get-survey 
+										'("Estrogen Study Diary"
+										  "Dyspnea Diary")))))
+;;										  "Estrogen Study Background")))))
+	(update-answers-from-log logfile qtable utable)))
+
+		

@@ -402,7 +402,7 @@
     ("Falkland Islands Time" "FKT" "-04")
     ("Galapagos Time" "GALT" "-06")
     ("Georgia Standard Time" "GET" "+04")
-    ("Greenwich Mean Time" "GMT" "")
+    ("Greenwich Mean Time" "GMT" "+00")
     ("South Georgia and the South Sandwich Islands" "GST" "-02")
     ("Gulf Standard Time" "GST" "+04")
     ("Guyana Time" "GYT" "-04")

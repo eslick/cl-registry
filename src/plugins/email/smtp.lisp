@@ -38,10 +38,14 @@
       
 (defun safe-smtp-send (host from to subject message &rest args)
   (handler-bind ((cl-smtp:rcpt-failed 
-		  #'(lambda (c)
-		      (warn "Could not send e-mail to: '~A'~%" 
-			    (cl-smtp::recipient c))
-		      (invoke-restart 'cl-smtp::ignore-recipient))))
+				  #'(lambda (c)
+					  (warn "Could not send e-mail to: '~A'~%" 
+							(cl-smtp::recipient c))
+					  (invoke-restart 'cl-smtp::ignore-recipient)))
+				 (condition
+				  #'(lambda (e)
+					  (warn "Unknown error ~A sending email to '~A'~%" 
+							e to))))
     (apply #'cl-smtp:send-email host from to subject message args)))
 
 (defun send-email (addresses subject body &optional from)
@@ -120,7 +124,7 @@
     (when (and addresses (email-to-users-p user-class))
       (loop for address in addresses
 	   do (send-email (mklist address)
-			  subject
+ 			  subject
 			  body
 			  from)))))
 
@@ -129,8 +133,7 @@
 (defun lookup-email-group (groupname)
   (case groupname
     (:all (all-users))
-    (:test (list (get-user "ianeslick") (get-user "eslick")
-		 (get-user "Amanda")))
+    (:test (list (get-user "ianeslick") (get-user "eslick")))
     (:estrogen (select-if #'(lambda (u)
 			      (has-preference-value-p u :estrogen-study t))
 			  (all-users)))
@@ -148,13 +151,18 @@
    :name "Send Group Email"))
 
 (defun send-email-to-group* (groupname from subject body)
-  (let* ((users (select-if (curry #'allowed-to-email-p nil)
-			   (lookup-email-group groupname)))
-	 (groups (group users 100)))
-    (dolist (group groups)
-      (safe-smtp-send (site-email-smtp-host)
-		      (or from (site-email-admin-address))
-		      (list (or from (site-email-admin-address)))
-		      subject body
-		      :bcc (mapcar #'user-email group)
-		      :authentication (site-email-smtp-authentication)))))
+  (handler-case
+	  (let* ((users (select-if (curry #'allowed-to-email-p nil)
+							   (lookup-email-group groupname)))
+			 (groups (group users 100)))
+		(format t "~A ~A ~A ~A ~A~%" groupname from users groups body)
+		(dolist (group groups)
+		  (safe-smtp-send (site-email-smtp-host)
+						  (or from (site-email-admin-address))
+						  (list (or from (site-email-admin-address)))
+						  subject body
+						  :bcc (mapcar #'user-email group)
+						  :authentication (site-email-smtp-authentication)))
+		(format t "Successful completion sending to group: ~A~%" groupname))
+	(error (e)
+	  (format t "Error sending email to group ~A: ~A~%" groupname e))))

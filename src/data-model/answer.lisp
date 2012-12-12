@@ -19,9 +19,9 @@
   (format stream "#<ANSWER (~A.~A) '~A'>" 
 	  (object-id inst) (answer-id inst)
 	  (let ((value (value inst)))
-	    (typecase value
-	      (string (subseq value 0 (min (length value) 40)))
-	      (t value)))))
+	    (if (stringp value)
+			(string (subseq value 0 (min (length value) 40)))
+			 value))))
 
 (defmethod fulltext-document ((inst answer))
   (when (and (slot-boundp inst 'question)
@@ -81,8 +81,14 @@
 (defun get-answer (question user &optional id)
   "Get the answer to question for user; optionally use ID"
   (awhen (get-user-answers question user)
-    (if id 
-		(find id it :key #'answer-id)
+		(if id 
+		(let ((dups (select-if (f (a) (eq (answer-id a) id)) it)))
+		  (cond ((= (length dups) 0) nil)
+				((= (length dups) 1) (first dups))
+			    (t (prog1 
+					   (first dups)
+					 (format t "Found from duplicate instances for ~A: ~A~%" user dups)))))
+					 ;; (drop-instances (rest dups))))))
 		(if (diary-question-p question)
 			(most #'answer-id it)
 			(first it)))))
@@ -104,11 +110,39 @@
   "Use 'most' to get the latest diary answer by entry time"
   (most #'entry-time (get-user-answers question user)))
 
+(defun answers-since (ts)
+  (get-instances-by-range 'answer 'entry-time ts (get-universal-time)))
+
+(defun select-answers-since (question user ts)
+  (select-if (f (answer) 
+               (and (eq (question answer) question)
+                    (eq (user answer) user)))
+             (answers-since ts)))
+
+(defun cached-answers (question user)
+;;  (format t "Getting cached data for ~A ~A~%" (username (user user)) question)
+  (when weblocks::*session*
+	(let ((cache (weblocks::session-value 'answer-cache))
+		  (ts (weblocks::session-value 'answer-cache-ts)))
+	  (when (null cache)
+		(setf cache (setf (weblocks::session-value 'answer-cache) (make-hash-table)))
+        (setf ts (setf (weblocks::session-value 'answer-cache-ts) (get-universal-time))))
+	  (aif (gethash question cache)
+		   (progn 
+;;			 (format t "~A ~A~%" (length it) (length (select-answers-since question user ts)))
+			 (union it (select-answers-since question user ts)))
+		   (setf (gethash question cache) 
+				 (select-if #'(lambda (x)
+								(eq (question x) question))
+							(get-instances-by-value 'answer 'user user)))))))
+
 (defun get-user-answers (question user)
   "Answers associated with user"
-  (select-if #'(lambda (x)
-		 (eq (question x) question))
-	     (get-instances-by-value 'answer 'user user)))
+  (if (eq (current-user) (user user))
+	  (cached-answers question user)
+	  (select-if #'(lambda (x)
+					 (eq (question x) question))
+				 (get-instances-by-value 'answer 'user user))))
 
 (defun sorted-answers (question user)
   "Return answers sorted on value"
@@ -131,6 +165,7 @@
 ;; Answer mutation log 
 
 (defvar *answer-log-stream* nil)
+(defvar *answer-log-lock* (bordeaux-threads:make-lock))
 
 (define-system-event-hook answer-log-setup (start-app)
   (let ((stream (open (make-pathname :defaults (registry-relative-path (list "logs"))
@@ -150,21 +185,19 @@
   (setf *answer-log-stream* nil))
 
 (defun log-answer (question patient value id)
-  (handler-case 
+  (bordeaux-threads:with-lock-held (*answer-log-lock*)
+    (handler-case 
       (if *answer-log-stream*
-	  (progn
-	    (format *answer-log-stream*
-		    ";; ~A entered answer for patient ~A~%;; for q: ~A~%"
-		    (if (boundp 'hunchentoot::*session*) (current-user) nil)
-		    patient question)
-	    (format *answer-log-stream*
-		    "(answer :question ~A :user ~A :time ~A :value ~A :id ~A)~%"
-		    (mid question)
-		    (mid patient)
-		    (get-universal-time) 
-		    value id))
-	  (warn "Answer log not open"))
-    (error (e) (warn "Error in answer-log: ~A" e))))
+		  (progn
+			(format *answer-log-stream*
+					";; ~A entered answer for patient ~A~%;; for q: ~A~%"
+					(if (boundp 'hunchentoot::*session*) (current-user) nil)
+					patient question)
+			(format *answer-log-stream*
+					"(answer :question ~A :user ~A :time ~A :value \"~A\" :id ~A )~%"
+					(mid question) (mid patient) (get-universal-time) value id))
+		  (warn "Answer log not open"))
+    (error (e) (warn "Error in answer-log: ~A" e)))))
 
 (defun add-answer (question user value &key id history)
   "Create a new answer"
@@ -181,27 +214,30 @@
 (defun next-id (question user)
   (let ((answers (sort (get-user-answers question user) #'> :key 'answer-id)))
     (if answers
-	(1+ (answer-id (first answers)))
-	1)))
+		(1+ (answer-id (first answers)))
+		1)))
 
 (defun update-answer (question value &optional id)
   "Updates the answer; or latest answer"
-  (let* ((user (current-patient))
-	 (answer (get-answer question user id)))
-    (if answer
-	(update-answer% answer value id)
-	(unless (or (eql value :none) (equal value ""))
-	  (add-answer question user value :id id)))))
+  (ensure-transaction ()
+   (let* ((user (current-patient))
+		  (answer (get-answer question user id)))
+	 (if answer
+		 (update-answer% answer value id)
+		 (unless (or (eql value :none) (equal value ""))
+		   (add-answer question user value :id id))))))
 
 (defun update-answer% (answer new-value id)
   (cond ((update-history-p answer new-value)
-	 (setf (value answer) new-value)
-	 (setf (entry-time answer) (get-universal-time))
-	 answer)
-	((record-history-p answer new-value)
-	 (add-answer (question answer) (user answer) new-value :id id
-		     :history (change-class answer 'answer-history)))
-	(t answer)))
+		 (log-answer (question answer) (user answer) new-value (or id 1))
+		 (setf (value answer) new-value)
+		 (setf (entry-time answer) (get-universal-time))
+		 answer)
+		((record-history-p answer new-value)
+		 (log-answer (question answer) (user answer) new-value (or id 1))
+		 (add-answer (question answer) (user answer) new-value :id id
+					 :history (change-class answer 'answer-history)))
+		(t answer)))
 
 (defun record-history-p (answer value)
   (not (equalp value (value answer))))
@@ -221,11 +257,16 @@
 (defun delete-answer (question &optional user)
   (awhen (get-answer question (or user (current-patient)))
     (cond ((update-history-p it :delete)
-	   (drop-instances (mklist it)))
-	  ((record-history-p it :delete)
-	   (mapc #'(lambda (answer)
-		     (change-class answer 'answer-history))
-		 (mklist it))))))
+		   (drop-instances (mklist it)))
+		  ((record-history-p it :delete)
+		   (mapc #'(lambda (answer)
+					 (change-class answer 'answer-history))
+				 (mklist it))))))
+
+(defun delete-diary-entry (survey patient id)
+  (let* ((questions (all-survey-questions survey))
+		 (answers (remove-nulls (mapcar (f (q) (get-answer q patient id)) questions))))
+	answers))
 	   
 ;; ===================================
 ;;  Convenience functions
@@ -249,16 +290,18 @@
 ;; ===================================
 
 (defun validate-answers (q user)
-  (let ((ids (mapcar #'answer-id (get-user-answers q user))))
-    (when (neq (length ids) (length (remove-duplicates ids)))
-      (error "Invalid duplicate answers in question ~A" q))))
+  t)
+;;  (let ((ids (mapcar #'answer-id (get-user-answers q user))))
+;;    (when (neq (length ids) (length (remove-duplicates ids)))
+;;      (error "Invalid duplicate answers in question ~A" q))))
 
 (defun remove-duplicate-answers (q user)
   (drop-instances (duplicate-answers q user)))
 
 (defun duplicate-answers (q user)
-  (let ((latest (latest-answer q user)))
-    (set-difference (get-user-answers q user) (list latest))))
+  (let* ((answers (get-user-answers q user))
+		 (unique (when answers (remove-duplicates answers :key #'answer-id))))
+    (set-difference answers unique)))
 
 (defun remove-all-duplicates ()
   (map-class #'remove-user-duplicates 'user))
@@ -269,10 +312,11 @@
 
 (defun print-user-duplicates (user)
   (print user)
-  (map-class #'(lambda (question) (let ((dups (duplicate-answers question user)))
-				    (when dups
-				      (print (cons (latest-answer question user) dups)))))
-	      'question))
+  (map-class #'(lambda (question) 
+				 (let ((dups (duplicate-answers question user)))
+				   (when dups
+					 (print (cons question dups)))))
+			 'question))
 
 
 ;; ===================================
@@ -283,15 +327,15 @@
   "Updates answers with new value returned by function when
    second return value is true"
   (labels ((change-answer (answer value)
-	     (update-answer% answer value (answer-id answer)))
-	   (upgrade-answer (answer)
-	     (multiple-value-bind (value change?)
-		 (funcall fn (value answer))
-	       (if change?
-		   (change-answer answer value)
-		   answer))))
+			 (update-answer% answer value (answer-id answer)))
+		   (upgrade-answer (answer)
+			 (multiple-value-bind (value change?)
+				 (funcall fn (value answer))
+			   (if change?
+				   (change-answer answer value)
+				   answer))))
     (mapcar #'upgrade-answer
-	    (get-answers question))))
+			(get-answers question))))
 
 (defun list-replace (old new list &key (test #'equal))
   "Cons a new list, replacing instance of old with new under equal"
@@ -347,4 +391,151 @@
 		  (cerror (format nil "Keep processing") "Found error ~A" e))))
 	  questions)))
 
+;;
+;; Import Answer Log
+;;
 
+(defun make-diaries-table ()
+  (let ((table (make-hash-table)))
+	(populate-question-table table
+							 (get-survey "Estrogen Study Diary"))
+	(populate-question-table table
+							 (get-survey "Dyspnea Diary"))
+	table))
+
+(defun populate-question-table (table survey)
+  (loop for group in (survey-groups survey)
+	 do (loop for subgroup in (find-subgroups group)
+		   do (loop for question in (group-questions subgroup)
+				 do (setf (gethash (mid question) table) t))))
+  table)
+
+(defun make-user-table (users)
+  (let ((table (make-hash-table)))
+	(loop for user in users 
+		 do (setf (gethash (mid (get-patient-for-user user)) table) t))
+	table))
+		 
+
+(defun non-comment-line-p (line)
+  (and (> (length line) 2) (not (equal (subseq line 0 2) ";;"))))
+
+(defun parse-line (line)
+  (awhen (read-from-string line)
+    (pairs (cdr it))))
+
+(defun matching-rec (rec qtable utable)
+  (and (or (null qtable) (gethash (assoc-get :question rec) qtable))
+	   (or (null utable) (gethash (assoc-get :user rec) utable))))
+
+(defun update-table (rec table)
+  (setf (gethash (list (assoc-get :question rec) 
+					   (assoc-get :user rec) 
+					   (assoc-get :id rec))
+				 table)
+		rec))
+
+(defun commit-table (table &optional pmid &aux (count 0))
+  (maphash (f (key rec)
+              (declare (ignorable key))
+              (when (zerop (mod (incf count) 1000))
+				(format t "Count: ~A~%" count))
+              (when (or (null pmid) (eq pmid (assoc-get :user rec)))
+;;                (format t "Evaluating: ~A~%" rec)
+				(with-transaction ()
+                  (let* ((question (get-question (assoc-get :question rec)))
+						 (pat (get-model 'patient (assoc-get :user rec)))
+						 (new-value (assoc-get :value rec))
+						 (new-value (if (member (question-data-type question) '(:choice))
+										(if (numberp new-value) 
+											(format nil "~A" new-value)
+											new-value)
+										new-value))
+						 (id (assoc-get :id rec))
+						 (answer (get-answer question pat id)))
+					(when (null answer) 
+					  (format t "Adding (~A): ~A ~A ~A ~A~%" key question pat new-value id)
+					  (make-instance 'answer
+								   :question question
+								   :user pat
+								   :value new-value
+								   :id id
+								   :entry-time (assoc-get :time rec)
+								   :history nil))))))
+		   table))
+
+(defparameter line-scanner (ppcre:create-scanner "(.* :value) (.*) (:id .*)" :single-line-mode t))
+
+(defun primitive-value-p (string)
+  (and (= (length (split-sequence:split-sequence #\Space string)) 1)
+	   (or (string= string "NIL")
+		   (string= string "\"NIL\"")
+		   (string= string "T")
+		   (string= string "\"T\"")
+		   (parse-integer string :junk-allowed t) ;; number
+		   (parse-integer string :start 1 :junk-allowed t) ;; number
+		   )))
+
+(defun quoted-p (string)
+  (and (eq (char string 0) #\")
+	   (eq (last-char string) #\")))
+
+(defun strip-quotes (string)
+  (subseq string 1 (- (length string) 1)))
+
+(defun multi-valued-result (string)
+  (eq (char string 0) #\())
+
+(defun parse-multiple-values (string)
+  (split-sequence:split-sequence #\Space (subseq string 1 (- (length string) 1))))
+
+(defun read-full-line (line)
+  (multiple-value-bind (full parts)
+	  (scan-to-strings line-scanner line)
+	(declare (ignorable full))
+	(let ((pre (aref parts 0))
+		  (val (aref parts 1))
+		  (post (aref parts 2)))
+	  (cond ((and (primitive-value-p val) (quoted-p val))
+			 (parse-line (format nil "~A ~A ~A" pre (strip-quotes val) post)))
+			((and (primitive-value-p val) (not (quoted-p val)))
+			 (parse-line (format nil "~A ~A ~A" pre val post)))
+			((quoted-p val)
+			 (parse-line (format nil "~A ~A ~A" pre val post)))
+			((multi-valued-result val)
+			 (parse-line (format nil "~A (~{\"~A\" ~}) ~A" pre (parse-multiple-values val) post)))
+			(t (parse-line (format nil "~A \"~A\" ~A" pre val post)))))))
+
+(defun handle-line (line table qtable utable)
+  (handler-case
+	  (let ((rec (read-full-line line)))
+		(when (matching-rec rec qtable utable)
+;;		  (format t "Adding: ~A~%" rec)
+		  (update-table rec table)))
+	(error (e)
+	  (format t "Error parsing line: ~A~%~A~%" e line))))
+			  
+(defun update-answers-from-log (file qtable utable)
+  (let ((table (make-hash-table :size 10000 :test #'equal))
+		(line ""))
+	(with-open-file (stream file)
+	  (handler-case 
+   	     (loop 
+		   for segment = (read-line stream nil nil)
+		   while segment
+		   when (non-comment-line-p segment)
+		   do (progn 
+;;				(format t "line: ~A~%" line)
+				(cond ((or (equal line "") (eq (char line 0) #\())
+					   (setf line (format nil "~A~A~%" line segment)))
+					  ((eq (char segment 0) #\()
+					   (setf line segment))
+					  (t (setf line "")))
+;;				(format t "Examining: ~A~%" segment)
+				(when (eq (last-char segment) (last-char ")"))
+				  (handle-line line table qtable utable)
+				  (setf line ""))))
+	   (error (e) 
+		 (format t "Terminating: ~A~%" e)))
+	  table)))
+;;(commit-table table))))

@@ -33,9 +33,42 @@
 
 (defmethod render-widget-body ((admin stats-dashboard) &rest initargs)
   (declare (ignore initargs))
-  (render-stats)
   (with-html
-    (:br)
+    (:h3 "Login Statistics")
+    (render-stats)
+    (:h3 "Estrogen Study Status")
+    (estrogen-study-adherence-report)
+    (:p (:b "Non-entering users: ")
+      (mapcar (f (u) (htm (str (format nil "\"~A\"  " (username u)))))
+              (non-adhering-patients (* 48 3600))))))
+
+
+(defun make-admin-dashboard ()
+  (make-instance 'admin-dashboard))
+
+(defwidget admin-dashboard ()
+  ())
+
+(defparameter *archive-models* 
+  '(center clinician patient
+    study survey survey-group
+    question answer answer-history
+    consent-history))
+
+(defun dump-filename (dir)
+  (format nil "~A/data-archive-~A.sexp"
+	  dir
+	  (format-time-string nil "%Y%m%d%H%M%S")))
+
+(defun dump-data-models (directory)
+  "Not for Archival Purposes.  
+   Dumps all data models to a file in directory."
+  (export-models-to-file (dump-filename directory)
+			 :model-list *archive-models*))
+
+(defmethod render-widget-body ((admin admin-dashboard) &rest initargs)
+  (declare (ignore initargs))
+  (with-html
     "Email to users: "
     (str (if (get-site-config-param :email-to-users-p) "Enabled" "Disabled"))
     (render-link
@@ -50,7 +83,6 @@
          (mark-dirty admin))
      " [Toggle]")
     (:br)
-    "Analytics" 
     (:a :onclick "pageTracker._setVar('no_report');" 
 	"Ignore My Browser")
     (:br)
@@ -80,35 +112,7 @@
                            ("Info" . :info)
                            ("Debug" . :debug))
                          :selected-value (or *log-level* :error)
-                         :autosubmitp t)))))
-
-
-(defun make-admin-dashboard ()
-  (make-instance 'admin-dashboard))
-
-(defwidget admin-dashboard ()
-  ())
-
-(defparameter *archive-models* 
-  '(center clinician patient
-    study survey survey-group
-    question answer answer-history
-    consent-history))
-
-(defun dump-filename (dir)
-  (format nil "~A/data-archive-~A.sexp"
-	  dir
-	  (format-time-string nil "%Y%m%d%H%M%S")))
-
-(defun dump-data-models (directory)
-  "Not for Archival Purposes.  
-   Dumps all data models to a file in directory."
-  (export-models-to-file (dump-filename directory)
-			 :model-list *archive-models*))
-
-(defmethod render-widget-body ((admin admin-dashboard) &rest initargs)
-  (declare (ignore initargs))
-  (with-html
+                         :autosubmitp t)))
     (render-link (f* (dump-data-models "/var/backup"))
 		 "Dump the database")
     "to /var/backup"

@@ -177,12 +177,15 @@ message (via format)."
 
 (defmethod update-presentation ((presentation web-field-presentation) args)
   "Update a presentation's client-state from the appropriate arglist"
-  (let ((provided-value (getf-all args (as-argument-keyword (query-name presentation)))))
+  (let ((provided-value (getf-all args (as-argument-keyword (query-name presentation))))
+		(prior-value (client-value presentation)))
+	(when (equal provided-value prior-value)
+	  (return-from update-presentation (values t provided-value nil)))
     (when (and (or (null provided-value)
-		   (equal provided-value ""))
-	       (not (required presentation)))
+				   (equal provided-value ""))
+			   (not (required presentation)))
       (setf (client-value presentation) nil)
-      (return-from update-presentation (values t "")))
+      (return-from update-presentation (values t "" (if (not prior-value) nil t))))
     (block test-validity
       (dolist (validator (validators presentation))
         (multiple-value-bind (validp error-message)
@@ -191,13 +194,13 @@ message (via format)."
 	    (setf (warning-message presentation) error-message)
 	    ;; don't update the client-value with invalid text. return
 	    ;; NIL as the primary value.
-	    (return-from test-validity (values nil provided-value)))))
+	    (return-from test-validity (values nil provided-value nil)))))
       (setf (client-value presentation) provided-value)
       ;; now check if the lisp value is also valid.
       (setf (warning-message presentation)
             (multiple-value-bind (validp error-message)
                 (validp presentation)
               (if validp nil error-message)))
-      ;; return T as the primary value only if the value is valid.
-      (values (not (warning-message presentation)) provided-value))))
+      ;; return T as the primary value only if the value is valid, third value is 'changed'
+      (values (not (warning-message presentation)) provided-value t))))
 

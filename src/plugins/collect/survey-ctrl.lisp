@@ -213,8 +213,7 @@
 
 (defun initialize-control-from-state (ctrl state)
   (awhen (last-group state)
-    (goto-group ctrl it)
-    it))
+    (goto-group ctrl it)))
 
 (defmethod initialize-instance :after ((ctrl survey-ctrl) &rest args)
   (declare (ignore args))
@@ -319,34 +318,34 @@ ie if survey editor may have intervened to remove group or if survey changed (no
   (let ((group (ensure-current-group ctrl)))
     (unless group
       (with-html
-	(:div :class "survey-left-column"
-	      (render-survey-header ctrl)
-	      (:h1 (str #!"This survey is empty"))
-	      (:p (:a :href "/dashboard/collect/"
-		      (str #!"Return to Collect")))))
+	  (:div :class "survey-left-column"
+			(render-survey-header ctrl)
+			(:h1 (str #!"This survey is empty"))
+			(:p (:a :href "/dashboard/collect/"
+					(str #!"Return to Collect")))))
       (return-from render-widget-body))
     (let* ((presentations (active-presentations ctrl group)))
       (with-html 
-	(:div :class "survey-left-column"
-	      (render-survey-header ctrl)
-	      (htm (:h1
-		    (str (format nil
-				 (get-group-number-style-format-str ctrl)
-				 (1+ (position group (survey-groups (survey ctrl))))))
-		    (str "&nbsp;")
-		    (str (slot-value-translation group 'name)))
-		   (with-html-form (:post (question-response-action ctrl presentations)
-					  :class "survey-form" :id "survey-form")
-;;		      (render-form-actions ctrl)
-		     (render-group (current-group ctrl) ctrl)
-		     (render-form-actions ctrl))))
-	(:div :class "survey-right-column"
-	      (:div :class "top"
-		    (render-widget (help-widget ctrl))
-		    (render-survey-list-nav ctrl)
-		    (render-survey-help ctrl))
-	      (:div :class "bottom"))
-	(:div :class "float-end")))))
+	    (:div :class "survey-left-column"
+			(render-survey-header ctrl)
+			(htm (:h1
+				  (str (format nil
+							   (get-group-number-style-format-str ctrl)
+							   (1+ (position group (survey-groups (survey ctrl))))))
+				  (str "&nbsp;")
+				  (str (slot-value-translation group 'name)))
+				 (with-html-form (:post (question-response-action ctrl presentations)
+										:class "survey-form" :id "survey-form")
+ ;;		      (render-form-actions ctrl)
+				   (render-group (current-group ctrl) ctrl)
+				   (render-form-actions ctrl))))
+	    (:div :class "survey-right-column"
+	        (:div :class "top"
+		      (render-widget (help-widget ctrl))
+		      (render-survey-list-nav ctrl)
+		      (render-survey-help ctrl))
+	        (:div :class "bottom"))
+	    (:div :class "float-end")))))
 
 
 ;; ===============================================================
@@ -420,16 +419,16 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 	    (render-diary-header ctrl))
 	  (:div :class "newline survey-bar-description"
 		(str (slot-value-translation (survey ctrl) 'description)))
-	  (:div :class "newline survey-bar-nav"
-		(if (has-prev-group ctrl)
-		    (render-survey-action ctrl 'prev #!"Previous Page" "previous-group-link")
-		    (htm (str #!"Previous Page")))
-		" | "
-		(if (has-next-group ctrl)
-		    (render-survey-action ctrl 'next #!"Next Page" "next-group-link")
-		    (htm (str #!"Next Page")))
-		" | "
-		(:a :href "/dashboard/collect/" (str #!"Return to Collect")))
+;;	  (:div :class "newline survey-bar-nav"
+;;		(if (has-prev-group ctrl)
+;;		    (render-survey-action ctrl 'prev #!"Previous Page" "previous-group-link")
+;;		    (htm (str #!"Previous Page")))
+;;		" | "
+;;		(if (has-next-group ctrl)
+;;		    (render-survey-action ctrl 'next #!"Next Page" "next-group-link")
+;;		    (htm (str #!"Next Page")))
+;;		" | "
+;;		(:a :href "/dashboard/collect/" (str #!"Return to Collect")))
 	  (:div :style "height: 15px;")
 	  (:hr))))
 
@@ -438,40 +437,42 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 
 (defun render-diary-header (ctrl)
   (let* ((survey (survey ctrl))
-	 (series (diary-question survey))
-	 (description (diary-description survey)))
+		 (series (diary-question survey))
+		 (description (diary-description survey)))
     (with-html
-      (:div :class "newline survey-bar-diary-nav"
-	    "List of entries  &nbsp; ("
-	    (render-link (f* (setf (current-id ctrl) 
-				   (next-id series (current-patient)))
-			     (goto-first-group ctrl) 
-			     (create-current-presentations ctrl))
-			 #!"Add new entry")
-	    ")"
-	    (:ul 
-	     (dolist (answer (sorted-answers series (current-patient)))
-	       (render-entry-header-link ctrl answer series description)))))))
+	(:div :class "newline survey-bar-diary-nav"
+		  "List of entries  &nbsp; ("
+		  (render-link (f* (setf (current-id ctrl) 
+								 (next-id series (current-patient)))
+						   (goto-first-group ctrl) 
+						   (create-current-presentations ctrl))
+					   #!"Add new entry")
+		  ")"
+		  (:ul 
+		   (dolist (answer (sorted-answers series (current-patient)))
+			 (render-entry-header-link ctrl answer series description)))))))
 
 (defun render-entry-header-link (ctrl answer series description)
   (with-html 
     (:li (render-link 
-	  (f* (setf (current-id ctrl) (answer-id answer))
-	      (create-current-presentations ctrl))
-	  description
-	  :render-fn
-	  (lambda (label)
-	    (render-presentation
-	     (make-presentation series (answer-id answer))))
+		  (f* (setf (current-id ctrl) (answer-id answer))
+			  (create-current-presentations ctrl))
+		  description
+		  :render-fn
+		  (lambda (label)
+            (case (question-data-type series)
+			  (:date (str (print-datetime (value answer) :show-time-p nil :show-date-p t)))
+			  (t (render-presentation
+				  (make-presentation series (answer-id answer))))))
 ;;	    (with-html
 ;;	      (str "&nbsp;")
 ;;	      (str (princ-to-string
 ;;		    (typecase label
 ;;		      (question (question-prompt label))
 ;;		      (otherwise label))))))
-	  :class (if (eq (current-id ctrl) (answer-id answer))
-		     "diary-selected-answer-entry"
-		     "diary-answer-entry")))))
+		  :class (if (eq (current-id ctrl) (answer-id answer))
+					 "diary-selected-answer-entry"
+					 "diary-answer-entry")))))
 
 ;; diary class w/ series and description fields?
 ;; Are groups 1:1 with a survey (Check if shared?)
@@ -534,6 +535,8 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 	    (:ul
 	     (if (diary-p ctrl)
 		 (htm
+		  (when t ;; (is-admin-p)
+            (htm (:li (str (format nil "Id ~A" (current-id ctrl))))))
 		  (:li 
 		   (str #!"A diary is just like a survey that you can fill out many times.  At the top of the page, the 'List of Entries' allows you to select a specific diary by date.  When you create a new diary, it chooses today's date, but you can change that date to the past to enter a diary for a prior day.")))
 		 (htm
@@ -582,7 +585,7 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 
 (defun question-response-action (ctrl presentations)
   (make-action (lambda (&rest args)
-		 (let ((continue (getf args :continue))
+		  (let ((continue (getf args :continue))
 		       (finish (getf args :finish))
 ;;		       (restart (getf args :restart))
 		       (delete (getf args :delete))
@@ -591,28 +594,28 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 ;;		   (log-message :survey :debug "Survey form actions: ~A"
 ;;				(list save continue finish delete restart update))
 		   (cond ((or update save)
-			  (update-survey-presentations ctrl presentations args t)
-			  (mark-dirty ctrl))
-			 (continue
-			  (if (update-survey-presentations ctrl presentations args t)
-			      (progn
-				(goto-next-group ctrl)
-				(ajax-scroll-to-top))
-			      (progn
-				(mark-dirty ctrl)
-				(ajax-scroll-to-top))))
-			 (finish
-			  (if (update-survey-presentations ctrl presentations args t)
-			      (progn
-				(goto-first-group ctrl)
-				(post-action-redirect "/dashboard/collect/"))
-			      (progn
-				(mark-dirty ctrl)
-				(ajax-scroll-to-top))))
-			 (delete ;; wipe answers and create new presentations
-			  (delete-answers (mapcar #'metadata presentations))
-			  (create-current-presentations ctrl)
-			  (mark-dirty ctrl)))))))
+				  (update-survey-presentations ctrl presentations args t)
+				  (mark-dirty ctrl))
+				 (continue
+				  (if (update-survey-presentations ctrl presentations args t)
+					  (progn
+						(goto-next-group ctrl)
+						(ajax-scroll-to-top))
+					  (progn
+						(mark-dirty ctrl)
+						(ajax-scroll-to-top))))
+				 (finish
+				  (if (update-survey-presentations ctrl presentations args t)
+					  (progn
+						(goto-first-group ctrl)
+						(post-action-redirect "/dashboard/collect/"))
+					  (progn
+						(mark-dirty ctrl)
+						(ajax-scroll-to-top))))
+				 (delete ;; wipe answers and create new presentations
+				  (delete-answers (mapcar #'metadata presentations))
+				  (create-current-presentations ctrl)
+				  (mark-dirty ctrl)))))))
 
 
 					    
@@ -649,11 +652,14 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 (defmethod render-inline-group (ctrl group)
   (with-html
     (:div :class "survey-inline-group"
-          (render-group group ctrl) #| 
+          (render-group group ctrl) 
+#| 
 ;;	  (when (is-admin-p)
 ;;	    (str (format nil "[Group ID: ~A]" (mid group))))
 	  (mapc #'(lambda (p) (render-question ctrl group p))
-		(presentations-for-group ctrl group)) |# )))
+		(presentations-for-group ctrl group)) 
+|# 
+		  )))
 
 (defmethod render-group ((group survey-group-table) ctrl)
   (with-html
@@ -673,9 +679,9 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 		      (htm (let ((presentation (find cell (presentations-for-group ctrl group) :key #'metadata)))
 			     (validate-answers cell (current-patient))
 			     (htm
-                              (:div :class "inline-trigger"
-                                    (:div :class "question-input"
-                                          (render-presentation-editable presentation))))
+				  (:div :class "inline-trigger"
+						(:div :class "question-input"
+							  (render-presentation-editable presentation))))
 			     #| ;; should probably refactor this code from the other render-group method
 			     (let ((comment-count (comment-count cell)))
 			     (htm (render-image-link (f* (do-question-comment-dialog ctrl cell))
@@ -689,11 +695,10 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 			     (if (= comment-count 1)
 			     #!"comment"
 			     #!"comments")))))))) |#
-                         (awhen (warning-message presentation)
+				 (awhen (warning-message presentation)
                            (htm (:div :class "question-error"
                                       (str it))))
-
-                         (awhen (question-help cell)
+				 (awhen (question-help cell)
                            (when (> (length it) 2)
                              (htm (:div :class "question-help" 
                                         ;;			   (:img :src "/pub/images/help32.png" :alt "Help")
@@ -707,14 +712,13 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 
 (defun render-question (ctrl group p)
   (let* ((q (metadata p))
-	 (active-inline-groups 
-	  (inline-groups group q (lisp-value p))))
+		 (inline? (has-inline-group? group q))
+		 (active-inline-groups (inline-groups group q (lisp-value p))))
 ;;    (log-message :survey :debug "render question: ~A (~A) with value ~A"
 ;;		 (question-name q) q (lisp-value p))
     (validate-answers q (current-patient))
     (with-html 
-      (:div :class "question inline-trigger"
-
+      (:div :class (if inline? "question inline-trigger" "question")
  	    (:div :class "question-prompt"
 		  (render-prompt p)
 
@@ -817,13 +821,14 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 
 (defun update-survey-presentations (ctrl presentations args update-answers)
   (let ((result t))
+	(with-transaction ()
     (dolist (presentation presentations)
-      (update-presentation presentation args)
-      (when (and update-answers (not (warning-message presentation)))
-	(update-answer (metadata presentation) (lisp-value presentation)
-		       (current-id ctrl)))
-      (when (warning-message presentation)
-	(setf result nil)))
+      (mvbind (validp client-value changedp) (update-presentation presentation args)
+        (when (and changedp update-answers (not (warning-message presentation)))
+		  (update-answer (metadata presentation) (lisp-value presentation)
+					     (current-id ctrl)))
+        (unless validp
+		  (setf result nil)))))
     result))
 	
 
@@ -873,7 +878,7 @@ ie if survey editor may have intervened to remove group or if survey changed (no
 
 (defun goto-group (ctrl group)
   (unless group
-    (warn "Error going from group ~A to NULL" (current-group ctrl)))
+    (warn "Error going from group ~A to NULL for user ~A" (current-group ctrl) (current-user true)))
   (prog1
       (setf (current-group ctrl) group)
     ;; Remember this group in survey state
